@@ -1,0 +1,77 @@
+body {
+    background: #000000;
+    color: #996633;
+    font-size: small;
+    margin: 2em;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+a:hover, a:visited {
+    color: #948a04;
+}
+
+h1, h2, h3 {
+    color: #4c4c4c;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-width: 100%;
+}
+
+header, main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40em;
+}
+
+header {
+    border: thin solid #4c4c4c;
+    margin-bottom: 2em;
+    padding: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 3em;
+    letter-spacing: .2em;
+    margin-top: 0;
+}
+
+header .description {
+    color: #ffffff;
+    font-size: .8em;
+    letter-spacing: .2em;
+}
+
+article, .comments, .comment {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+article hr {
+    color: #111111;
+    width: 50%
+}
+
+.links {
+    text-align: center;
+}
+
+.links a {
+    font-size: 130%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
