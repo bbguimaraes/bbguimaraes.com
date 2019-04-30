@@ -23,6 +23,45 @@ a:visited {
     width: 50%;
 }
 
+nav {
+    display: inline-block;
+    text-align: left;
+    font-size: 2vw;
+    list-style-position: inside;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    margin-bottom: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul ul li::before {
+    content: '├─';
+}
+
+nav ul ul li:last-child::before {
+    content: '└─';
+}
+
+nav ul ul ul li::before {
+    content: '│\00a0  ├─';
+}
+
+nav ul ul ul li:last-child::before {
+    content: '│\00a0  └─';
+}
+
+nav ul ul li:last-child ul li:last-child::before {
+    content: '\00a0  \00a0└─';
+}
+
 :not(li) > ul {
     list-style-type: none;
     padding-left: 0;
