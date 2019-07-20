@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Hiding text in LaTeX</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>Hiding text in LaTeX</h1>
+            <i>2012-11-04 22:24:00</i>
+            <p>
+When writing my dissertation, I like to leave some text that I won't use at
+that particular moment but know I will need in the (near) future.  To remember
+to correct it later, I surrounded it with the (pseudo-randomly chosen)
+<i>\ldots</i> command, like this:
+            </p>
+            <pre>
+This is the actual text.
+
+\dots
+
+This is some text I'll need later.
+
+\ldots
+
+This is more of the actual text.
+</pre>
+            <p>
+That solved my problem, I could just grep the files and find the parts that
+needed refactoring.  The problem is they ended up on the PDF, which is not the
+end of the world, but it disrupted the reading and didn't look so good.  I
+finally decided to google the problem, and found a nice solution, using the if
+command:
+            </p>
+            <pre>
+This is the actual text
+
+\iffalse
+
+This is some text I'll need latex.
+
+\fi
+
+This is more of the actual text.
+</pre>
+            <p>
+Now I can still grep for <i>\iffalse</i>, and it doesn't pollute the PDF.  And
+it even advertises my blog.  Yay!
+            </p>
+            <div class="tags">
+                <a href="tags/dissertation.html">dissertation</a>
+                <a href="tags/latex.html">latex</a>
+            </div>
+        </div>
+    </body>
+</html>

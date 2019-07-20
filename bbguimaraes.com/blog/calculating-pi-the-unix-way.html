@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Calculating π the unix way</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>Calculating π the unix way</h1>
+            <i>2014-12-11 22:51:00</i>
+            <p>
+A nice trick I learned a while ago that is worth sharing: calculating pi the
+unix way (you know, on the command line, with pipes, as god intended).
+            </p><p>
+I would like to give credit to the original source of this command, but I just
+couldn't find it.  It was some of those "shell one-liners" you see on hacker
+news five times a day, except I didn't know half of them.  The most interesting
+was a semi-cryptic command line with a pretentious comment besides it:
+            </p>
+            <pre># calculates pi the unix way</pre>
+            <p>
+I remember as if it was today how puzzled I was by that line.  As I said, I
+didn't know much of the incantations on that list, but this was by far the most
+magical.  The line goes like this:
+            </p>
+            <pre>$ seq -f '4/%g' 1 2 9999 | paste -sd-+ | bc -l</pre>
+            <p>
+If you like a challenge (as I do), try to figure it out by yourself.  A shell
+and the man pages are your best friends.
+            </p>
+            <h2>seq</h2>
+            <p>
+If shell (or python) wasn't your first programming language, you were probably
+surprised by the way loops are done.  It usually goes like this:
+            </p>
+            <pre>
+$ for x in 1 2 3 4 5; do echo "$x"; done
+    1
+    2
+    3
+    4
+    5
+</pre>
+            <p>
+If you have a little experience with shell, you probably learned there is a
+more idiomatic way of doing this using the seq command and some shell voodoo:
+            </p>
+            <pre>$ for x in $(seq 1 5); do echo "$x"; done</pre>
+            <p>
+And if you were truly initiated on the dark arts of bash programming, you
+probably know this is functionally equivalent to this:
+            </p>
+            <pre>$ for x in {1..5}; do echo "$x"; done</pre>
+            <p>
+I won't explain how shell command substitution works, suffice to say seq is a
+nice utility to generate sequences (get it?) of numbers.  From the first lines
+of the man page:
+            </p>
+            <pre>
+$ man seq | grep -A 3 SYNOPSIS
+    SYNOPSIS
+           seq [OPTION]... LAST
+           seq [OPTION]... FIRST LAST
+           seq [OPTION]... FIRST INCREMENT LAST
+</pre>
+            <p>
+So the main part of the first command on the pipe is no magic: we are
+generating numbers from 1 to 9999 with a step of 2:
+            </p>
+            <pre>
+$ echo $(seq 1 2 9999 | head -5)
+1 3 5 7 9
+</pre>
+            <p>
+There is a useful option to this command to control how the value is output:
+            </p>
+            <pre>
+$ seq -f '%02g' 1 3 10
+    01
+    04
+    07
+    10
+</pre>
+            <p>
+Programmers familiar with c will recognize the printf format string.  Moving
+down the pipe...
+            </p>
+            <h2>paste </h2>
+            <p>
+There are some commands that do something so simple they seem almost useless:
+            </p>
+            <pre>
+$ whatis -l paste
+    paste (1)            - merge lines of files
+    paste (1p)           - merge corresponding or subsequent lines of files
+</pre>
+            <p>Nothing really interesting here, right?</p>
+            <pre>
+$ paste <(seq 1 3) <(seq 4 6)
+    1       4
+    2       5
+    3       6
+$ seq 1 6 | paste - -
+    1       2
+    3       4
+    5       6
+</pre>
+            <p>
+Well, that is interesting.  What if we play with the other options?
+            </p>
+            <pre>
+$ paste -sd, <(seq 1 3) <(seq 4 6)
+1,2,3
+4,5,6
+$ seq 1 6 | paste -sd,
+1,2,3,4,5,6
+</pre>
+            <p>
+This simple command is starting to show complex behavior.  Maybe there is
+something interesting in those old unix books after all...  Wait:
+            </p>
+            <pre>
+$ seq 1 6 | paste -sd+
+1+2+3+4+5+6
+</pre>
+            <p>
+Nice, a mathematical expression. If only we had some way of interpreting it...
+            </p>
+            <h2>bc</h2>
+            <p>
+There are people who say: the python/ruby interpreter is my calculator.  To
+that I say: screw that!
+            </p>
+            <pre>
+$ bc -ql
+1 + 2 + 3
+6
+10 / 12
+.83333333333333333333
+scale = 80
+10 / 12
+.8333333333333333333333333333333333333333333333333333333333333333333\
+3333333333333
+</pre>
+            <p>
+Do you see that <i>\</i> character?  It's almost as if it was meant to be used
+on a shell...
+            </p>
+            <pre>
+$ seq 1 6 | paste -sd+ | bc -l
+21
+</pre>
+            <h2>Interlude: Gregory-Leibniz</h2>
+            <p>
+There are many ways of calculating π.  You can find many of them on its
+wikipedia page.  One of them is named after two mathematicians, James Gregory
+and Gottfried Leibniz, goes like this (again from wikipedia):
+            </p>
+            <a href="https://upload.wikimedia.org/math/9/e/8/9e804b8a1a11e442be93fed1d52205a9.png">
+                <img
+                    class="white-bg"
+                    src="https://upload.wikimedia.org/math/9/e/8/9e804b8a1a11e442be93fed1d52205a9.png"
+                    alt="Gregory-Leibniz sum" />
+            </a>
+            <p>
+This is an infinite series with a simple pattern, which I'm sure you can
+identify (you weren't sleeping on those calculus classes, were you?).  Just in
+case you can't (and because it is a pretty equation), here it is:
+            </p><p>
+            <a href="https://upload.wikimedia.org/math/c/a/a/caafcd11bc553464dd4873a76ae4d9a7.png">
+                <img
+                    class="white-bg"
+                    src="https://upload.wikimedia.org/math/c/a/a/caafcd11bc553464dd4873a76ae4d9a7.png"
+                    alt="Gregory-Leibniz formula" />
+            </a>
+            <h2>Back in unix-land</h2>
+            <p>
+So here is the challenge: how can we generate and evaluate the terms of this
+series?  Generating each term, without the sign, can be done easily with seq
+and a format string:
+            </p>
+            <pre>
+$ seq -f '1/%g' 1 2 9
+1/1
+1/3
+1/5
+1/7
+1/9
+</pre>
+            <p>Remember our useful-where-you-never-imagined friend paste?</p>
+            <pre>
+$ seq -f '1/%g' 1 2 9 | paste -sd-+
+1/1-1/3+1/5-1/7+1/9
+</pre>
+            <p>
+This may take some time to understand, it's ok.  Read those man pages!  But
+once you understand, the only thing left is to evaluate the expression:
+            </p>
+            <pre>
+$ seq -f '1/%g' 1 2 9 | paste -sd-+ | bc -l
+.83492063492063492064
+</pre>
+            <p>
+Hmm, not much π-like, is it?  Right, this is π/4.  Ok, we can rearrange the
+terms a bit to fit our tools (that is the essential hacker skill).  Lets move
+the denominator on the right side to the numerator on the left.
+            </p>
+            <pre>
+$ seq -f '4/%g' 1 2 9 | paste -sd-+ | bc -l
+3.33968253968253968254
+</pre>
+            <p>
+That's more like it!  As any infinite series approximation, we can increase the
+number of terms to increase accuracy:
+            </p>
+            <pre>
+$ seq -f '4/%g' 1 2 9999 | paste -sd-+ | bc -l
+3.14139265359179323814
+</pre>
+            <p>Now just for the heck of it:</p>
+            <pre>
+$ seq -f '4/%g' 1 2 999999 | paste -sd-+ | bc -l
+3.14159065358979323855
+</pre>
+            <p>And there you have it. Enjoy your unix π.</p>
+            <div class="tags">
+                <a href="tags/printf.html">printf</a>
+                <a href="tags/head.html">head</a>
+                <a href="tags/python.html">python</a>
+                <a href="tags/pi.html">π</a>
+                <a href="tags/bash.html">bash</a>
+                <a href="tags/bc.html">bc</a>
+                <a href="tags/math.html">math</a>
+                <a href="tags/grep.html">grep</a>
+                <a href="tags/whatis.html">whatis</a>
+                <a href="tags/man.html">man</a>
+                <a href="tags/pipe.html">pipe</a>
+                <a href="tags/paste.html">paste</a>
+                <a href="tags/seq.html">seq</a>
+                <a href="tags/unix.html">unix</a>
+                <a href="tags/shell.html">shell</a>
+            </div>
+        </div>
+    </body>
+</html>

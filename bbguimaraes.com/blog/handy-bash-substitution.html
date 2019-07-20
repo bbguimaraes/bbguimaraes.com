@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Handy bash substitution</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>Handy bash substitution</h1>
+            <i>2013-02-24 04:06:00</i>
+            <p>
+Working on the command line is awesome.  But there are times where  all the
+typing gets unwieldy.  No one likes to type a long file name a  lot of times.
+Sure, using the up arrow and tab keys can make things  faster sometimes, but
+I'll show you some tricks to make your life easier.
+            </p><p>
+Let's start with a really common operation.  You download a tarball, extract,
+<i>cd</i> and have fun.  Usually, you'd do this:
+            </p>
+            <pre>
+$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
+$ tar -xjf linux-3.7.9.tar.bz2
+$ cd linux-3.7.9
+$ bob's your uncle
+</pre>
+            <p>Using the <i>Tab</i> key, you can save a lot of typing:</p>
+            <pre>
+$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
+$ tar -xjf l&lt;TAB&gt;
+$ cd l&lt;TAB&gt;
+$ bob's your uncle
+</pre>
+            <p>
+However, this is highly dependent on the contents of your directory, names in
+your path and auto-complete configurations.
+            </p><p>
+I'm not being picky here.  While testing these commands, I had to press
+<i>Tab</i> twice.  First, I had a directory called <i>libs</i>, so it stopped
+at <i>li</i>.  Second, I had an episode of the
+<a href="http://www.jupiterbroadcasting.com/show/linuxactionshow/">
+Linux Action Show</a> in a file called linuxactionshowep248.mp4, so it stopped
+at <i>linux</i>.  And, after you decompress the file, it stops at
+<i>linux-3.7.9</i>.
+            </p><p>
+Also, if your auto-completion isn't smart enough to filter
+names that aren't files or directories when you type <i>Tab</i> after <i>cd</i>
+and <i>tar</i>, you could have many more conflicts.
+            </p><p>
+I don't mean to bash (ha!) on auto-completion, just point you to more efficient
+alternatives: bash (get it?) has a nice feature called substitutions.  You may
+have come across it before if you ever tried to add an unescaped exclamation
+mark (henceforth mentioned using the niftier name "bang"):
+            </p>
+            <pre>
+$ echo "Bang!"
+bash: !": event not found
+</pre>
+            <p>Or got surprised by it:</p>
+            <pre>
+$ echo "balrog:!you shall not pass:/nonexistent:/bin/false" >> /etc/passwd
+echo "balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false" >> /tmp/test
+$ sleep 3d; grep balrog /etc/passwd
+balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false
+</pre>
+            <p>
+That is because the bang is used to reference previous commands.  The simplest
+is substitution of the last command:
+            </p>
+            <pre>
+$ echo billy
+billy
+$ !!
+echo billy
+billy
+</pre>
+            <p>
+One thing I should mention: to avoid chaos and destruction (or at least inform
+you that chaos and destruction have happened) the command with all
+substitutions made is printed before its output.  That is the fourth line in
+the example, showing that <i>!!</i> was substituted by <i>echo billy</i>.
+            </p><p>
+This substitution is simple and needs no explanation, but it raises a question:
+what is it useful for?  Have you ever typed a (possibly long) command, just to
+get the following message after running it?
+            </p>
+            <pre>
+$ cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
+cat: /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_:
+Permission denied
+</pre>
+            <p>
+You can solve this by typing <i>&lt;UP&gt;&lt;HOME&gt;sudo&lt;SPACE&gt;</i> (if
+you type <i>&lt;UP&gt;&lt;LEFT&gt;{201}sudo&lt;SPACE&gt;</i>, I will personally
+punch you in the face).  But you can save a lot of typing just using
+            </p>
+            <pre>
+$ sudo !!
+sudo cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
+[sudo] password for billy:
+</pre>
+            <p>
+Here, <i>!!</i> got substituted by the last command, as you can see on the
+echo.  Some other uses I found (which you may not understand if you're not or
+is on the path to <del>enlightenment</del> becoming a bash enthusiast)
+were:
+            </p>
+            <pre>
+$ cat my_files
+file1
+file2
+file3
+$ cat $(!!)
+cat $(cat my_files)
+contents_of_file1
+contents_of_file2
+contents_of_file3
+$ perl -e 'bang your head on the keyboard'
+# god only knows
+$ echo "!!" > file_to_save_command
+$ # This could be done by clever use of Ctrl-x Ctrl-e, but
+$ # sometimes you're in a hurry. That's alright, as long as
+$ # you <a href="http://tldp.org/LDP/abs/html/escapingsection.html">do it carefully</a>.
+</pre>
+            <p>
+When <i>!</i> is followed by a number <i>n</i>, it executes the <i>n</i>th
+command in the history (which you can check with the <i>history</i> command).
+More useful, though, is that, if <i>n</i> is negative, it will execute the last
+<i>n</i>th command:
+            </p>
+            <pre>
+$ echo some
+some
+$ echo thing
+thing
+$ !-2
+echo some
+some
+$ !-3 other thing
+echo some other thing
+some other thing
+</pre>
+            <p>
+Without thinking much, you can discover that <i>!!</i> is just an easier way to
+spell <i>!-1</i>.
+            </p><p>
+Now, these are useful techniques, but we are just getting started!  Usually,
+you don't need the whole command, but just one or a few arguments.  Common
+scenario:
+            </p>
+            <pre>
+$ ls ef
+son daughter dog
+$ # oh my, ef is a directory
+$ cd ef
+</pre>
+            <p>or how about:</p>
+            <pre>
+$ mv some_directory a_different_name_for_some_directory
+$ cd a_different_name_for_some_directory
+</pre>
+            <p>
+It is very common to address the same file on multiple, successive commands.
+You can, again, save some typing:
+            </p>
+            <pre>
+$ ls ef
+son daughter dog
+$ # oh my, ef is a directory
+$ cd !$
+cd ef
+$ mv some_directory a_different_name_for_some_directory
+$ cd !$
+cd some_directory a_different_name_for_some_directory
+</pre>
+            <p>
+As you can see, <i>!$</i> is substituted by the last argument of the last
+command. If you know your regular expressions, you can make a link with the
+"end of line" symbol. But there's more. This is just a nice shortcut to the
+more general form <i>!n:m</i>. This means: from the <i>n</i>th, get the
+<i>m</i>th argument.
+            </p>
+            <pre>
+$ tar -f my_tar -cz file1 file2 file3
+$ du -sh !:2
+4.0K    my_tar
+$ du -sh !-2:4-6
+4.0K    file1
+4.0K    file2
+4.0K    file3
+</pre>
+            <p>
+What goes before the colon can be any of the previous substitutions: <i>!!</i>,
+<i>!n</i> or <i>!-n</i>.  Note that you can specify a range using <i>:n-m</i>,
+which will get substituted by the parameters <i>n</i> to <i>m</i>.  If you need
+them in a different order, or some non-contiguous arguments, just use more than
+one substitution:
+            </p>
+            <pre>
+$ diff ours theirs
+$ # gah
+$ diff !:2 !:1
+diff theirs ours
+</pre>
+            <p>
+Alright, I guess this is enough information for a single post.  Have fun
+playing with The Bash and see you soon for more advanced uses of history
+substitution.
+            </p><p>
+P.S.: I couldn't leave without some closing notes.
+            </p>
+            <ol>
+                <li>
+                    <p>
+I learned everything shown here from scattered information on the internet.  I
+decided to compile them because I never found a document which explained them
+in detail AND without burying them on other bash-related commands.
+                    </p><p>
+That said, a good reference (not so good for self-learning, but, if you read
+the text, you should be okay) is bash's man page.  Search for "Event
+Designators" or <i>\!\!</i> (escaping is mandatory):
+                    </p>
+                    <pre>
+$ man bash
+/Event Designators&lt;CR&gt;
+</pre>
+                </li>
+                <li>
+                    <p>
+While all this may seem hard to use practically, I recommend you just keep it
+in a dark corner of your mind.  I promise you'll start to find places where you
+can apply it.  They can be used to write commands quickly, especially several
+one-shot commands in a row.  Just don't try forcing the use when it's not
+necessary.  After all, they were created to save time.
+                    </p>
+                </li>
+                <li>
+                    <p>
+If you ever got stabbed by not knowing how the bang works (like the examples I
+showed in the beginning), you can avoid getting stabbed again by escaping the
+bangs, either with a backslash or single quotes:
+                    </p>
+                    <pre>
+$ echo Bang\!
+Bang!
+$ echo 'balrog:!you shall not pass:/nonexistent:/bin/false' >> /etc/passwd
+</pre>
+                </li>
+                <li>
+                    <p>
+More of a side note, but to get that humongous file name, I discovered a new
+(string of) command(s) to get the longest line from a text.
+                    </p>
+                    <pre>
+$ find /sys/ | awk '{print length, $0;}' | sort -nr | head -n 1
+</pre>
+                    <p>
+You can probably do the same thing (although it might be a little slower) using
+a while loop and another bash trick: while <i>$variable</i> (or
+<i>${variable}</i>) will give you the contents of a variable,
+<i>${#variable}</i> will give you the length of that content.
+                    </p>
+                    <pre>
+$ find /sys/ | while read i; do echo "${#i} $i" | sort -nr | head -n 1
+</pre>
+                    <p>
+Apparently, Jethro Tull's Too Old to Rock 'n' Roll, Too Old to Die generates
+pretty long file names (the title song is the second only to a really long
+cache file name on my file system).
+                    </p>
+                </li>
+            </ol>
+            <div class="tags">
+                <a href="tags/tar.html">tar</a>
+                <a href="tags/awk.html">awk</a>
+                <a href="tags/jethro-tull.html">jethro tull</a>
+                <a href="tags/perl.html">perl</a>
+                <a href="tags/wget.html">wget</a>
+                <a href="tags/find.html">find</a>
+                <a href="tags/bash-substitution.html">bash substitution</a>
+                <a href="tags/bash-expansion.html">bash expansion</a>
+                <a href="tags/shell.html">shell</a>
+                <a href="tags/programming.html">programming</a>
+                <a href="tags/linux.html">linux</a>
+                <a href="tags/du.html">du</a>
+            </div>
+        </div>
+    </body>
+</html>
