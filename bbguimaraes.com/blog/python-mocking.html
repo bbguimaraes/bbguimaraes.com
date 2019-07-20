@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>python mocking</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>python mocking</h1>
+            <i>2013-05-11 19:17:00</i>
+            <p>
+If you are into unit testing, you probably have been introduced to mocking.
+And if that is the case, you probably already have been bitten by it.  Mocking
+requires some understanding of code execution, importing and name resolution
+that most people lack when first encountering such situations.  In python,
+mocking is a relatively simple process, if you analyze carefully what needs to
+be done.
+            </p><p>
+Mocking simply means replacing an object with another.  This is usually done to
+avoid instantiating costly systems or to change the behaviour of a system.  To
+begin with a simple example:
+            </p>
+            <pre>
+def some_function_in_your_code(a):
+    if a.do_something():
+        return 3.14159
+    else:
+        return 6.26318
+
+def some_other_function_in_your_code():
+    # ...
+    a = create_complicated_object(*thousand_parameters)
+    result = some_other_function_in_your_code(a)
+    # ...
+</pre>
+            <p>
+Here we have a function <i>some_other_function_in_your_code</i> that uses an
+object. Somewhere else in your code, <i>some_other_function_in_your_code</i>
+creates that object, which is a complicated process that involves hundreds of
+operations. If you just want to test <i>some_other_function_in_your_code</i>,
+you shouldn't need to go through this whole process[<a href="#note1">1</a>].
+            </p><p>
+To avoid that, we can use mocking.  Notice that all we need to test on
+<i>some_other_function_in_your_code</i> is that the argument passed has a
+member called <i>do_something</i> that can be called with no arguments and
+returns something that can be converted to <i>bool</i>.  There are many ways to
+do that, but to keep things short, I'll skip right to the library I use most of
+the times, <i>mock</i>.
+            </p><p>
+The main component of the <i>mock</i> library is the <i>Mock</i> class, which
+is basically an empty object with a few useful characteristics (be sure to
+check the documentation, because they are really useful).  Two of them are
+important for this discussion.  First, every time you access an attribute of a
+<i>Mock</i> object, another <i>Mock</i> object is created and assigned to the
+attribute being accessed.
+            </p>
+            <pre>
+>>> import mock
+>>> m = mock.Mock()
+>>> print(m)
+&lt;Mock id='140095453080976'&gt;
+>>> print(id(m.some_attribute))
+140095453131664
+>>> print(m.some_attribute)
+&lt;Mock name='mock.some_attribute' id='140095453131664'&gt;
+>>> print(id(m.some_attribute))
+140095453131664
+</pre>
+            <p>
+As you can see, when we tried to access some_attribute, a <i>Mock</i> object
+was created for us. We could do it by hand with a single line of code, but it
+makes it makes the code easier, shorter and cleaner.
+            </p><p>
+The other feature of <i>Mock</i> objects is the <i>return_value</i> attribute.
+Whatever is contained in this attribute gets returned when the object is called
+as a function object[<a href="#note2">2</a>].
+            </p>
+            <pre>
+>>> import mock
+>>> m = mock.Mock()
+>>> m.return_value = u'the return value'
+>>> m()
+u'the return value'
+</pre>
+            <p>Using this two techniques, we can now test our function:</p>
+            <pre>
+import mock
+
+def your_test():
+    a = mock.Mock()
+    a.do_something.return_value = True
+    if some_function_in_your_code(a) != 3.14159:
+        raise Exception(u'return wasn't 3.14159.')
+    a.return_value = False
+    if some_function_in_your_code(a) != 6.28318:
+        raise Exception(u'return wasn't 6.28318.')
+</pre>
+            <p>
+Let's break that down.  We first create a <i>Mock</i> object to represent the
+argument passed to the function.  The next line takes care of the two things we
+need to test the function: the <i>do_something</i> attribute and its return
+value.  Then, all we have to do is call the function, passing the mocked
+argument, and check the return value.  After that, repeat the process, this
+time with a different return value.
+            </p>
+            <h2>That was the easy part</h2>
+            <p>
+This first section was easy, nothing you couldn't find out with a quick search
+on the internet.  But the real world is not that pretty (at least mine isn't).
+The trickiest situation is when you have to change the behaviour of something
+inside a function, but you don't <i>pass</i> that something as an argument.
+Suppose we have this:
+            </p>
+            <pre>
+# some_file.py
+import random
+
+def f():
+    if random.random() < 0.5:
+        return 3.14159
+    else:
+        return 6.28318
+</pre>
+            <p>
+How can you test that function if the value tested is conjured from oblivion in
+the middle of the function?  Fear not, you can actually do it.  The trick here
+is to mock the <i>random</i> function from the <i>random</i> module before the
+first line of <i>f</i> is executed.  Let's start with this simple example, just
+to get the basic idea:
+            </p>
+            <pre>
+>>> import random
+>>> random.random()
+0.5212285734499994
+>>> random.random()
+0.40492920488281725
+>>> import mock
+>>> random.random = mock.Mock(return_value=0.5)
+>>> random.random()
+0.5
+</pre>
+            <p>
+This seems pretty simple.  But here is where everybody gets lost:
+            </p>
+            <pre>
+>>> import random
+>>> import mock
+>>> random.random = mock.Mock(return_value=0.5)
+>>> import some_file
+>>> some_file.f() == 6.28318 or raise ThisShouldNotBeHappeningException()
+</pre>
+            <p>
+This may not explode the first time, but you have a 50% chance of getting an
+exception.  To see why, you can put a <i>print random.random</i> inside
+<i>f</i> and see that the mock didn't work.  To understand why, we have to dig
+a little deeper.
+            </p>
+            <h2>Import</h2>
+            <p>
+What happens when you run <i>import random</i>? You can watch
+<a href="http://pyvideo.org/video/1707/how-import-works">this video</a> to know
+exactly what.  Or you can just continue reading to get a summary.  Or both.
+Anyway:
+            </p>
+            <pre>
+>>> locals()
+{'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', '__doc__': None, '__package__': None}
+>>> import random
+>>> locals()
+{'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', 'random': &lt;module 'random' from '/usr/lib/python2.7/random.pyc'&gt;, '__doc__': None, '__package__': None}
+</pre>
+            <p>
+In python, <i>locals</i> is a built-in function that returns the local
+variables accessible on the current state of execution (don't believe me, run
+<i>print(__builtins__.locals)</i>). When you execute <i>import random</i>, the
+interpreter does its magic to find the module and load it, but more important,
+it creates an item called "random" on the current namespace referring to the
+module loaded. The critical part here is "current namespace". Try this:
+            </p>
+            <pre>
+>>> def f(): print(locals())
+>>> import random
+>>> f() {}
+</pre>
+            <p>
+Here, importing random didn't affect the namespace on <i>f</i>.  The same thing
+applies to namespaces of other modules.  Our example fails because the
+namespace on the <i>some_file</i> module is different than the namespace where
+we run our tests.  To change the namespace of <i>some_file</i>, we have to do
+it explicitly:
+            </p>
+            <pre>
+>>> import some_file
+>>> some_file.random.random = lambda: 0.5
+>>> some_file.f() == 6.28318 or raise ThisShouldNotBeHappeningException()
+</pre>
+            <p>
+You can run that many times if you don't trust me, but that will always
+succeed.  And it does because we now are changing the correct namespace.  You
+can check it by putting a <i>print(random.random)</i> on <i>f</i> again.
+            </p>
+            <h2>Being nice</h2>
+            <p>
+Now you know how to mock, but there is something I must say before you leave.
+Always, always, ALWAYS restore any mock you do.  Seriously.  Even if you're
+sure no one will use the mocked attribute.  You don't want to loose an entire
+day of work just to find out that the problem was an undone mock.
+            </p><p>
+And doing it is so simple: store the original value on a variable and restore
+it after the operation.  I like to do it as soon as the operation is complete,
+before anything else is executed, but you don't need to, if you're not
+paranoid.  Just to clear any doubt, here is exactly how to do it:
+            </p>
+            <pre>
+>>> import random
+>>> original_random = random.random
+>>> random.random = lambda: 0.5
+>>> # do something
+>>> random.random = original_random
+</pre>
+            <p>
+Now you have no excuse.  Better yet, you can use another feature of the
+<i>mock</i> library called <i>patch</i>.  But that would be an extension to an
+already long post.  Maybe I'll cover it in the future.  Anyway, happy mocking!
+            </p>
+            <h2>Notes</h2>
+            <ol>
+                <li id="note1">
+                    <p>
+You shouldn't have complicated processes that involve hundreds of operations
+anyway, but that is another problem.
+                    </p>
+                </li>
+                <li id="note2">
+                    <p>
+Curious to know what happens when you access <i>return_value</i> without
+setting it first?  No?  Well, I'll show you anyway:
+                    </p>
+                    <pre>
+>>> import mock
+>>> m = mock.Mock()
+>>> m.return_value
+&lt;Mock name='mock()' id='140095453168080'&gt;
+</pre>
+            <p>
+Since we didn't set it, we get the default behaviour of <i>__setattr__</i>,
+which is to create another <i>Mock</i>.
+                </li>
+            </ol>
+            <div class="tags">
+                <a href="tags/best-practices.html">best practices</a>
+                <a href="tags/programming.html">programming</a>
+                <a href="tags/python.html">python</a>
+                <a href="tags/coding-style.html">coding style</a>
+                <a href="tags/mock.html">mock</a>
+            </div>
+        </div>
+    </body>
+</html>

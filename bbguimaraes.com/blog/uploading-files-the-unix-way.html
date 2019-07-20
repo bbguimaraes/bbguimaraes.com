@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Uploading files the unix way</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>Uploading files the unix way</h1>
+            <i>2014-03-04 00:26:00</i>
+            <p>
+I just did something which I thought was worth sharing.  It shows a couple of
+fundamental techniques in unix systems used in a context where most people
+would not think of.
+            </p><p>
+The context: my mom sent me a recipe of potato souffle (I hope google translate
+is doing the right thing here,
+<a href="https://www.google.com/search?q=potato+souffle"> it seems like it
+    is</a>).  But as most of e-mails coming from non-tech people, there was a
+lot of noise along the actual recipe text.  Since I wanted to view it in my
+cell phone while I cooked, I decided to clean it up a bit.
+            </p><p>
+So did I: copied the text to vim (which got rid of most of the noise
+immediately), edited a bit and it was ready:
+            </p>
+            <pre>
+Ingredientes
+
+- 450 gramas: Batata cozida
+- 200 gramas: Queijo ricota caseiro – Guloso e Saudável
+- 4 colheres de sopa: Queijo gorgonzola
+- 3 colheres de sopa: Farinha de trigo branca
+- 300 mililitros: Leite desnatado
+- 2 unidades: Gema de ovo
+- 3 unidades: Clara de ovo
+- 1 colher de sopa: Fermento em pó
+- 1/2 unidade: Cebola ralada
+- 4 colheres de sopa: Salsa fresca cortada
+
+Modo de preparo
+
+- Amasse os queijos, reserve
+- Amasse as batatas, reserve
+- Preaqueça o forno a 200ºC
+- Bata as claras em neve com uma pitada de sal, reserve
+- Numa vasilha misture as gemas, a farinha, o leite, a cebola, a batata, os queijos, a salsinha
+- Junte delicadamente o fermento e as claras em neve
+- Coloque o suflê de batata em ramequins e leve ao forno por 30 minutos ou até assar
+- Sirva de imediato o suflê de batata com queijos, acompanhado de salada
+</pre>
+            <p>
+Now all I needed was a way to get it on my cellphone.  I could use dropbox or
+any of the related services, but that didn't seem exciting
+enough[<a href="#note1">1</a>].  So I thought: well, I'll just put it in my
+webserver and access it in my mobile browser.
+            </p><p>
+Fair enough.  But this is a file opened in vim[<a href="#note2">2</a>].  After
+a little thinking (which lasted for approximately 423ms), this is what I did.
+From inside vim, I executed the following command:
+            </p>
+            <pre>:!ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt' &</pre>
+            <p>
+Which launched an ssh client connecting to my webserver[<a href="#note3">3</a>]
+running the netcat command.  If you are not familiar with netcat, think of it
+as the traditional cat command which reads and writes to sockets instead of
+files.  Here, I'm telling it to listen (<i>-l</i>) on port 31415 and output
+anything read to the file <i>/srv/http/sufle.txt</i>, where <i>/srv/http</i> is
+the document root of the webserver.
+            </p><p>
+Since I added the ampersand to the end of the command, the command is launched
+in the background and just stays there waiting for input, releasing the shell
+immediately so I can continue using vim.  Now that we're back, another vim
+command:
+            </p>
+            <pre>:w !cat > /dev/tcp/raspberrypi/31415</pre>
+            <p>
+Here we are telling vim to write the contents of the buffer (<i>:w</i>).
+Normally, we would give it the name of a file to write, but the <i>:write</i>
+command accepts a special syntax, where instead of a file name, we put a
+<i>!</i> and the rest of the line is interpreted as a
+command[<a href="#note4">4</a>].  This command is executed in a standard unix
+shell, but with stdin redirected to read the contents of the buffer. As an
+example, try opening a new empty buffer in vim (<i>c-w n</i>), writing
+something and executing the command[<a href="#note5">5</a>]:
+            </p>
+            <pre>:w !cowsay</pre>
+            <p>
+Continuing the analysis of the command, we are using the <i>:w !</i> command to
+write to the program run by the shell, which is
+            </p>
+            <pre>$ cat > /dev/tcp/raspberrypi/31415</pre>
+            <p>
+Well, you don't need to be a unix wizard to know what this is doing. cat is a
+command that reads the contents from a list of files (or stdin if it's invoked
+without arguments, as it is here) and writes them in the same order to its
+stdout. Since its stdin will read the contents of the vim buffer, we already
+know the effect of this command: the contents of the buffer will get written to
+a file.
+            </p><p>
+But what is that funny file starting with <i>/dev/tcp/</i>? That is feature of
+bash (I don't know about other shells). You can read about using the command[<a
+href="#note6">6</a>]:
+            </p>
+            <pre>$ man -P 'less -p /dev/tcp' bash</pre>
+            <p>
+What we are doing here is telling bash to write the data coming from cat's
+output to port 31415 on the host raspberrypi. Remember our little ssh friend we
+left running in the background a while ago? It hasn't done much
+since[<a href="#note7">7</a>], but now there is data coming from the socket
+it's listening on, so the os wakes him up to do its job.
+            </p><p>
+And so it does, reading the data from the socket and writing it to stdout.
+Remember what that is?  That's the file we passed to the shell,
+<i>/srv/http/sufle.txt</i>.  And so our long journey comes to an end.  When nc
+finishes reading and writing the data, it dies[<a href="#note8">8</a>] and so
+does the ssh client process, which was also sitting there, waiting for it's
+child process to die[<a href="#note9">9</a>].  The shell that spawned the ssh
+client has long died: it had nothing more to do because we started the process
+asynchronously (using the <i>&</i> on the command line), so that's the end of
+that (process) family tree[<a href="#note10">10</a>].
+            </p><p>
+The result? The contents of the buffer have now been transfered and written to
+the file <i>/src/http/sufle.txt</i> on the remote host raspberrypi.
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+You might be thinking: "What the hell?  You are telling me all this is simpler
+than dropbox?".  And I would be lying if I said "yes".  But the point here is
+not that this is simple.  In fact, it's the base of one of the most complex
+systems in computer history: the operating system.  And even though I have
+detailed some parts of the processes, there are a lot, and I really mean *a
+lot* more things going on behind the scenes here[<a href="#note11">11</a>].
+            </p><p>
+But if you step back, you will realize that all that was needed were two
+commands:
+            </p>
+            <pre>
+ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt'
+cat > /dev/tcp/raspberrypi/31415
+</pre>
+            <p>
+What I'm trying to present here is the incredible complexity and richness that
+can be achieved by using shell commands and unix concepts like input and output
+redirections and socket communication.  Another goal was to show how a powerful
+text editor incorporates this concept in its design, taking advantage of of the
+powerful features of the operating system to extend its
+capabilities[<a href="#note12">12</a>].
+            </p><p>
+And I bet I can type these two commands faster than your dropbox client can
+transfer the file to your cellphone[<a href="#note13">13</a>].  Now, I you'll
+excuse me, there is a potato souffle that needs to be cooked.
+            </p>
+            <h3>Bonus</h3>
+            <p>
+While doing some scientific tests on the cowsay program (trying to make the cow
+say the text of this post), I discovered perl has a special mention of my blog
+on its source code[<a href="#note14">14</a>]:
+            </p>
+            <pre>
+:w !cowsay
+This shouldn't happen at /usr/share/perl5/core_perl/Text/Wrap.pm line 84, &lt;stdin&gt; line 63.
+shell returned 255
+</pre>
+            <h3>Notes</h3>
+            <ol>
+                <li id="note1">What sane geek uses dropbox, anyway?</li>
+                <li id="note2">
+Actually just a buffer, since I didn't even write it to a file.
+                </li>
+                <li id="note3">A rπ.</li>
+                <li id="note4">
+The space after <i>:w</i> is important here. If we wrote <i>:w!cat ...</i>, it
+would be interpret as the <i>:write!</i> command, which is not what we want
+here. See <i>:help :write!</i> on vim.
+                </li>
+                <li id="note5">What do you mean "I don't have cowsay installed"?</li>
+                <li id="note6">
+Don't worry, that will only open a man page passing a special flag to the pager
+telling it to go directly to the right section.
+                </li>
+                <li id="note7">
+It hasn't been doing anything, actually, thanks to the magic of process
+scheduling and blocking io syscalls, so no resources are wasted (except for a
+few bytes on the process and file tables).
+                </li>
+                <li id="note8">
+Ok, it terminates its execution, "dies" sounds so dramatic.
+                </li>
+                <li id="note9">Just when you thought it could not get more dramatic.</li>
+                <li id="note10">Ok, that was on purpose =)</li>
+                <li id="note11">
+Including, for example, the whole file buffer cache algorithm that makes this
+whole process absurdly efficient, even though we seem to be copying data around
+dozens of times. That is the subject of whole book chapters (like
+<a href="http://www.amazon.com/The-Design-UNIX-Operating-System/dp/0132017997">
+this one</a>).
+                </li>
+                <li id="note12">
+My trademark phrase is: "do *that* in gedit".
+                </li>
+                <li id="note13">
+After it has sent your data, maybe without using encryption, across the
+internet and sent a copy of the recipe to the NSA for analysis.
+                </li>
+                <li id="note14">
+You can check it
+<a href="http://sources.debian.net/src/perl/5.18.2-2/cpan/Text-Tabs/lib/Text/Wrap.pm?hl=1#L84">
+here</a> (thanks to sources.debian.net for their awesome service).
+                </li>
+            </ol>
+            <div class="tags">
+                <a href="tags/cowsay.html">cowsay</a>
+                <a href="tags/potato-souffle.html">potato souffle</a>
+                <a href="tags/webserver.html">webserver</a>
+                <a href="tags/perl.html">perl</a>
+                <a href="tags/nsa.html">nsa</a>
+                <a href="tags/vim.html">vim</a>
+                <a href="tags/raspberry-pi.html">raspberry pi</a>
+                <a href="tags/ssh.html">ssh</a>
+                <a href="tags/shell.html">shell</a>
+                <a href="tags/netcat.html">netcat</a>
+                <a href="tags/less.html">less</a>
+                <a href="tags/man.html">man</a>
+                <a href="tags/debian.html">debian</a>
+                <a href="tags/dropbox.html">dropbox</a>
+                <a href="tags/unix.html">unix</a>
+                <a href="tags/gedit.html">gedit</a>
+            </div>
+        </div>
+    </body>
+</html>

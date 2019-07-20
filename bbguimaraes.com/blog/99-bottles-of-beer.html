@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>99 Bottles of Beer</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>99 Bottles of Beer</h1>
+            <i>2012-10-01 03:13:00</i>
+            <pre>
+$ vim hello.asm
+    .section        .rodata
+string:
+    .ascii "Hello, World!\n\0"
+length:
+    .quad . -string         #Dot = 'here'
+
+    .section        .text
+    .globl _start           #Make entry point visible to linker
+_start:
+    movq $4, %rax           #4=write
+    movq $1, %rbx           #1=stdout
+
+    movq $string, %rcx
+    movq length, %rdx
+    int $0x80               #Call Operating System
+    movq %rax, %rbx         #Make program return syscall exit status
+    movq $1, %rax           #1=exit
+    int $0x80               #Call System Again
+:!as % -o %.o
+:!ld %.o
+:!./a.out
+</pre>
+            <div class="tags">
+                <a href="tags/programming.html">programming</a>
+                <a href="tags/hello-world.html">hello world</a>
+                <a href="tags/assembly.html">assembly</a>
+                <a href="tags/vim.html">vim</a>
+            </div>
+        </div>
+    </body>
+</html>

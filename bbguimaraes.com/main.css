@@ -70,3 +70,30 @@ nav :not(li) > ul {
 nav :not(li) > ul > li {
     margin-bottom: 1em;
 }
+
+.blog {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog img {
+    display: block;
+    margin: 2em auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+.blog img.white-bg {
+    background-color: white;
+    padding: 1em;
+}
+
+.blog pre {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.blog .tags {
+    font-style:italic;
+}

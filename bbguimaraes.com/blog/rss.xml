@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>iffalse</title>
+        <link>https://bbguimaraes.com/blog</link>
+        <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
+        <description>assert("this should not be happening");</description>
+        <language>en-us</language>
+        <pubDate>Fri, 19 Jul 2019 00:00:00 GMT</pubDate>
+        <lastBuildDate>Fri, 19 Jul 2019 00:00:00 GMT</lastBuildDate>
+        <docs>http://www.rssboard.org/rss-specification</docs>
+        <generator>vim</generator>
+        <item>
+            <title>~/music</title>
+            <link>https://bbguimaraes.com/blog/music.html</link>
+            <guid>https://bbguimaraes.com/blog/music.html</guid>
+            <pubDate>Sun, 12 Mar 2017 21:12:00 GMT</pubDate>
+            <category>music</category>
+            <description>For too long my musical (if you can call them that) experiments have been scattered all over the internet.  Not anymore!</description>
+        </item>
+        <item>
+            <title>College research projects</title>
+            <link>https://bbguimaraes.com/blog/college-research-projects.html</link>
+            <guid>https://bbguimaraes.com/blog/college-research-projects.html</guid>
+            <pubDate>Sat, 20 Aug 2016 20:47:00 GMT</pubDate>
+            <category>dissertation</category>
+            <category>programming</category>
+            <category>linux</category>
+            <category>math</category>
+            <description>A long time ago, when I was in college, I got involved in two research projects.</description>
+        </item>
+        <item>
+            <title>2014 books</title>
+            <link>https://bbguimaraes.com/blog/2014-books.html</link>
+            <guid>https://bbguimaraes.com/blog/2014-books.html</guid>
+            <pubDate>Tue, 20 Jan 2015 16:42:00 GMT</pubDate>
+            <category>c</category>
+            <category>vim</category>
+            <category>tdd</category>
+            <category>oreillyl</category>
+            <category>tmux</category>
+            <category>programming</category>
+            <category>linux</category>
+            <category>apache</category>
+            <category>books</category>
+            <category>unix</category>
+            <category>shell</category>
+            <category>sicp</category>
+            <description>I read a lot of books.  Last year I had some money laying around and decided to put it to good use.  I ended up buying fourteen books from O'Reilly (simply the best publisher in the technology field) on May and finally finished reading them all (exception bellow) on the first days of this year.  This a quick and informal review of each of them.</description>
+        </item>
+        <item>
+            <title>Calculating π the unix way</title>
+            <link>https://bbguimaraes.com/blog/calculating-pi-the-unix-way.html</link>
+            <guid>https://bbguimaraes.com/blog/calculating-pi-the-unix-way.html</guid>
+            <pubDate>Thu, 11 Dec 2014 22:51:00 GMT</pubDate>
+            <category>printf</category>
+            <category>head</category>
+            <category>python</category>
+            <category>π</category>
+            <category>bash</category>
+            <category>bc</category>
+            <category>math</category>
+            <category>grep</category>
+            <category>whatis</category>
+            <category>man</category>
+            <category>pipe</category>
+            <category>paste</category>
+            <category>seq</category>
+            <category>unix</category>
+            <category>shell</category>
+            <description>A nice trick I learned a while ago that is worth sharing: calculating pi the unix way (you know, on the command line, with pipes, as god intended).</description>
+        </item>
+        <item>
+            <title>pip --extra-index</title>
+            <link>https://bbguimaraes.com/blog/pip-extra-index.html</link>
+            <guid>https://bbguimaraes.com/blog/pip-extra-index.html</guid>
+            <pubDate>Wed, 10 Dec 2014 12:46:00 GMT</pubDate>
+            <category>pip</category>
+            <category>lsof</category>
+            <category>webserver</category>
+            <category>debugging</category>
+            <category>python</category>
+            <category>socket</category>
+            <category>strace</category>
+            <category>grep</category>
+            <category>programming</category>
+            <category>linux</category>
+            <category>man</category>
+            <category>unix</category>
+            <description>This is a tale of debugging.  That fine art of digging the darkest corners of a computer system to solve whatever problem is haunting it.  This particular story is about python's package manager, pip.</description>
+        </item>
+        <item>
+            <title>Manufacturer's blues</title>
+            <link>https://bbguimaraes.com/blog/manufacturers-blues.html</link>
+            <guid>https://bbguimaraes.com/blog/manufacturers-blues.html</guid>
+            <pubDate>Fri, 02 May 2014 04:13:00 GMT</pubDate>
+            <category>mp3</category>
+            <category>badvoltage</category>
+            <category>dos</category>
+            <category>arch</category>
+            <category>pacman</category>
+            <category>shell</category>
+            <category>linux</category>
+            <category>billy</category>
+            <category>filesystem</category>
+            <category>mkfs</category>
+            <category>fat</category>
+            <category>unix</category>
+            <description>The state of technology sometimes gives me the blues.</description>
+        </item>
+        <item>
+            <title>Uploading files the unix way</title>
+            <link>https://bbguimaraes.com/blog/uploading-files-the-unix-way.html</link>
+            <guid>https://bbguimaraes.com/blog/uploading-files-the-unix-way.html</guid>
+            <pubDate>Tue, 04 Mar 2014 00:26:00 GMT</pubDate>
+            <category>cowsay</category>
+            <category>potato souffle</category>
+            <category>webserver</category>
+            <category>perl</category>
+            <category>nsa</category>
+            <category>vim</category>
+            <category>raspberry pi</category>
+            <category>ssh</category>
+            <category>shell</category>
+            <category>netcat</category>
+            <category>less</category>
+            <category>man</category>
+            <category>debian</category>
+            <category>dropbox</category>
+            <category>unix</category>
+            <category>gedit</category>
+            <description>I just did something which I thought was worth sharing.  It shows a couple of fundamental techniques in unix systems used in a context where most people would not think of.</description>
+        </item>
+        <item>
+            <title>A post-mortem</title>
+            <link>https://bbguimaraes.com/blog/a-post-mortem.html</link>
+            <guid>https://bbguimaraes.com/blog/a-post-mortem.html</guid>
+            <pubDate>Sun, 14 Jul 2013 22:14:00 GMT</pubDate>
+            <category>programming</category>
+            <category>raspbian</category>
+            <category>linux</category>
+            <category>arch</category>
+            <category>raspberry pi</category>
+            <description>&lt;a href="http://iffalse.blogspot.com/2013/05/that-moment-you-realize-something.html" target="_blank"&gt;A lot&lt;/a&gt; has happened since &lt;a href="http://iffalse.blogspot.com/2013/01/the-raspberry.html" target="_blank"&gt;my first rπ post&lt;/a&gt;.</description>
+        </item>
+        <item>
+            <title>That moment you realize something really wrong is going on</title>
+            <link>https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html</link>
+            <guid>https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html</guid>
+            <pubDate>Thu, 30 May 2013 22:18:00 GMT</pubDate>
+            <category>dpkg</category>
+            <category>apt-get</category>
+            <category>shell</category>
+            <category>linux</category>
+            <category>raspberry pi</category>
+        </item>
+        <item>
+            <title>python mocking</title>
+            <link>https://bbguimaraes.com/blog/python-mocking.html</link>
+            <guid>https://bbguimaraes.com/blog/python-mocking.html</guid>
+            <pubDate>Sat, 11 May 2013 19:17:00 GMT</pubDate>
+            <category>best practices</category>
+            <category>programming</category>
+            <category>python</category>
+            <category>coding style</category>
+            <category>mock</category>
+            <description>If you are into unit testing, you probably have been introduced to mocking. And if that is the case, you probably already have been bitten by it. Mocking requires some understanding of code execution, importing and name resolution that most people lack when first encountering such situations. In python, mocking is a relatively simple process, if you analyze carefully what needs to be done.</description>
+        </item>
+        <item>
+            <title>Handy bash substitution</title>
+            <link>https://bbguimaraes.com/blog/handy-bash-substitution.html</link>
+            <guid>https://bbguimaraes.com/blog/handy-bash-substitution.html</guid>
+            <pubDate>Sun, 24 Feb 2013 04:06:00 GMT</pubDate>
+            <category>tar</category>
+            <category>awk</category>
+            <category>jethro tull</category>
+            <category>perl</category>
+            <category>wget</category>
+            <category>find</category>
+            <category>bash substitution</category>
+            <category>bash expansion</category>
+            <category>shell</category>
+            <category>programming</category>
+            <category>linux</category>
+            <category>du</category>
+            <description>Working on the command line is awesome. But there are times where all the typing gets unwieldy. No one likes to type a long file name a lot of times. Sure, using the up arrow and tab keys can make things faster sometimes, but I'll show you some tricks to make your life easier.</description>
+        </item>
+        <item>
+            <title>An image is worth a thousand megabytes</title>
+            <link>https://bbguimaraes.com/blog/an-image-is-worth-a-thousand-megabytes.html</link>
+            <guid>https://bbguimaraes.com/blog/an-image-is-worth-a-thousand-megabytes.html</guid>
+            <pubDate>Thu, 07 Feb 2013 01:11:00 GMT</pubDate>
+            <category>df</category>
+            <category>sha1sum</category>
+            <category>raspbian</category>
+            <category>linux</category>
+            <category>dd</category>
+            <category>wget</category>
+            <category>raspberry pi</category>
+            <description>Now we have all the components we need to run our Raspberry Pi, we can start preparing them to actually work together.</description>
+        </item>
+        <item>
+            <title>The raspberry</title>
+            <link>https://bbguimaraes.com/blog/the-raspberry.html</link>
+            <guid>https://bbguimaraes.com/blog/the-raspberry.html</guid>
+            <pubDate>Wed, 23 Jan 2013 23:29:00 GMT</pubDate>
+            <category>raspbian</category>
+            <category>linux</category>
+            <category>raspberry pi</category>
+            <description>My late Christmas gift (from me to myself) arrived on Monday, and it is a little Raspberry Pi.</description>
+        </item>
+        <item>
+            <title>The super user is more powerful than god</title>
+            <link>https://bbguimaraes.com/blog/the-super-user-is-more-powerful-than-god.html</link>
+            <guid>https://bbguimaraes.com/blog/the-super-user-is-more-powerful-than-god.html</guid>
+            <pubDate>Fri, 21 Dec 2012 10:48:00 GMT</pubDate>
+            <category>shell</category>
+            <category>linux</category>
+        </item>
+        <item>
+            <title>Hiding text in LaTeX</title>
+            <link>https://bbguimaraes.com/blog/hiding-text-in-latex.html</link>
+            <guid>https://bbguimaraes.com/blog/hiding-text-in-latex.html</guid>
+            <pubDate>Sun, 04 Nov 2012 22:24:00 GMT</pubDate>
+            <category>dissertation</category>
+            <category>latex</category>
+            <description>When writing my dissertation, I like to leave some text that I won't use at that particular moment but know I will need in the (near) future.</description>
+        </item>
+        <item>
+            <title>Problem when adding SSH key on github</title>
+            <link>https://bbguimaraes.com/blog/problem-when-adding-ssh-key-on-github.html</link>
+            <guid>https://bbguimaraes.com/blog/problem-when-adding-ssh-key-on-github.html</guid>
+            <pubDate>Sun, 28 Oct 2012 03:41:00 GMT</pubDate>
+            <category>curl</category>
+            <category>git</category>
+            <category>github</category>
+            <description>Recently, I had I problem with github. I couldn't add SSH keys anymore, the web page would just hang and present me a "Connection reset" error after a few (annoying) minutes. I struggled for a week, but have finally found a solution, which is not the best, but at least I can access github from my machine once again.</description>
+        </item>
+        <item>
+            <title>perl is beautiful - part 3</title>
+            <link>https://bbguimaraes.com/blog/perl-is-beautiful3.html</link>
+            <guid>https://bbguimaraes.com/blog/perl-is-beautiful3.html</guid>
+            <pubDate>Tue, 23 Oct 2012 01:25:00 GMT</pubDate>
+            <category>programming</category>
+            <category>perl</category>
+            <description>In the last post on the subject, I'll show a couple more perl tricks I use everyday.</description>
+        </item>
+        <item>
+            <title>Low-level language</title>
+            <link>https://bbguimaraes.com/blog/low-level-language.html</link>
+            <guid>https://bbguimaraes.com/blog/low-level-language.html</guid>
+            <pubDate>Mon, 22 Oct 2012 12:01:00 GMT</pubDate>
+            <category>portuguese</category>
+            <category>language</category>
+            <description>"Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas." MARÃO, Públio Virgílio. &lt;i&gt;Eneida&lt;/i&gt;.</description>
+        </item>
+        <item>
+            <title>perl is beatiful - part 2</title>
+            <link>https://bbguimaraes.com/blog/perl-is-beautiful2.html</link>
+            <guid>https://bbguimaraes.com/blog/perl-is-beautiful2.html</guid>
+            <pubDate>Thu, 18 Oct 2012 10:53:00 GMT</pubDate>
+            <category>programming</category>
+            <category>perl</category>
+            <description>We've seen how perl can be used, but you may be wondering, &lt;/i&gt;so what&lt;i&gt;? Fasten your seatbelt, for fun begins now.</description>
+        </item>
+        <item>
+            <title>perl is beatiful</title>
+            <link>https://bbguimaraes.com/blog/perl-is-beautiful.html</link>
+            <guid>https://bbguimaraes.com/blog/perl-is-beautiful.html</guid>
+            <pubDate>Tue, 02 Oct 2012 02:18:00 GMT</pubDate>
+            <category>programming</category>
+            <category>perl</category>
+            <description>Writing the first post on a blog about programming is fairly easy. Now, the second one needed a little thought to come up with. I decided to show a trick I use almost daily, be it at work or on personal projects.</description>
+        </item>
+        <item>
+            <title>99 Bottles of Beer</title>
+            <link>https://bbguimaraes.com/blog/99-bottles-of-beer.html</link>
+            <guid>https://bbguimaraes.com/blog/99-bottles-of-beer.html</guid>
+            <pubDate>Mon, 01 Oct 2012 03:13:00 GMT</pubDate>
+            <category>programming</category>
+            <category>hello world</category>
+            <category>assembly</category>
+            <category>vim</category>
+        </item>
+    </channel>
+</rss>

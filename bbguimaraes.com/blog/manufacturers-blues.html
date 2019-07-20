@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Manufacturer's blues</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>Manufacturer's blues</h1>
+            <i>2014-05-02 16:13:00</i>
+            <p>
+The state of technology sometimes gives me the blues.  In 2014, I found myself
+installing a package called `dosfstools` to format my pendrive.  That's because
+the car's radio wouldn't accept any device with a file system that's not fat32:
+            </p>
+            <a href="img/radio_fat32.png">
+                <img src="img/radio_fat32.png" alt="not a device"/>
+            </a>
+            <p>
+Of course possessing a file system of another kind makes the device "not a
+device".  After a few seconds on the command line the problem went away:
+            </p>
+            <pre>
+$ sudo pacman -S dosfstools
+$ sudo mkfs.vfat -n BILLY /dev/sdb1
+</pre>
+            <p>
+but the sadness remained.  At l(e)ast I can listen to some
+<a href="http://www.badvoltage.org/">badvoltage</a> while driving.
+            </p><p>
+Oh yes, did I mention it doesn't accept any format <em>except</em> mp3?  And
+how does it signal it?  By not showing the files at all, of course.
+            </p>
+            <div class="tags">
+                <a href="tags/mp3.html">mp3</a>
+                <a href="tags/badvoltage.html">badvoltage</a>
+                <a href="tags/dos.html">dos</a>
+                <a href="tags/arch.html">arch</a>
+                <a href="tags/pacman.html">pacman</a>
+                <a href="tags/shell.html">shell</a>
+                <a href="tags/linux.html">linux</a>
+                <a href="tags/billy.html">billy</a>
+                <a href="tags/filesystem.html">filesystem</a>
+                <a href="tags/mkfs.html">mkfs</a>
+                <a href="tags/fat.html">fat</a>
+                <a href="tags/unix.html">unix</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>The super user is more powerful than god</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+    </head>
+    <body>
+        <div class="blog">
+            <h1>The super user is more powerful than god</h1>
+            <i>2012-12-21 10:48:00</i>
+            <pre>
+$ useradd god
+$ mkdir a
+$ chmod 000 a
+$ su god -c ls a
+ls: cannot open directory a: Permission denied
+$ sudo ls a
+$
+</pre>
+            <p>And it can even tell god what to do:</p>
+            <pre>
+$ sudo su god -c "sed -i 's/\(-DWINDOWS\|-DLINUX\)//' Makefile; make -B world"
+</pre>
+            <p>Happy winter solstice.</p>
+            <div class="tags">
+                <a href="tags/shell.html">shell</a>
+                <a href="tags/linux.html">linux</a>
+            </div>
+        </div>
+    </body>
+</html>
