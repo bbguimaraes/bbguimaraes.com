@@ -94,6 +94,10 @@ nav :not(li) > ul > li {
     margin-right: 2em;
 }
 
+.blog code {
+    font-weight: bold;
+}
+
 .blog .tags {
     font-style:italic;
 }

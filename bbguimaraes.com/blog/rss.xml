@@ -11,6 +11,20 @@
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
+            <title>SIGFPE</title>
+            <link>https://bbguimaraes.com/blog/sigfpe.html</link>
+            <guid>https://bbguimaraes.com/blog/sigfpe.html</guid>
+            <pubDate>Wed, 20 May 2020 21:56:52 GMT</pubDate>
+            <category>assembly</category>
+            <category>c</category>
+            <category>debugging</category>
+            <category>linux</category>
+            <category>math</category>
+            <category>programming</category>
+            <category>unix</category>
+            <description>Every programmer at one point will encounter the arcane semantics of IEEE-754 floating-point arithmetic.  If for you that point is right now, allow me to list the worst offenders of the principle of least surprise:</description>
+        </item>
+        <item>
             <title>Dot product as cosine subtraction</title>
             <link>https://bbguimaraes.com/blog/dot-product-as-cosine-subtraction.html</link>
             <guid>https://bbguimaraes.com/blog/dot-product-as-cosine-subtraction.html</guid>
