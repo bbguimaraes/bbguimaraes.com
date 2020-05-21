@@ -131,7 +131,7 @@ library (modulo static initialization order) without recompiling the program:
             </p>
             <pre>
 $ cat fpe.cpp
-#include <fenv.h>
+#include &lt;fenv.h&gt;
 static int _=[]{return feenableexcept(FE_DIVBYZERO|FE_INVALID|FE_OVERFLOW);}();
 $ g++ -c -fpic fpe.cpp && g++ -shared -o fpe.so fpe.o
 $ cat test.cpp
