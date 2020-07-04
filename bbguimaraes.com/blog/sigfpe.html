@@ -69,7 +69,11 @@ and spread quickly <em>without generating an easily identifiable error</em>.
 The result is spectacular, but not ideal if one wants a stable simulation:
             </p>
             <img src="img/sigfpe.gif"/>
-            <h2>Enter <code>SIGFPE</code></h2>
+            <a href="#enter-sigfpe">
+                <h2 id="enter-sigfpe">
+                    Enter <code> SIGFPE</code>
+                </h2>
+            </a>
             <p>
 POSIX platforms have a special signal for arithmetic operation errors:
 <code>SIGFPE</code> (short for "floating-point exception").  If integer
@@ -123,7 +127,7 @@ int feenableexcept (int excepts) {
     return old_exc;
 }
 </pre>
-            <h2>Bonus</h2>
+            <a href="#bonus"><h2 id="bonus">Bonus</h2></a>
             <p>
 For bonus points, this can be put in a shared library so that FPE signals can
 be enabled dynamically by either loading or <code>LD_PRELOAD</code>ing the

@@ -27,7 +27,9 @@ roughly fifty packages on a requirements.txt file.  That is a ridiculously long
 time.  That would be crazy slow even if we were hitting the wan, but on a lan,
 that is just absurd.  So, clearly, something fishy was going on.
             </p>
-            <h2>Debugging begins</h2>
+            <a href="#debugging-begins">
+                <h2 id="debugging-begins">Debugging begins</h2>
+            </a>
             <p>
 Step one when debugging an issue: figure out what changed.  I thought long and
 hard (harder than longer, I must admit) about it, but couldn't think of
@@ -68,7 +70,9 @@ real    13m19.752s
 user    0m1.031s
 sys     0m0.184s
 </pre>
-            <h2>On the server</h2>
+            <a href="#on-the-server">
+                <h2 id="on-the-server">On the server</h2>
+            </a>
             <p>
 The three main servers affected by this issue (the ones I spend most time in)
 were our buildbot (i.e. continuous integration), staging and production
@@ -127,7 +131,7 @@ problem: something was preventing the connection from ending and each operation
 was waiting for the timeout to close the socket.  That would explain why
 closing the socket took so long.
             </p>
-            <h2>The mistakes</h2>
+            <a href="#the-mistakes"><h2 id="the-mistakes">The mistakes</h2></a>
             <p>
 At this point, I realised my first mistake.  If you take a look at the strace
 output again, the remote end of the socket is *not* our server.  Take a look at
@@ -184,7 +188,7 @@ sys     0m0.057s
 Removing the extra index option eliminated the issue (and gave us a ~42x speed
 up, something you don't see everyday).
             </p>
-            <h2>Conclusion</h2>
+            <a href="#conclusion"><h2 id="conclusion">Conclusion</h2></a>
             <p>
 So, what do we take out of this (unexpectedly long) story?  If you are using a
 local package server, don't use <i>--extra-index</i>.  I have no idea why pip
@@ -209,7 +213,7 @@ real    0m1.125s
 user    0m0.947s
 sys     0m0.053s
 </pre>
-            <h2>Coda</h2>
+            <a href="#coda"><h2 id="coda">Coda</h2></a>
             <p>
 Thank you for making it this far.  I hope this story was entertaining and
 hopefully it taught you a thing or two about investigation, debugging and

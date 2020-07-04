@@ -29,7 +29,7 @@ magical.  The line goes like this:
 If you like a challenge (as I do), try to figure it out by yourself.  A shell
 and the man pages are your best friends.
             </p>
-            <h2>seq</h2>
+            <a href="#seq"><h2 id="seq">seq</h2></a>
             <p>
 If shell (or python) wasn't your first programming language, you were probably
 surprised by the way loops are done.  It usually goes like this:
@@ -86,7 +86,7 @@ $ seq -f '%02g' 1 3 10
 Programmers familiar with c will recognize the printf format string.  Moving
 down the pipe...
             </p>
-            <h2>paste </h2>
+            <a href="#paste"><h2 id="paste">paste</h2></a>
             <p>
 There are some commands that do something so simple they seem almost useless:
             </p>
@@ -127,7 +127,7 @@ $ seq 1 6 | paste -sd+
             <p>
 Nice, a mathematical expression. If only we had some way of interpreting it...
             </p>
-            <h2>bc</h2>
+            <a href="#bc"><h2 id="bc">bc</h2></a>
             <p>
 There are people who say: the python/ruby interpreter is my calculator.  To
 that I say: screw that!
@@ -151,7 +151,11 @@ on a shell...
 $ seq 1 6 | paste -sd+ | bc -l
 21
 </pre>
-            <h2>Interlude: Gregory-Leibniz</h2>
+            <a href="#interlude-gregory-leibniz">
+                <h2 id="interlude-gregory-leibniz">
+                    Interlude: Gregory-Leibniz
+                </h2>
+            </a>
             <p>
 There are many ways of calculating π.  You can find many of them on its
 wikipedia page.  One of them is named after two mathematicians, James Gregory
@@ -174,7 +178,9 @@ case you can't (and because it is a pretty equation), here it is:
                     src="https://upload.wikimedia.org/math/c/a/a/caafcd11bc553464dd4873a76ae4d9a7.png"
                     alt="Gregory-Leibniz formula" />
             </a>
-            <h2>Back in unix-land</h2>
+            <a href="#back-in-unix-land">
+                <h2 id="back-in-unix-land">Back in unix-land</h2>
+            </a>
             <p>
 So here is the challenge: how can we generate and evaluate the terms of this
 series?  Generating each term, without the sign, can be done easily with seq
