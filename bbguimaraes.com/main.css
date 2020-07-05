@@ -71,6 +71,18 @@ a:visited {
     margin-bottom: 1em;
 }
 
+#page-nav {
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+}
+
+#page-nav #logo {
+    display: inline;
+    margin: -10px;
+    width: 32px;
+    height: 32px;
+}
+
 .blog {
     max-width: 40em;
     margin-left: auto;
