@@ -12,62 +12,62 @@ a:visited {
     color: darkgreen;
 }
 
-#main {
+#home {
     text-align: center;
 }
 
-#logo {
+#home #logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
-nav {
+#home nav {
     display: inline-block;
     text-align: left;
     font-size: 2vw;
     list-style-position: inside;
 }
 
-nav ul {
+#home nav ul {
     padding-left: 0;
 }
 
-nav li {
+#home nav li {
     margin-bottom: 0;
 }
 
-nav ul {
+#home nav ul {
     list-style-type: none;
 }
 
-nav ul ul li::before {
+#home nav ul ul li::before {
     content: '├─';
 }
 
-nav ul ul li:last-child::before {
+#home nav ul ul li:last-child::before {
     content: '└─';
 }
 
-nav ul ul ul li::before {
+#home nav ul ul ul li::before {
     content: '│\00a0  ├─';
 }
 
-nav ul ul ul li:last-child::before {
+#home nav ul ul ul li:last-child::before {
     content: '│\00a0  └─';
 }
 
-nav ul ul li:last-child ul li:last-child::before {
+#home nav ul ul li:last-child ul li:last-child::before {
     content: '\00a0  \00a0└─';
 }
 
-nav :not(li) > ul {
+#home nav :not(li) > ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-nav :not(li) > ul > li {
+#home nav :not(li) > ul > li {
     margin-bottom: 1em;
 }
 
