@@ -89,7 +89,15 @@ a:visited {
     margin-right: auto;
 }
 
-.blog img {
+.blog aside {
+    border: 1px solid darkgreen;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.blog img, .blog video {
     display: block;
     margin: 2em auto;
     max-width: 80%;

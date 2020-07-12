@@ -11,6 +11,30 @@
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
+            <title>nngn - lua</title>
+            <link>https://bbguimaraes.com/blog/nngn-lua.html</link>
+            <guid>https://bbguimaraes.com/blog/nngn-lua.html</guid>
+            <pubDate>Sun, 30 Aug 2020 17:54:09 GMT</pubDate>
+            <category>lua</category>
+            <category>netcat</category>
+            <category>nngn</category>
+            <category>programming</category>
+            <category>readline</category>
+            <category>socket</category>
+            <category>unix</category>
+            <category>vim</category>
+            <description>Out of sheer patriotic duty, the main component of the engine is <a href="https://www.lua.org">Lua</a>.  The famous tiny scripting language is the only hard dependency (other than a C++ compiler and a vaguely POSIX-compliant operating system) and is the interstitial fluid that coordinates all the other components.</description>
+        </item>
+        <item>
+            <title>nngn</title>
+            <link>https://bbguimaraes.com/blog/nngn.html</link>
+            <guid>https://bbguimaraes.com/blog/nngn.html</guid>
+            <pubDate>Sun, 30 Aug 2020 17:54:08 GMT</pubDate>
+            <category>nngn</category>
+            <category>programming</category>
+            <description>Back in 2018, I publicized a project I had been working on intently for more than a year.  Because of the circumstances, it ended up never having its own entry here in this blog.  That is finally being corrected, and I am going to write not just one, but a series of posts about it.</description>
+        </item>
+        <item>
             <title>SIGFPE</title>
             <link>https://bbguimaraes.com/blog/sigfpe.html</link>
             <guid>https://bbguimaraes.com/blog/sigfpe.html</guid>

@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>nngn - lua</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+        <link
+            rel="alternate" type="application/rss+xml" title="RSS"
+            href="https://bbguimaraes.com/blog/rss.xml" />
+    </head>
+    <body>
+        <div class="blog">
+            <nav id="page-nav">
+                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                /
+                <a href=".">blog</a>
+                /
+                nngn - lua
+            </nav>
+            <h1>nngn - lua</h1>
+            <i>2020-08-30T17:54:09</i>
+            <a href="https://www.lua.org">
+                <img src="/files/blog/lua.png" alt="Lua logo"/>
+            </a>
+            <aside>
+                <p>
+This post is part of a series.  You should probably start
+<a href="nngn.html">here</a>.
+                </p>
+            </aside>
+            <p>
+Out of sheer patriotic duty, the main component of the engine is
+<a href="https://www.lua.org">Lua</a>.  The famous tiny scripting language is
+the only hard dependency (other than a C++ compiler and a vaguely
+POSIX-compliant operating system) and is the interstitial fluid that
+coordinates all the other components.
+            </p>
+            <p>
+The language needs no introduction: it is powerful, tiny, fast, portable, free,
+built for extensibility and interoperability, has an amazing (and amazingly
+simple) API&#8230; The list of compliments is almost endless, and it is
+unsurprising that it is part of so many applications in vastly different
+domains.
+            </p>
+            <p>
+Lua plays a vital role in the engine.  Starting the program without further
+configuration will result in an infinite loop that does nothing, not even
+create a window.  The sole method of configuration is Lua scripts.
+            </p>
+            <p>
+Command-line arguments are treated as file paths, and should initialize the
+required subsystems and perform all the actions to set up whatever scenario is
+desired.  The engine then assumes control and starts its main loop, although
+Lua still continues to be a central part of the process, as will be described
+later.
+            </p>
+            <p>
+This has several advantages.  Minimal builds can be created very easily:
+scripts can be used by any build that supports their prerequisites.  Those
+attempting to use parts excluded during compilation will either get a
+gracefully degraded experience or can dynamically query and adapt to the build
+characteristics.  This is why every dependency other than Lua is optional.
+            </p>
+            <p>
+Because all these scripts are written in a Turing-complete language with full
+access to the engine and the operating system, there is no limit to what a
+single script can do.  At the same time, utility functions from the Lua
+standard library and those exported by the engine make these scripts concise:
+most are a page or two of code.
+            </p>
+            <p>
+Additionally, it allows for a very uniform interface, as will be shown in the
+next sections.  They contain several code snippets directly extracted from the
+repository without edits.  They are not meant to be thoroughly understood, only
+provide a feel for the style of the code.
+            </p>
+            <h3 id="default-configuration">
+                <a href="#default-configuration">default configuration</a>
+            </h3>
+            <p>
+A default configuration that includes all capabilities and loads the initial
+map is a script (it is the default value for <code>argv</code>).  Its only
+statements are <code>dofile</code>s (Lua's version of <code>#include</code> or
+<code>import</code>) which load and execute separate, specialized scripts:
+            </p>
+            <pre><code>-- src/lua/all.lua
+dofile "src/lua/init.lua"
+dofile "src/lua/limits.lua"
+dofile "src/lua/main.lua"
+dofile "maps/main.lua"</code></pre>
+            <p>
+Each of these in turn is composed of lower-level pieces:
+            </p>
+            <pre><code>-- src/lua/init.lua
+dofile "src/lua/path.lua"
+require("nngn.lib.compute").init()
+require("nngn.lib.graphics").init()</code></pre>
+            <pre><code>-- src/lua/limits.lua
+nngn.entities:set_max(1 &lt;&lt; 20)
+nngn.animations:set_max(1 &lt;&lt; 16)
+nngn.textures:set_max(16)
+-- …</code></pre>
+            <pre><code>-- src/lua/main.lua
+local camera = require "nngn.lib.camera"
+local entity = require "nngn.lib.entity"
+local font = require "nngn.lib.font"
+local map = require "nngn.lib.map"
+local player = require "nngn.lib.player"
+dofile "src/lua/input.lua"
+-- …
+camera.reset()
+player.set{
+    "src/lson/crono.lua", "src/lson/link.lua", "src/lson/link_sh.lua",
+    "src/lson/fairy0.lua", "src/lson/chocobo.lua", "src/lson/null.lua"}
+nngn:load_texture()
+font.load(32, "DejaVuSans.ttf")
+nngn.grid:set_dimensions(32.0, 64)</code></pre>
+            <h3 id="demos"><a href="#demos">demos</a></h3>
+            <p>
+<a href="/nngn#demos">Demos</a> and other special-purpose cases are scripts
+that initialize just the parts of the engine that are necessary.  The
+separation shown in the previous section allows them to choose to use the
+default configuration for separate parts of the engine (keyboard bindings,
+camera placement, default parameters for the various sub-systems, etc.) by
+loading the appropriate script:
+            </p>
+            <pre><code>-- demos/demo.lua
+dofile "src/lua/init.lua"
+dofile "src/lua/limits.lua"
+dofile "src/lua/main.lua"
+
+DEMO = {
+    -- …
+    add_stage = function(self, text, f)
+        -- …
+        table.insert(self.stages, {text, f})
+    end,
+    next = function(self)
+        local i, stages = self.i, self.stages
+        if i > #stages then return end
+        local text, f = table.unpack(stages[i])
+        if f then f() end
+        textbox.update("nngn", text)
+        self.i = i + 1
+    end,
+}
+-- …
+DEMO:add_stage([[
+The engine has dynamic lighting. At the
+moment, only a dim ambient light exists.]],
+    function()
+        dofile("maps/wolfenstein.lua")
+        nngn.lighting:set_shadows_enabled(false)
+    end)
+-- …
+nngn.input:register_binding(
+    Input.ENTER, Input.BIND_PRESS,
+    function() DEMO:next() end)
+-- …</code></pre>
+            <h3 id="benchmarks"><a href="#benchmarks">benchmarks</a></h3>
+            <p>
+Benchmarks are scripts that set up the engine in a similar manner and either
+leave the test running or run it for a while and dump the results:
+            </p>
+            <pre><code>-- demos/colliders.lua
+dofile "src/lua/path.lua"
+local entity = require "nngn.lib.entity"
+local player = require "nngn.lib.player"
+require "src/lua/input"
+-- …
+local colliders = {
+    -- …
+}
+-- …
+for i = 1, N do
+    entity.load(nil, nil, {
+        pos = {rnd(), rnd(), 0},
+        collider = colliders[nngn.math:rand_int(1, n_col)]})
+end
+-- …</code></pre>
+            <h3 id="integration-tests">
+                <a href="#integration-tests">
+                    integration tests
+                </a>
+            </h3>
+            <p>
+Integration tests are scripts that set up the engine, exercise some part of it
+via the Lua interface, and check the results:
+            </p>
+            <pre><code>-- demos/cl/vector.lua
+dofile "src/lua/path.lua"
+local common = require "demos/cl/common"
+
+nngn:set_compute(Compute.OPENCL_BACKEND, Compute.opencl_params{debug = true})
+
+local prog = nngn.compute:create_program(
+    io.open("demos/cl/vector.cl"):read("a"), "-Werror")
+-- …
+local function test_add_numbers()
+    print("add_numbers:")
+    local out = exec(
+        Compute.FLOATV, 2, prog, "add_numbers", Compute.BLOCKING, {8}, {4}, {
+            Compute.FLOATV, {
+                 0,  1,  2,  3,  4,  5,  6,  7,
+                 8,  9, 10, 11, 12, 13, 14, 15,
+                16, 17, 18, 19, 20, 21, 22, 23,
+                24, 25, 26, 27, 28, 29, 30, 31,
+                32, 33, 34, 35, 36, 37, 38, 39,
+                40, 41, 42, 43, 44, 45, 46, 47,
+                48, 49, 50, 51, 52, 53, 54, 55,
+                56, 57, 58, 59, 60, 61, 62, 63},
+            Compute.LOCAL, 4 * Compute.SIZEOF_FLOAT})
+    local sum = out[1] + out[2]
+    print(sum)
+    if not common.err_check(sum, 64 / 2 * 63, .01) then
+        error("check failed")
+    end
+end
+-- …</code></pre>
+            <h2 id="socket">
+                <a href="#socket">
+                    <code>socket(2)</code>
+                </a>
+            </h2>
+            <p>
+That is only part of the story.  In the spirit of
+<a href="https://en.wikipedia.org/wiki/Unix_philosophy">ancient philosophy</a>
+(the birthplace of scripting languages), the engine also maintains a Unix
+socket in the file system while it is active.  Any data sent via this socket is
+read at the top of the frame and interpreted as Lua code.
+            </p>
+            <p>
+Being in a POSIX environment, all the power of file manipulation is made
+available (i.e. the "everything is a file (descriptor)"
+<a href="https://en.wikipedia.org/wiki/Everything_is_a_file">principle</a>).
+<code>netcat</code> can be used to write any text stream to the socket
+(<code>nc -U</code>).   It can be invoked at a terminal with no other arguments
+or redirections for a command-line console interface to the engine, or in a
+pipeline to allow any program that outputs a text stream, including text
+editors, to interact with the engine.
+            </p>
+            <p>
+Wrapping <code>netcat</code> with <code>rlwrap</code> (<i>readline wrapper</i>)
+gives it <code>readline</code> editing capabilities and command history.  With
+a bit of glue code (which I have yet to explore), it could even provide dynamic
+command-line completion.
+            </p>
+            <p>
+This effectively extends all the flexibility of initialization described in the
+previous section to runtime:
+            </p>
+            <h3 id="runtime-commands">
+                <a href="#runtime-commands">
+                    runtime commands
+                </a>
+            </h3>
+            <p>
+<code>rlwrap nc -NU path/to/sock</code> (the contents of
+<code>scripts/sock.sh</code>) gives a fully-featured <code>readline</code>
+shell where any ad hoc piece of Lua code can be entered and immediately
+executed.
+            </p>
+            <p>
+A limited version of this is usually implemented with some kind of virtual
+console inside the engine (which also brings in a fairly heavy dependency on
+font rendering).  This method gives a more powerful result mostly for free
+simply by using widely available Unix facilities.
+            </p>
+            <h3 id="specialized-scripts">
+                <a href="#specialized-scripts">
+                    specialized scripts
+                </a>
+            </h3>
+            <p>
+Any action or sequence of actions that can be performed using the Lua interface
+can be placed in a script file and invoked whenever desired by sending the
+contents of the file to the socket.  Examples include dumping internal
+structures as text, launching auxiliary tools (more on that in a future post),
+reloading assets, etc.
+            </p>
+            <h3 id="live-editing">
+                <a href="#live-editing">
+                    live-editing
+                </a>
+            </h3>
+            <p>
+Either of the previous techniques can be used to emulate the live-editing
+capability present in some programs.  Whenever a tight edit-reload loop is
+required, it is very easy to create a short piece of Lua code that will reload
+the asset when invoked, which can be used repeatedly or put in a script.
+            </p>
+            <p>
+For text files, which constitute most of the assets that usually require this
+sort of loop, my preferred approach is to open the file in <code>vim</code>
+(the One True Text Editor) and use one of the following commands to write to
+it, depending on whether a shell or Lua script for that particular case exists
+or not:
+            </p>
+            <pre><code>:w | !nc -NU sock &lt;&lt;&lt;"…"
+:w | !nc -NU sock < script.lua
+:w | !script.sh</code></pre>
+            <p>
+From then on, <code>@:</code> in normal mode is all that is required to save
+the contents of the file and see the result in the engine.
+            </p>
+            <h2 id="configuration-serialization">
+                <a href="#configuration-serialization">
+                    configuration/serialization
+                </a>
+            </h2>
+            <p>
+The last topic I wanted to discuss where Lua plays an important role is in
+serialization.  Creating
+<a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSL</a>s is
+one of the most common uses for Lua: it removes the need for custom file
+formats and the associated code to load them.
+            </p>
+            <p>
+In the repository, they fall into two categories: purely declarative and a
+combination of declarative and imperative sections.
+            </p>
+            <h3><a href="#lson">LSON</a></h3>
+            <p>
+These are simply scripts that contain only static data, mostly in the form of
+tables (Lua's primary data structure).  All these scripts do is
+<code>return</code> the data:
+            </p>
+            <pre><code>-- src/lson/crono.lua
+return {
+    name = "crono",
+    collider = {type = Collider.AABB, bb = {-8, -16, 8, -8}},
+    renderer = {
+        type = Renderer.SPRITE,
+        tex = "img/chrono_trigger/crono.png",
+        size = {32, 48}, z_off = -16,
+    },
+    anim = {sprite = {512//32, 512//16, {
+        {{0, 6, 1,  9, 0}}, {{0, 0, 1, 3, 0}},
+        {{0, 9, 1, 12, 0}}, {{0, 3, 1, 6, 0}},
+        -- …
+    }}},
+}</code></pre>
+            <p>
+These files can then be loaded either by the engine or by other scripts by
+simply evaluating them as Lua code.  The table will still need to be processed
+by the engine to create the objects, but serialization happens automatically
+without requiring a parser.  All scripts in this category are static, although
+it is common to go even further and include some amount of executable code in
+these files.
+            </p>
+            <h3><a href="#maps">maps</a></h3>
+            <p>
+For some cases, a purely declarative format would be unnecessarily verbose, and
+ultimately insufficient.  Using the imperative aspect of a proper programming
+language with access to the engine and to higher-level functions can simplify
+them.
+            </p>
+            <p>
+Map files are the primary example.  They encode all the necessary data for an
+individual, self-contained area, as well as the behavior associated with it.
+More specifically, these files usually have:
+            <ul>
+                <li>
+a function that initializes the area, sometimes relying heavily on loops and
+specific logic
+                </li>
+                <li>
+a function that releases any data still in use when the area is left
+                </li>
+                <li>
+a function that is called every frame to update area-specific objects
+                </li>
+                <li>
+functions to handle special events (e.g. collisions)
+                </li>
+                <li>
+local variables to share data between all of the above
+                </li>
+            </ul>
+            <p>
+While the manner in which the file is processed is necessarily imperative (it
+is simply loaded and executed), several utility functions make the contents
+mostly declarative:
+            </p>
+            <pre><code>-- maps/zelda.lua
+-- …
+local entities = {}
+-- …
+local function init() -- …
+local function heartbeat() -- …
+local function on_collision(e0, e1, v) -- …
+-- …
+map.map {
+    name = "zelda",
+    state = {ambient_light = true, zsprites = true, shadows_enabled = true},
+    init = init,
+    entities = entities,
+    heartbeat = heartbeat,
+    on_collision = on_collision,
+    reset = function() nngn.lighting:set_ambient_anim{} end,
+    tiles = {
+        nngn.textures:load("img/zelda_sacred_grove.png"),
+        2, 0, 0, 256, 256, 1, 2, {0, 0, 0, 1}}}</code></pre>
+            <h2><a href="#next">next</a></h2>
+            <p>
+I hope this post demonstrated how fundamental Lua is for the engine.  It truly
+is the brain of the system: all high-level logic lives in Lua scripts, leaving
+only the lower, operating-system-level, high performance type of operations to
+the engine itself.  This makes the system extremely dynamic and easy to inspect
+and modify, while still maintaining native or near-native performance.
+            </p>
+            <p>
+One last area where Lua is involved is in the interaction with external tools.
+That will be the topic for the next post.
+            </p>
+            <div class="tags">
+                <a href="tags/lua.html">lua</a>
+                <a href="tags/netcat.html">netcat</a>
+                <a href="tags/nngn.html">nngn</a>
+                <a href="tags/programming.html">programming</a>
+                <a href="tags/readline.html">readline</a>
+                <a href="tags/socket.html">socket</a>
+                <a href="tags/unix.html">unix</a>
+                <a href="tags/vim.html">vim</a>
+            </div>
+        </div>
+    </body>
+</html>
