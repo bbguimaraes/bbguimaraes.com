@@ -58,13 +58,15 @@ Take for example the following code that attempts to find the vector of
 penetration of a point <code>p</code> in a sphere with center <code>c</code>
 and radius <code>r</code> (the precursor to this epopoeia):
             </p>
-            <pre>
+            <code>
+                <pre>
 const auto d = c - p;
 if(const auto l2 = dot(d, d); l2 > r2) {
     d *= r / std::sqrt(l2) - 1;
     // …
 }
 </pre>
+            </code>
             <p>
 The code itself is not very interesting other than the fact that if the point
 happens to lie exactly on the circle, <code>d</code> will be a vector of length
@@ -97,9 +99,11 @@ The good news is this can be changed, albeit with a bit of platform-specific
 code.  For Linux systems using <code>glibc</code>, there is <a
 href="https://linux.die.net/man/3/feenableexcept"><code>feenableexcept</code></a>:
             </p>
-            <pre>
+            <code>
+                <pre>
 feenableexcept(FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW);
 </pre>
+            </code>
             <p>
 This will cause all (IEEE-754) exceptions to send a <code>SIGFPE</code> to the
 process.  Crucially, the signal will be delivered at the exact point where the
@@ -119,7 +123,8 @@ and SSE modes are very simple, v. the
 <a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/x86_64/fpu/feenablxcpt.c;hb=HEAD"><code>glibc</code> implementation</a>
 (slightly formatted):
             </p>
-            <pre>
+            <code>
+                <pre>
 int feenableexcept (int excepts) {
     unsigned short int new_exc, old_exc;
     unsigned int new;
@@ -137,13 +142,15 @@ int feenableexcept (int excepts) {
     return old_exc;
 }
 </pre>
+            </code>
             <a href="#bonus"><h2 id="bonus">Bonus</h2></a>
             <p>
 For bonus points, this can be put in a shared library so that FPE signals can
 be enabled dynamically by either loading or <code>LD_PRELOAD</code>ing the
 library (modulo static initialization order) without recompiling the program:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ cat fpe.cpp
 #include &lt;fenv.h&gt;
 static int _=[]{return feenableexcept(FE_DIVBYZERO|FE_INVALID|FE_OVERFLOW);}();
@@ -155,6 +162,7 @@ $ ./test
 $ LD_PRELOAD=./fpe.so ./test
 Floating point exception (core dumped)
 </pre>
+            </code>
             <p>
 <i>(credits for
 <a href="https://www.dursi.ca/post/stopping-your-program-at-the-first-nan.html">Jonathan Dursi</a>

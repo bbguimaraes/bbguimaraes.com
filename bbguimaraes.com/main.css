@@ -110,6 +110,10 @@ a:visited {
     font-weight: bold;
 }
 
+.blog code pre {
+    font-weight: normal;
+}
+
 .blog .tags {
     font-style:italic;
 }

@@ -69,7 +69,11 @@ Fair enough.  But this is a file opened in vim[<a href="#note2">2</a>].  After
 a little thinking (which lasted for approximately 423ms), this is what I did.
 From inside vim, I executed the following command:
             </p>
-            <pre>:!ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt' &</pre>
+            <code>
+                <pre>
+:!ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt' &
+</pre>
+            </code>
             <p>
 Which launched an ssh client connecting to my webserver[<a href="#note3">3</a>]
 running the netcat command.  If you are not familiar with netcat, think of it
@@ -83,7 +87,7 @@ in the background and just stays there waiting for input, releasing the shell
 immediately so I can continue using vim.  Now that we're back, another vim
 command:
             </p>
-            <pre>:w !cat > /dev/tcp/raspberrypi/31415</pre>
+            <code><pre>:w !cat > /dev/tcp/raspberrypi/31415</pre></code>
             <p>
 Here we are telling vim to write the contents of the buffer (<i>:w</i>).
 Normally, we would give it the name of a file to write, but the <i>:write</i>
@@ -94,12 +98,12 @@ shell, but with stdin redirected to read the contents of the buffer. As an
 example, try opening a new empty buffer in vim (<i>c-w n</i>), writing
 something and executing the command[<a href="#note5">5</a>]:
             </p>
-            <pre>:w !cowsay</pre>
+            <code><pre>:w !cowsay</pre></code>
             <p>
 Continuing the analysis of the command, we are using the <i>:w !</i> command to
 write to the program run by the shell, which is
             </p>
-            <pre>$ cat > /dev/tcp/raspberrypi/31415</pre>
+            <code><pre>$ cat > /dev/tcp/raspberrypi/31415</pre></code>
             <p>
 Well, you don't need to be a unix wizard to know what this is doing. cat is a
 command that reads the contents from a list of files (or stdin if it's invoked
@@ -112,7 +116,7 @@ But what is that funny file starting with <i>/dev/tcp/</i>? That is feature of
 bash (I don't know about other shells). You can read about using the command[<a
 href="#note6">6</a>]:
             </p>
-            <pre>$ man -P 'less -p /dev/tcp' bash</pre>
+            <code><pre>$ man -P 'less -p /dev/tcp' bash</pre></code>
             <p>
 What we are doing here is telling bash to write the data coming from cat's
 output to port 31415 on the host raspberrypi. Remember our little ssh friend we
@@ -145,10 +149,12 @@ lot* more things going on behind the scenes here[<a href="#note11">11</a>].
 But if you step back, you will realize that all that was needed were two
 commands:
             </p>
-            <pre>
+            <code>
+                <pre>
 ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt'
 cat > /dev/tcp/raspberrypi/31415
 </pre>
+            </code>
             <p>
 What I'm trying to present here is the incredible complexity and richness that
 can be achieved by using shell commands and unix concepts like input and output
@@ -167,11 +173,13 @@ While doing some scientific tests on the cowsay program (trying to make the cow
 say the text of this post), I discovered perl has a special mention of my blog
 on its source code[<a href="#note14">14</a>]:
             </p>
-            <pre>
+            <code>
+                <pre>
 :w !cowsay
 This shouldn't happen at /usr/share/perl5/core_perl/Text/Wrap.pm line 84, &lt;stdin&gt; line 63.
 shell returned 255
 </pre>
+            </code>
             <a href="#notes"><h3 id="notes">Notes</h3></a>
             <ol>
                 <li id="note1">What sane geek uses dropbox, anyway?</li>

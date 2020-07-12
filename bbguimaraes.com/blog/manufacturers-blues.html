@@ -31,10 +31,12 @@ the car's radio wouldn't accept any device with a file system that's not fat32:
 Of course possessing a file system of another kind makes the device "not a
 device".  After a few seconds on the command line the problem went away:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ sudo pacman -S dosfstools
 $ sudo mkfs.vfat -n BILLY /dev/sdb1
 </pre>
+            </code>
             <p>
 but the sadness remained.  At l(e)ast I can listen to some
 <a href="http://www.badvoltage.org/">badvoltage</a> while driving.

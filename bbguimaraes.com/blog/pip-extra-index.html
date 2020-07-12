@@ -48,38 +48,44 @@ advanced to step two: getting a small, reproducible test.
             </p><p>
 In this case, the test can be reduced to a simple command line execution:
             </p>
-            <pre>$ pip install -Ur requirements.txt</pre>
+            <code><pre>$ pip install -Ur requirements.txt</pre></code>
             <p>
 This is a standard pip requirements file, with the standard options to prefer
 our internal server over the official PyPi server:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ head -2 requirements.txt
 --index-url=http://pypi.example.com/simple/
 --extra-index-url=http://pypi.python.org/simple/
 </pre>
+            </code>
             <p>
 Here and in the next examples, I'll substitute the real domains for our servers
 for fake ones.  Anyway, running that one simple command was all that was needed
 to test the strange behavior.  On my personal development machine, that
 took quite a while:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ time pip install -Ur requirement.txt &> /dev/null
 real    0m41.280s
 user    0m3.557s
 sys     0m0.100s
 </pre>
+            </code>
             <p>
 Even more interestingly, this was way less time than we were seeing on the
 servers:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ time pip install -Ur requirement.txt &> /dev/null
 real    13m19.752s
 user    0m1.031s
 sys     0m0.184s
 </pre>
+            </code>
             <a href="#on-the-server">
                 <h2 id="on-the-server">On the server</h2>
             </a>
@@ -100,15 +106,18 @@ attach to a running process, which is an amazing way to debug a process that
 starts running wild.
             </p>
             <p>Using it to run the command:</p>
-            <pre>
+            <code>
+                <pre>
 $ strace -r -o strace.txt pip install -Ur requirement.txt
-            </pre>
+</pre>
+            </code>
             <p>
 The arguments here are `-o strace.txt` to redirect output to a file and the super useful `-r` to output the relative time between each system call, which is perfect to identify the exact system calls slowing down the execution of the command.
             </p><p>
 After the execution was done, looking at the output, I found the culprit. Here is a sample of the log:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ grep -m 1 -B 5 close strace.txt
 0.000138 socket(PF_INET, SOCK_STREAM, IPPROTO_TCP) = 4
 0.000115 fcntl(4, F_GETFL)         = 0x2 (flags O_RDWR)
@@ -117,6 +126,7 @@ $ grep -m 1 -B 5 close strace.txt
 0.000128 poll([{fd=4, events=POLLOUT}], 1, 15000) = 0 (Timeout)
 15.014733 close(4)
 </pre>
+            </code>
             <p>
 From this point, my analysis had some flaws that delayed the final conclusion. 
 I will explain my line of thought as it happened, maybe you'll find the
@@ -127,11 +137,13 @@ but then closing it takes around fifteen seconds.  Hmm, that is really odd.
 So I ran the command again and, while it was blocked waiting, I used another
 useful command to list the open file descriptors of the process:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ lsof -p $(pgrep pip) | tail -2
 pip     19928 django    3u  IPv4 8064331      0t0     TCP pypi.example.com:38804->pypi.example.com:http (CLOSE_WAIT)
 pip     19928 django    4u  IPv4 8064359      0t0     TCP pypi.example.com:30470->199.27.76.223:http (SYN_SENT)
 </pre>
+            </code>
             <p>
 Here we have two open sockets.  One of them is in the CLOSE_WAIT state.  Anyone
 who's ever done socket programming knows this dreaded state, where the local
@@ -153,21 +165,25 @@ There should be no other servers involved, since we explicitly told pip to
 fetch packages from our own server.  So I thought: what other server could be
 involved here?  So I took a guess:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ dig pypi.python.org | grep -A 2 'ANSWER SECTION'
 ;; ANSWER SECTION:
 pypi.python.org.        52156   IN      CNAME   python.map.fastly.net.
 python.map.fastly.net.  30      IN      A       23.235.46.223
 </pre>
+            </code>
             <p>
 Damn... Wait!
             </p>
-            <pre>
+            <code>
+                <pre>
 $ dig pypi.python.org | grep -A 2 'ANSWER SECTION'
 ;; ANSWER SECTION:
 pypi.python.org.        3575    IN      CNAME   python.map.fastly.net.
 python.map.fastly.net.  7       IN      A       23.235.39.223
 </pre>
+            </code>
             <p>
 Bingo!  So it was a connection to one of PyPi's servers.  I went back to the
 strace output and realised my second mistake.  If you read strace's man page
@@ -183,7 +199,8 @@ connection to PyPi after checking our server.  Since we don't allow that, the
 operation hang around until the timeout was reached.  One final test confirmed
 our suspicion:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ time pip install -Ur requirement.txt &> /dev/null
 real    0m42.981s
 user    0m3.720s
@@ -194,6 +211,7 @@ real    0m1.049s
 user    0m0.853s
 sys     0m0.057s
 </pre>
+            </code>
             <p>
 Removing the extra index option eliminated the issue (and gave us a ~42x speed
 up, something you don't see everyday).
@@ -212,7 +230,8 @@ worth it to remove the option.  The time it takes just to reach the server for
 each package, even just to receive a "package up-to-date" message, slows down
 the operation considerably:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ time pip install -Ur requirement.txt &> /dev/null
 real    0m46.816s
 user    0m3.853s
@@ -223,6 +242,7 @@ real    0m1.125s
 user    0m0.947s
 sys     0m0.053s
 </pre>
+            </code>
             <a href="#coda"><h2 id="coda">Coda</h2></a>
             <p>
 Thank you for making it this far.  I hope this story was entertaining and

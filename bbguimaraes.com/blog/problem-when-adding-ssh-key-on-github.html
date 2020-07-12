@@ -87,12 +87,16 @@ utility, so I guess it wasn't all that bad.
 curl is a program you can use to fetch web pages just as your browser would do.
 It is present on most distributions, so you can start right away and run
             </p>
-            <pre>$ curl https://bbguimaraes.com</pre>
+            <code><pre>$ curl https://bbguimaraes.com</pre></code>
             <p>
 And you'll get the HTML output of the page.  You can use that to access the
 github API.  To list all the keys of an account, you'd use
             </p>
-            <pre>$ curl -u bbguimaraes https://api.github.com/user/keys</pre>
+            <code>
+                <pre>
+$ curl -u bbguimaraes https://api.github.com/user/keys
+</pre>
+            </code>
             <p>
 Use the <i>-u</i> option to set the username.  You will be prompted for the
 password.  The switch accepts the form <i>-u user:password</i>, but that just
@@ -105,12 +109,14 @@ But the one that did it for me was the <i>
 <a href="http://developer.github.com/v3/users/keys/#create-a-public-key">create
 a puclib key</a></i>.  A simple post
             </p>
-            <pre>
+            <code>
+                <pre>
 $ curl \
     -u bbguimaraes \
     -d '{"title": "[...]", "key": "ssh-rsa AAA[...]"}' \
     https://api.github.com/user/keys
 </pre>
+            </code>
             <p>
 and, after a week of awful manual syncing of code, I was finally able to use my
 beloved github repositories as I always had.  I hope this text can save you
