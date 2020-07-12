@@ -4,43 +4,72 @@
         <meta charset="utf-8" />
         <title>nngn</title>
         <link rel="stylesheet" type="text/css" href="../main.css" />
+        <link rel="stylesheet" type="text/css" href="nngn.css" />
     </head>
     <body>
-        <nav id="page-nav">
-            <a href="/"><img id="logo" src="/triangle.png"/></a>
-            /
-            <a href="">nngn</a>
-        </nav>
-        <h1>nngn</h1>
         <main>
-            <a href="nngn.png">
-                <img
-                    src="nngn.png" alt="nngn"
-                    style="float: right; width: 50%; height: 50%" />
+            <nav id="page-nav">
+                <a href="/"><img id="logo" src="/triangle.png"/></a>
+                /
+                <a href="">nngn</a>
+            </nav>
+            <h1>nngn</h1>
+            <div class="main-video">
+                <video controls loop preload="none" poster="fiona_poster.png">
+                    <source src="fiona.webm" />
+                    Your browser doesn't support the &lt;video&gt; tag.
+                </video>
+            </div>
+            <p>
+<i>nngn</i> is a free and open source 2D/3D graphics/game/physics engine.  Read
+more about it in the <a href="/blog/tags/nngn.html">blog</a> section.  Get the
+source code <a href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn.git">
+here</a> or <a href="https://github.com/bbguimaraes/nngn.git">here</a>.
+            </p>
+            <a href="#demos">
+                <h2 id="demos">demos</h2>
             </a>
             <p>
-                This is a free and open source 2d simulation / game engine.
+Try it without installing or compiling anything <a href="nngn.html">here</a>
+(or <a href="nngn.html?argv=demos/demo.lua">here</a> for a guided
+demonstration).
             </p>
             <p>
-                Get the source code on
-                <a href="https://github.com/bbguimaraes/nngn.git">github</a>.
+<small>There might be issues that are not present in the native build.  The
+console can be informative if things go wrong.  The page will also download
+approximately 10MB of data.</small>
             </p>
             <p>
-                Watch the demo <a href="nngn.mkv">here</a> or on
-                <a href="https://youtube.com/watch?v=T9HBn05Tm4s">youtube</a>.
+Watch an earlier version of the demo <a href="nngn.mkv">here</a> or on
+<a href="https://youtube.com/watch?v=T9HBn05Tm4s">Youtube</a>.
             </p>
-            <h2>Live demo</h2>
-            <p>
-                Try it without installing or compiling anything
-                <a href="nngn.html">here</a>.
-            </p>
-            <p>
-                <span style="color: red">Warning</span>: this is an
-                experimental build.  It works pretty well, but there might be
-                issues that are not present in the real build.  The console can
-                be informative if things do go wrong.  It will also download
-                approximately 25MB of data.
-            </p>
+            <a href="#screenshots">
+                <h2 id="screenshots">screenshots</h2>
+            </a>
+            <div class="screenshots">
+                <img src="screenshots/map.png" title="map" />
+                <img
+                    src="screenshots/debug.png"
+                    title="debug, colliders, grid" />
+                <img
+                    src="screenshots/lights.png"
+                    title="directional/point light, Z sprites" />
+                <img src="screenshots/tilesheet.png" title="tile sheet map" />
+                <img src="screenshots/shadows.png" title="shadow mapping" />
+                <img
+                    src="screenshots/script.png"
+                    title="scripting, text box" />
+                <img src="screenshots/zelda.png" title="more scripting" />
+                <img
+                    src="screenshots/fiona.png"
+                    title="dynamic lighting, light animation" />
+                <img
+                    src="screenshots/perspective.png"
+                    title="perspective camera" />
+                <img
+                    src="screenshots/cathedral.png"
+                    title="more dynamic lighting" />
+            </div>
         </main>
     </body>
 </html>
