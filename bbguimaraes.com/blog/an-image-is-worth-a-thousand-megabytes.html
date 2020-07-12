@@ -37,9 +37,11 @@ already prepared to run on the Pi.  If you haven't already, grab Raspbian's
 image, which you can find on <a href="http://www.raspberrypi.org/downloads">
 Raspberry Pi Foundation's downloads web page</a>.
             </p>
-            <pre>
+            <code>
+                <pre>
 $ wget http://downloads.raspberrypi.org/images/raspbian/2012-12-16-wheezy-raspbian/2012-12-16-wheezy-raspbian.zip
 </pre>
+            </code>
             <p>
 Note that this is the current version as I write this post.  Visit the page to
 get the most recent version.  An optional but recommended step after you
@@ -49,18 +51,22 @@ download, which is always a good thing to know, specially when dealing with
 sensitive data such as disk images.  To do that, you can use the <i>sha1sum</i>
 program:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ sha1sum 2012-12-16-wheezy-raspbian.zip
 514974a5fcbbbea02151d79a715741c2159d4b0a  2012-12-16-wheezy-raspbian.zip
 </pre>
+            </code>
             <p>
 Compare the output with the hash on the SHA-1 section of the download page.
 Or, if you have the SHA-1 stored in a file:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ sha1sum -c 2012-12-16-wheezy-raspbian.zip.sha1
 2012-12-16-wheezy-raspbian.zip: OK
 </pre>
+            </code>
             <p>
 If you don't get the appropriate result, just download the file again and check
 it, until you get it right.  Now we are going to copy the image to the SD card.
@@ -68,16 +74,19 @@ Before you insert the SD card on your computer (you may need an external SD
 card reader, depending on the ports available on your machine), execute the
 command
             </p>
-            <pre>
+            <code>
+                <pre>
 $ ls /dev/sd*
 /dev/sda   /dev/sda2  /dev/sda4  /dev/sda6  /dev/sda8
 /dev/sda1  /dev/sda3  /dev/sda5  /dev/sda7
 </pre>
+            </code>
             <p>
 That will list all the disks available.  If you prefer a more friendly output,
 you can use
             </p>
-            <pre>
+            <code>
+                <pre>
 $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
     /dev/sda6        46G   30G   14G  69% /
@@ -87,6 +96,7 @@ Filesystem      Size  Used Avail Use% Mounted on
     none            2.9G   76K  2.9G   1% /run/shm
     /dev/sda4       107G   50G   53G  49% /mnt/data
 </pre>
+            </code>
             <p>
 This will list the devices used by the mounted file systems.  Now you can
 insert the SD card and run the command again.  You will notice that new entries
@@ -106,11 +116,13 @@ need the device, not any partition, so be sure to use the device file with no
 number suffix.  When you have the device name, make sure the device is unmounted
 so we can write data to it:
             </p>
-            <pre>$ umount /dev/sdb*</pre>
+            <code><pre>$ umount /dev/sdb*</pre></code>
             <p>Then use good old <i>dd</i> to copy the image:</p>
-            <pre>
+            <code>
+                <pre>
 $ dd if=./2012-12-16-wheezy-raspbian.zip of=/dev/sdb bs=4M
 </pre>
+            </code>
             <p>
 A couple things deserve mention.  It is always good to check (and re-check) the
 parameters, to make sure the image is the <i>if</i> (input file) value and the
@@ -122,13 +134,15 @@ Since it can take quite some time to finish, you may think it's froze.  But
 don't worry, it hasn't.  If you want to be absolutely sure, send the program a
 signal and it will output the progress:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ ps aux | grep dd
   4821 pts/2    R+     0:33 dd if=./2012-12-16-wheezy-raspbian.zip of=/dev/sdb bs=4M
 $ kill -USR1 4821
 </pre>
+            </code>
             <p>When it is done, run</p>
-            <pre>$ sync</pre>
+            <code><pre>$ sync</pre></code>
             <p>
 to make sure everything is properly written and remove the card.  Now insert
 the card on the Raspberry, plug the power supply and, if everything worked, you

@@ -28,13 +28,14 @@ couldn't find it.  It was some of those "shell one-liners" you see on hacker
 news five times a day, except I didn't know half of them.  The most interesting
 was a semi-cryptic command line with a pretentious comment besides it:
             </p>
-            <pre># calculates pi the unix way</pre>
+            <code><pre># calculates pi the unix way</pre></code>
             <p>
 I remember as if it was today how puzzled I was by that line.  As I said, I
 didn't know much of the incantations on that list, but this was by far the most
 magical.  The line goes like this:
             </p>
-            <pre>$ seq -f '4/%g' 1 2 9999 | paste -sd-+ | bc -l</pre>
+            <code><pre>$ seq -f '4/%g' 1 2 9999 | paste -sd-+ | bc
+-l</pre></code>
             <p>
 If you like a challenge (as I do), try to figure it out by yourself.  A shell
 and the man pages are your best friends.
@@ -44,7 +45,8 @@ and the man pages are your best friends.
 If shell (or python) wasn't your first programming language, you were probably
 surprised by the way loops are done.  It usually goes like this:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ for x in 1 2 3 4 5; do echo "$x"; done
     1
     2
@@ -52,46 +54,53 @@ $ for x in 1 2 3 4 5; do echo "$x"; done
     4
     5
 </pre>
+            </code>
             <p>
 If you have a little experience with shell, you probably learned there is a
 more idiomatic way of doing this using the seq command and some shell voodoo:
             </p>
-            <pre>$ for x in $(seq 1 5); do echo "$x"; done</pre>
+            <code><pre>$ for x in $(seq 1 5); do echo "$x"; done</pre></code>
             <p>
 And if you were truly initiated on the dark arts of bash programming, you
 probably know this is functionally equivalent to this:
             </p>
-            <pre>$ for x in {1..5}; do echo "$x"; done</pre>
+            <code><pre>$ for x in {1..5}; do echo "$x"; done</pre></code>
             <p>
 I won't explain how shell command substitution works, suffice to say seq is a
 nice utility to generate sequences (get it?) of numbers.  From the first lines
 of the man page:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ man seq | grep -A 3 SYNOPSIS
     SYNOPSIS
            seq [OPTION]... LAST
            seq [OPTION]... FIRST LAST
            seq [OPTION]... FIRST INCREMENT LAST
 </pre>
+            </code>
             <p>
 So the main part of the first command on the pipe is no magic: we are
 generating numbers from 1 to 9999 with a step of 2:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ echo $(seq 1 2 9999 | head -5)
 1 3 5 7 9
 </pre>
+            </code>
             <p>
 There is a useful option to this command to control how the value is output:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '%02g' 1 3 10
     01
     04
     07
     10
 </pre>
+            </code>
             <p>
 Programmers familiar with c will recognize the printf format string.  Moving
 down the pipe...
@@ -100,13 +109,16 @@ down the pipe...
             <p>
 There are some commands that do something so simple they seem almost useless:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ whatis -l paste
     paste (1)            - merge lines of files
     paste (1p)           - merge corresponding or subsequent lines of files
 </pre>
+            </code>
             <p>Nothing really interesting here, right?</p>
-            <pre>
+            <code>
+                <pre>
 $ paste <(seq 1 3) <(seq 4 6)
     1       4
     2       5
@@ -116,24 +128,29 @@ $ seq 1 6 | paste - -
     3       4
     5       6
 </pre>
+            </code>
             <p>
 Well, that is interesting.  What if we play with the other options?
             </p>
-            <pre>
+            <code>
+                <pre>
 $ paste -sd, <(seq 1 3) <(seq 4 6)
 1,2,3
 4,5,6
 $ seq 1 6 | paste -sd,
 1,2,3,4,5,6
 </pre>
+            </code>
             <p>
 This simple command is starting to show complex behavior.  Maybe there is
 something interesting in those old unix books after all...  Wait:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq 1 6 | paste -sd+
 1+2+3+4+5+6
 </pre>
+            </code>
             <p>
 Nice, a mathematical expression. If only we had some way of interpreting it...
             </p>
@@ -142,7 +159,8 @@ Nice, a mathematical expression. If only we had some way of interpreting it...
 There are people who say: the python/ruby interpreter is my calculator.  To
 that I say: screw that!
             </p>
-            <pre>
+            <code>
+                <pre>
 $ bc -ql
 1 + 2 + 3
 6
@@ -153,14 +171,17 @@ scale = 80
 .8333333333333333333333333333333333333333333333333333333333333333333\
 3333333333333
 </pre>
+            </code>
             <p>
 Do you see that <i>\</i> character?  It's almost as if it was meant to be used
 on a shell...
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq 1 6 | paste -sd+ | bc -l
 21
 </pre>
+            </code>
             <a href="#interlude-gregory-leibniz">
                 <h2 id="interlude-gregory-leibniz">
                     Interlude: Gregory-Leibniz
@@ -196,7 +217,8 @@ So here is the challenge: how can we generate and evaluate the terms of this
 series?  Generating each term, without the sign, can be done easily with seq
 and a format string:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '1/%g' 1 2 9
 1/1
 1/3
@@ -204,41 +226,52 @@ $ seq -f '1/%g' 1 2 9
 1/7
 1/9
 </pre>
+            </code>
             <p>Remember our useful-where-you-never-imagined friend paste?</p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '1/%g' 1 2 9 | paste -sd-+
 1/1-1/3+1/5-1/7+1/9
 </pre>
+            </code>
             <p>
 This may take some time to understand, it's ok.  Read those man pages!  But
 once you understand, the only thing left is to evaluate the expression:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '1/%g' 1 2 9 | paste -sd-+ | bc -l
 .83492063492063492064
 </pre>
+            </code>
             <p>
 Hmm, not much π-like, is it?  Right, this is π/4.  Ok, we can rearrange the
 terms a bit to fit our tools (that is the essential hacker skill).  Lets move
 the denominator on the right side to the numerator on the left.
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '4/%g' 1 2 9 | paste -sd-+ | bc -l
 3.33968253968253968254
 </pre>
+            </code>
             <p>
 That's more like it!  As any infinite series approximation, we can increase the
 number of terms to increase accuracy:
             </p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '4/%g' 1 2 9999 | paste -sd-+ | bc -l
 3.14139265359179323814
 </pre>
+            </code>
             <p>Now just for the heck of it:</p>
-            <pre>
+            <code>
+                <pre>
 $ seq -f '4/%g' 1 2 999999 | paste -sd-+ | bc -l
 3.14159065358979323855
 </pre>
+            </code>
             <p>And there you have it. Enjoy your unix π.</p>
             <div class="tags">
                 <a href="tags/printf.html">printf</a>
