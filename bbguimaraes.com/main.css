@@ -106,12 +106,8 @@ a:visited {
     margin-right: 2em;
 }
 
-.blog code {
+.blog :not(pre) code {
     font-weight: bold;
-}
-
-.blog code pre {
-    font-weight: normal;
 }
 
 .blog .tags {

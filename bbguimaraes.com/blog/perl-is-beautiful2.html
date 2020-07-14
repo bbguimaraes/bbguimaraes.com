@@ -33,7 +33,7 @@ alter the way it runs, but most importantly, they can alter the way the code is
 executed.  First, though, I'll show you the <i>-e</i> switch, which will be
 used on all the other examples.
             </p>
-            <code><pre>$ perl -e 'print "hello\n";'</pre></code>
+            <pre><code>$ perl -e 'print "hello\n";'</code></pre>
             <p>
 The switch tells the interpreter that, instead reading from <i>stdin</i> or
 from a file, the program will be contained inside the next argument.  Note
@@ -44,13 +44,9 @@ quotes. With this switch, it will be easier to show you the others.
 Let's start with -n, which will <em>surround</em> your code with the following
 construct:
             </p>
-            <code>
-                <pre>
-while(<>) {
+            <pre><code>while(<>) {
     # your code
-}
-</pre>
-            </code>
+}</code></pre>
             <p>
 Try running our previous example but adding this switch.  It will start
 listening on stdin, and after every line it will print the string 'hello' (I
@@ -58,14 +54,10 @@ call it the nice program).  One thing to note is that the <i>-e</i> switch and
 the program string must be contiguous. You can run the program like the first
 three lines below, but the fourth will give you an error:
             </p>
-            <code>
-                <pre>
-$ perl -ne 'print "hello\n"'
+            <pre><code>$ perl -ne 'print "hello\n"'
 $ perl -n -e 'print "hello\n"'
 $ perl -e 'print "hello\n"' -n
-$ perl -e -n 'print "hello\n"' # This is wrong!
-</pre>
-            </code>
+$ perl -e -n 'print "hello\n"' # This is wrong!</code></pre>
             <p>
 But what really happened when we ran that program?  If you remember
 <a href="perl-is-beautiful.html">the last post</a>, <i>&lt;&gt;</i> is the input
@@ -74,7 +66,7 @@ ends".  And if you have really good memory (or are already tainted by the perl
 way of thinking), you'll remember that the input read will go to the variable
 <i>$_</i>.  We can test it with our reimplementation of <i>cat</i>:
             </p>
-            <code><pre>$ perl -ne 'print'</pre></code>
+            <pre><code>$ perl -ne 'print'</code></pre>
             <p>
 See what I did there?  I tested your memory again. <i>$_</i> is used as the
 default argument to many functions in perl, including <i>print</i>.  This
@@ -82,20 +74,16 @@ allows you to say just <i>print</i> here, instead of <i>print $_</i>. And this
 code is such a common occurrence that perl already has another switch to do
 just that: <i>-p</i>.
             </p>
-            <code><pre>$ perl -pe ''</pre></code>
+            <pre><code>$ perl -pe ''</code></pre>
             <p>
 Running this, you can see that it is exactly the same as the previous. Just
 like <i>-n</i>, it surrounds your code with more code, but it adds a little
 something to what <i>-n</i> adds:
             </p>
-            <code>
-                <pre>
-while(<>) {
+            <pre><code>while(<>) {
     # your code
     print
-}
-</pre>
-            </code>
+}</code></pre>
             <a href="#regular-expressions-revisited">
                 <h2 id="regular-expressions-revisited">
                     Regular expressions revisited
@@ -109,7 +97,7 @@ I'm showing you comes from combining these techniques with perl's
 <a href="http://en.wikipedia.org/wiki/MongoDB">humongous</a> power.  Check
 this:
             </p>
-            <code><pre>$ perl -ne 'print if m/=D/'</pre></code>
+            <pre><code>$ perl -ne 'print if m/=D/'</code></pre>
             <p>
 This will print every happy line on a file.  Remember that the default
 parameter for the <i>m//</i> operator is also <i>$_</i> (isn't it beautiful?).
@@ -117,7 +105,7 @@ If you followed me all the way here, you can now start applying it, just by
 remembering this simple command line.  Quick example I use every day: find all
 python functions on a file.
             </p>
-            <code><pre> $ perl -ne 'print if m/^\s*def /'</pre></code>
+            <pre><code> $ perl -ne 'print if m/^\s*def /'</code></pre>
             <p>
 From here, you can go anywhere.  The nice thing is now you have the power of a
 real programming language, and can do all the bizarre things perl can do (and

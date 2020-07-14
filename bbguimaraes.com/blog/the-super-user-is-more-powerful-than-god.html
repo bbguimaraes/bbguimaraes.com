@@ -19,23 +19,15 @@
             </nav>
             <h1>The super user is more powerful than god</h1>
             <i>2012-12-21 10:48:00</i>
-            <code>
-                <pre>
-$ useradd god
+            <pre><code>$ useradd god
 $ mkdir a
 $ chmod 000 a
 $ su god -c ls a
 ls: cannot open directory a: Permission denied
 $ sudo ls a
-$
-</pre>
-            </code>
+$</code></pre>
             <p>And it can even tell god what to do:</p>
-            <code>
-                <pre>
-$ sudo su god -c "sed -i 's/\(-DWINDOWS\|-DLINUX\)//' Makefile; make -B world"
-</pre>
-            </code>
+            <pre><code>$ sudo su god -c "sed -i 's/\(-DWINDOWS\|-DLINUX\)//' Makefile; make -B world"</code></pre>
             <p>Happy winter solstice.</p>
             <div class="tags">
                 <a href="tags/shell.html">shell</a>
