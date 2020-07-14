@@ -25,9 +25,7 @@ that particular moment but know I will need in the (near) future.  To remember
 to correct it later, I surrounded it with the (pseudo-randomly chosen)
 <i>\ldots</i> command, like this:
             </p>
-            <code>
-                <pre>
-This is the actual text.
+            <pre><code>This is the actual text.
 
 \dots
 
@@ -35,9 +33,7 @@ This is some text I'll need later.
 
 \ldots
 
-This is more of the actual text.
-</pre>
-            </code>
+This is more of the actual text.</code></pre>
             <p>
 That solved my problem, I could just grep the files and find the parts that
 needed refactoring.  The problem is they ended up on the PDF, which is not the
@@ -45,9 +41,7 @@ end of the world, but it disrupted the reading and didn't look so good.  I
 finally decided to google the problem, and found a nice solution, using the if
 command:
             </p>
-            <code>
-                <pre>
-This is the actual text
+            <pre><code>This is the actual text
 
 \iffalse
 
@@ -55,9 +49,7 @@ This is some text I'll need latex.
 
 \fi
 
-This is more of the actual text.
-</pre>
-            </code>
+This is more of the actual text.</code></pre>
             <p>
 Now I can still grep for <i>\iffalse</i>, and it doesn't pollute the PDF.  And
 it even advertises my blog.  Yay!

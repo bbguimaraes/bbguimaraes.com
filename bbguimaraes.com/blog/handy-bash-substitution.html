@@ -28,23 +28,15 @@ I'll show you some tricks to make your life easier.
 Let's start with a really common operation.  You download a tarball, extract,
 <i>cd</i> and have fun.  Usually, you'd do this:
             </p>
-            <code>
-                <pre>
-$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
+            <pre><code>$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
 $ tar -xjf linux-3.7.9.tar.bz2
 $ cd linux-3.7.9
-$ bob's your uncle
-</pre>
-            </code>
+$ bob's your uncle</code></pre>
             <p>Using the <i>Tab</i> key, you can save a lot of typing:</p>
-            <code>
-                <pre>
-$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
+            <pre><code>$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
 $ tar -xjf l&lt;TAB&gt;
 $ cd l&lt;TAB&gt;
-$ bob's your uncle
-</pre>
-            </code>
+$ bob's your uncle</code></pre>
             <p>
 However, this is highly dependent on the contents of your directory, names in
 your path and auto-complete configurations.
@@ -66,34 +58,22 @@ alternatives: bash (get it?) has a nice feature called substitutions.  You may
 have come across it before if you ever tried to add an unescaped exclamation
 mark (henceforth mentioned using the niftier name "bang"):
             </p>
-            <code>
-                <pre>
-$ echo "Bang!"
-bash: !": event not found
-</pre>
-            </code>
+            <pre><code>$ echo "Bang!"
+bash: !": event not found</code></pre>
             <p>Or got surprised by it:</p>
-            <code>
-                <pre>
-$ echo "balrog:!you shall not pass:/nonexistent:/bin/false" >> /etc/passwd
+            <pre><code>$ echo "balrog:!you shall not pass:/nonexistent:/bin/false" >> /etc/passwd
 echo "balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false" >> /tmp/test
 $ sleep 3d; grep balrog /etc/passwd
-balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false
-</pre>
-            </code>
+balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false</code></pre>
             <p>
 That is because the bang is used to reference previous commands.  The simplest
 is substitution of the last command:
             </p>
-            <code>
-                <pre>
-$ echo billy
+            <pre><code>$ echo billy
 billy
 $ !!
 echo billy
-billy
-</pre>
-            </code>
+billy</code></pre>
             <p>
 One thing I should mention: to avoid chaos and destruction (or at least inform
 you that chaos and destruction have happened) the command with all
@@ -104,34 +84,24 @@ This substitution is simple and needs no explanation, but it raises a question:
 what is it useful for?  Have you ever typed a (possibly long) command, just to
 get the following message after running it?
             </p>
-            <code>
-                <pre>
-$ cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
+            <pre><code>$ cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
 cat: /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_:
-Permission denied
-</pre>
-            </code>
+Permission denied</code></pre>
             <p>
 You can solve this by typing <i>&lt;UP&gt;&lt;HOME&gt;sudo&lt;SPACE&gt;</i> (if
 you type <i>&lt;UP&gt;&lt;LEFT&gt;{201}sudo&lt;SPACE&gt;</i>, I will personally
 punch you in the face).  But you can save a lot of typing just using
             </p>
-            <code>
-                <pre>
-$ sudo !!
+            <pre><code>$ sudo !!
 sudo cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
-[sudo] password for billy:
-</pre>
-            </code>
+[sudo] password for billy:</code></pre>
             <p>
 Here, <i>!!</i> got substituted by the last command, as you can see on the
 echo.  Some other uses I found (which you may not understand if you're not or
 is on the path to <del>enlightenment</del> becoming a bash enthusiast)
 were:
             </p>
-            <code>
-                <pre>
-$ cat my_files
+            <pre><code>$ cat my_files
 file1
 file2
 file3
@@ -145,18 +115,14 @@ $ perl -e 'bang your head on the keyboard'
 $ echo "!!" > file_to_save_command
 $ # This could be done by clever use of Ctrl-x Ctrl-e, but
 $ # sometimes you're in a hurry. That's alright, as long as
-$ # you <a href="http://tldp.org/LDP/abs/html/escapingsection.html">do it carefully</a>.
-</pre>
-            </code>
+$ # you <a href="http://tldp.org/LDP/abs/html/escapingsection.html">do it carefully</a>.</code></pre>
             <p>
 When <i>!</i> is followed by a number <i>n</i>, it executes the <i>n</i>th
 command in the history (which you can check with the <i>history</i> command).
 More useful, though, is that, if <i>n</i> is negative, it will execute the last
 <i>n</i>th command:
             </p>
-            <code>
-                <pre>
-$ echo some
+            <pre><code>$ echo some
 some
 $ echo thing
 thing
@@ -165,9 +131,7 @@ echo some
 some
 $ !-3 other thing
 echo some other thing
-some other thing
-</pre>
-            </code>
+some other thing</code></pre>
             <p>
 Without thinking much, you can discover that <i>!!</i> is just an easier way to
 spell <i>!-1</i>.
@@ -176,37 +140,25 @@ Now, these are useful techniques, but we are just getting started!  Usually,
 you don't need the whole command, but just one or a few arguments.  Common
 scenario:
             </p>
-            <code>
-                <pre>
-$ ls ef
+            <pre><code>$ ls ef
 son daughter dog
 $ # oh my, ef is a directory
-$ cd ef
-</pre>
-            </code>
+$ cd ef</code></pre>
             <p>or how about:</p>
-            <code>
-                <pre>
-$ mv some_directory a_different_name_for_some_directory
-$ cd a_different_name_for_some_directory
-</pre>
-            </code>
+            <pre><code>$ mv some_directory a_different_name_for_some_directory
+$ cd a_different_name_for_some_directory</code></pre>
             <p>
 It is very common to address the same file on multiple, successive commands.
 You can, again, save some typing:
             </p>
-            <code>
-                <pre>
-$ ls ef
+            <pre><code>$ ls ef
 son daughter dog
 $ # oh my, ef is a directory
 $ cd !$
 cd ef
 $ mv some_directory a_different_name_for_some_directory
 $ cd !$
-cd some_directory a_different_name_for_some_directory
-</pre>
-            </code>
+cd some_directory a_different_name_for_some_directory</code></pre>
             <p>
 As you can see, <i>!$</i> is substituted by the last argument of the last
 command. If you know your regular expressions, you can make a link with the
@@ -214,17 +166,13 @@ command. If you know your regular expressions, you can make a link with the
 more general form <i>!n:m</i>. This means: from the <i>n</i>th, get the
 <i>m</i>th argument.
             </p>
-            <code>
-                <pre>
-$ tar -f my_tar -cz file1 file2 file3
+            <pre><code>$ tar -f my_tar -cz file1 file2 file3
 $ du -sh !:2
 4.0K    my_tar
 $ du -sh !-2:4-6
 4.0K    file1
 4.0K    file2
-4.0K    file3
-</pre>
-            </code>
+4.0K    file3</code></pre>
             <p>
 What goes before the colon can be any of the previous substitutions: <i>!!</i>,
 <i>!n</i> or <i>!-n</i>.  Note that you can specify a range using <i>:n-m</i>,
@@ -232,14 +180,10 @@ which will get substituted by the parameters <i>n</i> to <i>m</i>.  If you need
 them in a different order, or some non-contiguous arguments, just use more than
 one substitution:
             </p>
-            <code>
-                <pre>
-$ diff ours theirs
+            <pre><code>$ diff ours theirs
 $ # gah
 $ diff !:2 !:1
-diff theirs ours
-</pre>
-            </code>
+diff theirs ours</code></pre>
             <p>
 Alright, I guess this is enough information for a single post.  Have fun
 playing with The Bash and see you soon for more advanced uses of history
@@ -258,12 +202,8 @@ That said, a good reference (not so good for self-learning, but, if you read
 the text, you should be okay) is bash's man page.  Search for "Event
 Designators" or <i>\!\!</i> (escaping is mandatory):
                     </p>
-                    <code>
-                        <pre>
-$ man bash
-/Event Designators&lt;CR&gt;
-</pre>
-                    </code>
+                    <pre><code>$ man bash
+/Event Designators&lt;CR&gt;</code></pre>
                 </li>
                 <li>
                     <p>
@@ -280,35 +220,23 @@ If you ever got stabbed by not knowing how the bang works (like the examples I
 showed in the beginning), you can avoid getting stabbed again by escaping the
 bangs, either with a backslash or single quotes:
                     </p>
-                    <code>
-                        <pre>
-$ echo Bang\!
+                    <pre><code>$ echo Bang\!
 Bang!
-$ echo 'balrog:!you shall not pass:/nonexistent:/bin/false' >> /etc/passwd
-</pre>
-                    </code>
+$ echo 'balrog:!you shall not pass:/nonexistent:/bin/false' >> /etc/passwd</code></pre>
                 </li>
                 <li>
                     <p>
 More of a side note, but to get that humongous file name, I discovered a new
 (string of) command(s) to get the longest line from a text.
                     </p>
-                    <code>
-                        <pre>
-$ find /sys/ | awk '{print length, $0;}' | sort -nr | head -n 1
-</pre>
-                    </code>
+                    <pre><code>$ find /sys/ | awk '{print length, $0;}' | sort -nr | head -n 1</code></pre>
                     <p>
 You can probably do the same thing (although it might be a little slower) using
 a while loop and another bash trick: while <i>$variable</i> (or
 <i>${variable}</i>) will give you the contents of a variable,
 <i>${#variable}</i> will give you the length of that content.
                     </p>
-                    <code>
-                        <pre>
-$ find /sys/ | while read i; do echo "${#i} $i" | sort -nr | head -n 1
-</pre>
-                    </code>
+                    <pre><code>$ find /sys/ | while read i; do echo "${#i} $i" | sort -nr | head -n 1</code></pre>
                     <p>
 Apparently, Jethro Tull's Too Old to Rock 'n' Roll, Too Old to Die generates
 pretty long file names (the title song is the second only to a really long
