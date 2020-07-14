@@ -15,7 +15,7 @@
                 /
                 <a href=".">blog</a>
                 /
-                <a href=""> pip --extra-index</a>
+                pip --extra-index
             </nav>
             <h1> pip --extra-index</h1>
             <i>2014-12-10 12:46:00</i>
@@ -37,9 +37,9 @@ roughly fifty packages on a requirements.txt file.  That is a ridiculously long
 time.  That would be crazy slow even if we were hitting the wan, but on a lan,
 that is just absurd.  So, clearly, something fishy was going on.
             </p>
-            <a href="#debugging-begins">
-                <h2 id="debugging-begins">Debugging begins</h2>
-            </a>
+            <h2 id="debugging-begins">
+                <a href="#debugging-begins">Debugging begins</a>
+            </h2>
             <p>
 Step one when debugging an issue: figure out what changed.  I thought long and
 hard (harder than longer, I must admit) about it, but couldn't think of
@@ -74,9 +74,9 @@ servers:
 real    13m19.752s
 user    0m1.031s
 sys     0m0.184s</code></pre>
-            <a href="#on-the-server">
-                <h2 id="on-the-server">On the server</h2>
-            </a>
+            <h2 id="on-the-server">
+                <a href="#on-the-server">On the server</a>
+            </h2>
             <p>
 The three main servers affected by this issue (the ones I spend most time in)
 were our buildbot (i.e. continuous integration), staging and production
@@ -129,7 +129,7 @@ problem: something was preventing the connection from ending and each operation
 was waiting for the timeout to close the socket.  That would explain why
 closing the socket took so long.
             </p>
-            <a href="#the-mistakes"><h2 id="the-mistakes">The mistakes</h2></a>
+            <h2 id="the-mistakes"><a href="#the-mistakes">The mistakes</a></h2>
             <p>
 At this point, I realised my first mistake.  If you take a look at the strace
 output again, the remote end of the socket is *not* our server.  Take a look at
@@ -180,7 +180,7 @@ sys     0m0.057s</code></pre>
 Removing the extra index option eliminated the issue (and gave us a ~42x speed
 up, something you don't see everyday).
             </p>
-            <a href="#conclusion"><h2 id="conclusion">Conclusion</h2></a>
+            <h2 id="conclusion"><a href="#conclusion">Conclusion</a></h2>
             <p>
 So, what do we take out of this (unexpectedly long) story?  If you are using a
 local package server, don't use <i>--extra-index</i>.  I have no idea why pip
@@ -203,7 +203,7 @@ $ time pip install -Ur requirement.txt &> /dev/null
 real    0m1.125s
 user    0m0.947s
 sys     0m0.053s</code></pre>
-            <a href="#coda"><h2 id="coda">Coda</h2></a>
+            <h2 id="coda"><a href="#coda">Coda</a></h2>
             <p>
 Thank you for making it this far.  I hope this story was entertaining and
 hopefully it taught you a thing or two about investigation, debugging and
