@@ -106,9 +106,9 @@ value.  Then, all we have to do is call the function, passing the mocked
 argument, and check the return value.  After that, repeat the process, this
 time with a different return value.
             </p>
-            <a href="#that-was-the-easy-part">
-                <h2 id="that-was-the-easy-part">That was the easy part</h2>
-            </a>
+            <h2 id="that-was-the-easy-part">
+                <a href="#that-was-the-easy-part">That was the easy part</a>
+            </h2>
             <p>
 This first section was easy, nothing you couldn't find out with a quick search
 on the internet.  But the real world is not that pretty (at least mine isn't).
@@ -154,7 +154,7 @@ exception.  To see why, you can put a <i>print random.random</i> inside
 <i>f</i> and see that the mock didn't work.  To understand why, we have to dig
 a little deeper.
             </p>
-            <a href="#import"><h2 id="import">Import</h2></a>
+            <h2 id="import"><a href="#import">Import</a></h2>
             <p>
 What happens when you run <i>import random</i>? You can watch
 <a href="http://pyvideo.org/video/1707/how-import-works">this video</a> to know
@@ -192,7 +192,7 @@ You can run that many times if you don't trust me, but that will always
 succeed.  And it does because we now are changing the correct namespace.  You
 can check it by putting a <i>print(random.random)</i> on <i>f</i> again.
             </p>
-            <a href="#being-nice"><h2 id="being-nice">Being nice</h2></a>
+            <h2 id="being-nice"><a href="#being-nice">Being nice</a></h2>
             <p>
 Now you know how to mock, but there is something I must say before you leave.
 Always, always, ALWAYS restore any mock you do.  Seriously.  Even if you're
@@ -214,7 +214,7 @@ Now you have no excuse.  Better yet, you can use another feature of the
 <i>mock</i> library called <i>patch</i>.  But that would be an extension to an
 already long post.  Maybe I'll cover it in the future.  Anyway, happy mocking!
             </p>
-            <a href="#notes"><h2 id="notes">Notes</h2></a>
+            <h2 id="notes"><a href="#notes">Notes</a></h2>
             <ol>
                 <li id="note1">
                     <p>

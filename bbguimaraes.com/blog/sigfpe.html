@@ -77,11 +77,11 @@ and spread quickly <em>without generating an easily identifiable error</em>.
 The result is spectacular, but not ideal if one wants a stable simulation:
             </p>
             <img src="/files/blog/sigfpe.gif"/>
-            <a href="#enter-sigfpe">
-                <h2 id="enter-sigfpe">
+            <h2 id="enter-sigfpe">
+                <a href="#enter-sigfpe">
                     Enter <code> SIGFPE</code>
-                </h2>
-            </a>
+                </a>
+            </h2>
             <p>
 POSIX platforms have a special signal for arithmetic operation errors:
 <code>SIGFPE</code> (short for "floating-point exception").  If integer
@@ -131,7 +131,7 @@ and SSE modes are very simple, v. the
     __asm__ ("ldmxcsr %0" : : "m" (*&new));
     return old_exc;
 }</code></pre>
-            <a href="#bonus"><h2 id="bonus">Bonus</h2></a>
+            <h2 id="bonus"><a href="#bonus">Bonus</a></h2>
             <p>
 For bonus points, this can be put in a shared library so that FPE signals can
 be enabled dynamically by either loading or <code>LD_PRELOAD</code>ing the
