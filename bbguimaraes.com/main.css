@@ -72,15 +72,27 @@ a:visited {
 }
 
 #page-nav {
+    height: 32px;
+    line-height: 32px;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
 }
 
+#page-nav img {
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
 #page-nav #logo {
-    display: inline;
-    margin: -10px;
+    margin-right: -0.5em;
     width: 32px;
     height: 32px;
+}
+
+#page-nav #rss-icon {
+    float: right;
 }
 
 .blog {
