@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>machinatrix</title>
+        <link rel="stylesheet" type="text/css" href="../main.css" />
+        <link rel="stylesheet" type="text/css" href="machinatrix.css" />
+    </head>
+    <body>
+        <main>
+            <nav id="page-nav">
+                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                /
+                machinatrix
+            </nav>
+            <h1>machinatrix</h1>
+            <div class="description">
+                <p>
+                    A very silly <a href="https://matrix.org">Matrix</a> bot
+                    written in C.
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://gitlab.bbguimaraes.com/bbguimaraes/machinatrix.git">source</a>
+                    </li>
+                    <li>
+                        <a href="docs/">documentation</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="example">
+                <pre><code>$ ./machinatrix_matrix \
+    --server matrix.example.com \
+    --user @machinatrix:matrix.example.com \
+    --token /path/to/token_file</code></pre>
+                <br />
+                <pre><code>$ ./machinatrix bard
+Thy sin’s not accidental, but a trade.
+-- Measure For Measure (Act 3, Scene 1)
+$ ./machinatrix wikt robot | head -2 | fmt -w 40
+English
+  Borrowed from Czech robot,
+  from robota (“drudgery,
+  servitude”). Coined in the 1921
+  science-fiction play R.U.R. (Rossum's
+  Universal Robots) by Karel Čapek
+  after having been suggested to him
+  by his brother Josef, and taken into
+  English without change.</code></pre>
+            </div>
+        </main>
+    </body>
+</html>
