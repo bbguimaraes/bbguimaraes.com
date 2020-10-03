@@ -20,7 +20,6 @@ a:visited {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 #home nav {
@@ -95,8 +94,8 @@ a:visited {
     float: right;
 }
 
-.blog {
-    max-width: 79ch;
+.w80 {
+    max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
 }
