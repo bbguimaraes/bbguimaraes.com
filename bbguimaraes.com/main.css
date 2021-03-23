@@ -5,11 +5,11 @@ body {
 }
 
 body, a {
-    color: green;
+    color: #a0a0a0;
 }
 
 a:visited {
-    color: darkgreen;
+    color: #606060;
 }
 
 pre {
@@ -106,7 +106,7 @@ pre {
 }
 
 .blog aside {
-    border: 1px solid darkgreen;
+    border: 1px solid #a0a0a0;
     margin-bottom: 1em;
     margin-top: 1em;
     padding-left: 1em;
