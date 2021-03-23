@@ -120,6 +120,24 @@ a:visited {
     padding: 1em;
 }
 
+.blog .img-group {
+    text-align: center;
+}
+
+.blog .img-group a {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+.blog .img-group img {
+    max-width: 100%;
+    margin: 1em auto;
+}
+
+.blog .img-group2 a:not(:last-child) {
+    margin-right: 8em;
+}
+
 .blog pre {
     margin-left: 2em;
     margin-right: 2em;
