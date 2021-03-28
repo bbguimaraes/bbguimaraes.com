@@ -64,6 +64,7 @@ text box with the result (I heard you like interpreters…).  It is similar in
 function to the command-line <code>lua</code> interpreter that might be found in
 your operating system.
             </p>
+            <a class="src-ref" data-hash="70e07d44a42c3810195c05cc90fc6fd692544f1d" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/repl.lua">demos/repl.lua</a>
             <img
                 src="/files/blog/lua_wasm_demo0.png"
                 title="Lua Wasm demo - write some lua code and press enter"
@@ -130,11 +131,11 @@ to its tool chain, so the
 in the repository can be used almost unmodified.
             </p>
             <p>
-<a href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/scripts/emscripten/build.sh">Here</a>
-is the script that is used in my builds, which is executed once, before the
-final <code>make</code> call.  Other than downloading and extracting the source
-code, its only significant actions are:
+A script is used in my builds, which is executed once, before the final
+<code>make</code> call.  Other than downloading and extracting the source code,
+its only significant actions are:
             </p>
+            <a class="src-ref" data-hash="a079068db60c13c975173c7c8c4453534bcf8799" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/scripts/emscripten/build.sh">scripts/emscripten/build.sh</a>
             <pre><code>patch -Np0 < "$PATCHES_DIR/lua.patch"
 pushd src/
 emmake make generic ALL=liblua.a</code></pre>
@@ -168,9 +169,9 @@ analogous for any other build system.
             </p>
             <p>
 Because of how <code>emscripten</code> builds work, this is also the step where
-Lua libraries and scripts (all regular source code text files) are included
-(<a href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/Makefile.am">source</a>):
+Lua libraries and scripts (all regular source code text files) are included:
             </p>
+            <a class="src-ref" data-hash="72a7757b61fcc5f4d81137de337ee769ad9bce7f" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/Makefile.am">Makefile.am</a>
             <pre><code>nngn_js_LDFLAGS= \
 	$(nngn_js_CXXFLAGS) -O3 --source-map-base / \
 	--embed-file $(srcdir)/src/lua/@src/lua \
@@ -192,9 +193,9 @@ exposed to Javascript and, by extension, the browser console:
 <a href="https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html">communication</a>
 between Javascript and the application.  The simplest form is via
 <code>ccall</code> and <code>cwrap</code>, which directly expose C functions.  A
-simple C entry point is included in the program
-(<a href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/main.cpp">source</a>):
+simple C entry point is included in the program:
             </p>
+            <a class="src-ref" data-hash="eb9fcddd4fd6c1c73cd10384fb3f800e0ff6799a" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/main.cpp">src/main.cpp</a>
             <pre><code>#ifdef NNGN_PLATFORM_EMSCRIPTEN
 extern "C" {
 void lua(const char *s) { NNGN_LOG_CONTEXT_F(); p_nngn->lua.dostring(s); }
@@ -221,6 +222,7 @@ member is the object that wraps the <code>lua_State*</code>.
             <p>
 This function is then exposed as described in the documentation linked above:
             </p>
+            <a class="src-ref" data-hash="72a7757b61fcc5f4d81137de337ee769ad9bce7f" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/Makefile.am">Makefile.am</a>
             <pre><code>nngn_js_CXXFLAGS = \
 	$(AM_CXXFLAGS) \
 	… \

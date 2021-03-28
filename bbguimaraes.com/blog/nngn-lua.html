@@ -87,28 +87,28 @@ map is a script (it is the default value for <code>argv</code>).  Its only
 statements are <code>dofile</code>s (Lua's version of <code>#include</code> or
 <code>import</code>) which load and execute separate, specialized scripts:
             </p>
-            <pre><code>-- src/lua/all.lua
-dofile "src/lua/init.lua"
+            <a class="src-ref" data-hash="40833fe56c2306e2df2a52289bc7ee7678155107" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/all.lua">src/lua/all.lua</a>
+            <pre><code>dofile "src/lua/init.lua"
 dofile "src/lua/limits.lua"
 dofile "src/lua/main.lua"
 dofile "maps/main.lua"</code></pre>
             <p>
 Each of these in turn is composed of lower-level pieces:
             </p>
-            <pre><code>-- src/lua/init.lua
-dofile "src/lua/path.lua"
+            <a class="src-ref" data-hash="abed4e12a019e62bd9aa9423b77bf8347af31f34" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/init.lua">src/lua/init.lua</a>
+            <pre><code>dofile "src/lua/path.lua"
 require("nngn.lib.compute").init()
 require("nngn.lib.graphics").init()
 require("nngn.lib.collision").init()
 nngn.socket:init("sock")</code></pre>
-            <pre><code>-- src/lua/limits.lua
-nngn.entities:set_max(1 << 20)
+            <a class="src-ref" data-hash="cf0b3a65506344cc77a1e1facda3e19dd725d251" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/limits.lua">src/lua/limits.lua</a>
+            <pre><code>nngn.entities:set_max(1 << 20)
 nngn.animations:set_max(1 << 16)
 nngn.graphics:resize_textures(16)
 nngn.textures:set_max(16)
 -- …</code></pre>
-            <pre><code>-- src/lua/main.lua
-local camera = require "nngn.lib.camera"
+            <a class="src-ref" data-hash="ab5bf80d6445868ec241e4c8418148611454f61b" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/main.lua">src/lua/main.lua</a>
+            <pre><code>local camera = require "nngn.lib.camera"
 local entity = require "nngn.lib.entity"
 local font = require "nngn.lib.font"
 local map = require "nngn.lib.map"
@@ -131,8 +131,8 @@ default configuration for separate parts of the engine (keyboard bindings,
 camera placement, default parameters for the various sub-systems, etc.) by
 loading the appropriate script:
             </p>
-            <pre><code>-- demos/demo.lua
-dofile "src/lua/init.lua"
+            <a class="src-ref" data-hash="5d48b238abaf1199562d6ca443b6b06059a46ae7" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/demo1.lua">demos/demo1.lua</a>
+            <pre><code>dofile "src/lua/init.lua"
 dofile "src/lua/limits.lua"
 dofile "src/lua/main.lua"
 -- …
@@ -169,8 +169,8 @@ input.input:add(
 Benchmarks are scripts that set up the engine in a similar manner and either
 leave the test running or run it for a while and dump the results:
             </p>
-            <pre><code>-- demos/colliders.lua
-dofile "src/lua/path.lua"
+            <a class="src-ref" data-hash="61ffd3ae17460d5a86acb66b874eb2800d69d015" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/colliders.lua">demos/colliders.lua</a>
+            <pre><code>dofile "src/lua/path.lua"
 local entity = require "nngn.lib.entity"
 local player = require "nngn.lib.player"
 require "src/lua/input"
@@ -194,8 +194,8 @@ end
 Integration tests are scripts that set up the engine, exercise some part of it
 via the Lua interface, and check the results:
             </p>
-            <pre><code>-- demos/cl/vector.lua
-dofile "src/lua/path.lua"
+            <a class="src-ref" data-hash="0f59333d712f00d2a80554ed1e2c5f24129deafa" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/cl/vector.lua">demos/cl/vector.lua</a>
+            <pre><code>dofile "src/lua/path.lua"
 local common = require "demos/cl/common"
 
 nngn:set_compute(Compute.OPENCL_BACKEND, Compute.opencl_params{debug = true})
@@ -333,8 +333,8 @@ These are simply scripts that contain only static data, mostly in the form of
 tables (Lua's primary data structure).  All these scripts do is
 <code>return</code> the data:
             </p>
-            <pre><code>-- src/lson/crono.lua
-return {
+            <a class="src-ref" data-hash="252e3b7b9381cf2520181d6d1952231b2b623518" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lson/crono.lua">src/lson/crono.lua</a>
+            <pre><code>return {
     name = "crono",
     collider = {type = Collider.AABB, bb = {-8, -16, 8, -8}},
     renderer = {
@@ -390,8 +390,8 @@ While the manner in which the file is processed is necessarily imperative (it
 is simply loaded and executed), several utility functions make the contents
 mostly declarative:
             </p>
-            <pre><code>-- maps/zelda.lua
--- …
+            <a class="src-ref" data-hash="5b3f64156cc41a6402b270291ce55242d63d60ee" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/maps/zelda.lua">maps/zelda.lua</a>
+            <pre><code>-- …
 local entities, animations = {}, {}
 -- …
 local function init() -- …

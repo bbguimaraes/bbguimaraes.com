@@ -143,9 +143,13 @@ pre {
     margin-right: 8em;
 }
 
-.blog pre {
+.blog pre, .blog .src-ref {
     margin-left: 2em;
     margin-right: 2em;
+}
+
+.blog .src-ref {
+    font-style: italic;
 }
 
 .blog :not(pre) code {
