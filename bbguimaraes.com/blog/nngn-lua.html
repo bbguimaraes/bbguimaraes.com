@@ -98,10 +98,13 @@ Each of these in turn is composed of lower-level pieces:
             <pre><code>-- src/lua/init.lua
 dofile "src/lua/path.lua"
 require("nngn.lib.compute").init()
-require("nngn.lib.graphics").init()</code></pre>
+require("nngn.lib.graphics").init()
+require("nngn.lib.collision").init()
+nngn.socket:init("sock")</code></pre>
             <pre><code>-- src/lua/limits.lua
-nngn.entities:set_max(1 &lt;&lt; 20)
-nngn.animations:set_max(1 &lt;&lt; 16)
+nngn.entities:set_max(1 << 20)
+nngn.animations:set_max(1 << 16)
+nngn.graphics:resize_textures(16)
 nngn.textures:set_max(16)
 -- …</code></pre>
             <pre><code>-- src/lua/main.lua
@@ -117,7 +120,7 @@ player.set{
     "src/lson/crono.lua", "src/lson/link.lua", "src/lson/link_sh.lua",
     "src/lson/fairy0.lua", "src/lson/chocobo.lua", "src/lson/null.lua"}
 nngn:load_texture()
-font.load(32, "DejaVuSans.ttf")
+font.load(32)
 nngn.grid:set_dimensions(32.0, 64)</code></pre>
             <h3 id="demos"><a href="#demos">demos</a></h3>
             <p>
@@ -132,22 +135,22 @@ loading the appropriate script:
 dofile "src/lua/init.lua"
 dofile "src/lua/limits.lua"
 dofile "src/lua/main.lua"
+-- …
+DEMO = {i = 1, stages = {}, data = {}}
 
-DEMO = {
+function DEMO:add_stage(text, f)
     -- …
-    add_stage = function(self, text, f)
-        -- …
-        table.insert(self.stages, {text, f})
-    end,
-    next = function(self)
-        local i, stages = self.i, self.stages
-        if i > #stages then return end
-        local text, f = table.unpack(stages[i])
-        if f then f() end
-        textbox.update("nngn", text)
-        self.i = i + 1
-    end,
-}
+    table.insert(self.stages, {text, f})
+end
+
+function DEMO:next()
+    local i, stages = self.i, self.stages
+    if i > #stages then return end
+    local text, f = table.unpack(stages[i])
+    if f then f() end
+    textbox.update("nngn", text)
+    self.i = i + 1
+end
 -- …
 DEMO:add_stage([[
 The engine has dynamic lighting. At the
@@ -157,8 +160,8 @@ moment, only a dim ambient light exists.]],
         nngn.lighting:set_shadows_enabled(false)
     end)
 -- …
-nngn.input:register_binding(
-    Input.ENTER, Input.BIND_PRESS,
+input.input:add(
+    Input.KEY_ENTER, Input.SEL_PRESS,
     function() DEMO:next() end)
 -- …</code></pre>
             <h3 id="benchmarks"><a href="#benchmarks">benchmarks</a></h3>
@@ -197,8 +200,9 @@ local common = require "demos/cl/common"
 
 nngn:set_compute(Compute.OPENCL_BACKEND, Compute.opencl_params{debug = true})
 
-local prog = nngn.compute:create_program(
-    io.open("demos/cl/vector.cl"):read("a"), "-Werror")
+local prog = assert(
+    nngn.compute:create_program(
+        io.open("demos/cl/vector.cl"):read("a"), "-Werror"))
 -- …
 local function test_add_numbers()
     print("add_numbers:")
@@ -388,11 +392,11 @@ mostly declarative:
             </p>
             <pre><code>-- maps/zelda.lua
 -- …
-local entities = {}
+local entities, animations = {}, {}
 -- …
 local function init() -- …
 local function heartbeat() -- …
-local function on_collision(e0, e1, v) -- …
+local function on_collision(e0, e1) -- …
 -- …
 map.map {
     name = "zelda",
