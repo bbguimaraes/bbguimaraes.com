@@ -1,4 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rss [
+<!ELEMENT rss (channel)>
+<!ELEMENT channel (title, link, atom:link, description, language, pubDate, lastBuildDate, docs, generator, item*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT atom:link EMPTY>
+<!ELEMENT description ANY>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT pubDate (#PCDATA)>
+<!ELEMENT lastBuildDate (#PCDATA)>
+<!ELEMENT docs (#PCDATA)>
+<!ELEMENT generator (#PCDATA)>
+<!ELEMENT guid (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT item (title, link, guid, pubDate, category+, description)>
+<!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
+<!ATTLIST atom:link href CDATA #REQUIRED rel CDATA #REQUIRED type CDATA #REQUIRED>
+<!ATTLIST a href CDATA #REQUIRED>
+]>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>iffalse</title>
@@ -222,6 +242,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <category>shell</category>
             <category>linux</category>
             <category>raspberry pi</category>
+            <description />
         </item>
         <item>
             <title>python mocking</title>
@@ -285,6 +306,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <pubDate>Fri, 21 Dec 2012 10:48:00 GMT</pubDate>
             <category>shell</category>
             <category>linux</category>
+            <description />
         </item>
         <item>
             <title>Hiding text in LaTeX</title>
@@ -350,6 +372,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <category>hello world</category>
             <category>assembly</category>
             <category>vim</category>
+            <description />
         </item>
     </channel>
 </rss>
