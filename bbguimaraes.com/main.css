@@ -16,6 +16,10 @@ pre {
     overflow: auto;
 }
 
+figcaption {
+    text-align: center;
+}
+
 #home {
     text-align: center;
 }

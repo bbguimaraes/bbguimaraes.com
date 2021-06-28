@@ -25,9 +25,14 @@ main {
     padding-right: 2em;
 }
 
+.screenshots figure {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+}
+
 .screenshots img {
-    display: block;
     width: 100%;
     max-width: 800px;
-    margin: 2em auto;
+    padding: 1em;
 }
