@@ -31,7 +31,7 @@ main {
     margin-top: 2em;
 }
 
-.screenshots img {
+.screenshots img, .screenshots video {
     width: 100%;
     max-width: 800px;
     padding: 1em;
