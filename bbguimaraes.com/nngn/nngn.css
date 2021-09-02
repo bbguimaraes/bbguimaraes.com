@@ -18,6 +18,12 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+.main-video video:not(:first-child) {
+    padding-top: 2em;
 }
 
 .screenshots {
