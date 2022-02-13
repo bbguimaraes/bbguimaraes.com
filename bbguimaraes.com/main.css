@@ -109,6 +109,15 @@ figcaption {
     margin-right: auto;
 }
 
+.small-video {
+    max-width: 400px;
+    max-height: 300px;
+    padding: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .blog aside {
     border: 1px solid #a0a0a0;
     margin-bottom: 1em;
