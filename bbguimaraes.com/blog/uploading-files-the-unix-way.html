@@ -73,7 +73,7 @@ Fair enough.  But this is a file opened in vim[<a href="#note2">2</a>].  After
 a little thinking (which lasted for approximately 423ms), this is what I did.
 From inside vim, I executed the following command:
             </p>
-            <pre><code>:!ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt' &</code></pre>
+            <pre><code>:!ssh raspberrypi <b>'nc -l 31415 > /srv/http/sufle.txt'</b> &</code></pre>
             <p>
 Which launched an ssh client connecting to my webserver[<a href="#note3">3</a>]
 running the netcat command.  If you are not familiar with netcat, think of it
@@ -116,7 +116,7 @@ But what is that funny file starting with <i>/dev/tcp/</i>? That is feature of
 bash (I don't know about other shells). You can read about using the command[<a
 href="#note6">6</a>]:
             </p>
-            <pre><code>$ man -P 'less -p /dev/tcp' bash</code></pre>
+            <pre><code>$ man -P <b>'less -p /dev/tcp'</b> bash</code></pre>
             <p>
 What we are doing here is telling bash to write the data coming from cat's
 output to port 31415 on the host raspberrypi. Remember our little ssh friend we
@@ -149,8 +149,8 @@ lot* more things going on behind the scenes here[<a href="#note11">11</a>].
 But if you step back, you will realize that all that was needed were two
 commands:
             </p>
-            <pre><code>ssh raspberrypi 'nc -l 31415 > /srv/http/sufle.txt'
-cat > /dev/tcp/raspberrypi/31415</code></pre>
+            <pre><code>ssh raspberrypi <b>'nc -l 31415 &gt; /srv/http/sufle.txt'</b>
+cat &gt; /dev/tcp/raspberrypi/31415</code></pre>
             <p>
 What I'm trying to present here is the incredible complexity and richness that
 can be achieved by using shell commands and unix concepts like input and output

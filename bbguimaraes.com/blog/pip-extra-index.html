@@ -145,14 +145,14 @@ There should be no other servers involved, since we explicitly told pip to
 fetch packages from our own server.  So I thought: what other server could be
 involved here?  So I took a guess:
             </p>
-            <pre><code>$ dig pypi.python.org | grep -A 2 'ANSWER SECTION'
+            <pre><code>$ dig pypi.python.org | grep -A <b>2</b> <b>'ANSWER SECTION'</b>
 ;; ANSWER SECTION:
 pypi.python.org.        52156   IN      CNAME   python.map.fastly.net.
 python.map.fastly.net.  30      IN      A       23.235.46.223</code></pre>
             <p>
 Damn... Wait!
             </p>
-            <pre><code>$ dig pypi.python.org | grep -A 2 'ANSWER SECTION'
+            <pre><code>$ dig pypi.python.org | grep -A <b>2</b> <b>'ANSWER SECTION'</b>
 ;; ANSWER SECTION:
 pypi.python.org.        3575    IN      CNAME   python.map.fastly.net.
 python.map.fastly.net.  7       IN      A       23.235.39.223</code></pre>
@@ -175,7 +175,7 @@ our suspicion:
 real    0m42.981s
 user    0m3.720s
 sys     0m0.070s
-$ sed -ie 's/^--extra-index/#&/' requirements.txt
+$ sed -ie <b>'s/^--extra-index/#&amp;/'</b> requirements.txt
 $ time pip install -Ur requirement.txt &> /dev/null
 real    0m1.049s
 user    0m0.853s
@@ -202,7 +202,7 @@ the operation considerably:
 real    0m46.816s
 user    0m3.853s
 sys     0m0.130s
-$ sed -ie 's/^--extra-index/#&/' requirements.txt
+$ sed -ie <b>'s/^--extra-index/#&amp;/'</b> requirements.txt
 $ time pip install -Ur requirement.txt &> /dev/null
 real    0m1.125s
 user    0m0.947s

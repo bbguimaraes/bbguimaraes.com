@@ -136,7 +136,7 @@ A script is used in my builds, which is executed once, before the final
 its only significant actions are:
             </p>
             <a class="src-ref" data-hash="a079068db60c13c975173c7c8c4453534bcf8799" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/scripts/emscripten/build.sh">scripts/emscripten/build.sh</a>
-            <pre><code>patch -Np0 < "$PATCHES_DIR/lua.patch"
+            <pre><code>patch -Np0 < <b>"$PATCHES_DIR/lua.patch"</b>
 pushd src/
 emmake make generic ALL=liblua.a</code></pre>
             <p>
@@ -172,11 +172,11 @@ Because of how <code>emscripten</code> builds work, this is also the step where
 Lua libraries and scripts (all regular source code text files) are included:
             </p>
             <a class="src-ref" data-hash="72a7757b61fcc5f4d81137de337ee769ad9bce7f" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/Makefile.am">Makefile.am</a>
-            <pre><code>nngn_js_LDFLAGS= \
-	$(nngn_js_CXXFLAGS) -O3 --source-map-base / \
+            <pre><code><b>nngn_js_LDFLAGS</b> = \
+	<b>$(nngn_js_CXXFLAGS)</b> -O3 --source-map-base / \
 	--embed-file $(srcdir)/src/lua/@src/lua \
 	--embed-file $(srcdir)/src/lson/@src/lson \
-	# …</code></pre>
+    <i># …</i></code></pre>
             <h2 id="bonus">
                 <a href="bonus">bonus: console REPL</a>
             </h2>
@@ -196,11 +196,11 @@ between Javascript and the application.  The simplest form is via
 simple C entry point is included in the program:
             </p>
             <a class="src-ref" data-hash="eb9fcddd4fd6c1c73cd10384fb3f800e0ff6799a" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/main.cpp">src/main.cpp</a>
-            <pre><code>#ifdef NNGN_PLATFORM_EMSCRIPTEN
-extern "C" {
-void lua(const char *s) { NNGN_LOG_CONTEXT_F(); p_nngn->lua.dostring(s); }
+            <pre><code><b>#ifdef</b> NNGN_PLATFORM_EMSCRIPTEN
+<b>extern</b> <b>"C"</b> {
+<b>void</b> lua(<b>const</b> <b>char</b> *s) { NNGN_LOG_CONTEXT_F(); p_nngn->lua.dostring(s); }
 }
-#endif</code></pre>
+<b>#endif</b></code></pre>
             <aside>
                 <p>For completeness:</p>
                 <ul>
@@ -223,11 +223,11 @@ member is the object that wraps the <code>lua_State*</code>.
 This function is then exposed as described in the documentation linked above:
             </p>
             <a class="src-ref" data-hash="72a7757b61fcc5f4d81137de337ee769ad9bce7f" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/Makefile.am">Makefile.am</a>
-            <pre><code>nngn_js_CXXFLAGS = \
-	$(AM_CXXFLAGS) \
+            <pre><code><b>nngn_js_CXXFLAGS</b> = \
+    <b>$(AM_CXXFLAGS)</b> \
 	… \
-	-s EXPORTED_FUNCTIONS='["_main","_lua"]' \
-	-s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall","cwrap"]' \
+	-s EXPORTED_FUNCTIONS=<b>'["_main","_lua"]'</b> \
+	-s EXTRA_EXPORTED_RUNTIME_METHODS=<b>'["ccall","cwrap"]'</b> \
 	…</code></pre>
             <p>
 And that is it!  We now have an application compiled to WebAssembly that has a

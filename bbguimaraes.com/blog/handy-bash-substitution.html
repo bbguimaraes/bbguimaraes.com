@@ -35,12 +35,12 @@ Let's start with a really common operation.  You download a tarball, extract,
             <pre><code>$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
 $ tar -xjf linux-3.7.9.tar.bz2
 $ cd linux-3.7.9
-$ bob's your uncle</code></pre>
+$ <i># bob's your uncle</i></code></pre>
             <p>Using the <i>Tab</i> key, you can save a lot of typing:</p>
             <pre><code>$ wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.7.9.tar.bz2
-$ tar -xjf l&lt;TAB&gt;
-$ cd l&lt;TAB&gt;
-$ bob's your uncle</code></pre>
+$ tar -xjf l<i>&lt;TAB&gt;</i>
+$ cd l<i>&lt;TAB&gt;</i>
+$ <i># bob's your uncle</i></code></pre>
             <p>
 However, this is highly dependent on the contents of your directory, names in
 your path and auto-complete configurations.
@@ -62,18 +62,18 @@ alternatives: bash (get it?) has a nice feature called substitutions.  You may
 have come across it before if you ever tried to add an unescaped exclamation
 mark (henceforth mentioned using the niftier name "bang"):
             </p>
-            <pre><code>$ echo "Bang!"
+            <pre><code>$ <b>echo</b> <b>"Bang!"</b>
 bash: !": event not found</code></pre>
             <p>Or got surprised by it:</p>
-            <pre><code>$ echo "balrog:!you shall not pass:/nonexistent:/bin/false" >> /etc/passwd
-echo "balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false" >> /tmp/test
+            <pre><code>$ echo <b>"balrog:!you shall not pass:/nonexistent:/bin/false"</b> &gt;&gt; /etc/passwd
+<b>echo</b> "balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false" &gt;&gt; /tmp/test
 $ sleep 3d; grep balrog /etc/passwd
 balrog:youtube-dl http://www.youtube.com/watch?v=pLgJ7pk0X-s shall not pass:/nonexistent:/bin/false</code></pre>
             <p>
 That is because the bang is used to reference previous commands.  The simplest
 is substitution of the last command:
             </p>
-            <pre><code>$ echo billy
+            <pre><code>$ <b>echo</b> billy
 billy
 $ !!
 echo billy
@@ -113,21 +113,21 @@ cat $(cat my_files)
 contents_of_file1
 contents_of_file2
 contents_of_file3
-$ perl -e 'bang your head on the keyboard'
+$ perl -e <b>'bang your head on the keyboard'</b>
 # god only knows
-$ echo "!!" > file_to_save_command
-$ # This could be done by clever use of Ctrl-x Ctrl-e, but
-$ # sometimes you're in a hurry. That's alright, as long as
-$ # you <a href="http://tldp.org/LDP/abs/html/escapingsection.html">do it carefully</a>.</code></pre>
+$ <b>echo</b> <b>"!!"</b> &gt; file_to_save_command
+$ <i># This could be done by clever use of Ctrl-x Ctrl-e, but</i>
+$ <i># sometimes you're in a hurry. That's alright, as long as</i>
+$ <i># you <a href="http://tldp.org/LDP/abs/html/escapingsection.html">do it carefully</a>.</i></code></pre>
             <p>
 When <i>!</i> is followed by a number <i>n</i>, it executes the <i>n</i>th
 command in the history (which you can check with the <i>history</i> command).
 More useful, though, is that, if <i>n</i> is negative, it will execute the last
 <i>n</i>th command:
             </p>
-            <pre><code>$ echo some
+            <pre><code>$ <b>echo</b> some
 some
-$ echo thing
+$ <b>echo</b> thing
 thing
 $ !-2
 echo some
@@ -145,22 +145,22 @@ scenario:
             </p>
             <pre><code>$ ls ef
 son daughter dog
-$ # oh my, ef is a directory
-$ cd ef</code></pre>
+$ <i># oh my, ef is a directory</i>
+$ <b>cd</b> ef</code></pre>
             <p>or how about:</p>
             <pre><code>$ mv some_directory a_different_name_for_some_directory
-$ cd a_different_name_for_some_directory</code></pre>
+$ <b>cd</b> a_different_name_for_some_directory</code></pre>
             <p>
 It is very common to address the same file on multiple, successive commands.
 You can, again, save some typing:
             </p>
             <pre><code>$ ls ef
 son daughter dog
-$ # oh my, ef is a directory
-$ cd !$
+$ <i># oh my, ef is a directory</i>
+$ <b>cd</b> !$
 cd ef
 $ mv some_directory a_different_name_for_some_directory
-$ cd !$
+$ <b>cd</b> !$
 cd some_directory a_different_name_for_some_directory</code></pre>
             <p>
 As you can see, <i>!$</i> is substituted by the last argument of the last
@@ -184,7 +184,7 @@ them in a different order, or some non-contiguous arguments, just use more than
 one substitution:
             </p>
             <pre><code>$ diff ours theirs
-$ # gah
+$ <i># gah</i>
 $ diff !:2 !:1
 diff theirs ours</code></pre>
             <p>
@@ -223,23 +223,23 @@ If you ever got stabbed by not knowing how the bang works (like the examples I
 showed in the beginning), you can avoid getting stabbed again by escaping the
 bangs, either with a backslash or single quotes:
                     </p>
-                    <pre><code>$ echo Bang\!
+                    <pre><code>$ <b>echo</b> Bang\!
 Bang!
-$ echo 'balrog:!you shall not pass:/nonexistent:/bin/false' >> /etc/passwd</code></pre>
+$ <b>echo</b> <b>'balrog:!you shall not pass:/nonexistent:/bin/false'</b> &gt;&gt; /etc/passwd</code></pre>
                 </li>
                 <li>
                     <p>
 More of a side note, but to get that humongous file name, I discovered a new
 (string of) command(s) to get the longest line from a text.
                     </p>
-                    <pre><code>$ find /sys/ | awk '{print length, $0;}' | sort -nr | head -n 1</code></pre>
+                    <pre><code>$ find /sys/ | awk <b>'{print length, $0;}'</b> | sort -nr | head -n 1</code></pre>
                     <p>
 You can probably do the same thing (although it might be a little slower) using
 a while loop and another bash trick: while <i>$variable</i> (or
 <i>${variable}</i>) will give you the contents of a variable,
 <i>${#variable}</i> will give you the length of that content.
                     </p>
-                    <pre><code>$ find /sys/ | while read i; do echo "${#i} $i" | sort -nr | head -n 1</code></pre>
+                    <pre><code>$ find /sys/ | <b>while</b> <b>read</b> i; <b>do</b> <b>echo</b> <b>"${#i} $i"</b>; <b>done</b> | sort -nr | head -n 1</code></pre>
                     <p>
 Apparently, Jethro Tull's Too Old to Rock 'n' Roll, Too Old to Die generates
 pretty long file names (the title song is the second only to a really long

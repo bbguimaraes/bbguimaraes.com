@@ -35,17 +35,17 @@ Mocking simply means replacing an object with another.  This is usually done to
 avoid instantiating costly systems or to change the behaviour of a system.  To
 begin with a simple example:
             </p>
-            <pre><code>def some_function_in_your_code(a):
-    if a.do_something():
-        return 3.14159
-    else:
-        return 6.26318
+            <pre><code><b>def</b> some_function_in_your_code(a):
+    <b>if</b> a.do_something():
+        <b>return</b> <b>3.14159</b>
+    <b>else</b>:
+        <b>return</b> <b>6.26318</b>
 
-def some_other_function_in_your_code():
-    # ...
+<b>def</b> some_other_function_in_your_code():
+    #<i> ...</i>
     a = create_complicated_object(*thousand_parameters)
     result = some_other_function_in_your_code(a)
-    # ...</code></pre>
+    <i># ...</i></code></pre>
             <p>
 Here we have a function <i>some_other_function_in_your_code</i> that uses an
 object. Somewhere else in your code, <i>some_other_function_in_your_code</i>
@@ -67,15 +67,15 @@ important for this discussion.  First, every time you access an attribute of a
 <i>Mock</i> object, another <i>Mock</i> object is created and assigned to the
 attribute being accessed.
             </p>
-            <pre><code>>>> import mock
->>> m = mock.Mock()
->>> print(m)
+            <pre><code>&gt;&gt;&gt; <b>import</b> mock
+&gt;&gt;&gt; m = mock.Mock()
+&gt;&gt;&gt; <b>print</b>(m)
 &lt;Mock id='140095453080976'&gt;
->>> print(id(m.some_attribute))
+&gt;&gt;&gt; <b>print</b>(<b>id</b>(m.some_attribute))
 140095453131664
->>> print(m.some_attribute)
+&gt;&gt;&gt; <b>print</b>(m.some_attribute)
 &lt;Mock name='mock.some_attribute' id='140095453131664'&gt;
->>> print(id(m.some_attribute))
+&gt;&gt;&gt; <b>print</b>(<b>id</b>(m.some_attribute))
 140095453131664</code></pre>
             <p>
 As you can see, when we tried to access some_attribute, a <i>Mock</i> object
@@ -86,22 +86,22 @@ The other feature of <i>Mock</i> objects is the <i>return_value</i> attribute.
 Whatever is contained in this attribute gets returned when the object is called
 as a function object[<a href="#note2">2</a>].
             </p>
-            <pre><code>>>> import mock
->>> m = mock.Mock()
->>> m.return_value = u'the return value'
->>> m()
+            <pre><code>&gt;&gt;&gt; <b>import</b> mock
+&gt;&gt;&gt; m = mock.Mock()
+&gt;&gt;&gt; m.return_value = <b>u'the return value'</b>
+&gt;&gt;&gt; m()
 u'the return value'</code></pre>
             <p>Using this two techniques, we can now test our function:</p>
-            <pre><code>import mock
+            <pre><code><b>import</b> mock
 
-def your_test():
+<b>def</b> your_test():
     a = mock.Mock()
     a.do_something.return_value = True
-    if some_function_in_your_code(a) != 3.14159:
-        raise Exception(u'return wasn't 3.14159.')
-    a.return_value = False
-    if some_function_in_your_code(a) != 6.28318:
-        raise Exception(u'return wasn't 6.28318.')</code></pre>
+    <b>if</b> some_function_in_your_code(a) != <b>3.14159</b>:
+        <b>raise</b> <b>Exception</b>(<b>u'return wasn't 3.14159.'</b>)
+    a.return_value = <b>False</b>
+    <b>if</b> some_function_in_your_code(a) != <b>6.28318</b>:
+        <b>raise</b> <b>Exception</b>(<b>u'return wasn't 6.28318.'</b>)</code></pre>
             <p>
 Let's break that down.  We first create a <i>Mock</i> object to represent the
 argument passed to the function.  The next line takes care of the two things we
@@ -120,14 +120,14 @@ The trickiest situation is when you have to change the behaviour of something
 inside a function, but you don't <i>pass</i> that something as an argument.
 Suppose we have this:
             </p>
-            <pre><code># some_file.py
-import random
+            <pre><code><i># some_file.py</i>
+<b>import</b> random
 
-def f():
-    if random.random() < 0.5:
-        return 3.14159
-    else:
-        return 6.28318</code></pre>
+<b>def</b> f():
+    <b>if</b> random.random() &lt; <b>0.5</b>:
+        <b>return</b> <b>3.14159</b>
+    <b>else</b>:
+        <b>return</b> <b>6.28318</b></code></pre>
             <p>
 How can you test that function if the value tested is conjured from oblivion in
 the middle of the function?  Fear not, you can actually do it.  The trick here
@@ -135,23 +135,23 @@ is to mock the <i>random</i> function from the <i>random</i> module before the
 first line of <i>f</i> is executed.  Let's start with this simple example, just
 to get the basic idea:
             </p>
-            <pre><code>>>> import random
->>> random.random()
+            <pre><code>&gt;&gt;&gt; <b>import</b> random
+&gt;&gt;&gt; random.random()
 0.5212285734499994
->>> random.random()
+&gt;&gt;&gt; random.random()
 0.40492920488281725
->>> import mock
->>> random.random = mock.Mock(return_value=0.5)
->>> random.random()
+&gt;&gt;&gt; <b>import</b> mock
+&gt;&gt;&gt; random.random = mock.Mock(return_value=<b>0.5</b>)
+&gt;&gt;&gt; random.random()
 0.5</code></pre>
             <p>
 This seems pretty simple.  But here is where everybody gets lost:
             </p>
-            <pre><code>>>> import random
->>> import mock
->>> random.random = mock.Mock(return_value=0.5)
->>> import some_file
->>> some_file.f() == 6.28318 or raise ThisShouldNotBeHappeningException()</code></pre>
+            <pre><code>&gt;&gt;&gt; <b>import</b> random
+&gt;&gt;&gt; <b>import</b> mock
+&gt;&gt;&gt; random.random = mock.Mock(return_value=<b>0.5</b>)
+&gt;&gt;&gt; <b>import</b> some_file
+&gt;&gt;&gt; some_file.f() == <b>6.28318</b> <b>or</b> <b>raise</b> ThisShouldNotBeHappeningException()</code></pre>
             <p>
 This may not explode the first time, but you have a 50% chance of getting an
 exception.  To see why, you can put a <i>print random.random</i> inside
@@ -165,10 +165,10 @@ What happens when you run <i>import random</i>? You can watch
 exactly what.  Or you can just continue reading to get a summary.  Or both.
 Anyway:
             </p>
-            <pre><code>>>> locals()
+            <pre><code>&gt;&gt;&gt; <b>locals</b>()
 {'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', '__doc__': None, '__package__': None}
->>> import random
->>> locals()
+&gt;&gt;&gt; <b>import</b> random
+&gt;&gt;&gt; <b>locals</b>()
 {'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', 'random': &lt;module 'random' from '/usr/lib/python2.7/random.pyc'&gt;, '__doc__': None, '__package__': None}</code></pre>
             <p>
 In python, <i>locals</i> is a built-in function that returns the local
@@ -178,9 +178,10 @@ interpreter does its magic to find the module and load it, but more important,
 it creates an item called "random" on the current namespace referring to the
 module loaded. The critical part here is "current namespace". Try this:
             </p>
-            <pre><code>>>> def f(): print(locals())
->>> import random
->>> f() {}</code></pre>
+            <pre><code>&gt;&gt;&gt; <b>def</b> f(): <b>print</b>(<b>locals</b>())
+&gt;&gt;&gt; <b>import</b> random
+&gt;&gt;&gt; f()
+{}</code></pre>
             <p>
 Here, importing random didn't affect the namespace on <i>f</i>.  The same thing
 applies to namespaces of other modules.  Our example fails because the
@@ -188,9 +189,9 @@ namespace on the <i>some_file</i> module is different than the namespace where
 we run our tests.  To change the namespace of <i>some_file</i>, we have to do
 it explicitly:
             </p>
-            <pre><code>>>> import some_file
->>> some_file.random.random = lambda: 0.5
->>> some_file.f() == 6.28318 or raise ThisShouldNotBeHappeningException()</code></pre>
+            <pre><code>&gt;&gt;&gt; <b>import</b> some_file
+&gt;&gt;&gt; some_file.random.random = <b>lambda</b>: <b>0.5</b>
+&gt;&gt;&gt; some_file.f() == <b>6.28318</b> <b>or</b> <b>raise</b> ThisShouldNotBeHappeningException()</code></pre>
             <p>
 You can run that many times if you don't trust me, but that will always
 succeed.  And it does because we now are changing the correct namespace.  You
@@ -208,11 +209,11 @@ it after the operation.  I like to do it as soon as the operation is complete,
 before anything else is executed, but you don't need to, if you're not
 paranoid.  Just to clear any doubt, here is exactly how to do it:
             </p>
-            <pre><code>>>> import random
->>> original_random = random.random
->>> random.random = lambda: 0.5
->>> # do something
->>> random.random = original_random</code></pre>
+            <pre><code>&gt;&gt;&gt; <b>import</b> random
+&gt;&gt;&gt; original_random = random.random
+&gt;&gt;&gt; random.random = <b>lambda</b>: <b>0.5</b>
+&gt;&gt;&gt; <i># do something</i>
+&gt;&gt;&gt; random.random = original_random</code></pre>
             <p>
 Now you have no excuse.  Better yet, you can use another feature of the
 <i>mock</i> library called <i>patch</i>.  But that would be an extension to an
@@ -231,9 +232,9 @@ anyway, but that is another problem.
 Curious to know what happens when you access <i>return_value</i> without
 setting it first?  No?  Well, I'll show you anyway:
                     </p>
-                    <pre><code>>>> import mock
->>> m = mock.Mock()
->>> m.return_value
+                    <pre><code>&gt;&gt;&gt; <b>import</b> mock
+&gt;&gt;&gt; m = mock.Mock()
+&gt;&gt;&gt; m.return_value
 &lt;Mock name='mock()' id='140095453168080'&gt;</code></pre>
             <p>
 Since we didn't set it, we get the default behaviour of <i>__setattr__</i>,

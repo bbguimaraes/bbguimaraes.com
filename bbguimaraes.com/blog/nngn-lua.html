@@ -88,40 +88,40 @@ statements are <code>dofile</code>s (Lua's version of <code>#include</code> or
 <code>import</code>) which load and execute separate, specialized scripts:
             </p>
             <a class="src-ref" data-hash="40833fe56c2306e2df2a52289bc7ee7678155107" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/all.lua">src/lua/all.lua</a>
-            <pre><code>dofile "src/lua/init.lua"
-dofile "src/lua/limits.lua"
-dofile "src/lua/main.lua"
-dofile "maps/main.lua"</code></pre>
+            <pre><code><b>dofile</b> <b>"src/lua/init.lua"</b>
+<b>dofile</b> <b>"src/lua/limits.lua"</b>
+<b>dofile</b> <b>"src/lua/main.lua"</b>
+<b>dofile</b> <b>"maps/main.lua"</b></code></pre>
             <p>
 Each of these in turn is composed of lower-level pieces:
             </p>
             <a class="src-ref" data-hash="abed4e12a019e62bd9aa9423b77bf8347af31f34" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/init.lua">src/lua/init.lua</a>
-            <pre><code>dofile "src/lua/path.lua"
-require("nngn.lib.compute").init()
-require("nngn.lib.graphics").init()
-require("nngn.lib.collision").init()
-nngn.socket:init("sock")</code></pre>
+            <pre><code><b>dofile</b> <b>"src/lua/path.lua"</b>
+<b>require</b>(<b>"nngn.lib.compute"</b>).init()
+<b>require</b>(<b>"nngn.lib.graphics"</b>).init()
+<b>require</b>(<b>"nngn.lib.collision"</b>).init()
+nngn.socket:init(<b>"sock"</b>)</code></pre>
             <a class="src-ref" data-hash="cf0b3a65506344cc77a1e1facda3e19dd725d251" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/limits.lua">src/lua/limits.lua</a>
-            <pre><code>nngn.entities:set_max(1 << 20)
-nngn.animations:set_max(1 << 16)
-nngn.graphics:resize_textures(16)
-nngn.textures:set_max(16)
--- …</code></pre>
+            <pre><code>nngn.entities:set_max(<b>1</b> &lt;&lt; <b>20</b>)
+nngn.animations:set_max(<b>1</b> &lt;&lt; <b>16</b>)
+nngn.graphics:resize_textures(<b>16</b>)
+nngn.textures:set_max(<b>16</b>)
+<i>-- …</i></code></pre>
             <a class="src-ref" data-hash="ab5bf80d6445868ec241e4c8418148611454f61b" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lua/main.lua">src/lua/main.lua</a>
-            <pre><code>local camera = require "nngn.lib.camera"
-local entity = require "nngn.lib.entity"
-local font = require "nngn.lib.font"
-local map = require "nngn.lib.map"
-local player = require "nngn.lib.player"
-dofile "src/lua/input.lua"
--- …
+            <pre><code><b>local</b> camera = <b>require</b> <b>"nngn.lib.camera"</b>
+<b>local</b> entity = <b>require</b> <b>"nngn.lib.entity"</b>
+<b>local</b> font = <b>require</b> <b>"nngn.lib.font"</b>
+<b>local</b> map = <b>require</b> <b>"nngn.lib.map"</b>
+<b>local</b> player = <b>require</b> <b>"nngn.lib.player"</b>
+<b>dofile</b> <b>"src/lua/input.lua"</b>
+<i>-- …</i>
 camera.reset()
 player.set{
-    "src/lson/crono.lua", "src/lson/link.lua", "src/lson/link_sh.lua",
-    "src/lson/fairy0.lua", "src/lson/chocobo.lua", "src/lson/null.lua"}
+    <b>"src/lson/crono.lua"</b>, <b>"src/lson/link.lua"</b>, <b>"src/lson/link_sh.lua"</b>,
+    <b>"src/lson/fairy0.lua"</b>, <b>"src/lson/chocobo.lua"</b>, <b>"src/lson/null.lua"</b>}
 nngn:load_texture()
-font.load(32)
-nngn.grid:set_dimensions(32.0, 64)</code></pre>
+font.load(<b>32</b>)
+nngn.grid:set_dimensions(<b>32.0</b>, <b>64</b>)</code></pre>
             <h3 id="demos"><a href="#demos">demos</a></h3>
             <p>
 <a href="/nngn#demos">Demos</a> and other special-purpose cases are scripts
@@ -132,59 +132,59 @@ camera placement, default parameters for the various sub-systems, etc.) by
 loading the appropriate script:
             </p>
             <a class="src-ref" data-hash="5d48b238abaf1199562d6ca443b6b06059a46ae7" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/demo1.lua">demos/demo1.lua</a>
-            <pre><code>dofile "src/lua/init.lua"
-dofile "src/lua/limits.lua"
-dofile "src/lua/main.lua"
--- …
-DEMO = {i = 1, stages = {}, data = {}}
+            <pre><code><b>dofile</b> <b>"src/lua/init.lua"</b>
+<b>dofile</b> <b>"src/lua/limits.lua"</b>
+<b>dofile</b> <b>"src/lua/main.lua"</b>
+<i>-- …</i>
+DEMO = {i = <b>1</b>, stages = {}, data = {}}
 
-function DEMO:add_stage(text, f)
-    -- …
+<b>function</b> DEMO:add_stage(text, f)
+    <i>-- …</i>
     table.insert(self.stages, {text, f})
-end
+<b>end</b>
 
-function DEMO:next()
-    local i, stages = self.i, self.stages
-    if i > #stages then return end
-    local text, f = table.unpack(stages[i])
-    if f then f() end
-    textbox.update("nngn", text)
+<b>function</b> DEMO:next()
+    <b>local</b> i, stages = self.i, self.stages
+    <b>if</b> i &gt; #stages then return end
+    <b>local</b> text, f = <b>table.unpack</b>(stages[i])
+    <b>if</b> f <b>then</b> f() <b>end</b>
+    textbox.update(<b>"nngn"</b>, text)
     self.i = i + 1
-end
--- …
-DEMO:add_stage([[
+<b>end</b>
+<i>-- …</i>
+DEMO:add_stage(<b>[[
 The engine has dynamic lighting. At the
-moment, only a dim ambient light exists.]],
-    function()
-        dofile("maps/wolfenstein.lua")
-        nngn.lighting:set_shadows_enabled(false)
-    end)
--- …
+moment, only a dim ambient light exists.]]</b>,
+    <b>function</b>()
+        <b>dofile</b>(<b>"maps/wolfenstein.lua"</b>)
+        nngn.lighting:set_shadows_enabled(<b>false</b>)
+    <b>end</b>)
+<i>-- …</i>
 input.input:add(
     Input.KEY_ENTER, Input.SEL_PRESS,
-    function() DEMO:next() end)
--- …</code></pre>
+    <b>function</b>() DEMO:next() <b>end</b>)
+<i>-- …</i></code></pre>
             <h3 id="benchmarks"><a href="#benchmarks">benchmarks</a></h3>
             <p>
 Benchmarks are scripts that set up the engine in a similar manner and either
 leave the test running or run it for a while and dump the results:
             </p>
             <a class="src-ref" data-hash="61ffd3ae17460d5a86acb66b874eb2800d69d015" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/colliders.lua">demos/colliders.lua</a>
-            <pre><code>dofile "src/lua/path.lua"
-local entity = require "nngn.lib.entity"
-local player = require "nngn.lib.player"
-require "src/lua/input"
--- …
-local colliders = {
-    -- …
+            <pre><code><b>dofile</b> <b>"src/lua/path.lua"</b>
+<b>local</b> entity = <b>require</b> <b>"nngn.lib.entity"</b>
+<b>local</b> player = <b>require</b> <b>"nngn.lib.player"</b>
+<b>require</b> <b>"src/lua/input"</b>
+<i>-- …</i>
+<b>local</b> colliders = {
+    <i>-- …</i>
 }
--- …
-for i = 1, N do
+<i>-- …</i>
+<b>for</b> i = <b>1</b>, N <b>do</b>
     entity.load(nil, nil, {
-        pos = {rnd(), rnd(), 0},
-        collider = colliders[nngn.math:rand_int(1, n_col)]})
-end
--- …</code></pre>
+        pos = {rnd(), rnd(), <b>0</b>},
+        collider = colliders[nngn.math:rand_int(<b>1</b>, n_col)]})
+<b>end</b>
+<i>-- …</i></code></pre>
             <h3 id="integration-tests">
                 <a href="#integration-tests">
                     integration tests
@@ -195,36 +195,36 @@ Integration tests are scripts that set up the engine, exercise some part of it
 via the Lua interface, and check the results:
             </p>
             <a class="src-ref" data-hash="0f59333d712f00d2a80554ed1e2c5f24129deafa" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/cl/vector.lua">demos/cl/vector.lua</a>
-            <pre><code>dofile "src/lua/path.lua"
-local common = require "demos/cl/common"
+            <pre><code><b>dofile</b> <b>"src/lua/path.lua"</b>
+<b>local</b> common = <b>require</b> <b>"demos/cl/common"</b>
 
-nngn:set_compute(Compute.OPENCL_BACKEND, Compute.opencl_params{debug = true})
+nngn:set_compute(Compute.OPENCL_BACKEND, Compute.opencl_params{debug = <b>true</b>})
 
-local prog = assert(
+<b>local</b> prog = <b>assert</b>(
     nngn.compute:create_program(
-        io.open("demos/cl/vector.cl"):read("a"), "-Werror"))
--- …
-local function test_add_numbers()
-    print("add_numbers:")
-    local out = exec(
-        Compute.FLOATV, 2, prog, "add_numbers", Compute.BLOCKING, {8}, {4}, {
+        <b>io.open</b>(<b>"demos/cl/vector.cl"</b>):read(<b>"a"</b>), <b>"-Werror"</b>))
+<i>-- …</i>
+<b>local</b> <b>function</b> test_add_numbers()
+    <b>print</b>("add_numbers:")
+    <b>local</b> out = exec(
+        Compute.FLOATV, <b>2</b>, prog, <b>"add_numbers"</b>, Compute.BLOCKING, {<b>8</b>}, {<b>4</b>}, {
             Compute.FLOATV, {
-                 0,  1,  2,  3,  4,  5,  6,  7,
-                 8,  9, 10, 11, 12, 13, 14, 15,
-                16, 17, 18, 19, 20, 21, 22, 23,
-                24, 25, 26, 27, 28, 29, 30, 31,
-                32, 33, 34, 35, 36, 37, 38, 39,
-                40, 41, 42, 43, 44, 45, 46, 47,
-                48, 49, 50, 51, 52, 53, 54, 55,
-                56, 57, 58, 59, 60, 61, 62, 63},
-            Compute.LOCAL, 4 * Compute.SIZEOF_FLOAT})
-    local sum = out[1] + out[2]
-    print(sum)
-    if not common.err_check(sum, 64 / 2 * 63, .01) then
-        error("check failed")
-    end
-end
--- …</code></pre>
+                 <b>0</b>,  <b>1</b>,  <b>2</b>,  <b>3</b>,  <b>4</b>,  <b>5</b>,  <b>6</b>,  <b>7</b>,
+                 <b>8</b>,  <b>9</b>, <b>10</b>, <b>11</b>, <b>12</b>, <b>13</b>, <b>14</b>, <b>15</b>,
+                <b>16</b>, <b>17</b>, <b>18</b>, <b>19</b>, <b>20</b>, <b>21</b>, <b>22</b>, <b>23</b>,
+                <b>24</b>, <b>25</b>, <b>26</b>, <b>27</b>, <b>28</b>, <b>29</b>, <b>30</b>, <b>31</b>,
+                <b>32</b>, <b>33</b>, <b>34</b>, <b>35</b>, <b>36</b>, <b>37</b>, <b>38</b>, <b>39</b>,
+                <b>40</b>, <b>41</b>, <b>42</b>, <b>43</b>, <b>44</b>, <b>45</b>, <b>46</b>, <b>47</b>,
+                <b>48</b>, <b>49</b>, <b>50</b>, <b>51</b>, <b>52</b>, <b>53</b>, <b>54</b>, <b>55</b>,
+                <b>56</b>, <b>57</b>, <b>58</b>, <b>59</b>, <b>60</b>, <b>61</b>, <b>62</b>, <b>63</b>},
+            Compute.LOCAL, <b>4</b> * Compute.SIZEOF_FLOAT})
+    <b>local</b> sum = out[<b>1</b>] + out[<b>2</b>]
+    <b>print</b>(sum)
+    <b>if</b> <b>not</b> common.err_check(sum, <b>64</b> / <b>2</b> * <b>63</b>, <b>.01</b>) then
+        <b>error</b>(<b>"check failed"</b>)
+    <b>end</b>
+<b>end</b>
+<i>-- …</i></code></pre>
             <h2 id="socket">
                 <a href="#socket">
                     <code>socket(2)</code>
@@ -304,7 +304,7 @@ sort of loop, my preferred approach is to open the file in <code>vim</code>
 it, depending on whether a shell or Lua script for that particular case exists
 or not:
             </p>
-            <pre><code>:w | !nc -NU sock &lt;&lt;&lt;"…"
+            <pre><code>:w | !nc -NU sock &lt;&lt;&lt;<b>"…"</b>
 :w | !nc -NU sock < script.lua
 :w | !script.sh</code></pre>
             <p>
@@ -334,18 +334,18 @@ tables (Lua's primary data structure).  All these scripts do is
 <code>return</code> the data:
             </p>
             <a class="src-ref" data-hash="252e3b7b9381cf2520181d6d1952231b2b623518" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/src/lson/crono.lua">src/lson/crono.lua</a>
-            <pre><code>return {
-    name = "crono",
-    collider = {type = Collider.AABB, bb = {-8, -16, 8, -8}},
+            <pre><code><b>return</b> {
+    name = <b>"crono"</b>,
+    collider = {type = Collider.AABB, bb = {<b>-8</b>, <b>-16</b>, <b>8</b>, <b>-8</b>}},
     renderer = {
         type = Renderer.SPRITE,
-        tex = "img/chrono_trigger/crono.png",
-        size = {32, 48}, z_off = -16,
+        tex = <b>"img/chrono_trigger/crono.png"</b>,
+        size = {<b>32</b>, <b>48</b>}, z_off = <b>-16</b>,
     },
-    anim = {sprite = {512//32, 512//16, {
-        {{0, 6, 1,  9, 0}}, {{0, 0, 1, 3, 0}},
-        {{0, 9, 1, 12, 0}}, {{0, 3, 1, 6, 0}},
-        -- …
+    anim = {sprite = {<b>512</b>//<b>32</b>, <b>512</b>//<b>16</b>, {
+        {{<b>0</b>, <b>6</b>, <b>1</b>,  <b>9</b>, <b>0</b>}}, {{<b>0</b>, <b>0</b>, <b>1</b>, <b>3</b>, <b>0</b>}},
+        {{<b>0</b>, <b>9</b>, <b>1</b>, <b>12</b>, <b>0</b>}}, {{<b>0</b>, <b>3</b>, <b>1</b>, <b>6</b>, <b>0</b>}},
+        <i>-- …</i>
     }}},
 }</code></pre>
             <p>
@@ -392,23 +392,23 @@ mostly declarative:
             </p>
             <a class="src-ref" data-hash="5b3f64156cc41a6402b270291ce55242d63d60ee" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/maps/zelda.lua">maps/zelda.lua</a>
             <pre><code>-- …
-local entities, animations = {}, {}
--- …
-local function init() -- …
-local function heartbeat() -- …
-local function on_collision(e0, e1) -- …
--- …
+<b>local</b> entities, animations = {}, {}
+<i>-- …</i>
+<b>local</b> function init() <i>-- …</i>
+<b>local</b> function heartbeat() <i>-- …</i>
+<b>local</b> function on_collision(e0, e1) <i>-- …</i>
+<i>-- …</i>
 map.map {
-    name = "zelda",
-    state = {ambient_light = true, zsprites = true, shadows_enabled = true},
+    name = <b>"zelda"</b>,
+    state = {ambient_light = <b>true</b>, zsprites = <b>true</b>, shadows_enabled = <b>true</b>},
     init = init,
     entities = entities,
     heartbeat = heartbeat,
     on_collision = on_collision,
-    reset = function() nngn.lighting:set_ambient_anim{} end,
+    reset = <b>function</b>() nngn.lighting:set_ambient_anim{} <b>end</b>,
     tiles = {
-        nngn.textures:load("img/zelda_sacred_grove.png"),
-        2, 0, 0, 256, 256, 1, 2, {0, 0, 0, 1}}}</code></pre>
+        nngn.textures:load(<b>"img/zelda_sacred_grove.png"</b>),
+        <b>2</b>, <b>0</b>, <b>0</b>, <b>256</b>, <b>256</b>, <b>1</b>, <b>2</b>, {<b>0</b>, <b>0</b>, <b>0</b>, <b>1</b>}}}</code></pre>
             <h2><a href="#next">next</a></h2>
             <p>
 I hope this post demonstrated how fundamental Lua is for the engine.  It truly

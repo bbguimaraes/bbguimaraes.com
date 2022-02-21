@@ -79,7 +79,7 @@ For longer scripts, you can save it to a file and pass the file name as an
 argument to the interpreter.  But my personal favorite is the -e switch.  It
 means that the string following the switch is actually the program to be run.
             </p>
-            <pre><code>$ perl -e 'print "Hello world!\n"</code></pre>
+            <pre><code>$ perl -e <b>'print "Hello world!\n"'</b></code></pre>
             <p>
 You won't have this problem here, but take care when mixing the quotes used
 inside the program from the quotes used to pass the command to the shell.  You
@@ -92,13 +92,13 @@ strongest side of perl: its support for
 <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>.
 We create a file to contain our script:
             </p>
-            <pre><code>#!/usr/bin/perl
+            <pre><code><i>#!/usr/bin/perl</i>
 
-use strict;
-use warnings;
+<b>use</b> <b>strict</b>;
+<b>use</b> <b>warnings</b>;
 
-my $str = <>;
-print $str if $str =~ m/g w/;</code></pre>
+<b>my</b> <b>$str</b> = &lt;&gt;;
+<b>print</b> <b>$str</b> <b>if</b> <b>$str</b> =~ <b>m/g w/</b>;</code></pre>
             <p>
 I'll explain what each line does.
 <a href="http://en.wikipedia.org/wiki/Shebang_%28Unix%29">You should know what line 1 does</a>.
@@ -115,8 +115,8 @@ Line 7 deserves a special paragraph.  Here I'm using the inverted <i>if</i>
 syntax (which is a great feature that most languages lack), but don't get
 fooled by it.  It could be written as
             </p>
-            <pre><code>if($str =~ m/g w/) {
-    print $str;
+            <pre><code><b>if</b>(<b>$str</b> =~ <b>m/g w/</b>) {
+    <b>print</b> <b>$str</b>;
 }</code></pre>
             <p>
 but I find the inverted syntax much clearer and easier to read.  The =~
@@ -125,13 +125,14 @@ the left-hand side is a string or a variable containing a string, and the
 right-hand side is a regex operator (in this case, the <i>m//</i> operator).
 The syntax to match a string against a regular expression is
             </p>
-            <pre><code>string =~ m/regex;</code>/</pre>
+            <pre><code>string =~ <b>m/regex/</b>;</code></pre>
             <p>
 Using some of
 <a href="http://www.perlmonks.org/?node_id=431511">perl's magic</a>, we could
 rewrite our example as
             </p>
-            <pre><code>$_ = <>; print if m/g w;</code>/</pre>
+            <pre><code><b>$_</b> = <b>&lt;&gt;</b>;
+<b>print</b> <b>if</b> <b>m/g w/</b>;</code></pre>
             <p>
 Now things start to get interesting!  I decided to go light and present the
 omnipotent <i>$_</i> variable explicitly.  <i>$_</i> is a special (a.k.a.
@@ -141,8 +142,8 @@ Two examples here are print and the match operator.
 One last thing before I delegate the rest of this topic to the next post: the
 diamond operator can be used with a loop to read all the lines from the input:
             </p>
-            <pre><code>while(<>) {
-    print;
+            <pre><code><b>while</b>(&lt;&gt;) {
+    <b>print</b>;
 }</code></pre>
             <p>
 Here, <i>&lt;&gt;</i> causes one line from the input to be read and stored on

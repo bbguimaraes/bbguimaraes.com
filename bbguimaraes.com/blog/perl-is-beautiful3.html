@@ -35,29 +35,29 @@ Every operation in perl is done in a
 When you assign to a variable, the expression is evaluated in scalar context.
 When you assign to an array, you get list context:
             </p>
-            <pre><code>my @my_array = (2, 3, 4, 5);</code></pre>
+            <pre><code><b>my</b> <b>@my_array</b> = (<b>2</b>, <b>3</b>, <b>4</b>, <b>5</b>);</code></pre>
             <p>
 The <i>@</i> tells perl that your variable will be an array, and the rhs is
 thus executed in list context.  Try this:
             </p>
-            <pre><code>my @my_array = (2, 3, 4, 5);
-my $my_var = @my_array;</code></pre>
+            <pre><code><b>my</b> <b>@my_array</b> = (<b>2</b>, <b>3</b>, <b>4</b>, <b>5</b>);
+<b>my</b> <b>$my_var</b> = <b>@my_array</b>;</code></pre>
             <p>Or, my personal favorite:</p>
-            <pre><code>my @my_array = 2..5;
-my $my_var = @my_array;</code></pre>
+            <pre><code><b>my</b> <b>@my_array</b> = <b>2..5</b>;
+<b>my</b> <b>$my_var</b> = <b>@my_array</b>;</code></pre>
             <p>
 Both do the same thing.  When you use an array on the rhs of a scalar
 assignment, you get the length of that array, which is what's happening here.
 The regex operators also work this way:
             </p>
-            <pre><code>my $scalar = m/my \$\w+/;</code></pre>
+            <pre><code><b>my</b> <b>$scalar</b> = <b>m/my \$\w+/</b>;</code></pre>
             <p>
 will put a boolean value on $scalar if a match was or wasn't found (on
 <i>$_</i>, remember).  This will (roughly) find all <i>use</i> directives on
 perl code.  Since we are in scalar context, the result will be a boolean, which
 will be true if any match occurs.  But try this:
             </p>
-            <pre><code>my @array = m/my \$(\w+)/g;</code></pre>
+            <pre><code><b>my</b> <b>@array</b> = <b>m/my \$(\w+)/g</b>;</code></pre>
             <p>
 This will create an array with all the matches found.  There are some new
 things here which need a better explanation.  First, the regex modifier
@@ -68,30 +68,30 @@ Since we are on a list context, the result is no longer a boolean, but a list
 of all the matches, here meaning the values captured on <i>$1</i>, <i>$2</i>,
 and so on. The output for a sample file:
             </p>
-            <pre><code>use warnings;
-use strict;
+            <pre><code><b>use</b> <b>warnings</b>;
+<b>use</b> <b>strict</b>;
 
-local $/;
-$_ = <>;
-$, = "\n";
-$\ = "\n";
+<b>local</b> <b>$/</b>;
+<b>$_</b> = <b><></b>;
+<b>$,</b> = <b>"\n"</b>;
+<b>$\</b> = <b>"\n"</b>;
 
-my $scalar = m/use (\w+);/;
-my @array = m/use (\w+);/g;
+<b>my</b> <b>$scalar</b> = <b>m/use (\w+);/</b>;
+<b>my</b> <b>@array</b> = <b>m/use (\w+);/g</b>;
 
-print $scalar;
-print @array;
+<b>print</b> <b>$scalar</b>;
+<b>print</b> <b>@array</b>;
 
-# Output
-1
-warnings
-strict</code></pre>
+<i># Output</i>
+<i># 1</i>
+<i># warnings</i>
+<i># strict</i></code></pre>
             <p>
 Here we can see, when we incept the code through itself, that the variable gets
 a value of true, while the array is populated with all the results found.  Just
 to show you another nice feature: if we add some parenthesis around <i>use</i>:
             </p>
-            <pre><code>my @array = m/(use) (\w+);/g;</code></pre>
+            <pre><code><b>my</b> <b>@array</b> = <b>m/(use) (\w+);/g</b>;</code></pre>
             <p>
 we get four elements on the array.  That's because, for each "pass", all values
 from (<i>$1</i>, <i>$2</i>, <i>$3</i>, ...) are stored.
@@ -115,7 +115,7 @@ text to the standard input of the command.  Combining all this with what we
 learned, we can, for example, use the regex to find python functions, on a
 single vim command:
             </p>
-            <pre><code>:'<,'>w !perl -ne 'print if m/^\s*def \w+/'</code></pre>
+            <pre><code>:'<,'>w !perl -ne <b>'print if m/^\s*def \w+/'</b></code></pre>
             <p>
 And get a listing of the functions inside the selected text.  Or you can do
 some bizarre things, like sending the output to a file, or changing the name of

@@ -62,10 +62,10 @@ Take for example the following code that attempts to find the vector of
 penetration of a point <code>p</code> in a sphere with center <code>c</code>
 and radius <code>r</code> (the precursor to this epopoeia):
             </p>
-            <pre><code>const auto d = c - p;
-if(const auto l2 = dot(d, d); l2 > r2) {
-    d *= r / std::sqrt(l2) - 1;
-    // …
+            <pre><code><b>const</b> <b>auto</b> d = c - p;
+<b>if</b>(<b>const</b> <b>auto</b> l2 = dot(d, d); l2 &gt; r2) {
+    d *= r / <b>std::sqrt</b>(l2) - <b>1</b>;
+    <i>// …</i>
 }</code></pre>
             <p>
 The code itself is not very interesting other than the fact that if the point
@@ -119,21 +119,21 @@ and SSE modes are very simple, v. the
 <a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/x86_64/fpu/feenablxcpt.c;hb=HEAD"><code>glibc</code> implementation</a>
 (slightly formatted):
             </p>
-            <pre><code>int feenableexcept (int excepts) {
-    unsigned short int new_exc, old_exc;
-    unsigned int new;
+            <pre><code><b>int</b> feenableexcept (<b>int</b> excepts) {
+    <b>unsigned</b> <b>short</b> <b>int</b> new_exc, old_exc;
+    <b>unsigned</b> <b>int</b> new;
     excepts &amp;= FE_ALL_EXCEPT;
-    /* Get the current control word of the x87 FPU. */
-    __asm__ ("fstcw %0" : "=m" (*&amp;new_exc));
+    <i>/* Get the current control word of the x87 FPU. */</i>
+    <b>__asm__</b> (<b>"fstcw %0"</b> : <b>"=m"</b> (*&amp;new_exc));
     old_exc = (~new_exc) &amp; FE_ALL_EXCEPT;
     new_exc &amp;= ~excepts;
-    __asm__ ("fldcw %0" : : "m" (*&amp;new_exc));
-    /* And now the same for the SSE MXCSR register. */
-    __asm__ ("stmxcsr %0" : "=m" (*&amp;new));
-    /* The SSE exception masks are shifted by 7 bits. */
-    new &amp;= ~(excepts << 7);
-    __asm__ ("ldmxcsr %0" : : "m" (*&amp;new));
-    return old_exc;
+    <b>__asm__</b> (<b>"fldcw %0" </b>: : <b>"m"</b> (*&amp;new_exc));
+    <i>/* And now the same for the SSE MXCSR register. */</i>
+    <b>__asm__</b> (<b>"stmxcsr %0" </b>: <b>"=m"</b> (*&amp;new));
+    <i>/* The SSE exception masks are shifted by 7 bits. */</i>
+    new &amp;= ~(excepts &lt;&lt; 7);
+    <b>__asm__</b> (<b>"ldmxcsr %0"</b> : : <b>"m"</b> (*&amp;new));
+    <b>return</b> old_exc;
 }</code></pre>
             <h2 id="bonus"><a href="#bonus">Bonus</a></h2>
             <p>
@@ -142,11 +142,11 @@ be enabled dynamically by either loading or <code>LD_PRELOAD</code>ing the
 library (modulo static initialization order) without recompiling the program:
             </p>
             <pre><code>$ cat fpe.cpp
-#include &lt;fenv.h&gt;
-static int _=[]{return feenableexcept(FE_DIVBYZERO|FE_INVALID|FE_OVERFLOW);}();
+<b>#include</b> <b>&lt;fenv.h&gt;</b>
+<b>static</b> <b>int</b> _=[]{<b>return</b> feenableexcept(FE_DIVBYZERO|FE_INVALID|FE_OVERFLOW);}();
 $ g++ -c -fpic fpe.cpp &amp;&amp; g++ -shared -o fpe.so fpe.o
 $ cat test.cpp
-int main() { return 1.0f / 0.0f; }
+<b>int</b> main() { <b>return</b> <b>1.0f</b> / <b>0.0f</b>; }
 $ g++ -o test test.cpp
 $ ./test
 $ LD_PRELOAD=./fpe.so ./test
