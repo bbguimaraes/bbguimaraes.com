@@ -163,8 +163,12 @@ figcaption {
     font-style: italic;
 }
 
-.blog :not(pre) code {
+.blog code {
     font-weight: bold;
+}
+
+.blog pre code {
+    font-weight: normal;
 }
 
 .blog .tags {
