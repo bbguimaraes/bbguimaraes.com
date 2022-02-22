@@ -12,6 +12,10 @@ a:visited {
     color: #606060;
 }
 
+details > summary {
+    cursor: pointer;
+}
+
 pre {
     overflow: auto;
 }
@@ -156,6 +160,29 @@ figcaption {
 
 .blog pre, .blog .src-ref {
     margin-left: 2em;
+}
+
+.blog p + .inline-code {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.blog .inline-code {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.blog .inline-code-details {
+    display: inline-block;
+}
+
+.blog .code-details {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.blog .code-details summary, .blog .inline-code-details summary {
+    margin-bottom: 1em;
 }
 
 .blog .src-ref {
