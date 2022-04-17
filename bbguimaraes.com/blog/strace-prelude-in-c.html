@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>strace prelude in C</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+        <link
+            rel="alternate" type="application/rss+xml" title="RSS"
+            href="https://bbguimaraes.com/blog/rss.xml" />
+    </head>
+    <body>
+        <div class="w80 blog">
+            <nav id="page-nav">
+                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                /
+                <a href=".">blog</a>
+                /
+                strace prelude in C
+                <a id="rss-icon" href="/blog/rss.xml">
+                    <img src="/files/blog/rss.png" alt="rss"/>
+                </a>
+            </nav>
+            <h1>strace prelude in C</h1>
+            <p><i>2022-04-17T10:34:57</i></p>
+            <p>
+Much has been written about the venerable
+<a href="https://strace.io/"><code>strace</code></a>, one of the most important
+allies of the systems programmer.  However, the focus is often on the specifics
+of the particular program being examined, not on the functioning of
+<code>strace</code> itself and the operating system environment involved in the
+execution of the process.  Today we explore this neglected part of the system
+call trace.
+            </p>
+            <h2 id="minimal-elf">
+                <a href="#minimal-elf">Minimal ELF</a>
+            </h2>
+            <p>
+The first encounter with <code>strace</code> is very intimidating: even the most
+apparently trivial programs are revealed to not be so under its dissection.
+            </p>
+            <pre><code>$ strace true |&amp; wc
+     35     213    2485
+$ strace ls /sys |&amp; wc
+     81     453    5148</code></pre>
+            <p>
+For this reason, texts presenting techniques for analysis and debugging instruct
+the reader to ignore the beginning of the output.  There are indeed a number of
+steps involved in executing a fully-featured program built for modern operating
+systems, but it need not be so.  Examples traditionally start with a
+<code>printf</code>, but a minimal, much smaller and simpler executable can be
+crafted which results in an almost empty trace.
+            </p>
+            <pre><code>$ as <a href="strace-prelude-in-c/min.s">min.s</a> -o min.o
+$ ld --oformat binary min.o -o min
+$ du --bytes min
+124     min
+$ env --ignore-environment strace ./min
+execve("./min", ["./min"], 0x7ffec174db90 /* 0 vars */) = 0
+exit(0)                                 = ?
++++ exited with 0 +++</code></pre>
+            <p>
+In fact, under <code>strace</code>, this is the smallest possible output for a
+program that correctly terminates.  After the program is assembled, it is
+executed under <code>env -i</code>/<code>--ignore-environment</code> so that all
+environment variables from the shell are cleared, reducing the size and
+variability of the output.  The first line of the trace is the
+<code>execve(2)</code> which begins the execution of the program specified in
+the command line.  Nelson Elhage's
+<a href="https://blog.nelhage.com/2010/08/write-yourself-an-strace-in-70-lines-of-code/">article</a>
+on building a minimal tracing tool using <code>ptrace(2)</code> has an excellent
+explanation of the reason why this is always the first line, as well as the path
+that gets there and much more.
+            </p>
+            <aside>
+                <p>
+The <code>min.s</code> file instructs the assembler to manually create an ELF
+file.  This and all other files presented are built on and for an x86-64 Linux
+machine.  They inevitably display platform-specific aspects, but the concepts
+are still generally applicable.  The exact details of generating such a file
+will not be covered: many resources on this subject can be found on the
+internet.  Consult the source code and the <code>elf(5)</code> manual page.
+                </p>
+                <p>
+The entirety of the instruction stream is encoded in four bytes in the binary:
+                </p>
+                <pre><code>$ objdump --disassemble=_start min.o
+
+min.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000078 &lt;_start&gt;:
+  78:   b0 3c                   mov    $0x3c,%al
+  7a:   0f 05                   syscall</code></pre>
+                <p>
+This program simply sets up the <code>rax</code> register and issues a system
+call.  <code>rax</code> receives the value <code>3c<sub>16</sub></code> /
+<code>60<sub>10</sub></code>, which is the code for <code>sys_exit</code> on
+x86-64.  <code>rdi</code>, implicitly set to zero, indicates the status code.
+                </p>
+                <p>
+Depending on the version of <code>binutils</code>, it may be necessary to use
+<code>as --mx86-used-note no</code> in order to generate an unadulterated object
+file (or, alternatively, to remove that section post factum with <code>objcopy
+--remove-section .note.gnu.property</code> before the linking step).
+                </p>
+            </aside>
+            <h2 id="c">
+                <a href="#c">C</a>
+            </h2>
+            <p>
+To start moving to more complex examples, the previous program can be rewritten
+in (partially non-standard and very low-level) C.  The entire purpose of the new
+source code is to instruct the compiler to generate the same <code>_start</code>
+entry point as expected by the (now implicitly invoked) assembler, with the
+exact same machine code.
+            </p>
+            <pre><code><b>#include</b> &lt;stdnoreturn.h&gt;
+
+<b>noreturn</b> <b>void</b> _start() {
+    <b>__asm__</b>(<b>"mov $0x3c,%al\nsyscall"</b>);
+    __builtin_unreachable();
+}</code></pre>
+            <p>
+When compiled as a static executable, this source code produces the same
+sequence of instructions and an equivalent result when traced (it is also about
+70x larger).
+            </p>
+            <pre><code>$ gcc -std=c17 -static -nostdlib -O2 <a href="strace-prelude-in-c/min.c">min.c</a>
+$ objdump --disassemble=_start a.out | tail -3
+0000000000401000 &lt;_start&gt;:
+  401000:       b0 3c                   mov    $0x3c,%al
+  401002:       0f 05                   syscall
+$ env -i strace ./a.out
+execve("./a.out", ["./a.out"], 0x7ffd8a6c9e20 /* 0 vars */) = 0
+exit(0)                                 = ?
++++ exited with 0 +++</code></pre>
+            <p>
+The <code>-nostdlib</code> flag is used to suppress the inclusion of the C
+standard library facilities, since none of them are used in this program.  Even
+though it is a very minimalistic language (compared to its more modern
+counterparts), the C standard library manages a number of library and operating
+system components, and much of the initialization of a process — prior to the
+execution of the <code>main</code> function — is done by the library.
+            </p>
+            <h2 id="musl">
+                <a href="#musl">musl</a>
+            </h2>
+            <p>
+Somewhat unconventionally compared to other Unix descendants (and operating
+systems in general), the C library is not strictly considered part of the
+operating system on Linux.  As such, the
+<a href="https://www.gnu.org/software/libc/">GNU C library</a>
+(<code>glibc</code>) is the traditional implementation used on most systems, but
+a number of alternatives exist.
+<a href="https://musl.libc.org/"><code>musl</code></a> is one of these
+implementations.  Its focus on simplicity is appropriate to begin exploring the
+C runtime.  Tracing the true C "hello, world" program compiled with
+<code>musl</code> yields:
+            </p>
+            <pre><code><b>int</b> main(<b>void</b>) {}</code></pre>
+            <pre><code>$ musl-gcc -std=c17 -static <a href="strace-prelude-in-c/libc.c">libc.c</a>
+$ env -i strace ./a.out
+execve("./a.out", ["./a.out"], 0x7ffc71f9cfc0 /* 0 vars */) = 0
+arch_prctl(ARCH_SET_FS, 0x404158)       = 0
+set_tid_address(0x404290)               = 2961014
+exit_group(0)                           = ?
++++ exited with 0 +++</code></pre>
+            <p>
+All changes in the output are related to the threading library and its runtime
+setup:
+            </p>
+            <ul>
+                <li>
+                    <p>
+<code>arch_prctl(2)</code> is an x86-64 system call for managing thread
+state; the <code>ARCH_SET_FS</code> operation manipulates the <code>FS</code>
+register, used in the implementation of thread-local storage<a href="#note0"><sup>0</sup></a>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+<code>set_tid_address(2)</code> is used in the <code>pthread(3)</code>
+implementation.  The address passed to it corresponds to the
+<code>child_tid</code> argument of <code>clone(2)</code> and is part of the
+implementation of <code>pthread_create(3)</code>, <code>pthread_join(3)</code>,
+etc.
+                    </p>
+                </li>
+                <li>
+                    <p>
+<code>exit_group(2)</code> is the real system call behind <code>exit(3)</code>:
+it terminates not only the caller but all threads in a process.
+                    </p>
+                </li>
+            </ul>
+            <h2 id="glibc">
+                <a href="#glibc">glibc</a>
+            </h2>
+            <p>
+Tracing the same program as before, but now compiled using the GNU standard
+library, yields a much longer output, detailed in parts below.  All of the new
+calls come from the standard library initialization, done by the
+<code>__libc_start_main_impl</code> function (defined using the
+<code>LIBC_START_MAIN</code> macro, for those following the code).
+            </p>
+            <pre><code>$ gcc -std=c17 -static -O2 <a href="strace-prelude-in-c/libc.c">libc.c</a>
+$ env -i strace ./a.out
+execve("./a.out", ["./a.out"], 0x7ffefce488e0 /* 0 vars */) = 0
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc39156920) = -1 EINVAL (Invalid argument)</code></pre>
+            <p>
+<code>arch_prctl(2)</code> is used here again, this time performing a mysterious
+<code>0x3001</code> operation<a href="#note1"><sup>1</sup></a>.  This code
+corresponds to the <code>ARCH_CET_STATUS</code> operation, used in the
+implementation of Intel's <a href="https://en.wikipedia.org/wiki/Control-flow_integrity#Intel_Control-flow_Enforcement_Technology">Control-flow
+Enforcement Technology</a>, in particular
+<a href="https://lwn.net/Articles/885220/"><i>shadow stacks</i></a> and
+<a href="https://lwn.net/Articles/889475/"><i>indirect branch tracking</i></a>.
+In this particular machine, the CPU does not support these features.
+            </p>
+            <pre><code>brk(NULL)                               = 0x232b000
+brk(0x232bdc0)                          = 0x232bdc0</code></pre>
+            <p>
+<code>brk(2)</code> controls the <i>program break</i>, i.e. the maximum address
+of the program's heap.  The first call uses <code>NULL</code> to retrieve the
+current value (n.b.: this is a Linux idiosyncrasy, POSIX <code>brk(2)</code>
+returns <code>0</code> on success), while the second sets it to
+<code>0xdc0</code> bytes above that value.  This is dynamic memory allocation at
+its lowest level (above the kernel), virtually equivalent to
+<code>malloc(0xdc0)</code>.  Here, it is done in the initialization of
+thread-local storage.
+            </p>
+            <pre><code>arch_prctl(ARCH_SET_FS, 0x232b3c0)      = 0
+set_tid_address(0x232b690)              = 2965460
+set_robust_list(0x232b6a0, 24)          = 0</code></pre>
+            <p>
+Threading configuration is done similarly to <code>musl</code>.
+<code>set_robust_list</code> is also related to threading: it ensures proper
+handling of <code>futex(2)</code>es when threads terminate unexpectedly.
+            </p>
+            <pre><code>rseq(0x232bd60, 0x20, 0, 0x53053053)    = 0</code></pre>
+            <p>
+Restartable sequences are a kernel mechanism, recently incorporated
+into <code>glibc</code>, which allow user space to use per-CPU data as is done
+extensively in kernel mode.  This requires operating system support, since user
+programs are constantly preempted, which is configured via this system call.
+You know <a href="https://lwn.net/Articles/883104/">where</a> to find more
+information by now.
+            </p>
+            <pre><code>uname({sysname="Linux", nodename="tjobim", ...}) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+readlink("/proc/self/exe", "/home/bbguimaraes/src/bbguimarae"..., 4096) = 71</code></pre>
+            <p>
+These calls are relatively simple.  The antediluvian <code>uname(2)</code> is
+used to retrieve the kernel version.  <code>prlimit64(2)</code> retrieves the
+maximum stack size, to be used as the default <code>stacksize</code> attribute
+in <code>pthread_create(3)</code>.  Finally, <code>readlink(2)</code> is used
+with the Linux-specific <code>/proc/self/exe</code> symbolic link to discover
+the path of the executable.
+            </p>
+            <pre><code>getrandom("\x94\x07\xa0\xf7\x13\xa7\xe9\xfc", 8, GRND_NONBLOCK) = 8
+brk(0x234cdc0)                          = 0x234cdc0
+brk(0x234d000)                          = 0x234d000</code></pre>
+            <p>
+Amusingly, this is the first time <code>malloc(3)</code> is called (recall the
+program break was set directly using <code>brk(2)</code> before).  As part of
+its internal initialization, a 64-bit value is set to a random value.  Then,
+memory is allocated in the same way as before: by retrieving the current program
+break and incrementing it (this is actually a library version of
+<code>sbrk(2)</code> implemented using <code>brk(2)</code>).
+            </p>
+            <pre><code>mprotect(0x4b7000, 16384, PROT_READ)    = 0
+exit_group(0)                           = ?
++++ exited with 0 +++</code></pre>
+            <p>
+The final action before the execution of our uneventful <code>main</code>
+function is to make part of the address space (as indicated by the
+<code>RELRO</code> ELF header) read-only<a href="#note2"><sup>2</sup></a>.
+            </p>
+            <h2 id="ld">
+                <a href="#ld">ld</a>
+            </h2>
+            <p>
+To complete our investigation of the usual <code>strace</code> prelude, dynamic
+linking is introduced.  Doing so generates many system calls performed by the
+linker, which appear in the output since they occur as part of the
+<code>execve(2)</code> call.  Somewhat surprisingly, it also changes
+considerably the actions performed during <code>glibc</code>'s initialization.
+Details on what is covered in this section can be found in the
+<code>ld.so(8)</code> and <code>ldconfig(8)</code> manual pages.  Charng-Da Lu's
+<a href="https://stevens.netmeister.org/631/elf.html">article</a> on the ELF
+format also details some of the <code>glibc</code> linker implementation.
+            </p>
+            <pre><code>$ gcc -std=c17 -O2 <a href="strace-prelude-in-c/libc.c">libc.c</a>
+$ env -i strace ./a.out
+execve("./a.out", ["./a.out"], 0x7ffdbf7c30d0 /* 0 vars */) = 0
+brk(NULL)                               = 0x55ccf3f95000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc92198690) = -1 EINVAL (Invalid argument)</code></pre>
+            <p>
+The first few lines are familiar, except there is now a single direct call to
+<code>brk(2)</code> to retrieve the current program break.
+            </p>
+            <pre><code>access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)</code></pre>
+            <p>
+There are many ways to instruct the linker to load additional shared libraries
+before beginning the execution of a dynamically-linked program.  The
+<code>LD_PRELOAD</code> environment variable is perhaps the best known of them,
+but <code>/etc/ld.so.preload</code> can also be used to affect every process in
+the system.  This particular machine does not have this file.
+            </p>
+            <pre><code>openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=156427, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 156427, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f576c5e2000
+close(3)                                = 0</code></pre>
+            <p>
+When <code>ldconfig(8)</code> sets up shared libraries in the system
+directories, it also populates <code>/etc/ld.so.cache</code>.  This file is
+structured so that the shared library names registered in a dynamically-linked
+program (<code>soname</code>s) can be searched quickly when its execution
+begins.  The cache is a binary file: its contents can be viewed using
+<code>ldconfig -p</code>/<code>--print-cache</code>.  During initialization, the
+linker opens the file and <code>mmap(2)</code>s it into the process' address
+space<a href="#note3"><sup>3</sup></a>.
+            </p>
+            <pre><code>openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\324\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0@\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 80, 848) = 80
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\205vn\235\204X\261n\234|\346\340|q,\2"..., 68, 928) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2463384, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f576c5e0000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2136752, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f576c3d6000
+mprotect(0x7f576c402000, 1880064, PROT_NONE) = 0
+mmap(0x7f576c402000, 1531904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2c000) = 0x7f576c402000
+mmap(0x7f576c578000, 344064, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a2000) = 0x7f576c578000
+mmap(0x7f576c5cd000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1f6000) = 0x7f576c5cd000
+mmap(0x7f576c5d3000, 51888, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f576c5d3000
+close(3)                                = 0</code></pre>
+            <p>
+Here dynamic linking per se begins.  The first library to be linked is naturally
+the C standard library.  It is found via <code>/etc/ld.so.cache</code> and
+opened directly.  <code>read(2)</code> and <code>pread64(2)</code> (i.e. read
+with offset) are used to determine the contents of the shared library.  Each
+section is then <code>mmap(2)</code>ed into the process' address space with the
+appropriate access permissions<a href="#note4"><sup>4</sup></a>.
+            </p>
+            <pre><code>mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f576c3d4000
+arch_prctl(ARCH_SET_FS, 0x7f576c5e1600) = 0
+set_tid_address(0x7f576c5e18d0)         = 2974699
+set_robust_list(0x7f576c5e18e0, 24)     = 0
+rseq(0x7f576c5e1fa0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f576c5cd000, 12288, PROT_READ) = 0
+mprotect(0x55ccf2f54000, 4096, PROT_READ) = 0
+mprotect(0x7f576c63e000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0</code></pre>
+            <p>
+Another <code>malloc(3)</code> call causes more system memory to be requested
+(corresponding to the initial <code>brk(2)</code> calls during TLS
+initialization in the statically-linked program).  It is followed by a series of
+familiar calls, only this time there are a few read-only memory sections (and
+they are mapped to dynamic locations).
+            </p>
+            <pre><code>munmap(0x7f576c5e2000, 156427)          = 0
+exit_group(0)                           = ?
++++ exited with 0 +++</code></pre>
+            <p>
+With the dynamic linking done, the cache is unmapped and our magnanimous
+<code>main</code> function is executed.  This brings us to the end of a complete
+<code>strace</code> output.
+            </p>
+            <h2 id="coda">
+                <a href="#coda">Coda</a>
+            </h2>
+            <p>
+Of course, as a programmer or system administrator, it is <em>at this point</em>
+that your job would begin in tracing the actual program under consideration, but
+problems sometimes occur in or are caused by the library and operating system
+components described here.  Understanding these concepts can be useful in those
+situations, and also allows us to explore the many interesting steps performed
+to execute almost every program in our operating systems.
+            </p>
+            <p>
+Each of the manual pages and articles linked throughout the text provides more
+information on any topic that may be of interest.  The implementation of these
+system calls in the Linux kernel and the GNU C library is fairly approachable
+once one gets accustomed to the general structure of those code bases.  GDB also
+has a useful "catchpoint" command which can stop at the beginning and end of
+every system call:
+            </p>
+            <pre><code>$ gdb a.out
+Reading symbols from a.out...
+(No debugging symbols found in a.out)
+(gdb) catch syscall
+Catchpoint 1 (any syscall)
+(gdb) r
+Starting program: /tmp/a.out
+
+Catchpoint 1 (call to syscall brk), 0x00007ffff7fe8dbb in brk () from /lib64/ld-linux-x86-64.so.2
+(gdb) bt
+#0  0x00007ffff7fe8dbb in brk () from /lib64/ld-linux-x86-64.so.2
+#1  0x00007ffff7fe2ebe in _dl_sysdep_start () from /lib64/ld-linux-x86-64.so.2
+#2  0x00007ffff7fe4b91 in _dl_start () from /lib64/ld-linux-x86-64.so.2
+#3  0x00007ffff7fe3938 in _start () from /lib64/ld-linux-x86-64.so.2
+#4  0x0000000000000001 in ?? ()
+#5  0x00007fffffffe2c0 in ?? ()
+#6  0x0000000000000000 in ?? ()</code></pre>
+            <p>
+With some experience in analyzing optimized machine language instructions, this
+can be a very good way to explore the runtime behavior of a program or library.
+For the bibliophiles such as myself, there are many amazing books on this topic
+(there is a reason my <a href="/books">reading list</a> has more operating
+system books than any other category).  In particular, <i>The Linux Programming
+Interface</i> by Michael Kerrisk (who happens to also be the maintainer of
+Linux manual pages) is a fantastic resource.
+            </p>
+            <a href="/files/blog/strace0.png">
+                <img
+                    title="tlpi" alt="tlpi"
+                    src="/files/blog/strace0_512.png" />
+            </a>
+            <p>
+Have fun!
+            </p>
+            <h2 id="notes">
+                <a href="#notes">Notes</a>
+            </h2>
+            <ol start=0>
+                <li id="note0">
+                    <p>
+This can be verified with code such as the following:
+                    </p>
+                    <pre class="inline-code"><code><b>thread_local</b> <b>int</b> i;
+
+<b>int</b> f(<b>void</b>) {
+    <b>return</b> i;
+}</code></pre>
+                    <pre class="inline-code"><code>f:
+    <b>mov</b> <b>eax</b>, DWORD <b>PTR</b> fs:0xfffffffffffffffc
+    <b>ret</b></code></pre>
+                    <p>
+where <code>0xfffffffffffffffc</code> is a complicated spelling of
+<code>-4</code> (i.e. <code>-sizeof(i)</code>) in two's complement.
+Similarly, printing the address of <code>i</code> in the main thread shows that
+it is located four bytes below the address passed to the
+<code>arch_prctl(2)</code> call.
+                </li>
+                <li id="note1">
+                    <p>
+It is common for programs which decode system call information, such as
+<code>strace</code> and <code>gdb</code>, to not have support for obscure and/or
+recently-added calls or parameters.  Sometimes, they are documented in the
+manual pages.  The Linux and <code>glibc</code> source code and <code>git</code>
+logs are good sources of information to figure out their meaning when that is
+not the case.
+                </li>
+                <li id="note2">
+                    <p>
+These values can be seen in the ELF file:
+                    </p>
+                    <pre><code>$ objdump --all a.out | grep -A1 RELRO
+   RELRO off    0x00000000000b6770 vaddr 0x00000000004b7770 paddr 0x00000000004b7770 align 2**0
+         filesz 0x0000000000003890 memsz 0x0000000000003890 flags r--</code></pre>
+                    <p>
+The start address is rounded down to the page size (<code>0x4b7770 &amp; ~0xfff
+= 0x4b7000</code>) and then used to calculate the new size (<code>0x3890 + 0x770
+= 0x4000 = 16384</code>).
+                    </p>
+                </li>
+                <li id="note3">
+                    <p>
+For readers new to <code>strace</code>, it is important to understand how these
+four calls form a single overarching operation.  <code>openat(2)</code> returns
+file descriptor <code>3</code> (i.e. just above
+<code>stderr</code>/<code>STDERR_FILENO</code>), as indicated at the end of the
+line.  Each of the subsequent calls uses that same descriptor: as the first
+argument to <code>newfstatat(2)</code> (a specialized version of
+<code>stat(2)</code>) and as the fifth argument to <code>mmap(2)</code>.
+<code>close(2)</code>ing the descriptor finalizes the operation.
+                    </p>
+                    <p>
+While not all operations follow this pattern (files may be kept open, calls
+may be interleaved, etc.), this is a very common occurrence and worth getting
+accustomed to.
+                    </p>
+                </li>
+                <li id="note4">
+                    <p>
+The first <code>mmap(2)</code> call, which does not specify a file descriptor
+(<code>-1</code>), is actually from yet another <code>malloc(3)</code>
+implementation inside the linker.
+                    </p>
+            </ol>
+            <div class="tags">
+                <a href="tags/assembly.html">assembly</a>
+                <a href="tags/c.html">c</a>
+                <a href="tags/debugging.html">debugging</a>
+                <a href="tags/linux.html">linux</a>
+                <a href="tags/man.html">man</a>
+                <a href="tags/programming.html">programming</a>
+                <a href="tags/strace.html">strace</a>
+                <a href="tags/unix.html">unix</a>
+            </div>
+        </div>
+    </body>
+</html>

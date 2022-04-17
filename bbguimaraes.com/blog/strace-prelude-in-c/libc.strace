@@ -1,0 +1,5 @@
+execve("./a.out", ["./a.out"], 0x7ffc71f9cfc0 /* 0 vars */) = 0
+arch_prctl(ARCH_SET_FS, 0x404158)       = 0
+set_tid_address(0x404290)               = 2961014
+exit_group(0)                           = ?
++++ exited with 0 +++

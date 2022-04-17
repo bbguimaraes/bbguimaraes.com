@@ -26,10 +26,25 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 22 Feb 2022 20:09:10 GMT</pubDate>
-        <lastBuildDate>Mon, 22 Feb 2022 20:09:10 GMT</lastBuildDate>
+        <pubDate>Sun, 17 Apr 2022 10:34:57 GMT</pubDate>
+        <lastBuildDate>Sun, 17 Apr 2022 10:34:57 GMT</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>strace prelude in C</title>
+            <link>https://bbguimaraes.com/blog/strace-prelude-in-c.html</link>
+            <guid>https://bbguimaraes.com/blog/strace-prelude-in-c.html</guid>
+            <pubDate>Sun, 17 Apr 2022 10:34:57 GMT</pubDate>
+            <category>assembly</category>
+            <category>c</category>
+            <category>debugging</category>
+            <category>linux</category>
+            <category>man</category>
+            <category>programming</category>
+            <category>strace</category>
+            <category>unix</category>
+            <description>Much has been written about the venerable <a href="https://strace.io/"><code>strace</code></a>, one of the most important allies of the systems programmer.  However, the focus is often on the specifics of the particular program being examined, not on the functioning of <code>strace</code> itself and the operating system environment involved in the execution of the process.  Today we explore this neglected part of the system call trace.</description>
+        </item>
         <item>
             <title>C++ virtual tables</title>
             <link>https://bbguimaraes.com/blog/c++-virtual-tables.html</link>

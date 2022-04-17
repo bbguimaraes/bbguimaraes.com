@@ -1,0 +1,3 @@
+execve("./a.out", ["./a.out"], 0x7ffd8a6c9e20 /* 0 vars */) = 0
+exit(0)                                 = ?
++++ exited with 0 +++

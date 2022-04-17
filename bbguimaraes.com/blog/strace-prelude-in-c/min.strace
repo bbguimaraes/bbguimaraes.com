@@ -1,0 +1,3 @@
+execve("./min", ["./min"], 0x7ffec174db90 /* 0 vars */) = 0
+exit(0)                                 = ?
++++ exited with 0 +++
