@@ -1,0 +1,19 @@
+\begin{tikzpicture}[
+    color=black!62.5!white,
+    rect/.style={draw, line width=0.1cm, shape=rectangle},
+    a4/.style={rect, anchor=center, minimum width=\w, minimum height=\h},
+    a5/.style={a4, minimum width=\h/2, minimum height=\w, rotate=90},
+]
+    \pgfmathsetmacro{\w}{2*2.1cm}
+    \pgfmathsetmacro{\h}{2*2.97cm}
+    \Huge
+    \node (p0) at (-9, 0) {0};
+    \node (p1) at (-4, 0) {1};
+    \node[rotate=90, xshift=\h/4] (n0) at (4, 0) {0};
+    \node[rotate=90, xshift=\h/-4] (n1) at (4, 0) {1};
+    \node[a4] at (p0) {};
+    \node[a4] at (p1) {};
+    \node[a5] at (n0) {};
+    \node[a5] at (n1) {};
+    \draw[->, line width=0.1cm] (-0.5, 0) -- (0.5, 0);
+\end{tikzpicture}

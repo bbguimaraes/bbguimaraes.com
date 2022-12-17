@@ -1,0 +1,20 @@
+\begin{tikzpicture}[
+    color=black!62.5!white,
+    rect/.style={
+        draw, line width=0.1cm, shape=rectangle,
+        minimum width=\w, minimum height=\h,
+    },
+    slant/.style={rect, minimum height=\w, anchor=east},
+]
+    \pgfmathsetmacro{\w}{4*2.1cm}
+    \pgfmathsetmacro{\h}{4*2.97cm}
+    \Huge
+    \node[rect, xshift=-0.4cm, yshift=0.4cm] at (0, 0) {};
+    \node[rect] (a4) {};
+    \node[rect, minimum width=\h/2, minimum height=\w] (a5) at (\w/16, -1) {};
+    \node[slant, minimum width=\h/2, yslant=-0.005cm] at (a5.west) {};
+    \node[slant, minimum width=\h/2.1, yslant=-0.01cm] at (a5.west) {};
+    \node[slant, minimum width=\h/2.25, yslant=-0.015cm] at (a5.west) {};
+    \node at (a4) {A4};
+    \node at (a5) {A5};
+\end{tikzpicture}

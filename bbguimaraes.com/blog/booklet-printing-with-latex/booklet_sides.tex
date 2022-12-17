@@ -1,0 +1,30 @@
+\begin{tikzpicture}[
+    color=black!62.5!white, line width=0.1cm,
+    rect/.style={
+        draw, shape=rectangle, anchor=center,
+        anchor=center, minimum width=2*2.1cm, minimum height=2*2.97cm,
+    },
+    side/.style={minimum height=2em},
+]
+    \Huge
+    \node (long) at (-6, 0) {};
+    \node (single) at (0, 0) {};
+    \node (short) at (6, 0) {};
+    \node (single_r) [rect] at (single) {};
+    \node (short_r) [rect] at (short) {};
+    \node (long_r) [rect] at (long) {};
+    \node[side, above = of long, xshift=-1cm] {long};
+    \node[side, above = of single] {single};
+    \node[side, above = of short] {short};
+    \draw[->]
+        ($ (long_r.north east) + (0, 0.5cm) $)
+        .. controls +(-1, 0.5cm) and +(1, 0.5cm)
+        ..  ($ (long_r.north west) + (0, 0.5cm) $);
+    \draw[->]
+        ($ (short_r.north east) + (0.5cm, 0) $)
+        .. controls +(0.5cm, -1) and +(0.5cm, +1)
+        .. ($ (short_r.south east) + (0.5cm, 0) $);
+    \pgfsetfillopacity{0.4}
+    \node[side, below = of short, yscale=-1, yshift=2cm] {short};
+    \node[side, above = of long, xscale=-1, xshift=-1cm] {long};
+\end{tikzpicture}
