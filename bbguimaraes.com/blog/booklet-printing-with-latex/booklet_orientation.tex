@@ -1,0 +1,17 @@
+\begin{tikzpicture}[
+    color=black!62.5!white,
+    rect/.style={draw, line width=0.1cm, shape=rectangle},
+]
+    \pgfmathsetmacro{\w}{2*2.1cm}
+    \pgfmathsetmacro{\h}{2*2.97cm}
+    \Huge
+    \node (portrait) at (-4, 0) {portrait};
+    \node (landscape) at (4, 0) {landscape};
+    \node (sheet) [
+        rect, anchor=center, minimum width=\w, minimum height=\h,
+    ] at (portrait) {};
+    \node[scale=2] at (-0.5, 0) {↶};
+    \node (sheet) [
+        rect, anchor=center, minimum width=\h, minimum height=\w,
+    ] at (landscape) {};
+\end{tikzpicture}

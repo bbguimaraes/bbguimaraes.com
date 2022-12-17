@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+    color=black!62.5!white,
+    rect/.style={
+        draw, fill=black, line width=0.1cm, shape=rectangle,
+        minimum width=\h/2, minimum height=\w,
+    },
+    slant_e/.style={rect, anchor=east},
+    slant_w/.style={slant_e, anchor=west},
+]
+    \pgfmathsetmacro{\w}{4*2.1cm}
+    \pgfmathsetmacro{\h}{4*2.97cm}
+    \Huge
+    \node[rect] (p2) {};
+    \node[rect, right = 0 of p2] (p11) {};
+    \node[slant_e, minimum width=\h/2.5, yslant=-0.015cm] (p4) at (p2.east) {};
+    \node[slant_e, minimum width=\h/4, yslant=-0.05cm] (p6) at (p2.east) {};
+    \node[slant_w, minimum width=\h/2.5, yslant=0.015cm] (p9) at (p11.west) {};
+    \node[slant_w, minimum width=\h/4, yslant=0.05cm] (p7) at (p11.west) {};
+    \node[below right = 0 and 0 of p2.north west] {2};
+    \node[below right = 0.3cm and 0 of p4.north west] {4};
+    \node[below right = 1.2cm and 0 of p6.north west] {6};
+    \node[below left = 1.2cm and 0 of p7.north east] {7};
+    \node[below left = 0.3cm and 0 of p9.north east] {9};
+    \node[below left = 0 and -0.2cm of p11.north east] {11};
+    \pgfsetfillopacity{0.4}
+    \node[above left = 0 and 0 of p2.south west, xscale=-1] {1};
+    \node[above left = 0.2cm and 0 of p4.south west, xscale=-1] {3};
+    \node[above left = 0 and 0 of p6.south west, xscale=-1] {5};
+    \node[above right = 0 and 0 of p7.south east, xscale=-1] {8};
+    \node[above right = 0.2cm and 0 of p9.south east, xscale=-1] {10};
+    \node[above right = 0 and 0 of p11.south east, xscale=-1] {12};
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+\begin{tikzpicture}[
+    color=black!62.5!white,
+    rect/.style={draw, line width=0.1cm, shape=rectangle},
+]
+    \pgfmathsetmacro{\w}{2*2.1cm}
+    \pgfmathsetmacro{\h}{2*2.97cm}
+    \Huge
+    \node (a4) {A4};
+    \node (sheet) [
+        rect, anchor=center, minimum width=\w, minimum height=\h,
+    ] at (a4) {};
+    \node[below=0.5em of sheet.south] {short edge};
+    \node[left=1.5em of sheet.west, anchor=center, rotate=90] {long edge};
+\end{tikzpicture}
