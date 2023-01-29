@@ -89,9 +89,9 @@ object is called as a function object<sup><a href="#note1">1</a></sup>.
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> mock
 &gt;&gt;&gt; m = mock.Mock()
-&gt;&gt;&gt; m.return_value = <b>u'the return value'</b>
+&gt;&gt;&gt; m.return_value = <b>'the return value'</b>
 &gt;&gt;&gt; m()
-u'the return value'</code></pre>
+'the return value'</code></pre>
             <p>Using these two techniques, we can now test our function:</p>
             <pre><code><b>import</b> mock
 
@@ -99,10 +99,10 @@ u'the return value'</code></pre>
     a = mock.Mock()
     a.do_something.return_value = <b>True</b>
     <b>if</b> some_function_in_your_code(a) != <b>3.14159</b>:
-        <b>raise</b> <b>Exception</b>(<b>u'return wasn't 3.14159.'</b>)
+        <b>raise</b> <b>Exception</b>(<b>'return wasn't 3.14159.'</b>)
     a.do_something.return_value = <b>False</b>
     <b>if</b> some_function_in_your_code(a) != <b>6.28318</b>:
-        <b>raise</b> <b>Exception</b>(<b>u'return wasn't 6.28318.'</b>)</code></pre>
+        <b>raise</b> <b>Exception</b>(<b>'return wasn't 6.28318.'</b>)</code></pre>
             <p>
 Let's break that down.  We first create a <code>Mock</code> object to represent
 the argument passed to the function.  The next line takes care of the two things
