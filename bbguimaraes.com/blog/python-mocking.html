@@ -52,7 +52,7 @@ an object. Somewhere else in your code,
 <code>some_other_function_in_your_code</code> creates that object, which is a
 complicated process that involves hundreds of operations. If you just want to
 test <code>some_other_function_in_your_code</code>, you shouldn't need to go
-through this whole process[<a href="#note1">1</a>].
+through this whole process<sup><a href="#note0">0</a></sup>.
             </p><p>
 To avoid that, we can use mocking.  Notice that all we need to test in
 <code>some_other_function_in_your_code</code> is that the argument passed has a
@@ -85,7 +85,7 @@ but it makes the code easier, shorter and cleaner.
             </p><p>
 The other feature of <code>Mock</code> objects is the <code>return_value</code>
 attribute.  Whatever is contained in this attribute gets returned when the
-object is called as a function object[<a href="#note2">2</a>].
+object is called as a function object<sup><a href="#note1">1</a></sup>.
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> mock
 &gt;&gt;&gt; m = mock.Mock()
@@ -224,13 +224,13 @@ happy mocking!
             </p>
             <h2 id="notes"><a href="#notes">Notes</a></h2>
             <ol>
-                <li id="note1">
+                <li id="note0">
                     <p>
 You shouldn't have complicated processes that involve hundreds of operations
 anyway, but that is another problem.
                     </p>
                 </li>
-                <li id="note2">
+                <li id="note1">
                     <p>
 Curious to know what happens when you access <code>return_value</code> without
 setting it first?  No?  Well, I'll show you anyway:
