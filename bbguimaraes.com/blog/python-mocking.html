@@ -44,19 +44,19 @@ begin with a simple example:
 <b>def</b> some_other_function_in_your_code():
     #<i> ...</i>
     a = create_complicated_object(*thousand_parameters)
-    result = some_other_function_in_your_code(a)
+    result = some_function_in_your_code(a)
     <i># ...</i></code></pre>
             <p>
-Here we have a function <code>some_other_function_in_your_code</code> that uses
-an object. Somewhere else in your code,
+Here we have a function <code>some_function_in_your_code</code> that uses an
+object. Somewhere else in your code,
 <code>some_other_function_in_your_code</code> creates that object, which is a
 complicated process that involves hundreds of operations. If you just want to
-test <code>some_other_function_in_your_code</code>, you shouldn't need to go
-through this whole process<sup><a href="#note0">0</a></sup>.
+test <code>some_function_in_your_code</code>, you shouldn't need to go through
+this whole process<sup><a href="#note0">0</a></sup>.
             </p><p>
 To avoid that, we can use mocking.  Notice that all we need to test in
-<code>some_other_function_in_your_code</code> is that the argument passed has a
-member called <code>do_something</code> that can be called with no arguments and
+<code>some_function_in_your_code</code> is that the argument passed has a member
+called <code>do_something</code> that can be called with no arguments and
 returns something that can be converted to <code>bool</code>.  There are many
 ways to do that, but to keep things short, I'll skip right to the library I use
 most of the times, <code>mock</code>.
@@ -100,7 +100,7 @@ u'the return value'</code></pre>
     a.do_something.return_value = <b>True</b>
     <b>if</b> some_function_in_your_code(a) != <b>3.14159</b>:
         <b>raise</b> <b>Exception</b>(<b>u'return wasn't 3.14159.'</b>)
-    a.return_value = <b>False</b>
+    a.do_something.return_value = <b>False</b>
     <b>if</b> some_function_in_your_code(a) != <b>6.28318</b>:
         <b>raise</b> <b>Exception</b>(<b>u'return wasn't 6.28318.'</b>)</code></pre>
             <p>
