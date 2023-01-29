@@ -47,25 +47,26 @@ begin with a simple example:
     result = some_other_function_in_your_code(a)
     <i># ...</i></code></pre>
             <p>
-Here we have a function <i>some_other_function_in_your_code</i> that uses an
-object. Somewhere else in your code, <i>some_other_function_in_your_code</i>
-creates that object, which is a complicated process that involves hundreds of
-operations. If you just want to test <i>some_other_function_in_your_code</i>,
-you shouldn't need to go through this whole process[<a href="#note1">1</a>].
+Here we have a function <code>some_other_function_in_your_code</code> that uses
+an object. Somewhere else in your code,
+<code>some_other_function_in_your_code</code> creates that object, which is a
+complicated process that involves hundreds of operations. If you just want to
+test <code>some_other_function_in_your_code</code>, you shouldn't need to go
+through this whole process[<a href="#note1">1</a>].
             </p><p>
 To avoid that, we can use mocking.  Notice that all we need to test in
-<i>some_other_function_in_your_code</i> is that the argument passed has a
-member called <i>do_something</i> that can be called with no arguments and
-returns something that can be converted to <i>bool</i>.  There are many ways to
-do that, but to keep things short, I'll skip right to the library I use most of
-the times, <i>mock</i>.
+<code>some_other_function_in_your_code</code> is that the argument passed has a
+member called <code>do_something</code> that can be called with no arguments and
+returns something that can be converted to <code>bool</code>.  There are many
+ways to do that, but to keep things short, I'll skip right to the library I use
+most of the times, <code>mock</code>.
             </p><p>
-The main component of the <i>mock</i> library is the <i>Mock</i> class, which
-is basically an empty object with a few useful characteristics (be sure to
-check the documentation, because they are really useful).  Two of them are
-important for this discussion.  First, every time you access an attribute of a
-<i>Mock</i> object, another <i>Mock</i> object is created and assigned to the
-attribute being accessed.
+The main component of the <code>mock</code> library is the <code>Mock</code>
+class, which is basically an empty object with a few useful characteristics (be
+sure to check the documentation, because they are really useful).  Two of them
+are important for this discussion.  First, every time you access an attribute of
+a <code>Mock</code> object, another <code>Mock</code> object is created and
+assigned to the attribute being accessed.
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> mock
 &gt;&gt;&gt; m = mock.Mock()
@@ -78,13 +79,13 @@ attribute being accessed.
 &gt;&gt;&gt; <b>print</b>(<b>id</b>(m.some_attribute))
 140095453131664</code></pre>
             <p>
-As you can see, when we tried to access some_attribute, a <i>Mock</i> object was
-created for us. We could do it by hand with a single line of code, but it makes
-the code easier, shorter and cleaner.
+As you can see, when we tried to access some_attribute, a <code>Mock</code>
+object was created for us. We could do it by hand with a single line of code,
+but it makes the code easier, shorter and cleaner.
             </p><p>
-The other feature of <i>Mock</i> objects is the <i>return_value</i> attribute.
-Whatever is contained in this attribute gets returned when the object is called
-as a function object[<a href="#note2">2</a>].
+The other feature of <code>Mock</code> objects is the <code>return_value</code>
+attribute.  Whatever is contained in this attribute gets returned when the
+object is called as a function object[<a href="#note2">2</a>].
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> mock
 &gt;&gt;&gt; m = mock.Mock()
@@ -96,17 +97,17 @@ u'the return value'</code></pre>
 
 <b>def</b> your_test():
     a = mock.Mock()
-    a.do_something.return_value = True
+    a.do_something.return_value = <b>True</b>
     <b>if</b> some_function_in_your_code(a) != <b>3.14159</b>:
         <b>raise</b> <b>Exception</b>(<b>u'return wasn't 3.14159.'</b>)
     a.return_value = <b>False</b>
     <b>if</b> some_function_in_your_code(a) != <b>6.28318</b>:
         <b>raise</b> <b>Exception</b>(<b>u'return wasn't 6.28318.'</b>)</code></pre>
             <p>
-Let's break that down.  We first create a <i>Mock</i> object to represent the
-argument passed to the function.  The next line takes care of the two things we
-need to test the function: the <i>do_something</i> attribute and its return
-value.  Then, all we have to do is call the function, passing the mocked
+Let's break that down.  We first create a <code>Mock</code> object to represent
+the argument passed to the function.  The next line takes care of the two things
+we need to test the function: the <code>do_something</code> attribute and its
+return value.  Then, all we have to do is call the function, passing the mocked
 argument, and check the return value.  After that, the process is repeated, this
 time with a different return value.
             </p>
@@ -131,9 +132,9 @@ Suppose we have this:
             <p>
 How can you test that function if the value tested is conjured from oblivion in
 the middle of the function?  Fear not, you can actually do it.  The trick here
-is to mock the <i>random</i> function from the <i>random</i> module before the
-first line of <i>f</i> is executed.  Let's start with this simple example, just
-to get the basic idea:
+is to mock the <code>random</code> function from the <code>random</code> module
+before the first line of <code>f</code> is executed.  Let's start with this
+simple example, just to get the basic idea:
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> random
 &gt;&gt;&gt; random.random()
@@ -154,40 +155,41 @@ This seems pretty simple.  But here is where everybody gets lost:
 &gt;&gt;&gt; some_file.f() == <b>6.28318</b> <b>or</b> <b>raise</b> ThisShouldNotBeHappeningException()</code></pre>
             <p>
 This may not explode the first time, but you have a 50% chance of getting an
-exception.  To see why, you can put a <i>print random.random</i> inside
-<i>f</i> and see that the mock didn't work.  To understand why, we have to dig
-a little deeper.
+exception.  To see why, you can put a <code>print random.random</code> inside
+<code>f</code> and see that the mock didn't work.  To understand why, we have to
+dig a little deeper.
             </p>
             <h2 id="import"><a href="#import">Import</a></h2>
             <p>
-What happens when you run <i>import random</i>? You can watch
+What happens when you run <code>import random</code>? You can watch
 <a href="http://pyvideo.org/video/1707/how-import-works">this video</a> to know
 exactly what.  Or you can just continue reading to get a summary.  Or both.
 Anyway:
             </p>
             <pre><code>&gt;&gt;&gt; <b>locals</b>()
-{'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', '__doc__': None, '__package__': None}
+{<b>'__builtins__'</b>: &lt;module <b>'__builtin__'</b> (built-in)&gt;, <b>'__name__'</b>: <b>'__main__'</b>, <b>'__doc__'</b>: None, <b>'__package__'</b>: None}
 &gt;&gt;&gt; <b>import</b> random
 &gt;&gt;&gt; <b>locals</b>()
-{'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', 'random': &lt;module 'random' from '/usr/lib/python2.7/random.pyc'&gt;, '__doc__': None, '__package__': None}</code></pre>
+{<b>'__builtins__'</b>: &lt;module <b>'__builtin__'</b> (built-in)&gt;, <b>'__name__'</b>: <b>'__main__'</b>, <b>'random'</b>: &lt;module <b>'random'</b> from <b>'/usr/lib/python2.7/random.pyc'</b>&gt;, <b>'__doc__'</b>: None, <b>'__package__'</b>: None}</code></pre>
             <p>
-In Python, <i>locals</i> is a built-in function that returns the local
+In Python, <code>locals</code> is a built-in function that returns the local
 variables accessible on the current state of execution (don't believe me, run
-<i>print(__builtins__.locals)</i>). When you execute <i>import random</i>, the
-interpreter does its magic to find the module and load it, but more importantly,
-it creates an item called "random" on the current namespace referring to the
-module loaded. The critical part here is "current namespace". Try this:
+<code>print(__builtins__.locals)</code>). When you execute <code>import
+random</code>, the interpreter does its magic to find the module and load it,
+but more importantly, it creates an item called <code>"random"</code> in the
+current namespace referring to the module loaded. The critical part here is
+"current namespace".  Try this:
             </p>
             <pre><code>&gt;&gt;&gt; <b>def</b> f(): <b>print</b>(<b>locals</b>())
 &gt;&gt;&gt; <b>import</b> random
 &gt;&gt;&gt; f()
 {}</code></pre>
             <p>
-Here, importing random didn't affect the namespace of <i>f</i>.  The same thing
-applies to namespaces of other modules.  Our example fails because the
-namespace in the <i>some_file</i> module is different than the namespace where
-we run our tests.  To change the namespace of <i>some_file</i>, we have to do
-it explicitly:
+Here, importing random didn't affect the namespace of <code>f</code>.  The same
+thing applies to namespaces of other modules.  Our example fails because the
+namespace in the <code>some_file</code> module is different than the namespace
+where we run our tests.  To change the namespace of <code>some_file</code>, we
+have to do it explicitly:
             </p>
             <pre><code>&gt;&gt;&gt; <b>import</b> some_file
 &gt;&gt;&gt; some_file.random.random = <b>lambda</b>: <b>0.5</b>
@@ -195,7 +197,7 @@ it explicitly:
             <p>
 You can run that many times if you don't trust me, but that will always succeed.
 And it does because we now are changing the correct namespace.  You can check it
-by putting a <i>print(random.random)</i> in <i>f</i> again.
+by putting a <code>print(random.random)</code> in <code>f</code> again.
             </p>
             <h2 id="being-nice"><a href="#being-nice">Being nice</a></h2>
             <p>
@@ -216,8 +218,9 @@ paranoid.  Just to clear any doubt, here is exactly how to do it:
 &gt;&gt;&gt; random.random = original_random</code></pre>
             <p>
 Now you have no excuse.  Better yet, you can use another feature of the
-<i>mock</i> library called <i>patch</i>.  But that would be an extension to an
-already long post.  Maybe I'll cover it in the future.  Anyway, happy mocking!
+<code>mock</code> library called <code>patch</code>.  But that would be an
+extension to an already long post.  Maybe I'll cover it in the future.  Anyway,
+happy mocking!
             </p>
             <h2 id="notes"><a href="#notes">Notes</a></h2>
             <ol>
@@ -229,7 +232,7 @@ anyway, but that is another problem.
                 </li>
                 <li id="note2">
                     <p>
-Curious to know what happens when you access <i>return_value</i> without
+Curious to know what happens when you access <code>return_value</code> without
 setting it first?  No?  Well, I'll show you anyway:
                     </p>
                     <pre><code>&gt;&gt;&gt; <b>import</b> mock
@@ -237,8 +240,8 @@ setting it first?  No?  Well, I'll show you anyway:
 &gt;&gt;&gt; m.return_value
 &lt;Mock name='mock()' id='140095453168080'&gt;</code></pre>
             <p>
-Since we didn't set it, we get the default behavior of <i>__setattr__</i>, which
-is to create another <i>Mock</i>.
+Since we didn't set it, we get the default behavior of <code>__setattr__</code>,
+which is to create another <code>Mock</code>.
                 </li>
             </ol>
             <div class="tags">
