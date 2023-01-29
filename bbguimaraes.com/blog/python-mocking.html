@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>python mocking</title>
+        <title>Python mocking</title>
         <link rel="stylesheet" type="text/css" href="/main.css" />
         <link
             rel="alternate" type="application/rss+xml" title="RSS"
@@ -16,18 +16,18 @@
                 /
                 <a href=".">blog</a>
                 /
-                python mocking
+                Python mocking
                 <a id="rss-icon" href="/blog/rss.xml">
                     <img src="/files/blog/rss.png" alt="rss"/>
                 </a>
             </nav>
-            <h1>python mocking</h1>
+            <h1>Python mocking</h1>
             <p><i>2013-05-11 19:17:00</i></p>
             <p>
 If you are into unit testing, you probably have been introduced to mocking.
 And if that is the case, you probably already have been bitten by it.  Mocking
 requires some understanding of code execution, importing and name resolution
-that most people lack when first encountering such situations.  In python,
+that most people lack when first encountering such situations.  In Python,
 mocking is a relatively simple process, if you analyze carefully what needs to
 be done.
             </p><p>
@@ -53,7 +53,7 @@ creates that object, which is a complicated process that involves hundreds of
 operations. If you just want to test <i>some_other_function_in_your_code</i>,
 you shouldn't need to go through this whole process[<a href="#note1">1</a>].
             </p><p>
-To avoid that, we can use mocking.  Notice that all we need to test on
+To avoid that, we can use mocking.  Notice that all we need to test in
 <i>some_other_function_in_your_code</i> is that the argument passed has a
 member called <i>do_something</i> that can be called with no arguments and
 returns something that can be converted to <i>bool</i>.  There are many ways to
@@ -78,9 +78,9 @@ attribute being accessed.
 &gt;&gt;&gt; <b>print</b>(<b>id</b>(m.some_attribute))
 140095453131664</code></pre>
             <p>
-As you can see, when we tried to access some_attribute, a <i>Mock</i> object
-was created for us. We could do it by hand with a single line of code, but it
-makes it makes the code easier, shorter and cleaner.
+As you can see, when we tried to access some_attribute, a <i>Mock</i> object was
+created for us. We could do it by hand with a single line of code, but it makes
+the code easier, shorter and cleaner.
             </p><p>
 The other feature of <i>Mock</i> objects is the <i>return_value</i> attribute.
 Whatever is contained in this attribute gets returned when the object is called
@@ -91,7 +91,7 @@ as a function object[<a href="#note2">2</a>].
 &gt;&gt;&gt; m.return_value = <b>u'the return value'</b>
 &gt;&gt;&gt; m()
 u'the return value'</code></pre>
-            <p>Using this two techniques, we can now test our function:</p>
+            <p>Using these two techniques, we can now test our function:</p>
             <pre><code><b>import</b> mock
 
 <b>def</b> your_test():
@@ -107,7 +107,7 @@ Let's break that down.  We first create a <i>Mock</i> object to represent the
 argument passed to the function.  The next line takes care of the two things we
 need to test the function: the <i>do_something</i> attribute and its return
 value.  Then, all we have to do is call the function, passing the mocked
-argument, and check the return value.  After that, repeat the process, this
+argument, and check the return value.  After that, the process is repeated, this
 time with a different return value.
             </p>
             <h2 id="that-was-the-easy-part">
@@ -171,10 +171,10 @@ Anyway:
 &gt;&gt;&gt; <b>locals</b>()
 {'__builtins__': &lt;module '__builtin__' (built-in)&gt;, '__name__': '__main__', 'random': &lt;module 'random' from '/usr/lib/python2.7/random.pyc'&gt;, '__doc__': None, '__package__': None}</code></pre>
             <p>
-In python, <i>locals</i> is a built-in function that returns the local
+In Python, <i>locals</i> is a built-in function that returns the local
 variables accessible on the current state of execution (don't believe me, run
 <i>print(__builtins__.locals)</i>). When you execute <i>import random</i>, the
-interpreter does its magic to find the module and load it, but more important,
+interpreter does its magic to find the module and load it, but more importantly,
 it creates an item called "random" on the current namespace referring to the
 module loaded. The critical part here is "current namespace". Try this:
             </p>
@@ -183,9 +183,9 @@ module loaded. The critical part here is "current namespace". Try this:
 &gt;&gt;&gt; f()
 {}</code></pre>
             <p>
-Here, importing random didn't affect the namespace on <i>f</i>.  The same thing
+Here, importing random didn't affect the namespace of <i>f</i>.  The same thing
 applies to namespaces of other modules.  Our example fails because the
-namespace on the <i>some_file</i> module is different than the namespace where
+namespace in the <i>some_file</i> module is different than the namespace where
 we run our tests.  To change the namespace of <i>some_file</i>, we have to do
 it explicitly:
             </p>
@@ -193,9 +193,9 @@ it explicitly:
 &gt;&gt;&gt; some_file.random.random = <b>lambda</b>: <b>0.5</b>
 &gt;&gt;&gt; some_file.f() == <b>6.28318</b> <b>or</b> <b>raise</b> ThisShouldNotBeHappeningException()</code></pre>
             <p>
-You can run that many times if you don't trust me, but that will always
-succeed.  And it does because we now are changing the correct namespace.  You
-can check it by putting a <i>print(random.random)</i> on <i>f</i> again.
+You can run that many times if you don't trust me, but that will always succeed.
+And it does because we now are changing the correct namespace.  You can check it
+by putting a <i>print(random.random)</i> in <i>f</i> again.
             </p>
             <h2 id="being-nice"><a href="#being-nice">Being nice</a></h2>
             <p>
@@ -204,7 +204,7 @@ Always, always, ALWAYS restore any mock you do.  Seriously.  Even if you're
 sure no one will use the mocked attribute.  You don't want to loose an entire
 day of work just to find out that the problem was an undone mock.
             </p><p>
-And doing it is so simple: store the original value on a variable and restore
+And doing it is so simple: store the original value in a variable and restore
 it after the operation.  I like to do it as soon as the operation is complete,
 before anything else is executed, but you don't need to, if you're not
 paranoid.  Just to clear any doubt, here is exactly how to do it:
