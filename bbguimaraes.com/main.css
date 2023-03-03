@@ -16,8 +16,16 @@ details > summary {
     cursor: pointer;
 }
 
+code {
+    font-weight: bold;
+}
+
 pre {
     overflow: auto;
+}
+
+pre code {
+    font-weight: normal;
 }
 
 figcaption {
@@ -187,14 +195,6 @@ figcaption {
 
 .blog .src-ref {
     font-style: italic;
-}
-
-.blog code {
-    font-weight: bold;
-}
-
-.blog pre code {
-    font-weight: normal;
 }
 
 .blog .tags {
