@@ -1,0 +1,48 @@
+@media (max-width: 80ch) {
+    .video video {
+        width: 100%;
+    }
+}
+
+@media not (max-width: 80ch) {
+    .video video {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+.video {
+    margin-bottom: 2em;
+}
+
+.video h2 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.video > a:first-child {
+    text-decoration: none;
+}
+
+.video > div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+
+.video video {
+    max-width: 400px;
+    max-height: 300px;
+    margin-bottom: 1em;
+}
+
+.video ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.video li {
+    margin-bottom: 0.5em;
+}
