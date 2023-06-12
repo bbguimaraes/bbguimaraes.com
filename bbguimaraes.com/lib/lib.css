@@ -21,3 +21,28 @@
 .book h3 {
     margin-top: 0;
 }
+
+.citation {
+    text-align: center;
+}
+
+.citation-el, .citation-en {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: left;
+    vertical-align: top;
+}
+
+@media (min-width: 80ch) {
+    .citation-el {
+        width: 40%;
+        margin-right: 0;
+    }
+
+    .citation-en {
+        width: 50%;
+    }
+}
