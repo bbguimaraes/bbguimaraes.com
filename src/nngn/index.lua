@@ -61,6 +61,10 @@ return include "master.lua" {
                         content = "post-processing",
                     },
                     link {
+                        href = "screenshots/audio.html",
+                        content = "audio",
+                    },
+                    link {
                         href = "screenshots/compute.html",
                         content = "compute",
                     },
