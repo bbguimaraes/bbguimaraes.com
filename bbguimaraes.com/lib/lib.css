@@ -1,3 +1,37 @@
+.book blockquote {
+    font-style: italic;
+    position: relative;
+    padding-left: 1em;
+}
+
+.book blockquote::before {
+    content: '“';
+    font-size: 4em;
+    font-style: normal;
+    filter: brightness(40%);
+    position: absolute;
+    top: -0.2em;
+    left: -0.4em;
+}
+
+.book blockquote hr {
+    filter: brightness(40%);
+    width: 61.8%;
+}
+
+.books .book:nth-child(odd) h3 + blockquote {
+    display: flow-root;
+    left: 1em;
+}
+
+.books .book:nth-child(odd) h3 + blockquote p {
+    display: inline;
+}
+
+.books .book:nth-child(odd) h3 + blockquote p:last-child {
+    margin-bottom: 0;
+}
+
 .books .book:nth-child(even) img {
     float: right;
     margin-left: 1em;
