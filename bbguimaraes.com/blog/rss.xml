@@ -32,10 +32,19 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Wed, 26 Jul 2023 19:34:49 GMT</pubDate>
-        <lastBuildDate>Wed, 26 Jul 2023 19:34:49 GMT</lastBuildDate>
+        <pubDate>Mon, 31 Jul 2023 08:47:14 +0000</pubDate>
+        <lastBuildDate>Mon, 31 Jul 2023 08:47:14 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Prelude 4, op. 28</title>
+            <link>https://bbguimaraes.com/music/prelude-4-op-28.html</link>
+            <guid>https://bbguimaraes.com/music/prelude-4-op-28.html</guid>
+            <pubDate>Sun, 30 Jul 2023 11:28:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Frédéric François Chopin</p><p>The sound of absence and longing.</p></description>
+        </item>
         <item>
             <title>Pride and prejudice</title>
             <link>https://bbguimaraes.com/lib/pride-and-prejudice.html</link>
