@@ -1,38 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Apology of Socrates</title>
-        <link rel="stylesheet" type="text/css" href="/main.css" />
-        <link rel="stylesheet" type="text/css" href="lib.css" />
-    </head>
-    <body class="w80">
-        <nav id="page-nav">
-            <a href="/"><img id="logo" src="/triangle_icon.png" alt="root" /></a>
-            /
-            <a href=".">lib</a>
-            /
-            Apology of Socrates
-            <a id="rss-icon" href="/rss.xml"><img src="/files/rss.png" alt="rss" /></a>
-        </nav>
-        <div class="book">
-            <img class="book-cover" src="/files/lib/apologia.jpg" alt="cover" />
-            <h1 id="apologia">
-                <a href="https://standardebooks.org/ebooks/plato/dialogues/benjamin-jowett"><i><span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates)</i></a>,
-                Plato
-            </h1>
-            <p class="languages">
-                <b>en</b>
-                <a href="apologia-pt.html">pt</a>
-            </p>
-            <p><i>2023-07-12T18:04:19</i></p>
-            <blockquote>
-                <p>
-The unexamined life is not worth living.
-                </p>
-            </blockquote>
-            <p>
+local description <const> = [[
 One of the Platonic dialogues which depicts the last days of Socrates (together
 with <i>Euthyphro</i>, <i>Crito</i>, <i>Phaedo</i>, and Xenophon's
 <i>Apology</i>).  Having been accused of "corrupting the youth" and teaching men
@@ -41,8 +7,15 @@ the philosopher consults his δαιμόνιον (<i lang="grc">daimonion</i>, hi
 faculty") and decides that, rather than desisting and escaping from his trial,
 as his prosecutors would have him do, he is to deliver his defense in front of
 the court and face the ultimate consequence.
-            </p>
-            <p>
+]]
+
+local intro <const> = lines {
+    blockquote(par "The unexamined life is not worth living.\n"),
+    par(description),
+}
+
+local content <const> = lines {
+    par [[
 This can be considered the quintessential Socratic dialogue: it contains many of
 the idiosyncratic elements he is most renowned for.  His traditional manner of
 speaking (the eponymous <i>Socratic irony</i>) is present from the opening and
@@ -52,8 +25,8 @@ knows ("for I know that I have no wisdom, small or great"), but because the
 awareness of his ignorance ensures his humility, and his subsequent search and
 examination of truly wise men so that she could be refuted leads to the
 discovery that none was indeed wise, but only thought himself to be.
-            </p>
-            <p>
+]],
+    par [[
 A few centuries later, Cicero would write that in his trial Socrates spoke
 <i lang="la">ut non supplex aut reus, sed magister, aut dominus videretur esse
 iudicum</i> ("as to be seen not supplicant as a defendant, but great as a master
@@ -64,15 +37,13 @@ conviction, integrity, and rectitude, not even death is a threat: fear of it is
 "pretense of wisdom".  Nothing will injure him: his accusers and adjudicators
 have no power, "for a bad man is not permitted to injure a better than himself",
 and "no evil can happen to a good man, either in life or after death".
-            </p>
-            <blockquote>
-                <p>
+]],
+    blockquote(par [[
 And now I depart hence condemned by you to suffer the penalty of death &mdash;
 they too go their ways condemned by the truth to suffer the penalty of villainy
 and wrong.
-                </p>
-            </blockquote>
-            <p>
+]]),
+    par [[
 The source of his fortitude is obstinate devotion, as his duty is eminently
 <em>religious</em>: "I shall obey God rather than you".  Similar is his
 inference from the Pythian augury: "but the truth is, O men of Athens, that God
@@ -81,33 +52,33 @@ of his fellow citizens, and even of his accusers: he argues not for his sake,
 "but for yours, that you may not sin against the God by condemning me".  And as
 "God orders me to fulfill the philosopher's mission of searching into myself and
 other men", betraying this commandment would be not only immoral, but impious:
-            </p>
-            <blockquote>
-                <p>
+]],
+    blockquote(lines {
+        par [[
 I shall never alter my ways, not even if I have to die many times.
-                </p>
-                <hr />
-                <p>
+]],
+    html "<hr />",
+    par [[
 I would rather die having spoken after my manner, than speak in your manner and
 live.
-                </p>
-                <hr />
-                <p>
+]],
+    html "<hr />",
+    par [[
 A man who is good for anything ought only to consider whether in doing anything
 he is doing right or wrong[&hellip;]; he should not think of death or anything
 but of disgrace.
-                </p>
-                <hr />
-                <p>
+]],
+    html "<hr />",
+    par [[
 For if, O men of Athens, by force of persuasion and entreaty I could overpower
 your oaths, then I should be teaching you to believe that there are no gods, and
 in defending should simply convict myself of the charge of not believing in
 them.  But that is not so &mdash; far otherwise.  For I do believe that there
 are gods, and in a sense higher than that in which any of my accusers believe in
 them.
-                </p>
-            </blockquote>
-            <p>
+]],
+    }),
+    par [[
 Socrates was tried and executed in 4th-century B.C. Athens, but in a time when
 the trial of public opinion still coerces and silences, when death is to be
 avoided at all costs, when freedom is thought to be licentiousness,
@@ -115,78 +86,124 @@ incontinence, exemption from consequence, and subordination to nothing and to no
 one, in a time of meaninglessness, moral relativism, and confusion, his apology
 shows that there are things worth living &mdash; and dying &mdash; for:
 <i>wisdom, truth, and the greatest improvement of the soul</i>.
-            </p>
-            <blockquote>
-                <p>
+]],
+    blockquote(par [[
 The hour of departure has arrived, and we go our ways &mdash; I to die, and you
 to live. Which is better God only knows.
-                </p>
-            </blockquote>
-            <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0170:text=Apol.">English</a>
-            <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0169:text=Apol.">Greek</a>
-        </div>
-        <hr />
-        <div class="citations">
-            <h2 id="citations">
-                <a href="#citations">
-                    citations
-                </a>
-            </h2>
-            <ul>
-                <li>
-                    <a href="#20c">20c &ndash; the wisest man</a>
-                </li>
-                <li>
-                    <a href="#21b">21b &ndash; politicians</a>
-                </li>
-                <li>
-                    <a href="#22a">22a &ndash; poets</a>
-                </li>
-                <li>
-                    <a href="#22c">22c &ndash; artisans</a>
-                </li>
-                <li>
-                    <a href="#22e">22e &ndash; devotion to God</a>
-                </li>
-                <li>
-                    <a href="#23c">23c &ndash; angry with themselves</a>
-                </li>
-                <li>
-                    <a href="#25c">25c &ndash; to live among good citizens</a>
-                </li>
-                <li>
-                    <a href="#26b">26b &ndash; belief in gods</a>
-                </li>
-                <li>
-                    <a href="#28b">28b &ndash; fear of death</a>
-                </li>
-                <li>
-                    <a href="#30c">30c &ndash; nothing will injure me</a>
-                </li>
-                <li>
-                    <a href="#30d">30d &ndash; gadfly</a>
-                </li>
-                <li>
-                    <a href="#34e">34e &ndash; fear of God</a>
-                </li>
-                <li>
-                    <a href="#37e">37e &ndash; the unexamined life</a>
-                </li>
-                <li>
-                    <a href="#40a">40a &ndash; be of good cheer about death</a>
-                </li>
-                <li>
-                    <a href="#41e">41e &ndash; last favor</a>
-                </li>
-                <li>
-                    <a href="#42e">42e &ndash; God only knows</a>
-                </li>
-            </ul>
-            <hr />
-            <p><a name="20c" href="#20c">20c &ndash; the wisest man</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]]),
+    link {
+        href = "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0170:text=Apol.",
+        content = "English",
+    },
+    link {
+        href = "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0169:text=Apol.",
+        content = "Greek",
+    },
+}
+
+local content_pt <const> = lines {
+    blockquote(par "A vida não examinada não merece ser vivida.\n"),
+    par [[
+Um dos diálogos platônicos que retrata os últimos dias de Sócrates (junto com
+<i>Euthyphro</i>, <i>Crito</i>, <i>Phaedo</i>, e a <i>Apologia</i> de Xenophon).
+Tendo sido acusado de "corromper a juventude" e ensinar aos homens que "não
+aceitem os deuses que a cidade aceita", e sabendo qual é seu destino, o filósofo
+consulta seu δαιμόνιον (<i lang="grc">daimonion</i>, sua "faculdade divina") e
+decide que, ao invés de desistir e escapar de seu julgamento, como os promotores
+desejariam que fizesse, ele apresentará sua defesa em frente à corte e encarará
+a consequência suprema.
+]],
+    par [[
+Esse pode ser considerado o diálogo socrático quintessencial: contém muitos dos
+elementos idiossincráticos pelos quais ele é mais renomado.  Sua maneira
+tradicional de falar (a epônima <i>ironia socrática</i>) é presente desde a
+abertura e tornada quase mítica no famoso relato do pronunciamento pelo oráculo
+de Delphi que ele era o homem mais sábio.  Isso ele descobre ser não pelo que
+sabe ("pois sei que não tenho sabedoria, pequena ou grande"), mas porque a
+consciência da sua ignorância assegura a sua humildade, e a sua subsequente
+busca e examinação de homens verdadeiramente sábios para que ela pudesse ser
+refutada leva à descoberta que nenhum era de fato sábio, somente pensava ser.
+]],
+    par [[
+Alguns séculos depois, Cícero escreveria que em seu julgamento Sócrates falou <i
+lang="la">ut non supplex aut reus, sed magister, aut dominus videretur esse
+iudicum</i> ("a ser visto não suplicante como réu, mas como mestre, senhor de
+seus juízes").  Ele é a personificação do homem <i>livre</i>, no sentido
+clássico (e verdadeiro): libertado de vícios mundanos, sua vida é dedicada, até
+o fim, ao que é verdadeiramente importante, a <em>virtude</em>.  Na força de sua
+convicção, integridade, e retidão, nem mesmo a morte é uma ameaça: temor a ela é
+"pretensão de sabedoria".  Nada o ferirá: seus acusadores e juízes não tem
+poder, "pois a um homem ruim não é permitido ferir alguém melhor que ele", e
+"nenhum mal pode acontecer a um homem bom, na vida ou após a morte".
+]],
+    blockquote(par [[
+E agora parto portanto condenado por vocês a sofrer a pena de morte &mdash; eles
+também seguem seus caminhos condenados pela verdade a sofrerem a pena da vilania
+e injúria.
+]]),
+    par [[
+A fonte de sua fortitude é a devoção obstinada, pois seu dever é eminentemente
+<em>religioso</em>: "eu obedecerei a Deus, e não a vocês".  Similar é a sua
+inferência do augúrio de Pythia: "mas a verdade é, ó homens de Atenas, que
+somente Deus é sábio".  E sua preocupação moral não é só consigo, mas com as
+almas de seus concidadãos, e mesmo de seus acusadores: ele argumenta não por sua
+causa, "mas pela sua, para que não pequem contra Deus me condenando".  E como
+"Deus me ordena a cumprir a missão do filósofo de inquirir a mim mesmo e a
+outros homens", trair esse mandamento seria não só imoral, mas ímpio:
+]],
+    blockquote(lines {
+        par [[
+Nunca alterarei meu modo, nem que tenha que morrer várias vezes.
+]],
+    html "<hr />",
+    par [[
+Preferiria morrer tendo falado da minha maneira, a falar da sua maneira e viver.
+]],
+    html "<hr />",
+    par [[
+Um homem que é bom para qualquer coisa deve somente considerar se ao fazer algo
+faz o certo ou o errado[&hellip;]; não deve pensar na morte ou em qualquer coisa
+senão na desgraça.
+]],
+    html "<hr />",
+    par [[
+Porque se, ó homens de Atenas, por força de persuasão e súplica eu pudesse
+compelir seus juramentos, então estaria os ensinando a acreditar que não existem
+deuses, e em defesa simplesmente me condenaria à acusação de não acreditar
+neles.  Mas não é assim &mdash; muito pelo contrário.  Porque eu acredito que
+existem deuses, num sentido superior ao que os meus acusadores acreditam.
+]],
+    }),
+    par [[
+Sócrates foi julgado e executado na Atenas do século IV A.C., mas num tempo em
+que o tribunal da opinão pública ainda coage e silencia, em que a morte é
+evitada a qualquer custo, em que se pensa que liberdade é licenciosidade,
+incontinência, isenção de consequência, e subordinação a nada e a ninguém, num
+tempo de insignificância, relativismo moral, e confusão, a sua apologia mostra
+que existem coisas para as quais vale a pena viver &mdash; e morrer:
+<i>sabedoria, verdade, e o maior aperfeiçoamento da alma</i>.
+]],
+    blockquote(par [[
+É chegada a hora da partida, e seguimos nossos caminhos &mdash; eu para morrer,
+vocês para viverem.  Qual é melhor, só Deus sabe.
+]]),
+    link {
+        href = "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0170:text=Apol.",
+        content = "inglês",
+    },
+    link {
+        href = "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0169:text=Apol.",
+        content = "grego",
+    },
+}
+
+local citations <const> = {{
+    id = "20c",
+    source = "20c",
+    title = "the wisest man",
+    content = {
+        lines {
+            par [[
 I dare say, Athenians, that someone among you will reply, "Yes, Socrates, but
 what is the origin of these accusations which are brought against you; there
 must have been something strange which you have been doing?  All these rumours
@@ -214,8 +231,8 @@ to interrupt &mdash; he asked the oracle to tell him whether anyone was wiser
 than I was, and the Pythian prophetess answered, that there was no man wiser.
 Chaerephon is dead himself; but his brother, who is in court, will confirm the
 truth of what I am saying.
-                    </p>
-                    <p>
+]],
+            par [[
 Why do I mention this?  Because I am going to explain to you why I have such an
 evil name.  When I heard the answer, I said to myself "What can the god mean,
 and what is the interpretation of his riddle?" for I know that I have no wisdom,
@@ -225,10 +242,10 @@ long consideration, I thought of a method of trying the question.  I reflected
 that if I could only find a man wiser than myself, then I might go to the god
 with a refutation in my hand.  I should say to him, "Here is a man who is wiser
 than I am; but you said that I was the wisest".
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ὑπολάβοι ἂν οὖν τις ὑμῶν ἴσως: "ἀλλ᾽, ὦ Σώκρατες, τὸ σὸν τί ἐστι πρᾶγμα; πόθεν
 αἱ διαβολαί σοι αὗται γεγόνασιν; οὐ γὰρ δήπου σοῦ γε οὐδὲν τῶν ἄλλων
 περιττότερον πραγματευομένου ἔπειτα τοσαύτη φήμη τε καὶ λόγος γέγονεν, εἰ μή τι
@@ -251,8 +268,8 @@ than I am; but you said that I was the wisest".
 &mdash; ἤρετο γὰρ δὴ εἴ τις ἐμοῦ εἴη σοφώτερος.  ἀνεῖλεν οὖν ἡ Πυθία μηδένα
 σοφώτερον εἶναι.  καὶ τούτων πέρι ὁ ἀδελφὸς ὑμῖν αὐτοῦ οὑτοσὶ μαρτυρήσει, ἐπειδὴ
 ἐκεῖνος τετελεύτηκεν.
-                    </p>
-                    <p>
+]],
+            par [[
 σκέψασθε δὴ ὧν ἕνεκα ταῦτα λέγω: μέλλω γὰρ ὑμᾶς διδάξειν ὅθεν μοι ἡ διαβολὴ
 γέγονεν.  ταῦτα γὰρ ἐγὼ ἀκούσας ἐνεθυμούμην οὑτωσί: "τί ποτε λέγει ὁ θεός, καὶ
 τί ποτε αἰνίττεται; ἐγὼ γὰρ δὴ οὔτε μέγα οὔτε σμικρὸν σύνοιδα ἐμαυτῷ σοφὸς ὤν:
@@ -261,14 +278,16 @@ than I am; but you said that I was the wisest".
 ζήτησιν αὐτοῦ τοιαύτην τινὰ ἐτραπόμην.  ἦλθον ἐπί τινα τῶν δοκούντων σοφῶν
 εἶναι, ὡς ἐνταῦθα εἴπερ που ἐλέγξων τὸ μαντεῖον καὶ ἀποφανῶν τῷ χρησμῷ ὅτι
 "οὑτοσὶ ἐμοῦ σοφώτερός ἐστι, σὺ δ᾽ ἐμὲ ἔφησθα".
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="21b" href="#21b">21b &ndash; politicians</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "21b",
+    source = "21b",
+    title = "politicians",
+    content = {
+        lines {
+            par [[
 Accordingly I went to one who had the reputation of wisdom, and observed him
 &mdash; his name I need not mention; he was a politician whom I selected for
 examination &mdash; and the result was as follows: when I began to talk with
@@ -283,8 +302,8 @@ he knows; I neither know nor think that I know".  In this latter particular,
 then, I seem to have slightly the advantage of him.  Then I went to another who
 had still higher pretensions to wisdom, and my conclusion was exactly the same.
 Whereupon I made another enemy of him, and of many others besides him.
-                    </p>
-                    <p>
+]],
+            par [[
 Then I went to one man after another, being not unconscious of the enmity which
 I provoked, and I lamented and feared this: but necessity was laid upon me
 &mdash; the word of God, I thought, ought to be considered first.  And I said to
@@ -295,10 +314,10 @@ the men most in repute were all but the most foolish; and that others less
 esteemed were really wiser and better.  I will tell you the tale of my
 wanderings and of the "Herculean" labours, as I may call them, which I endured
 only to find at last the oracle irrefutable.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 διασκοπῶν οὖν τοῦτον &mdash; ὀνόματι γὰρ οὐδὲν δέομαι λέγειν, ἦν δέ τις τῶν
 πολιτικῶν πρὸς ὃν ἐγὼ σκοπῶν τοιοῦτόν τι ἔπαθον, ὦ ἄνδρες Ἀθηναῖοι, καὶ
 διαλεγόμενος αὐτῷ &mdash; ἔδοξέ μοι οὗτος ὁ ἀνὴρ δοκεῖν μὲν εἶναι σοφὸς ἄλλοις
@@ -311,8 +330,8 @@ only to find at last the oracle irrefutable.
 σοφώτερος εἶναι, ὅτι ἃ μὴ οἶδα οὐδὲ οἴομαι εἰδέναι.  ἐντεῦθεν ἐπ᾽ ἄλλον ᾖα τῶν
 ἐκείνου δοκούντων σοφωτέρων εἶναι καί μοι ταὐτὰ ταῦτα ἔδοξε, καὶ ἐνταῦθα κἀκείνῳ
 καὶ ἄλλοις πολλοῖς ἀπηχθόμην.
-                    </p>
-                    <p>
+]],
+            par [[
 μετὰ ταῦτ᾽ οὖν ἤδη ἐφεξῆς ᾖα, αἰσθανόμενος μὲν καὶ λυπούμενος καὶ δεδιὼς ὅτι
 ἀπηχθανόμην, ὅμως δὲ ἀναγκαῖον ἐδόκει εἶναι τὸ τοῦ θεοῦ περὶ πλείστου ποιεῖσθαι
 &mdash; ἰτέον οὖν, σκοποῦντι τὸν χρησμὸν τί λέγει, ἐπὶ ἅπαντας τούς τι δοκοῦντας
@@ -322,14 +341,15 @@ only to find at last the oracle irrefutable.
 δοκοῦντες φαυλότεροι ἐπιεικέστεροι εἶναι ἄνδρες πρὸς τὸ φρονίμως ἔχειν.  δεῖ δὴ
 ὑμῖν τὴν ἐμὴν πλάνην ἐπιδεῖξαι ὥσπερ πόνους τινὰς πονοῦντος ἵνα μοι καὶ
 ἀνέλεγκτος ἡ μαντεία γένοιτο.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="22a" href="#22a">22a &ndash; poets</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "22a",
+    source = "22a",
+    title = "poets",
+    content = {
+        par [[
 After the politicians, I went to the poets; tragic, dithyrambic, and all sorts.
 And there, I said to myself: "you will be instantly detected; now you will find
 out that you are more ignorant than they are".  Accordingly, I took them some of
@@ -345,10 +365,8 @@ upon the strength of their poetry they believed themselves to be the wisest of
 men in other things in which they were not wise.  So I departed, conceiving
 myself to be superior to them for the same reason that I was superior to the
 politicians.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 μετὰ γὰρ τοὺς πολιτικοὺς ᾖα ἐπὶ τοὺς ποιητὰς τούς τε τῶν τραγῳδιῶν καὶ τοὺς τῶν
 διθυράμβων καὶ τοὺς ἄλλους, ὡς ἐνταῦθα ἐπ᾽ αὐτοφώρῳ καταληψόμενος ἐμαυτὸν
 ἀμαθέστερον ἐκείνων ὄντα.  ἀναλαμβάνων οὖν αὐτῶν τὰ ποιήματα ἅ μοι ἐδόκει
@@ -362,14 +380,14 @@ politicians.
 ἅμα ᾐσθόμην αὐτῶν διὰ τὴν ποίησιν οἰομένων καὶ τἆλλα σοφωτάτων εἶναι ἀνθρώπων ἃ
 οὐκ ἦσαν.  ἀπῇα οὖν καὶ ἐντεῦθεν τῷ αὐτῷ οἰόμενος περιγεγονέναι ᾧπερ καὶ τῶν
 πολιτικῶν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="22c" href="#22c">22c &ndash; artisans</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "22c",
+    source = "22c",
+    title = "artisans",
+    content = {
+        par [[
 At last I went to the artisans.  I was conscious that I knew nothing at all, as
 I may say, and I was sure that they knew many fine things; and here I was not
 mistaken, for they did know many things of which I was ignorant, and in this
@@ -380,10 +398,8 @@ defect in them overshadowed their wisdom; and therefore I asked myself on behalf
 of the oracle, whether I would like to be as I was, neither having their
 knowledge nor their ignorance, or like them in both; and I made answer to myself
 and to the oracle that I was better off as I was.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 τελευτῶν οὖν ἐπὶ τοὺς χειροτέχνας ᾖα: ἐμαυτῷ γὰρ συνῄδη οὐδὲν ἐπισταμένῳ ὡς ἔπος
 εἰπεῖν, τούτους δέ γ᾽ ᾔδη ὅτι εὑρήσοιμι πολλὰ καὶ καλὰ ἐπισταμένους.  καὶ τούτου
 μὲν οὐκ ἐψεύσθην, ἀλλ᾽ ἠπίσταντο ἃ ἐγὼ οὐκ ἠπιστάμην καί μου ταύτῃ σοφώτεροι
@@ -394,14 +410,14 @@ and to the oracle that I was better off as I was.
 χρησμοῦ πότερα δεξαίμην ἂν οὕτως ὥσπερ ἔχω ἔχειν, μήτε τι σοφὸς ὢν τὴν ἐκείνων
 σοφίαν μήτε ἀμαθὴς τὴν ἀμαθίαν, ἢ ἀμφότερα ἃ ἐκεῖνοι ἔχουσιν ἔχειν.  ἀπεκρινάμην
 οὖν ἐμαυτῷ καὶ τῷ χρησμῷ ὅτι μοι λυσιτελοῖ ὥσπερ ἔχω ἔχειν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="22e" href="#22e">22e &ndash; devotion to God</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "22e",
+    source = "22e",
+    title = "devotion to God",
+    content = {
+        par [[
 This inquisition has led to my having many enemies of the worst and most
 dangerous kind, and has given occasion also to many calumnies.  And I am called
 wise, for my hearers always imagine that I myself possess the wisdom which I
@@ -416,10 +432,8 @@ wise, then in vindication of the oracle I show him that he is not wise; and my
 occupation quite absorbs me, and I have no time to give either to any public
 matter of interest or to any concern of my own, but I am in utter poverty by
 reason of my devotion to the god.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 ἐκ ταυτησὶ δὴ τῆς ἐξετάσεως, ὦ ἄνδρες Ἀθηναῖοι, πολλαὶ μὲν ἀπέχθειαί μοι
 γεγόνασι καὶ οἷαι χαλεπώταται καὶ βαρύταται, ὥστε πολλὰς διαβολὰς ἀπ᾽ αὐτῶν
 γεγονέναι, ὄνομα δὲ τοῦτο λέγεσθαι, σοφὸς εἶναι: οἴονται γάρ με ἑκάστοτε οἱ
@@ -434,14 +448,14 @@ reason of my devotion to the god.
 ἔστι σοφός.  καὶ ὑπὸ ταύτης τῆς ἀσχολίας οὔτε τι τῶν τῆς πόλεως πρᾶξαί μοι σχολὴ
 γέγονεν ἄξιον λόγου οὔτε τῶν οἰκείων, ἀλλ᾽ ἐν πενίᾳ μυρίᾳ εἰμὶ διὰ τὴν τοῦ θεοῦ
 λατρείαν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="23c" href="#23c">23c &ndash; angry with themselves</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "23c",
+    source = "23c",
+    title = "angry with themselves",
+    content = {
+        par [[
 There is another thing: &mdash; young men of the richer classes, who have not
 much to do, come about me of their own accord; they like to hear the pretenders
 examined, and they often imitate me, and proceed to examine others; there are
@@ -458,10 +472,8 @@ their pretence of knowledge has been detected &mdash; which is the truth; and as
 they are numerous and ambitious and energetic, and are drawn up in battle array
 and have persuasive tongues, they have filled your ears with their loud and
 inveterate calumnies.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 πρὸς δὲ τούτοις οἱ νέοι μοι ἐπακολουθοῦντες &mdash; οἷς μάλιστα σχολή ἐστιν, οἱ
 τῶν πλουσιωτάτων &mdash; αὐτόματοι, χαίρουσιν ἀκούοντες ἐξεταζομένων τῶν
 ἀνθρώπων, καὶ αὐτοὶ πολλάκις ἐμὲ μιμοῦνται, εἶτα ἐπιχειροῦσιν ἄλλους ἐξετάζειν:
@@ -476,38 +488,39 @@ inveterate calumnies.
 εἰδέναι, εἰδότες δὲ οὐδέν.  ἅτε οὖν οἶμαι φιλότιμοι ὄντες καὶ σφοδροὶ καὶ
 πολλοί, καὶ συντεταμένως καὶ πιθανῶς λέγοντες περὶ ἐμοῦ, ἐμπεπλήκασιν ὑμῶν τὰ
 ὦτα καὶ πάλαι καὶ σφοδρῶς διαβάλλοντες.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="25c" href="#25c">25c &ndash; to live among good citizens</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "25c",
+    source = "25c",
+    title = "to live among good citizens",
+    content = {
+        lines {
+            par [[
 &ndash; And now, Meletus, I will ask you another question &mdash; by Zeus I
 will: Which is better, to live among bad citizens, or among good ones?  Answer,
 friend, I say; the question is one which may be easily answered.  Do not the
 good do their neighbours good, and the bad do them evil?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Certainly.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; And is there anyone who would rather be injured than benefited by those
 who live with him?  Answer, my good friend, the law requires you to answer
 &mdash; does anyone like to be injured?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Certainly not.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; And when you accuse me of corrupting and deteriorating the youth, do you
 allege that I corrupt them intentionally or unintentionally?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Intentionally, I say.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; But you have just admitted that the good do their neighbours good, and
 the evil do them evil.  Now, is that a truth which your superior wisdom has
 recognized thus early in life, and am I, at my age, in such darkness and
@@ -524,34 +537,34 @@ me and refused to teach me.  And now you bring me up in this court, which is a
 place not of instruction, but of punishment.  It will be very clear to you,
 Athenians, as I was saying, that Meletus has no care at all, great or small,
 about the matter.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ἔτι δὲ ἡμῖν εἰπέ, ὦ πρὸς Διὸς Μέλητε, πότερόν ἐστιν οἰκεῖν ἄμεινον ἐν πολίταις
 χρηστοῖς ἢ πονηροῖς; ὦ τάν, ἀπόκριναι: οὐδὲν γάρ τοι χαλεπὸν ἐρωτῶ.  οὐχ οἱ μὲν
 πονηροὶ κακόν τι ἐργάζονται τοὺς ἀεὶ ἐγγυτάτω αὑτῶν ὄντας, οἱ δ᾽ ἀγαθοὶ ἀγαθόν
 τι;
-                    </p>
-                    <p>
+]],
+            par [[
 πάνυ γε.
-                    </p>
-                    <p>
+]],
+            par [[
 ἔστιν οὖν ὅστις βούλεται ὑπὸ τῶν συνόντων βλάπτεσθαι μᾶλλον ἢ ὠφελεῖσθαι;
 ἀποκρίνου, ὦ ἀγαθέ: καὶ γὰρ ὁ νόμος κελεύει ἀποκρίνεσθαι.  ἔσθ᾽ ὅστις βούλεται
 βλάπτεσθαι;
-                    </p>
-                    <p>
+]],
+            par [[
 οὐ δῆτα.
-                    </p>
-                    <p>
+]],
+            par [[
 φέρε δή, πότερον ἐμὲ εἰσάγεις δεῦρο ὡς διαφθείροντα τοὺς νέους καὶ πονηροτέρους
 ποιοῦντα ἑκόντα ἢ ἄκοντα;
-                    </p>
-                    <p>
+]],
+            par [[
 ἑκόντα ἔγωγε.
-                    </p>
-                    <p>
+]],
+            par [[
 τί δῆτα, ὦ Μέλητε; τοσοῦτον σὺ ἐμοῦ σοφώτερος εἶ τηλικούτου ὄντος τηλικόσδε ὤν,
 ὥστε σὺ μὲν ἔγνωκας ὅτι οἱ μὲν κακοὶ κακόν τι ἐργάζονται ἀεὶ τοὺς μάλιστα
 πλησίον ἑαυτῶν, οἱ δὲ ἀγαθοὶ ἀγαθόν, ἐγὼ δὲ δὴ εἰς τοσοῦτον ἀμαθίας ἥκω ὥστε καὶ
@@ -565,24 +578,26 @@ about the matter.
 δὲ εἰσάγεις, οἷ νόμος ἐστὶν εἰσάγειν τοὺς κολάσεως δεομένους ἀλλ᾽ οὐ μαθήσεως.
 ἀλλὰ γάρ, ὦ ἄνδρες Ἀθηναῖοι, τοῦτο μὲν ἤδη δῆλον οὑγὼ ἔλεγον, ὅτι Μελήτῳ τούτων
 οὔτε μέγα οὔτε μικρὸν πώποτε ἐμέλησεν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="26b" href="#26b">26b &ndash; belief in gods</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "26b",
+    source = "26b",
+    title = "belief in gods",
+    content = {
+        lines {
+            par [[
 &ndash; But still I should like to know, Meletus, in what I am affirmed to
 corrupt the young.  I suppose you mean, as I infer from your indictment, that I
 teach them not to acknowledge the gods which the state acknowledges, but some
 other new divinities or spiritual agencies in their stead.  These are the
 lessons by which I corrupt the youth, as you say.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Yes, that I say emphatically.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Then, by the gods, Meletus, of whom we are speaking, tell me and the
 court, in somewhat plainer terms, what you mean!  For I do not as yet understand
 whether you affirm that I teach other men to acknowledge some gods, and
@@ -590,24 +605,24 @@ therefore that I do believe in gods, and am not an entire atheist &mdash; this
 you do not lay to my charge &mdash; but only you say that they are not the same
 gods which the city recognizes &mdash; the charge is that they are different
 gods.  Or, do you mean that I am an atheist simply, and a teacher of atheism?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; I mean the latter &mdash; that you are a complete atheist.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; What an extraordinary statement!  Why do you think so, Meletus?
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ὅμως δὲ δὴ λέγε ἡμῖν, πῶς με φῂς διαφθείρειν, ὦ Μέλητε, τοὺς νεωτέρους; ἢ δῆλον
 δὴ ὅτι κατὰ τὴν γραφὴν ἣν ἐγράψω θεοὺς διδάσκοντα μὴ νομίζειν οὓς ἡ πόλις
 νομίζει, ἕτερα δὲ δαιμόνια καινά; οὐ ταῦτα λέγεις ὅτι διδάσκων διαφθείρω;
-                    </p>
-                    <p>
+]],
+            par [[
 πάνυ μὲν οὖν σφόδρα ταῦτα λέγω.
-                    </p>
-                    <p>
+]],
+            par [[
 πρὸς αὐτῶν τοίνυν, ὦ Μέλητε, τούτων τῶν θεῶν ὧν νῦν ὁ λόγος ἐστίν, εἰπὲ ἔτι
 σαφέστερον καὶ ἐμοὶ καὶ τοῖς ἀνδράσιν τουτοισί.  ἐγὼ γὰρ οὐ δύναμαι μαθεῖν
 πότερον λέγεις διδάσκειν με νομίζειν εἶναί τινας θεούς &mdash; καὶ αὐτὸς ἄρα
@@ -615,39 +630,41 @@ gods.  Or, do you mean that I am an atheist simply, and a teacher of atheism?
 μέντοι οὕσπερ γε ἡ πόλις ἀλλὰ ἑτέρους, καὶ τοῦτ᾽ ἔστιν ὅ μοι ἐγκαλεῖς, ὅτι
 ἑτέρους, ἢ παντάπασί με φῂς οὔτε αὐτὸν νομίζειν θεοὺς τούς τε ἄλλους ταῦτα
 διδάσκειν.
-                    </p>
-                    <p>
+]],
+            par [[
 ταῦτα λέγω, ὡς τὸ παράπαν οὐ νομίζεις θεούς.
-                    </p>
-                    <p>
+]],
+            par [[
 ὦ θαυμάσιε Μέλητε, ἵνα τί ταῦτα λέγεις;
-                    </p>
-                </blockquote>
-            </div>
-            <p><a name="26e" href="#26e">26e</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "26e",
+    source = "26e",
+    content = {
+        lines {
+            par [[
 &ndash; Nobody will believe you, Meletus, and I am pretty sure that you do not
 believe yourself.  I cannot help thinking, men of Athens, that Meletus is
 reckless and impudent, and that he has written this indictment in a spirit of
 mere wantonness and youthful bravado.
-                    </p>
-                    <p>
+]],
+            par [[
 Has he not compounded a riddle, thinking to try me?  He said to himself: &mdash;
 I shall see whether the wise Socrates will discover my facetious contradiction,
 or whether I shall be able to deceive him and the rest of them.  For he
 certainly does appear to me to contradict himself in the indictment as much as
 if he said that Socrates is guilty of not believing in the gods, and yet of
 believing in them &mdash; but this is not like a person who is in earnest.
-                    </p>
-                    <p>
+]],
+            par [[
 I should like you, O men of Athens, to join me in examining what I conceive to
 be his inconsistency; and do you, Meletus, answer.  And I must remind the
 audience of my request that they would not make a disturbance if I speak in my
 accustomed manner:
-                    </p>
-                    <p>
+]],
+            par [[
 Did ever man, Meletus, believe in the existence of human things, and not of
 human beings?  &hellip; I wish, men of Athens, that he would answer, and not be
 always trying to get up an interruption.  Did ever any man believe in
@@ -656,11 +673,11 @@ No, my friend; I will answer to you and to the court, as you refuse to answer
 for yourself.  There is no man who ever did.  But now please to answer the next
 question: Can a man believe in spiritual and divine agencies, and not in spirits
 or demigods?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; He cannot.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; How lucky I am to have extracted that answer, by the assistance of the
 court!  But then you swear in the indictment that I teach and believe in divine
 or spiritual agencies (new or old, no matter for that); at any rate, I believe
@@ -669,11 +686,11 @@ I believe in divine beings, how can I help believing in spirits or demigods;
 &mdash; must I not?  To be sure I must; and therefore I may assume that your
 silence gives consent.  Now what are spirits or demigods?  Are they not either
 gods or the sons of gods?
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; Certainly they are.
-                    </p>
-                    <p>
+]],
+            par [[
 &ndash; But this is what I call the facetious riddle invented by you: the
 demigods or spirits are gods, and you say first that I do not believe in gods,
 and then again that I do believe in gods; that is, if I believe in demigods.
@@ -686,49 +703,49 @@ trial of me.  You have put this into the indictment because you had nothing real
 of which to accuse me.  But no one who has a particle of understanding will ever
 be convinced by you that the same men can believe in divine and superhuman
 things, and yet not believe that there are gods and demigods and heroes.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ἄπιστός γ᾽ εἶ, ὦ Μέλητε, καὶ ταῦτα μέντοι, ὡς ἐμοὶ δοκεῖς, σαυτῷ.  ἐμοὶ γὰρ
 δοκεῖ οὑτοσί, ὦ ἄνδρες Ἀθηναῖοι, πάνυ εἶναι ὑβριστὴς καὶ ἀκόλαστος, καὶ ἀτεχνῶς
 τὴν γραφὴν ταύτην ὕβρει τινὶ καὶ ἀκολασίᾳ καὶ νεότητι γράψασθαι.
-                    </p>
-                    <p>
+]],
+            par [[
 ἔοικεν γὰρ ὥσπερ αἴνιγμα συντιθέντι διαπειρωμένῳ "ἆρα γνώσεται Σωκράτης ὁ σοφὸς
 δὴ ἐμοῦ χαριεντιζομένου καὶ ἐναντί" ἐμαυτῷ λέγοντος, "ἢ ἐξαπατήσω αὐτὸν καὶ τοὺς
 ἄλλους τοὺς ἀκούοντας"; οὗτος γὰρ ἐμοὶ φαίνεται τὰ ἐναντία λέγειν αὐτὸς ἑαυτῷ ἐν
 τῇ γραφῇ ὥσπερ ἂν εἰ εἴποι: "ἀδικεῖ Σωκράτης θεοὺς οὐ νομίζων, ἀλλὰ θεοὺς
 νομίζων". καίτοι τοῦτό ἐστι παίζοντος.
-                    </p>
-                    <p>
+]],
+            par [[
 συνεπισκέψασθε δή, ὦ ἄνδρες, ᾗ μοι φαίνεται ταῦτα λέγειν: σὺ δὲ ἡμῖν ἀπόκριναι,
 ὦ Μέλητε.  ὑμεῖς δέ, ὅπερ κατ᾽ ἀρχὰς ὑμᾶς παρῃτησάμην, μέμνησθέ μοι μὴ θορυβεῖν
 ἐὰν ἐν τῷ εἰωθότι τρόπῳ τοὺς λόγους ποιῶμαι.
-                    </p>
-                    <p>
+]],
+            par [[
 ἔστιν ὅστις ἀνθρώπων, ὦ Μέλητε, ἀνθρώπεια μὲν νομίζει πράγματ᾽ εἶναι, ἀνθρώπους
 δὲ οὐ νομίζει; ἀποκρινέσθω, ὦ ἄνδρες, καὶ μὴ ἄλλα καὶ ἄλλα θορυβείτω: ἔσθ᾽ ὅστις
 ἵππους μὲν οὐ νομίζει, ἱππικὰ δὲ πράγματα; ἢ αὐλητὰς μὲν οὐ νομίζει εἶναι,
 αὐλητικὰ δὲ πράγματα; οὐκ ἔστιν, ὦ ἄριστε ἀνδρῶν: εἰ μὴ σὺ βούλει ἀποκρίνεσθαι,
 ἐγὼ σοὶ λέγω καὶ τοῖς ἄλλοις τουτοισί.  ἀλλὰ τὸ ἐπὶ τούτῳ γε ἀπόκριναι: ἔσθ᾽
 ὅστις δαιμόνια μὲν νομίζει πράγματ᾽ εἶναι, δαίμονας δὲ οὐ νομίζει;
-                    </p>
-                    <p>
+]],
+            par [[
 οὐκ ἔστιν.
-                    </p>
-                    <p>
+]],
+            par [[
 ὡς ὤνησας ὅτι μόγις ἀπεκρίνω ὑπὸ τουτωνὶ ἀναγκαζόμενος.  οὐκοῦν δαιμόνια μὲν φῄς
 με καὶ νομίζειν καὶ διδάσκειν, εἴτ᾽ οὖν καινὰ εἴτε παλαιά, ἀλλ᾽ οὖν δαιμόνιά γε
 νομίζω κατὰ τὸν σὸν λόγον, καὶ ταῦτα καὶ διωμόσω ἐν τῇ ἀντιγραφῇ.  εἰ δὲ
 δαιμόνια νομίζω, καὶ δαίμονας δήπου πολλὴ ἀνάγκη νομίζειν μέ ἐστιν: οὐχ οὕτως
 ἔχει; ἔχει δή: τίθημι γάρ σε ὁμολογοῦντα, ἐπειδὴ οὐκ ἀποκρίνῃ.  τοὺς δὲ δαίμονας
 οὐχὶ ἤτοι θεούς γε ἡγούμεθα ἢ θεῶν παῖδας; φῂς ἢ οὔ;
-                    </p>
-                    <p>
+]],
+            par [[
 πάνυ γε.
-                    </p>
-                    <p>
+]],
+            par [[
 οὐκοῦν εἴπερ δαίμονας ἡγοῦμαι, ὡς σὺ φῄς, εἰ μὲν θεοί τινές εἰσιν οἱ δαίμονες,
 τοῦτ᾽ ἂν εἴη ὃ ἐγώ φημί σε αἰνίττεσθαι καὶ χαριεντίζεσθαι, θεοὺς οὐχ ἡγούμενον
 φάναι με θεοὺς αὖ ἡγεῖσθαι πάλιν, ἐπειδήπερ γε δαίμονας ἡγοῦμαι: εἰ δ᾽ αὖ οἱ
@@ -740,14 +757,16 @@ things, and yet not believe that there are gods and demigods and heroes.
 ἀληθὲς ἀδίκημα: ὅπως δὲ σύ τινα πείθοις ἂν καὶ σμικρὸν νοῦν ἔχοντα ἀνθρώπων, ὡς
 οὐ τοῦ αὐτοῦ ἔστιν καὶ δαιμόνια καὶ θεῖα ἡγεῖσθαι, καὶ αὖ τοῦ αὐτοῦ μήτε
 δαίμονας μήτε θεοὺς μήτε ἥρωας, οὐδεμία μηχανή ἐστιν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="28b" href="#28b">28b &ndash; fear of death</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "28b",
+    source = "28b",
+    title = "fear of death",
+    content = {
+        lines {
+            par [[
 Someone will say: "And are you not ashamed, Socrates, of a course of life which
 is likely to bring you to an untimely end?".  To him I may fairly answer: there
 you are mistaken: a man who is good for anything ought not to calculate the
@@ -763,8 +782,8 @@ death, and instead of fearing them, feared rather to live in dishonour, and not
 to avenge his friend.  "Let me die forthwith", he replies, "and be avenged of my
 enemy, rather than abide here by the beaked ships, a laughingstock and a burden
 of the earth".  Had Achilles any thought of death and danger?
-                    </p>
-                    <p>
+]],
+            par [[
 And this, O men of Athens, is a true saying.  For wherever a man's place is,
 whether the place which he has chosen or that in which he has been placed by a
 commander, there he ought to remain in the hour of danger; he should not think
@@ -819,10 +838,10 @@ says that this is not my teaching, he is speaking an untruth.  Wherefore, O men
 of Athens, I say to you, do as Anytus bids or not as Anytus bids, and either
 acquit me or not; but whichever you do, understand that I shall never alter my
 ways, not even if I have to die many times.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ἴσως ἂν οὖν εἴποι τις: "εἶτ᾽ οὐκ αἰσχύνῃ, ὦ Σώκρατες, τοιοῦτον ἐπιτήδευμα
 ἐπιτηδεύσας ἐξ οὗ κινδυνεύεις νυνὶ ἀποθανεῖν"; ἐγὼ δὲ τούτῳ ἂν δίκαιον λόγον
 ἀντείποιμι, ὅτι "οὐ καλῶς λέγεις, ὦ ἄνθρωπε, εἰ οἴει δεῖν κίνδυνον ὑπολογίζεσθαι
@@ -838,8 +857,8 @@ ways, not even if I have to die many times.
 κακὸς ὢν καὶ τοῖς φίλοις μὴ τιμωρεῖν, "αὐτίκα", φησί, "τεθναίην, δίκην ἐπιθεὶς
 τῷ ἀδικοῦντι, ἵνα μὴ ἐνθάδε μένω καταγέλαστος παρὰ νηυσὶ κορωνίσιν ἄχθος
 ἀρούρης".  μὴ αὐτὸν οἴει φροντίσαι θανάτου καὶ κινδύνου";
-                    </p>
-                    <p>
+]],
+            par [[
 οὕτω γὰρ ἔχει, ὦ ἄνδρες Ἀθηναῖοι, τῇ ἀληθείᾳ: οὗ ἄν τις ἑαυτὸν τάξῃ ἡγησάμενος
 βέλτιστον εἶναι ἢ ὑπ᾽ ἄρχοντος ταχθῇ, ἐνταῦθα δεῖ, ὡς ἐμοὶ δοκεῖ, μένοντα
 κινδυνεύειν, μηδὲν ὑπολογιζόμενον μήτε θάνατον μήτε ἄλλο μηδὲν πρὸ τοῦ αἰσχροῦ.
@@ -889,14 +908,15 @@ ways, not even if I have to die many times.
 δέ τίς μέ φησιν ἄλλα λέγειν ἢ ταῦτα, οὐδὲν λέγει.  πρὸς ταῦτα", φαίην ἄν, "ὦ
 ἄνδρες Ἀθηναῖοι, ἢ πείθεσθε Ἀνύτῳ ἢ μή, καὶ ἢ ἀφίετέ με ἢ μή, ὡς ἐμοῦ οὐκ ἂν
 ποιήσαντος ἄλλα, οὐδ᾽ εἰ μέλλω πολλάκις τεθνάναι".
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="30c" href="#30c">30c &ndash; nothing will injure me</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "30c",
+    source = "30c",
+    title = "nothing will injure me",
+    content = {
+        par [[
 I would have you know, that if you kill such an one as I am, you will injure
 yourselves more than you will injure me.  Nothing will injure me, not Meletus
 nor yet Anytus &mdash; they cannot, for a bad man is not permitted to injure a
@@ -905,10 +925,8 @@ him into exile, or deprive him of civil rights; and he may imagine, and others
 may imagine, that he is inflicting a great injury upon him: but there I do not
 agree.  For the evil of doing as he is doing &mdash; the evil of unjustly taking
 away the life of another &mdash; is greater far.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 εὖ γὰρ ἴστε, ἐάν με ἀποκτείνητε τοιοῦτον ὄντα οἷον ἐγὼ λέγω, οὐκ ἐμὲ μείζω
 βλάψετε ἢ ὑμᾶς αὐτούς: ἐμὲ μὲν γὰρ οὐδὲν ἂν βλάψειεν οὔτε Μέλητος οὔτε Ἄνυτος
 &mdash; οὐδὲ γὰρ ἂν δύναιτο &mdash; οὐ γὰρ οἴομαι θεμιτὸν εἶναι ἀμείνονι ἀνδρὶ
@@ -916,14 +934,14 @@ away the life of another &mdash; is greater far.
 ἀλλὰ ταῦτα οὗτος μὲν ἴσως οἴεται καὶ ἄλλος τίς που μεγάλα κακά, ἐγὼ δ᾽ οὐκ
 οἴομαι, ἀλλὰ πολὺ μᾶλλον ποιεῖν ἃ οὑτοσὶ νῦν ποιεῖ, ἄνδρα ἀδίκως ἐπιχειρεῖν
 ἀποκτεινύναι.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="30d" href="#30d">30d &ndash; gadfly</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "30d",
+    source = "30d",
+    title = "gadfly",
+    content = {
+        par [[
 And now, Athenians, I am not going to argue for my own sake, as you may think,
 but for yours, that you may not sin against the God by condemning me, who am his
 gift to you.  For if you kill me you will not easily find a successor to me,
@@ -947,10 +965,8 @@ sense in my doing so; but now, as you will perceive, not even the impudence of
 my accusers dares to say that I have ever exacted or sought pay of anyone; of
 that they have no witness.  And I have a sufficient witness to the truth of what
 I say &mdash; my poverty.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 νῦν οὖν, ὦ ἄνδρες Ἀθηναῖοι, πολλοῦ δέω ἐγὼ ὑπὲρ ἐμαυτοῦ ἀπολογεῖσθαι, ὥς τις ἂν
 οἴοιτο, ἀλλὰ ὑπὲρ ὑμῶν, μή τι ἐξαμάρτητε περὶ τὴν τοῦ θεοῦ δόσιν ὑμῖν ἐμοῦ
 καταψηφισάμενοι.  ἐὰν γάρ με ἀποκτείνητε, οὐ ῥᾳδίως ἄλλον τοιοῦτον εὑρήσετε,
@@ -972,14 +988,15 @@ I say &mdash; my poverty.
 οὕτω κατηγοροῦντες τοῦτό γε οὐχ οἷοί τε ἐγένοντο ἀπαναισχυντῆσαι παρασχόμενοι
 μάρτυρα, ὡς ἐγώ ποτέ τινα ἢ ἐπραξάμην μισθὸν ἢ ᾔτησα.  ἱκανὸν γάρ, οἶμαι, ἐγὼ
 παρέχομαι τὸν μάρτυρα ὡς ἀληθῆ λέγω, τὴν πενίαν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="34e" href="#34e">34e &ndash; fear of God</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "34e",
+    source = "34e",
+    title = "fear of God",
+    content = {
+        lines {
+            par [[
 But, having regard to public opinion, I feel that such conduct would be
 discreditable to myself, and to you, and to the whole state.  One who has
 reached my years, and who has a name for wisdom, ought not to demean himself.
@@ -997,8 +1014,8 @@ say that these things ought not to be done by those of us who have a reputation;
 and if they are done, you ought not to permit them; you ought rather to show
 that you are far more disposed to condemn the man who gets up a doleful scene
 and makes the city ridiculous, than him who holds his peace.
-                    </p>
-                    <p>
+]],
+            par [[
 But, setting aside the question of public opinion, there seems to be something
 wrong in asking a favour of a judge, and thus procuring an acquittal, instead of
 informing and convincing him.  For his duty is, not to make a present of
@@ -1014,10 +1031,10 @@ simply convict myself of the charge of not believing in them.  But that is not
 so &mdash; far otherwise.  For I do believe that there are gods, and in a sense
 higher than that in which any of my accusers believe in them.  And to you and to
 God I commit my cause, to be determined by you as is best for you and me.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 πρὸς δ᾽ οὖν δόξαν καὶ ἐμοὶ καὶ ὑμῖν καὶ ὅλῃ τῇ πόλει οὔ μοι δοκεῖ καλὸν εἶναι
 ἐμὲ τούτων οὐδὲν ποιεῖν καὶ τηλικόνδε ὄντα καὶ τοῦτο τοὔνομα ἔχοντα, εἴτ᾽ οὖν
 ἀληθὲς εἴτ᾽ οὖν ψεῦδος, ἀλλ᾽ οὖν δεδογμένον γέ ἐστί τῳ Σωκράτη διαφέρειν τῶν
@@ -1032,8 +1049,8 @@ God I commit my cause, to be determined by you as is best for you and me.
 τοὺς δοκοῦντας καὶ ὁπῃοῦν τι εἶναι, οὔτ᾽, ἂν ἡμεῖς ποιῶμεν, ὑμᾶς ἐπιτρέπειν,
 ἀλλὰ τοῦτο αὐτὸ ἐνδείκνυσθαι, ὅτι πολὺ μᾶλλον καταψηφιεῖσθε τοῦ τὰ ἐλεινὰ ταῦτα
 δράματα εἰσάγοντος καὶ καταγέλαστον τὴν πόλιν ποιοῦντος ἢ τοῦ ἡσυχίαν ἄγοντος.
-                    </p>
-                    <p>
+]],
+            par [[
 χωρὶς δὲ τῆς δόξης, ὦ ἄνδρες, οὐδὲ δίκαιόν μοι δοκεῖ εἶναι δεῖσθαι τοῦ δικαστοῦ
 οὐδὲ δεόμενον ἀποφεύγειν, ἀλλὰ διδάσκειν καὶ πείθειν.  οὐ γὰρ ἐπὶ τούτῳ κάθηται
 ὁ δικαστής, ἐπὶ τῷ καταχαρίζεσθαι τὰ δίκαια, ἀλλ᾽ ἐπὶ τῷ κρίνειν ταῦτα: καὶ
@@ -1047,14 +1064,15 @@ God I commit my cause, to be determined by you as is best for you and me.
 ἀλλὰ πολλοῦ δεῖ οὕτως ἔχειν: νομίζω τε γάρ, ὦ ἄνδρες Ἀθηναῖοι, ὡς οὐδεὶς τῶν
 ἐμῶν κατηγόρων, καὶ ὑμῖν ἐπιτρέπω καὶ τῷ θεῷ κρῖναι περὶ ἐμοῦ ὅπῃ μέλλει ἐμοί τε
 ἄριστα εἶναι καὶ ὑμῖν.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="37e" href="#37e">37e &ndash; the unexamined life</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "37e",
+    source = "37e",
+    title = "the unexamined life",
+    content = {
+        par [[
 Someone will say: "Yes, Socrates, but cannot you hold your tongue, and then you
 may go into a foreign city, and no one will interfere with you?".  Now I have
 great difficulty in making you understand my answer to this.  For if I tell you
@@ -1065,10 +1083,8 @@ which you hear me examining myself and others, is the greatest good of man, and
 that the unexamined life is not worth living, you are still less likely to
 believe me.  Yet I say what is true, although a thing of which it is hard for me
 to persuade you.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 ἴσως οὖν ἄν τις εἴποι: "σιγῶν δὲ καὶ ἡσυχίαν ἄγων, ὦ Σώκρατες, οὐχ οἷός τ᾽ ἔσῃ
 ἡμῖν ἐξελθὼν ζῆν"; τουτὶ δή ἐστι πάντων χαλεπώτατον πεῖσαί τινας ὑμῶν.  ἐάντε
 γὰρ λέγω ὅτι τῷ θεῷ ἀπειθεῖν τοῦτ᾽ ἐστὶν καὶ διὰ τοῦτ᾽ ἀδύνατον ἡσυχίαν ἄγειν,
@@ -1077,13 +1093,13 @@ to persuade you.
 περὶ ὧν ὑμεῖς ἐμοῦ ἀκούετε διαλεγομένου καὶ ἐμαυτὸν καὶ ἄλλους ἐξετάζοντος, ὁ δὲ
 ἀνεξέταστος βίος οὐ βιωτὸς ἀνθρώπῳ, ταῦτα δ᾽ ἔτι ἧττον πείσεσθέ μοι λέγοντι.  τὰ
 δὲ ἔχει μὲν οὕτως, ὡς ἐγώ φημι, ὦ ἄνδρες, πείθειν δὲ οὐ ῥᾴδιον.
-                    </p>
-                </blockquote>
-            </div>
-            <p><a name="38e" href="#38e">38e</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "38e",
+    source = "38e",
+    content = {
+        par [[
 I would rather die having spoken after my manner, than speak in your manner and
 live.  For neither in war nor yet at law ought I or any man to use every way of
 escaping death. Often in battle there can be no doubt that if a man will throw
@@ -1098,10 +1114,8 @@ too go their ways condemned by the truth to suffer the penalty of villainy and
 wrong; and I must abide by my award &mdash; let them abide by theirs. I suppose
 that these things may be regarded as fated &mdash; and I think that they are
 well.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 ἀλλὰ πολὺ μᾶλλον αἱροῦμαι ὧδε ἀπολογησάμενος τεθνάναι ἢ ἐκείνως ζῆν.  οὔτε γὰρ
 ἐν δίκῃ οὔτ᾽ ἐν πολέμῳ οὔτ᾽ ἐμὲ οὔτ᾽ ἄλλον οὐδένα δεῖ τοῦτο μηχανᾶσθαι, ὅπως
 ἀποφεύξεται πᾶν ποιῶν θάνατον.  καὶ γὰρ ἐν ταῖς μάχαις πολλάκις δῆλον γίγνεται
@@ -1114,13 +1128,13 @@ well.
 κακίας.  καὶ νῦν ἐγὼ μὲν ἄπειμι ὑφ᾽ ὑμῶν θανάτου δίκην ὀφλών, οὗτοι δ᾽ ὑπὸ τῆς
 ἀληθείας ὠφληκότες μοχθηρίαν καὶ ἀδικίαν.  καὶ ἐγώ τε τῷ τιμήματι ἐμμένω καὶ
 οὗτοι.  ταῦτα μέν που ἴσως οὕτως καὶ ἔδει σχεῖν, καὶ οἶμαι αὐτὰ μετρίως ἔχειν.
-                    </p>
-                </blockquote>
-            </div>
-            <p><a name="39c" href="#39c">39c</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "39c",
+    source = "39c",
+    content = {
+        par [[
 And now, O men who have condemned me, I would fain prophesy to you; for I am
 about to die, and in the hour of death men are gifted with prophetic power.  And
 I prophesy to you who are my murderers, that immediately after my departure
@@ -1135,10 +1149,8 @@ are mistaken; that is not a way of escape which is either possible or
 honourable; the easiest and the noblest way is not to be disabling others, but
 to be improving yourselves.  This is the prophecy which I utter before my
 departure to the judges who have condemned me.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 τὸ δὲ δὴ μετὰ τοῦτο ἐπιθυμῶ ὑμῖν χρησμῳδῆσαι, ὦ καταψηφισάμενοί μου: καὶ γάρ
 εἰμι ἤδη ἐνταῦθα ἐν ᾧ μάλιστα ἄνθρωποι χρησμῳδοῦσιν, ὅταν μέλλωσιν ἀποθανεῖσθαι.
 φημὶ γάρ, ὦ ἄνδρες οἳ ἐμὲ ἀπεκτόνατε, τιμωρίαν ὑμῖν ἥξειν εὐθὺς μετὰ τὸν ἐμὸν
@@ -1151,14 +1163,15 @@ departure to the judges who have condemned me.
 αὕτη ἡ ἀπαλλαγὴ οὔτε πάνυ δυνατὴ οὔτε καλή, ἀλλ᾽ ἐκείνη καὶ καλλίστη καὶ ῥᾴστη,
 μὴ τοὺς ἄλλους κολούειν ἀλλ᾽ ἑαυτὸν παρασκευάζειν ὅπως ἔσται ὡς βέλτιστος.
 ταῦτα μὲν οὖν ὑμῖν τοῖς καταψηφισαμένοις μαντευσάμενος ἀπαλλάττομαι.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="40a" href="#40a">40a &ndash; be of good cheer about death</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "40a",
+    source = "40a",
+    title = "be of good cheer about death",
+    content = {
+        lines {
+            par [[
 O my judges &mdash; for you I may truly call judges &mdash; I should like to
 tell you of a wonderful circumstance.  Hitherto the divine faculty of which the
 internal oracle is the source has constantly been in the habit of opposing me
@@ -1173,8 +1186,8 @@ me.  What do I take to be the explanation of this silence?  I will tell you.  It
 is an intimation that what has happened to me is a good, and that those of us
 who think that death is an evil are in error.  For the customary sign would
 surely have opposed me had I been going to evil and not to good.
-                    </p>
-                    <p>
+]],
+            par [[
 Let us reflect in another way, and we shall see that there is great reason to
 hope that death is a good; for one of two things &mdash; either death is a state
 of nothingness and utter unconsciousness, or, as men say, there is a change and
@@ -1208,8 +1221,8 @@ and women too!  What infinite delight would there be in conversing with them and
 asking them questions!  In another world they do not put a man to death for
 asking questions: assuredly not.  For besides being happier than we are, they
 will be immortal, if what is said is true.
-                    </p>
-                    <p>
+]],
+            par [[
 Wherefore, O judges, be of good cheer about death, and know of a certainty, that
 no evil can happen to a good man, either in life or after death.  He and his are
 not neglected by the gods; nor has my own approaching end happened by mere
@@ -1218,10 +1231,10 @@ to die and be released from trouble; wherefore the oracle gave no sign.  For
 which reason, also, I am not angry with my condemners, or with my accusers; they
 have done me no harm, although they did not mean to do me any good; and for this
 I may gently blame them.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        },
+        lines {
+            par [[
 ἐμοὶ γάρ, ὦ ἄνδρες δικασταί—ὑμᾶς γὰρ δικαστὰς καλῶν ὀρθῶς ἂν καλοίην—θαυμάσιόν
 τι γέγονεν.  ἡ γὰρ εἰωθυῖά μοι μαντικὴ ἡ τοῦ δαιμονίου ἐν μὲν τῷ πρόσθεν χρόνῳ
 παντὶ πάνυ πυκνὴ ἀεὶ ἦν καὶ πάνυ ἐπὶ σμικροῖς ἐναντιουμένη, εἴ τι μέλλοιμι μὴ
@@ -1235,8 +1248,8 @@ I may gently blame them.
 ὅπως ἡμεῖς ὀρθῶς ὑπολαμβάνομεν, ὅσοι οἰόμεθα κακὸν εἶναι τὸ τεθνάναι.  μέγα μοι
 τεκμήριον τούτου γέγονεν: οὐ γὰρ ἔσθ᾽ ὅπως οὐκ ἠναντιώθη ἄν μοι τὸ εἰωθὸς
 σημεῖον, εἰ μή τι ἔμελλον ἐγὼ ἀγαθὸν πράξειν.
-                    </p>
-                    <p>
+]],
+            par [[
 ἐννοήσωμεν δὲ καὶ τῇδε ὡς πολλὴ ἐλπίς ἐστιν ἀγαθὸν αὐτὸ εἶναι.  δυοῖν γὰρ
 θάτερόν ἐστιν τὸ τεθνάναι: ἢ γὰρ οἷον μηδὲν εἶναι μηδὲ αἴσθησιν μηδεμίαν μηδενὸς
 ἔχειν τὸν τεθνεῶτα, ἢ κατὰ τὰ λεγόμενα μεταβολή τις τυγχάνει οὖσα καὶ μετοίκησις
@@ -1268,8 +1281,8 @@ I may gently blame them.
 εὐδαιμονίας; πάντως οὐ δήπου τούτου γε ἕνεκα οἱ ἐκεῖ ἀποκτείνουσι: τά τε γὰρ
 ἄλλα εὐδαιμονέστεροί εἰσιν οἱ ἐκεῖ τῶν ἐνθάδε, καὶ ἤδη τὸν λοιπὸν χρόνον
 ἀθάνατοί εἰσιν, εἴπερ γε τὰ λεγόμενα ἀληθῆ.
-                    </p>
-                    <p>
+]],
+            par [[
 ἀλλὰ καὶ ὑμᾶς χρή, ὦ ἄνδρες δικασταί, εὐέλπιδας εἶναι πρὸς τὸν θάνατον, καὶ ἕν
 τι τοῦτο διανοεῖσθαι ἀληθές, ὅτι οὐκ ἔστιν ἀνδρὶ ἀγαθῷ κακὸν οὐδὲν οὔτε ζῶντι
 οὔτε τελευτήσαντι, οὐδὲ ἀμελεῖται ὑπὸ θεῶν τὰ τούτου πράγματα: οὐδὲ τὰ ἐμὰ νῦν
@@ -1278,14 +1291,15 @@ I may gently blame them.
 σημεῖον, καὶ ἔγωγε τοῖς καταψηφισαμένοις μου καὶ τοῖς κατηγόροις οὐ πάνυ
 χαλεπαίνω.  καίτοι οὐ ταύτῃ τῇ διανοίᾳ κατεψηφίζοντό μου καὶ κατηγόρουν, ἀλλ᾽
 οἰόμενοι βλάπτειν: τοῦτο αὐτοῖς ἄξιον μέμφεσθαι.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="41e" href="#41e">41e &ndash; last favor</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+        },
+    },
+}, {
+    id = "41e",
+    source = "41e",
+    title = "last favor",
+    content = {
+        par [[
 Still I have a favour to ask of them.  When my sons are grown up, I would ask
 you, O my friends, to punish them; and I would have you trouble them, as I have
 troubled you, if they seem to care about riches, or anything, more than about
@@ -1294,34 +1308,54 @@ then reprove them, as I have reproved you, for not caring about that for which
 they ought to care, and thinking that they are something when they are really
 nothing.  And if you do this, both I and my sons will have received justice at
 your hands.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 τοσόνδε μέντοι αὐτῶν δέομαι: τοὺς ὑεῖς μου, ἐπειδὰν ἡβήσωσι, τιμωρήσασθε, ὦ
 ἄνδρες, ταὐτὰ ταῦτα λυποῦντες ἅπερ ἐγὼ ὑμᾶς ἐλύπουν, ἐὰν ὑμῖν δοκῶσιν ἢ χρημάτων
 ἢ ἄλλου του πρότερον ἐπιμελεῖσθαι ἢ ἀρετῆς, καὶ ἐὰν δοκῶσί τι εἶναι μηδὲν ὄντες,
 ὀνειδίζετε αὐτοῖς ὥσπερ ἐγὼ ὑμῖν, ὅτι οὐκ ἐπιμελ ταῦτα ποιῆτε, δίκαια πεπονθὼς
 ἐγὼ ἔσομαι ὑφ᾽ ὑμῶν αὐτός τε καὶ οἱ ὑεῖς.
-                    </p>
-                </blockquote>
-            </div>
-            <hr />
-            <p><a name="42e" href="#42e">42e &ndash; God only knows</a></p>
-            <div class="citation">
-                <blockquote class="citation-en">
-                    <p>
+]],
+    },
+}, {
+    id = "42e",
+    source = "42e",
+    title = "God only knows",
+    content = {
+        par [[
 The hour of departure has arrived, and we go our ways &mdash; I to die, and you
 to live.  Which is better God only knows.
-                    </p>
-                </blockquote>
-                <blockquote lang="grc" class="citation-el">
-                    <p>
+]],
+        par [[
 ἀλλὰ γὰρ ἤδη ὥρα ἀπιέναι, ἐμοὶ μὲν ἀποθανουμένῳ, ὑμῖν δὲ βιωσομένοις: ὁπότεροι
 δὲ ἡμῶν ἔρχονται ἐπὶ ἄμεινον πρᾶγμα, ἄδηλον παντὶ πλὴν ἢ τῷ θεῷ.
-                    </p>
-                </blockquote>
-            </div>
-        </div>
-    </body>
-</html>
+]],
+    },
+}}
+
+return {
+    id = "apologia",
+    short_title = {
+        en = "Apology of Socrates",
+        pt = "Apologia de Sócrates",
+    },
+    title = {
+        en = '<span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates)',
+        pt = '<span lang="grc">Ἀπολογία Σωκράτους</span> (Apologia de Sócrates)',
+    },
+    link = "https://standardebooks.org/ebooks/plato/dialogues/benjamin-jowett",
+    cover = "apologia.jpg",
+    author = {
+        en = "Plato",
+        pt = "Platão",
+    },
+    date = { "1689185059", "2023-07-12T18:04:19" },
+    languages = { "en", "pt" },
+    description = description,
+    intro = intro,
+    content = {
+        en = content,
+        pt = content_pt,
+    },
+    citations = citations,
+}
