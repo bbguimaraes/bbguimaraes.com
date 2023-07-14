@@ -1,6 +1,8 @@
-.PHONY: check tidy xmllint
+.PHONY: check generate tidy xmllint
 
 check: tidy xmllint
+generate:
+	$(MAKE) -C src/ $@
 tidy:
 	scripts/tidy.sh
 xmllint:

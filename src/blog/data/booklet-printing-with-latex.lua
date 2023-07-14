@@ -1,0 +1,328 @@
+local description <const> = [[In another episode of "there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine": booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.]]
+
+local content <const> = {
+    par [[
+                <i>
+In another episode of "there was something very peculiar I wanted to do, there
+existed no decent guides on the internet, so here is mine": booklet printing.  I
+had the need to turn a LaTeX document I had produced into something physical
+which could be taken with me easily.  After a few days of research and
+experimentation and some wasted paper, I arrived at a very satisfying result.
+There is something about real-life printed books (even a small one) which cannot
+be translated to digital media.  So here is how you can do the same for any PDF
+document you might have.
+                </i>
+]],
+    par [[
+One learns many things in university.  To the horror of my former teachers, if I
+had to elect the most useful and enduring skill I learned back then, one which I
+use extensively to this day&hellip; learning to use LaTeX effectively would be
+among the primary choices.  From <a href="/codex">notes</a> to
+<a href="/talks">presentations</a> to <a href="/lib">books</a> to the
+<a href="https://gitlab.bbguimaraes.com/bbguimaraes/bbguimaraes.com/-/tree/master/bbguimaraes.com/blog/booklet-printing-with-latex/">images</a>
+in this very post, few tools are more essential to my daily routine.
+]],
+    par [[
+While most of the time the desired output for a LaTeX document is a good old PDF
+file, I recently had the need and the inspiration to produce something physical.
+In this case, the most appropriate form was a <i>booklet</i>, or small book.
+That is, instead of the usual A4 single- or double-sided print, a series of A4
+pages is printed in a specific format, folded in half, and bound together,
+producing a small book with pages of size A5.
+]],
+    image {
+        src = "/files/blog/booklet_size.png",
+        alt = "booklet size",
+        title = "booklet size",
+    },
+    par [[
+While that is a common option in printers and printing programs, it can also be
+done as a post-processing step of a regular PDF file.  And although the process
+is not complex, I found it rather difficult to aggregate information about the
+several different programs, not to mention understanding the printing
+vocabulary, to arrive at the final result.  So here is a summary and a guide.
+]],
+    h2_link { "latex", "LaTeX" },
+    par [[
+This first part will start from the very beginning, creating a PDF file out of
+nothing.  Feel free to advance to the <a href="#printing-vocabulary">next</a> if
+you already have a document and just want to format and print it, but do keep in
+mind the dimensions of this format are not appropriate for some types of
+content, at least unchanged, as discussed below.
+]],
+    par [[
+Other than the few options described in this section, the document itself can be
+composed however desired.  Defining these options early, however, reduces the
+need to reformat the content later to adjust it to the reduced dimensions.
+]],
+    h3_link { "documentclass", "<code>documentclass</code>" },
+    par [[
+Every LaTeX document starts with a <code>documentclass</code> declaration.  It
+defines the overall structure of the content and the sections that compose it.
+Any class could potentially be used for a booklet, but
+<code>\documentclass{book}</code> is the most appropriate since it has two-sided
+pages, chapters and sections, etc.
+]],
+    par [[
+Other than the name, another important part of the document class are the
+options, which go inside <code>[brackets]</code> between
+<code>\documentclass</code> and <code>{book}</code>.  Relevant here are:
+]],
+    [[
+            <ul>
+                <li>
+                    <p>
+Paper size: choose whatever size is appropriate for your printer.
+<code>letterpaper</code> (5in x 11in) is the default.  <code>a4paper</code> will
+produce the standard A4 size (210mm x 297mm).
+                    </p>
+                </li>
+                <li>
+                    <p>
+Font size: the default size of <code>10pt</code> may be too small depending on
+the type of booklet and the intended usage.  Other available values are
+<code>11pt</code> and <code>12pt</code>.  If these are still not sufficient,
+package <a href="https://www.ctan.org/pkg/extsizes"><code>extsizes</code></a>
+provides <code>\documentclass{extbook}</code>, which adds several more options.
+For my particular case, <code>14pt</code> was the best choice.
+                    </p>
+                    <p>
+It may be necessary to actually print a test page with a few lines in some of
+these font sizes to determine the best one, since the electronic version does
+not give a good idea of how text will look on real paper.
+                    </p>
+                </li>
+            </ul>]],
+    h3_link { "geometry", "<code>geometry</code>" },
+    par [[
+The <code>book</code> document class predefines very spacious margin sizes.
+This is intended to produce lines with a reasonable number of characters (below
+80, as God intended) to facilitate reading.  With the reduced page size and a
+larger font size, it will probably be necessary to adjust the margins.  This can
+be done with the
+<a href="https://www.ctan.org/pkg/geometry"><code>geometry</code></a> package.
+The final set of options I used was:
+]],
+    code [[
+<b>\usepackage</b>[
+    a4paper, heightrounded, includefoot, includemp, marginparwidth=0pt,
+    top=1cm, bottom=1cm, outer=1cm, inner=2cm,
+]{<b>geometry</b>}
+]],
+    par [[
+This package is also useful for creating title pages (or any page with different
+margin sizes), e.g.:
+]],
+    code [[
+\<b>newgeometry</b>{margin=0pt}
+\<b>begin</b>{<b>titlepage</b>}
+    <i>% title page text/commands</i>
+\<b>end</b>{<b>titlepage</b>}
+\<b>restoregeometry</b>
+]],
+    h2_link { "printing-vocabulary", "Printing vocabulary" },
+    par [[
+A few printing terms need to be understood before the required operations to
+produce a booklet can be explained.  Imagining a traditional book resting on a
+table with the cover facing up, with the traditional Cartesian axes being the
+table surface (XY) and the normal vector pointing up (Z):
+]],
+    [[
+            <ul>
+                <li>
+                    <p>
+<i>Long/short edges</i>: these refer to the sides of the paper sheets.  The
+binding of a book is usually on the long edge on the left (parallel to the Y
+axis).
+                    </p>
+                    <img alt="long/short edges" title="long/short edges" src="/files/blog/booklet_edges.png" />
+                </li>
+                <li>
+                    <p>
+<i>Portrait/landscape</i>: books are usually printed in portrait mode, in which
+the long edges are parallel to the Y axis as explained above.  Landscape mode is
+a 90&deg; counter-clockwise rotation along the Z axis, such that the long edges
+become parallel to the X axis.  For a book, this would turn the binding towards
+the reader.
+                    </p>
+                    <img alt="page orientation" title="page orientation" src="/files/blog/booklet_orientation.png" />
+                </li>
+                <li>
+                    <p>
+<i>One-/two-sided printing</i>: whether pages are printed only on the front or
+on both sides of the paper sheet.  For the latter case, reversing the sheet
+before printing the other page can be done either over the short or the long
+edge, depending on how the two sides of the sheet should be oriented in relation
+to each other.
+                    </p>
+                    <img alt="one-/two-sided printing" title="one-/two-sided printing" src="/files/blog/booklet_sides.png" />
+                    <p>
+This can require (and will for the booklet format) mirroring the pages on one of
+the sides of the sheet so that they are properly aligned with the content on the
+other.
+                    </p>
+                <li>
+                    <p>
+<i>N-up</i>: this is the process of sub-dividing an output page into <i>n</i>
+parts and placing one (resized) input page in each sub-division.  <i>2-up</i>
+means the output page is divided in half, each side containing one page from the
+input that is half its original size.
+                    </p>
+                    <img alt="n-up printing" title="n-up printing" src="/files/blog/booklet_nup.png" />
+                    <p>
+While there are two possible sub-divisions for 2-up printing (and many more for
+larger numbers), the one shown in the image above (where the division is done
+along the horizontal &mdash; i.e. X &mdash; axis) is the most common, since it
+preserves the aspect ratio of the pages.
+                    </p>
+                </li>
+                <li>
+                    <p>
+<i>Signatures</i>: if you look at the binding of a traditional book, you will
+notice it is not composed of a stack of individual sheets.  Pages are instead
+grouped into what are called signatures: 2-up sheets in landscape orientation
+which are bound together at the fold.  Each of these folded layers can be
+composed of a single folded sheet (four pages) or multiple sheets folded
+together.  Here is an example of a twelve-page signature (composed of three
+sheets):
+                    </p>
+                    <img alt="signature" title="signature" src="/files/blog/booklet_signature.png" />
+                </li>
+            </ul>]],
+    h2_link { "pdfjam", "<code>pdfjam</code>" },
+    par [[
+This is a script which uses LaTeX itself to manipulate PDF files.  It can be
+used to transform a normal document into a format that can be printed directly
+as a booklet.  <code>pdfjam</code> itself is usually distributed as part of
+<a href="https://tug.org/texlive/">TeX Live</a>, but the particular script
+required for this task, <code>pdfbook</code>, is part of
+<a href="https://github.com/rrthomas/pdfjam-extras.git"><code>pdfjam-extras</code></a>.
+Since it is just a shell script, if it is not installed it can be simply
+downloaded and executed directly.
+]],
+    par [[
+The first requirement is to know the number of pages in the document.  Since
+each sheet will contain four pages (think of a single-sheet signature), this
+should ideally be a multiple of four.  Blank pages will be inserted
+automatically at the end if it is not.  This is important since the two
+inner-most pages &mdash; i.e. those at exactly half the page count &mdash; must
+be printed on the same (inner) side of the sheet, as in the image above.  The
+following commands can be used to extract the number of pages from a file
+(<code>pdfinfo</code> is from
+<a href="https://poppler.freedesktop.org/"><code>poppler</code></a>):
+]],
+    code [[
+$ pdfinfo input.pdf | awk -F ':\\s*' '$1 == "Pages" { print $2 }'
+28
+]],
+    par [[
+This is the point where all the terminology discussed earlier is critical to
+produce the correct result: in order to print the document and fold and bind it
+as a booklet, <code>pdfbook</code> has to be instructed to produce a landscape,
+2-up, single-signature version of the input which can be printed in two-sided,
+long-edge mode (<i>phew</i>).  Thankfully, the only configuration necessary in
+this case is to tell it to produce a single signature containing all the pages:
+]],
+    code [[
+$ pdfbook --signature 28 input.pdf
+]],
+    par [[
+A few things to keep in mind about this command:
+]],
+    [[
+            <ul>
+                <li>
+Make sure to use the number of pages reported by <code>pdfinfo</code>.
+                </li>
+                <li>
+Note that this may be different from the number seen in the last page of the
+document, depending on how it is structured (e.g. if it has a
+<code>\frontmatter</code> section).
+                </li>
+                <li>
+Also note that the argument is the number of pages in each signature, not the
+number of signatures.
+                </li>
+            </ul>]],
+    par [[
+The command will produce a file called <code>input-book.pdf</code> in the
+desired format.  Opening it in a PDF viewer can be quite confusing, since the
+orientation, rotation, and page ordering are very different from a normal
+document, as expected.
+]],
+    h2_link { "cups", "CUPS" },
+    par [[
+Printing on Unix systems is done using <a href="https://www.cups.org/">CUPS</a>.
+Its basic mode of operation is simple:
+]],
+    code [[
+$ lp -d printer input.pdf
+]],
+    par [[
+This will print the file <code>input.pdf</code> using the printer named
+<code>printer</code>.
+]],
+    [[
+            <aside>
+                <p>
+While not very useful in this case,
+<a href="https://www.cups-pdf.de/"><code>cups-pdf</code></a> can be used to
+"print" to a PDF file, which can generally be used to test the various available
+options.  To configure this type of printer:
+                </p>
+                <pre><code># lpadmin -p cups-pdf -v cups-pdf:/ -m CUPS-PDF_opt.ppd -E</code></pre>
+                <p>
+The printer will then be shown and available as a destination:
+                </p>
+                <pre><code>$ lpstat -v
+device for cups-pdf: cups-pdf:/
+$ lp -d cups-pdf input.pdf</code></pre>
+            </aside>]],
+    par [[
+To print the file generated by <code>pdfbook</code> in the correct format, the
+following options are required:
+]],
+    ul {
+        html [[
+<code>-o orientation-requested=4</code>: landscape
+orientation.]],
+        html [[
+<code>-o sides=two-sided-long-edge</code>: print on both
+sides of the page, reversing each page over the long edge.]],
+    },
+    par [[
+The final command is:
+]],
+    code [[
+$ lp -o orientation-requested=4 -o sides=two-sided-long-edge input-book.pdf
+]],
+    h2_link { "binding", "Binding" },
+    par [[
+Once the document is printed, it needs to be folded and bound.  The pages should
+come out of the printer already in the correct order, but make sure they are by
+laying them on a table as if they were a book opened exactly in the middle.  Go
+through each page, starting from the cover, and verify that they follow the
+correct sequence.  Then, fold each A4 page in the middle (the first fold is done
+such that the title page ends on your left palm).
+]],
+    par [[
+Binding can be done in a number of ways.  The simplest is to use a stapler to
+bind twice at the fold.  For A4 sheets, this requires a long stapler.  It is
+also possible to manually perforate and fold the staples, but that gets
+difficult to do precisely as the number of pages increases.  Take extra care
+that the staples are placed as close as possible to the fold, otherwise one half
+of the pages will turn irregularly.
+]],
+    par [[
+If you followed all of this, you should now have a very nice-looking booklet.
+You can see the result of my first try <a href="/lib#missale">here</a>.
+]],
+}
+
+return {
+    title = "Booklet printing with LaTeX",
+    date  = { "1671299341", "2022-12-17T17:49:01" },
+    tags = { "books", "latex", "linux", "unix" },
+    description = description,
+    content = content,
+}
