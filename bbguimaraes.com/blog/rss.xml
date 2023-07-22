@@ -13,7 +13,8 @@
 <!ELEMENT generator (#PCDATA)>
 <!ELEMENT guid (#PCDATA)>
 <!ELEMENT category (#PCDATA)>
-<!ELEMENT a (#PCDATA)>
+<!ELEMENT a (#PCDATA|code)*>
+<!ELEMENT code (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>
 <!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
 <!ATTLIST atom:link href CDATA #REQUIRED rel CDATA #REQUIRED type CDATA #REQUIRED>
@@ -60,7 +61,7 @@
             <title>C++ virtual tables</title>
             <link>https://bbguimaraes.com/blog/c++-virtual-tables.html</link>
             <guid>https://bbguimaraes.com/blog/c++-virtual-tables.html</guid>
-            <pubDate>Mon, 22 Feb 2022 20:09:10 GMT</pubDate>
+            <pubDate>Tue, 22 Feb 2022 20:09:10 GMT</pubDate>
             <category>assembly</category>
             <category>c</category>
             <category>c++</category>
@@ -125,8 +126,7 @@
             <guid>https://bbguimaraes.com/blog/dot-product-as-cosine-subtraction.html</guid>
             <pubDate>Sat, 25 Jan 2020 18:04:00 GMT</pubDate>
             <category>math</category>
-            <description>
-The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;emph&gt;I&lt;/emph&gt; can understand a mathematical concept, so can you.</description>
+            <description>The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;em&gt;I&lt;/em&gt; can understand a mathematical concept, so can you.</description>
         </item>
         <item>
             <title>mv ~</title>
@@ -150,7 +150,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <title>College research projects</title>
             <link>https://bbguimaraes.com/blog/college-research-projects.html</link>
             <guid>https://bbguimaraes.com/blog/college-research-projects.html</guid>
-            <pubDate>Sat, 20 Aug 2016 20:47:00 GMT</pubDate>
+            <pubDate>Sat, 20 Aug 2016 23:47:00 GMT</pubDate>
             <category>dissertation</category>
             <category>programming</category>
             <category>linux</category>
@@ -184,7 +184,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <category>printf</category>
             <category>head</category>
             <category>python</category>
-            <category>π</category>
+            <category>pi</category>
             <category>bash</category>
             <category>bc</category>
             <category>math</category>
@@ -221,7 +221,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <title>Manufacturer's blues</title>
             <link>https://bbguimaraes.com/blog/manufacturers-blues.html</link>
             <guid>https://bbguimaraes.com/blog/manufacturers-blues.html</guid>
-            <pubDate>Fri, 02 May 2014 04:13:00 GMT</pubDate>
+            <pubDate>Fri, 02 May 2014 16:13:00 GMT</pubDate>
             <category>mp3</category>
             <category>badvoltage</category>
             <category>dos</category>
@@ -269,7 +269,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <category>linux</category>
             <category>arch</category>
             <category>raspberry pi</category>
-            <description>&lt;a href="http://iffalse.blogspot.com/2013/05/that-moment-you-realize-something.html" target="_blank"&gt;A lot&lt;/a&gt; has happened since &lt;a href="http://iffalse.blogspot.com/2013/01/the-raspberry.html" target="_blank"&gt;my first rπ post&lt;/a&gt;.</description>
+            <description>&lt;a href="https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html" target="_blank"&gt;A lot&lt;/a&gt; has happened since &lt;a href="https://bbguimaraes.com/blog/the-raspberry.html" target="_blank"&gt;my first rπ post&lt;/a&gt;.</description>
         </item>
         <item>
             <title>That moment you realize something really wrong is going on</title>
@@ -293,7 +293,7 @@ The two principal definitions of the dot product have always seemed incoherent t
             <category>python</category>
             <category>coding style</category>
             <category>mock</category>
-            <description>If you are into unit testing, you probably have been introduced to mocking. And if that is the case, you probably already have been bitten by it. Mocking requires some understanding of code execution, importing and name resolution that most people lack when first encountering such situations. In python, mocking is a relatively simple process, if you analyze carefully what needs to be done.</description>
+            <description>If you are into unit testing, you probably have been introduced to mocking. And if that is the case, you probably already have been bitten by it. Mocking requires some understanding of code execution, importing and name resolution that most people lack when first encountering such situations. In Python, mocking is a relatively simple process, if you analyze carefully what needs to be done.</description>
         </item>
         <item>
             <title>Handy bash substitution</title>
@@ -379,22 +379,22 @@ The two principal definitions of the dot product have always seemed incoherent t
             <title>Low-level language</title>
             <link>https://bbguimaraes.com/blog/low-level-language.html</link>
             <guid>https://bbguimaraes.com/blog/low-level-language.html</guid>
-            <pubDate>Mon, 22 Oct 2012 12:01:00 GMT</pubDate>
+            <pubDate>Mon, 22 Oct 2012 03:01:00 GMT</pubDate>
             <category>portuguese</category>
             <category>language</category>
             <description>"Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas." MARÃO, Públio Virgílio. &lt;i&gt;Eneida&lt;/i&gt;.</description>
         </item>
         <item>
-            <title>perl is beatiful - part 2</title>
+            <title>perl is beautiful - part 2</title>
             <link>https://bbguimaraes.com/blog/perl-is-beautiful2.html</link>
             <guid>https://bbguimaraes.com/blog/perl-is-beautiful2.html</guid>
             <pubDate>Thu, 18 Oct 2012 10:53:00 GMT</pubDate>
             <category>programming</category>
             <category>perl</category>
-            <description>We've seen how perl can be used, but you may be wondering, &lt;/i&gt;so what&lt;i&gt;? Fasten your seatbelt, for fun begins now.</description>
+            <description>We've seen how perl can be used, but you may be wondering, so what? Fasten your seatbelt, for fun begins now.</description>
         </item>
         <item>
-            <title>perl is beatiful</title>
+            <title>perl is beautiful</title>
             <link>https://bbguimaraes.com/blog/perl-is-beautiful.html</link>
             <guid>https://bbguimaraes.com/blog/perl-is-beautiful.html</guid>
             <pubDate>Tue, 02 Oct 2012 02:18:00 GMT</pubDate>

@@ -83,10 +83,11 @@ document, with some ancillary  material around them:
                     </li>
                     <li><a href="#references">References</a></li>
                     <li><a href="#notes">Notes</a></li>
-                    <p>
+                </ul>
+                <p>
 Links to source files are placed throughout the text.  They are also available
 in the <a href="https://gitlab.bbguimaraes.com/bbguimaraes/bbguimaraes.com.git">repository</a>.
-                </ul>
+                </p>
             </aside>
             <p>
 To limit the scope to even a reasonably long description, virtual inheritance is
@@ -133,8 +134,8 @@ presented at the end of this article:
 The program contains objects of each class and performs a series of operations
 on them.  However, only <code>V</code>, the bottom of the hierarchy, is defined
 by the C++ source:
-            <pre>
-$ objdump --syms --demangle test.o
+            </p>
+            <pre>$ objdump --syms --demangle test.o
 <i>[…]</i>
 0000000000000000  w    O .data.rel.ro._ZTV1V	0000000000000048 vtable for V
 0000000000000000  w    F .text._ZN1V2tfEv	0000000000000015 V::tf()
@@ -145,6 +146,7 @@ $ objdump --syms --demangle test.o
 <i>[…]</i></pre>
             <p>
 Where are the other definitions?  I am glad you asked:
+            </p>
             <pre>
 $ make --always-make test
 g++ -O2 -fno-rtti   -c -o test.o <a href="c++-virtual-tables/motivation/test.cpp">test.cpp</a>
@@ -235,8 +237,7 @@ Here is the C++ part of the program and its output:
     <b>static_cast</b>&lt;U*&gt;(&amp;v)-&gt;uf();
     std::puts(<b>"\n=== C++ obj -&gt; C++ impl ===\n"</b>);
     (&amp;v)-&gt;vf();
-}
-                </code></pre>
+}</code></pre>
             </details>
             <details>
                 <summary>Output</summary>
@@ -379,14 +380,12 @@ and so none is generated and the objects do not contain a virtual pointer.
 
 <b>void</b> f(<b>void</b>) {
     s.f();
-}
-</code></pre>
+}</code></pre>
             <pre class="inline-code"><code>f():
     <b>lea</b> <b>rdi</b>, s[<b>rip</b>]
     <b>jmp</b> ._anon_0::f()@PLT
 s:
-    <b>.zero</b> <b>1</b>
-</code></pre>
+    <b>.zero</b> <b>1</b></code></pre>
             <p>
 The code is as simple as it can be.  <code>s</code> has no data members, so it
 is declared as a single-byte object<a href="#note0"><sup>0</sup></a>.  The free
@@ -508,7 +507,9 @@ A quick reference for those unfamiliar with x86 assembly:
                         values.
                     </li>
                 </ul>
+                <p>
 The equivalent code in pseudo-C would be:
+                </p>
                 <pre><code><b>extern</b> <b>u64</b> rdi;
 <b>u64</b> **rax = *(<b>u64</b>***)rdi; <i>// mov</i>
 <b>goto</b> **rax; <i>// jmp</i></code></pre>
@@ -632,8 +633,7 @@ virtual table arrived at via the virtual pointer:
 }</code></pre>
             <pre class="inline-code"><code>f:
     <b>mov</b> <b>rax</b>, <b>QWORD</b> <b>PTR</b> [<b>rdi</b>]
-    <b>jmp</b> [<b>QWORD</b> <b>PTR</b> [<b>rax</b>]]
-</code></pre>
+    <b>jmp</b> [<b>QWORD</b> <b>PTR</b> [<b>rax</b>]]</code></pre>
             <h2 id="general-single-inheritance">
                 <a href="#general-single-inheritance">
                     General single inheritance
@@ -644,7 +644,7 @@ While not discriminated in the document, this category has enough distinguishing
 characteristics from the others to be presented in its own section.  These are
 classes which inherit virtual functions through single inheritance only, i.e.
 each class in the hierarchy inherits from a single base.  Their <i>inheritance
-    graph</i> is a single straight line.
+graph</i> is a single straight line.
             </p>
             <p>
 Surprisingly little has to be added to support this case, which is one reason
@@ -883,8 +883,7 @@ T_vtable:
     <b>.quad</b> T_tf
 S_vtable:
     <b>.zero</b> <b>16</b>
-    <b>.quad</b> S_sf
-                </code></pre>
+    <b>.quad</b> S_sf</code></pre>
             </details>
             <h2 id="non-virtual-bases-only">
                 <a href="#non-virtual-bases-only">Non-virtual bases only</a>
@@ -1218,8 +1217,7 @@ t:
     <b>.quad</b> T_vtable+16
 u:
     <b>.quad</b> U_vtable+16
-    <b>.quad</b> U_vtable+56
-                </code></pre>
+    <b>.quad</b> U_vtable+56</code></pre>
             </details>
             <h2 id="references">
                 <a href="#references">References</a>
@@ -1251,6 +1249,7 @@ virtual functions whose implementation needs some care.
 In general, an immense amount of detail has been omitted &mdash; destructor
 variants, covariant return types, construction tables, to name a few.
                     </p>
+                </li>
                 <li>
                     <p>
 Bjarne Stroustrup's original
@@ -1355,6 +1354,7 @@ which generates the same machine code is:
 Which amusingly can also be written as <code>n[array]</code>, with the same
 semantics and mirroring the assembly syntax.
                     </p>
+                </li>
                 <li id="note4">
                     <p>
 A very subtle aspect of the implementation generated by the compiler here is
@@ -1370,6 +1370,7 @@ virtual functions is not defined (it need not even involve a virtual pointer at
 all).  Exposing enough information to the compiler back end to take advantage of
 this optimization is an active area of research (e.g.
 <a href="https://arxiv.org/pdf/2003.04228.pdf"><i>Modeling the Invariance of Virtual Pointers in LLVM</i></a>).
+                    </p>
                     <p>
 We can emulate this in our C implementation, compare:
                     </p>
