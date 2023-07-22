@@ -327,7 +327,7 @@ formats and the associated code to load them.
 In the repository, they fall into two categories: purely declarative and a
 combination of declarative and imperative sections.
             </p>
-            <h3><a href="#lson">LSON</a></h3>
+            <h3 id="lson"><a href="#lson">LSON</a></h3>
             <p>
 These are simply scripts that contain only static data, mostly in the form of
 tables (Lua's primary data structure).  All these scripts do is
@@ -356,7 +356,7 @@ without requiring a parser.  All scripts in this category are static, although
 it is common to go even further and include some amount of executable code in
 these files.
             </p>
-            <h3><a href="#maps">maps</a></h3>
+            <h3 id="maps"><a href="#maps">maps</a></h3>
             <p>
 For some cases, a purely declarative format would be unnecessarily verbose, and
 ultimately insufficient.  Using the imperative aspect of a proper programming
@@ -367,6 +367,7 @@ them.
 Map files are the primary example.  They encode all the necessary data for an
 individual, self-contained area, as well as the behavior associated with it.
 More specifically, these files usually have:
+            </p>
             <ul>
                 <li>
 a function that initializes the area, sometimes relying heavily on loops and
@@ -409,7 +410,7 @@ map.map {
     tiles = {
         nngn.textures:load(<b>"img/zelda_sacred_grove.png"</b>),
         <b>2</b>, <b>0</b>, <b>0</b>, <b>256</b>, <b>256</b>, <b>1</b>, <b>2</b>, {<b>0</b>, <b>0</b>, <b>0</b>, <b>1</b>}}}</code></pre>
-            <h2><a href="#next">next</a></h2>
+            <h2 id="next"><a href="#next">next</a></h2>
             <p>
 I hope this post demonstrated how fundamental Lua is for the engine.  It truly
 is the brain of the system: all high-level logic lives in Lua scripts, leaving
