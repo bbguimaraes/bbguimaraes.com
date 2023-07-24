@@ -34,12 +34,12 @@
 
 .books .book:nth-child(even) .book-cover {
     float: right;
-    margin-left: 1em;
+    margin-right: 0;
 }
 
 .books .book:nth-child(odd) .book-cover {
     float: left;
-    margin-right: 1em;
+    margin-left: 0;
 }
 
 .book {
@@ -49,7 +49,15 @@
 }
 
 .book .book-cover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+.books .book .book-cover {
     height: 16em;
+    margin: 0 1em 1em 1em;
 }
 
 .book h3 {
