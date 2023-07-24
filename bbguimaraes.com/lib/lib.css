@@ -64,6 +64,26 @@
     margin-top: 0;
 }
 
+.books.honorable-mentions {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.books.honorable-mentions .book {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.books.honorable-mentions .book .book-cover {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .citation {
     text-align: center;
 }
