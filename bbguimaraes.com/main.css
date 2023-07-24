@@ -53,6 +53,46 @@ figcaption {
     list-style-position: inside;
 }
 
+@media(max-width: 800px) {
+    #home nav {
+        font-size: 4vw;
+    }
+}
+
+#home nav a {
+    text-decoration: none;
+}
+
+#home nav a span:first-child {
+    text-decoration: underline;
+}
+
+#home nav span:nth-child(2) {
+    font-size: 67%;
+    font-style: italic;
+    vertical-align: middle;
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+}
+
+#home nav a:hover span:last-child {
+    text-shadow: #606060 2px 2px 20px;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    #home nav span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #home nav:hover span:last-child {
+        opacity: 0.5;
+    }
+}
+
+#home nav a:hover span:last-child {
+    opacity: 1;
+}
+
 #home nav ul {
     padding-left: 0;
 }
