@@ -2,7 +2,7 @@
 <!DOCTYPE rss [
 <!ELEMENT rss (channel)>
 <!ELEMENT channel (title, link, atom:link, description, language, pubDate, lastBuildDate, docs, generator, item*)>
-<!ELEMENT title (#PCDATA)>
+<!ELEMENT title (#PCDATA|span)*>
 <!ELEMENT link (#PCDATA)>
 <!ELEMENT atom:link EMPTY>
 <!ELEMENT description ANY>
@@ -15,10 +15,15 @@
 <!ELEMENT category (#PCDATA)>
 <!ELEMENT a (#PCDATA|code)*>
 <!ELEMENT code (#PCDATA)>
+<!ELEMENT i (#PCDATA)>
+<!ELEMENT p (#PCDATA|i|span)*>
+<!ELEMENT span (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>
 <!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
 <!ATTLIST atom:link href CDATA #REQUIRED rel CDATA #REQUIRED type CDATA #REQUIRED>
 <!ATTLIST a href CDATA #REQUIRED>
+<!ATTLIST i lang CDATA #IMPLIED>
+<!ATTLIST span lang CDATA #IMPLIED>
 ]>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -27,10 +32,34 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sat, 17 Dec 2022 17:49:01 GMT</pubDate>
-        <lastBuildDate>Sat, 17 Dec 2022 17:49:01 GMT</lastBuildDate>
+        <pubDate>Tue, 25 Jul 2023 21:53:02 +0000</pubDate>
+        <lastBuildDate>Tue, 25 Jul 2023 21:53:02 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title><span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates)</title>
+            <link>https://bbguimaraes.com/lib/apologia.html</link>
+            <guid>https://bbguimaraes.com/lib/apologia.html</guid>
+            <pubDate>Wed, 12 Jul 2023 18:04:19 GMT</pubDate>
+            <category>books</category>
+            <description><p><span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates), Plato</p><p>One of the Platonic dialogues which depicts the last days of Socrates (together with <i>Euthyphro</i>, <i>Crito</i>, <i>Phaedo</i>, and Xenophon's <i>Apology</i>).  Having been accused of "corrupting the youth" and teaching men "not to receive the gods whom the city receives", and knowing what his fate is, the philosopher consults his δαιμόνιον (<i lang="grc">daimonion</i>, his "divine faculty") and decides that, rather than desisting and escaping from his trial, as his prosecutors would have him do, he is to deliver his defense in front of the court and face the ultimate consequence.</p></description>
+        </item>
+        <item>
+            <title>Brave new world</title>
+            <link>https://bbguimaraes.com/lib/brave-new-world.html</link>
+            <guid>https://bbguimaraes.com/lib/brave-new-world.html</guid>
+            <pubDate>Sun, 22 Jan 2023 22:26:22 GMT</pubDate>
+            <category>books</category>
+            <description><p>Brave new world, Aldous Leonard Huxley</p><p>The World State in the Year of Our Ford 632 is perfectly constructed: humans are produced in laboratories, engineered and conditioned for their societal purpose, kept young until their death, with free access to drugs and all sorts of technological amenities.  Women are infertile or expertly trained in contraceptive rituals, encouraged to have as many partners as possible, and, if they ever "feel out of sorts", administered a <i>passion surrogate</i> or <i>pregnancy substitute</i>.</p></description>
+        </item>
+        <item>
+            <title><span lang="grc">Τὰ εἰς ἑαυτόν</span> (Meditations)</title>
+            <link>https://bbguimaraes.com/lib/meditations.html</link>
+            <guid>https://bbguimaraes.com/lib/meditations.html</guid>
+            <pubDate>Sun, 01 Jan 2023 12:21:23 GMT</pubDate>
+            <category>books</category>
+            <description><p><span lang="grc">Τὰ εἰς ἑαυτόν</span> (Meditations), Marcus Aurelius Antoninus Augustus</p><p>A book which should be mandatory reading for every man entering adult life. With deep roots in classical Greek and early Christian philosophy, these notes by Marcus Aurelius (the last of the "Good Emperors", maintainers of the Pax Romana in the first two centuries A.D.), written in the last third of his life, describe his conception of masculine virtue.</p></description>
+        </item>
         <item>
             <title>Booklet printing with LaTeX</title>
             <link>https://bbguimaraes.com/blog/booklet-printing-with-latex.html</link>
