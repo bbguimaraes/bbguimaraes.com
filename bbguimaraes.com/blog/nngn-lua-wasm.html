@@ -12,25 +12,21 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 nngn - lua &amp; wasm
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>nngn - lua &amp; wasm</h1>
             <p><i>2021-03-23T10:10:25</i></p>
             <div class="img-group img-group2">
                 <a href="https://www.lua.org">
-                    <img src="/files/blog/lua.png" alt="Lua logo"/>
+                    <img src="/files/blog/lua.png" alt="Lua logo" />
                 </a>
                 <a href="https://webassembly.org">
-                    <img
-                        src="/files/blog/wasm.png" alt="WebAssembly logo"
-                        style="width: 100px"/>
+                    <img src="/files/blog/wasm.png" alt="WebAssembly logo" style="width: 100px" />
                 </a>
             </div>
             <aside>
@@ -53,7 +49,9 @@ I have since been involved in discussions and seen enough interest in blog posts
 is an overview.
             </p>
             <h2 id="demo">
-                <a href="#demo">demo</a>
+                <a href="#demo">
+                    demo
+                </a>
             </h2>
             <p>
 You can see a basic demonstration on
@@ -65,22 +63,15 @@ function to the command-line <code>lua</code> interpreter that might be found in
 your operating system.
             </p>
             <a class="src-ref" data-hash="70e07d44a42c3810195c05cc90fc6fd692544f1d" href="https://gitlab.bbguimaraes.com/bbguimaraes/nngn/-/blob/master/demos/repl.lua">demos/repl.lua</a>
-            <img
-                src="/files/blog/lua_wasm_demo0.png"
-                title="Lua Wasm demo - write some lua code and press enter"
-                alt="Lua Wasm demo - write some lua code and press enter"/>
+            <img src="/files/blog/lua_wasm_demo0.png" alt="Lua Wasm demo - write some lua code and press enter" title="Lua Wasm demo - write some lua code and press enter" />
             <hr />
-            <img
-                src="/files/blog/lua_wasm_demo1.png"
-                title='Lua Wasm demo - "hello" .. ", " .. "lua"'
-                alt='Lua Wasm demo - "hello" .. ", " .. "lua"'/>
+            <img src="/files/blog/lua_wasm_demo1.png" alt="Lua Wasm demo - &quot;hello&quot; .. &quot;, &quot; .. &quot;lua&quot;" title="Lua Wasm demo - &quot;hello&quot; .. &quot;, &quot; .. &quot;lua&quot;" />
             <hr />
-            <img
-                src="/files/blog/lua_wasm_demo2.png"
-                title="Lua Wasm demo - hello, lua"
-                alt="Lua Wasm demo - hello, lua"/>
+            <img src="/files/blog/lua_wasm_demo2.png" alt="Lua Wasm demo - hello, lua" title="Lua Wasm demo - hello, lua" />
             <h2 id="emscripten">
-                <a href="#emscripten"><code>emscripten</code></a>
+                <a href="#emscripten">
+                    <code>emscripten</code>
+                </a>
             </h2>
             <p>
 Unsurprisingly, the WebAssembly build is based on the
@@ -109,7 +100,9 @@ also described in the
 <a href="https://emscripten.org/docs/porting/files/packaging_files.html#packaging-files">documentation</a>.
             </p>
             <h2 id="building-lua">
-                <a href="#building-lua">building Lua</a>
+                <a href="#building-lua">
+                    building Lua
+                </a>
             </h2>
             <p>
 Building a scripting language's interpreter from scratch may seem intimidating,
@@ -148,7 +141,9 @@ the compiler and library tools.  Further adjustments may be needed depending on
 the project, but those few are sufficient to build Lua as a static library.
             </p>
             <h2 id="linking">
-                <a href="#linking">linking</a>
+                <a href="#linking">
+                    linking
+                </a>
             </h2>
             <p>
 With the library built, all that is left is to include it in the linker calls.
@@ -178,16 +173,15 @@ Lua libraries and scripts (all regular source code text files) are included:
 	--embed-file $(srcdir)/src/lson/@src/lson \
     <i># …</i></code></pre>
             <h2 id="bonus">
-                <a href="#bonus">bonus: console REPL</a>
+                <a href="#bonus">
+                    bonus: console REPL
+                </a>
             </h2>
             <p>
 As a fun coda to this post, here is how access to the Lua interpreter is also
 exposed to Javascript and, by extension, the browser console:
             </p>
-            <img
-                src="/files/blog/lua_wasm_demo3.png"
-                title="Lua Wasm demo - browser console"
-                alt="Lua Wasm demo - browser console"/>
+            <img src="/files/blog/lua_wasm_demo3.png" alt="Lua Wasm demo - browser console" title="Lua Wasm demo - browser console" />
             <p>
 <code>emscripten</code> provides bidirectional
 <a href="https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html">communication</a>

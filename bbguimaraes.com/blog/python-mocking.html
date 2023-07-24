@@ -12,17 +12,15 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 Python mocking
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>Python mocking</h1>
-            <p><i>2013-05-11 19:17:00</i></p>
+            <p><i>2013-05-11T19:17:00</i></p>
             <p>
 If you are into unit testing, you probably have been introduced to mocking.
 And if that is the case, you probably already have been bitten by it.  Mocking
@@ -30,7 +28,8 @@ requires some understanding of code execution, importing and name resolution
 that most people lack when first encountering such situations.  In Python,
 mocking is a relatively simple process, if you analyze carefully what needs to
 be done.
-            </p><p>
+            </p>
+            <p>
 Mocking simply means replacing an object with another.  This is usually done to
 avoid instantiating costly systems or to change the behavior of a system.  To
 begin with a simple example:
@@ -53,14 +52,16 @@ object. Somewhere else in your code,
 complicated process that involves hundreds of operations. If you just want to
 test <code>some_function_in_your_code</code>, you shouldn't need to go through
 this whole process<sup><a href="#note0">0</a></sup>.
-            </p><p>
+            </p>
+            <p>
 To avoid that, we can use mocking.  Notice that all we need to test in
 <code>some_function_in_your_code</code> is that the argument passed has a member
 called <code>do_something</code> that can be called with no arguments and
 returns something that can be converted to <code>bool</code>.  There are many
 ways to do that, but to keep things short, I'll skip right to the library I use
 most of the times, <code>mock</code>.
-            </p><p>
+            </p>
+            <p>
 The main component of the <code>mock</code> library is the <code>Mock</code>
 class, which is basically an empty object with a few useful characteristics (be
 sure to check the documentation, because they are really useful).  Two of them
@@ -82,7 +83,8 @@ assigned to the attribute being accessed.
 As you can see, when we tried to access some_attribute, a <code>Mock</code>
 object was created for us. We could do it by hand with a single line of code,
 but it makes the code easier, shorter and cleaner.
-            </p><p>
+            </p>
+            <p>
 The other feature of <code>Mock</code> objects is the <code>return_value</code>
 attribute.  Whatever is contained in this attribute gets returned when the
 object is called as a function object<sup><a href="#note1">1</a></sup>.
@@ -92,7 +94,9 @@ object is called as a function object<sup><a href="#note1">1</a></sup>.
 &gt;&gt;&gt; m.return_value = <b>'the return value'</b>
 &gt;&gt;&gt; m()
 'the return value'</code></pre>
-            <p>Using these two techniques, we can now test our function:</p>
+            <p>
+Using these two techniques, we can now test our function:
+            </p>
             <pre><code><b>import</b> mock
 
 <b>def</b> your_test():
@@ -112,7 +116,9 @@ argument, and check the return value.  After that, the process is repeated, this
 time with a different return value.
             </p>
             <h2 id="that-was-the-easy-part">
-                <a href="#that-was-the-easy-part">That was the easy part</a>
+                <a href="#that-was-the-easy-part">
+                    That was the easy part
+                </a>
             </h2>
             <p>
 This first section was easy, nothing you couldn't find out with a quick search
@@ -159,7 +165,11 @@ exception.  To see why, you can put a <code>print random.random</code> inside
 <code>f</code> and see that the mock didn't work.  To understand why, we have to
 dig a little deeper.
             </p>
-            <h2 id="import"><a href="#import">Import</a></h2>
+            <h2 id="import">
+                <a href="#import">
+                    Import
+                </a>
+            </h2>
             <p>
 What happens when you run <code>import random</code>? You can watch
 <a href="http://pyvideo.org/video/1707/how-import-works">this video</a> to know
@@ -199,13 +209,18 @@ You can run that many times if you don't trust me, but that will always succeed.
 And it does because we now are changing the correct namespace.  You can check it
 by putting a <code>print(random.random)</code> in <code>f</code> again.
             </p>
-            <h2 id="being-nice"><a href="#being-nice">Being nice</a></h2>
+            <h2 id="being-nice">
+                <a href="#being-nice">
+                    Being nice
+                </a>
+            </h2>
             <p>
 Now you know how to mock, but there is something I must say before you leave.
 Always, always, ALWAYS restore any mock you do.  Seriously.  Even if you're
 sure no one will use the mocked attribute.  You don't want to loose an entire
 day of work just to find out that the problem was an undone mock.
-            </p><p>
+            </p>
+            <p>
 And doing it is so simple: store the original value in a variable and restore
 it after the operation.  I like to do it as soon as the operation is complete,
 before anything else is executed, but you don't need to, if you're not
@@ -222,7 +237,11 @@ Now you have no excuse.  Better yet, you can use another feature of the
 extension to an already long post.  Maybe I'll cover it in the future.  Anyway,
 happy mocking!
             </p>
-            <h2 id="notes"><a href="#notes">Notes</a></h2>
+            <h2 id="notes">
+                <a href="#notes">
+                    Notes
+                </a>
+            </h2>
             <ol>
                 <li id="note0">
                     <p>

@@ -12,24 +12,23 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 perl is beautiful
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>perl is beautiful</h1>
-            <p><i>2012-10-02 02:18:00</i></p>
+            <p><i>2012-10-02T02:18:00</i></p>
             <p>
 Writing the first post on a blog about programming is fairly easy.  Now, the
 second one needed a little thought to come up with.  I decided to show a trick
 I use almost daily, be it at work or on personal projects.  And that is
 <a href="http://en.wikipedia.org/wiki/Perl">perl</a>. Yes, the ancient language
 from 1987.
-            </p><p>
+            </p>
+            <p>
 If you're familiar with grep (and if you're not, stop reading this right now
 and get familiarized), you already know the enormous power of a general purpose
 stream filter.  What I want to show you in this post is how you can augment
@@ -37,7 +36,9 @@ that power using simple (aren't them all?) features from perl, both the
 language and the homonymous interpreter.
             </p>
             <h2 id="the-interpreter">
-                <a href="#the-interpreter">The interpreter</a>
+                <a href="#the-interpreter">
+                    The interpreter
+                </a>
             </h2>
             <p>
 I'll start with the interpreter just to get you started on how to run simple
@@ -85,7 +86,11 @@ You won't have this problem here, but take care when mixing the quotes used
 inside the program from the quotes used to pass the command to the shell.  You
 may need to escape some of them.
             </p>
-            <h2 id="perl"><a href="#perl">perl</a></h2>
+            <h2 id="perl">
+                <a href="#perl">
+                    perl
+                </a>
+            </h2>
             <p>
 Let's start building some more interesting examples, exploring one of the
 strongest side of perl: its support for
@@ -110,7 +115,8 @@ and initialize it using the
 <a href="http://www.stat.berkeley.edu/~spector/extension/perl/notes/node46.html">diamond operator</a>.
 Long story short, this operator reads from the standard input (as long as you
 don't pass any parameters when executing the program, more on this later).
-            </p><p>
+            </p>
+            <p>
 Line 7 deserves a special paragraph.  Here I'm using the inverted <i>if</i>
 syntax (which is a great feature that most languages lack), but don't get
 fooled by it.  It could be written as
@@ -138,7 +144,8 @@ Now things start to get interesting!  I decided to go light and present the
 omnipotent <i>$_</i> variable explicitly.  <i>$_</i> is a special (a.k.a.
 magic) variable in perl, which is used as the default value of many functions.
 Two examples here are print and the match operator.
-            </p><p>
+            </p>
+            <p>
 One last thing before I delegate the rest of this topic to the next post: the
 diamond operator can be used with a loop to read all the lines from the input:
             </p>
@@ -156,7 +163,9 @@ loop keeps reading until the input ends, which means reading until an
 <i>EOF</i> character on <i>stdin</i> or reading all the files.
 Congratulations!  You have just implemented <i>cat</i>.
             </p>
-            <p>Coming next: <em>actually</em> increasing productivity.</p>
+            <p>
+Coming next: <em>actually</em> increasing productivity.
+            </p>
             <div class="tags">
                 <a href="tags/programming.html">programming</a>
                 <a href="tags/perl.html">perl</a>

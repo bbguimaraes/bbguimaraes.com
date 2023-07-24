@@ -12,19 +12,17 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 nngn - lua
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>nngn - lua</h1>
             <p><i>2020-08-30T17:54:09</i></p>
             <a href="https://www.lua.org">
-                <img src="/files/blog/lua.png" alt="Lua logo"/>
+                <img src="/files/blog/lua.png" alt="Lua logo" />
             </a>
             <aside>
                 <p>
@@ -79,7 +77,9 @@ repository without edits.  They are not meant to be thoroughly understood, only
 provide a feel for the style of the code.
             </p>
             <h3 id="default-configuration">
-                <a href="#default-configuration">default configuration</a>
+                <a href="#default-configuration">
+                    default configuration
+                </a>
             </h3>
             <p>
 A default configuration that includes all capabilities and loads the initial
@@ -122,7 +122,11 @@ player.set{
 nngn:load_texture()
 font.load(<b>32</b>)
 nngn.grid:set_dimensions(<b>32.0</b>, <b>64</b>)</code></pre>
-            <h3 id="demos"><a href="#demos">demos</a></h3>
+            <h3 id="demos">
+                <a href="#demos">
+                    demos
+                </a>
+            </h3>
             <p>
 <a href="/nngn#demos">Demos</a> and other special-purpose cases are scripts
 that initialize just the parts of the engine that are necessary.  The
@@ -164,7 +168,11 @@ input.input:add(
     Input.KEY_ENTER, Input.SEL_PRESS,
     <b>function</b>() DEMO:next() <b>end</b>)
 <i>-- …</i></code></pre>
-            <h3 id="benchmarks"><a href="#benchmarks">benchmarks</a></h3>
+            <h3 id="benchmarks">
+                <a href="#benchmarks">
+                    benchmarks
+                </a>
+            </h3>
             <p>
 Benchmarks are scripts that set up the engine in a similar manner and either
 leave the test running or run it for a while and dump the results:
@@ -327,7 +335,11 @@ formats and the associated code to load them.
 In the repository, they fall into two categories: purely declarative and a
 combination of declarative and imperative sections.
             </p>
-            <h3 id="lson"><a href="#lson">LSON</a></h3>
+            <h3 id="lson">
+                <a href="#lson">
+                    LSON
+                </a>
+            </h3>
             <p>
 These are simply scripts that contain only static data, mostly in the form of
 tables (Lua's primary data structure).  All these scripts do is
@@ -356,7 +368,11 @@ without requiring a parser.  All scripts in this category are static, although
 it is common to go even further and include some amount of executable code in
 these files.
             </p>
-            <h3 id="maps"><a href="#maps">maps</a></h3>
+            <h3 id="maps">
+                <a href="#maps">
+                    maps
+                </a>
+            </h3>
             <p>
 For some cases, a purely declarative format would be unnecessarily verbose, and
 ultimately insufficient.  Using the imperative aspect of a proper programming
@@ -410,7 +426,11 @@ map.map {
     tiles = {
         nngn.textures:load(<b>"img/zelda_sacred_grove.png"</b>),
         <b>2</b>, <b>0</b>, <b>0</b>, <b>256</b>, <b>256</b>, <b>1</b>, <b>2</b>, {<b>0</b>, <b>0</b>, <b>0</b>, <b>1</b>}}}</code></pre>
-            <h2 id="next"><a href="#next">next</a></h2>
+            <h2 id="next">
+                <a href="#next">
+                    next
+                </a>
+            </h2>
             <p>
 I hope this post demonstrated how fundamental Lua is for the engine.  It truly
 is the brain of the system: all high-level logic lives in Lua scripts, leaving

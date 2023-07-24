@@ -12,14 +12,12 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 SIGFPE
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1><code>SIGFPE</code></h1>
             <p><i>2020-05-20T21:56:52</i></p>
@@ -81,7 +79,7 @@ they did), <code>NaN</code>s and <code>infinity</code> will very soon appear
 and spread quickly <em>without generating an easily identifiable error</em>.
 The result is spectacular, but not ideal if one wants a stable simulation:
             </p>
-            <img src="/files/blog/sigfpe.gif" alt="spectacular simulation">
+            <img src="/files/blog/sigfpe.gif" alt="spectacular simulation" />
             <h2 id="enter-sigfpe">
                 <a href="#enter-sigfpe">
                     Enter <code> SIGFPE</code>
@@ -136,7 +134,11 @@ and SSE modes are very simple, v. the
     <b>__asm__</b> (<b>"ldmxcsr %0"</b> : : <b>"m"</b> (*&amp;new));
     <b>return</b> old_exc;
 }</code></pre>
-            <h2 id="bonus"><a href="#bonus">Bonus</a></h2>
+            <h2 id="bonus">
+                <a href="#bonus">
+                    Bonus
+                </a>
+            </h2>
             <p>
 For bonus points, this can be put in a shared library so that FPE signals can
 be enabled dynamically by either loading or <code>LD_PRELOAD</code>ing the
