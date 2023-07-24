@@ -12,17 +12,15 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 The super user is more powerful than god
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>The super user is more powerful than god</h1>
-            <p><i>2012-12-21 10:48:00</i></p>
+            <p><i>2012-12-21T10:48:00</i></p>
             <pre><code>$ useradd god
 $ mkdir a
 $ chmod 000 a
@@ -30,9 +28,13 @@ $ su god -c ls a
 ls: cannot open directory a: Permission denied
 $ sudo ls a
 $</code></pre>
-            <p>And it can even tell god what to do:</p>
+            <p>
+And it can even tell god what to do:
+            </p>
             <pre><code>$ sudo su god -c <b>"sed -i 's/\(-DWINDOWS\|-DLINUX\)//' Makefile; make -B world"</b></code></pre>
-            <p>Happy winter solstice.</p>
+            <p>
+Happy winter solstice.
+            </p>
             <div class="tags">
                 <a href="tags/shell.html">shell</a>
                 <a href="tags/linux.html">linux</a>

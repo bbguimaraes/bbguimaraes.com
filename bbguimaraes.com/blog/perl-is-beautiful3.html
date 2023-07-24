@@ -12,23 +12,22 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 perl is beautiful - part 3
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>perl is beautiful - part 3</h1>
-            <p><i>2012-10-23 01:25:00</i></p>
+            <p><i>2012-10-23T01:25:00</i></p>
             <p>
 In the last post on the subject, I'll show a couple more perl tricks I use
 everyday.  I'll touch on some not-so-basic regex concepts here, so feel free to
 take a look <a href="http://perldoc.perl.org/perlre.html">here</a> if you don't
 know what some of them mean.
-            </p><p>
+            </p>
+            <p>
 One thing you can do with the regex operators is using them in list context.
 Every operation in perl is done in a
 <a href="http://docstore.mik.ua/orelly/perl4/prog/ch02_07.htm">context</a>.
@@ -42,7 +41,9 @@ thus executed in list context.  Try this:
             </p>
             <pre><code><b>my</b> <b>@my_array</b> = (<b>2</b>, <b>3</b>, <b>4</b>, <b>5</b>);
 <b>my</b> <b>$my_var</b> = <b>@my_array</b>;</code></pre>
-            <p>Or, my personal favorite:</p>
+            <p>
+Or, my personal favorite:
+            </p>
             <pre><code><b>my</b> <b>@my_array</b> = <b>2..5</b>;
 <b>my</b> <b>$my_var</b> = <b>@my_array</b>;</code></pre>
             <p>
@@ -63,7 +64,8 @@ This will create an array with all the matches found.  There are some new
 things here which need a better explanation.  First, the regex modifier
 <i>g</i> (from <i>global</i>) will make the regex be applied repeatedly,
 instead of stopping on the first result.
-            </p><p>
+            </p>
+            <p>
 Since we are on a list context, the result is no longer a boolean, but a list
 of all the matches, here meaning the values captured on <i>$1</i>, <i>$2</i>,
 and so on. The output for a sample file:
@@ -95,7 +97,8 @@ to show you another nice feature: if we add some parenthesis around <i>use</i>:
             <p>
 we get four elements on the array.  That's because, for each "pass", all values
 from (<i>$1</i>, <i>$2</i>, <i>$3</i>, ...) are stored.
-            </p><p>
+            </p>
+            <p>
 Well, I could go on and on writing about all the cool things you can do with
 perl, but I'm going to stop here.  If this short introduction did leave you
 interested to learn more, there are several sources on-line.  Two I use
@@ -106,7 +109,8 @@ highly recommend O'Reilly's
 <a href="http://shop.oreilly.com/product/9780596528126.do">Mastering Regular
 Expressions</a> (but please, don't buy the Brazilian Portuguese translation,
 just don't).
-            </p><p>
+            </p>
+            <p>
 And as a last note, if you are a vim user, here's something really useful.  You
 can select some text (using <i>v</i>, <i>V</i> or <i>ctrl-v</i>) and press
 <i>:</i>.  You will automatically get a filter for the selected text.  From

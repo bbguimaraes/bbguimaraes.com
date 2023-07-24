@@ -12,29 +12,29 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 Uploading files the unix way
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>Uploading files the unix way</h1>
-            <p><i>2014-03-04 00:26:00</i></p>
+            <p><i>2014-03-04T00:26:00</i></p>
             <p>
 I just did something which I thought was worth sharing.  It shows a couple of
 fundamental techniques in unix systems used in a context where most people
 would not think of.
-            </p><p>
+            </p>
+            <p>
 The context: my mom sent me a recipe of potato souffle (I hope google translate
 is doing the right thing here,
-<a href="https://www.google.com/search?q=potato+souffle"> it seems like it
-    is</a>).  But as most of e-mails coming from non-tech people, there was a
-lot of noise along the actual recipe text.  Since I wanted to view it in my
-cell phone while I cooked, I decided to clean it up a bit.
-            </p><p>
+<a href="https://www.google.com/search?q=potato+souffle"> it seems like it is</a>).
+But as most of e-mails coming from non-tech people, there was a lot of noise
+along the actual recipe text.  Since I wanted to view it in my cell phone while
+I cooked, I decided to clean it up a bit.
+            </p>
+            <p>
 So did I: copied the text to vim (which got rid of most of the noise
 immediately), edited a bit and it was ready:
             </p>
@@ -68,7 +68,8 @@ Now all I needed was a way to get it on my cellphone.  I could use dropbox or
 any of the related services, but that didn't seem exciting
 enough[<a href="#note1">1</a>].  So I thought: well, I'll just put it in my
 webserver and access it in my mobile browser.
-            </p><p>
+            </p>
+            <p>
 Fair enough.  But this is a file opened in vim[<a href="#note2">2</a>].  After
 a little thinking (which lasted for approximately 423ms), this is what I did.
 From inside vim, I executed the following command:
@@ -81,7 +82,8 @@ as the traditional cat command which reads and writes to sockets instead of
 files.  Here, I'm telling it to listen (<i>-l</i>) on port 31415 and output
 anything read to the file <i>/srv/http/sufle.txt</i>, where <i>/srv/http</i> is
 the document root of the webserver.
-            </p><p>
+            </p>
+            <p>
 Since I added the ampersand to the end of the command, the command is launched
 in the background and just stays there waiting for input, releasing the shell
 immediately so I can continue using vim.  Now that we're back, another vim
@@ -111,7 +113,8 @@ without arguments, as it is here) and writes them in the same order to its
 stdout. Since its stdin will read the contents of the vim buffer, we already
 know the effect of this command: the contents of the buffer will get written to
 a file.
-            </p><p>
+            </p>
+            <p>
 But what is that funny file starting with <i>/dev/tcp/</i>? That is feature of
 bash (I don't know about other shells). You can read about using the command[<a
 href="#note6">6</a>]:
@@ -123,7 +126,8 @@ output to port 31415 on the host raspberrypi. Remember our little ssh friend we
 left running in the background a while ago? It hasn't done much
 since[<a href="#note7">7</a>], but now there is data coming from the socket
 it's listening on, so the os wakes him up to do its job.
-            </p><p>
+            </p>
+            <p>
 And so it does, reading the data from the socket and writing it to stdout.
 Remember what that is?  That's the file we passed to the shell,
 <i>/srv/http/sufle.txt</i>.  And so our long journey comes to an end.  When nc
@@ -133,11 +137,16 @@ child process to die[<a href="#note9">9</a>].  The shell that spawned the ssh
 client has long died: it had nothing more to do because we started the process
 asynchronously (using the <i>&</i> on the command line), so that's the end of
 that (process) family tree[<a href="#note10">10</a>].
-            </p><p>
+            </p>
+            <p>
 The result? The contents of the buffer have now been transfered and written to
 the file <i>/src/http/sufle.txt</i> on the remote host raspberrypi.
             </p>
-            <h3 id="conclusion"><a href="#conclusion">Conclusion</a></h3>
+            <h3 id="conclusion">
+                <a href="#conclusion">
+                    Conclusion
+                </a>
+            </h3>
             <p>
 You might be thinking: "What the hell?  You are telling me all this is simpler
 than dropbox?".  And I would be lying if I said "yes".  But the point here is
@@ -145,7 +154,8 @@ not that this is simple.  In fact, it's the base of one of the most complex
 systems in computer history: the operating system.  And even though I have
 detailed some parts of the processes, there are a lot, and I really mean *a
 lot* more things going on behind the scenes here[<a href="#note11">11</a>].
-            </p><p>
+            </p>
+            <p>
 But if you step back, you will realize that all that was needed were two
 commands:
             </p>
@@ -158,12 +168,17 @@ redirections and socket communication.  Another goal was to show how a powerful
 text editor incorporates this concept in its design, taking advantage of of the
 powerful features of the operating system to extend its
 capabilities[<a href="#note12">12</a>].
-            </p><p>
+            </p>
+            <p>
 And I bet I can type these two commands faster than your dropbox client can
 transfer the file to your cellphone[<a href="#note13">13</a>].  Now, I you'll
 excuse me, there is a potato souffle that needs to be cooked.
             </p>
-            <h3 id="bonus"><a href="#bonus">Bonus</a></h3>
+            <h3 id="bonus">
+                <a href="#bonus">
+                    Bonus
+                </a>
+            </h3>
             <p>
 While doing some scientific tests on the cowsay program (trying to make the cow
 say the text of this post), I discovered perl has a special mention of my blog
@@ -172,7 +187,11 @@ on its source code[<a href="#note14">14</a>]:
             <pre><code>:w !cowsay
 This shouldn't happen at /usr/share/perl5/core_perl/Text/Wrap.pm line 84, &lt;stdin&gt; line 63.
 shell returned 255</code></pre>
-            <h3 id="notes"><a href="#notes">Notes</a></h3>
+            <h3 id="notes">
+                <a href="#notes">
+                    Notes
+                </a>
+            </h3>
             <ol>
                 <li id="note1">What sane geek uses dropbox, anyway?</li>
                 <li id="note2">

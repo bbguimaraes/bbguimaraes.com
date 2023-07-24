@@ -12,14 +12,12 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 strace prelude in C
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>strace prelude in C</h1>
             <p><i>2022-04-17T10:34:57</i></p>
@@ -33,7 +31,9 @@ execution of the process.  Today we explore this neglected part of the system
 call trace.
             </p>
             <h2 id="minimal-elf">
-                <a href="#minimal-elf">Minimal ELF</a>
+                <a href="#minimal-elf">
+                    Minimal ELF
+                </a>
             </h2>
             <p>
 The first encounter with <code>strace</code> is very intimidating: even the most
@@ -108,7 +108,9 @@ file (or, alternatively, to remove that section post factum with <code>objcopy
                 </p>
             </aside>
             <h2 id="c">
-                <a href="#c">C</a>
+                <a href="#c">
+                    C
+                </a>
             </h2>
             <p>
 To start moving to more complex examples, the previous program can be rewritten
@@ -146,7 +148,9 @@ system components, and much of the initialization of a process — prior to the
 execution of the <code>main</code> function — is done by the library.
             </p>
             <h2 id="musl">
-                <a href="#musl">musl</a>
+                <a href="#musl">
+                    musl
+                </a>
             </h2>
             <p>
 Somewhat unconventionally compared to other Unix descendants (and operating
@@ -197,7 +201,9 @@ it terminates not only the caller but all threads in a process.
                 </li>
             </ul>
             <h2 id="glibc">
-                <a href="#glibc">glibc</a>
+                <a href="#glibc">
+                    glibc
+                </a>
             </h2>
             <p>
 Tracing the same program as before, but now compiled using the GNU standard
@@ -280,7 +286,9 @@ function is to make part of the address space (as indicated by the
 <code>RELRO</code> ELF header) read-only<a href="#note2"><sup>2</sup></a>.
             </p>
             <h2 id="ld">
-                <a href="#ld">ld</a>
+                <a href="#ld">
+                    ld
+                </a>
             </h2>
             <p>
 To complete our investigation of the usual <code>strace</code> prelude, dynamic
@@ -372,7 +380,9 @@ With the dynamic linking done, the cache is unmapped and our magnanimous
 <code>strace</code> output.
             </p>
             <h2 id="coda">
-                <a href="#coda">Coda</a>
+                <a href="#coda">
+                    Coda
+                </a>
             </h2>
             <p>
 Of course, as a programmer or system administrator, it is <em>at this point</em>
@@ -417,15 +427,15 @@ Programming Interface</i> by Michael Kerrisk (who happens to also be the
 maintainer of Linux manual pages) is a fantastic resource.
             </p>
             <a href="/files/blog/strace0.png">
-                <img
-                    title="tlpi" alt="tlpi"
-                    src="/files/blog/strace0_512.png" />
+                <img src="/files/blog/strace0_512.png" alt="tlpi" title="tlpi" />
             </a>
             <p>
 Have fun!
             </p>
             <h2 id="notes">
-                <a href="#notes">Notes</a>
+                <a href="#notes">
+                    Notes
+                </a>
             </h2>
             <ol start=0>
                 <li id="note0">

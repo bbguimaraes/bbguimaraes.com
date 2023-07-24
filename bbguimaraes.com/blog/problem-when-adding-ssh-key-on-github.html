@@ -12,36 +12,47 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 Problem when adding SSH key on github
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>Problem when adding SSH key on github</h1>
-            <p><i>2012-10-28 03:41:00</i></p>
+            <p><i>2012-10-28T03:41:00</i></p>
             <p>
 Recently, I had I problem with github.  I couldn't add SSH keys anymore, the
 web page would just hang and present me a "Connection reset" error after a few
 (annoying) minutes.  I struggled for a week, but have finally found a solution,
 which is not the best, but at least I can access github from my machine once
 again.
-            </p><p>
+            </p>
+            <p>
 It all started two weeks ago, when I ran an everyday <i>git push</i>, and got a
 little surprise.  It just sat there forever, and I had to <i>SIGTERM</i> it
 every time.  What I did after was try to reset my key on github.  I went to the
 SSH page and deleted my key, created a new one and tried to add it.
             </p>
-            <p>Yes I know it was stupid. The right way to do it would be:</p>
+            <p>
+Yes I know it was stupid. The right way to do it would be:
+            </p>
             <ol>
-                <li>back up my key</li>
-                <li>create a new one</li>
-                <li>add it</li>
-                <li>make absolutely sure it works</li>
-                <li>remove the old one in github and on the machine</li>
+                <li>
+                    back up my key
+                </li>
+                <li>
+                    create a new one
+                </li>
+                <li>
+                    add it
+                </li>
+                <li>
+                    make absolutely sure it works
+                </li>
+                <li>
+                    remove the old one in github and on the machine
+                </li>
             </ol>
             <p>
 But I didn't, for one simple reason: adding keys has been such a natural
@@ -49,7 +60,11 @@ operation, I didn't even think about it.  Replacing a key (which I did a lot of
 times when I was learning how public-key encryption works) only takes a few
 seconds, and I never had to worry about it.  Until now.
             </p>
-            <h2 id="haystacking"><a href="#haystacking">Haystacking</a></h2>
+            <h2 id="haystacking">
+                <a href="#haystacking">
+                    Haystacking
+                </a>
+            </h2>
             <p>
 I am no ssh expert.  So I turned to github's support.  And I have to say, the
 response was really good, fast and to the point.  Sadly, it didn't solve the
@@ -58,15 +73,19 @@ problem.  Here is the response:
             <blockquote>
                 <p>
 Hi Bruno,
-                </p><p>
+                </p>
+                <p>
 What size SSH key are you using? We have a known bug where the page will give a
 500 error if the SSH key is too large.
-                </p><p>
+                </p>
+                <p>
 I would recommend using the default size key for now, and hopefully we will
 have this bug fixed soon.
-                </p><p>
+                </p>
+                <p>
 Sorry for the trouble.
-                </p><p>
+                </p>
+                <p>
 Cheers,
 <br />
 Steve
@@ -79,13 +98,16 @@ but in a week I just couldn't do it.  Then, yesterday, I decided to give the
 developer API a try.  I didn't have much hope that it would work, because I had
 tried a lot of different things and because I thought the problem was exactly
 there.  But I was wrong again.
-            </p><p>
+            </p>
+            <p>
 With just a few commands, I was able to add a ssh key to my account and finally
 access my repositories.  And, in the process, I discovered a handy command line
 utility, so I guess it wasn't all that bad.
             </p>
             <h2 id="curl-aka-curl">
-                <a href="#curl-aka-curl">curl (a.k.a. cURL)</a>
+                <a href="#curl-aka-curl">
+                    curl (a.k.a. cURL)
+                </a>
             </h2>
             <p>
 curl is a program you can use to fetch web pages just as your browser would do.
@@ -104,7 +126,8 @@ isn't very nice.  You will get back a json output, listing all the keys
 registered for your account.  There are several functions on the API, you can
 take a look at them on the <a href="http://developer.github.com/">docs
 page</a>.
-            </p><p>
+            </p>
+            <p>
 But the one that did it for me was the <i>
 <a href="http://developer.github.com/v3/users/keys/#create-a-public-key">create
 a puclib key</a></i>.  A simple post

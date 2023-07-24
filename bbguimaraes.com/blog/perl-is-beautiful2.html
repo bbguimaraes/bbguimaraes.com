@@ -12,23 +12,23 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 perl is beautiful - part 2
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>perl is beautiful - part 2</h1>
-            <p><i>2012-10-18 10:53:00</i></p>
+            <p><i>2012-10-18T10:53:00</i></p>
             <p>
 We've seen how perl can be used, but you may be wondering, so what?  Fasten
 your seatbelt, for fun begins now.
             </p>
             <h2 id="interpreter-switches">
-                <a href="#interpreter-switches">Interpreter switches</a>
+                <a href="#interpreter-switches">
+                    Interpreter switches
+                </a>
             </h2>
             <p>
 The single most useful tool I'm going to show you.  The interpreter accepts
@@ -44,7 +44,8 @@ from a file, the program will be contained inside the next argument.  Note
 that,  by perl's definition, you don't need to use a semicolon after the last
 (here also the only) command.  But I've included it to avoid confusion on the
 quotes. With this switch, it will be easier to show you the others.
-            </p><p>
+            </p>
+            <p>
 Let's start with -n, which will <em>surround</em> your code with the following
 construct:
             </p>
@@ -109,7 +110,7 @@ If you followed me all the way here, you can now start applying it, just by
 remembering this simple command line.  Quick example I use every day: find all
 python functions on a file.
             </p>
-            <pre><code> $ perl -ne <b>'print if m/^\s*def /'</b></code></pre>
+            <pre><code>$ perl -ne <b>'print if m/^\s*def /'</b></code></pre>
             <p>
 From here, you can go anywhere.  The nice thing is now you have the power of a
 real programming language, and can do all the bizarre things perl can do (and
@@ -119,7 +120,8 @@ it a few times, it's now natural, I don't even have to think about it.  And it
 took only a couple of seconds to google "perl command line" anyway (at some
 point, I only had to type "perl" on Firefox's address bar and it would show me
 the page right away).
-            </p><p>
+            </p>
+            <p>
 Coming next: on the last post on this (unexpectedly long) topic, I'll show you
 some (kind of) advanced perl and regexp techniques.
             </p>

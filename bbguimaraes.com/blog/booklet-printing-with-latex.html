@@ -12,14 +12,12 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 Booklet printing with LaTeX
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>Booklet printing with LaTeX</h1>
             <p><i>2022-12-17T17:49:01</i></p>
@@ -52,10 +50,7 @@ That is, instead of the usual A4 single- or double-sided print, a series of A4
 pages is printed in a specific format, folded in half, and bound together,
 producing a small book with pages of size A5.
             </p>
-            <img
-                alt="booklet size"
-                title="booklet size"
-                src="/files/blog/booklet_size.png" />
+            <img src="/files/blog/booklet_size.png" alt="booklet size" title="booklet size" />
             <p>
 While that is a common option in printers and printing programs, it can also be
 done as a post-processing step of a regular PDF file.  And although the process
@@ -63,7 +58,11 @@ is not complex, I found it rather difficult to aggregate information about the
 several different programs, not to mention understanding the printing
 vocabulary, to arrive at the final result.  So here is a summary and a guide.
             </p>
-            <a href="#latex"><h2 id="latex">LaTeX</h2></a>
+            <h2 id="latex">
+                <a href="#latex">
+                    LaTeX
+                </a>
+            </h2>
             <p>
 This first part will start from the very beginning, creating a PDF file out of
 nothing.  Feel free to advance to the <a href="#printing-vocabulary">next</a> if
@@ -76,9 +75,11 @@ Other than the few options described in this section, the document itself can be
 composed however desired.  Defining these options early, however, reduces the
 need to reformat the content later to adjust it to the reduced dimensions.
             </p>
-            <a href="#documentclass">
-                <h3 id="documentclass"><code>documentclass</code></h3>
-            </a>
+            <h3 id="documentclass">
+                <a href="#documentclass">
+                    <code>documentclass</code>
+                </a>
+            </h3>
             <p>
 Every LaTeX document starts with a <code>documentclass</code> declaration.  It
 defines the overall structure of the content and the sections that compose it.
@@ -115,9 +116,11 @@ not give a good idea of how text will look on real paper.
                     </p>
                 </li>
             </ul>
-            <a href="#geometry">
-                <h3 id="geometry"><code>geometry</code></h3>
-            </a>
+            <h3 id="geometry">
+                <a href="#geometry">
+                    <code>geometry</code>
+                </a>
+            </h3>
             <p>
 The <code>book</code> document class predefines very spacious margin sizes.
 This is intended to produce lines with a reasonable number of characters (below
@@ -140,9 +143,11 @@ margin sizes), e.g.:
     <i>% title page text/commands</i>
 \<b>end</b>{<b>titlepage</b>}
 \<b>restoregeometry</b></code></pre>
-            <a href="#printing-vocabulary">
-                <h2 id="printing-vocabulary">Printing vocabulary</h2>
-            </a>
+            <h2 id="printing-vocabulary">
+                <a href="#printing-vocabulary">
+                    Printing vocabulary
+                </a>
+            </h2>
             <p>
 A few printing terms need to be understood before the required operations to
 produce a booklet can be explained.  Imagining a traditional book resting on a
@@ -156,10 +161,7 @@ table surface (XY) and the normal vector pointing up (Z):
 binding of a book is usually on the long edge on the left (parallel to the Y
 axis).
                     </p>
-                    <img
-                        alt="long/short edges"
-                        title="long/short edges"
-                        src="/files/blog/booklet_edges.png" />
+                    <img alt="long/short edges" title="long/short edges" src="/files/blog/booklet_edges.png" />
                 </li>
                 <li>
                     <p>
@@ -169,10 +171,7 @@ a 90&deg; counter-clockwise rotation along the Z axis, such that the long edges
 become parallel to the X axis.  For a book, this would turn the binding towards
 the reader.
                     </p>
-                    <img
-                        alt="page orientation"
-                        title="page orientation"
-                        src="/files/blog/booklet_orientation.png" />
+                    <img alt="page orientation" title="page orientation" src="/files/blog/booklet_orientation.png" />
                 </li>
                 <li>
                     <p>
@@ -182,10 +181,7 @@ before printing the other page can be done either over the short or the long
 edge, depending on how the two sides of the sheet should be oriented in relation
 to each other.
                     </p>
-                    <img
-                        alt="one-/two-sided printing"
-                        title="one-/two-sided printing"
-                        src="/files/blog/booklet_sides.png" />
+                    <img alt="one-/two-sided printing" title="one-/two-sided printing" src="/files/blog/booklet_sides.png" />
                     <p>
 This can require (and will for the booklet format) mirroring the pages on one of
 the sides of the sheet so that they are properly aligned with the content on the
@@ -198,10 +194,7 @@ parts and placing one (resized) input page in each sub-division.  <i>2-up</i>
 means the output page is divided in half, each side containing one page from the
 input that is half its original size.
                     </p>
-                    <img
-                        alt="n-up printing"
-                        title="n-up printing"
-                        src="/files/blog/booklet_nup.png" />
+                    <img alt="n-up printing" title="n-up printing" src="/files/blog/booklet_nup.png" />
                     <p>
 While there are two possible sub-divisions for 2-up printing (and many more for
 larger numbers), the one shown in the image above (where the division is done
@@ -219,13 +212,14 @@ composed of a single folded sheet (four pages) or multiple sheets folded
 together.  Here is an example of a twelve-page signature (composed of three
 sheets):
                     </p>
-                    <img
-                        alt="signature"
-                        title="signature"
-                        src="/files/blog/booklet_signature.png" />
+                    <img alt="signature" title="signature" src="/files/blog/booklet_signature.png" />
                 </li>
             </ul>
-            <a href="#pdfjam"><h2 id="pdfjam"><code>pdfjam</code></h2></a>
+            <h2 id="pdfjam">
+                <a href="#pdfjam">
+                    <code>pdfjam</code>
+                </a>
+            </h2>
             <p>
 This is a script which uses LaTeX itself to manipulate PDF files.  It can be
 used to transform a normal document into a format that can be printed directly
@@ -281,7 +275,11 @@ desired format.  Opening it in a PDF viewer can be quite confusing, since the
 orientation, rotation, and page ordering are very different from a normal
 document, as expected.
             </p>
-            <a href="#cups"><h2 id="cups">CUPS</h2></a>
+            <h2 id="cups">
+                <a href="#cups">
+                    CUPS
+                </a>
+            </h2>
             <p>
 Printing on Unix systems is done using <a href="https://www.cups.org/">CUPS</a>.
 Its basic mode of operation is simple:
@@ -324,7 +322,11 @@ following options are required:
 The final command is:
             </p>
             <pre><code>$ lp -o orientation-requested=4 -o sides=two-sided-long-edge input-book.pdf</code></pre>
-            <a href="#binding"><h2 id="binding">Binding</h2></a>
+            <h2 id="binding">
+                <a href="#binding">
+                    Binding
+                </a>
+            </h2>
             <p>
 Once the document is printed, it needs to be folded and bound.  The pages should
 come out of the printer already in the correct order, but make sure they are by

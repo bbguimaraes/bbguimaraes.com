@@ -12,21 +12,17 @@
     <body>
         <div class="w80 blog">
             <nav id="page-nav">
-                <a href="/"><img id="logo" src="/triangle.png" alt="root"/></a>
+                <a href="/"><img id="logo" src="/triangle.png" alt="root" /></a>
                 /
                 <a href=".">blog</a>
                 /
                 An image is worth a thousand megabytes
-                <a id="rss-icon" href="/blog/rss.xml">
-                    <img src="/files/blog/rss.png" alt="rss"/>
-                </a>
+                <a id="rss-icon" href="/blog/rss.xml"><img src="/files/blog/rss.png" alt="rss" /></a>
             </nav>
             <h1>An image is worth a thousand megabytes</h1>
-            <p><i>2013-02-07 01:11:00</i></p>
+            <p><i>2013-02-07T01:11:00</i></p>
             <p><a href="the-raspberry.html">Part I - The raspberry</a></p>
-            <p>
-                <b>Part II - An image is worth a thousand megabytes</b>
-            </p>
+            <p><b>Part II - An image is worth a thousand megabytes</b></p>
             <p><a href="a-post-mortem.html">Part III - A post-mortem</a></p>
             <p>
 Now we have all the components we need to run our Raspberry Pi, we can start
@@ -34,7 +30,8 @@ preparing them to actually work together.  The first thing we need to do is get
 the boot record, partitions and operating system on the SD card, so our little
 friend can boot and run a true system.  Thankfully, some nice folks have
 already done the hard work, so we can jump many of the complex steps.
-            </p><p>
+            </p>
+            <p>
 I'm going to use the Raspbian distribution, which is based on the famous Debian
 (GNU/)Linux distribution, and includes many of the standard software packages
 already prepared to run on the Pi.  If you haven't already, grab Raspbian's
@@ -51,15 +48,13 @@ download, which is always a good thing to know, specially when dealing with
 sensitive data such as disk images.  To do that, you can use the <i>sha1sum</i>
 program:
             </p>
-            <pre><code>
-$ sha1sum 2012-12-16-wheezy-raspbian.zip
+            <pre><code>$ sha1sum 2012-12-16-wheezy-raspbian.zip
 514974a5fcbbbea02151d79a715741c2159d4b0a  2012-12-16-wheezy-raspbian.zip</code></pre>
             <p>
 Compare the output with the hash on the SHA-1 section of the download page.
 Or, if you have the SHA-1 stored in a file:
             </p>
-            <pre><code>
-$ sha1sum -c 2012-12-16-wheezy-raspbian.zip.sha1
+            <pre><code>$ sha1sum -c 2012-12-16-wheezy-raspbian.zip.sha1
 2012-12-16-wheezy-raspbian.zip: OK</code></pre>
             <p>
 If you don't get the appropriate result, just download the file again and check
@@ -68,8 +63,7 @@ Before you insert the SD card on your computer (you may need an external SD
 card reader, depending on the ports available on your machine), execute the
 command
             </p>
-            <pre><code>
-$ ls /dev/sd*
+            <pre><code>$ ls /dev/sd*
 /dev/sda   /dev/sda2  /dev/sda4  /dev/sda6  /dev/sda8
 /dev/sda1  /dev/sda3  /dev/sda5  /dev/sda7</code></pre>
             <p>
@@ -91,12 +85,14 @@ will appear on the output.  It will usually be <i>/dev/sdb*</i> entries, if you
 have only one disk.  That is the device file for the card.  If the card is
 automatically mounted, you can see the size on <i>df</i>'s output, so you can
 be sure that it is the right device.
-            </p><p>
+            </p>
+            <p>
 <b>A really important note here</b>: you need to get the correct device name.
 We are going to use a program that does raw block copying, which can destroy
 your data if you target the wrong device.  The device mounted on root
 (<i>/</i>) is probably not the device you want, for example.
-            </p><p>
+            </p>
+            <p>
 Another important thing: if the card already has partitions, some extra device
 files may appear, such as <i>/dev/sdb1</i>, <i>/dev/sdb2</i> and so on.  We
 need the device, not any partition, so be sure to use the device file with no
@@ -104,7 +100,9 @@ number suffix.  When you have the device name, make sure the device is unmounted
 so we can write data to it:
             </p>
             <pre><code>$ umount /dev/sdb*</code></pre>
-            <p>Then use good old <i>dd</i> to copy the image:</p>
+            <p>
+Then use good old <i>dd</i> to copy the image:
+            </p>
             <pre><code>$ dd if=./2012-12-16-wheezy-raspbian.zip of=/dev/sdb bs=4M</code></pre>
             <p>
 A couple things deserve mention.  It is always good to check (and re-check) the
@@ -120,7 +118,9 @@ signal and it will output the progress:
             <pre><code>$ ps aux | grep dd
   4821 pts/2    R+     0:33 dd if=./2012-12-16-wheezy-raspbian.zip of=/dev/sdb bs=4M
 $ kill -USR1 4821</code></pre>
-            <p>When it is done, run</p>
+            <p>
+When it is done, run
+            </p>
             <pre><code>$ sync</code></pre>
             <p>
 to make sure everything is properly written and remove the card.  Now insert
@@ -129,15 +129,13 @@ will get a nice show of lights as it boots.  You can plug the HDMI to a monitor
 and see the boot messages.  Here's a (somewhat light-impaired) gallery:
             </p>
             <a href="/files/blog/an_image0.png">
-                <img src="/files/blog/an_image0.png" alt="raspberry pi lights"/>
+                <img src="/files/blog/an_image0.png" alt="raspberry pi lights" />
             </a>
             <a href="/files/blog/an_image1.png">
-                <img src="/files/blog/an_image1.png" alt="raspberry pi lights"/>
+                <img src="/files/blog/an_image1.png" alt="raspberry pi lights" />
             </a>
             <a href="/files/blog/an_image2.png">
-                <img
-                    src="/files/blog/an_image2.png"
-                    alt="raspberry pi starting"/>
+                <img src="/files/blog/an_image2.png" alt="raspberry pi starting" />
             </a>
             <p>
 I know I promised we'd get it to work!  Well, if you (unlike me) think this
