@@ -32,12 +32,12 @@
     margin-bottom: 0;
 }
 
-.books .book:nth-child(even) img {
+.books .book:nth-child(even) .book-cover {
     float: right;
     margin-left: 1em;
 }
 
-.books .book:nth-child(odd) img {
+.books .book:nth-child(odd) .book-cover {
     float: left;
     margin-right: 1em;
 }
@@ -48,7 +48,7 @@
     margin-top: 1em;
 }
 
-.book img {
+.book .book-cover {
     height: 16em;
 }
 
