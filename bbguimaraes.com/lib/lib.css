@@ -80,6 +80,7 @@
 }
 
 .books.honorable-mentions .book {
+    cursor: pointer;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -88,6 +89,16 @@
     float: none;
     margin-left: auto;
     margin-right: auto;
+}
+
+.books.honorable-mentions .book a {
+    text-decoration: none;
+}
+
+.books.honorable-mentions .book h3 {
+    font-style: italic;
+    margin-bottom: 0.25em;
+    text-decoration: underline;
 }
 
 .citation {
