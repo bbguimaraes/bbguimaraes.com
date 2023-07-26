@@ -60,6 +60,12 @@
     margin: 0 1em 1em 1em;
 }
 
+.book .languages {
+    float: right;
+    margin-top: 0;
+    margin-left: 2em;
+}
+
 .book h3 {
     margin-top: 0;
 }
