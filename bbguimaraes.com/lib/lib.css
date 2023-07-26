@@ -88,19 +88,48 @@
     text-align: center;
 }
 
-.citation-el, .citation-en {
+.citation p {
+    text-align: left;
+}
+
+.citation-left, .citation-right, .citation-el, .citation-en {
     display: inline-block;
+    vertical-align: top;
     margin-top: 0;
+}
+
+.citation-right {
     margin-bottom: 0;
+}
+
+.citation-el, .citation-en {
     margin-left: 1em;
     margin-right: 1em;
-    text-align: left;
-    vertical-align: top;
+}
+
+.citation-left > *:first-child, .citation-right > *:first-child {
+    margin-top: 0;
+}
+
+.citation-left > *:last-child, .citation-right > *:last-child {
+    margin-bottom: 0;
 }
 
 @media (min-width: 80ch) {
-    .citation-el {
+    .citation-left, .citation-right {
+        margin-right: 0;
+    }
+
+    .citation-left, .citation-right, .citation-el {
         width: 40%;
+        margin-bottom: 0;
+    }
+
+    .citation-right {
+        margin-top: 0;
+    }
+
+    .citation-el {
         margin-right: 0;
     }
 
