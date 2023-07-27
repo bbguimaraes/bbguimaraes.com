@@ -80,6 +80,15 @@
             <description>In another episode of "there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine": booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.</description>
         </item>
         <item>
+            <title>Wish you were here</title>
+            <link>https://bbguimaraes.com/music/wish-you-were-here.html</link>
+            <guid>https://bbguimaraes.com/music/wish-you-were-here.html</guid>
+            <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>guitar</category>
+            <description><p>music guitar</p><p>Pink Floyd</p></description>
+        </item>
+        <item>
             <title>strace prelude in C</title>
             <link>https://bbguimaraes.com/blog/strace-prelude-in-c.html</link>
             <guid>https://bbguimaraes.com/blog/strace-prelude-in-c.html</guid>
@@ -166,6 +175,15 @@
             <description>The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;em&gt;I&lt;/em&gt; can understand a mathematical concept, so can you.</description>
         </item>
         <item>
+            <title>Black mountain side / Bron-Y-Aur stomp</title>
+            <link>https://bbguimaraes.com/music/black-mountain-side-bron-y-aur-stomp.html</link>
+            <guid>https://bbguimaraes.com/music/black-mountain-side-bron-y-aur-stomp.html</guid>
+            <pubDate>Sun, 29 Dec 2019 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>guitar</category>
+            <description><p>music guitar</p><p>Led Zeppelin</p><p>An (old) newly developed love for thumbpicking and Jimmy Page. Some parts are better than others.</p></description>
+        </item>
+        <item>
             <title>mv ~</title>
             <link>https://bbguimaraes.com/blog/mv-home.html</link>
             <guid>https://bbguimaraes.com/blog/mv-home.html</guid>
@@ -176,12 +194,87 @@
             <description>&lt;p&gt;Both from personal experience and from having read all sorts of blogs, I learned that the secret to not having to give excuses for updating a blog in a very infrequent and irregular fashion is to completely ignore the fact that it has been more than a year since the last post (I would say this is an autological self-reference, but that would be paradoxically contradictory).&lt;/p&gt;&lt;p&gt;The big news this time is that from now on, the new home for this blog is:&lt;/p&gt;&lt;blockquote&gt;&lt;a href="https://bbguimaraes.com/blog"&gt;https://bbguimaraes.com/blog&lt;/a&gt;&lt;/blockquote&gt;</description>
         </item>
         <item>
+            <title>O pato</title>
+            <link>https://bbguimaraes.com/music/o-pato.html</link>
+            <guid>https://bbguimaraes.com/music/o-pato.html</guid>
+            <pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>guitar</category>
+            <description><p>music guitar</p><p>João Gilberto</p><p>R.I.P.</p></description>
+        </item>
+        <item>
+            <title>Cello suite no. 1 (prelude)</title>
+            <link>https://bbguimaraes.com/music/prelude-cello-suite-no-1.html</link>
+            <guid>https://bbguimaraes.com/music/prelude-cello-suite-no-1.html</guid>
+            <pubDate>Sat, 06 Jul 2019 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>mandolin</category>
+            <description><p>music mandolin</p><p>Johann Sebastian Bach</p></description>
+        </item>
+        <item>
+            <title>The lemon song</title>
+            <link>https://bbguimaraes.com/music/the-lemon-song.html</link>
+            <guid>https://bbguimaraes.com/music/the-lemon-song.html</guid>
+            <pubDate>Sun, 13 Aug 2017 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>bass</category>
+            <description><p>music bass</p><p>Led Zeppelin</p><p>I'm sorry for the mistakes, it has taken me a whole weekend and a whole bottle of Becherovka to get this song down.</p></description>
+        </item>
+        <item>
+            <title>Cripple creek</title>
+            <link>https://bbguimaraes.com/music/cripple-creek.html</link>
+            <guid>https://bbguimaraes.com/music/cripple-creek.html</guid>
+            <pubDate>Sun, 23 Jul 2017 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>mandolin</category>
+            <description><p>music mandolin</p><p>traditional</p></description>
+        </item>
+        <item>
+            <title>Sheik's theme</title>
+            <link>https://bbguimaraes.com/music/sheiks-theme.html</link>
+            <guid>https://bbguimaraes.com/music/sheiks-theme.html</guid>
+            <pubDate>Thu, 06 Jul 2017 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Koji Kondo</p><p>The legend of Zelda - Ocarina of time</p></description>
+        </item>
+        <item>
             <title>~/music</title>
             <link>https://bbguimaraes.com/blog/music.html</link>
             <guid>https://bbguimaraes.com/blog/music.html</guid>
             <pubDate>Sun, 12 Mar 2017 21:12:00 GMT</pubDate>
             <category>music</category>
             <description>For too long my musical (if you can call them that) experiments have been scattered all over the internet.  Not anymore!</description>
+        </item>
+        <item>
+            <title>A bit of soul (blues hangover)</title>
+            <link>https://bbguimaraes.com/music/a-bit-of-soul.html</link>
+            <guid>https://bbguimaraes.com/music/a-bit-of-soul.html</guid>
+            <pubDate>Thu, 29 Dec 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Ray Charles</p></description>
+        </item>
+        <item>
+            <title>Água de beber</title>
+            <link>https://bbguimaraes.com/music/agua-de-beber.html</link>
+            <guid>https://bbguimaraes.com/music/agua-de-beber.html</guid>
+            <pubDate>Sat, 24 Dec 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <category>bass</category>
+            <category>drums</category>
+            <description><p>music piano bass drums</p><p>Tom Jobim</p></description>
+        </item>
+        <item>
+            <title>Fado tropical</title>
+            <link>https://bbguimaraes.com/music/fado-tropical.html</link>
+            <guid>https://bbguimaraes.com/music/fado-tropical.html</guid>
+            <pubDate>Sun, 16 Oct 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <category>mandolin</category>
+            <description><p>music piano mandolin</p><p>Chico Buarque, Ruy Guerra</p></description>
         </item>
         <item>
             <title>College research projects</title>
@@ -193,6 +286,42 @@
             <category>linux</category>
             <category>math</category>
             <description>A long time ago, when I was in college, I got involved in two research projects.</description>
+        </item>
+        <item>
+            <title>Choo choo ch'boogie</title>
+            <link>https://bbguimaraes.com/music/choo-choo-chboogie.html</link>
+            <guid>https://bbguimaraes.com/music/choo-choo-chboogie.html</guid>
+            <pubDate>Sat, 30 Apr 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Louis Jordan</p></description>
+        </item>
+        <item>
+            <title>Georgia</title>
+            <link>https://bbguimaraes.com/music/georgia.html</link>
+            <guid>https://bbguimaraes.com/music/georgia.html</guid>
+            <pubDate>Sun, 24 Apr 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Hugh Laurie</p></description>
+        </item>
+        <item>
+            <title>I will survive</title>
+            <link>https://bbguimaraes.com/music/i-will-survive.html</link>
+            <guid>https://bbguimaraes.com/music/i-will-survive.html</guid>
+            <pubDate>Sun, 20 Mar 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Gloria Gaynor</p></description>
+        </item>
+        <item>
+            <title>Not for Elise</title>
+            <link>https://bbguimaraes.com/music/not-for-elise.html</link>
+            <guid>https://bbguimaraes.com/music/not-for-elise.html</guid>
+            <pubDate>Sun, 28 Feb 2016 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>Ludwig van Beethoven</p><p>Forgive me, Ludwig, wherever you are.</p></description>
         </item>
         <item>
             <title>2014 books</title>
@@ -253,6 +382,33 @@
             <category>man</category>
             <category>unix</category>
             <description>This is a tale of debugging.  That fine art of digging the darkest corners of a computer system to solve whatever problem is haunting it.  This particular story is about python's package manager, pip.</description>
+        </item>
+        <item>
+            <title>Jô Soares</title>
+            <link>https://bbguimaraes.com/music/jo-soares.html</link>
+            <guid>https://bbguimaraes.com/music/jo-soares.html</guid>
+            <pubDate>Sun, 16 Nov 2014 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>For a friend.</p></description>
+        </item>
+        <item>
+            <title>Elysian Shadows</title>
+            <link>https://bbguimaraes.com/music/elysian-shadows.html</link>
+            <guid>https://bbguimaraes.com/music/elysian-shadows.html</guid>
+            <pubDate>Tue, 24 Jun 2014 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>A quick jam with a song from the Elysian Shadows team. Check them out at <a href="http://elysianshadows.com">http://elysianshadows.com</a>.</p></description>
+        </item>
+        <item>
+            <title>Cow and chicken</title>
+            <link>https://bbguimaraes.com/music/cow-and-chicken.html</link>
+            <guid>https://bbguimaraes.com/music/cow-and-chicken.html</guid>
+            <pubDate>Mon, 23 Jun 2014 00:00:00 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <description><p>music piano</p><p>First and only take. From ear. From memory. Bad recording. Bad angle. Bad sound quality. But I couldn't resist the urge to record it after seeing <a href="https://pbs.twimg.com/profile_images/419767343309660160/SbtebImM.jpeg">this</a>.</p></description>
         </item>
         <item>
             <title>Manufacturer's blues</title>
