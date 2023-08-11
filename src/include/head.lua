@@ -9,6 +9,10 @@ for _, x in ipairs(var("css", {})) do
     table.insert(ret, html([[
     <link rel="stylesheet" type="text/css" href="]] .. x .. [[" />]]))
 end
+for _, x in ipairs(var("js", {})) do
+    table.insert(ret, html([[
+    <script type="text/javascript" src="]] .. x .. [[" defer></script>]]))
+end
 
 var_and("head_extra", function(extra)
     table.insert(ret, indent(1, extra))
