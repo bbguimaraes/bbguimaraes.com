@@ -120,7 +120,7 @@ def find_files():
 def parse_src_ref(s):
     x = xml.dom.minidom.parseString(s).documentElement
     if not all(x.hasAttribute(a) for a in SRC_REF_ATTRS):
-        return (), err('invalid `src-ref` element:', line)
+        return (None, None), err('invalid `src-ref` element:', s)
     return map(x.getAttribute, SRC_REF_ATTRS), True
 
 def check_hash(repo, branch, path, hash):
