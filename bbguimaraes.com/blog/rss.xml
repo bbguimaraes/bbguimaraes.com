@@ -82,6 +82,7 @@
             <link>https://bbguimaraes.com/blog/booklet-printing-with-latex.html</link>
             <guid>https://bbguimaraes.com/blog/booklet-printing-with-latex.html</guid>
             <pubDate>Sat, 17 Dec 2022 17:49:01 GMT</pubDate>
+            <category>blog</category>
             <category>books</category>
             <category>latex</category>
             <category>linux</category>
@@ -102,6 +103,7 @@
             <link>https://bbguimaraes.com/blog/strace-prelude-in-c.html</link>
             <guid>https://bbguimaraes.com/blog/strace-prelude-in-c.html</guid>
             <pubDate>Sun, 17 Apr 2022 10:34:57 GMT</pubDate>
+            <category>blog</category>
             <category>assembly</category>
             <category>c</category>
             <category>debugging</category>
@@ -117,6 +119,7 @@
             <link>https://bbguimaraes.com/blog/c++-virtual-tables.html</link>
             <guid>https://bbguimaraes.com/blog/c++-virtual-tables.html</guid>
             <pubDate>Tue, 22 Feb 2022 20:09:10 GMT</pubDate>
+            <category>blog</category>
             <category>assembly</category>
             <category>c</category>
             <category>c++</category>
@@ -130,6 +133,7 @@
             <link>https://bbguimaraes.com/blog/nngn-lua-wasm.html</link>
             <guid>https://bbguimaraes.com/blog/nngn-lua-wasm.html</guid>
             <pubDate>Tue, 23 Mar 2021 10:10:25 GMT</pubDate>
+            <category>blog</category>
             <category>c</category>
             <category>lua</category>
             <category>nngn</category>
@@ -142,6 +146,7 @@
             <link>https://bbguimaraes.com/blog/nngn-lua.html</link>
             <guid>https://bbguimaraes.com/blog/nngn-lua.html</guid>
             <pubDate>Sun, 30 Aug 2020 17:54:09 GMT</pubDate>
+            <category>blog</category>
             <category>lua</category>
             <category>netcat</category>
             <category>nngn</category>
@@ -157,6 +162,7 @@
             <link>https://bbguimaraes.com/blog/nngn.html</link>
             <guid>https://bbguimaraes.com/blog/nngn.html</guid>
             <pubDate>Sun, 30 Aug 2020 17:54:08 GMT</pubDate>
+            <category>blog</category>
             <category>nngn</category>
             <category>programming</category>
             <description>Back in 2018, I publicized a project I had been working on intently for more than a year.  Because of the circumstances, it ended up never having its own entry here in this blog.  That is finally being corrected, and I am going to write not just one, but a series of posts about it.</description>
@@ -166,6 +172,7 @@
             <link>https://bbguimaraes.com/blog/sigfpe.html</link>
             <guid>https://bbguimaraes.com/blog/sigfpe.html</guid>
             <pubDate>Wed, 20 May 2020 21:56:52 GMT</pubDate>
+            <category>blog</category>
             <category>assembly</category>
             <category>c</category>
             <category>debugging</category>
@@ -180,6 +187,7 @@
             <link>https://bbguimaraes.com/blog/dot-product-as-cosine-subtraction.html</link>
             <guid>https://bbguimaraes.com/blog/dot-product-as-cosine-subtraction.html</guid>
             <pubDate>Sat, 25 Jan 2020 18:04:00 GMT</pubDate>
+            <category>blog</category>
             <category>math</category>
             <description>The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;em&gt;I&lt;/em&gt; can understand a mathematical concept, so can you.</description>
         </item>
@@ -197,6 +205,7 @@
             <link>https://bbguimaraes.com/blog/mv-home.html</link>
             <guid>https://bbguimaraes.com/blog/mv-home.html</guid>
             <pubDate>Sun, 21 Jul 2019 21:26:13 GMT</pubDate>
+            <category>blog</category>
             <category>facebook</category>
             <category>google</category>
             <category>meta</category>
@@ -252,6 +261,7 @@
             <link>https://bbguimaraes.com/blog/music.html</link>
             <guid>https://bbguimaraes.com/blog/music.html</guid>
             <pubDate>Sun, 12 Mar 2017 21:12:00 GMT</pubDate>
+            <category>blog</category>
             <category>music</category>
             <description>For too long my musical (if you can call them that) experiments have been scattered all over the internet.  Not anymore!</description>
         </item>
@@ -290,6 +300,7 @@
             <link>https://bbguimaraes.com/blog/college-research-projects.html</link>
             <guid>https://bbguimaraes.com/blog/college-research-projects.html</guid>
             <pubDate>Sat, 20 Aug 2016 23:47:00 GMT</pubDate>
+            <category>blog</category>
             <category>dissertation</category>
             <category>programming</category>
             <category>linux</category>
@@ -337,6 +348,7 @@
             <link>https://bbguimaraes.com/blog/2014-books.html</link>
             <guid>https://bbguimaraes.com/blog/2014-books.html</guid>
             <pubDate>Tue, 20 Jan 2015 16:42:00 GMT</pubDate>
+            <category>blog</category>
             <category>c</category>
             <category>vim</category>
             <category>tdd</category>
@@ -356,6 +368,7 @@
             <link>https://bbguimaraes.com/blog/calculating-pi-the-unix-way.html</link>
             <guid>https://bbguimaraes.com/blog/calculating-pi-the-unix-way.html</guid>
             <pubDate>Thu, 11 Dec 2014 22:51:00 GMT</pubDate>
+            <category>blog</category>
             <category>printf</category>
             <category>head</category>
             <category>python</category>
@@ -378,6 +391,7 @@
             <link>https://bbguimaraes.com/blog/pip-extra-index.html</link>
             <guid>https://bbguimaraes.com/blog/pip-extra-index.html</guid>
             <pubDate>Wed, 10 Dec 2014 12:46:00 GMT</pubDate>
+            <category>blog</category>
             <category>pip</category>
             <category>lsof</category>
             <category>webserver</category>
@@ -424,6 +438,7 @@
             <link>https://bbguimaraes.com/blog/manufacturers-blues.html</link>
             <guid>https://bbguimaraes.com/blog/manufacturers-blues.html</guid>
             <pubDate>Fri, 02 May 2014 16:13:00 GMT</pubDate>
+            <category>blog</category>
             <category>mp3</category>
             <category>badvoltage</category>
             <category>dos</category>
@@ -443,6 +458,7 @@
             <link>https://bbguimaraes.com/blog/uploading-files-the-unix-way.html</link>
             <guid>https://bbguimaraes.com/blog/uploading-files-the-unix-way.html</guid>
             <pubDate>Tue, 04 Mar 2014 00:26:00 GMT</pubDate>
+            <category>blog</category>
             <category>cowsay</category>
             <category>potato souffle</category>
             <category>webserver</category>
@@ -466,6 +482,7 @@
             <link>https://bbguimaraes.com/blog/a-post-mortem.html</link>
             <guid>https://bbguimaraes.com/blog/a-post-mortem.html</guid>
             <pubDate>Sun, 14 Jul 2013 22:14:00 GMT</pubDate>
+            <category>blog</category>
             <category>programming</category>
             <category>raspbian</category>
             <category>linux</category>
@@ -478,6 +495,7 @@
             <link>https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html</link>
             <guid>https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html</guid>
             <pubDate>Thu, 30 May 2013 22:18:00 GMT</pubDate>
+            <category>blog</category>
             <category>dpkg</category>
             <category>apt-get</category>
             <category>shell</category>
@@ -490,6 +508,7 @@
             <link>https://bbguimaraes.com/blog/python-mocking.html</link>
             <guid>https://bbguimaraes.com/blog/python-mocking.html</guid>
             <pubDate>Sat, 11 May 2013 19:17:00 GMT</pubDate>
+            <category>blog</category>
             <category>best practices</category>
             <category>programming</category>
             <category>python</category>
@@ -502,6 +521,7 @@
             <link>https://bbguimaraes.com/blog/handy-bash-substitution.html</link>
             <guid>https://bbguimaraes.com/blog/handy-bash-substitution.html</guid>
             <pubDate>Sun, 24 Feb 2013 04:06:00 GMT</pubDate>
+            <category>blog</category>
             <category>tar</category>
             <category>awk</category>
             <category>jethro tull</category>
@@ -521,6 +541,7 @@
             <link>https://bbguimaraes.com/blog/an-image-is-worth-a-thousand-megabytes.html</link>
             <guid>https://bbguimaraes.com/blog/an-image-is-worth-a-thousand-megabytes.html</guid>
             <pubDate>Thu, 07 Feb 2013 01:11:00 GMT</pubDate>
+            <category>blog</category>
             <category>df</category>
             <category>sha1sum</category>
             <category>raspbian</category>
@@ -535,6 +556,7 @@
             <link>https://bbguimaraes.com/blog/the-raspberry.html</link>
             <guid>https://bbguimaraes.com/blog/the-raspberry.html</guid>
             <pubDate>Wed, 23 Jan 2013 23:29:00 GMT</pubDate>
+            <category>blog</category>
             <category>raspbian</category>
             <category>linux</category>
             <category>raspberry pi</category>
@@ -545,6 +567,7 @@
             <link>https://bbguimaraes.com/blog/the-super-user-is-more-powerful-than-god.html</link>
             <guid>https://bbguimaraes.com/blog/the-super-user-is-more-powerful-than-god.html</guid>
             <pubDate>Fri, 21 Dec 2012 10:48:00 GMT</pubDate>
+            <category>blog</category>
             <category>shell</category>
             <category>linux</category>
             <description />
@@ -554,6 +577,7 @@
             <link>https://bbguimaraes.com/blog/hiding-text-in-latex.html</link>
             <guid>https://bbguimaraes.com/blog/hiding-text-in-latex.html</guid>
             <pubDate>Sun, 04 Nov 2012 22:24:00 GMT</pubDate>
+            <category>blog</category>
             <category>dissertation</category>
             <category>latex</category>
             <description>When writing my dissertation, I like to leave some text that I won't use at that particular moment but know I will need in the (near) future.</description>
@@ -563,6 +587,7 @@
             <link>https://bbguimaraes.com/blog/problem-when-adding-ssh-key-on-github.html</link>
             <guid>https://bbguimaraes.com/blog/problem-when-adding-ssh-key-on-github.html</guid>
             <pubDate>Sun, 28 Oct 2012 03:41:00 GMT</pubDate>
+            <category>blog</category>
             <category>curl</category>
             <category>git</category>
             <category>github</category>
@@ -573,6 +598,7 @@
             <link>https://bbguimaraes.com/blog/perl-is-beautiful3.html</link>
             <guid>https://bbguimaraes.com/blog/perl-is-beautiful3.html</guid>
             <pubDate>Tue, 23 Oct 2012 01:25:00 GMT</pubDate>
+            <category>blog</category>
             <category>programming</category>
             <category>perl</category>
             <description>In the last post on the subject, I'll show a couple more perl tricks I use everyday.</description>
@@ -582,6 +608,7 @@
             <link>https://bbguimaraes.com/blog/low-level-language.html</link>
             <guid>https://bbguimaraes.com/blog/low-level-language.html</guid>
             <pubDate>Mon, 22 Oct 2012 03:01:00 GMT</pubDate>
+            <category>blog</category>
             <category>portuguese</category>
             <category>language</category>
             <description>"Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas." MARÃO, Públio Virgílio. &lt;i&gt;Eneida&lt;/i&gt;.</description>
@@ -591,6 +618,7 @@
             <link>https://bbguimaraes.com/blog/perl-is-beautiful2.html</link>
             <guid>https://bbguimaraes.com/blog/perl-is-beautiful2.html</guid>
             <pubDate>Thu, 18 Oct 2012 10:53:00 GMT</pubDate>
+            <category>blog</category>
             <category>programming</category>
             <category>perl</category>
             <description>We've seen how perl can be used, but you may be wondering, so what? Fasten your seatbelt, for fun begins now.</description>
@@ -600,6 +628,7 @@
             <link>https://bbguimaraes.com/blog/perl-is-beautiful.html</link>
             <guid>https://bbguimaraes.com/blog/perl-is-beautiful.html</guid>
             <pubDate>Tue, 02 Oct 2012 02:18:00 GMT</pubDate>
+            <category>blog</category>
             <category>programming</category>
             <category>perl</category>
             <description>Writing the first post on a blog about programming is fairly easy. Now, the second one needed a little thought to come up with. I decided to show a trick I use almost daily, be it at work or on personal projects.</description>
@@ -609,6 +638,7 @@
             <link>https://bbguimaraes.com/blog/99-bottles-of-beer.html</link>
             <guid>https://bbguimaraes.com/blog/99-bottles-of-beer.html</guid>
             <pubDate>Mon, 01 Oct 2012 03:13:00 GMT</pubDate>
+            <category>blog</category>
             <category>programming</category>
             <category>hello world</category>
             <category>assembly</category>
