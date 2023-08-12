@@ -4,10 +4,6 @@
         float: none;
         max-width: 100%;
     }
-
-    .video .info {
-        float: none;
-    }
 }
 
 @media not (max-width: 80ch) {
@@ -18,9 +14,13 @@
         margin-right: 2em;
     }
 
+    .videos .video .info {
+        float: none;
+    }
+
     .video .info {
-        float: left;
-        margin-right: 2em;
+        float: right;
+        margin-left: 2em;
     }
 }
 
