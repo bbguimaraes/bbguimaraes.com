@@ -1,10 +1,57 @@
-.book blockquote {
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: default;
+    z-index: -1;
+    font-size: 1.5em;
+    opacity: 0.5;
+    animation: 5s ease-out background;
+}
+
+@keyframes background {
+    0% { opacity: 0; }
+    100% { opacity: 0.5; }
+}
+
+#background-left, #background-right {
+    top: 0;
+    max-width: 25vw;
+}
+
+#background-left {
+    float: left;
+    margin-left: 1em;
+}
+
+#background-right {
+    float: right;
+    margin-right: 1em;
+}
+
+#background blockquote {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+#background blockquote:hover {
+    opacity: 2;
+}
+
+@media (max-width: 160ch) {
+    #background-left, #background-right {
+        display: none;
+    }
+}
+
+#background blockquote, .book blockquote {
     font-style: italic;
     position: relative;
     padding-left: 1em;
 }
 
-.book blockquote::before {
+#background blockquote::before, .book blockquote::before {
     content: '“';
     font-size: 4em;
     font-style: normal;
