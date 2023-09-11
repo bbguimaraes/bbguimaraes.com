@@ -58,6 +58,11 @@ main {
     padding-left: 1em;
 }
 
+#background blockquote em, .book blockquote em,
+#background blockquote i,  .book blockquote i {
+    font-style: normal;
+}
+
 #background blockquote::before, .book blockquote::before {
     content: '“';
     font-size: 4em;
