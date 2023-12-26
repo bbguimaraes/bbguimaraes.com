@@ -44,7 +44,8 @@
             <category>music</category>
             <category>guitar</category>
             <category>bass</category>
-            <description><p>music guitar bass</p><p>Dean Dillon, Linda Hargrove</p></description>
+            <category>short</category>
+            <description><p>music guitar bass short</p><p>Dean Dillon, Linda Hargrove</p></description>
         </item>
         <item>
             <title>The power of the powerless</title>
@@ -123,7 +124,8 @@
             <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>guitar</category>
-            <description><p>music guitar</p><p>Pink Floyd</p></description>
+            <category>short</category>
+            <description><p>music guitar short</p><p>Pink Floyd</p></description>
         </item>
         <item>
             <title>strace prelude in C</title>
@@ -245,7 +247,8 @@
             <pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>guitar</category>
-            <description><p>music guitar</p><p>João Gilberto</p><p>R.I.P.</p></description>
+            <category>short</category>
+            <description><p>music guitar short</p><p>João Gilberto</p><p>R.I.P.</p></description>
         </item>
         <item>
             <title>Cello suite no. 1 (prelude)</title>
@@ -263,7 +266,8 @@
             <pubDate>Sun, 13 Aug 2017 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>bass</category>
-            <description><p>music bass</p><p>Led Zeppelin</p><p>I'm sorry for the mistakes, it has taken me a whole weekend and a whole bottle of Becherovka to get this song down.</p></description>
+            <category>short</category>
+            <description><p>music bass short</p><p>Led Zeppelin</p><p>I'm sorry for the mistakes, it has taken me a whole weekend and a whole bottle of Becherovka to get this song down.</p></description>
         </item>
         <item>
             <title>Cripple creek</title>
@@ -272,7 +276,8 @@
             <pubDate>Sun, 23 Jul 2017 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>mandolin</category>
-            <description><p>music mandolin</p><p>traditional</p></description>
+            <category>short</category>
+            <description><p>music mandolin short</p><p>traditional</p></description>
         </item>
         <item>
             <title>Sheik's theme</title>
@@ -310,7 +315,8 @@
             <category>piano</category>
             <category>bass</category>
             <category>drums</category>
-            <description><p>music piano bass drums</p><p>Tom Jobim</p></description>
+            <category>short</category>
+            <description><p>music piano bass drums short</p><p>Tom Jobim</p></description>
         </item>
         <item>
             <title>Fado tropical</title>
@@ -440,7 +446,8 @@
             <pubDate>Sun, 16 Nov 2014 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>piano</category>
-            <description><p>music piano</p><p>For a friend.</p></description>
+            <category>short</category>
+            <description><p>music piano short</p><p>For a friend.</p></description>
         </item>
         <item>
             <title>Elysian Shadows</title>
@@ -449,7 +456,8 @@
             <pubDate>Tue, 24 Jun 2014 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>piano</category>
-            <description><p>music piano</p><p>A quick jam with a song from the Elysian Shadows team. Check them out at <a href="http://elysianshadows.com">http://elysianshadows.com</a>.</p></description>
+            <category>short</category>
+            <description><p>music piano short</p><p>A quick jam with a song from the Elysian Shadows team. Check them out at <a href="http://elysianshadows.com">http://elysianshadows.com</a>.</p></description>
         </item>
         <item>
             <title>Cow and chicken</title>
@@ -458,7 +466,8 @@
             <pubDate>Mon, 23 Jun 2014 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>piano</category>
-            <description><p>music piano</p><p>First and only take. From ear. From memory. Bad recording. Bad angle. Bad sound quality. But I couldn't resist the urge to record it after seeing <a href="https://pbs.twimg.com/profile_images/419767343309660160/SbtebImM.jpeg">this</a>.</p></description>
+            <category>short</category>
+            <description><p>music piano short</p><p>First and only take. From ear. From memory. Bad recording. Bad angle. Bad sound quality. But I couldn't resist the urge to record it after seeing <a href="https://pbs.twimg.com/profile_images/419767343309660160/SbtebImM.jpeg">this</a>.</p></description>
         </item>
         <item>
             <title>Manufacturer's blues</title>
