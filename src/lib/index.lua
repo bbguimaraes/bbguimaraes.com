@@ -272,6 +272,13 @@ local honorable <const> = {
         "the_screwtape_letters.jpg",
         "C. S. Lewis"),
     honorable(
+        "https://www.penguinrandomhouse.com/books/241840/the-brothers-karamazov-by-fyodor-dostoevsky-translated-by-richard-pevear-and-larissa-volokhonsky-introduction-by-malcolm-jones/",
+        "The brothers Karamazov",
+        "The brothers Karamazov",
+        "the-brothers-karamazov",
+        "the_brothers_karamazov.jpg",
+        "Fyodor Dostoevsky"),
+    honorable(
         "https://www.harpercollins.com/products/the-call-of-the-wild-collins-classics-jack-london",
         "The call<br />of the wild",
         "The call of the wild",
