@@ -8,6 +8,7 @@ return {
         link {
             href = "https://imslp.org/wiki/6_Cello_Suites%2C_BWV_1007-1012_(Bach%2C_Johann_Sebastian)",
             content = "score",
+            target = "_blank",
         },
     },
     tags = {"mandolin"},

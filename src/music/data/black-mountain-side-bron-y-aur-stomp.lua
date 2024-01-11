@@ -14,20 +14,24 @@ return {
             link {
                 href = "/files/music/black_mountain_side.pdf",
                 content = "score0",
+                target = "_blank",
             },
             link {
                 href = "/files/music/black_mountain_side.mscz",
                 content = "source0",
+                target = "_blank",
             },
         },
         lines {
             link {
                 href = "/files/music/bron-y-aur_stomp.pdf",
                 content = "score1",
+                target = "_blank",
             },
             link {
                 href = "/files/music/bron-y-aur_stomp.mscz",
                 content = "source1",
+                target = "_blank",
             },
         },
     },

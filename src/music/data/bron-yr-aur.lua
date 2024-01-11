@@ -10,10 +10,12 @@ return {
         link {
             href = "/files/music/bron_yr_aur.pdf",
             content = "score",
+            target = "_blank",
         },
         link {
             href = "/files/music/bron_yr_aur.mscz",
             content = "source",
+            target = "_blank",
         },
     },
     tags = {"guitar"},
