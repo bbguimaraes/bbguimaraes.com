@@ -8,10 +8,12 @@ return {
         link {
             href = "/files/music/tennessee_whiskey.pdf",
             content = "score",
+            target = "_blank",
         },
         link {
             href = "/files/music/tennessee_whiskey.mscz",
             content = "source",
+            target = "_blank",
         },
     },
     tags = {"guitar", "bass", "short"},

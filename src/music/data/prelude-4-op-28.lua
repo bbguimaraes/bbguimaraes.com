@@ -12,6 +12,7 @@ return {
         link {
             href = "https://imslp.org/wiki/Preludes%2C_Op.28_(Chopin%2C_Fr%C3%A9d%C3%A9ric)",
             content = "score",
+            target = "_blank",
         },
     },
     tags = {"piano"},
@@ -47,6 +48,7 @@ everything you do in life.
             link {
                 href = "https://www.youtube.com/watch?v=pRLBBJLX-dQ",
                 content = "Seymour Bernstein",
+                target = "_blank",
             },
             "\n",
         }),

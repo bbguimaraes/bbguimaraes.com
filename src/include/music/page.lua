@@ -14,10 +14,12 @@ else
             link {
                 href = string.format("/files/music/%s.pdf", file_name),
                 content = "score",
+                target = "_blank",
             },
             link {
                 href = string.format("/files/music/%s.mscz", file_name),
                 content = "src",
+                target = "_blank",
             },
         },
     }
@@ -27,6 +29,7 @@ local links <const> = {
     link {
         href = string.format("/files/music/%s.mp4", file_name),
         content = "video",
+        target = "_blank",
     },
 }
 
@@ -36,6 +39,7 @@ var_and("youtube", function(youtube)
         "https://www.youtube.com/watch?v="
         .. var "youtube",
         content = "youtube",
+        target = "_blank",
     })
 end)
 
