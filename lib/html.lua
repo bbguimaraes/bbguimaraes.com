@@ -42,6 +42,7 @@ local function write_attrs(out, t)
     write_attr(out, t, "type")
     write_attr(out, t, "title")
     write_attr(out, t, "href")
+    write_attr(out, t, "target")
     write_attr(out, t, "start")
     write_attr(out, t, "style")
 end
