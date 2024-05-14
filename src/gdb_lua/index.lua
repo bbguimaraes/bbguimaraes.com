@@ -1,4 +1,7 @@
 local example <const> = code [[
+(gdb) lua version
+5.4.6
+
 (gdb) lua type lua_type(L, 1)
 lightuserdata
 (gdb) lua type lua_type(L, 2)
@@ -28,6 +31,8 @@ return include "master.lua" {
         html "<h1>gdb_lua</h1>",
         par [[
 A set of custom GDB commands that are useful when working with Lua programs.
+All minor versions of the 5.3 and 5.4 releases are supported (currently, these
+are 5.3.0 to 5.3.6 and 5.4.0 to 5.4.6).
 ]],
         div({class = "description"}, ul {
             lines {
