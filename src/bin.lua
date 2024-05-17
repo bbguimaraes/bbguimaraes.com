@@ -33,6 +33,13 @@ local sections <const> = {{
             },
             ": graphics/physics/audio/game engine.",
         },
+        concat {
+            link {
+                href = "subs/",
+                content = "subs",
+            },
+            ": subscription manager.",
+        },
     },
 }}
 

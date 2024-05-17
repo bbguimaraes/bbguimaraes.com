@@ -21,6 +21,7 @@ FILES = \
 	nngn/screenshots/tools \
 	places/index \
 	random/index \
+	subs/index \
 	talks/index
 
 ../bbguimaraes.com/rss.xml: \

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>subs</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+        <link rel="stylesheet" type="text/css" href="/description.css" />
+        <script type="text/javascript" src="/main.js" defer></script>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://bbguimaraes.com/rss.xml" />
+    </head>
+    <body>
+        <div class="w80">
+            <nav id="page-nav">
+                <a href="/"><img id="logo" src="/triangle_icon.png" alt="root" /></a>
+                /
+                subs
+                <a id="rss-icon" href="/rss.xml"><img src="/files/rss.png" alt="rss" /></a>
+            </nav>
+        </div>
+        <main>
+            <div class="w80">
+                <h1>subs</h1>
+                <p>
+Subscription manager.
+                </p>
+                <p>
+A fast and uniform way of following accounts on video platforms without an
+account, and without going through the platform's interface and notification
+system (especially useful to avoid YouTube's web interface and conspicuously
+forgetful notifications).  Currently handles:
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://lbry.com">LBRY</a>, using the JSON API of a local <a href="https://github.com/lbryio/lbry-sdk.git"><code>lbrynet</code></a> server
+                    </li>
+                    <li>
+                        <a href="https://youtube.com">YouTube</a>, using <a href="https://github.com/yt-dlp/yt-dlp.git"><code>yt-dlp</code></a>
+                    </li>
+                </ul>
+                <p>
+Video history is kept in a local <a href="https://www.sqlite.org">SQlite</a>
+database and presented via either a CLI or a <code>curses</code> TUI interface.
+The application is programmable and extendable using <a
+href="https://www.lua.org">Lua</a>.
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://gitlab.bbguimaraes.com/bbguimaraes/subs.git">source</a>
+                        (gitlab)
+                    </li>
+                    <li>
+                        <a href="https://github.com/bbguimaraes/subs.git">source</a>
+                        (github)
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <video controls preload="none" class="demo" poster="/files/subs/subs_poster.png">
+            <source src="/files/subs/subs.webm" />
+            Your browser doesn't support the &lt;video&gt; tag.
+        </video>
+    </body>
+</html>
