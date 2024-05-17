@@ -46,6 +46,13 @@ local machinatrix <const> = item {
     content = "machinatrix",
 }
 
+local subs <const> = item {
+    href = "subs/",
+    title = "video subscription manager",
+    short = "subscription manager",
+    content = "subs",
+}
+
 local nngn <const> = item {
     href = "nngn/",
     title = "2D/3D graphics/physics/audio/game engine",
@@ -156,7 +163,7 @@ return include "master.lua" {
             },
             tag("nav", nil, ul {
                 list(root, {
-                    list(bin, {custos, impero, machinatrix, nngn}),
+                    list(bin, {custos, impero, machinatrix, nngn, subs}),
                     list(html "dev", {random, snd, stdin, stdout}),
                     list(html "etc", {pub_asc}),
                     list(lib, {codex, gdb_lua}),

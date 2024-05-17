@@ -38,7 +38,6 @@ A graphical command executor, intended to be used via a keyboard shortcut.
             }),
             video {
                 controls = true,
-                loop = true,
                 preload = "none",
                 class = "demo",
                 poster = "/files/impero/impero_poster.png",
