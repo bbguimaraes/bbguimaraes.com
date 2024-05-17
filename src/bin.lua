@@ -2,6 +2,13 @@ local sections <const> = {{
     items = {
         concat {
             link {
+                href = "custos/",
+                content = "custos",
+            },
+            ": system monitoring utility.",
+        },
+        concat {
+            link {
                 href = "impero/",
                 content = "impero",
             },

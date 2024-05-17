@@ -25,6 +25,13 @@ local bin <const> = item {
     content = "bin",
 }
 
+local custos <const> = item {
+    href = "custos/",
+    title = "system monitoring utility",
+    short = "system monitoring",
+    content = "custos"
+}
+
 local impero <const> = item {
     href = "impero/",
     title = "graphical command executor",
@@ -149,7 +156,7 @@ return include "master.lua" {
             },
             tag("nav", nil, ul {
                 list(root, {
-                    list(bin, {impero, machinatrix, nngn}),
+                    list(bin, {custos, impero, machinatrix, nngn}),
                     list(html "dev", {random, snd, stdin, stdout}),
                     list(html "etc", {pub_asc}),
                     list(lib, {codex, gdb_lua}),

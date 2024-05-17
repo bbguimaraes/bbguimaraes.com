@@ -6,6 +6,7 @@ FILES = \
 	blog/tags/index \
 	codex/index \
 	contact \
+	custos/index \
 	gdb_lua/index \
 	impero/index \
 	index \
