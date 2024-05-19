@@ -116,7 +116,8 @@ blockquote::before {
     transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
-.place:hover .preview {
+.place:hover .preview,
+.place.hover .preview {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.25s ease, visibility 0.25s ease;

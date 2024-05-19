@@ -58,3 +58,11 @@ if(nav) {
     div.appendChild(document.querySelector("#rss-icon"));
     nav.appendChild(div);
 }
+
+if(window.matchMedia('(pointer: coarse)').matches) {
+    let cls = "hover";
+    document.querySelectorAll(".hover-on-touch").forEach(x => {
+        x.addEventListener("touchstart", e => { x.classList.add(cls) });
+        x.addEventListener("touchend",   e => { x.classList.remove(cls) });
+    });
+}
