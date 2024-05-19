@@ -73,6 +73,7 @@ blockquote::before {
 
 .place .main-img {
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
     min-height: 100%;
@@ -88,6 +89,7 @@ blockquote::before {
 
 .place .title {
     position: absolute;
+    z-index: 0;
     bottom: 0;
     right: 0;
     margin: 1em;
@@ -101,4 +103,60 @@ blockquote::before {
 .place h2 {
     margin: 0;
     font-weight: normal;
+}
+
+.place .preview {
+    visibility: hidden;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.place:hover .preview {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.place .preview-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.place .preview .preview-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 1.5em;
+    box-sizing: border-box;
+    text-align: justify;
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0.5) 90%,
+        transparent 95%);
+}
+
+.place .preview .gallery {
+    gap: 0.5em;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+.place .preview .gallery img,
+.place .preview .gallery video {
+    max-width: 120px;
+    max-height: 45px;
 }
