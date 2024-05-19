@@ -19,7 +19,7 @@ var_and("content", function(x)
 end)
 
 return div(
-    {class = "place"},
+    {class = "place hover-on-touch"},
     tag("a", {href = var("id") .. ".html"}, lines {
         image {
             class = "main-img",
