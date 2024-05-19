@@ -81,6 +81,14 @@ figcaption {
 }
 
 @media(max-width: 800px) {
+    body {
+        font-size: calc(8px + 1vw);
+    }
+
+    .roman {
+        font-size: calc(10px + 1vw);
+    }
+
     #home nav {
         font-size: 4vw;
     }
