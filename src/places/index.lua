@@ -46,21 +46,24 @@ else than the good ordering of the mind.]]):gsub("\n", " ") .. [[
 — Marcus Aurelius, Meditations
 ]]
 
+local render_without_links
 local function generate_item(_, t)
-    local id <const> = t.id
-    local l <const> = {}
-    table.insert(l, image {
-        class = "main-img",
-        alt = t.title,
-        src = path.join(FILES_URL, t.images[1].path:gsub("%.", "_small."), nil),
-    })
-    table.insert(l, div({class = "title"}, lines {
-        inline_tag("h2", nil, t.title),
-        html(t.timestamp[2]),
-    }))
-    return div(
-        {class = "place"},
-        tag("a", {href = id .. ".html"}, lines(l)))
+    local content <const> = t.content
+    if content then
+        t = util.copy(t)
+        t.content = render_without_links(content)
+    end
+    return generate.load(
+        path.join("src", "include", "places", "preview.lua"), t)
+end
+
+function render_without_links(t)
+    if not t then
+        return
+    end
+    return generate.render(t)
+        :gsub('<a%s+href="[^"]+">', "")
+        :gsub("</a>", "")
 end
 
 local find_images
