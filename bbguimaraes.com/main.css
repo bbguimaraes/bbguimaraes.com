@@ -12,6 +12,11 @@ body {
     color: #444444;
 }
 
+.no-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .black-bg {
     background-color: black;
 }
@@ -168,6 +173,9 @@ figcaption {
     line-height: 32px;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
+}
+
+body.no-margin #page-nav {
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -203,14 +211,14 @@ figcaption {
     float: right;
 }
 
-.w80 {
+.w80, body.w80:not(.no-margin) {
     max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
 }
 
 @media (max-width: 80ch) {
-    body.w80 {
+    body.w80:not(.no-margin) {
         margin-left: 1em;
         margin-right: 1em;
     }
