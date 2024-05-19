@@ -115,10 +115,14 @@ figcaption {
 }
 
 #home nav ul ul ul li::before {
+    content: '\00a0\00a0  ├─';
+}
+
+#home nav ul ul li:not(:last-child) ul li::before {
     content: '│\00a0  ├─';
 }
 
-#home nav ul ul ul li:last-child::before {
+#home nav ul ul li:not(:last-child) ul li:last-child::before {
     content: '│\00a0  └─';
 }
 
