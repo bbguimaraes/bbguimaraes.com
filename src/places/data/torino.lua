@@ -1,0 +1,60 @@
+local description <const> = [[(a bit unexpected to post again, but Italy is just a fantastic place)]]
+
+local content <const> = lines {
+    par [[
+(a bit unexpected to post again, but Italy is just a fantastic place)
+]],
+}
+
+local citation <const> = par [[
+Entre nós reviva Atenas para assombro dos tiranos
+Sejamos gregos na glória e na virtude, romanos
+]]
+
+local images <const> = {{
+    path = "torino0.jpg",
+}, {
+    path = "torino1.jpg",
+}, {
+    path = "torino2.jpg",
+    text = [[
+Porta Palatina, the most well-preserved Roman ruins I have ever seen.  It is
+incredible that it has stood here for two thousand years.
+]],
+}, {
+    path = "torino3.jpg",
+    text = [[
+Augusta Taurinorum
+]],
+}, {
+    path = "torino4.jpg",
+    text = [[
+Next to it, across the street, il Duomo di Torino, the resting place of the Holy
+Shroud.
+]],
+}, {
+    path = "torino5.jpg",
+}, {
+    path = "torino6.jpg",
+    text = [[
+How to make me extremely happy.  (I got these back in the university of Padova,
+but they fit the theme)
+]],
+}, {
+    path = "torino7.jpg",
+}}
+
+return {
+    id = "torino",
+    title = "Torino",
+    timestamp = {"1697500800", "2023-10-17"},
+    description = description,
+    content = content,
+    citation = citation,
+    images = images,
+    links = {
+        mastodon = "111466976296767860",
+        facebook = "pfbid0oxJdWuZvzoRgNyQG19eY7TGMZuQ5jB22Kmpv9hz63cG6Jd8goQdWoudt65XsEtxAl",
+        instagram = "C0CgXOIpxv2",
+    },
+}
