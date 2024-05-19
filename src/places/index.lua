@@ -46,6 +46,13 @@ else than the good ordering of the mind.]]):gsub("\n", " ") .. [[
 — Marcus Aurelius, Meditations
 ]]
 
+local function generate_file(t)
+    local file_name <const> =
+        path.join("bbguimaraes.com", "places", t.id) .. ".html"
+    local f <close> = io.open(file_name, "w")
+    generate.generate(f, "src/include/places/page.lua", t)
+end
+
 local render_without_links
 local function generate_item(_, t)
     local content <const> = t.content
@@ -132,6 +139,10 @@ for x in path.each(DIR) do
     table.insert(files, t)
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
+
+for _, x in pairs(files) do
+    generate_file(x)
+end
 
 return include "master.lua" {
     title = "places",
