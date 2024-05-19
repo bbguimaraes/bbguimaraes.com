@@ -26,6 +26,10 @@ body {
     font-size: 18px;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 body, a, select {
     color: #a0a0a0;
 }
