@@ -342,6 +342,7 @@ util.ieach(generate_book_page, general)
 return include "master.lua" {
     title = "books",
     css = {"/main.css", "lib.css"},
+    body_class = "no-margin",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "lib"}},
