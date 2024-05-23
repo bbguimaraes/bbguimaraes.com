@@ -48,6 +48,7 @@ return {
     citation = citation,
     images = images,
     links = {
+        map = "relation/179180",
         mastodon = "111466885977291495",
         facebook = "pfbid02AKxH7kG9mDqKnaQCg6vqT79riuM4KzZYpbedFCSQQzvJMKjr6UFk99rzyuaXtD6Ml",
         instagram = "C0Cd7EPOJFb",

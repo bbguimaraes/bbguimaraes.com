@@ -121,6 +121,7 @@ return {
     content = content,
     images = images,
     links = {
+        map = "node/1882099475",
         mastodon = "111467049448408770",
         facebook = "pfbid0cJBgaC1DTaa6YaGyGorxPVUDEVVbwLtRwZhWDSqtsaeioaXQt3quhgHEoqFicF4Vl",
         instagram = "C0CjlLKv5l-",
