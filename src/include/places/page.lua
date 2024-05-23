@@ -5,7 +5,8 @@ local title <const> = var("title")
 local DIR <const> = path.join("", "files", "places")
 
 local LINKS <const> = {
-    "mastodon", "facebook", "instagram",
+    "map", "mastodon", "facebook", "instagram",
+    map = "https://www.openstreetmap.org",
     mastodon = "https://mastodon.bbguimaraes.com/@bbguimaraes",
     facebook = "https://www.facebook.com/bruno.barcarolguimaraes/posts",
     instagram = "https://www.instagram.com/p",

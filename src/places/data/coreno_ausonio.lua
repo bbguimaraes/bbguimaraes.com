@@ -59,6 +59,7 @@ return {
     content = content,
     images = images,
     links = {
+        map = "relation/41222",
         mastodon = "111813838754645433",
         facebook = "pfbid032wXELhBEBCcoja5h5cmQbYcB4qm3mgeUD7mqW8rW95YGhziXUCjFZSB55tL1AyC1l",
         instagram = "C2gLaWfKiP1",

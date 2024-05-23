@@ -101,6 +101,7 @@ return {
     citation = citation,
     images = images,
     links = {
+        map = "node/4693682411",
         mastodon = "111909907160185040",
         facebook = "pfbid0VPveFPMxnuZ6UT3M19bXikE6uHhHGZCizYZoE9pSuBAm4rniB28M4skseaAL3wCpl",
         instagram = "C3Lz35XqMv1",
