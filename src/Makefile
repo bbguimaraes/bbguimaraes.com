@@ -20,8 +20,17 @@ FILES = \
 	nngn/screenshots/tools \
 	random/index \
 	talks/index
-generate:
+
+../bbguimaraes.com/rss.xml: \
+	rss.lua \
+	include/rss.lua \
+	$(wildcard blog/data/*) \
+	$(wildcard lib/data/*) \
+	$(wildcard music/data/*)
+../bbguimaraes.com/rss.xml:
+	cd ../ && src/generate.lua src/rss.lua > src/$@
+
+generate: ../bbguimaraes.com/rss.xml
 	@cd ../ && for x in $(FILES); do \
 		src/generate.lua src/$$x.lua > bbguimaraes.com/$$x.html || exit; \
-	done \
-	&& src/generate.lua src/rss.lua > bbguimaraes.com/rss.xml
+	done
