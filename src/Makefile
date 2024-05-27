@@ -18,6 +18,7 @@ FILES = \
 	nngn/screenshots/lighting \
 	nngn/screenshots/post \
 	nngn/screenshots/tools \
+	places/index \
 	random/index \
 	talks/index
 
