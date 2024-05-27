@@ -7,12 +7,33 @@ body {
     hyphens: auto;
 }
 
-body, a {
+.white-bg:not(.black-bg) {
+    background-color: white;
+    color: #444444;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.roman {
+    font-family: Palatino, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+body, a, select {
     color: #a0a0a0;
 }
 
 a:visited {
     color: #606060;
+}
+
+select {
+    background-color: transparent;
+    border-color: #a0a0a0;
+    border-style: solid;
+    border-width: 2px;
 }
 
 details > summary {
@@ -140,10 +161,15 @@ figcaption {
 }
 
 #page-nav {
-    height: 32px;
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 32px;
+    width: 100%;
     line-height: 32px;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 #page-nav img {
@@ -156,6 +182,21 @@ figcaption {
 #page-nav #logo {
     width: 16px;
     height: 16px;
+}
+
+#page-nav .nav-opt {
+    float: right;
+    margin-left: 1em;
+}
+
+#page-nav select {
+    margin-right: 1em;
+    border-width: 1px;
+    border-style: none none dotted none;
+}
+
+#page-nav select:invalid, #page-nav select option[value="x"]{
+    font-style: italic;
 }
 
 #page-nav #rss-icon {
