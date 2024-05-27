@@ -2,14 +2,20 @@ local SEP <const> = package.config:match("^([^\n]*)")
 
 --- Returns the directory part of a path.
 local function dir(path)
-    local ret <const> = path:match("(.*)/")
+    local ret <const> = path:match("(.*)" .. SEP)
     if not ret then
         return "."
     elseif #ret == 0 then
-        return "/"
+        return SEP
     else
         return ret
     end
+end
+
+--- Returns the file part of a path.
+local function base(path)
+    local _, i <const> = path:find(".*" .. SEP)
+    return path:sub((i or 0) + 1)
 end
 
 --- Concatenates all arguments, with a path separator between each.
@@ -33,6 +39,19 @@ local function clean(x)
     return table.concat(t, SEP)
 end
 
+--- Checks whether a file exists at a given path.
+local function exists(x)
+    local ok <const>, s <const>, n <const> =
+        os.execute(string.format("[[ -e %s ]]", x))
+    if ok then
+        return true
+    end
+    if s == "exit" and n == 1 then
+        return false
+    end
+    assert(ok, s, n)
+end
+
 --- Returns an iterator for paths contained in a directory.
 local function each(dir)
     return assert(io.popen("ls " .. dir)):lines()
@@ -41,7 +60,9 @@ end
 return {
     SEP = SEP,
     dir = dir,
+    base = base,
     join = join,
     clean = clean,
+    exists = exists,
     each = each,
 }
