@@ -123,7 +123,14 @@ local gitlab <const> = item {
     content = "gitlab",
 }
 
-local var <const> = item {
+local loc <const> = item {
+    href = "places/",
+    title = "places",
+    short = "places",
+    content = "local",
+}
+
+local log <const> = item {
     href = "blog/",
     title = "blog",
     short = "blog",
@@ -148,7 +155,7 @@ return include "master.lua" {
                     list(lib, {codex, gdb_lua}),
                     list(html "proc", {proc}),
                     list(html "src", {github, gitlab}),
-                    list(html "var", {var}),
+                    list(html "var", {log, loc}),
                 }),
             }),
         }),
