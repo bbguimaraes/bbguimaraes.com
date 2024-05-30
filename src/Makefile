@@ -27,7 +27,8 @@ FILES = \
 	include/rss.lua \
 	$(wildcard blog/data/*) \
 	$(wildcard lib/data/*) \
-	$(wildcard music/data/*)
+	$(wildcard music/data/*) \
+	$(wildcard places/data/*)
 ../bbguimaraes.com/rss.xml:
 	cd ../ && src/generate.lua src/rss.lua > src/$@
 
