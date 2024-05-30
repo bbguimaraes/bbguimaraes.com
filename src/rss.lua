@@ -27,7 +27,7 @@ for x in path.each(lib_dir) do
         title = title.en
         author = author.en
     end
-    t.file = "lib/" .. x
+    t.file = path.join("lib", x)
     t.tags = {"books"}
     t.title = title
     t.short_title = nil
@@ -66,10 +66,24 @@ for x in path.each(music_dir) do
         table.insert(desc, (description:gsub("\n$", ""):gsub("\n", " ")))
         table.insert(desc, "</p>")
     end
-    t.file = "music/" .. t.id .. ".html"
+    t.file = path.join("music", t.id .. ".html")
     table.insert(tags, 1, "music")
     t.description = table.concat(desc)
     t.timestamp = math.tointeger(t.date[1])
+    files[x] = t
+    table.insert(file_names, x)
+end
+
+local places_dir <const> = path.join("src", "places", "data")
+for x in path.each(places_dir) do
+    local t <const> = generate.load(path.join(places_dir, x))
+    local desc <const> = t.description
+    if desc then
+        t.description = desc:gsub("\n$", ""):gsub("\n", " ")
+    end
+    t.file = path.join("places", t.id .. ".html")
+    t.timestamp = math.tointeger(t.timestamp[1])
+    t.tags = {"place"}
     files[x] = t
     table.insert(file_names, x)
 end
