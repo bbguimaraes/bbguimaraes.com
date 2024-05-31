@@ -11,7 +11,7 @@ local title <const>, short_title <const> = t.title, t.short_title
 return include "master.lua" {
     title = short_title or title,
     head_extra = head_extra,
-    body_class = "w80",
+    body_class = t.style or "w80",
     nav_path = {{".", "blog"}, {nil, short_title or title}},
     main = lines {
         div({class = "blog"}, lines {
