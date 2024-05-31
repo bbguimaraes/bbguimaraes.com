@@ -386,7 +386,7 @@ function header_link(n, t)
     local id <const>, content <const> = table.unpack(t)
     return tag:new(
         "h" .. n, {id = id},
-        tag:new("a", { href = "#" .. id }, html:new(content)))
+        tag:new("a", { href = "#" .. id }, content))
 end
 
 --- Shortcut for a \ref header_link for an `h1`.
