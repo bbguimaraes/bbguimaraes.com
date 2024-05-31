@@ -42,6 +42,11 @@ blockquote::before {
         4px 4px 8px black;
 }
 
+.header > div > p:last-child {
+    margin: 1em;
+    text-align: right;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;

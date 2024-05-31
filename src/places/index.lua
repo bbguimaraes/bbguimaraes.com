@@ -161,14 +161,21 @@ return include "master.lua" {
                     title = "Sunset behind the promontory of Gaeta",
                 },
             },
-            div({class = "w80 citations"}, lines {
-                generic_tag(
-                    "blockquote", {{"lang", "la"}, {"title", cit0_en}}, cit0),
-                blockquote(lines {
-                    text_tag("p", {lang = "grc", title = cit1_en}, cit1),
-                    "— Marcus Aurelius,",
-                    inline_tag("span", {lang = "grc"}, "Τὰ εἰς ἑαυτόν"),
+            div({class = "w80"}, lines {
+                div({class=  "citations"}, lines {
+                    generic_tag(
+                        "blockquote",
+                        {{"lang", "la"}, {"title", cit0_en}},
+                        cit0),
+                    blockquote(lines {
+                        text_tag("p", {lang = "grc", title = cit1_en}, cit1),
+                        "— Marcus Aurelius,",
+                        inline_tag("span", {lang = "grc"}, "Τὰ εἰς ἑαυτόν"),
+                    }),
                 }),
+                par [[
+Read more about this page <a href="/blog/places.html">here</a>.
+]],
             }),
         }),
         main(nil, lines {
