@@ -32,10 +32,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Fri, 31 May 2024 17:31:42 +0000</pubDate>
-        <lastBuildDate>Fri, 31 May 2024 17:31:42 +0000</lastBuildDate>
+        <pubDate>Fri, 31 May 2024 17:32:15 +0000</pubDate>
+        <lastBuildDate>Fri, 31 May 2024 17:32:15 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>~/places</title>
+            <link>https://bbguimaraes.com/blog/places.html</link>
+            <guid>https://bbguimaraes.com/blog/places.html</guid>
+            <pubDate>Fri, 31 May 2024 06:52:00 GMT</pubDate>
+            <category>blog</category>
+            <description><p>You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, <span lang="la">“caelum, nón animum mútant, quí tráns mare currunt”</span>.</p><p>But that has gradually changed over the past few years, to the point that I have now, after a week of furious programming, added a new <a href="https://bbguimaraes.com/places">section</a> to this web site dedicated to it.  Read on for an explanation, jump to the <a href="https://bbguimaraes.com/blog/places.html#conclusion">conclusion</a> if you do not like to read (but then this is probably not the place for you in the first place…), or just go directly there and explore.</p></description>
+        </item>
         <item>
             <title>Minturno</title>
             <link>https://bbguimaraes.com/places/minturno.html</link>
