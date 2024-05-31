@@ -337,6 +337,45 @@ function image:render(out, indent)
     out:write(" />")
 end
 
+local figure <const> = {}
+figure.__index = figure
+figure.__name = "figure"
+
+--- Creates a renderer for a figure (`<figure>`).
+function figure:new(t)
+    return setmetatable({ t = t }, self)
+end
+
+function figure:render(out, indent)
+    local t <const> = self.t
+    local img <const>, content <const>, caption <const> =
+        t.image, t.content, t.caption
+    str.write_indent(out, indent)
+    out:write("<figure")
+    write_attr(out, t, "id")
+    write_attr(out, t, "class")
+    write_attr(out, t, "style")
+    out:write(">\n")
+    indent = indent + 1
+    if img then
+        image:new({src = img}):render(out, indent)
+        out:write("\n")
+    end
+    if content then
+        content:render(out, indent)
+        out:write("\n")
+    end
+    if caption then
+        str.write_indent(out, indent)
+        out:write("<figcaption>")
+        render(caption, out, 0)
+        out:write("</figcaption>\n")
+    end
+    indent = indent - 1
+    str.write_indent(out, indent)
+    out:write("</figure>")
+end
+
 --- Shortcut for an image with a link to itself.
 function image_link(t)
     return tag:new("a", { href = t.src }, image:new(t))
@@ -454,6 +493,7 @@ return {
     ol = ol,
     link = function(...) return link:new(...) end,
     image = function(...) return image:new(...) end,
+    figure = function(...) return figure:new(...) end,
     image_link = image_link,
     header_link = header_link,
     pre = function(...) return pre:new(...) end,
