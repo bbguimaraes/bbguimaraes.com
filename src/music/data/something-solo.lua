@@ -17,7 +17,7 @@ rhythm guitar and bass.
 ]],
     blockquote(lines {
         par [[
-“Somewhere in her smile, she knows<br />
+Somewhere in her smile, she knows<br />
 That I don't need no other lover<br />
 Something in her style that shows me
 ]],
@@ -29,7 +29,7 @@ You know I believe and how<br />
 You're asking me, will my love grow?<br />
 I don't know, I don't know<br />
 You stick around, now, it may show<br />
-I don't know, I don't know”
+I don't know, I don't know
 ]],
     }),
 }

@@ -50,23 +50,12 @@ main {
 
 #background blockquote, .book blockquote {
     font-style: italic;
-    position: relative;
-    padding-left: 1em;
 }
 
 #background blockquote em, .book blockquote em,
-#background blockquote i,  .book blockquote i {
+#background blockquote i,  .book blockquote i,
+.book blockquote footer {
     font-style: normal;
-}
-
-#background blockquote::before, .book blockquote::before {
-    content: '“';
-    font-size: 4em;
-    font-style: normal;
-    filter: brightness(40%);
-    position: absolute;
-    top: -0.2em;
-    left: -0.4em;
 }
 
 #header-img {
@@ -172,6 +161,14 @@ h1 {
 
 .citation p {
     text-align: left;
+}
+
+.citation blockquote {
+    padding-left: 0;
+}
+
+.citation blockquote::before {
+    display: none;
 }
 
 .citation-left, .citation-right, .citation-el, .citation-en {

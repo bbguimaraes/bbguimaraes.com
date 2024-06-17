@@ -49,6 +49,21 @@ details > summary {
     cursor: pointer;
 }
 
+blockquote {
+    position: relative;
+    padding-left: 1em;
+}
+
+blockquote::before {
+    content: '“';
+    font-size: 4em;
+    font-style: normal;
+    filter: brightness(40%);
+    position: absolute;
+    top: -0.2em;
+    left: -0.4em;
+}
+
 code {
     font-weight: bold;
 }
