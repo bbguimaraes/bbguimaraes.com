@@ -41,9 +41,7 @@ long until he walked again in long strides, started to proceed swiftly and
 impatiently, heading no longer for home, no longer to his father, no longer
 back.
 ]],
-    par [[
-— Hermann Hesse, “Siddhartha”
-]],
+    quote_footer("Hermann Hesse", "Siddhartha"),
 }
 
 local images <const> = {{path = "brno.jpg"}}

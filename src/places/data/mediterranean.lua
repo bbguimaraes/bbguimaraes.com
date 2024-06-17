@@ -34,9 +34,7 @@ fidelity and modesty and justice and truth are gone
         par [[
 Up to Olympus from the widespread earth.
 ]],
-        par [[
-— Hesiod, “Works”, etc., V, 197.
-]],
+        quote_footer("Hesiod", "Works, etc., V, 197"),
     }),
     par [[
 What then is there which still detains thee here?  If the objects of sense are
@@ -50,9 +48,7 @@ tolerance and self-restraint; but as to everything which is beyond the limits of
 the poor flesh and breath, to remember that this is neither thine nor in thy
 power.
 ]],
-    par [[
-— Marcus Aurelius, “Meditations”, V.33
-]],
+    quote_footer("Marcus Aurelius", "Meditations, V.33"),
 }
 
 local images <const> = {{

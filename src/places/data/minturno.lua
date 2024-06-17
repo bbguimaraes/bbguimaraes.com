@@ -44,10 +44,13 @@ a man who is incapable of entering into partnership, or who is so
 self-sufficing that he has no need to do so, is no part of a state, so that he
 must be either a lower animal or a god
 ]],
-    par [[
-— Ἀριστοτέλης, “Πολιτική”<br />
-<span class="hidden">— </span>Aristotle, “Politics”
-]],
+    tag("footer", nil, lines {
+        "— Ἀριστοτέλης,",
+        tag("cite", nil, "Πολιτική"),
+        "<br />",
+        '<span class="hidden">— </span>Aristotle,',
+        tag("cite", nil, "Politics"),
+    }),
 }
 
 local images <const> = {{

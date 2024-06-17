@@ -19,9 +19,7 @@ local citation <const> = lines {
 Of all that is written, I love only what a person hath written with his blood.
 Write with blood, and thou wilt find that blood is spirit.
 ]],
-    par [[
-― Friedrich Nietzsche, “Thus spoke Zarathustra”
-]],
+    quote_footer("Friedrich Nietzsche", "Thus spoke Zarathustra"),
 }
 
 local images <const> = {{

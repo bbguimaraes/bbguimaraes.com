@@ -28,9 +28,9 @@ Vivo penando<br />
 Y cuando debo quedarme, viday<br />
 Me voy andando.
 ]],
-    par [[
-— Atahualpa Yupanqui, “Preguntan de donde soy” / “Piedra y camino”
-]],
+    quote_footer(
+        "Atahualpa Yupanqui",
+        "Preguntan de donde soy / Piedra y camino"),
 }
 
 return {

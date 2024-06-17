@@ -46,7 +46,7 @@ I want goodness.<br />
         par [[
 […] I'm claiming the right to be unhappy.  […] I claim them all.
 ]],
-        html "-- John, the Savage",
+        tag("footer", nil, "— John, the Savage"),
     }),
 }
 

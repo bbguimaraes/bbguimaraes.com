@@ -36,9 +36,7 @@ local citation <const> = lines {
 Pain and suffering are always inevitable for a large intelligence and a deep
 heart.  The really great men must, I think, have great sadness on earth.
 ]],
-    par [[
-— Fyodor Dostoevsky, “Crime and punishment”
-]],
+    quote_footer("Fyodor Dostoevsky", "Crime and punishment"),
 }
 
 local images <const> = {{

@@ -260,6 +260,19 @@ function blockquote(s) return tag:new("blockquote", nil, s) end
 --- Shortcut for \ref blockquote with a `<p>`.
 function blockquote_par(s) return blockquote(par(s)) end
 
+local function quote_footer(author, cite)
+    local pre
+    if author then
+        pre = string.format("— %s,", author)
+    else
+        pre = "—"
+    end
+    return tag:new("footer", nil, str.lines {
+        pre,
+        tag:new("cite", nil, cite),
+    })
+end
+
 local list <const> = {}
 list.__index = list
 list.__name = "list"
@@ -489,6 +502,7 @@ return {
     div = div,
     main = main,
     blockquote = blockquote,
+    quote_footer = quote_footer,
     ul = ul,
     ol = ol,
     link = function(...) return link:new(...) end,
