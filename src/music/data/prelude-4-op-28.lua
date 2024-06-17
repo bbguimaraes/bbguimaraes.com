@@ -20,7 +20,7 @@ return {
     description = description,
     content = lines {
         par(description),
-        tag("blockquote", {style = "clear: both; font-style: italic"}, lines {
+        tag("blockquote", nil, lines {
             par [[
 With all that I tried to suggest to students, you get a feeling of a piece… one
 of the most profound ones that Chopin ever wrote.  It's a beloved piece.  In
@@ -42,15 +42,15 @@ our talent, and that's what you take away from your practice sessions.  So that
 everything that you learn through the discipline of music you project into
 everything you do in life.
 ]],
-        }),
-        par(concat {
-            "&mdash; ",
-            link {
-                href = "https://www.youtube.com/watch?v=pRLBBJLX-dQ",
-                content = "Seymour Bernstein",
-                target = "_blank",
-            },
-            "\n",
+            tag("footer", nil, par(concat {
+                "&mdash; ",
+                tag("cite", nil, link {
+                    href = "https://www.youtube.com/watch?v=pRLBBJLX-dQ",
+                    content = "Seymour Bernstein",
+                    target = "_blank",
+                }),
+                "\n",
+            })),
         }),
     },
 }

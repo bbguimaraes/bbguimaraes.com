@@ -21,25 +21,29 @@ monte Massico and setting in the gulf was a spectacle I watched — as you'll se
 
 local citation <const> = lines {
     par [[
-“ἐκεῖνος γὰρ ἔφη ὁρῶν αὐτὸν περὶ πάντων μᾶλλον διαλεγόμενον ἢ περὶ τῆς δίκης
+ἐκεῖνος γὰρ ἔφη ὁρῶν αὐτὸν περὶ πάντων μᾶλλον διαλεγόμενον ἢ περὶ τῆς δίκης
 εἰπεῖν: οὐκ ἐχρῆν μέντοι σκοπεῖν, ὦ Σώκρατες, καὶ ὅ τι ἀπολογήσῃ; τὸν δὲ τὸ μὲν
 πρῶτον ἀποκρίνασθαι: οὐ γὰρ δοκῶ σοι ἀπολογεῖσθαι μελετῶν διαβεβιωκέναι; ἐπεὶ δ᾽
 αὐτὸν ἐρέσθαι: πῶς; ὅτι οὐδὲν ἄδικον διαγεγένημαι ποιῶν: ἥνπερ νομίζω μελέτην
-εἶναι καλλίστην ἀπολογίας.”
+εἶναι καλλίστην ἀπολογίας.
 ]],
     par [[
-“For he stated that on seeing Socrates discussing any and every subject rather
-than the trial, he had said: ‘Socrates, ought you not to be giving some thought
-to what defence you are going to make?’.  That Socrates had at first replied,
-‘Why, do I not seem to you to have spent my whole life in preparing to defend
-myself?’.  Then when he asked, 'How so?’ he had said, ‘Because all my life I
+For he stated that on seeing Socrates discussing any and every subject rather
+than the trial, he had said: “Socrates, ought you not to be giving some thought
+to what defence you are going to make?”.  That Socrates had at first replied,
+“Why, do I not seem to you to have spent my whole life in preparing to defend
+myself?”.  Then when he asked, 'How so?” he had said, “Because all my life I
 have been guiltless of wrong-doing; and that I consider the finest preparation
-for a defence’.
+for a defence”.
 ]],
-    lines {
-        "— Ξενοφων, Ἀπολογία Σωκράτους<br />",
-        '<span class="hidden">— </span>Xenophon, Apology of Socrates<br />',
-    },
+    tag("footer", nil, lines {
+        "— Ξενοφων,",
+        tag("cite", nil, "Ἀπολογία Σωκράτους"),
+        "<br />",
+        '<span class="hidden">— </span>Xenophon,',
+        tag("cite", nil, "Apology of Socrates"),
+        "<br />",
+    }),
 }
 
 local images <const> = {{

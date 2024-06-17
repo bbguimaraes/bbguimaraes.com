@@ -34,11 +34,14 @@ local citation <const> = lines {
 The fear of the LORD is the beginning of knowledge: but fools despise wisdom and
 instruction.
 ]],
-    par [[
-— Proverbs 1:7<br />
-<span class="hidden">— </span>Solomon the son of David,<br />
-<span class="hidden">— </span>king of Israel
-]],
+    tag("footer", nil, lines {
+        "—",
+        tag("cite", nil, "Proverbs 1:7"),
+        "<br />",
+        '<span class="hidden">— </span>Solomon the son of David,',
+        "<br />",
+        '<span class="hidden">— </span>king of Israel',
+    }),
 }
 
 return {

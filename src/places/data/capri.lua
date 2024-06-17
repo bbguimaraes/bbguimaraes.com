@@ -37,9 +37,7 @@ et quicumque te angariaverit mille passus, vade cum illo et alia duo.
     par [[
 And whosoever shall compel thee to go a mile, go with him twain.
 ]],
-    par [[
-— Matthew 5:41
-]],
+    quote_footer(nil, "Matthew 5:41"),
 }
 
 local images <const> = {{

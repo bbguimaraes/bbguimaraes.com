@@ -38,9 +38,7 @@ local citation <const> = lines {
     par [[
 semper sursum
 ]],
-    par [[
-— Latin proverb
-]],
+    quote_footer(nil, "Latin proverb"),
 }
 
 local images <const> = {{

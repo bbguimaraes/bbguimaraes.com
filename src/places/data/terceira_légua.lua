@@ -14,9 +14,9 @@ La vida me han presta'o y tengo que devolverla<br />
 Cuando El Creador me llame para la entrega,<br />
 Que mis huesos, piel y sal abonen mi suelo natal.
 ]],
-    par [[
-— Carlos Carabajal / Pablo Raúl Trullenque, “Entre a mi pago sin golpear”
-]],
+    quote_footer(
+        "Carlos Carabajal / Pablo Raúl Trullenque",
+        "Entre a mi pago sin golpear"),
 }
 
 return {

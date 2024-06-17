@@ -37,9 +37,7 @@ when thy comrades shall have rowed past these, thereafter I shall not fully say
 on which side thy course is to lie, but do thou thyself ponder it in mind, and I
 will tell thee of both ways.
 ]],
-    par [[
-— Homer, “Odyssey”
-]],
+    quote_footer("Homer", "Odyssey"),
 }
 
 local images <const> = {{

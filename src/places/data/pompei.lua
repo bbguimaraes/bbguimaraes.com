@@ -33,9 +33,9 @@ from yourself forever, you have to return, have to come to that experiment, to
 know whether you really can love.  That is the question — whether you can love
 yourself, and that will be the test.
 ]],
-    par [[
-— Carl Jung, seminar on Nietzsche's “Thus spoke Zarathustra”
-]],
+    quote_footer(
+        "Carl Jung",
+        "seminar on Nietzsche's “Thus spoke Zarathustra”"),
 }
 
 local images <const> = {{

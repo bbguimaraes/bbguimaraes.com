@@ -17,9 +17,7 @@ Parcarumque dies et vis inimica propinquat.
     par [[
 hac iter Elysium nobis
 ]],
-    par [[
-— Publius Vergilius Maro, “Aeneis”, VI.542 / XII.150 / X.542
-]],
+    quote_footer("Publius Vergilius Maro", "Aeneis, VI.542 / XII.150 / X.542"),
 }
 
 local images <const> = {{

@@ -13,7 +13,7 @@ local citation <const> = lines {
     "Es mi destino, piedra y camino<br />",
     "De un sueño lejano y bello, viday, soy peregrino<br />",
     "<br />",
-    "— Atahualpa Yupanqui, “Piedra y Camino”",
+    quote_footer("Atahualpa Yupanqui", "Piedra y Camino"),
 }
 
 local images <const> = {{

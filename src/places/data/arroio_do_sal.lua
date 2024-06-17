@@ -29,9 +29,7 @@ São ordens que vem de cima do patrão onipotente<br />
 Somente a gente que sente se ronda uma noite inteira<br />
 Quando uma estrela matreira se perde no continente
 ]],
-    par [[
-— Noel Guarany, “Filosofia de gaudério”
-]]
+    quote_footer("Noel Guarany", "Filosofia de gaudério"),
 }
 
 return {

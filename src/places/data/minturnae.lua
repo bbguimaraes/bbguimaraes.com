@@ -52,9 +52,7 @@ désert…
     par [[
 ― On est seul aussi chez les hommes, dit le serpent.
 ]],
-    par [[
-— Antoine de Saint-Exupéry, “Le petit prince”
-]]
+    quote_footer("Antoine de Saint-Exupéry", "Le petit prince"),
 }
 
 local images <const> = {{

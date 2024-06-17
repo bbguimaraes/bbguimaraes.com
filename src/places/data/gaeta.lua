@@ -33,9 +33,7 @@ mota est, et petrae scissae sunt
 And, behold, the veil of the temple was rent in twain from the top to the
 bottom; and the earth did quake, and the rocks rent
 ]],
-    par [[
-— Matthew 27:51
-]],
+    quote_footer(nil, "Matthew 27:51"),
 }
 
 local images <const> = {{
