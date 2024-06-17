@@ -45,7 +45,7 @@ end)
 
 return include "master.lua" {
     css = {"/main.css", "music.css"},
-    body_class = "w80",
+    body_class = "w80 roman",
     nav_path = {{".", "music"}, {nil, title}},
     main = lines {
         div({class = "video"}, lines {
