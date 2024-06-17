@@ -60,7 +60,7 @@ end
 return include "master.lua" {
     title = "music",
     css = {"/main.css", "music.css"},
-    body_class = "w80",
+    body_class = "w80 roman",
     nav_path = {{nil, "music"}},
     main = div(nil, lines {
         div({class = "videos"}, lines(util.imap(generate, file_names))),
