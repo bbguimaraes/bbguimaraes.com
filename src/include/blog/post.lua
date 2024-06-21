@@ -10,6 +10,7 @@ local title <const>, short_title <const> = t.title, t.short_title
 
 return include "master.lua" {
     title = short_title or title,
+    css = {"/main.css", "blog.css"},
     head_extra = head_extra,
     body_class = t.style or "w80",
     nav_path = {{".", "blog"}, {nil, short_title or title}},

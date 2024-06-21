@@ -41,6 +41,7 @@ util.each(generate_tag_file, tags)
 
 return include "master.lua" {
     title = "blog - tags",
+    css = {"/main.css", "../blog.css"},
     body_class = "w80",
     nav_path = {{"..", "blog"}, {nil, "tags"}},
     main = div({class = "blog"}, lines {

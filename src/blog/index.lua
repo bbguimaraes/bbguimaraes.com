@@ -55,6 +55,7 @@ end
 
 return include "master.lua" {
     title = "iffalse",
+    css = {"/main.css", "blog.css"},
     body_class = "w80",
     nav_path = {{nil, "blog"}},
     main = div({class = "blog"}, lines {
