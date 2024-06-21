@@ -55,7 +55,6 @@ end
 
 return include "master.lua" {
     title = "iffalse",
-    head_extra = include "rss_head.lua" {},
     body_class = "w80",
     nav_path = {{nil, "blog"}},
     main = div({class = "blog"}, lines {

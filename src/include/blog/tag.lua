@@ -11,7 +11,6 @@ end
 
 return include "master.lua" {
     title = "blog / tag / " .. tag,
-    head_extra = include "rss_head.lua" {},
     body_class = "w80",
     nav_path = {{"..", "blog"}, {".", "tags"}, {nil, tag}},
     main = div({class = "blog"}, lines {
