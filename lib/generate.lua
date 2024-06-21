@@ -26,26 +26,34 @@ local function conf_file_name()
     end
 end
 
+--- Reads configuration file, if it exists.
+local function read_conf()
+    local file_name <const> = conf_file_name()
+    if not file_name then
+        return
+    end
+    local f <close>, err <const>, status <const> = io.open(file_name, "r")
+    if f then
+        return assert(f:read("a"))
+    end
+    if status == NOT_FOUND then
+        return
+    end
+    error(string.format(
+        "failed to load configuration file %s: %s",
+        file_name, err))
+end
+
 --- Loads configuration file, if necessary.
 local function load_conf()
     if CONF then
         return CONF
     end
-    local file_name <const> = conf_file_name()
-    if not file_name then
-        CONF = {}
+    local c <const> = read_conf()
+    if c then
+        CONF = assert(load(c, nil, nil, {}))()
     else
-        local f <close>, err <const>, status <const> = io.open(file_name, "r")
-        if not f then
-            if status ~= NOT_FOUND then
-                error(string.format(
-                    "failed to load configuration file %s: %s",
-                    file_name, err))
-            end
-            CONF = {}
-        else
-            CONF = assert(load(assert(f:read("a")), nil, nil, {}))()
-        end
+        CONF = {}
     end
     return CONF
 end
