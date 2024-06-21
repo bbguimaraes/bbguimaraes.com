@@ -45,13 +45,13 @@ local function read_conf()
 end
 
 --- Loads configuration file, if necessary.
-local function load_conf()
+local function load_conf(env)
     if CONF then
         return CONF
     end
     local c <const> = read_conf()
     if c then
-        CONF = assert(load(c, nil, nil, {}))()
+        CONF = assert(load(c, nil, nil, env))()
     else
         CONF = {}
     end
@@ -77,7 +77,7 @@ end
 --- Creates a new environment containing variables in \p conf and loads a file.
 local function load_file(file_name, conf)
     local env <const> = new_env()
-    local global_vars <close> = env.push(nil, load_conf())
+    local global_vars <close> = env.push(nil, load_conf(env))
     local path_var <close> = env.push(nil, { PATH = file_name})
     local conf_vars <close> = env.push(nil, conf)
     return assert(loadfile(file_name, nil, env))()
