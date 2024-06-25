@@ -3,10 +3,6 @@ main {
     margin-right: auto;
 }
 
-.description {
-    display: inline-block;
-}
-
 .example {
     font-size: 75%;
 }
@@ -18,6 +14,11 @@ main {
         clear: both;
     }
 
-    .description { float: left; }
-    .example { float: right; }
+    .description {
+        float: left;
+    }
+
+    .example {
+        float: right;
+    }
 }
