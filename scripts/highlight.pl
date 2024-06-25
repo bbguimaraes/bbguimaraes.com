@@ -29,6 +29,12 @@ use constant X86_BOLD => '\.(zero|byte|word|long|quad) | \b(
     | (-?[0-9]+)
 )\b';
 
+use constant LUA_BOLD => '
+    = | \{ | \}
+    | (\'[^\']*\') | (\"[^"]*")
+    | ([0-9]+?)
+';
+
 sub escape {
     my $s = shift;
     $s =~ s/&/&amp;/g;
@@ -57,6 +63,9 @@ if($lang eq "c") {
 } elsif($lang eq "x86") {
     $bold_regexp = X86_BOLD;
     $ital_regexp = '\#.*';
+} elsif($lang eq "lua") {
+    $bold_regexp = LUA_BOLD;
+    $ital_regexp = "--.*";
 }
 
 for(<>) {
