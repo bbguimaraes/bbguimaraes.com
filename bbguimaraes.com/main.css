@@ -30,6 +30,12 @@ body {
     visibility: hidden;
 }
 
+.small-div {
+    width: 38.2%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 body, a, select {
     color: #a0a0a0;
 }
