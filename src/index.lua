@@ -118,8 +118,8 @@ local gdb_lua <const> = item {
 
 local proc <const> = item {
     href = "/files/cv.pdf",
-    title = "CV",
-    short = "CV",
+    title = "curriculum vitae",
+    short = "curriculum vitae",
     content = "self",
 }
 
