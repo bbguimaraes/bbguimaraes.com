@@ -1,5 +1,6 @@
 return include "master.lua" {
     title = "impero",
+    css = {"/main.css", "/description.css"},
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "impero"}},
@@ -39,7 +40,7 @@ A graphical command executor, intended to be used via a keyboard shortcut.
                 controls = true,
                 loop = true,
                 preload = "none",
-                style = "display: block; margin-left: auto; margin-right: auto",
+                class = "demo",
                 poster = "/files/impero/impero_poster.png",
                 sources = {
                     "/files/impero/impero.webm",
