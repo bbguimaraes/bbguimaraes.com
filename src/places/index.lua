@@ -123,7 +123,7 @@ function generate_small_image(t, suffix, size)
             t.poster or "0:00", name, size, small)))
     else
         assert(os.execute(string.format(
-            "convert -resize '%s>' %s %s", size, name, small)))
+            "magick convert -resize '%s>' %s %s", size, name, small)))
     end
 end
 
