@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Thu, 20 Jun 2024 09:47:13 +0000</pubDate>
-        <lastBuildDate>Thu, 20 Jun 2024 09:47:13 +0000</lastBuildDate>
+        <pubDate>Sat, 29 Jun 2024 09:13:13 +0000</pubDate>
+        <lastBuildDate>Sat, 29 Jun 2024 09:13:13 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -54,6 +54,14 @@
             <pubDate>Fri, 31 May 2024 06:52:00 GMT</pubDate>
             <category>blog</category>
             <description><p>You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, <span lang="la">“caelum, nón animum mútant, quí tráns mare currunt”</span>.</p><p>But that has gradually changed over the past few years, to the point that I have now, after a week of furious programming, added a new <a href="https://bbguimaraes.com/places">section</a> to this web site dedicated to it.  Read on for an explanation, jump to the <a href="https://bbguimaraes.com/blog/places.html#conclusion">conclusion</a> if you do not like to read (but then this is probably not the place for you in the first place…), or just go directly there and explore.</p></description>
+        </item>
+        <item>
+            <title>Via Francigena</title>
+            <link>https://bbguimaraes.com/places/via-francigena.html</link>
+            <guid>https://bbguimaraes.com/places/via-francigena.html</guid>
+            <pubDate>Thu, 29 Feb 2024 00:00:01 GMT</pubDate>
+            <category>place</category>
+            <description>One of the two major early-Mediaeval peregrination routes across Western Europe — the other being, of course, the famous Camino de Santiago, which it predates by a few centuries and to which it is roughly perpendicular.  Beginning in Canterbury (specifically, Canterbury Cathedral, seat of the Archbishop of the Church of England), at the southeastern corner of Britain near the Thames estuary, it crosses France, Switzerland, and the entirety of the Italian peninsula, passing through Rome and ending in Santa Maria di Leuca in Puglia, the southeastern end of Italy, after more than three thousand kilometers.  From there pilgrims would sail across the Mediterranean to the Holy Land.  Thus it connects, together with Camino de Santiago, Compostela, Canterbury, Rome, and Jerusalem, the main peregrination sites of Christianity.</description>
         </item>
         <item>
             <title>Minturno</title>
@@ -134,7 +142,7 @@
             <title>Pompei</title>
             <link>https://bbguimaraes.com/places/pompei.html</link>
             <guid>https://bbguimaraes.com/places/pompei.html</guid>
-            <pubDate>Fri, 02 Feb 2024 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 02 Feb 2024 00:00:01 GMT</pubDate>
             <category>place</category>
             <description>I was in Pompei very briefly — just a single day, on the way to and from Vesuvius.  That was much less than the four years I estimate it will take me to visit its famous ruins, given that my mind lives more in the Roman empire than in whatever this “real” life is, next time I'm there.</description>
         </item>
