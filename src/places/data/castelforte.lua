@@ -49,8 +49,8 @@ for a defence”.
 local images <const> = {{
     path = "castelforte0.jpg",
     text = [[
-Sunrise illuminating the misty valley, Castelforte in the middle, Santi Cosma e
-Damiano below.
+Sunrise illuminating the misty valley, Castelforte in the middle, <a
+href="santi-cosma-e-damiano.html">Santi Cosma e Damiano</a> below.
 ]],
 }, {
     path = "castelforte1.jpg",
