@@ -17,6 +17,13 @@ local function generate_links(t)
         return
     end
     local ret <const> = {}
+    for _, l in ipairs(t) do
+        table.insert(ret, link {
+            href = l[2],
+            target = "_blank",
+            content = l[1],
+        })
+    end
     for _, k in ipairs(LINKS) do
         local v <const> = t[k]
         if v then
