@@ -26,7 +26,7 @@ game, a bee when it has made the honey, so a man when he has done a good act,
 does not call out for others to come and see, but he goes on to another act, as
 a vine goes on to produce again the grapes in season.
 ]],
-    quote_footer("Marcus Aurelius", "Meditations, V.6"),
+    quote_footer("Marcus Aurelius", "Meditations", "V.6"),
 }
 
 local images <const> = {{
