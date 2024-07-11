@@ -261,16 +261,19 @@ function blockquote(s) return tag:new("blockquote", nil, s) end
 function blockquote_par(s) return blockquote(par(s)) end
 
 local function quote_footer(author, cite)
-    local l <const> = {}
+    assert(author or cite)
+    if not cite then
+        return text_tag:new(
+            "footer", nil, str.concat { "— ", author, "\n" })
+    end
+    local ret <const> = {}
     if author then
-        table.insert(l, string.format("— %s%s", author, cite and "," or ""))
+        table.insert(ret, str.concat { "— ", author, "," })
     else
-        table.insert(l, "—")
+        table.insert(ret, html:new "—")
     end
-    if cite then
-        table.insert(l, tag:new("cite", nil, cite))
-    end
-    return tag:new("footer", nil, str.lines(l))
+    table.insert(ret, tag:new("cite", nil, cite))
+    return tag:new("footer", nil, str.lines(ret))
 end
 
 local list <const> = {}
