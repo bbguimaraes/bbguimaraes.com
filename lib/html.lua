@@ -260,7 +260,7 @@ function blockquote(s) return tag:new("blockquote", nil, s) end
 --- Shortcut for \ref blockquote with a `<p>`.
 function blockquote_par(s) return blockquote(par(s)) end
 
-local function quote_footer(author, cite)
+local function quote_footer(author, cite, extra)
     assert(author or cite)
     if not cite then
         return text_tag:new(
@@ -272,7 +272,19 @@ local function quote_footer(author, cite)
     else
         table.insert(ret, html:new "—")
     end
-    table.insert(ret, tag:new("cite", nil, cite))
+    local c <const> = tag:new("cite", nil, cite)
+    if extra then
+        table.insert(ret, str.concat { c, "," })
+    else
+        table.insert(ret, c)
+    end
+    if extra then
+        if type(extra) == "string" then
+            table.insert(ret, html:new(extra))
+        else
+            table.insert(ret, extra)
+        end
+    end
     return tag:new("footer", nil, str.lines(ret))
 end
 
