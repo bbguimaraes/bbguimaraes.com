@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sat, 29 Jun 2024 09:13:13 +0000</pubDate>
-        <lastBuildDate>Sat, 29 Jun 2024 09:13:13 +0000</lastBuildDate>
+        <pubDate>Wed, 17 Jul 2024 06:45:52 +0000</pubDate>
+        <lastBuildDate>Wed, 17 Jul 2024 06:45:52 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -70,6 +70,14 @@
             <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
             <category>place</category>
             <description>The Roman city of Minturnae, in the southern region of Lazio, was built in 312 B.C. on the site of the previous conquered ancient city of the same name, part of the Pentapoli Aurunca.  Its location, protected by the monti Aurunci to the north, golfo di Gaeta and mar Tirreno to the southwest, and the river Liris (now called Garigliano) to the southeast, and right on via Appia, the “regina viarum” (queen of roads, the main road connecting Rome to the southern end of the peninsula), made it a strategic point for a colony.</description>
+        </item>
+        <item>
+            <title>Herculaneum</title>
+            <link>https://bbguimaraes.com/places/herculaneum.html</link>
+            <guid>https://bbguimaraes.com/places/herculaneum.html</guid>
+            <pubDate>Sun, 25 Feb 2024 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>At the foot of <a href="https://bbguimaraes.com/places/vesuvius.html">mount Vesuvius</a> there existed, until the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it was founded by the Greek hero <span lang="grc">Ἡρακλῆς</span> (Heracles, known to the Romans as Hercules) himself while returning from Iberia after one of his twelve labors, and named after him.  While not as large as the nearby city of Pompeii, its position at (what was then) the seaside made it a retreat for Roman nobility including, it is believed, Julius Caesar's father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand inhabitants enjoyed decent prosperity.</description>
         </item>
         <item>
             <title>Something (guitar solo)</title>
