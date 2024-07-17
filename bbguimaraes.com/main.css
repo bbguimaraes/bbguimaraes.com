@@ -158,7 +158,9 @@ figcaption {
 }
 
 #home nav li {
+    margin-top: 0;
     margin-bottom: 0;
+    line-height: 1em;
 }
 
 #home nav ul {
