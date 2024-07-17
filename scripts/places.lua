@@ -1,11 +1,16 @@
 #!/usr/bin/env lua
 local generate <const> = require "lib.generate"
+local path <const> = require "lib.path"
+
+local DIR <const> = path.join("bbguimaraes.com", "files", "places")
 
 local usage, cmd_post
 
 local function main(args)
     local cmd <const> = args[1]
-    if cmd == "post" then
+    if cmd == "images" then
+        return cmd_images(args)
+    elseif cmd == "post" then
         return cmd_post(args)
     else
         usage(args)
@@ -18,9 +23,39 @@ Usage: %s CMD [ARG...]
 
 Commands:
 
+    images rm generated [PATTERN]
     post FILE
 ]], args[0]))
     return 1
+end
+
+local images_rm
+
+function cmd_images(args)
+    local cmd <const> = args[2]
+    if cmd == "rm" then
+        return images_rm(args)
+    else
+        return usage(args)
+    end
+end
+
+function images_rm(args)
+    local cmd <const> = args[3]
+    if cmd == "generated" then
+        return images_rm_generated(args[4])
+    else
+        return usage(args)
+    end
+end
+
+function images_rm_generated(pat)
+    pat = pat and pat .. "*_{small,tiny}.jpg"
+    local t <const> = {}
+    for x in path.each(path.join(DIR, pat)) do
+        table.insert(t, x)
+    end
+    assert(os.execute("rm " .. table.concat(t, " ")))
 end
 
 local section_separator, post_section, post_images
