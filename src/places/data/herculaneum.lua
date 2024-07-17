@@ -1,5 +1,4 @@
-local description <const> = [[
-At the foot of <a href="https://bbguimaraes.com/places/vesuvius.html">mount Vesuvius</a> there existed, until the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it was founded by the Greek hero <span lang="grc">Ἡρακλῆς</span> (Heracles, known to the Romans as Hercules) himself while returning from Iberia after one of his twelve labors, and named after him.  While not as large as the nearby city of Pompeii, its position at (what was then) the seaside made it a retreat for Roman nobility including, it is believed, Julius Caesar's father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand inhabitants enjoyed decent prosperity.]]
+local description <const> = [[At the foot of <a href="https://bbguimaraes.com/places/vesuvius.html">mount Vesuvius</a> there existed, until the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it was founded by the Greek hero <span lang="grc">Ἡρακλῆς</span> (Heracles, known to the Romans as Hercules) himself while returning from Iberia after one of his twelve labors, and named after him.  While not as large as the nearby city of <a href="https://bbguimaraes.com/places/pompeii.html">Pompeii</a>, its position at (what was then) the seaside made it a retreat for Roman nobility including, it is believed, Julius Caesar's father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand inhabitants enjoyed decent prosperity.]]
 
 local content <const> = lines {
     par [[
@@ -7,11 +6,11 @@ At the foot of <a href="vesuvius.html">mount Vesuvius</a> there existed, until
 the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it
 was founded by the Greek hero <span lang="grc">Ἡρακλῆς</span> (Heracles, known
 to the Romans as Hercules) himself while returning from Iberia after one of his
-twelve labors, and named after him.  While not as large as the nearby city of
-Pompeii, its position at (what was then) the seaside made it a retreat for Roman
-nobility including, it is believed, Julius Caesar's father-in-law, Lucius
-Calpurnius Piso Caesonius, and its four thousand inhabitants enjoyed decent
-prosperity.
+twelve labors, and named after him.  While not as large as the nearby city of <a
+href="pompeii.html">Pompeii</a>, its position at (what was then) the seaside
+made it a retreat for Roman nobility including, it is believed, Julius Caesar's
+father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand
+inhabitants enjoyed decent prosperity.
 ]],
     par [[
 That, of course, changed radically with the eruption.  At around 1AM heat waves
@@ -23,10 +22,10 @@ More than a millennium and a half would pass until the town was accidentally
 rediscovered in 1709 during the excavations for the construction of a well.
 Because of its position away from the wind direction in that particular day of
 the eruption, its destruction was much reduced compared to other places around
-the gulf such as Pompeii, making it unique in how well-preserved its structures
-are, as well as the artifacts found inside them (most of which are now on
-display in the <a href="https://mann-napoli.it">museo archeologico nazionale di
-Napoli</a>).
+the gulf such as <a href="pompeii.html">Pompeii</a>, making it unique in how
+well-preserved its structures are, as well as the artifacts found inside them
+(most of which are now on display in the <a href="https://mann-napoli.it">museo
+archeologico nazionale di Napoli</a>).
 ]],
     par [[
 The modern Italian city of Ercolano, renamed after the ancient Roman town it was
