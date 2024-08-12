@@ -80,7 +80,7 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
-        image = path.join(base_url, images[1].poster),
+        image = #images ~= 0 and path.join(base_url, images[1].poster) or nil,
         url = path.join(base_url, "places", var("id") .. ".html"),
     },
     body_class = "white-bg roman",
