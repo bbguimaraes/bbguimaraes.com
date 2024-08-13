@@ -1,3 +1,25 @@
+.header {
+    position: relative;
+}
+
+.header .header-background {
+    display: block;
+    min-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 0.5em;
+}
+
+.header .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95vw;
+    transform: translate(-50%, -50%);
+    object-fit: scale-down;
+    filter: drop-shadow(0.5em 0.5em 0.3em black);
+}
+
 @media (max-width: 800px) {
     .videos .video img {
         margin-bottom: 1em;

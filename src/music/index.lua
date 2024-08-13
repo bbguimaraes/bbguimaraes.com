@@ -65,6 +65,16 @@ return include "master.lua" {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "music"}},
         }),
+        div({class = "header"}, lines {
+            image {
+                src = "/files/music/music.jpg",
+                class = "header-background",
+            },
+            image {
+                src = "/files/music/music_text.png",
+                class = "header-text",
+            },
+        }),
         div({class = "videos"}, lines(util.imap(generate, file_names))),
     },
 }
