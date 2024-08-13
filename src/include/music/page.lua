@@ -1,6 +1,8 @@
 local id <const> = var "id"
 local title <const> = var "title"
 local file_name <const> = var("file_name", false) or id:gsub("-", "_")
+local poster_url <const> = string.format("/files/music/%s.png", file_name)
+local video_url <const> = string.format("/files/music/%s.mp4", file_name)
 local scores <const> = var("scores", false)
 
 local src
@@ -51,8 +53,8 @@ return include "master.lua" {
         div({class = "video"}, lines {
             video {
                 controls = true,
-                poster = string.format("/files/music/%s.png", file_name),
-                sources = {string.format("/files/music/%s.mp4", file_name)},
+                poster = poster_url,
+                sources = {video_url},
             },
             inline_tag("h1", nil, title),
             div({class = "info"}, ul {
