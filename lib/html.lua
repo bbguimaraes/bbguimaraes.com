@@ -152,11 +152,16 @@ end
 ---
 ---     <${name} ${attrs...}>${content}</${name}>
 function inline_tag:render(out, indent)
-    local name <const> = self.name
+    local name <const>, content <const> = self.name, self.content
     str.write_indent(out, indent)
-    write_full_open_tag(out, name, self.attrs)
-    render(self.content, out, 0)
-    write_close_tag(out, name)
+    write_open_tag(out, name, self.attrs)
+    if content then
+        out:write(">")
+        render(content, out, 0)
+        write_close_tag(out, name)
+    else
+        out:write(" />")
+    end
 end
 
 local generic_tag <const> = {}
