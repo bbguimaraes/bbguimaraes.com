@@ -1,6 +1,8 @@
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
-local title <const> = var("title")
+
+local base_url <const> = var "base_url"
+local title <const> = var "title"
 
 local DIR <const> = path.join("", "files", "places")
 
@@ -62,6 +64,8 @@ local function generate_image(_, t)
         path = name,
         poster = poster,
         text = t.text,
+        width = t.width,
+        height = t.height,
     }
 end
 
@@ -110,8 +114,16 @@ end)
 add_sep(l)
 
 return include "master.lua" {
-    title = title,
     css = {"/main.css", "places.css"},
+    head_extra = lines {
+        var "head_extra",
+        include "og.lua" {
+            og_type = "article",
+            og_title = title,
+            og_image = path.join(base_url, images[1].poster),
+            og_url = path.join(base_url, "places", var("id") .. ".html"),
+        },
+    },
     body_class = "white-bg roman",
     main = lines {
         div({class = "post"}, lines {
