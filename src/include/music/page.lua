@@ -1,5 +1,9 @@
+local path <const> = require "lib.path"
+
 local id <const> = var "id"
 local title <const> = var "title"
+local base_url <const> = var "base_url"
+local url <const> = string.format("/music/%s.html", id)
 local file_name <const> = var("file_name", false) or id:gsub("-", "_")
 local poster_url <const> = string.format("/files/music/%s.png", file_name)
 local video_url <const> = string.format("/files/music/%s.mp4", file_name)
@@ -47,6 +51,16 @@ end)
 
 return include "master.lua" {
     css = {"/main.css", "music.css"},
+    head_extra = lines {
+        var "head_extra",
+        include "og.lua" {
+            og_type = "music.song",
+            og_title = title,
+            og_image = path.join(base_url, poster_url),
+            og_url = path.join(base_url, url),
+            og_video = path.join(base_url, video_url),
+        },
+    },
     body_class = "w80 roman",
     nav_path = {{".", "music"}, {nil, title}},
     main = lines {
