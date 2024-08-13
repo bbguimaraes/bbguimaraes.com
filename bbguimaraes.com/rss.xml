@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sat, 07 Sep 2024 17:14:05 +0000</pubDate>
-        <lastBuildDate>Sat, 07 Sep 2024 17:14:05 +0000</lastBuildDate>
+        <pubDate>Mon, 16 Sep 2024 18:22:47 +0000</pubDate>
+        <lastBuildDate>Mon, 16 Sep 2024 18:22:47 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -90,9 +90,17 @@
             <title>Minturno</title>
             <link>https://bbguimaraes.com/places/minturno.html</link>
             <guid>https://bbguimaraes.com/places/minturno.html</guid>
-            <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 28 Feb 2024 00:00:01 GMT</pubDate>
             <category>place</category>
             <description>The Roman city of Minturnae, in the southern region of Lazio, was built in 312 B.C. on the site of the previous conquered ancient city of the same name, part of the Pentapoli Aurunca.  Its location, protected by the monti Aurunci to the north, golfo di Gaeta and mar Tirreno to the southwest, and the river Liris (now called Garigliano) to the southeast, and right on via Appia, the “regina viarum” (queen of roads, the main road connecting Rome to the southern end of the peninsula), made it a strategic point for a colony.</description>
+        </item>
+        <item>
+            <title>Cappella Sansevero</title>
+            <link>https://bbguimaraes.com/places/sansevero.html</link>
+            <guid>https://bbguimaraes.com/places/sansevero.html</guid>
+            <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>This post will be different than usual.  Taking photographs is forbidden inside the cappella, so these are not mine, but taken from their web site (I hope they will not sue me for the mountains of money I make with each post).</description>
         </item>
         <item>
             <title>Pompeii</title>
