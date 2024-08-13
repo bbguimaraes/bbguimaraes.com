@@ -52,22 +52,32 @@ local function generate_info()
 end
 
 local function generate_image(_, t)
-    local name <const>, text <const> = t.path, t.text
-    local content
+    local name <const>, poster = t.path
+    if name:match("%.mp4$") then
+        poster = path.join(DIR, name:gsub("%.mp4$", "_small.jpg"), nil)
+    else
+        poster = path.join(DIR, name:gsub("%.", "_small."), nil)
+    end
+    return {
+        path = name,
+        poster = poster,
+        text = t.text,
+    }
+end
+
+local function generate_figure(_, t)
+    local name <const>, poster <const>, text <const> = t.path, t.poster, t.text
     if name:match("%.mp4$") then
         content = video {
             controls = true,
             preload = "none",
             width = t.width,
             height = t.height,
-            poster = path.join(DIR, name:gsub("%.mp4$", "_small.jpg"), nil),
+            poster = poster,
             sources = { path.join(DIR, name) },
         }
     else
-        content = image {
-            alt = name,
-            src = path.join(DIR, name:gsub("%.", "_small."), nil),
-        }
+        content = image { alt = name, src = poster }
     end
     local l <const> = {}
     table.insert(l, link {
@@ -85,6 +95,8 @@ local function add_sep(t)
         table.insert(t, html "<hr />")
     end
 end
+
+local images <const> = util.imap(generate_image, var("images"))
 
 local l <const> = {}
 var_and("content", function(x)
@@ -113,7 +125,7 @@ return include "master.lua" {
             }),
             div(
                 {class = "gallery"},
-                lines(util.imap(generate_image, var("images")))),
+                lines(util.imap(generate_figure, images))),
         }),
     },
 }
