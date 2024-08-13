@@ -265,6 +265,14 @@ function blockquote(s) return tag:new("blockquote", nil, s) end
 --- Shortcut for \ref blockquote with a `<p>`.
 function blockquote_par(s) return blockquote(par(s)) end
 
+--- Meta tag containing a property and its value.
+function property(k, v)
+    return generic_inline_tag:new("meta", {
+        {"property", k},
+        {"content", v},
+    })
+end
+
 local function quote_footer(author, cite, extra)
     assert(author or cite)
     if not cite then
@@ -515,6 +523,7 @@ end
 return {
     html = function(...) return html:new(...) end,
     generic_tag = function(...) return generic_tag:new(...) end,
+    generic_inline_tag = function(...) return generic_inline_tag:new(...) end,
     tag = function(...) return tag:new(...) end,
     inline_tag = function(...) return inline_tag:new(...) end,
     text_tag = function(...) return text_tag:new(...) end,
@@ -523,6 +532,7 @@ return {
     div = div,
     main = main,
     blockquote = blockquote,
+    property = property,
     quote_footer = quote_footer,
     ul = ul,
     ol = ol,
