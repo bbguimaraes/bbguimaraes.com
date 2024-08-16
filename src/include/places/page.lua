@@ -115,14 +115,11 @@ add_sep(l)
 
 return include "master.lua" {
     css = {"/main.css", "places.css"},
-    head_extra = lines {
-        var "head_extra",
-        include "og.lua" {
-            og_type = "article",
-            og_title = title,
-            og_image = path.join(base_url, images[1].poster),
-            og_url = path.join(base_url, "places", var("id") .. ".html"),
-        },
+    og = {
+        type = "article",
+        title = title,
+        image = path.join(base_url, images[1].poster),
+        url = path.join(base_url, "places", var("id") .. ".html"),
     },
     body_class = "white-bg roman",
     main = main({class = "post"}, lines {
