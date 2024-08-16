@@ -51,15 +51,12 @@ end)
 
 return include "master.lua" {
     css = {"/main.css", "music.css"},
-    head_extra = lines {
-        var "head_extra",
-        include "og.lua" {
-            og_type = "music.song",
-            og_title = title,
-            og_image = path.join(base_url, poster_url),
-            og_url = path.join(base_url, url),
-            og_video = path.join(base_url, video_url),
-        },
+    og = {
+        type = "music.song",
+        title = title,
+        image = path.join(base_url, poster_url),
+        url = path.join(base_url, url),
+        video = path.join(base_url, video_url),
     },
     body_class = "w80 roman",
     nav_path = {{".", "music"}, {nil, title}},
