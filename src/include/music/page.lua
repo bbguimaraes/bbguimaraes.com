@@ -9,35 +9,16 @@ local poster_url <const> = string.format("/files/music/%s.png", file_name)
 local video_url <const> = string.format("/files/music/%s.mp4", file_name)
 local scores <const> = var("scores", false)
 
-local src
-if type(scores) == "table" then
-    src = scores
-elseif scores == false then
-    src = {}
-else
-    src = {
-        lines {
-            link {
-                href = string.format("/files/music/%s.pdf", file_name),
-                content = "score",
-                target = "_blank",
-            },
-            link {
-                href = string.format("/files/music/%s.mscz", file_name),
-                content = "src",
-                target = "_blank",
-            },
-        },
-    }
-end
+local links <const> = {}
 
-local links <const> = {
-    link {
-        href = string.format("/files/music/%s.mp4", file_name),
-        content = "video",
-        target = "_blank",
-    },
-}
+local info <const> = var "info"
+table.move(info, 1, #info, 1, links)
+
+table.insert(links, link {
+    href = string.format("/files/music/%s.mp4", file_name),
+    content = "video",
+    target = "_blank",
+})
 
 var_and("youtube", function(youtube)
     table.insert(links, link {
@@ -48,6 +29,23 @@ var_and("youtube", function(youtube)
         target = "_blank",
     })
 end)
+
+if type(scores) == "table" then
+    table.move(scores, 1, #scores, #links + 1, links)
+elseif scores then
+    table.insert(links, lines {
+        link {
+            href = string.format("/files/music/%s.pdf", file_name),
+            content = "score",
+            target = "_blank",
+        },
+        link {
+            href = string.format("/files/music/%s.mscz", file_name),
+            content = "src",
+            target = "_blank",
+        },
+    })
+end
 
 return include "master.lua" {
     css = {"/main.css", "music.css"},
@@ -67,11 +65,7 @@ return include "master.lua" {
             sources = {video_url},
         },
         inline_tag("h1", nil, title),
-        div({class = "info"}, ul {
-            ul(var("info")),
-            lines(links),
-            table.unpack(src),
-        }),
+        div({class = "info"}, ul(links)),
         var("content", false) or nil,
     }),
 }
