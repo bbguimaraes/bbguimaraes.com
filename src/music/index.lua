@@ -89,7 +89,7 @@ for _, x in ipairs(files) do
 end
 
 return include "master.lua" {
-    title = "music",
+    title = "música · μουσική · music",
     css = {"/main.css", "music.css"},
     body_class = "no-margin roman",
     main = lines {
