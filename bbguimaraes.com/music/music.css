@@ -96,8 +96,9 @@
     font-size: 75%;
 }
 
-.video video {
+.video video, .video audio {
     max-width: 100%;
+    width: 100%;
     margin-top: 1em;
 }
 
