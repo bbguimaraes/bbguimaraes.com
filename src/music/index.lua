@@ -32,6 +32,11 @@ end
 local function generate_item(_, t)
     local id <const> = t.id
     local file_name <const> = t.file_name or id:gsub("-", "_")
+    local info <const> = {}
+    table.insert(info, inline_tag("h2", nil, t.title))
+    for _, x in ipairs(t.info) do
+        table.insert(info, x)
+    end
     return tag("a", {id = id, class = "video", href = t.id .. ".html"}, lines {
         div({class = "preview"}, lines {
             image {
@@ -40,8 +45,7 @@ local function generate_item(_, t)
             },
             inline_tag("span", {class = "duration"}, t.duration),
         }),
-        inline_tag("h2", nil, t.title),
-        div({class = "info"}, ul(t.info)),
+        div({class = "info"}, ul(info)),
     })
 end
 
