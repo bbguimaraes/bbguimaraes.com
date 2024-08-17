@@ -57,6 +57,23 @@ local function each(dir)
     return assert(io.popen("ls " .. dir)):lines()
 end
 
+--- Returns a set whose keys are the names of existing files.
+--- Can be used for efficient existence tests:
+---
+--- ```
+--- s = path.set(dir)
+--- if s[file_name] then
+---     -- …
+--- end
+--- ```
+local function set(dir)
+    local ret <const> = {}
+    for x in each(dir) do
+        ret[x] = true
+    end
+    return ret
+end
+
 return {
     SEP = SEP,
     dir = dir,
@@ -65,4 +82,5 @@ return {
     clean = clean,
     exists = exists,
     each = each,
+    set = set,
 }
