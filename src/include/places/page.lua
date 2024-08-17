@@ -6,49 +6,11 @@ local title <const> = var "title"
 
 local DIR <const> = path.join("", "files", "places")
 
-local LINKS <const> = {
-    "map", "mastodon", "facebook", "instagram",
-    map = "https://www.openstreetmap.org",
-    mastodon = "https://mastodon.bbguimaraes.com/@bbguimaraes",
-    facebook = "https://www.facebook.com/bruno.barcarolguimaraes/posts",
-    instagram = "https://www.instagram.com/p",
-}
-
-local function generate_links(t)
-    if not t then
-        return
-    end
-    local ret <const> = {}
-    for _, l in ipairs(t) do
-        table.insert(ret, link {
-            href = l[2],
-            target = "_blank",
-            content = l[1],
-        })
-    end
-    for _, k in ipairs(LINKS) do
-        local v <const> = t[k]
-        if v then
-            table.insert(ret, link {
-                href = path.join(LINKS[k], v),
-                target = "_blank",
-                content = k,
-            })
-            t[k] = nil
-        end
-    end
-    return ret
-end
-
 local function generate_info()
     local l <const> = {}
     table.insert(l, inline_tag("i", nil, var("timestamp")[2]))
-    var_and("links", function(t)
-        local links <const> = {}
-        for _, x in ipairs(generate_links(t)) do
-            table.insert(links, x)
-        end
-        table.insert(l, ul(links))
+    var_and("links", function()
+        table.insert(l, ul(include "link_list.lua" {}))
     end)
     return div({class = "info"}, lines(l))
 end
