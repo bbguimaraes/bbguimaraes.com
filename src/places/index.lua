@@ -6,6 +6,7 @@ local util <const> = require "lib.util"
 local DIR <const> = path.join("src", "places", "data")
 local FILES_URL <const> = path.join("", "files", "places")
 local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
+local PAGE <const> =  path.join("src", "include", "places", "page.lua")
 
 local IMAGES <const> = path.set(path.join(FILES_DIR, "*.jpg"))
 
@@ -47,11 +48,17 @@ else than the good ordering of the mind.]]):gsub("\n", " ") .. [[
 — Marcus Aurelius, Meditations
 ]]
 
-local function generate_file(t)
+local generate_images
+local function process_item(t)
+    t.images = generate_images(t)
+    return t
+end
+
+local function generate_page(t)
     local file_name <const> =
         path.join("bbguimaraes.com", "places", t.id) .. ".html"
-    local f <close> = io.open(file_name, "w")
-    generate.generate(f, "src/include/places/page.lua", t)
+    local f <close> = assert(io.open(file_name, "w"))
+    generate.generate(f, PAGE, t)
 end
 
 local render_without_links
@@ -75,13 +82,13 @@ function render_without_links(t)
 end
 
 local find_images
-local generate_small_image
-local function generate_images(t)
+local generate_image
+function generate_images(t)
     local id <const> = t.id:gsub("-", "_")
     local ret <const> = t.images or find_images(id)
     for _, x in ipairs(ret) do
-        generate_small_image(x, "_small", "512x384")
-        generate_small_image(x, "_tiny", "128x87")
+        generate_image(x, "_small", "512x384")
+        generate_image(x, "_tiny", "128x87")
     end
     return ret
 end
@@ -107,7 +114,7 @@ function find_images(id)
     return ret
 end
 
-function generate_small_image(t, suffix, size)
+function generate_image(t, suffix, size)
     local src <const> = t.path
     local dst <const> = path.join(
         FILES_DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
@@ -118,15 +125,12 @@ end
 
 local files <const> = {}
 for x in path.each(DIR) do
-    local t <const> = generate.load(path.join(DIR, x))
-    local id <const> = t.id
-    t.images = generate_images(t)
-    table.insert(files, t)
+    table.insert(files, process_item(generate.load(path.join(DIR, x))))
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
-for _, x in pairs(files) do
-    generate_file(x)
+for _, x in ipairs(files) do
+    generate_page(x)
 end
 
 return include "master.lua" {
@@ -139,9 +143,9 @@ return include "master.lua" {
         }),
         div({class = "header"}, lines {
             link {
-                href = "/files/places/header.jpg",
+                href = path.join(FILES_URL, "header.jpg"),
                 content = image {
-                    src = "/files/places/header_cropped.jpg",
+                    src = path.join(FILES_URL, "header_cropped.jpg"),
                     alt = "Sunset behind the promontory of Gaeta",
                     title = "Sunset behind the promontory of Gaeta",
                 },
@@ -163,8 +167,8 @@ Read more about this page <a href="/blog/places.html">here</a>.
 ]],
             }),
         }),
-        main({class = "places gallery"}, lines {
-            table.unpack(util.imap(generate_item, files))
-        }),
+        main(
+            {class = "places gallery"},
+            lines(util.imap(generate_item, files))),
     },
 }
