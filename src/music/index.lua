@@ -97,13 +97,15 @@ return include "master.lua" {
             nav_path = {{nil, "music"}},
         }),
         div({class = "header"}, lines {
-            image {
+            image_link {
                 src = path.join(FILES_URL, "music.jpg"),
                 class = "header-background",
+                alt = "music score, excerpt from Clair de Lune",
             },
-            image {
+            image_link {
                 src = path.join(FILES_URL, "music_text.png"),
                 class = "header-text",
+                alt = "música · μουσική",
             },
         }),
         main(
