@@ -1,8 +1,9 @@
 local path <const> = require "lib.path"
 
 local LINKS <const> = {
-    "map", "mastodon", "facebook", "instagram",
+    "map", "youtube", "mastodon", "facebook", "instagram",
     map = "https://www.openstreetmap.org/",
+    youtube = "https://www.youtube.com/watch?v=",
     mastodon = "https://mastodon.bbguimaraes.com/@bbguimaraes/",
     facebook = "https://www.facebook.com/bruno.barcarolguimaraes/posts/",
     instagram = "https://www.instagram.com/p/",
