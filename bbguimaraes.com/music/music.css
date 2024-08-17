@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 800px) {
-    .videos .video img {
+    .videos .video .preview {
         margin-bottom: 1em;
     }
 }
@@ -31,7 +31,7 @@
         width: 720px;
     }
 
-    .videos .video img {
+    .videos .video .preview {
         float: left;
         margin-right: 1.5em;
     }
@@ -55,6 +55,25 @@
     gap: 1.5em;
     padding: 1.5em;
     background-color: black;
+}
+
+.video .preview {
+    position: relative;
+}
+
+.video .preview img {
+    display: block;
+}
+
+.video .preview .duration {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 125%;
+    color: #e4e4e4;
+    text-shadow:
+        3px 3px 0px black,
+        3px 3px 4px black;
 }
 
 .video h2 {
