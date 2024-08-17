@@ -7,7 +7,7 @@ local DIR <const> = path.join("src", "places", "data")
 local FILES_URL <const> = path.join("", "files", "places")
 local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
 
-local IMAGES <const> = {}
+local IMAGES <const> = path.set(path.join(FILES_DIR, "*.jpg"))
 
 local cit0 <const> = lines {
     par [[
@@ -114,10 +114,6 @@ function generate_small_image(t, suffix, size)
     if not IMAGES[dst] then
         convert.generate_image(dst, path.join(FILES_DIR, src), size, t.poster)
     end
-end
-
-for x in path.each(path.join(FILES_DIR, "*.jpg")) do
-    IMAGES[x] = true
 end
 
 local files <const> = {}
