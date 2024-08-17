@@ -7,5 +7,6 @@ return {
     tags = {"piano"},
     links = {
         youtube = "vicfe5B8xqk",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0aF5QqWaKjJ62J8c7gjiJLDv436iB7UcoutVcVgtmc7PtjqLrxDAQVZyscWN4dFpvl",
     },
 }

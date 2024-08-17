@@ -55,6 +55,9 @@ return {
     tags = {"guitar", "bass", "short"},
     links = {
         youtube = "mCWKgva04ms",
+        mastodon = "111921426945685062",
+        facebook = "reel/1391962705043972",
+        instagram = "C3QhqZ4qk9i",
     },
     content = content,
 }

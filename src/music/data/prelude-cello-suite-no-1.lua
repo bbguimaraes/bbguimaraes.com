@@ -14,5 +14,6 @@ return {
     tags = {"mandolin"},
     links = {
         youtube = "d1EgodQaVFM",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0sgafora28NhJh6qbiY55ubCUbgG3bRUcQJJQFXufBn5KBj8yyjUFW4FtXut29ee6l",
     },
 }
