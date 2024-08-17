@@ -45,6 +45,8 @@
 
     .video .info {
         float: right;
+        position: relative;
+        z-index: 1;
         margin-left: 2em;
         margin-bottom: 1em;
     }
