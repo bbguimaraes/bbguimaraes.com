@@ -1,3 +1,4 @@
+local convert <const> = require "lib.convert"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
@@ -107,23 +108,11 @@ function find_images(id)
 end
 
 function generate_small_image(t, suffix, size)
-    local name = t.path
-    local small <const> = path.join(
-        FILES_DIR,
-        name:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
-    if IMAGES[small] then
-        return
-    end
-    name = path.join(FILES_DIR, name)
-    if name:match("%.mp4$") then
-        assert(os.execute(string.format(
-            "ffmpeg "
-                .. " -loglevel warning -ss %s -i %s"
-                .. " -vf scale=%s -update 1 -vframes 1 %s",
-            t.poster or "0:00", name, size, small)))
-    else
-        assert(os.execute(string.format(
-            "magick convert -resize '%s>' %s %s", size, name, small)))
+    local src <const> = t.path
+    local dst <const> = path.join(
+        FILES_DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
+    if not IMAGES[dst] then
+        convert.generate_image(dst, path.join(FILES_DIR, src), size, t.poster)
     end
 end
 
