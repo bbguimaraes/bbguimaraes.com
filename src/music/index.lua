@@ -30,7 +30,7 @@ end
 
 local function generate_item(_, t)
     local id <const> = t.id
-    local file_name <const> = t.file_name or id:gsub("-", "_")
+    local file_name <const> = t.file_url or t.file_name or id:gsub("-", "_")
     local info <const> = {}
     table.insert(info, inline_tag("h2", nil, t.title))
     for _, x in ipairs(t.info) do
