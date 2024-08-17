@@ -33,15 +33,14 @@ end
 local function generate_item(_, t)
     local id <const> = t.id
     local file_name <const> = t.file_name or id:gsub("-", "_")
-    return div({id = id, class = "video"},
-        tag("a", {href = t.id .. ".html"}, lines {
-            image {
-                src = path.join(FILES_URL, file_name .. ".png"),
-                alt = "video poster",
-            },
-            inline_tag("h2", nil, t.title),
-            div({class = "info"}, ul(t.info)),
-        }))
+    return tag("a", {id = id, class = "video", href = t.id .. ".html"}, lines {
+        image {
+            src = path.join(FILES_URL, file_name .. ".png"),
+            alt = "video poster",
+        },
+        inline_tag("h2", nil, t.title),
+        div({class = "info"}, ul(t.info)),
+    })
 end
 
 local files <const> = {}
