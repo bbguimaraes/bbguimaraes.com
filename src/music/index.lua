@@ -3,20 +3,10 @@ local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
 local DIR <const> = path.join("src", "music", "data")
+local FILES_URL <const> = path.join("", "files", "music")
 local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
-local function generate_page(t)
-    local file_name <const> =
-        path.join("bbguimaraes.com", "music", t.id) .. ".html"
-    local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, t)
-end
-
-local files <const> = {}
-local file_names <const> = {}
-
-for x in path.each(DIR)do
-    local t <const> = assert(loadfile(path.join(DIR, x), nil, _ENV))()
+local function process_item(t)
     local author <const>, date <const> = t.author, t.date
     local info <const> = {}
     table.insert(info, string.format("<i>%s</i>", date[2]))
@@ -30,31 +20,38 @@ for x in path.each(DIR)do
     end
     t.timestamp = math.tointeger(date[1])
     t.info = info
-    files[x] = t
-    table.insert(file_names, x)
-end
-table.sort(file_names, function(x, y)
-    return files[y].timestamp < files[x].timestamp
-end)
-
-for _, x in ipairs(file_names) do
-    local t <const> = files[x]
-    generate_page(t)
+    return t
 end
 
-local function generate(_, x)
-    local t <const> = files[x]
+local function generate_page(t)
+    local file_name <const> =
+        path.join("bbguimaraes.com", "music", t.id) .. ".html"
+    local f <close> = assert(io.open(file_name, "w"))
+    generate.generate(f, PAGE, t)
+end
+
+local function generate_item(_, t)
     local id <const> = t.id
-    local filename <const> = t.file_name or id:gsub("-", "_")
+    local file_name <const> = t.file_name or id:gsub("-", "_")
     return div({id = id, class = "video"},
         tag("a", {href = t.id .. ".html"}, lines {
             image {
-                src = string.format("/files/music/%s.png", filename),
+                src = path.join(FILES_URL, file_name .. ".png"),
                 alt = "video poster",
             },
             inline_tag("h2", nil, t.title),
             div({class = "info"}, ul(t.info)),
         }))
+end
+
+local files <const> = {}
+for x in path.each(DIR)do
+    table.insert(files, process_item(generate.load(path.join(DIR, x))))
+end
+table.sort(files, function(x, y) return y.timestamp < x.timestamp end)
+
+for _, x in ipairs(files) do
+    generate_page(x)
 end
 
 return include "master.lua" {
@@ -67,14 +64,16 @@ return include "master.lua" {
         }),
         div({class = "header"}, lines {
             image {
-                src = "/files/music/music.jpg",
+                src = path.join(FILES_URL, "music.jpg"),
                 class = "header-background",
             },
             image {
-                src = "/files/music/music_text.png",
+                src = path.join(FILES_URL, "music_text.png"),
                 class = "header-text",
             },
         }),
-        main({class = "videos"}, lines(util.imap(generate, file_names))),
+        main(
+            {class = "videos"},
+            lines(util.imap(generate_item, files))),
     },
 }
