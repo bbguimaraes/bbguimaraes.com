@@ -12,5 +12,7 @@ return {
         },
     },
     tags = {"mandolin"},
-    youtube = "d1EgodQaVFM",
+    links = {
+        youtube = "d1EgodQaVFM",
+    },
 }

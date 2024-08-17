@@ -17,5 +17,7 @@ return {
         },
     },
     tags = {"guitar", "bass", "short"},
-    youtube = "BH16O_-vmf0",
+    links = {
+        youtube = "BH16O_-vmf0",
+    },
 }

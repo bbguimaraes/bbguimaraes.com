@@ -73,7 +73,9 @@ return {
         },
     },
     tags = {"guitar", "bass", "short"},
-    youtube = "B09bdzJT7Vw",
+    links = {
+        youtube = "B09bdzJT7Vw",
+    },
     description = description,
     content = content,
 }

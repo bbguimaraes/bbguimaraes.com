@@ -20,14 +20,10 @@ table.insert(links, link {
     target = "_blank",
 })
 
-var_and("youtube", function(youtube)
-    table.insert(links, link {
-        href =
-        "https://www.youtube.com/watch?v="
-        .. var "youtube",
-        content = "youtube",
-        target = "_blank",
-    })
+var_and("links", function()
+    for _, x in ipairs(include "link_list.lua" {}) do
+        table.insert(links, x)
+    end
 end)
 
 if type(scores) == "table" then

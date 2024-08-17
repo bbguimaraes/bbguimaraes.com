@@ -52,7 +52,9 @@ return {
         },
     },
     tags = {"piano"},
-    youtube = "NCk9XZCStJQ",
+    links = {
+        youtube = "NCk9XZCStJQ",
+    },
     description = description,
     content = content,
 }
