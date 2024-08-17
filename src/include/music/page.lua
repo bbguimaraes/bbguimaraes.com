@@ -10,6 +10,7 @@ local file_name <const> =
     or id:gsub("-", "_")
 local poster_url <const> = string.format("/files/music/%s.png", file_name)
 local video_url <const> = string.format("/files/music/%s.mp4", file_name)
+local audio_url <const> = string.format("/files/music/%s.ogg", file_name)
 local scores <const> = var("scores", false)
 
 -- XXX name
@@ -59,6 +60,11 @@ return include "master.lua" {
             controls = true,
             poster = poster_url,
             sources = {video_url},
+        },
+        audio {
+            preload = "metadata",
+            controls = true,
+            src = audio_url,
         },
         inline_tag("h1", nil, title),
         div({class = "info"}, ul(links)),

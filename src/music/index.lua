@@ -24,6 +24,7 @@ local function process_item(t)
         table.insert(info, table.concat(t.tags, ", "))
     end
     local file_name <const> = t.file_name or t.id:gsub("-", "_")
+    t.file_name = file_name
     t.video = path.join(FILES_DIR, file_name .. ".mp4")
     t.image = generate_image(t)
     t.audio = generate_audio(t)

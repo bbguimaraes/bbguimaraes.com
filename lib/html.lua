@@ -11,6 +11,15 @@ local function render(x, out, indent)
     return x:render(out, indent)
 end
 
+--- Like \ref write_attr, for value-less attributes.
+local function write_flag(out, t, k)
+    if not t[k] then
+        return
+    end
+    out:write(" ")
+    out:write(k)
+end
+
 --- Writes an HTML attribute (format: ` ${k}="${t[k]}"`).
 local function write_attr_common(out, k, v)
     out:write(" ")
@@ -42,7 +51,10 @@ local function write_attrs(out, t)
     write_attr(out, t, "rel")
     write_attr(out, t, "type")
     write_attr(out, t, "title")
+    write_attr(out, t, "preload")
+    write_flag(out, t, "controls")
     write_attr(out, t, "href")
+    write_attr(out, t, "src")
     write_attr(out, t, "target")
     write_attr(out, t, "start")
     write_attr(out, t, "style")
@@ -81,15 +93,6 @@ local function write_generic_open_tag(out, indent, name, attrs)
     out:write("<")
     out:write(name)
     write_generic_attrs(out, attrs)
-end
-
---- Like \ref write_attr, for value-less attributes.
-local function write_flag(out, t, k)
-    if not t[k] then
-        return
-    end
-    out:write(" ")
-    out:write(k)
 end
 
 local html <const> = {}
@@ -264,6 +267,8 @@ function main(attrs, s) return tag:new("main", attrs, s) end
 function blockquote(s) return tag:new("blockquote", nil, s) end
 --- Shortcut for \ref blockquote with a `<p>`.
 function blockquote_par(s) return blockquote(par(s)) end
+--- Shortcut for \ref tag for an `<audio>`.
+function audio(t) return inline_tag:new("audio", t, "") end
 
 --- Meta tag containing a property and its value.
 function property(k, v)
