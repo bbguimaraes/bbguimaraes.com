@@ -10,7 +10,9 @@ return {
     date = { "1403481600", "2014-06-23T00:00:00" },
     duration = "0:40",
     tags = {"piano", "short"},
-    youtube = "87v6T-FPsPs",
+    links = {
+        youtube = "87v6T-FPsPs",
+    },
     description = description,
     content = par(description),
 }

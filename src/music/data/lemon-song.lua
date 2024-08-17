@@ -11,7 +11,9 @@ return {
     date = { "1502582400", "2017-08-13T00:00:00" },
     duration = "2:45",
     tags = {"bass", "short"},
-    youtube = "6m_apoFkUos",
+    links = {
+        youtube = "6m_apoFkUos",
+    },
     description = description,
     content = par(description),
 }

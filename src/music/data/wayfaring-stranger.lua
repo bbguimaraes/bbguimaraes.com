@@ -44,6 +44,8 @@ return {
     date = { "1718802939", "2024-06-19T15:15:39" },
     duration = "2:23",
     tags = {"guitar", "vocals", "short"},
-    youtube = "0d1R_8d6sqI",
+    links = {
+        youtube = "0d1R_8d6sqI",
+    },
     content = content,
 }

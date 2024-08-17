@@ -5,5 +5,7 @@ return {
     date = { "1461974400", "2016-04-30T00:00:00" },
     duration = "1:59",
     tags = {"piano"},
-    youtube = "vicfe5B8xqk",
+    links = {
+        youtube = "vicfe5B8xqk",
+    },
 }
