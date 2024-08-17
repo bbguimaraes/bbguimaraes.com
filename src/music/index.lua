@@ -10,8 +10,9 @@ local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
 local VIDEOS <const> = path.set(path.join(FILES_DIR, "*.mp4"))
 local IMAGES <const> = path.set(path.join(FILES_DIR, "*.png"))
+local AUDIOS <const> = path.set(path.join(FILES_DIR, "*.ogg"))
 
-local generate_image
+local generate_image, generate_audio
 local function process_item(t)
     local author <const> = t.author
     local info <const> = {}
@@ -25,6 +26,7 @@ local function process_item(t)
     local file_name <const> = t.file_name or t.id:gsub("-", "_")
     t.video = path.join(FILES_DIR, file_name .. ".mp4")
     t.image = generate_image(t)
+    t.audio = generate_audio(t)
     t.timestamp = math.tointeger(t.date[1])
     t.info = info
     return t
@@ -64,6 +66,14 @@ function generate_image(t)
     local dst <const> = src:gsub("%.[^.]+$", ".png")
     if not IMAGES[dst] and t.poster and VIDEOS[src] then
         convert.generate_image(dst, src, "400x225", t.poster)
+    end
+end
+
+function generate_audio(t)
+    local src <const> = t.video
+    local dst <const> = src:gsub("%.[^.]+$", ".ogg")
+    if not AUDIOS[dst] and VIDEOS[src] then
+        convert.generate_audio(dst, src)
     end
 end
 
