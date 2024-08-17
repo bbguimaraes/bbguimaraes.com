@@ -20,7 +20,7 @@ return {
     links = {
         map = "relation/44741",
         mastodon = "111466787703643981",
-        facebook = "pfbid0fgSDUPGDjqE5V2YWLGpKZQnYw8UHcYLms2retYdjZVeWZMC69WRse3Qq5WqhLcVRl",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0fgSDUPGDjqE5V2YWLGpKZQnYw8UHcYLms2retYdjZVeWZMC69WRse3Qq5WqhLcVRl",
         instagram = "C0CawirOPY-",
     },
 }

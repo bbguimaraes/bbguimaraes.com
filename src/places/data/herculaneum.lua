@@ -243,7 +243,7 @@ return {
         {"website", "https://ercolano.beniculturali.it"},
         map = "way/351900172",
         mastodon = "112780081759739958",
-        facebook = "pfbid0soYwjF64mBTb4e2v4PeZZbV8qkme3vxwuKKmWcFEax3hQta4omiCKm9pYdTHB3TXl",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0soYwjF64mBTb4e2v4PeZZbV8qkme3vxwuKKmWcFEax3hQta4omiCKm9pYdTHB3TXl",
         instagram = "C9Xn-S5q4_q",
     },
 }
