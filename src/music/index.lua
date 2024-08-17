@@ -1,11 +1,17 @@
+local convert <const> = require "lib.convert"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
 local DIR <const> = path.join("src", "music", "data")
 local FILES_URL <const> = path.join("", "files", "music")
+local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
 local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
+local VIDEOS <const> = path.set(path.join(FILES_DIR, "*.mp4"))
+local IMAGES <const> = path.set(path.join(FILES_DIR, "*.png"))
+
+local generate_image
 local function process_item(t)
     local author <const> = t.author
     local info <const> = {}
@@ -16,6 +22,9 @@ local function process_item(t)
     if tags then
         table.insert(info, table.concat(t.tags, ", "))
     end
+    local file_name <const> = t.file_name or t.id:gsub("-", "_")
+    t.video = path.join(FILES_DIR, file_name .. ".mp4")
+    t.image = generate_image(t)
     t.timestamp = math.tointeger(t.date[1])
     t.info = info
     return t
@@ -48,6 +57,14 @@ local function generate_item(_, t)
         }),
         div({class = "info"}, ul(info)),
     })
+end
+
+function generate_image(t)
+    local src <const> = t.video
+    local dst <const> = src:gsub("%.[^.]+$", ".png")
+    if not IMAGES[dst] and t.poster and VIDEOS[src] then
+        convert.generate_image(dst, src, "400x225", t.poster)
+    end
 end
 
 local files <const> = {}
