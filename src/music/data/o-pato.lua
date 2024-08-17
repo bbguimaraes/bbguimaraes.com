@@ -10,7 +10,9 @@ return {
     duration = "0:23",
     scores = false,
     tags = {"guitar", "short"},
-    youtube = "EtED_B8tRkk",
+    links = {
+        youtube = "EtED_B8tRkk",
+    },
     description = description,
     content = par(description),
 }

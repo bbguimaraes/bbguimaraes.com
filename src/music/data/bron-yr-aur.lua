@@ -19,7 +19,9 @@ return {
         },
     },
     tags = {"guitar"},
-    youtube = "PjMn1GCGcSE",
+    links = {
+        youtube = "PjMn1GCGcSE",
+    },
     description = description,
     content = html(description),
 }

@@ -36,7 +36,9 @@ return {
         },
     },
     tags = {"guitar"},
-    youtube = "M2h4PHvdWmQ",
+    links = {
+        youtube = "M2h4PHvdWmQ",
+    },
     description = description,
     content = par(description),
 }

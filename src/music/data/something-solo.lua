@@ -53,6 +53,8 @@ return {
         },
     },
     tags = {"guitar", "bass", "short"},
-    youtube = "mCWKgva04ms",
+    links = {
+        youtube = "mCWKgva04ms",
+    },
     content = content,
 }

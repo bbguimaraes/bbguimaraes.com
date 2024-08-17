@@ -6,5 +6,7 @@ return {
     duration = "3:02",
     scores = false,
     tags = {"guitar", "short"},
-    youtube = "yTDsCRNgLkI",
+    links = {
+        youtube = "yTDsCRNgLkI",
+    },
 }
