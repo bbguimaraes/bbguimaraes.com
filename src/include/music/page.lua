@@ -61,6 +61,7 @@ return include "master.lua" {
     nav_path = {{".", "music"}, {nil, title}},
     main = main({class = "video"}, lines {
         video {
+            preload = "metadata",
             controls = true,
             poster = poster_url,
             sources = {video_url},
