@@ -7,9 +7,8 @@ local FILES_URL <const> = path.join("", "files", "music")
 local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
 local function process_item(t)
-    local author <const>, date <const> = t.author, t.date
+    local author <const> = t.author
     local info <const> = {}
-    table.insert(info, string.format("<i>%s</i>", date[2]))
     if author then
         table.insert(info, author)
     end
@@ -17,7 +16,7 @@ local function process_item(t)
     if tags then
         table.insert(info, table.concat(t.tags, ", "))
     end
-    t.timestamp = math.tointeger(date[1])
+    t.timestamp = math.tointeger(t.date[1])
     t.info = info
     return t
 end
@@ -37,6 +36,8 @@ local function generate_item(_, t)
     for _, x in ipairs(t.info) do
         table.insert(info, x)
     end
+    table.insert(info,
+        inline_tag("span", {class = "date"}, t.date[2]:gsub("T.*$", "")))
     return tag("a", {id = id, class = "video", href = t.id .. ".html"}, lines {
         div({class = "preview"}, lines {
             image {
