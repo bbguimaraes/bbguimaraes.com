@@ -63,20 +63,18 @@ return include "master.lua" {
     },
     body_class = "w80 roman",
     nav_path = {{".", "music"}, {nil, title}},
-    main = lines {
-        div({class = "video"}, lines {
-            video {
-                controls = true,
-                poster = poster_url,
-                sources = {video_url},
-            },
-            inline_tag("h1", nil, title),
-            div({class = "info"}, ul {
-                ul(var("info")),
-                lines(links),
-                table.unpack(src),
-            }),
-            var("content", false) or nil,
+    main = main({class = "video"}, lines {
+        video {
+            controls = true,
+            poster = poster_url,
+            sources = {video_url},
+        },
+        inline_tag("h1", nil, title),
+        div({class = "info"}, ul {
+            ul(var("info")),
+            lines(links),
+            table.unpack(src),
         }),
-    },
+        var("content", false) or nil,
+    }),
 }

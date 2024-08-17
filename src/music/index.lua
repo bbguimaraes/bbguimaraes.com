@@ -2,7 +2,7 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local DIR <const> = "src/music/data"
+local DIR <const> = path.join("src", "music", "data")
 local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
 local function generate_page(t)
@@ -75,6 +75,6 @@ return include "master.lua" {
                 class = "header-text",
             },
         }),
-        div({class = "videos"}, lines(util.imap(generate, file_names))),
+        main({class = "videos"}, lines(util.imap(generate, file_names))),
     },
 }
