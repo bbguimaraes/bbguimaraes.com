@@ -5,7 +5,7 @@ local LINKS <const> = {
     map = "https://www.openstreetmap.org/",
     youtube = "https://www.youtube.com/watch?v=",
     mastodon = "https://mastodon.bbguimaraes.com/@bbguimaraes/",
-    facebook = "https://www.facebook.com/bruno.barcarolguimaraes/posts/",
+    facebook = "https://www.facebook.com/",
     instagram = "https://www.instagram.com/p/",
 }
 
