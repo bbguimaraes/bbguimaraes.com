@@ -87,6 +87,14 @@
     margin: 0;
 }
 
+.videos .video .preview img {
+    width: 320px;
+}
+
+.videos .video h2 {
+    hyphens: none;
+}
+
 .videos .video .info .date {
     font-size: 75%;
 }
@@ -98,5 +106,6 @@
 }
 
 .videos .video {
+    max-width: 560px;
     text-decoration: none;
 }
