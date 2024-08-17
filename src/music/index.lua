@@ -10,7 +10,6 @@ local function process_item(t)
     local author <const>, date <const> = t.author, t.date
     local info <const> = {}
     table.insert(info, string.format("<i>%s</i>", date[2]))
-    table.insert(info, string.format("<i>%s</i>", t.duration))
     if author then
         table.insert(info, author)
     end
@@ -34,10 +33,13 @@ local function generate_item(_, t)
     local id <const> = t.id
     local file_name <const> = t.file_name or id:gsub("-", "_")
     return tag("a", {id = id, class = "video", href = t.id .. ".html"}, lines {
-        image {
-            src = path.join(FILES_URL, file_name .. ".png"),
-            alt = "video poster",
-        },
+        div({class = "preview"}, lines {
+            image {
+                src = path.join(FILES_URL, file_name .. ".png"),
+                alt = "video poster",
+            },
+            inline_tag("span", {class = "duration"}, t.duration),
+        }),
         inline_tag("h2", nil, t.title),
         div({class = "info"}, ul(t.info)),
     })
