@@ -14,12 +14,10 @@ return include "master.lua" {
     head_extra = head_extra,
     body_class = t.style or "w80",
     nav_path = {{".", "blog"}, {nil, short_title or title}},
-    main = lines {
-        div({class = "blog"}, lines {
-            inline_tag("h1", nil, title),
-            inline_tag("p", nil, "<i>" .. t.date[2] .. "</i>"),
-            lines(t.content),
-            include "blog/tags.lua" { tags = t.tags },
-        }),
-    },
+    main = main({class = "blog"}, lines {
+        inline_tag("h1", nil, title),
+        inline_tag("p", nil, "<i>" .. t.date[2] .. "</i>"),
+        lines(t.content),
+        include "blog/tags.lua" { tags = t.tags },
+    }),
 }

@@ -178,10 +178,8 @@ Read more about this page <a href="/blog/places.html">here</a>.
 ]],
             }),
         }),
-        main(nil, lines {
-            div({class = "places gallery"}, lines {
-                table.unpack(util.imap(generate_item, files))
-            }),
+        main({class = "places gallery"}, lines {
+            table.unpack(util.imap(generate_item, files))
         }),
     },
 }

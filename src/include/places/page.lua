@@ -125,19 +125,17 @@ return include "master.lua" {
         },
     },
     body_class = "white-bg roman",
-    main = lines {
-        div({class = "post"}, lines {
-            div({class = "w80"}, lines {
-                include "nav.lua" {
-                    nav_path = {{".", "places"}, {nil, title}},
-                },
-                tag("h1", nil, title),
-                generate_info(),
-                table.unpack(l),
-            }),
-            div(
-                {class = "gallery"},
-                lines(util.imap(generate_figure, images))),
+    main = main({class = "post"}, lines {
+        div({class = "w80"}, lines {
+            include "nav.lua" {
+                nav_path = {{".", "places"}, {nil, title}},
+            },
+            tag("h1", nil, title),
+            generate_info(),
+            table.unpack(l),
         }),
-    },
+        div(
+            {class = "gallery"},
+            lines(util.imap(generate_figure, images))),
+    }),
 }

@@ -2,7 +2,7 @@ return include "master.lua" {
     title = "nngn",
     css = {"/main.css", "nngn.css"},
     nav_path = {{nil, "nngn"}},
-    main = tag("main", nil, lines {
+    main = main(nil, lines {
         html "<h1>nngn</h1>",
         div({class = "main-video"}, lines {
             video {

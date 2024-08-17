@@ -14,7 +14,7 @@ return include "master.lua" {
     css = {"/main.css", "../blog.css"},
     body_class = "w80",
     nav_path = {{"..", "blog"}, {".", "tags"}, {nil, tag}},
-    main = div({class = "blog"}, lines {
+    main = main({class = "blog"}, lines {
         html(string.format("<h1>tag - %s</h1>", tag)),
         ul(util.imap(page_link, var "pages")),
     }),
