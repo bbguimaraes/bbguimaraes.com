@@ -9,10 +9,12 @@ local poster_url <const> = string.format("/files/music/%s.png", file_name)
 local video_url <const> = string.format("/files/music/%s.mp4", file_name)
 local scores <const> = var("scores", false)
 
+-- XXX name
 local links <const> = {}
+table.insert(links, inline_tag("i", nil, var("date")[2]))
 
 local info <const> = var "info"
-table.move(info, 1, #info, 1, links)
+table.move(info, 1, #info, #links + 1, links)
 
 table.insert(links, link {
     href = string.format("/files/music/%s.mp4", file_name),
