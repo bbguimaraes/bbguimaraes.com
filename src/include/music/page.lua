@@ -19,12 +19,6 @@ table.insert(links, inline_tag("i", nil, var("date")[2]))
 local info <const> = var "info"
 table.move(info, 1, #info, #links + 1, links)
 
-table.insert(links, link {
-    href = string.format("/files/music/%s.mp4", file_name),
-    content = "video",
-    target = "_blank",
-})
-
 var_and("links", function()
     for _, x in ipairs(include "link_list.lua" {}) do
         table.insert(links, x)
