@@ -12,6 +12,7 @@ return {
     tags = {"piano"},
     links = {
         youtube = "8AnQZy7ErP4",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid02Ny8F8iKhDh9rMCgT9nkYDBgzBUYAMnP4vZjy8j8pnKoPPCNdkHnDufbW8tDH5TRFl",
     },
     description = description,
     content = par(description),

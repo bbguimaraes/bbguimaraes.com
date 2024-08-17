@@ -54,6 +54,7 @@ return {
     tags = {"piano"},
     links = {
         youtube = "NCk9XZCStJQ",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0cbhWAHPUxc2QYMxnpRHBjPhkPS2gC2e5He8Ut7bdttRAMDoh2eqNQwDxmhKrd4h4l",
     },
     description = description,
     content = content,

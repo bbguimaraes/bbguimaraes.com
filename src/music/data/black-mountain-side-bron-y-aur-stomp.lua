@@ -38,6 +38,7 @@ return {
     tags = {"guitar"},
     links = {
         youtube = "M2h4PHvdWmQ",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0RzJN4FTTbhbrhqXMuwf33tk1Jd6TEXnp4nnBCWFkGpbt8bnjcJPocxaHiNj3QouNl",
     },
     description = description,
     content = par(description),
