@@ -7,5 +7,6 @@ return {
     tags = {"piano", "mandolin"},
     links = {
         youtube = "X6-uZOONJ5c",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid02ZEsFmW3PKLHJNSE4o8nx1McvxyfzYk6y14RmvMMVnhjWua1pDBBtAFh5Adczv9zUl",
     },
 }

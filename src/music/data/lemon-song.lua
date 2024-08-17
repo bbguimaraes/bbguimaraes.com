@@ -13,6 +13,7 @@ return {
     tags = {"bass", "short"},
     links = {
         youtube = "6m_apoFkUos",
+        facebook = "bruno.barcarolguimaraes/posts/pfbid0m7f2ax47ydThJ7pTJHQpeiVPTXEjXSTcRxjPwjVQeK1Gd2wC2sSE9NKLsya33uFSl",
     },
     description = description,
     content = par(description),
