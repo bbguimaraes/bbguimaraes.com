@@ -12,6 +12,7 @@ FILES = \
 	index \
 	lib/index \
 	machinatrix/index \
+	music/about \
 	music/index \
 	nngn/index \
 	nngn/screenshots/compute \
