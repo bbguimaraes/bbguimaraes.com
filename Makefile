@@ -1,5 +1,7 @@
 .PHONY: check generate tidy xmllint
 
+generate:
+all: generate check
 check: tidy xmllint
 generate:
 	$(MAKE) -C src/ $@
