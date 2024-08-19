@@ -163,7 +163,7 @@ return include "master.lua" {
                     }),
                 }),
                 par [[
-Read more about this page <a href="/blog/places.html">here</a>.
+<a href="/blog/places.html">about this page</a>
 ]],
             }),
         }),
