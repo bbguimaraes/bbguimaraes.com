@@ -114,7 +114,10 @@ return include "master.lua" {
                     alt = "música · μουσική",
                 },
             }),
-            inline_tag("div", {class = "w80 bottom"}, ""),
+            div({class = "w80 bottom"}, link {
+                href = "about.html",
+                content = "about this page",
+            }),
         }),
         main(
             {class = "videos"},

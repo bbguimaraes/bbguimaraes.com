@@ -1,9 +1,23 @@
+img {
+    max-width: 100%;
+}
+
+ol, ul {
+    padding-left: 1.5em;
+}
+
+ol img, ul img {
+    padding-right: 1.5em;
+    box-sizing: border-box;
+}
+
 .header {
     text-align: right;
 }
 
 .header .header-imgs {
     position: relative;
+    text-align: right;
 }
 
 .header .header-background {
@@ -38,6 +52,19 @@
     content: " ";
     display: block;
     clear: both;
+}
+
+aside {
+    float: right;
+    border: 1px solid;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+aside ul {
+    margin-bottom: 0;
+    padding-left: 1em;
 }
 
 @media (max-width: 800px) {
