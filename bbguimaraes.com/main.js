@@ -1,5 +1,4 @@
-let nav = document.querySelector("nav");
-if(nav) {
+if(document.getElementById("page-nav")) {
     let make_listener = (key, cls, sel) => {
         let l = document.body.classList;
         let reset = l.contains(cls) ? l.add : l.remove;
@@ -56,7 +55,7 @@ if(nav) {
         "color", "black", "white",
     ]);
     div.appendChild(document.querySelector("#rss-icon"));
-    nav.appendChild(div);
+    document.getElementById("page-nav").appendChild(div);
 }
 
 if(window.matchMedia('(pointer: coarse)').matches) {
