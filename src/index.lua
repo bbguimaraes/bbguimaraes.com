@@ -154,6 +154,7 @@ local log <const> = item {
 return include "master.lua" {
     body_class = "w80",
     title = "bbguimaraes.com",
+    js = {},
     main = concat {
         div({id = "home"}, lines {
             image {
