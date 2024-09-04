@@ -14,7 +14,7 @@ for _, x in ipairs(var("css", {})) do
 end
 for _, x in ipairs(var("js", {})) do
     table.insert(ret, html([[
-    <script type="text/javascript" src="]] .. x .. [[" defer></script>]]))
+    <script type="module" src="]] .. x .. [["></script>]]))
 end
 
 var_and("og", function(t)
