@@ -50,7 +50,11 @@ local function generate_item(_, t)
     end
     table.insert(info,
         inline_tag("span", {class = "date"}, t.date[2]:gsub("T.*$", "")))
-    return tag("a", {id = id, class = "video", href = t.id .. ".html"}, lines {
+    local attrs <const> = {
+        {"id", id}, {"class", "video"}, {"href", t.id .. ".html"},
+        {"data-tags", table.concat(util.sorted(t.tags), ",")},
+    }
+    return generic_tag("a", attrs, lines {
         div({class = "preview"}, lines {
             image {
                 src = path.join(FILES_URL, file_name .. ".png"),
