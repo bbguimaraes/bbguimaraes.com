@@ -46,8 +46,12 @@ a:visited {
 select {
     background-color: transparent;
     border-color: #a0a0a0;
-    border-style: solid;
-    border-width: 2px;
+    border-style: none none dotted none;
+    border-width: 1px;
+}
+
+select:invalid, select option[value="x"]{
+    font-style: italic;
 }
 
 details > summary {
@@ -233,12 +237,6 @@ body.no-margin #page-nav {
 
 #page-nav select {
     margin-right: 1em;
-    border-width: 1px;
-    border-style: none none dotted none;
-}
-
-#page-nav select:invalid, #page-nav select option[value="x"]{
-    font-style: italic;
 }
 
 #page-nav #rss-icon {
