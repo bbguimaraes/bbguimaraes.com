@@ -52,6 +52,20 @@
     }
 }
 
+.header .bottom .tag-filter {
+    float: left;
+}
+
+.header .bottom a {
+    float: right;
+}
+
+.header .bottom::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
 .videos {
     display: flex;
     flex-wrap: wrap;
