@@ -1,3 +1,5 @@
+import { select_create } from "./js/html.mjs";
+
 if(document.getElementById("page-nav")) {
     let make_listener = (key, cls) => {
         let l = document.body.classList;
@@ -17,19 +19,6 @@ if(document.getElementById("page-nav")) {
             }
         };
     };
-    let make_sel = (title, key, cls, values) => {
-        let [v0, v1, v2] = values;
-        let ret = document.createElement("select");
-        ret.required = true;
-        ret.innerHTML = `
-<option value="">${v0}</option>
-<option>${v1}</option>
-<option>${v2}</option>
-`;
-        ret.title = title;
-        ret.addEventListener("change", make_listener(key, cls, ret));
-        return ret;
-    };
     let set_initial = (key, sel) => {
         let v = localStorage[key];
         if(!v)
@@ -42,19 +31,18 @@ if(document.getElementById("page-nav")) {
         sel.selectedIndex = o.index;
         sel.dispatchEvent(new Event("change"));
     };
-    let create = (div, title, key, cls, values) => {
-        let sel = make_sel(title, key, cls, values);
+    let create = (div, title, key, unset_opt, cls, values) => {
+        let sel = select_create(
+            title, unset_opt, values, make_listener(key, cls));
         div.appendChild(sel);
         set_initial(key, sel);
     };
     let div = document.createElement("div");
     div.classList.add("nav-opt");
-    create(div, "font style", "font", "roman", [
-        "font", "mono", "roman",
-    ]);
-    create(div, "background color", "bg_color", "white-bg", [
-        "color", "black", "white",
-    ]);
+    create(div, "font style", "font", "font", "roman", ["mono", "roman"]);
+    create(
+        div, "background color", "bg_color", "color", "white-bg",
+        ["black", "white"]);
     div.appendChild(document.querySelector("#rss-icon"));
     document.getElementById("page-nav").appendChild(div);
 }
