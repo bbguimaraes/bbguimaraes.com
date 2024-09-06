@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 11 Aug 2024 19:16:25 +0000</pubDate>
-        <lastBuildDate>Sun, 11 Aug 2024 19:16:25 +0000</lastBuildDate>
+        <pubDate>Fri, 06 Sep 2024 08:43:14 +0000</pubDate>
+        <lastBuildDate>Fri, 06 Sep 2024 08:43:14 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -603,9 +603,8 @@
             <category>music</category>
             <category>piano</category>
             <category>bass</category>
-            <category>drums</category>
             <category>short</category>
-            <description><p>music piano bass drums short</p><p>Tom Jobim</p></description>
+            <description><p>music piano bass short</p><p>Tom Jobim</p></description>
         </item>
         <item>
             <title>Fado tropical</title>

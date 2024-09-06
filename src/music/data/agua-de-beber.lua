@@ -6,7 +6,7 @@ return {
     author = "Tom Jobim",
     date = { "1482537600", "2016-12-24T00:00:00" },
     duration = "0:28",
-    tags = {"piano", "bass", "drums", "short"},
+    tags = {"piano", "bass", "short"},
     links = {
         youtube = "H50UtDGpKaI",
         facebook = "bruno.barcarolguimaraes/posts/pfbid0WikB3Z76bCSWnTtBGwRKwUaP4CbPXgy2xCy5xAEGijvGMWQk5QY2AvARYo2MTNV8l",
