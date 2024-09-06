@@ -95,6 +95,7 @@ end
 return include "master.lua" {
     title = "música · μουσική · music",
     css = {"/main.css", "music.css"},
+    js = {"/main.js", "music.js"},
     body_class = "no-margin roman",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
@@ -111,6 +112,7 @@ return include "master.lua" {
                 class = "header-text",
                 alt = "música · μουσική",
             },
+            inline_tag("div", {class = "w80 bottom"}, ""),
         }),
         main(
             {class = "videos"},
