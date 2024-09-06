@@ -1,8 +1,9 @@
 if(document.getElementById("page-nav")) {
-    let make_listener = (key, cls, sel) => {
+    let make_listener = (key, cls) => {
         let l = document.body.classList;
         let reset = l.contains(cls) ? l.add : l.remove;
-        return _ => {
+        return e => {
+            let sel = e.target;
             let i = sel.selectedIndex;
             if(i) {
                 localStorage[key] = sel.options[i].value;
@@ -61,7 +62,7 @@ if(document.getElementById("page-nav")) {
 if(window.matchMedia('(pointer: coarse)').matches) {
     let cls = "hover";
     document.querySelectorAll(".hover-on-touch").forEach(x => {
-        x.addEventListener("touchstart", e => { x.classList.add(cls) });
-        x.addEventListener("touchend",   e => { x.classList.remove(cls) });
+        x.addEventListener("touchstart", _ => { x.classList.add(cls) });
+        x.addEventListener("touchend",   _ => { x.classList.remove(cls) });
     });
 }
