@@ -20,12 +20,6 @@ table.insert(links, inline_tag("i", nil, var("date")[2]))
 local info <const> = var "info"
 table.move(info, 1, #info, #links + 1, links)
 
-var_and("links", function()
-    for _, x in ipairs(include "link_list.lua" {}) do
-        table.insert(links, x)
-    end
-end)
-
 if type(scores) == "table" then
     table.move(scores, 1, #scores, #links + 1, links)
 elseif scores then
@@ -42,6 +36,12 @@ elseif scores then
         },
     })
 end
+
+var_and("links", function()
+    for _, x in ipairs(include "link_list.lua" {}) do
+        table.insert(links, x)
+    end
+end)
 
 return include "master.lua" {
     css = {"/main.css", "music.css"},
