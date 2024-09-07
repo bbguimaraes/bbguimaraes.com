@@ -1,4 +1,6 @@
-local description <const> = "Meditation."
+local description <const> = [[
+Meditation.
+]]
 
 return {
     id = "bron-yr-aur",
@@ -24,5 +26,5 @@ return {
         facebook = "bruno.barcarolguimaraes/posts/pfbid02RzqyW3LAoocE9bicwp3mroxFM4AzJzGT2gEtsDndRrfQ2fD59URgry3sxfE3ujNnl",
     },
     description = description,
-    content = html(description),
+    content = par(description),
 }
