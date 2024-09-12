@@ -180,7 +180,8 @@ best.
         src = "/files/lib/elizabeth_and_darcy.jpg",
         alt = "Elizabeth and Darcy",
         title = "Elizabeth and Darcy",
-        style = "max-width: 100%; display: block; margin: auto",
+        class = "hor-center",
+        style = "max-width: 100%",
     },
 }
 
@@ -360,7 +361,8 @@ perpetuamente relevante.  É, como sua autora, a feminilidade no seu melhor.
         src = "/files/lib/elizabeth_and_darcy.jpg",
         alt = "Elizabeth and Darcy",
         title = "Elizabeth and Darcy",
-        style = "max-width: 100%; display: block; margin: auto",
+        class = "hor-center",
+        style = "max-width: 100",
     },
 }
 
