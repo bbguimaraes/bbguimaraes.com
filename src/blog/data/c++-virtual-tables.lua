@@ -422,17 +422,17 @@ Finally, the virtual table itself is composed of three <code>quad</code> (i.e.
 64-bit) words.  They are, as indicated by the comments:
 ]],
     tag("ol", {start = 0}, lines {
-        tag("li", nil, html [[
+        li(html [[
 <i>Offset to top</i>: this value is used in the
 implementation of <code>dynamic_cast</code> and is not
 relevant for this article.  It is always zero under single
 inheritance.]]),
-        tag("li", nil, html [[
+        li(html [[
 <i><code>typeinfo</code> pointer</i>: pointer to the object
 used for <i>run-time type information</i> (RTTI).  It will
 be zero/<code>nullptr</code> in all examples since they are
 compiled with RTTI disabled.]]),
-        tag("li", nil, html [[
+        li(html [[
 <i>Virtual function pointers</i>: this is the array which
 gives virtual tables their name.  In this case, it has a
 single entry: the address of <code>S::f</code>.]]),

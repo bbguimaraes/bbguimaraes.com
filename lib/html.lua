@@ -351,6 +351,8 @@ end
 function ul(...) return list:new("ul", ...) end
 --- Shortcut for a \ref list for an `<ol>`.
 function ol(...) return list:new("ol", ...) end
+--- Shortcut for \ref tag for a `<li>`.
+function li(...) return tag:new("li", nil, ...) end
 
 local link <const> = {}
 link.__index = link
