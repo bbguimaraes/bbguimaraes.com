@@ -355,7 +355,7 @@ function link:render(out, indent)
     out:write("<a")
     write_attrs(out, t)
     out:write(">")
-    render(t.content, out, 0)
+    render(t.content or "", out, 0)
     out:write("</a>")
 end
 
