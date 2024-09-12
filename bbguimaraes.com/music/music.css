@@ -1,4 +1,8 @@
 .header {
+    text-align: right;
+}
+
+.header .header-imgs {
     position: relative;
 }
 
