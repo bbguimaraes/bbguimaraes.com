@@ -95,6 +95,18 @@ local function write_generic_open_tag(out, indent, name, attrs)
     write_generic_attrs(out, attrs)
 end
 
+local html_str <const> = {}
+html_str.__index = html_str
+html_str.__name = "html_str"
+
+function html_str:new(s)
+    return setmetatable({ s = s }, self)
+end
+
+function html_str:render(out)
+    out:write(self.s)
+end
+
 local html <const> = {}
 html.__index = html
 html.__name = "html"
@@ -526,6 +538,7 @@ function src_ref(t)
 end
 
 return {
+    str = function(...) return html_str:new(...) end,
     html = function(...) return html:new(...) end,
     generic_tag = function(...) return generic_tag:new(...) end,
     generic_inline_tag = function(...) return generic_inline_tag:new(...) end,
