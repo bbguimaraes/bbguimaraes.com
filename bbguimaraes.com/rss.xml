@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 16 Sep 2024 18:22:47 +0000</pubDate>
-        <lastBuildDate>Mon, 16 Sep 2024 18:22:47 +0000</lastBuildDate>
+        <pubDate>Sun, 20 Oct 2024 15:17:15 +0000</pubDate>
+        <lastBuildDate>Sun, 20 Oct 2024 15:17:15 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -101,6 +101,14 @@
             <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
             <category>place</category>
             <description>This post will be different than usual.  Taking photographs is forbidden inside the cappella, so these are not mine, but taken from their web site (I hope they will not sue me for the mountains of money I make with each post).</description>
+        </item>
+        <item>
+            <title>Ischia</title>
+            <link>https://bbguimaraes.com/places/ischia.html</link>
+            <guid>https://bbguimaraes.com/places/ischia.html</guid>
+            <pubDate>Tue, 27 Feb 2024 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>The last stop of my marathon in the Gulf of Napoli.  I had become so enamored of the island from watching it all the way across the Gulf of Gaeta, more than 60km away — it is located right between the two gulfs, in the area where Campi Flegrei, the huge volcanic caldera, enters the Mediterranean sea, forming Penisola flegrea and the surrounding islands — seeing its dim figure through the maritime mist, its shaded contour against the colored sky at sunset, its dark green suspended in the bright blue where both sky and sea meet on sunny days (<a href="https://bbguimaraes.com/places/coreno-ausonio.html">see</a> <a href="https://bbguimaraes.com/places/castelforte.html">the</a> <a href="https://bbguimaraes.com/places/santi-cosma-e-damiano.html">other</a> <a href="https://bbguimaraes.com/places/gaeta.html">posts</a> <a href="https://bbguimaraes.com/places/napoli.html">where</a> <a href="https://bbguimaraes.com/places/capri.html">it</a> <a href="https://bbguimaraes.com/places/monte-solaro.html">makes</a> <a href="https://bbguimaraes.com/places/sorrento.html">an</a> <a href="https://bbguimaraes.com/places/herculaneum.html">appearance</a>), that I could not leave Campania without going there.</description>
         </item>
         <item>
             <title>Pompeii</title>
