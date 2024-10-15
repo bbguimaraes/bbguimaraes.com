@@ -1,5 +1,9 @@
 local l <const> = {}
 
+var_and("header", function(x)
+    table.insert(l, x)
+end)
+
 local title <const> = var("list_title", false) or var("title")
 table.insert(l, inline_tag("h1", nil, title))
 
