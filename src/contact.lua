@@ -47,6 +47,16 @@ local sections <const> = {{
 return include "list_simple.lua" {
     title = "contact",
     list_title = "Contact",
+    description = html "Bruno Barcarol Guimarães",
+    header = link {
+        href = "/files/contact.jpg",
+        content = image {
+            class = "side-content-three-quarters",
+            src = "/files/contact_small.jpg",
+            title = "me",
+            alt = "me",
+        },
+    },
     nav_path = {{nil, "contact"}},
     sections = sections,
 }
