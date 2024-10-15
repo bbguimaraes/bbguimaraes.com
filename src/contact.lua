@@ -5,21 +5,26 @@ local sections <const> = {{
             content = "bbguimaraes​@​bbguimaraes​.​com",
         },
         link {
-            href = "https://matrix.to/#/@bbguimaraes:matrix.bbguimaraes.com",
-            content = "@bbguimaraes:matrix.bbguimaraes.com",
-        },
-        link {
-            href = "https://mastodon.bbguimaraes.com/@bbguimaraes",
-            content = "mastodon",
-        },
-        link {
             href = "/files/cv.pdf",
             title = "CV",
             content = "curriculum vitae",
-        }
+        },
+        lines {
+            html "matrix:",
+            link {
+                href = "https://matrix.to/#/@bbguimaraes:matrix.bbguimaraes.com",
+                content = "@bbguimaraes:matrix.bbguimaraes.com",
+            },
+        },
+        lines {
+            html "mastodon:",
+            link {
+                href = "https://mastodon.bbguimaraes.com/@bbguimaraes",
+                content = " @bbguimaraes@bbguimaraes.com",
+            },
+        },
     },
 }, {
-    title = html "etc",
     items = {
         link {
             href = "https://www.reddit.com/u/bbguimaraes",
