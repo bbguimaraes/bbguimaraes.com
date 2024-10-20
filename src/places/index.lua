@@ -77,7 +77,7 @@ function render_without_links(t)
         return
     end
     return generate.render(t)
-        :gsub('<a%s+href="[^"]+">', "")
+        :gsub('<a%s+href="[^"]+"[^>]*>', "")
         :gsub("</a>", "")
 end
 
