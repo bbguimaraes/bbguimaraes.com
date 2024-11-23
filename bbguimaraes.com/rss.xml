@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 20 Oct 2024 15:17:15 +0000</pubDate>
-        <lastBuildDate>Sun, 20 Oct 2024 15:17:15 +0000</lastBuildDate>
+        <pubDate>Sat, 23 Nov 2024 21:35:47 +0000</pubDate>
+        <lastBuildDate>Sat, 23 Nov 2024 21:35:47 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -85,6 +85,14 @@
             <pubDate>Thu, 29 Feb 2024 00:00:01 GMT</pubDate>
             <category>place</category>
             <description>One of the two major early-Mediaeval peregrination routes across Western Europe — the other being, of course, the famous Camino de Santiago, which it predates by a few centuries and to which it is roughly perpendicular.  Beginning in Canterbury (specifically, Canterbury Cathedral, seat of the Archbishop of the Church of England), at the southeastern corner of Britain near the Thames estuary, it crosses France, Switzerland, and the entirety of the Italian peninsula, passing through Rome and ending in Santa Maria di Leuca in Puglia, the southeastern end of Italy, after more than three thousand kilometers.  From there pilgrims would sail across the Mediterranean to the Holy Land.  Thus it connects, together with Camino de Santiago, Compostela, Canterbury, Rome, and Jerusalem, the main peregrination sites of Christianity.</description>
+        </item>
+        <item>
+            <title>Formia</title>
+            <link>https://bbguimaraes.com/places/formia.html</link>
+            <guid>https://bbguimaraes.com/places/formia.html</guid>
+            <pubDate>Thu, 29 Feb 2024 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>As many of the cities along the Tyrrhenian coast on the ancient via Appia, Formia was a favored place for Roman seaside villae — including one belonging to the stepfather of the emperor Augustus.  Its Greek name <span lang="grc">Όρμιαι</span> (<span lang="la">Hormiae</span> in Latin, from a word for “harbor”) refers to its many ports and the mild maritime climate provided by its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many of these villae and ports can still be seen all they from the city center to the rocky shore on the way to <a href="https://www.openstreetmap.org/node/8390626221">monte Scauri</a>, with salient pieces of two-thousand-year-old mosaics coming out of the rock every now and then.</description>
         </item>
         <item>
             <title>Minturno</title>
