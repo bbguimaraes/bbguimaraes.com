@@ -302,7 +302,7 @@ local function quote_footer(author, cite, extra)
     else
         table.insert(ret, html:new "—")
     end
-    local c <const> = tag:new("cite", nil, cite)
+    local c <const> = inline_tag:new("cite", nil, cite)
     if extra then
         table.insert(ret, str.concat { c, "," })
     else
