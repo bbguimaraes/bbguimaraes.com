@@ -60,6 +60,7 @@ return {
     author = "Bee Gees",
     date = {"1723402285", "2024-08-11T18:51:25"},
     duration = "1:25",
+    poster = "0:57.5",
     scores = {
         link {
             href = "/files/music/how_deep_is_your_love.pdf",
