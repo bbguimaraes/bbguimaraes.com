@@ -6,6 +6,7 @@ return {
     author = "Tom Jobim",
     date = { "1482537600", "2016-12-24T00:00:00" },
     duration = "0:28",
+    poster = "0:00",
     tags = {"piano", "bass", "short"},
     links = {
         youtube = "H50UtDGpKaI",

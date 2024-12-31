@@ -40,6 +40,7 @@ return {
     author = "The Beatles",
     date = { "1707784486", "2024-02-13T00:34:46" },
     duration = "0:37",
+    poster = "0:07.8",
     scores = {
         link {
             href = "/files/music/something_solo.pdf",

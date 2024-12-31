@@ -8,6 +8,7 @@ return {
     author = "Ludwig van Beethoven",
     date = { "1456617600", "2016-02-28T00:00:00" },
     duration = "1:09",
+    poster = "0:05",
     tags = {"piano"},
     links = {
         youtube = "jBik-oX6Zas",
