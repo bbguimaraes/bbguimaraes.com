@@ -44,6 +44,7 @@ return {
     author = "Frédéric François Chopin",
     date = { "1690716480", "2023-07-30T11:28:00" },
     duration = "2:30",
+    poster = "0:39",
     scores = {
         link {
             href = "https://imslp.org/wiki/Preludes%2C_Op.28_(Chopin%2C_Fr%C3%A9d%C3%A9ric)",

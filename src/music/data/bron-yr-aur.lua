@@ -8,6 +8,7 @@ return {
     author = "Led Zeppelin",
     date = { "1692133997", "2023-08-15T21:13:17" },
     duration = "1:48",
+    poster = "0:10",
     scores = {
         link {
             href = "/files/music/bron_yr_aur.pdf",

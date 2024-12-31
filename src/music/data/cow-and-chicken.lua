@@ -9,6 +9,7 @@ return {
     title = "Cow and chicken",
     date = { "1403481600", "2014-06-23T00:00:00" },
     duration = "0:40",
+    poster = "0:16",
     tags = {"piano", "short"},
     links = {
         youtube = "87v6T-FPsPs",

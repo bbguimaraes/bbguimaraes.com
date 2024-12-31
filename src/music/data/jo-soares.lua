@@ -9,6 +9,7 @@ return {
     title = "Jô Soares",
     date = { "1416096000", "2014-11-16T00:00:00" },
     duration = "0:24",
+    poster = "0:12",
     tags = {"piano", "short"},
     links = {
         youtube = "6WGpJBZ9cOw",
