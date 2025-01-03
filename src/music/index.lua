@@ -3,9 +3,12 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local title <const> = "música · μουσική · music"
+local base_url <const> = var "base_url"
+
 local DIR <const> = path.join("src", "music", "data")
-local FILES_URL <const> = path.join("", "files", "music")
-local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
+local FILES_URL <const> = path.join("files", "music")
+local FILES_DIR <const> = path.join("bbguimaraes.com", FILES_URL)
 local PAGE <const> = path.join("src", "include", "music", "page.lua")
 
 local VIDEOS <const> = path.set(path.join(FILES_DIR, "*.mp4"))
@@ -57,7 +60,7 @@ local function generate_item(_, t)
     return generic_tag("a", attrs, lines {
         div({class = "preview"}, lines {
             image {
-                src = path.join(FILES_URL, file_name .. ".png"),
+                src = path.join("", FILES_URL, file_name .. ".png"),
                 alt = "video poster",
             },
             inline_tag("span", {class = "duration"}, t.duration),
@@ -93,7 +96,13 @@ for _, x in ipairs(files) do
 end
 
 return include "master.lua" {
-    title = "música · μουσική · music",
+    title = title,
+    og = {
+        type = "music",
+        title = title,
+        image = path.join(base_url, FILES_URL, "music_og.jpg"),
+        url = path.join(base_url, "music"),
+    },
     css = {"/main.css", "music.css"},
     js = {"/main.js", "music.js"},
     body_class = "no-margin roman",
@@ -104,12 +113,12 @@ return include "master.lua" {
         div({class = "header"}, lines {
             div({class = "header-imgs"}, lines {
                 image_link {
-                    src = path.join(FILES_URL, "music.jpg"),
+                    src = path.join("", FILES_URL, "music.jpg"),
                     class = "header-background",
                     alt = "music score, excerpt from Clair de Lune",
                 },
                 image_link {
-                    src = path.join(FILES_URL, "music_text.png"),
+                    src = path.join("", FILES_URL, "music_text.png"),
                     class = "header-text",
                     alt = "música · μουσική",
                 },
