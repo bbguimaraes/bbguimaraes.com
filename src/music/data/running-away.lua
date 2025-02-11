@@ -14,7 +14,6 @@ the Jazz Bass (with beefy low-end).
 If you could hear the background noise of my thoughts, this is how it would
 sound.
 ]],
-    html '<hr class="small-div" />',
     blockquote(lines {
         par [[
 Why'd you keep on running,<br />
