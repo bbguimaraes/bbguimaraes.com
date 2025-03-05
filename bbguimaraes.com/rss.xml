@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 16 Feb 2025 08:22:49 +0000</pubDate>
-        <lastBuildDate>Sun, 16 Feb 2025 08:22:49 +0000</lastBuildDate>
+        <pubDate>Wed, 05 Mar 2025 00:10:24 +0000</pubDate>
+        <lastBuildDate>Wed, 05 Mar 2025 00:10:24 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -99,6 +99,14 @@
             <pubDate>Fri, 31 May 2024 06:52:00 GMT</pubDate>
             <category>blog</category>
             <description><p>You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, <span lang="la">“caelum, nón animum mútant, quí tráns mare currunt”</span>.</p><p>But that has gradually changed over the past few years, to the point that I have now, after a week of furious programming, added a new <a href="https://bbguimaraes.com/places">section</a> to this web site dedicated to it.  Read on for an explanation, jump to the <a href="https://bbguimaraes.com/blog/places.html#conclusion">conclusion</a> if you do not like to read (but then this is probably not the place for you in the first place…), or just go directly there and explore.</p></description>
+        </item>
+        <item>
+            <title>Genova</title>
+            <link>https://bbguimaraes.com/places/genova.html</link>
+            <guid>https://bbguimaraes.com/places/genova.html</guid>
+            <pubDate>Sat, 27 Apr 2024 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>Legend says the city was founded by the god Janus, whose two faces watch over past and future — the ruler of time, of gates and passages, of beginnings and endings, of traveling, commerce, and sailing, of war and peace, of morning, birth, journey, transition, and change (it was in honor of him that the Romans named the first month of the year, <i lang="la">Ianuarius</i>, which marks the winter solstice and the transition between years).  This is attested by <span lang="it">Pozzo di Giano</span>, a well in what is considered the founding place of the city of Genova which, like the two-faced Janus, faces both sea and mountain.</description>
         </item>
         <item>
             <title>Terme di Diocleziano</title>
