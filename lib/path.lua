@@ -52,9 +52,9 @@ local function exists(x)
     assert(ok, s, n)
 end
 
---- Returns an iterator for paths contained in a directory.
-local function each(dir)
-    return assert(io.popen("ls " .. dir)):lines()
+--- Returns an iterator for paths contained in one or more directories.
+local function each(...)
+    return assert(io.popen("ls " .. table.concat({...}, " "))):lines()
 end
 
 --- Returns a set whose keys are the names of existing files.
@@ -66,9 +66,9 @@ end
 ---     -- …
 --- end
 --- ```
-local function set(dir)
+local function set(...)
     local ret <const> = {}
-    for x in each(dir) do
+    for x in each(...) do
         ret[x] = true
     end
     return ret
