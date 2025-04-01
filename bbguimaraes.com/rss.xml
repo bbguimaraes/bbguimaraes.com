@@ -32,10 +32,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Wed, 05 Mar 2025 00:10:24 +0000</pubDate>
-        <lastBuildDate>Wed, 05 Mar 2025 00:10:24 +0000</lastBuildDate>
+        <pubDate>Tue, 01 Apr 2025 22:55:19 +0000</pubDate>
+        <lastBuildDate>Tue, 01 Apr 2025 22:55:19 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Portofino</title>
+            <link>https://bbguimaraes.com/places/portofino.html</link>
+            <guid>https://bbguimaraes.com/places/portofino.html</guid>
+            <pubDate>Mon, 31 Mar 2025 18:38:12 GMT</pubDate>
+            <category>place</category>
+            <description>The <a href="https://bbguimaraes.com/places/genova.html">city of Ianus</a> keeps teaching me about movement and change. Ever since my first visit (of many) to Genova, I wanted to explore the coast around it, the <i lang="it">riviera ligure</i>. This weekend, after seeing that the gulf of Tigullio is only about 30km away, and that spring weather had arrived with gusto, I did what any sensible man would: got myself a bicycle and departed the very next day.</description>
+        </item>
         <item>
             <title>The godfather</title>
             <link>https://bbguimaraes.com/music/godfather.html</link>
