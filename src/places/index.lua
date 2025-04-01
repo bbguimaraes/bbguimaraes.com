@@ -8,7 +8,9 @@ local FILES_URL <const> = path.join("", "files", "places")
 local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
 local PAGE <const> =  path.join("src", "include", "places", "page.lua")
 
-local IMAGES <const> = path.set(path.join(FILES_DIR, "*.jpg"))
+local IMAGES <const> = path.set(
+    path.join(FILES_DIR, "*.jpg"),
+    path.join(FILES_DIR, "*/*.jpg"))
 
 local cit0 <const> = lines {
     par [[
