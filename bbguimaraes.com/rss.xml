@@ -32,17 +32,25 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 12 May 2025 18:59:15 +0000</pubDate>
-        <lastBuildDate>Mon, 12 May 2025 18:59:15 +0000</lastBuildDate>
+        <pubDate>Sun, 13 Jul 2025 09:53:35 +0000</pubDate>
+        <lastBuildDate>Sun, 13 Jul 2025 09:53:35 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Trapani</title>
+            <link>https://bbguimaraes.com/places/trapani.html</link>
+            <guid>https://bbguimaraes.com/places/trapani.html</guid>
+            <pubDate>Wed, 23 Apr 2025 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>The trip across Sicily started at the western end, in the city of Trapani and the adjoining archipelago, <a href="https://bbguimaraes.com/places/favignana.html">Isole Egadi</a>. Before Greeks, Phoenicians, and Romans competed for dominance over Sicily — possibly even before the fall of Troy in the XII century B.C. — this region was inhabited by the <span lang="grc">Ελυμοι</span> (<i>Elymoi</i>, “Elymians”), who had built a city and a temple in the nearby mount <span lang="grc">Ἔρυξ</span> (<i>Éryx</i>, modern Erice). It even appears in Virgil's Aeneid, as the place where Aeneas burries his father Anchise before sailing to the penninsula.</description>
+        </item>
         <item>
             <title>Favignana</title>
             <link>https://bbguimaraes.com/places/favignana.html</link>
             <guid>https://bbguimaraes.com/places/favignana.html</guid>
             <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
             <category>place</category>
-            <description>My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the <a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of Trapani and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to <a href="https://bbguimaraes.com/places/capri.html">Capri</a>), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.</description>
+            <description>My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the <a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of <a href="https://bbguimaraes.com/places/trapani.html">Trapani</a> and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to <a href="https://bbguimaraes.com/places/capri.html">Capri</a>), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.</description>
         </item>
         <item>
             <title>Portofino</title>

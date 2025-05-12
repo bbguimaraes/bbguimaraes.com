@@ -1,5 +1,5 @@
 local description <const> = [[
-My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the <a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of Trapani and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to <a href="https://bbguimaraes.com/places/capri.html">Capri</a>), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.
+My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the <a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of <a href="https://bbguimaraes.com/places/trapani.html">Trapani</a> and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to <a href="https://bbguimaraes.com/places/capri.html">Capri</a>), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.
 ]]
 
 local content <const> = lines {
@@ -8,14 +8,15 @@ My first stop in Sicily — and I could not have chosen a better one — was
 Favignana, the largest of the <a
 href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>.
 These are an archipelago of five islands in the Strait of Sicily, the closest
-about 7km from its western end, in the region of Trapani and Marsala.  The
-Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>,
-<span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats”
-(making them etymologicaly related to <a href="capri.html">Capri</a>), and
-according to English novelist Samuel Butler, author of a distinguished
-translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>,
-“holy island”), the island of Marettimo, furthest from the coast, is none other
-than Ithaca, the famous homeland that Odysseus seeks throughout the epic.
+about 7km from its western end, in the region of
+<a href="trapani.html">Trapani</a> and Marsala.  The Greeks called them <span
+lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates
+Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly
+related to <a href="capri.html">Capri</a>), and according to English novelist
+Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900,
+their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo,
+furthest from the coast, is none other than Ithaca, the famous homeland that
+Odysseus seeks throughout the epic.
 ]],
     par [[
 Regardless of the veracity of this claim, the islands have significant
@@ -142,8 +143,8 @@ The quarry of Cala Graziosa.
 }, {
     path = "favignana/9.jpg",
     text = [[
-Trapani and Monte Erice, in the main island of Sicily, visible in the far
-distance.
+<a href="trapani.html">Trapani</a> and Monte Erice, in the main island of
+Sicily, visible in the far distance.
 ]],
 }, {
     path = "favignana/10.jpg",
@@ -203,7 +204,8 @@ My companion, which took me all along the island that day.
 }, {
     path = "favignana/27.jpg",
     text = [[
-Recovering with a delicious risotto alla marinara back in Trapani.
+Recovering with a delicious risotto alla marinara back in <a
+href="trapani.html">Trapani</a>.
 ]],
 }, {
     path = "favignana/28.jpg",
