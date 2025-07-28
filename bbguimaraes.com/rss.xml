@@ -32,8 +32,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 27 Oct 2025 21:56:55 +0000</pubDate>
-        <lastBuildDate>Mon, 27 Oct 2025 21:56:55 +0000</lastBuildDate>
+        <pubDate>Sun, 16 Nov 2025 15:03:08 +0000</pubDate>
+        <lastBuildDate>Sun, 16 Nov 2025 15:03:08 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -54,6 +54,14 @@
             <pubDate>Mon, 14 Jul 2025 00:00:00 GMT</pubDate>
             <category>place</category>
             <description>Recently, I was recommended a trip to Perugia to attend the <a href="https://www.umbriajazz.it">Umbria Jazz festival</a> (my friends are <i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I saw how incredible the program was, with artists such as Herbie Hancock, and Marcus Miller, Jacob Collier all in the same festival.</description>
+        </item>
+        <item>
+            <title>Ustica</title>
+            <link>https://bbguimaraes.com/places/ustica.html</link>
+            <guid>https://bbguimaraes.com/places/ustica.html</guid>
+            <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>Whenever my itinerary includes large cities — which are not my favorite places, you should know by now, I can only take so much of them at a time — I must <i lang="it">per forza</i> intersperse escapes to remote places. As soon as I got to Sicily's capital and largest city, Palermo (one walk through <i lang="it">La Loggia</i> at night, with the incessant chatter of the Italian evenings, was enough), I fled to the small volcanic island of <i lang="it">Ustica</i>, about 70km north towards the heart of the Tyrrhenian sea.</description>
         </item>
         <item>
             <title>Trapani</title>
