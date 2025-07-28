@@ -25,7 +25,7 @@ local citation <const> = lines {
     "and kept far away from the shores of Italy.<br />",
     "Is this the prize for virtue? Is this how you restore our rule?<br />",
     "<br />",
-    quote_footer("Virgil", "Aeneid"),
+    quote_footer("Publius Vergilius Maro", "Aeneis", "I.241"),
 }
 
 local images <const> = {

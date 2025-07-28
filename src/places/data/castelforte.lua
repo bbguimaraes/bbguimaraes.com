@@ -39,9 +39,11 @@ for a defence”.
     tag("footer", nil, lines {
         "— Ξενοφων,",
         tag("cite", nil, "Ἀπολογία Σωκράτους"),
+        "2",
         "<br />",
         '<span class="hidden">— </span>Xenophon,',
         tag("cite", nil, "Apology of Socrates"),
+        "2",
         "<br />",
     }),
 }

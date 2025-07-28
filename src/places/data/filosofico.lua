@@ -17,6 +17,7 @@ starry heaven above me and the moral law within me
 Due cose riempiono l'animo di ammirazione e venerazione sempre nuova e
 crescente…: il cielo stellato sopra di me e la legge morale in me
 ]],
+    quote_footer("Immanuel Kant", "Critique of pure reason", "5:161.33"),
 }
 
 local images <const> = {{

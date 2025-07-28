@@ -37,6 +37,7 @@ some wishing to die, from the very fear of dying; some lifting their hands to
 the gods; but the greater part convinced that there were now no gods at all, and
 that the final endless night of which we have heard had come upon the world.
 ]],
+    quote_footer("Pliny the Younger", "Epistulae", "LXV: To Tacitus"),
 }
 
 local images <const> = {{

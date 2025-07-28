@@ -50,6 +50,7 @@ must be either a lower animal or a god
         "<br />",
         '<span class="hidden">— </span>Aristotle,',
         tag("cite", nil, "Politics"),
+        "1253a.1 / 1253a.20",
     }),
 }
 
