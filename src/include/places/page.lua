@@ -34,6 +34,7 @@ local function generate_figure(_, t)
     local name <const>, poster <const>, text <const> = t.path, t.poster, t.text
     if name:match("%.mp4$") then
         content = video {
+            class = "gallery-shadow",
             controls = true,
             preload = "none",
             width = t.width,
@@ -43,6 +44,7 @@ local function generate_figure(_, t)
         }
     else
         content = image {
+            class = "gallery-shadow",
             alt = name,
             src = file_url(poster),
         }
@@ -55,7 +57,7 @@ local function generate_figure(_, t)
     if text then
         table.insert(l, text_tag("figcaption", nil, text))
     end
-    return tag("figure", nil, lines(l))
+    return tag("figure", {class = "gallery-item"}, lines(l))
 end
 
 local images <const> = util.imap(generate_image, var("images", {}))
