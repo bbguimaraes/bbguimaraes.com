@@ -29,16 +29,15 @@ var_and("content", function(x)
     table.insert(content, div({class = "description"}, x))
 end)
 
-table.insert(l, div({class = "title"}, lines {
+table.insert(l, div({class = "gallery-title"}, lines {
     inline_tag("h2", nil, title),
     html(var("timestamp")[2]),
 }))
 
 table.insert(l, div({class = "preview"}, lines {
-    inline_tag("div", {class = "preview-background"}, ""),
     div({class = "preview-content"}, lines(content)),
 }))
 
 return div(
-    {class = "place hover-on-touch"},
+    {class = "gallery-item gallery-shadow place hover-on-touch"},
     tag("a", {href = var("id") .. ".html"}, lines(l)))

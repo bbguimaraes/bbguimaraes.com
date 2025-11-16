@@ -109,10 +109,6 @@ aside ul {
 }
 
 .videos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5em;
     padding: 2em 1.5em 1.5em 1.5em;
     background-color: black;
 }

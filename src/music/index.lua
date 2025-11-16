@@ -104,7 +104,7 @@ return include "master.lua" {
         image = base_url .. file_url(DIR, "music_og.jpg"),
         url = path.join(base_url, DIR),
     },
-    css = {"/main.css", "music.css"},
+    css = {"/main.css", "/gallery.css", "music.css"},
     js = {"/main.js", "music.js"},
     body_class = "no-margin roman",
     main = lines {
@@ -130,7 +130,7 @@ return include "master.lua" {
             }),
         }),
         main(
-            {class = "videos"},
+            {class = "gallery videos"},
             lines(util.imap(generate_item, files))),
     },
 }

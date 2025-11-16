@@ -14,7 +14,7 @@ local DATA_DIR <const> = path.join("src", DIR, "data")
 local PAGE <const> = include_path(DIR, "page.lua")
 local PREVIEW <const> = include_path(DIR, "preview.lua")
 local PAGE_ENV <const> = {
-    css = {"/main.css", "places.css"},
+    css = {"/main.css", "/gallery.css", "places.css"},
     file_url = function(...) return file_url(DIR, ...) end,
 }
 
@@ -127,7 +127,7 @@ end
 
 return include "master.lua" {
     title = "places",
-    css = {"/main.css", "places.css"},
+    css = {"/main.css", "/gallery.css", "places.css"},
     body_class = "no-margin white-bg roman",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
