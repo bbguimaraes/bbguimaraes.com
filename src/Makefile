@@ -5,6 +5,7 @@ FILES = \
 	blog/index \
 	blog/tags/index \
 	codex/index \
+	comp/index \
 	contact \
 	custos/index \
 	gdb_lua/index \
