@@ -6,9 +6,6 @@ Happy summer (or winter) solstice.
 
 local citation <const> = lines {
     par [[
-Happy summer (or winter) solstice.
-]],
-    par [[
 São versos de selva e campo, se perdem ao vento teatino<br />
 Repontando o meu destino campeia meu pensamento<br />
 Seguem juntitos com o vento se amadrinhando comparças<br />
@@ -41,6 +38,7 @@ return {
     title = "Arroio do Sal",
     timestamp = {"1703203200", "2023-12-22"},
     description = description,
+    content = content,
     citation = citation,
     images = images,
     links = {

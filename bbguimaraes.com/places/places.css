@@ -175,12 +175,6 @@
     padding: 0;
 }
 
-.post hr {
-    width: 38.2%;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-}
-
 .post hr:last-child {
     clear: both;
 }

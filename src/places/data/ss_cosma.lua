@@ -2,17 +2,17 @@ local description <const> = [[The equally small comune of Santi Cosma e Damiano 
 
 local content <const> = lines {
     par [[
-The equally small comune of Santi Cosma e Damiano is situated right next to <a
-href="castelforte.html">Castelforte</a>, on the same hillside overlooking the
+The equally small comune of Santi Cosma e Damiano is situated right next to
+<a href="castelforte.html">Castelforte</a>, on the same hillside overlooking the
 Garigliano valley and the gulf of <a href="gaeta.html">Gaeta</a> (but don't mix
 the two towns, or you'll upset the locals on both sides).  There is a stony road
 which climbs almost to the top of the hill, the highest point in the surrounding
-area, the village of <a
-href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its
+area, the village of
+<a href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its
 12th-century Romanesque watch tower, with a view of not only the valley and the
 vastness of the gulf, but stretching all the way to monte Cairo in the north,
-monti Aurunci in the west, Roccamonfina to the east, and going as far as <a
-href="vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east
+monti Aurunci in the west, Roccamonfina to the east, and going as far as
+<a href="vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east
 when the weather is sufficiently clear.
 ]],
     par [[

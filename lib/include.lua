@@ -36,7 +36,9 @@ local function print_stack(name, dir, file)
         io.stderr:write("error: file not found:\n")
         io.stderr:write("  name: ", name, "\n")
         io.stderr:write("  dir: ", dir, "\n")
-        io.stderr:write("  path: ", file, "\n")
+        if file then
+            io.stderr:write("  path: ", file, "\n")
+        end
     end
     io.stderr:write("include stack:\n")
     local path <const> = top()["PATH"]

@@ -118,8 +118,8 @@ local gdb_lua <const> = item {
 
 local proc <const> = item {
     href = "/files/cv.pdf",
-    title = "CV",
-    short = "CV",
+    title = "curriculum vitae",
+    short = "curriculum vitae",
     content = "self",
 }
 
@@ -155,25 +155,22 @@ return include "master.lua" {
     body_class = "w80",
     title = "bbguimaraes.com",
     js = {},
-    main = concat {
-        div({id = "home"}, lines {
-            image {
-                id = "logo",
-                alt = "logo",
-                src = "triangle.png",
-            },
-            tag("nav", nil, ul {
-                list(root, {
-                    list(bin, {custos, impero, machinatrix, nngn, subs}),
-                    list(html "dev", {random, snd, stdin, stdout}),
-                    list(html "etc", {pub_asc}),
-                    list(lib, {codex, gdb_lua}),
-                    list(html "proc", {proc}),
-                    list(html "src", {github, gitlab}),
-                    list(html "var", {log, loc}),
-                }),
+    main = div({id = "home"}, lines {
+        image {
+            id = "logo",
+            alt = "logo",
+            src = "triangle.png",
+        },
+        tag("nav", nil, ul {
+            list(root, {
+                list(bin, {custos, impero, machinatrix, nngn, subs}),
+                list(html "dev", {random, snd, stdin, stdout}),
+                list(html "etc", {pub_asc}),
+                list(lib, {codex, gdb_lua}),
+                list(html "proc", {proc}),
+                list(html "src", {github, gitlab}),
+                list(html "var", {log, loc}),
             }),
         }),
-    },
-    "\n",
+    }),
 }

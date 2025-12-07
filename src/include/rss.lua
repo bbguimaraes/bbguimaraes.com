@@ -30,6 +30,7 @@ local header <const> = [[
 <!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
 <!ATTLIST atom:link href CDATA #REQUIRED rel CDATA #REQUIRED type CDATA #REQUIRED>
 <!ATTLIST a href CDATA #REQUIRED>
+<!ATTLIST a lang CDATA #IMPLIED>
 <!ATTLIST i lang CDATA #IMPLIED>
 <!ATTLIST span lang CDATA #IMPLIED>
 ]>]]

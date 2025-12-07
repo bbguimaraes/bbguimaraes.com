@@ -56,31 +56,24 @@ local function generate_figure(_, t)
     return tag("figure", nil, lines(l))
 end
 
-local function add_sep(t)
-    if #t ~= 0 then
-        table.insert(t, html "<hr />")
-    end
-end
-
 local images <const> = util.imap(generate_image, var("images", {}))
 
 local l <const> = {}
 var_and("content", function(x)
-    add_sep(l)
     table.insert(l, x)
+    table.insert(l, tag("hr", {class = "small-div"}))
 end)
 var_and("citation", function(x)
-    add_sep(l)
     table.insert(l, blockquote(x))
+    table.insert(l, tag("hr", {class = "small-div"}))
 end)
-add_sep(l)
 
 return include "master.lua" {
     css = {"/main.css", "places.css"},
     og = {
         type = "article",
         title = title,
-        image = #images ~= 0 and path.join(base_url, images[1].poster) or nil,
+        image = #images ~= 0 and (base_url .. images[1].poster) or nil,
         url = path.join(base_url, "places", var("id") .. ".html"),
     },
     body_class = "white-bg roman",

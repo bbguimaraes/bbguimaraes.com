@@ -6,8 +6,8 @@ At the foot of <a href="vesuvius.html">mount Vesuvius</a> there existed, until
 the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it
 was founded by the Greek hero <span lang="grc">Ἡρακλῆς</span> (Heracles, known
 to the Romans as Hercules) himself while returning from Iberia after one of his
-twelve labors, and named after him.  While not as large as the nearby city of <a
-href="pompeii.html">Pompeii</a>, its position at (what was then) the seaside
+twelve labors, and named after him.  While not as large as the nearby city of
+<a href="pompeii.html">Pompeii</a>, its position at (what was then) the seaside
 made it a retreat for Roman nobility including, it is believed, Julius Caesar's
 father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand
 inhabitants enjoyed decent prosperity.

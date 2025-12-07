@@ -21,6 +21,8 @@ for _, t in ipairs(var("sections")) do
 end
 
 return include "master.lua" {
-    body_class = "w80",
+    body_class = var_and("body_class", function(x)
+        return x .. " w80"
+    end) or "w80",
     main = main(nil, lines(l)),
 }

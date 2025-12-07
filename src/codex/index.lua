@@ -10,7 +10,6 @@ end
 
 return include "list_simple.lua" {
     title = "codex",
-    body_class = "w80",
     nav_path = {{nil, "codex"}},
     description = inline_tag("p", nil, "Code experiments."),
     sections = {{

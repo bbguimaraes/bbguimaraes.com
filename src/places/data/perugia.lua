@@ -2,10 +2,10 @@ local description <const> = [[Recently, I was recommended a trip to Perugia to a
 
 local content <const> = lines {
     par [[
-Recently, I was recommended a trip to Perugia to attend the <a
-href="https://www.umbriajazz.it">Umbria Jazz festival</a> (my friends are <i
-lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I saw
-how incredible the program was, with artists such as Herbie Hancock, Marcus
+Recently, I was recommended a trip to Perugia to attend the
+<a href="https://www.umbriajazz.it">Umbria Jazz festival</a> (my friends are
+<i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I
+saw how incredible the program was, with artists such as Herbie Hancock, Marcus
 Miller, and Jacob Collier all in the same festival.
 ]],
     par [[

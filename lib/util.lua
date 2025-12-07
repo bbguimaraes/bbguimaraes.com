@@ -93,6 +93,5 @@ return {
     ivalues = ivalues,
     copy = copy,
     exists = exists,
-    defer = function(...) return defer:new(...) end
-,
+    defer = function(...) return defer:new(...) end,
 }

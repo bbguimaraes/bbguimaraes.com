@@ -5,8 +5,8 @@ My first stop in Sicily — and I could not have chosen a better one — was Fav
 local content <const> = lines {
     par [[
 My first stop in Sicily — and I could not have chosen a better one — was
-Favignana, the largest of the <a
-href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>.
+Favignana, the largest of the
+<a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>.
 These are an archipelago of five islands in the Strait of Sicily, the closest
 about 7km from its western end, in the region of
 <a href="trapani.html">Trapani</a> and Marsala.  The Greeks called them <span

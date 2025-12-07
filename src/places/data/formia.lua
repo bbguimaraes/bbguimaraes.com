@@ -9,8 +9,8 @@ lang="grc">Όρμιαι</span> (<span lang="la">Hormiae</span> in Latin, from a 
 for “harbor”) refers to its many ports and the mild maritime climate provided by
 its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many
 of these villae and ports can still be seen all they from the city center to the
-rocky shore on the way to <a
-href="https://www.openstreetmap.org/node/8390626221">monte Scauri</a>, with
+rocky shore on the way to
+<a href="https://www.openstreetmap.org/node/8390626221">monte Scauri</a>, with
 salient pieces of two-thousand-year-old mosaics coming out of the rock every now
 and then.
 ]],

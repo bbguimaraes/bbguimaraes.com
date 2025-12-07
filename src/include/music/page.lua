@@ -13,17 +13,17 @@ local video_url <const> = string.format("/files/music/%s.mp4", file_name)
 local audio_url <const> = string.format("/files/music/%s.ogg", file_name)
 local scores <const> = var("scores", false)
 
--- XXX name
-local links <const> = {}
-table.insert(links, inline_tag("i", nil, var("date")[2]))
+local info <const> = {}
+table.insert(info, inline_tag("i", nil, var("date")[2]))
 
-local info <const> = var "info"
-table.move(info, 1, #info, #links + 1, links)
+var_and("info", function(x)
+    table.move(x, 1, #x, #info + 1, info)
+end)
 
 if type(scores) == "table" then
-    table.move(scores, 1, #scores, #links + 1, links)
+    table.move(scores, 1, #scores, #info + 1, info)
 elseif scores then
-    table.insert(links, lines {
+    table.insert(info, lines {
         link {
             href = string.format("/files/music/%s.pdf", file_name),
             content = "score",
@@ -39,7 +39,7 @@ end
 
 var_and("links", function()
     for _, x in ipairs(include "link_list.lua" {}) do
-        table.insert(links, x)
+        table.insert(info, x)
     end
 end)
 
@@ -48,9 +48,9 @@ return include "master.lua" {
     og = {
         type = "music.song",
         title = title,
-        image = path.join(base_url, poster_url),
-        url = path.join(base_url, url),
-        video = path.join(base_url, video_url),
+        image = base_url .. poster_url,
+        url = base_url .. url,
+        video = base_url .. video_url,
     },
     body_class = "w80 roman",
     nav_path = {{".", "music"}, {nil, title}},
@@ -67,7 +67,7 @@ return include "master.lua" {
             src = audio_url,
         },
         inline_tag("h1", nil, title),
-        div({class = "info"}, ul(links)),
+        div({class = "info"}, ul(info)),
         var("content", false) or nil,
     }),
 }

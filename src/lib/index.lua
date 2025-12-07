@@ -258,6 +258,13 @@ local honorable <const> = {
         "wuthering_heights.jpg",
         "Emily Brontë"),
     honorable(
+        "https://www.penguinrandomhouse.com/books/241840/the-brothers-karamazov-by-fyodor-dostoevsky-translated-by-richard-pevear-and-larissa-volokhonsky-introduction-by-malcolm-jones/",
+        "The brothers Karamazov",
+        "The brothers Karamazov",
+        "the-brothers-karamazov",
+        "the_brothers_karamazov.jpg",
+        "Fyodor Dostoevsky"),
+    honorable(
         "https://www.penguin.co.uk/books/57587/siddhartha-by-hermann-hesse-intro--paulo-coelho/9780141189574",
         "Siddhartha",
         "Siddhartha",
@@ -271,13 +278,6 @@ local honorable <const> = {
         "the-screwtape-letters",
         "the_screwtape_letters.jpg",
         "C. S. Lewis"),
-    honorable(
-        "https://www.penguinrandomhouse.com/books/241840/the-brothers-karamazov-by-fyodor-dostoevsky-translated-by-richard-pevear-and-larissa-volokhonsky-introduction-by-malcolm-jones/",
-        "The brothers Karamazov",
-        "The brothers Karamazov",
-        "the-brothers-karamazov",
-        "the_brothers_karamazov.jpg",
-        "Fyodor Dostoevsky"),
     honorable(
         "https://www.harpercollins.com/products/the-call-of-the-wild-collins-classics-jack-london",
         "The call<br />of the wild",
@@ -405,7 +405,7 @@ return include "master.lua" {
                         },
                     },
                 },
-                h1_link { "publications", "Publications" },
+                h1_link { "publications", "publications" },
                 books {
                     par [[
 My own arrangements/formattings of classic books.  See original and LaTeX
@@ -413,7 +413,7 @@ sources linked in each entry.
 ]],
                     table.unpack(util.imap(render_book, publications)),
                 },
-                h1_link { "reading-list", "Reading list" },
+                h1_link { "reading-list", "reading list" },
                 par [[
 Book reviews also sometimes appear in my
 <a href="/blog/tags/books.html">blog</a>.
