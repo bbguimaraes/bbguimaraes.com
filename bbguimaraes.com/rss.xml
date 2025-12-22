@@ -33,10 +33,42 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 16 Nov 2025 15:03:08 +0000</pubDate>
-        <lastBuildDate>Sun, 16 Nov 2025 15:03:08 +0000</lastBuildDate>
+        <pubDate>Fri, 09 Jan 2026 09:48:14 +0000</pubDate>
+        <lastBuildDate>Fri, 09 Jan 2026 09:48:14 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Monviso from Moncalieri</title>
+            <link>https://bbguimaraes.com/pictures/monviso-moncalieri.html</link>
+            <guid>https://bbguimaraes.com/pictures/monviso-moncalieri.html</guid>
+            <pubDate>Sat, 08 Nov 2025 00:00:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>Autumn sunset at <span lang="it">Viale del Castello</span> in <span lang="it">Moncalieri</span>, with <span lang="it">Monviso</span> and <span lang="it">Ponte dei Cavalieri Templari</span>.</description>
+        </item>
+        <item>
+            <title>Turin baroque music festival</title>
+            <link>https://bbguimaraes.com/pictures/turin-baroque.html</link>
+            <guid>https://bbguimaraes.com/pictures/turin-baroque.html</guid>
+            <pubDate>Sat, 25 Oct 2025 00:00:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>The 4th edition of the <a href="https://www.tbmf.eu">baroque music festival</a> organized by <a href="https://www.accademiadelsantospirito.it" lang="it">Accademia del Santo Spirito</a>, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.</description>
+        </item>
+        <item>
+            <title>Costigliole d'Asti</title>
+            <link>https://bbguimaraes.com/pictures/costigliole-dasti.html</link>
+            <guid>https://bbguimaraes.com/pictures/costigliole-dasti.html</guid>
+            <pubDate>Thu, 25 Sep 2025 00:00:00 GMT</pubDate>
+            <category>pictures</category>
+            <description><span lang="it">Chiesa della Confraternita di San Gerolamo</span>.</description>
+        </item>
+        <item>
+            <title>Total lunar eclipse</title>
+            <link>https://bbguimaraes.com/pictures/eclipse-2025.html</link>
+            <guid>https://bbguimaraes.com/pictures/eclipse-2025.html</guid>
+            <pubDate>Sun, 07 Sep 2025 00:00:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>Seen from <span lang="it">Torino</span>, Italy, behind <span lang="it">Collina di Superga</span> and <span lang="it">Chiesa della Gran Madre di Dio</span>, from <span lang="it">Lungo Po Armando Diaz</span> across <span lang="it">Ponte Vittorio Emanuele</span> I and the river Po.</description>
+        </item>
         <item>
             <title>Autumn leaves (solo)</title>
             <link>https://bbguimaraes.com/music/autumn-leaves-solo.html</link>
