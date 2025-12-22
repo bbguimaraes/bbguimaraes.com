@@ -63,6 +63,12 @@ main {
     margin-top: 2em;
 }
 
+#reading-list .isbn {
+    display: inline-block;
+    min-width: 14ch;
+    font-style: italic;
+}
+
 h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
