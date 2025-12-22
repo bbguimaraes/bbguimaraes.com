@@ -419,8 +419,9 @@ sources linked in each entry.
                 },
                 h1_link { "reading-list", "reading list" },
                 par [[
-Book reviews also sometimes appear in my
-<a href="/blog/tags/books.html">blog</a>.
+<a href="list.html">Here</a> I maintain a running list of every book I have ever
+read, by year.  Book reviews also sometimes appear in my <a
+href="/blog/tags/books.html">blog</a>.
 ]],
                 h2_link { "general", "general" },
                 books(util.imap(render_book, general)),

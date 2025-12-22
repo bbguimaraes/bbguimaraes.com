@@ -11,6 +11,7 @@ FILES = \
 	impero/index \
 	index \
 	lib/index \
+	lib/list \
 	machinatrix/index \
 	music/about \
 	music/index \
