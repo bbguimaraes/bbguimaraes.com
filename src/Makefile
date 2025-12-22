@@ -21,6 +21,8 @@ FILES = \
 	nngn/screenshots/lighting \
 	nngn/screenshots/post \
 	nngn/screenshots/tools \
+	pictures/about \
+	pictures/index \
 	places/index \
 	random/index \
 	subs/index \
@@ -32,6 +34,7 @@ FILES = \
 	$(wildcard blog/data/*) \
 	$(wildcard lib/data/*) \
 	$(wildcard music/data/*) \
+	$(wildcard pictures/data/*) \
 	$(wildcard places/data/*)
 ../bbguimaraes.com/rss.xml:
 	cd ../ && src/generate.lua src/rss.lua > src/$@
