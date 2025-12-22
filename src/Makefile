@@ -26,7 +26,8 @@ FILES = \
 	places/index \
 	random/index \
 	subs/index \
-	talks/index
+	talks/index \
+	writing/index
 
 ../bbguimaraes.com/rss.xml: \
 	rss.lua \
@@ -35,7 +36,8 @@ FILES = \
 	$(wildcard lib/data/*) \
 	$(wildcard music/data/*) \
 	$(wildcard pictures/data/*) \
-	$(wildcard places/data/*)
+	$(wildcard places/data/*) \
+	$(wildcard writing/data/*)
 ../bbguimaraes.com/rss.xml:
 	cd ../ && src/generate.lua src/rss.lua > src/$@
 

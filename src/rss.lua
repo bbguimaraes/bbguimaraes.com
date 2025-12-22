@@ -82,6 +82,11 @@ for x in path.each(pictures_dir) do
     generate_common("pictures", x, t)
 end
 
+local writing_dir <const> = path.join("src", "writing", "data")
+for x in path.each(writing_dir) do
+    generate_common("writing", x, t)
+end
+
 table.sort(file_names, function(x, y)
     return files[y].timestamp[1] < files[x].timestamp[1]
 end)
