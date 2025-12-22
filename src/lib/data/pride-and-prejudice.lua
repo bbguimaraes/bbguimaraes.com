@@ -13,6 +13,14 @@ local intro <const> = lines {
     par(description),
 }
 
+local img <const> = image {
+    src = "/files/lib/elizabeth_and_darcy.jpg",
+    alt = "Elizabeth and Darcy",
+    title = "Elizabeth and Darcy",
+    class = "hor-center image",
+    style = "max-width: 100%",
+}
+
 local content <const> = lines {
     tag("h3", nil, "The true philosopher"),
     blockquote(par [[
@@ -97,8 +105,8 @@ perfectly portrayed in the marriages in <i>Pride and Prejudice</i>.
 Lydia and Wickham, their imprudent escapade and hurried marriage, are exemplars
 of the <i>relationship of pleasure</i>.  She, vain and vulgar, and for that
 reason incontinent and irresponsible; he, deceitful and superficial, with merely
-a semblance of character; "a couple who were only brought together because their
-passions were stronger than their virtue", as Elizabeth puts it.  Charlotte and
+a semblance of character; “a couple who were only brought together because their
+passions were stronger than their virtue”, as Elizabeth puts it.  Charlotte and
 Mr. Collins, on the other hand, exemplify the <i>relationship of utility</i>,
 equally despised by her.
 ]],
@@ -108,8 +116,8 @@ initial infatuation ends, Mr. and Mrs. Bennet's relationship deteriorates.  When
 Wickham no longer sees a benefit in being with his current companion, he moves
 on to another.  To these is opposed Elizabeth's relation with Darcy, the
 <i>relationship of virtue</i>.  It is the only one that can endure: as the
-Philosopher says, and the novel corroborates, it "lasts as long as they are good
-&mdash; and goodness is an enduring thing".  And it is virtue that Austen extols
+Philosopher says, and the novel corroborates, it “lasts as long as they are good
+&mdash; and goodness is an enduring thing”.  And it is virtue that Austen extols
 through Mary when she, in a lucid moment of departure from her usual overbearing
 erudite tone, proclaims:
 ]],
@@ -132,13 +140,13 @@ to these without ever betraying their own (feminine) spirit, true magnanimity.
 ]],
     par [[
 Elizabeth's wild character is consummated in her relationship with Darcy (and so
-is his, in turn, in its own way); she becomes the "truly accomplished woman"
-prophesied earlier: "a fearsome thing to behold" (another line from the film
+is his, in turn, in its own way); she becomes the “truly accomplished woman”
+prophesied earlier: “a fearsome thing to behold” (another line from the film
 which is not in the book but could very well be).  She ponders when beginning to
 feel affection for Darcy after reading his letter:
 ]],
     blockquote(par [[
-"How despicably have I acted!" she cried.  "I, who have prided myself on my
+“How despicably have I acted!” she cried.  “I, who have prided myself on my
 discernment!  I, who have valued myself on my abilities! who have often
 disdained the generous candour of my sister, and gratified my vanity in useless
 or blameless distrust.  How humiliating is this discovery!  Yet, how just a
@@ -146,20 +154,20 @@ humiliation!  Had I been in love, I could not have been more wretchedly blind.
 But vanity, not love, has been my folly.  Pleased with the preference of one,
 and offended by the neglect of the other, on the very beginning of our
 acquaintance, I have courted prepossession and ignorance, and driven reason away
-where either were concerned.  Till this moment, I never knew myself".
+where either were concerned.  Till this moment, I never knew myself”.
 ]]),
     par [[
 Her last phrase echoes the ancient Delphic injunction:
 <a href="https://en.wikipedia.org/wiki/Know_thyself" lang="grc">γνῶθι σεαυτόν</a>;
-Plato, Aristotle's revered teacher, in his <a href="lib/#symposium"><i>Symposium</i></a>
-has Diotima of Mantinea relate to Socrates that the ultimate function of love is
-to reveal the path to beauty and virtue.  Continuing this ancient line of
-philosophy, Austen's characters are completely transformed, through their
-relationship, into more fully-realized and better people.  In <i>mutual
-submission</i>, as the passage from Scripture says, their own limitations and
-vices are revealed to them.  And by their commitment to honesty and to each
-other, they are compelled to mutual improvement.  As Darcy says when they are
-finally engaged:
+Plato, Aristotle's revered teacher, in his
+<a href="./#the-symposium"><i>Symposium</i></a> has Diotima of Mantinea relate
+to Socrates that the ultimate function of love is to reveal the path to beauty
+and virtue.  Continuing this ancient line of philosophy, Austen's characters are
+completely transformed, through their relationship, into more fully-realized and
+better people.  In <i>mutual submission</i>, as the passage from Scripture says,
+their own limitations and vices are revealed to them.  And by their commitment
+to honesty and to each other, they are compelled to mutual improvement.  As
+Darcy says when they are finally engaged:
 ]],
     blockquote(par [[
 By you, I was properly humbled.  [&hellip;] You showed me how insufficient were
@@ -171,18 +179,197 @@ all my pretensions to please a woman worthy of being pleased.
 extremely daring for the beginning of the nineteenth century, and written at the
 remarkable age of twenty one (though it was revised fifteen years later prior to
 its publication), continues to be one of the most popular novels &mdash; and
-here "popular" is deserved and not an insult &mdash; because it shows true love:
+here “popular” is deserved and not an insult &mdash; because it shows true love:
 what it requires and what it effects in the soul of those it touches.  And for
 this it will be perpetually relevant.  It is, as its author, femininity at its
 best.
 ]],
-    image {
-        src = "/files/lib/elizabeth_and_darcy.jpg",
-        alt = "Elizabeth and Darcy",
-        title = "Elizabeth and Darcy",
-        class = "hor-center",
-        style = "max-width: 100%",
+    img,
+}
+
+local content_it <const> = lines {
+    blockquote(par [[
+Che cosa sono gli uomini in confronto alle rocce e alle montagne?
+]]),
+    par [[
+Mentre superficialmente è un romanzo, questo da solo non basterebbe a spiegare
+la immensa popolarità di questo libro.  Come il suo titolo iniziale, <i
+lang="en">First Impressions</i> (<i>prime impressioni</i>), suggere, in esso c'è
+molto di più di una semplice storia di amore.  Tratta essenzialmente della
+<i>filosofia</i> dell'amore ma, come romanziera, la esplorazione del tema da
+parte di Austen è quella di un pittore o un poeta: non formale, ma astratta, più
+profonda e accattivante, esprimendo quello che si può sentire ma che non può
+essere facilmente razionalizzato.
+]],
+    tag("h3", nil, "Il vero filosofo"),
+    blockquote(par [[
+Verso la moglie provava un'unica e molto scarsa gratitudine, quella di aver
+contribuito a divertirlo con la sua ignoranza e la sua stupidità.  Non è certo
+questa la felicità che in generale un uomo si aspetta dalla propria moglie, ma
+quando mancano altri motivi di interesse, il vero filosofo trarrà beneficio da
+quelli che gli sono forniti.
+]]),
+    par [[
+Il signor Bennet, il filosofo in questione in questo passaggio così
+caratteristico dell'umore e tono generale del libro, condivide con sua figlia
+uno spirito veramente <a href="apologia.html">socratico</a> nel suo disprezzo e
+disdegno per l'ostentazione e la finzione, pur rimanendo deferenti nei riguardi
+della vera sapienza.  In una delle interazioni centrali con il signor Darcy, la
+loro discussione sulle follie e vizi, vanità e orgoglio, Elizabeth dice su
+questo tipo di derisione:
+]],
+    blockquote(par [[
+Spero di non mettere mai in ridicolo ciò che è saggio e buono.  Stravaganze e
+sciocchezze, capricci e assurdità mi divertono, lo ammetto, e ne rido ogni volta
+che posso.  Ma queste cose, suppongo, sono proprio quelle da cui voi siete
+immune.
+]]),
+    par [[
+La prima affermazione è fondamentale per il libro quanto la seconda: proprio
+come non è semplicemente un romanzo, non è semplice derisione e biasimo sociale.
+Piuttosto, ciascuno dei suoi grandi personaggi ha un impegno verso la verità e
+l'onestà, spesso a suo danno, e questi sono al centro di tutti i rapporti
+esemplari tra di loro.  Questo vale sopratutto per Elizabeth e Darcy, che
+difendono questi principi con vigore:
+]],
+    lines {
+        tag("blockquote", {class = "citation-left"}, par [[
+Non devi difenderla solo perché è Charlotte Lucas.  Non devi, per salvare una
+persona, cambiare il significato della rettitudine e dell'integrità morale, né
+sforzarti di persuadere me o te stessa che l'egoismo sia prudenza, e
+l'incoscienza del pericolo sicurezza di felicità.
+]]),
+        tag("blockquote", {class = "citation-right"}, par [[
+Queste aspre accuse avrebbero potuto essere represse, se avessi nascosto con
+maggiore accortezza le mie resistenze, e vi avessi lusingata a credere di essere
+spronato da un'inclinazione senza riserve, incontaminata; dalla ragione, dalla
+riflessione, da tutto. Ma la finzione, in qualsiasi forma, mi ripugna.
+]]),
     },
+    par [[
+Questa disposizione comune, più di ogni cosa, è la base della loro attrazione
+irresistibile, nonostante la loro iniziale animosità, e lo sviluppo del loro
+romanzo.  In una frase spesso citata del
+<a href="https://it.wikipedia.org/wiki/Orgoglio_e_pregiudizio_(film_2005)">film
+del 2005</a> (superbo di per sé), Elizabeth dice:
+]],
+    blockquote(par [[
+Solo il vero amore può indurmi al matrimonio, ragion per cui morirò zitella.
+]]),
+    par [[
+Anche se non è tratto dal libro, è una buona sintesi delle parole di suo padre
+dopo che Darcy ha chiesto la sua mano in uno degli ultimi capitoli:
+]],
+    blockquote(par [[
+Conosco il tuo carattere, Lizzy.  So che non potrai mai essere né felice né
+degna di rispetto, se non stimerai davvero tuo marito, se non guarderai a lui
+con l'ammirazione che si deve a un uomo superiore.  Le tue brillanti qualità ti
+metterebbero in enorme pericolo in un matrimonio inadeguato.  Non potresti
+evitare discredito e infelicità.  Bambina mia, non farmi soffrire vedendo te
+incapace di rispettare il compagno della tua vita.  Non sai che cosa ti aspetta.
+]]),
+    par [[
+Che la verità e onestà sono una precondizione essenziale per ogni virtù e per
+ogni rapporto significativo è uno dei principi fondamentali del libro.  Non si
+può rispettare qualcuno di cui non ci si fida per la sua onestà.  Questo è
+brillantemente dimostrato dal controesempio negli altri matrimoni della storia.
+]],
+    tag("h3", nil, "Tre tipi di relazione"),
+    par [[
+Aristotele identifica nella sua
+<a href="/lib#the-nicomachean-ethics"><i>Etica</i></a>, una delle più grandi
+opere filosofiche di tutti i tempi, tre tipi di relazioni, secondo l'oggetto del
+loro affetto, e queste sono raffigurate perfettamente nei matrimoni in
+<i>Orgoglio e Pregiudizio</i>.
+]],
+    par [[
+Lydia e Wickham, la loro avventata fuga e il loro matrimonio affrettato, sono
+esemplari della <i>relazione di piacere</i>.  Lei, vanitosa e volgare, e per
+questo motivo incontinente e irresponsabile; lui, ingannevole e superficiale,
+con solo una parvenza di carattere; “una coppia che si era unita solo perché le
+passioni erano state più forti della virtù”, come dice Elizabeth.  Charlotte e
+il signor Collins, d'altra parte, esemplificano la <i>relazione di utilità</i>,
+altrettanto disprezzata da lei.
+]],
+par [[
+Queste due esistono solo finché dura l'interesse corrispondente.  Quando finisce
+la loro infatuazione iniziale, il rapporto tra il signor e la signora Bennet si
+deteriora.  Quando Whickham non vede più alcun beneficio nello stare con la sua
+attuale compagna, passa a un'altra.  A queste si oppone la relazione di
+Elizabeth con Darcy, la <i>relazione di virtù</i>.  È l'unica che può perdurare:
+come dice il Filosofo, e il romanzo corrobora, “perdura dunque finché siano
+buoni e la virtù è cosa stabile”.  Ed è la virtù che Austen esalta attraverso
+Mary quando lei, in un lucido momento di allontanamento del suo solito tono
+schiacciante e erudito, proclama:
+]],
+    blockquote(par [[
+Per quanto infelice sia questo evento per Lydia, possiamo trarne un'utile
+lezione; che in una donna la perdita della virtù è irreparabile, che un passo
+falso la conduce alla rovina eterna, che la sua reputazione non è meno fragile
+della sua bellezza, e che la cautela non sarà mai troppa nel modo di comportarsi
+verso l'indegnità dell'altro sesso.
+]]),
+    tag("h3", nil, "L'amore più profondo"),
+    par [[
+Questa giustapposizione di fragilità e bellezza è un altro segno della grandezza
+di Austen come romanziera.  Scrivendo in un momento in cui il femminismo — il
+movimento con il nome più ironico della storia — e filosofie simili cominciavano
+a prendere forma, lei annienta le loro proposizioni rendendo ammirabili i suoi
+personaggi femminili non perché protestano contro le norme sociali rifiutando
+completamente la moralità e il pudore, ma perché mostrano, attraverso la loro
+adesione a questi senza mai tradire il suo proprio spirito (femminile), vera
+magnanimità.
+]],
+    par [[
+Il carattere selvaggio di Elizabeth è consumato nella sua relazione con Darcy (e
+così è anche il suo, a sua volta, a modo suo): lei diventa la “donna veramente
+realizzata” profetizzata in precedenza: “terrificante da osservare” (un'altra
+frase del film che non viene dal libro, ma potrebbe benissimo venire).  Lei
+riflette quando inizia a provare affetto per Darcy dopo avere letto la sua
+lettera:
+]],
+    blockquote(par [[
+“Ho agito in modo veramente spregevole!” esclamò.  “Io, che ero orgogliosa del
+mio acume!  Io, che mi reputavo così intelligente! che ho spesso disprezzato il
+generoso candore di mia sorella, e gratificato la mia vanità con una diffidenza
+inutile e biasimevole!  Che scoperta umiliante!  Eppure, com'è giusta questa
+umiliazione!  Se fossi stata innamorata, non avrei potuto essere più
+terribilmente cieca.  Ma è stata la vanità, non l'amore, la mia follia.
+Compiaciuta dalla preferenza dell'uno, e offesa dall'indifferenza dell'altro,
+immediatamente dopo averli conosciuti, ho coltivato preconcetti e ignoranza, e
+ho messo da parte il buonsenso nei confronti di entrambi.  Fino a oggi, non ho
+mai saputo chi fossi”.
+]]),
+    par [[
+La sua ultima frase riecheggia l'antica ingiunzione delfica:
+<a href="https://it.wikipedia.org/wiki/Conosci_te_stesso" lang="grc">γνῶθι
+σεαυτόν</a>; Platone, il venerato maestro di Aristotele, nel suo
+<a href="./#the-symposium"><i>Simposio</i></a> fa Diotima di Mantinea raccontare
+a Socrate che la funzione finale dell'amore è rivelare il percorso verso la
+bellezza e la virtù.  Continuando questa antica linea di filosofia, i personaggi
+di Austen sono completamente trasformati, attraverso il loro rapporto, in
+persone più realizzate e migliori.  In <i>reciproca sottomissione</i>, come dice
+il passo della Scrittura, le loro proprie limitazioni e vizi vengono loro
+rivelati.  E grazie al loro impegno verso l'onestà e l'uno verso l'altro, sono
+spinti al miglioramento reciproco.  Come dice Darcy quando sono finalmente
+fidanzati:
+]],
+    blockquote(par [[
+Da te, sono stato giustamente umiliato.  Venni da te senza alcun dubbio su come
+sarei stato accolto.  Mi hai mostrato quanto fossero inadeguate tutte le mie
+pretese di piacere a una donna degna di essere amata.
+]]),
+    par [[
+<i>È una verità</i> (a volte) <i>universalmente riconosciuta</i> che <i>l'amore
+più profondo</i> sia un desiderio universale.  <i>Orgoglio e Pregiudizio</i>,
+estremamente audace per l'inizio del XIX secolo, e scritto all'età straordinaria
+di ventuno (anche se è stato rivisto quindici anni dopo prima della sua
+pubblicazione), continua ad essere uno dei romanzi più popolari — e qui
+“popolare” è meritato e non un insulto — perché mostra il vero amore: ciò che
+richiede e qual effetto ha sulle anime di coloro che tocca.  E per questo sarà
+perpetuamente rilevante.  È, come la sua autrice, la femminilità al suo meglio.
+]],
+    img,
 }
 
 local content_pt <const> = lines {
@@ -279,7 +466,7 @@ casamentos em <i>Orgulho e preconceito</i>.
 Lydia e Wickham, sua escapada imprudente e casamento apressado, são exemplares
 da <i>relação de prazer</i>.  Ela, vã e vulgar, e por essa razão incontinente e
 irresponsável; ele, enganador e superficial, com um mero semblante de caráter;
-"um casal que foi unido porque suas paixões eram mais fortes que sua virtude",
+“um casal que foi unido porque suas paixões eram mais fortes que sua virtude”,
 como Elizabeth diz.  Charlotte e o Sr. Collins, por outro lado, exemplificam a
 <i>relação de utilidade</i>, igualmente desprezada por ela.
 ]],
@@ -288,8 +475,8 @@ Essas duas existem somente enquanto o interesse correspondente existe.  Quando
 seu enfatuamento termina, a relação do Sr. e Sra. Bennet se deteriora.  Quando
 Wickham não vê mais benefício em estar com sua parceira atual, muda para outra.
 A essas é oposta a relação de Elizabeth com Darcy, a <i>relação de virtude</i>.
-É a única que perdura: como o Filósofo diz, e o romance corrobora, ela "dura
-enquanto forem bons &mdash; e a bondade é algo duradouro".  E é a virtude que
+É a única que perdura: como o Filósofo diz, e o romance corrobora, ela “dura
+enquanto forem bons &mdash; e a bondade é algo duradouro”.  E é a virtude que
 Austen exalta através de Mary, quando, num momento lúcido de abandono do seu tom
 gravemente erudito, proclama:
 ]],
@@ -312,14 +499,14 @@ nunca trair seu próprio espírito (feminino), verdadeira magnanimidade.
 ]],
     par [[
 A personalidade bravia de Elizabeth é consumada em sua relação com Darcy (e
-assim é a dele, por sua vez, da sua forma); ela se torna a "mulher
-verdadeiramente realizada" profetizada anteriormente: "algo aterrador de ser
-visto" (outra fala do filme que não vem do livro mas poderia muito bem ter
+assim é a dele, por sua vez, da sua forma); ela se torna a “mulher
+verdadeiramente realizada” profetizada anteriormente: “algo aterrador de ser
+visto” (outra fala do filme que não vem do livro mas poderia muito bem ter
 vindo).  Ela considera quando começa a sentir afeição por Darcy depois de ler
 sua carta:
 ]],
     blockquote(par [[
-"Quão desprezivelmente agi!", ela exclamou.  "Eu, que me orgulhei do meu
+“Quão desprezivelmente agi!”, ela exclamou.  “Eu, que me orgulhei do meu
 discernimento!  Eu, que me valorizei por minhas habilidades! que frequentemente
 desdenhei o candor de minha irmã, e gratifiquei minha vaidade em suspeita inútil
 ou irresponsável.  Quão humilhante é essa descoberta!  Ainda assim, quão justa
@@ -327,20 +514,20 @@ humilhação!  Se tivesse estado apaixonada, não poderia ter sido mais
 miseravelmente cega.  Mas a vaidade, não o amor, foi minha falha.  Agradada pela
 preferência de um, e ofendida pela negligência do outro, bem no começo da nossa
 familiaridade, cortejei o preconceito e a ignorância, e espantei a razão onde
-qualquer uma das duas se envolveu.  Até esse momento, eu nunca me conheci.
+qualquer uma das duas se envolveu.  Até esse momento, eu nunca me conheci”.
 ]]),
     par [[
 A sua frase final ecoa o preceito antigo de Delphi:
 <a href="https://pt.wikipedia.org/wiki/Conhece_a_ti_mesmo" lang="grc">γνῶθι σεαυτόν</a>.
-Platão, o professor reverenciado de Aristóteles, em seu <a href="lib/#symposium"><i>Simpósio</i></a>
-faz Diotima de Mantinea relatar a Sócrates que a função final do amor é revelar
-o caminho para a beleza e a virtude.  Continuando essa linha antiga da
-filosofia, os personagens de Austen são completamente transformados, através de
-sua relação, em pessoas mais plenamente realizadas e melhores.  Em <i>submissão
-mútua</i>, como a passagem da Escritura diz, suas próprias limitações e vícios
-são reveladas a eles.  E pelo seu comprometimento à honestidade e um ao outro,
-são compelidos ao aprimoramento mútuo.  Como Darcy diz quando finalmente ficam
-noivos:
+Platão, o professor reverenciado de Aristóteles, em seu
+<a href="./#the-symposium"><i>Simpósio</i></a> faz Diotima de Mantinea relatar a
+Sócrates que a função final do amor é revelar o caminho para a beleza e a
+virtude.  Continuando essa linha antiga da filosofia, os personagens de Austen
+são completamente transformados, através de sua relação, em pessoas mais
+plenamente realizadas e melhores.  Em <i>submissão mútua</i>, como a passagem da
+Escritura diz, suas próprias limitações e vícios são reveladas a eles.  E pelo
+seu comprometimento à honestidade e um ao outro, são compelidos ao aprimoramento
+mútuo.  Como Darcy diz quando finalmente ficam noivos:
 ]],
     blockquote(par [[
 Por ti, me tornei propriamente humilde.  [&hellip;] Me mostraste como eram
@@ -353,17 +540,11 @@ mais profundo</i> é um desejo universal.  <i>Orgulho e preconceito</i>,
 extremamente audaz para o início do século XIX, e escrito notavelmente aos vinte
 e um anos de idade (apesar de ter sido revisado quinze anos depois antes de sua
 publicação), continua sendo um dos romances mais populares &mdash; e aqui
-"popular" é merecido e não um insulto &mdash; porque mostra o amor verdadeiro: o
+“popular” é merecido e não um insulto &mdash; porque mostra o amor verdadeiro: o
 que requer e o efeito que tem nas almas daqueles que toca.  E por isso vai ser
 perpetuamente relevante.  É, como sua autora, a feminilidade no seu melhor.
 ]],
-    image {
-        src = "/files/lib/elizabeth_and_darcy.jpg",
-        alt = "Elizabeth and Darcy",
-        title = "Elizabeth and Darcy",
-        class = "hor-center",
-        style = "max-width: 100",
-    },
+    img,
 }
 
 local citations <const> = {{
@@ -1632,20 +1813,23 @@ unable to respect your partner in life.  You know not what you are about".
 return {
     title = {
         en = "Pride and prejudice",
+        it = "Orgoglio e pregiudizio",
         pt = "Orgulho e preconceito",
     },
     link = "https://gutenberg.org/ebooks/1342",
     cover = "pride_and_prejudice.jpg",
     author = {
         en = "Jane Austen",
+        it = "Jane Austen",
         pt = "Jane Austen",
     },
     timestamp = { 1690400089, "2023-07-26T19:34:49" },
-    languages = { "en", "pt" },
+    languages = { "en", "it", "pt" },
     description = description,
     intro = intro,
     content = {
         en = content,
+        it = content_it,
         pt = content_pt,
     },
     citations = citations,
