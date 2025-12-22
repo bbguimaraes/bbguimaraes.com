@@ -26,7 +26,8 @@ FILES = \
 	places/index \
 	random/index \
 	subs/index \
-	talks/index
+	talks/index \
+	writing/index
 
 ../bbguimaraes.com/rss.xml: \
 	rss.lua \
