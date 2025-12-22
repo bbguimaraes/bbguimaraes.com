@@ -108,6 +108,19 @@ local function ins_map(f, t)
     return ret
 end
 
+--- Similar to the Lua function, but generates a table.
+local function table_concat(t, x)
+    local ret <const>, next_x = {}
+    for _, y in ipairs(t) do
+        if next_x then
+            table.insert(ret, next_x)
+        end
+        next_x = x
+        table.insert(ret, y)
+    end
+    return ret
+end
+
 --- Sorts \p t in place and returns it.
 local function sorted(t, f)
     table.sort(t, f)
@@ -173,6 +186,7 @@ return {
     map = map,
     imap = imap,
     ins_map = ins_map,
+    table_concat = table_concat,
     sorted = sorted,
     group_by_sorted = group_by_sorted,
     igroup_by_sorted = igroup_by_sorted,
