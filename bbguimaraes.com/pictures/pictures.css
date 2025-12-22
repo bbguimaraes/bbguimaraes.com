@@ -1,0 +1,27 @@
+.header blockquote {
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.header p:last-child {
+    margin: 1em;
+    text-align: right;
+}
+
+aside {
+    float: right;
+    border: 1px solid;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+aside ul {
+    margin-bottom: 0;
+    padding-left: 1em;
+}
+
+.gallery {
+    align-items: center;
+}
