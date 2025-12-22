@@ -304,6 +304,10 @@ function property(k, v)
     })
 end
 
+local function centered_quote(t)
+    return div({class = "center-text"}, div({class = "inline-block"}, t))
+end
+
 local function quote_footer(author, cite, extra, pre)
     pre = pre or "—"
     assert(author or cite)
@@ -594,6 +598,7 @@ return {
     main = main,
     blockquote = blockquote,
     property = property,
+    centered_quote = centered_quote,
     quote_footer = quote_footer,
     ul = ul,
     ol = ol,

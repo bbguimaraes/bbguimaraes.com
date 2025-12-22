@@ -1,0 +1,45 @@
+.header {
+    position: relative;
+}
+
+.header img {
+    object-fit: cover;
+    min-height: 288px;
+    width: 100%;
+}
+
+.header .citation {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+.header blockquote {
+    font-size: 120%;
+    text-shadow:
+        4px 4px 2px var(--bg-black),
+        4px 4px 8px var(--bg-black);
+}
+
+.header blockquote,
+.header a {
+    color: var(--bg-white);
+}
+
+.article-preview {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.article-preview .article-title {
+    margin-bottom: 0;
+}
+
+.article-preview p {
+    margin: 0.5em 0;
+}
+
+.article img {
+    max-width: 100%;
+    box-shadow: 4px 4px 12px var(--text-color-white);
+}
