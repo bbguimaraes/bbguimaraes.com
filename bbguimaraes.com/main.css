@@ -1,3 +1,57 @@
+@property --font-size-mono {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 16px;
+}
+
+@property --font-size-roman {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 18px;
+}
+
+@property --bg-black {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: black;
+}
+
+@property --bg-white {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: white;
+}
+
+@property --text-color-white {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #444444;
+}
+
+@property --text-color-base {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #a0a0a0;
+}
+
+@property --text-color-black {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #a0a0a0;
+}
+
+@property --text-color-visited {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #606060;
+}
+
+@property --margin-body {
+    syntax: "*";
+    inherits: true;
+    initial-value: 1rem;
+}
+
 @font-face {
     font-family: "P052";
     src: url("/files/fonts/p052.otf");
@@ -23,17 +77,19 @@
 }
 
 body {
-    background-color: black;
+    background-color: var(--bg-black);
     font-family: Monospace;
-    font-size: 16px;
-    margin-left: 1em;
-    margin-right: 1em;
+    font-size: var(--font-size-mono);
+    color: var(--text-color-base);
+    margin-left: var(--margin-body);
+    margin-right: var(--margin-body);
     hyphens: auto;
 }
 
 .white-bg:not(.black-bg) {
-    background-color: white;
-    color: #444444;
+    background-color: var(--bg-white);
+    color: var(--text-color-white);
+    --text-color-base: var(--text-color-white);
 }
 
 .no-margin {
@@ -41,12 +97,12 @@ body {
 }
 
 .black-bg {
-    background-color: black;
+    background-color: var(--bg-black);
 }
 
 .roman {
     font-family: "P052", Palatino, 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-size: var(--font-size-roman);
 }
 
 .hor-center {
@@ -64,17 +120,17 @@ h1, h2, h3 {
     font-weight: normal;
 }
 
-body, a, select {
-    color: #a0a0a0;
+a, select {
+    color: var(--text-color-base);
 }
 
 a:visited {
-    color: #606060;
+    color: var(--text-color-visited);
 }
 
 select {
     background-color: transparent;
-    border-color: #a0a0a0;
+    border-color: var(--text-color-black);
     border-style: none none dotted none;
     border-width: 1px;
 }
@@ -282,8 +338,8 @@ hr {
 }
 
 body.no-margin #page-nav {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: var(--margin-body);
+    padding-right: var(--margin-body);
 }
 
 #page-nav img {
@@ -319,7 +375,7 @@ body.no-margin #page-nav {
 
 @media (max-width: 80ch) {
     body.w80:not(.no-margin) {
-        margin-left: 1em;
-        margin-right: 1em;
+        margin-left: var(--margin-body);
+        margin-right: var(--margin-body);
     }
 }

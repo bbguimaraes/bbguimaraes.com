@@ -1,5 +1,5 @@
 .blog aside {
-    border: 1px solid #a0a0a0;
+    border: 1px solid var(--text-color-base);
     margin-bottom: 1em;
     margin-top: 1em;
     padding-left: 1em;
