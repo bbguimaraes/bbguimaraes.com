@@ -3,14 +3,23 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local DIR <const> = path.join("src", "places", "data")
-local FILES_URL <const> = path.join("", "files", "places")
-local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
-local PAGE <const> =  path.join("src", "include", "places", "page.lua")
+local include_path <const> = var "include_path"
+local page_path <const> = var "page_path"
+local file_path <const> = var "file_path"
+local file_url <const> = var "file_url"
+
+local DIR <const> = "places"
+local DATA_DIR <const> = path.join("src", DIR, "data")
+local PAGE <const> = include_path(DIR, "page.lua")
+local PREVIEW <const> = include_path(DIR, "preview.lua")
+local PAGE_ENV <const> = {
+    base_url_sub = path.join(var("base_url"), DIR),
+    file_url = function(...) return file_url(DIR, ...) end,
+}
 
 local IMAGES <const> = path.set(
-    path.join(FILES_DIR, "*.jpg"),
-    path.join(FILES_DIR, "*/*.jpg"))
+    file_path(DIR, "*.jpg"),
+    file_path(DIR, "*/*.jpg"))
 
 local cit0 <const> = lines {
     par [[
@@ -57,10 +66,9 @@ local function process_item(t)
 end
 
 local function generate_page(t)
-    local file_name <const> =
-        path.join("bbguimaraes.com", "places", t.id) .. ".html"
+    local file_name <const> = page_path(DIR, t.id) .. ".html"
     local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, t)
+    generate.generate(f, PAGE, PAGE_ENV, t)
 end
 
 local render_without_links
@@ -69,8 +77,7 @@ local function generate_item(_, t)
     if t.content then
         tt = {content = render_without_links(t.content)}
     end
-    return generate.load(
-        path.join("src", "include", "places", "preview.lua"), t, tt)
+    return generate.load(PREVIEW, PAGE_ENV, t, tt)
 end
 
 function render_without_links(t)
@@ -96,16 +103,16 @@ end
 
 function generate_image(t, suffix, size)
     local src <const> = t.path
-    local dst <const> = path.join(
-        FILES_DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
+    local dst <const> =
+        file_path(DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
     if not IMAGES[dst] then
-        convert.generate_image(dst, path.join(FILES_DIR, src), size, t.poster)
+        convert.generate_image(dst, file_path(DIR, src), size, t.poster)
     end
 end
 
 local files <const> = {}
-for x in path.each(DIR) do
-    table.insert(files, process_item(generate.load(path.join(DIR, x))))
+for x in path.each(DATA_DIR) do
+    table.insert(files, process_item(generate.load(path.join(DATA_DIR, x))))
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
@@ -123,9 +130,9 @@ return include "master.lua" {
         }),
         div({class = "header"}, lines {
             link {
-                href = path.join(FILES_URL, "header.jpg"),
+                href = file_url(DIR, "header.jpg"),
                 content = image {
-                    src = path.join(FILES_URL, "header_cropped.jpg"),
+                    src = file_url(DIR, "header_cropped.jpg"),
                     alt = "Sunset behind the promontory of Gaeta",
                     title = "Sunset behind the promontory of Gaeta",
                 },

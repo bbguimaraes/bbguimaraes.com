@@ -5,15 +5,17 @@ local util <const> = require "lib.util"
 
 local title <const> = "música · μουσική · music"
 local base_url <const> = var "base_url"
+local page_path <const> = var "page_path"
+local file_path <const> = var "file_path"
+local file_url <const> = var "file_url"
 
-local DIR <const> = path.join("src", "music", "data")
-local FILES_URL <const> = path.join("files", "music")
-local FILES_DIR <const> = path.join("bbguimaraes.com", FILES_URL)
-local PAGE <const> = path.join("src", "include", "music", "page.lua")
+local DIR <const> = "music"
+local DATA_DIR <const> = path.join("src", DIR, "data")
+local PAGE <const> = path.join("src", "include", DIR, "page.lua")
 
-local VIDEOS <const> = path.set(path.join(FILES_DIR, "*.mp4"))
-local IMAGES <const> = path.set(path.join(FILES_DIR, "*.png"))
-local AUDIOS <const> = path.set(path.join(FILES_DIR, "*.ogg"))
+local VIDEOS <const> = path.set(file_path(DIR, "*.mp4"))
+local IMAGES <const> = path.set(file_path(DIR, "*.png"))
+local AUDIOS <const> = path.set(file_path(DIR, "*.ogg"))
 
 local generate_image, generate_audio
 local function process_item(t)
@@ -28,7 +30,7 @@ local function process_item(t)
     end
     local file_name <const> = t.file_name or t.id:gsub("-", "_")
     t.file_name = file_name
-    t.video = path.join(FILES_DIR, file_name .. ".mp4")
+    t.video = file_path(DIR, file_name .. ".mp4")
     t.image = generate_image(t)
     t.audio = generate_audio(t)
     t.timestamp[1] = math.tointeger(t.timestamp[1])
@@ -37,8 +39,7 @@ local function process_item(t)
 end
 
 local function generate_page(t)
-    local file_name <const> =
-        path.join("bbguimaraes.com", "music", t.id) .. ".html"
+    local file_name <const> = page_path(DIR, t.id) .. ".html"
     local f <close> = assert(io.open(file_name, "w"))
     generate.generate(f, PAGE, t)
 end
@@ -61,7 +62,7 @@ local function generate_item(_, t)
     return generic_tag("a", attrs, lines {
         div({class = "preview"}, lines {
             image {
-                src = path.join("", FILES_URL, file_name .. ".png"),
+                src = file_url(DIR, file_name .. ".png"),
                 alt = "video poster",
             },
             inline_tag("span", {class = "duration"}, t.duration),
@@ -87,8 +88,8 @@ function generate_audio(t)
 end
 
 local files <const> = {}
-for x in path.each(DIR)do
-    table.insert(files, process_item(generate.load(path.join(DIR, x))))
+for x in path.each(DATA_DIR)do
+    table.insert(files, process_item(generate.load(path.join(DATA_DIR, x))))
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
@@ -101,8 +102,8 @@ return include "master.lua" {
     og = {
         type = "music",
         title = title,
-        image = path.join(base_url, FILES_URL, "music_og.jpg"),
-        url = path.join(base_url, "music"),
+        image = base_url .. file_url(DIR, "music_og.jpg"),
+        url = path.join(base_url, DIR),
     },
     css = {"/main.css", "music.css"},
     js = {"/main.js", "music.js"},
@@ -114,12 +115,12 @@ return include "master.lua" {
         div({class = "header"}, lines {
             div({class = "header-imgs"}, lines {
                 image_link {
-                    src = path.join("", FILES_URL, "music.jpg"),
+                    src = file_url(DIR, "music.jpg"),
                     class = "header-background",
                     alt = "music score, excerpt from Clair de Lune",
                 },
                 image_link {
-                    src = path.join("", FILES_URL, "music_text.png"),
+                    src = file_url(DIR, "music_text.png"),
                     class = "header-text",
                     alt = "música · μουσική",
                 },

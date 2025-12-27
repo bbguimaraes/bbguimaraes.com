@@ -1,9 +1,8 @@
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local FILES_URL <const> = path.join("", "files", "places")
+local file_url <const> = var "file_url"
 local title <const> = var "title"
-local images <const> = var "images"
 
 local content <const> = {}
 local l <const> = {}
@@ -14,16 +13,14 @@ var_and("images", function(x)
         div({class = "gallery"}, lines(util.imap(function(_, x)
             return image {
                 alt = x.path,
-                src = path.join(
-                    FILES_URL,
-                    x.path:gsub("%.[^.]+", "_tiny.jpg"), nil),
+                src = file_url(x.path:gsub("%.[^.]+$", "_tiny.jpg"), nil),
             }
         end, x))))
     if #x ~= 0 then
         table.insert(l, image {
             class = "main-img",
             alt = title,
-            src = path.join(FILES_URL, x[1].path:gsub("%.", "_small."), nil),
+            src = file_url(x[1].path:gsub("%.([^.]+)$", "_small.%1"), nil),
         })
     end
 end)
