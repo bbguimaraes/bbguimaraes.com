@@ -292,17 +292,18 @@ function property(k, v)
     })
 end
 
-local function quote_footer(author, cite, extra)
+local function quote_footer(author, cite, extra, pre)
+    pre = pre or "—"
     assert(author or cite)
     if not cite then
         return text_tag:new(
-            "footer", nil, str.concat { "— ", author, "\n" })
+            "footer", nil, str.concat { pre, " ", author, "\n" })
     end
     local ret <const> = {}
     if author then
-        table.insert(ret, str.concat { "— ", author, "," })
+        table.insert(ret, str.concat { pre, " ", author, "," })
     else
-        table.insert(ret, html:new "—")
+        table.insert(ret, html:new(pre))
     end
     local c <const> = inline_tag:new("cite", nil, cite)
     if extra then
