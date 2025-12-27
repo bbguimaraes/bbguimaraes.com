@@ -1,17 +1,21 @@
 local path <const> = require "lib.path"
 
+local base_url <const> = var "base_url"
+local file_url <const> = var "file_url"
+
+local DIR <const> = "music"
+
 local id <const> = var "id"
 local title <const> = var "title"
-local base_url <const> = var "base_url"
-local url <const> = string.format("/music/%s.html", id)
 local file_name <const> =
     var("file_name_url", false)
     or var("file_name", false)
     or id:gsub("-", "_")
-local poster_url <const> = string.format("/files/music/%s.png", file_name)
-local video_url <const> = string.format("/files/music/%s.mp4", file_name)
-local audio_url <const> = string.format("/files/music/%s.ogg", file_name)
 local scores <const> = var("scores", false)
+
+local poster_url <const> = file_url(DIR, file_name .. ".png")
+local video_url <const> = file_url(DIR, file_name .. ".mp4")
+local audio_url <const> = file_url(DIR, file_name .. ".ogg")
 
 local info <const> = {}
 table.insert(info, inline_tag("i", nil, var("timestamp")[2]))
@@ -25,12 +29,12 @@ if type(scores) == "table" then
 elseif scores then
     table.insert(info, lines {
         link {
-            href = string.format("/files/music/%s.pdf", file_name),
+            href = file_url(DIR, file_name .. ".pdf"),
             content = "score",
             target = "_blank",
         },
         link {
-            href = string.format("/files/music/%s.mscz", file_name),
+            href = file_url(DIR, file_name .. ".mscz"),
             content = "src",
             target = "_blank",
         },
@@ -48,8 +52,8 @@ return include "master.lua" {
     og = {
         type = "music.song",
         title = title,
+        url = path.join(base_url, DIR, id .. ".html"),
         image = base_url .. poster_url,
-        url = base_url .. url,
         video = base_url .. video_url,
     },
     body_class = "w80 roman",

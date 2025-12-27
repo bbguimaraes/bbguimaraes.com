@@ -1,10 +1,9 @@
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local file_url <const> = var "file_url"
 local base_url <const> = var "base_url"
 local title <const> = var "title"
-
-local DIR <const> = path.join("", "files", "places")
 
 local function generate_info()
     local l <const> = {}
@@ -18,9 +17,9 @@ end
 local function generate_image(_, t)
     local name <const>, poster = t.path
     if name:match("%.mp4$") then
-        poster = path.join(DIR, name:gsub("%.mp4$", "_small.jpg"), nil)
+        poster = name:gsub("%.mp4$", "_small.jpg")
     else
-        poster = path.join(DIR, name:gsub("%.", "_small."), nil)
+        poster = name:gsub("%.", "_small.")
     end
     return {
         path = name,
@@ -39,15 +38,18 @@ local function generate_figure(_, t)
             preload = "none",
             width = t.width,
             height = t.height,
-            poster = poster,
-            sources = { path.join(DIR, name) },
+            poster = file_url(poster),
+            sources = { file_url(name) },
         }
     else
-        content = image { alt = name, src = poster }
+        content = image {
+            alt = name,
+            src = file_url(poster),
+        }
     end
     local l <const> = {}
     table.insert(l, link {
-        href = path.join(DIR, name),
+        href = file_url(name),
         content = content,
     })
     if text then
@@ -73,8 +75,10 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
-        image = #images ~= 0 and (base_url .. images[1].poster) or nil,
-        url = path.join(base_url, "places", var("id") .. ".html"),
+        image = #images ~= 0
+            and (base_url .. file_url(images[1].poster))
+            or nil,
+        url = path.join(var "base_url_sub", var("id") .. ".html"),
     },
     body_class = "white-bg roman",
     main = main({class = "post"}, lines {
