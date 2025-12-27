@@ -10,23 +10,29 @@ local function top()
     return VARS[#VARS]
 end
 
-local function push(name, t)
-    if not t then
-        return
+local function push(name, ...)
+    local ts <const> = {...}
+    do
+        local prev = top()
+        for _, t in ipairs(ts) do
+            assert(not getmetatable(t))
+            if prev then
+                setmetatable(t, {__index = prev})
+            end
+            table.insert(VARS, t)
+            table.insert(FILES, name)
+            prev = t
+        end
     end
-    local m <const> = top()
-    if m then
-        assert(not getmetatable(t))
-        setmetatable(t, {__index = m})
-    end
-    table.insert(VARS, t)
-    table.insert(FILES, name)
     return setmetatable({}, {
         __close = function()
-            assert(VARS[#VARS] == t)
-            setmetatable(t, nil)
-            table.remove(VARS)
-            table.remove(FILES)
+            for i = #ts, 1, -1 do
+                local t <const> = ts[i]
+                assert(VARS[#VARS] == t)
+                setmetatable(t, nil)
+                table.remove(VARS)
+                table.remove(FILES)
+            end
         end,
     })
 end
@@ -90,12 +96,12 @@ function unset_var(k)
 end
 
 function include(name)
-    return function(t)
+    return function(...)
         local file <const> = path.clean(path.join("src", "include", name))
         if not util.exists(file) then
             print_stack(name, file)
         end
-        local _ <close> = push(name, t)
+        local _ <close> = push(name, ...)
         return assert(loadfile(file, nil, setmetatable({}, {__index = _ENV})))()
     end
 end
