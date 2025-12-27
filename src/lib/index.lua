@@ -401,7 +401,6 @@ local honorable <const> = {
         "memorabilia.jpg",
         "Xenophon"),
 }
-local toc_honorable <const> = util.imap(toc_link, honorable)
 
 util.ieach(generate_book_page, general)
 
@@ -460,7 +459,6 @@ return include "master.lua" {
                                     href = "#honorable",
                                     content = "honorable mentions",
                                 },
-                                ul(toc_honorable),
                             },
                             lines {
                                 link {
