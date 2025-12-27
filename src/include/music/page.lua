@@ -5,7 +5,7 @@ local title <const> = var "title"
 local base_url <const> = var "base_url"
 local url <const> = string.format("/music/%s.html", id)
 local file_name <const> =
-    var("file_url", false)
+    var("file_name_url", false)
     or var("file_name", false)
     or id:gsub("-", "_")
 local poster_url <const> = string.format("/files/music/%s.png", file_name)
