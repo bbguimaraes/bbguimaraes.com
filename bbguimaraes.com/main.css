@@ -1,3 +1,27 @@
+@font-face {
+    font-family: "P052";
+    src: url("/files/fonts/p052.otf");
+}
+
+@font-face {
+    font-family: "P052";
+    src: url("/files/fonts/p052_bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "P052";
+    src: url("/files/fonts/p052_bold_italic.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "P052";
+    src: url("/files/fonts/p052_italic.otf");
+    font-style: italic;
+}
+
 body {
     background-color: black;
     font-family: Monospace;
@@ -21,7 +45,7 @@ body {
 }
 
 .roman {
-    font-family: Palatino, 'Times New Roman', Times, serif;
+    font-family: "P052", Palatino, 'Times New Roman', Times, serif;
     font-size: 18px;
 }
 
