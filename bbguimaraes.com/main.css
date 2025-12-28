@@ -8,9 +8,9 @@
 @property --font-size-roman {
     syntax: "<length>";
     inherits: true;
-    initial-value: 16px;
+    initial-value: 20px;
 }
-:root { --font-size-roman 16px; }
+:root { --font-size-roman 20px; }
 
 @property --bg-black {
     syntax: "<color>";
@@ -62,27 +62,24 @@
 :root { --margin-body: 1.5rem; }
 
 @font-face {
-    font-family: "P052";
-    src: url("/files/fonts/p052.otf");
+    font-family: "Cormorant";
+    src: url("/files/fonts/cormorant.otf");
 }
 
 @font-face {
-    font-family: "P052";
-    src: url("/files/fonts/p052_bold.otf");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "P052";
-    src: url("/files/fonts/p052_bold_italic.otf");
-    font-weight: bold;
+    font-family: "Cormorant";
+    src: url("/files/fonts/cormorant_italic.otf");
     font-style: italic;
 }
 
 @font-face {
-    font-family: "P052";
-    src: url("/files/fonts/p052_italic.otf");
-    font-style: italic;
+    font-family: "Codex LT";
+    src: url("/files/fonts/codex_lt.ttf");
+}
+
+@font-face {
+    font-family: "GFS Orpheus Classic";
+    src: url("/files/fonts/orpheus.otf");
 }
 
 body {
@@ -102,8 +99,12 @@ body {
     --text-color-base: var(--text-color-black);
 }
 
+[lang="grc"] {
+    font-family: "GFS Orpheus Classic";
+}
+
 .roman {
-    font-family: "P052", Palatino, 'Times New Roman', Times, serif;
+    font-family: "Cormorant", Palatino, 'Times New Roman', Times, serif;
     font-size: var(--font-size-roman);
 }
 
@@ -275,7 +276,7 @@ figure .image {
 
 @media(max-width: 800px) {
     .roman {
-        font-size: calc(10px + 1vw);
+        font-size: calc(13px + 1vw);
     }
 
     .mono {
