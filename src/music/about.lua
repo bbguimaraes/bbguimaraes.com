@@ -1,3 +1,5 @@
+local img_class <const> = "hor-center image"
+
 local toc <const> = ul {
     link { href = "#licence", content = "licence" },
     lines {
@@ -111,7 +113,7 @@ recreated, edited, and adapted for any use.
             src = "/files/music/musescore_small.png",
             title = "Musescore",
             alt = "Musescore",
-            class = "hor-center",
+            class = img_class,
         },
     },
     h3_link { "imslp", "IMSLP" },
@@ -130,7 +132,7 @@ contemporaries.
             src = "/files/music/imslp_small.png",
             title = "IMSLP",
             alt = "IMSLP",
-            class = "hor-center",
+            class = img_class,
         },
     },
     h2_link { "instruments", "instruments" },
@@ -149,7 +151,7 @@ all of which I love very much.  In no particular order:
                 src = "/files/music/jazz_bass_small.jpg",
                 alt = "Jazz Bass",
                 title = "Jazz Bass",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -165,7 +167,7 @@ one of my favorites.
                 src = "/files/music/telecaster_small.jpg",
                 alt = "Telecaster",
                 title = "Telecaster",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -181,7 +183,7 @@ arrangements.
                 src = "/files/music/fp_80_small.jpg",
                 alt = "Roland FP-80",
                 title = "Roland FP-80",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(lines {
@@ -206,7 +208,7 @@ learning to play (but you can skip those =).
                 src = "/files/music/ibanez_small.jpg",
                 alt = "Ibanez",
                 title = "Ibanez",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -222,7 +224,7 @@ it whenever I can.
                 src = "/files/music/richwood_small.jpg",
                 alt = "Richwood",
                 title = "Richwood",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -243,7 +245,7 @@ My recording setup is almost comically simple:
                 src = "/files/music/zoom_small.jpg",
                 alt = "Zoom H2n",
                 title = "Zoom H2n",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -264,7 +266,7 @@ record goes through its line-in input to the computer.
                 src = "/files/music/behringer_small.jpg",
                 alt = "Behringer BDI21",
                 title = "Behringer BDI21",
-                class = "hor-center",
+                class = img_class,
             },
         },
         li(par [[
@@ -304,7 +306,7 @@ occasionally some light overdrive/distortion).
             src = "/files/music/ardour0_small.png",
             title = "Ardour main interface",
             alt = "Ardour main interface",
-            class = "hor-center",
+            class = img_class,
         },
     },
     html "<br />",
@@ -314,7 +316,7 @@ occasionally some light overdrive/distortion).
             src = "/files/music/ardour1_small.png",
             title = "Ardour mixer",
             alt = "Ardour mixer",
-            class = "hor-center",
+            class = img_class,
         },
     },
     par [[
@@ -328,7 +330,7 @@ prize for the greatest name for a piece of audio software).
             src = "/files/music/audacity_small.png",
             title = "Audacity",
             alt = "Audacity",
-            class = "hor-center",
+            class = img_class,
         },
     },
     par [[
@@ -345,7 +347,7 @@ mixing, the result is surprisingly very decent.
             src = "/files/music/hydrogen_small.png",
             title = "Hydrogen",
             alt = "Hydrogen",
-            class = "hor-center",
+            class = img_class,
         },
     },
     h3_link { "video", "video" },
@@ -363,7 +365,7 @@ Kdenlive uses to render video).
             src = "/files/music/kdenlive_small.png",
             title = "Kdenlive",
             alt = "Kdenlive",
-            class = "hor-center",
+            class = img_class,
         },
     },
 }

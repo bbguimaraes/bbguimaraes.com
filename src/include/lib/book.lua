@@ -46,7 +46,7 @@ local content <const> = {}
 table.insert(content, image {
     src = "/files/lib/" .. var "cover",
     alt = "cover",
-    class = "book-cover",
+    class = "image book-cover",
 })
 
 if languages then

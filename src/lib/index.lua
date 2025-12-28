@@ -189,7 +189,7 @@ local function honorable(href, title_fmt, title, id, cover, author)
                 image {
                     src = "/files/lib/" .. cover,
                     alt = "cover",
-                    class = "book-cover",
+                    class = "image book-cover",
                 },
                 inline_tag("h3", nil, title_fmt),
                 inline_tag("span", nil, author),
@@ -348,6 +348,7 @@ return include "master.lua" {
             nav_path = {{nil, "lib"}},
         }),
         image_link {
+            class = "image",
             id = "header-img",
             src = "/files/lib/header.jpg",
             alt = "lib",

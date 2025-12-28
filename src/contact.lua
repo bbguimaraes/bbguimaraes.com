@@ -57,7 +57,7 @@ return include "list_simple.lua" {
     header = link {
         href = "/files/contact.jpg",
         content = image {
-            class = "side-content-three-quarters",
+            class = "side-content-three-quarters image",
             src = "/files/contact_small.jpg",
             title = "me",
             alt = "me",
