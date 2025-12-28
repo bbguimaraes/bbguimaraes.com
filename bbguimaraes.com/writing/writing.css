@@ -16,6 +16,7 @@
 
 .header blockquote {
     font-size: 120%;
+    margin: 0;
     text-shadow:
         4px 4px 2px var(--bg-black),
         4px 4px 8px var(--bg-black);
