@@ -51,6 +51,7 @@ local sections <const> = {{
 
 return include "list_simple.lua" {
     title = "contact",
+    body_class = "white-bg roman",
     list_title = "contact",
     description = html "Bruno Barcarol Guimarães",
     header = link {
