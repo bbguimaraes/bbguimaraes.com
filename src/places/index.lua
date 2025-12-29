@@ -7,13 +7,14 @@ local include_path <const> = var "include_path"
 local page_path <const> = var "page_path"
 local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
+local base_url <const> = var "base_url"
 
 local DIR <const> = "places"
 local DATA_DIR <const> = path.join("src", DIR, "data")
 local PAGE <const> = include_path(DIR, "page.lua")
 local PREVIEW <const> = include_path(DIR, "preview.lua")
 local PAGE_ENV <const> = {
-    base_url_sub = path.join(var("base_url"), DIR),
+    css = {"/main.css", "places.css"},
     file_url = function(...) return file_url(DIR, ...) end,
 }
 
@@ -69,7 +70,10 @@ end
 local function generate_page(t)
     local file_name <const> = page_path(DIR, t.id) .. ".html"
     local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, PAGE_ENV, t)
+    generate.generate(f, PAGE, PAGE_ENV, t, {
+        nav_path = {{".", "places"}, {nil, t.title}},
+        url = path.join(base_url, "places", t.id .. ".html"),
+    })
 end
 
 local render_without_links
