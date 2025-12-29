@@ -4,6 +4,7 @@ return {
     link = "https://www.pearson.com/us/higher-education/program/Bach-Design-of-the-UNIX-Operating-System/PGM81513.html",
     cover = "unix.jpg",
     author = "Maurice J. Bach",
+    timestamp = { 1601746459, "2020-10-03T17:34:19" },
     rss = false,
     content = lines {
         par [[

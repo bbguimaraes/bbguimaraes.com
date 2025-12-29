@@ -4,7 +4,7 @@ return {
     file_name_url = "%c3%a1gua_de_beber",
     title = "Água de beber",
     author = "Tom Jobim",
-    date = { "1482537600", "2016-12-24T00:00:00" },
+    timestamp = { 1482537600, "2016-12-24T00:00:00" },
     duration = "0:28",
     poster = "0:00",
     tags = {"piano", "bass", "short"},

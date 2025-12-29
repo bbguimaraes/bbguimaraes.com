@@ -4,6 +4,7 @@ return {
     cover = "tlpi.jpg",
     link = "https://www.man7.org/tlpi/index.html",
     author = "Michael Kerrisk",
+    timestamp = { 1601746464, "2020-10-03T17:34:24" },
     rss = false,
     content = lines {
         par [[

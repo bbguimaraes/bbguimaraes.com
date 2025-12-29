@@ -25,7 +25,7 @@ Enjoy.
 
 return {
     title = "~/music",
-    date  = { "1489353120", "2017-03-12T21:12:00" },
+    timestamp = { 1489353120, "2017-03-12T21:12:00" },
     tags = { "music" },
     description = description,
     content = content,

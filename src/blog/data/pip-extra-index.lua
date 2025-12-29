@@ -226,7 +226,7 @@ of situation.
 
 return {
     title = "pip --extra-index",
-    date  = { "1418215560", "2014-12-10T12:46:00" },
+    timestamp = { 1418215560, "2014-12-10T12:46:00" },
     tags = {
         "pip", "lsof", "webserver", "debugging", "python", "socket", "strace",
         "grep", "programming", "linux", "man", "unix",

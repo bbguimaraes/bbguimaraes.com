@@ -142,7 +142,7 @@ Piazza Dante.
 return {
     id = "napoli",
     title = "Napoli",
-    timestamp = {"1706745600", "2024-02-01"},
+    timestamp = { 1706745600, "2024-02-01" },
     description = description,
     content = content,
     citation = citation,

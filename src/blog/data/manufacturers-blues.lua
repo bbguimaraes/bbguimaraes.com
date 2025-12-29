@@ -30,7 +30,7 @@ how does it signal it?  By not showing the files at all, of course.
 
 return {
     title = "Manufacturer's blues",
-    date  = { "1399047180", "2014-05-02T16:13:00" },
+    timestamp = { 1399047180, "2014-05-02T16:13:00" },
     tags = {
         "mp3", "badvoltage", "dos", "arch", "pacman", "shell", "linux", "billy",
         "filesystem", "mkfs", "fat", "unix",

@@ -214,7 +214,7 @@ href="trapani.html">Trapani</a>.
 return {
     id = "favignana",
     title = "Favignana",
-    timestamp = {"1745280000", "2025-04-22"},
+    timestamp = { 1745280000, "2025-04-22" },
     description = description,
     content = content,
     citation = citation,

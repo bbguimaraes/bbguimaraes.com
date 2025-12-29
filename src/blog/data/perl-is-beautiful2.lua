@@ -117,7 +117,7 @@ some (kind of) advanced perl and regexp techniques.
 
 return {
     title = "perl is beautiful - part 2",
-    date  = { "1350557580", "2012-10-18T10:53:00" },
+    timestamp = { 1350557580, "2012-10-18T10:53:00" },
     tags = { "programming", "perl" },
     description = description,
     content = content,

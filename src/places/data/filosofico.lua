@@ -42,7 +42,7 @@ In Parco Filosofico.
 return {
     id = "belvedere-filosofico",
     title = "Belvedere filosofico, Capri",
-    timestamp = {"1707091201", "2024-02-05"},
+    timestamp = { 1707091201, "2024-02-05" },
     description = description,
     content = content,
     citation = citation,

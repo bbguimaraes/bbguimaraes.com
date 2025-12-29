@@ -108,7 +108,7 @@ return {
         en = "Aldous Leonard Huxley",
         pt = "Aldous Leonard Huxley",
     },
-    date = { "1674426382", "2023-01-22T22:26:22" },
+    timestamp = { 1674426382, "2023-01-22T22:26:22" },
     description = table.concat(description, " "),
     intro = intro,
     languages = { "en", "pt" },

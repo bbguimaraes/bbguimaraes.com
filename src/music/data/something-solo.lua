@@ -38,7 +38,7 @@ return {
     id = "something-solo",
     title = "Something (guitar solo)",
     author = "The Beatles",
-    date = { "1707784486", "2024-02-13T00:34:46" },
+    timestamp = { 1707784486, "2024-02-13T00:34:46" },
     duration = "0:37",
     poster = "0:07.8",
     scores = {

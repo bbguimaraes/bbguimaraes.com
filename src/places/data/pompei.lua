@@ -78,7 +78,7 @@ in hoc signo vinces
 return {
     id = "pompei",
     title = "Pompei",
-    timestamp = {"1706832001", "2024-02-02"},
+    timestamp = { 1706832001, "2024-02-02" },
     description = description,
     content = content,
     citation = citation,

@@ -98,7 +98,7 @@ A sad farewell, with Ischia outlined by the sunset glow.
 return {
     id = "capri",
     title = "Capri",
-    timestamp = {"1706918400", "2024-02-03"},
+    timestamp = { 1706918400, "2024-02-03" },
     description = description,
     content = content,
     citation = citation,

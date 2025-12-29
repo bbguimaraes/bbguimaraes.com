@@ -41,7 +41,7 @@ return {
     id = "lonely-stranger",
     title = "Lonely stranger",
     author = "Eric Clapton",
-    date = {"1739287293", "2025-02-11T15:21:33"},
+    timestamp = { 1739287293, "2025-02-11T15:21:33" },
     duration = "1:07",
     poster = "0:24",
     scores = {

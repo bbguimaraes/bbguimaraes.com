@@ -441,7 +441,7 @@ you can find <a href="nngn-lua-wasm.html">here</a>.</i>
 
 return {
     title = "nngn - lua",
-    date  = { "1598810049", "2020-08-30T17:54:09" },
+    timestamp = { 1598810049, "2020-08-30T17:54:09" },
     tags = {
         "lua", "netcat", "nngn", "programming", "readline", "socket", "unix",
         "vim",

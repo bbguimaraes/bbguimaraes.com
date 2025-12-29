@@ -506,7 +506,7 @@ implementation inside the linker.
 
 return {
     title = "strace prelude in C",
-    date  = { "1650191697", "2022-04-17T10:34:57" },
+    timestamp = { 1650191697, "2022-04-17T10:34:57" },
     tags = {
         "assembly", "c", "debugging", "linux", "man", "programming", "strace",
         "unix",

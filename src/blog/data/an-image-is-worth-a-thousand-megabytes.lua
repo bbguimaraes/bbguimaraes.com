@@ -153,7 +153,7 @@ isn't actual work, check the next posts, where we will put the Pi to good use.
 
 return {
     title = "An image is worth a thousand megabytes",
-    date  = { "1360199460", "2013-02-07T01:11:00" },
+    timestamp = { 1360199460, "2013-02-07T01:11:00" },
     tags = {
         "df", "sha1sum", "raspbian", "linux", "dd", "wget", "raspberry pi",
     },

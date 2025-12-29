@@ -114,7 +114,7 @@ some time if you ever happen to have the same problem.
 
 return {
     title = "Problem when adding SSH key on github",
-    date  = { "1351395660", "2012-10-28T03:41:00" },
+    timestamp = { 1351395660, "2012-10-28T03:41:00" },
     tags = { "curl", "git", "github" },
     description = description,
     content = content,

@@ -60,7 +60,7 @@ Finally, here is a short demo:
 
 return {
     title = "College research projects",
-    date  = { "1471736820", "2016-08-20T23:47:00" },
+    timestamp = { 1471736820, "2016-08-20T23:47:00" },
     tags = { "dissertation", "programming", "linux", "math" },
     description = description,
     content = content,

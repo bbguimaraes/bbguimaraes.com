@@ -255,7 +255,7 @@ which is to create another <code>Mock</code>.
 
 return {
     title = "Python mocking",
-    date  = { "1368299820", "2013-05-11T19:17:00" },
+    timestamp = { 1368299820, "2013-05-11T19:17:00" },
     tags = {
         "best practices", "programming", "python", "coding style", "mock",
     },

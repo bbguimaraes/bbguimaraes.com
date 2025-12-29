@@ -4,6 +4,7 @@ return {
     link = "https://www.aristeia.com/books.html",
     cover = "effc++.jpg",
     author = "Scott Meyers",
+    timestamp = { 1601746462, "2020-10-03T17:34:22" },
     rss = false,
     content = par [[
 The latest revision of the mandatory reading series for C++ programmers.  Each

@@ -4,6 +4,7 @@ return {
     link = "https://www.lua.org/pil/",
     cover = "pil.jpg",
     author = "Roberto Ierusalimschy",
+    timestamp = { 1601746463, "2020-10-03T17:34:23" },
     rss = false,
     content = lines {
         par [[

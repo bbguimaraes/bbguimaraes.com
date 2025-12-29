@@ -1641,7 +1641,7 @@ return {
         en = "Jane Austen",
         pt = "Jane Austen",
     },
-    date = { 1690400089, "2023-07-26T19:34:49" },
+    timestamp = { 1690400089, "2023-07-26T19:34:49" },
     languages = { "en", "pt" },
     description = description,
     intro = intro,

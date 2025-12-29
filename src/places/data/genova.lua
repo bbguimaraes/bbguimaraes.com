@@ -181,7 +181,7 @@ The type of souvenir I am sure to buy wherever I go.
 return {
     id = "genova",
     title = "Genova",
-    timestamp = {"1714176000", "2024-04-27"},
+    timestamp = { 1714176000, "2024-04-27" },
     description = description,
     content = content,
     citation = citation,

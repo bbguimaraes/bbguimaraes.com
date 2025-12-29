@@ -16,7 +16,7 @@ return include "master.lua" {
     nav_path = {{".", "blog"}, {nil, short_title or title}},
     main = main({class = "blog"}, lines {
         inline_tag("h1", nil, title),
-        inline_tag("p", nil, "<i>" .. t.date[2] .. "</i>"),
+        inline_tag("p", nil, "<i>" .. t.timestamp[2] .. "</i>"),
         lines(t.content),
         include "blog/tags.lua" { tags = t.tags },
     }),

@@ -125,7 +125,7 @@ the functions, changing indentation...  Your sanity is the limit.
 
 return {
     title = "perl is beautiful - part 3",
-    date  = { "1350955500", "2012-10-23T01:25:00" },
+    timestamp = { 1350955500, "2012-10-23T01:25:00" },
     tags = { "programming", "perl" },
     description = description,
     content = content,

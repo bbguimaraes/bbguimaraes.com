@@ -10,6 +10,7 @@ return {
     }, ", "),
     link = "http://www.heterogeneouscompute.org/?page_id=7",
     cover = "hcwocl.jpg",
+    timestamp = { 1601746465, "2020-10-03T17:34:25" },
     rss = false,
     content = par [[
 A detailed introduction to programming for heterogeneous devices, this book

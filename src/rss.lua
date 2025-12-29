@@ -9,7 +9,7 @@ for x in path.each(blog_dir) do
     local t <const> = generate.load(path.join(blog_dir, x))
     t.file = "blog/" .. x
     table.insert(t.tags, 1, "blog")
-    t.timestamp = math.tointeger(t.date[1])
+    t.timestamp = math.tointeger(t.timestamp[1])
     files[x] = t
     table.insert(file_names, x)
 end
@@ -38,7 +38,7 @@ for x in path.each(lib_dir) do
     else
         t.description = string.format("%s, %s", title, author)
     end
-    t.timestamp = math.tointeger(t.date[1])
+    t.timestamp = math.tointeger(t.timestamp[1])
     files[x] = t
     table.insert(file_names, x)
     ::continue::
@@ -69,7 +69,7 @@ for x in path.each(music_dir) do
     t.file = path.join("music", t.id .. ".html")
     table.insert(tags, 1, "music")
     t.description = table.concat(desc)
-    t.timestamp = math.tointeger(t.date[1])
+    t.timestamp = math.tointeger(t.timestamp[1])
     files[x] = t
     table.insert(file_names, x)
 end

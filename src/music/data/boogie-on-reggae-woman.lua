@@ -2,7 +2,7 @@ return {
     id = "boogie-on-reggae-woman",
     title = "Boogie on reggae woman",
     author = "Steview Wonder",
-    date = { "1491609600", "2017-04-08T00:00:00" },
+    timestamp = { 1491609600, "2017-04-08T00:00:00" },
     duration = "0:36",
     poster = "0:34",
     tags = {"piano", "short"},

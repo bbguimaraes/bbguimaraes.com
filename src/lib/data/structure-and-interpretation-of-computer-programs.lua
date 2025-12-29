@@ -4,6 +4,7 @@ return {
     link = "https://mitpress.mit.edu/sites/default/files/sicp/index.html",
     cover = "sicp.jpg",
     author = "Harold Abelson, Gerald Jay Sussman, Julie Sussman",
+    timestamp = { 1601746460, "2020-10-03T17:34:20" },
     rss = false,
     content = lines {
         par [[

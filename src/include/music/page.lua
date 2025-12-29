@@ -14,7 +14,7 @@ local audio_url <const> = string.format("/files/music/%s.ogg", file_name)
 local scores <const> = var("scores", false)
 
 local info <const> = {}
-table.insert(info, inline_tag("i", nil, var("date")[2]))
+table.insert(info, inline_tag("i", nil, var("timestamp")[2]))
 
 var_and("info", function(x)
     table.move(x, 1, #x, #info + 1, info)

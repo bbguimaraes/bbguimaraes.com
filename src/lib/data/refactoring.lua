@@ -4,6 +4,7 @@ return {
     link = "https://martinfowler.com/books/refactoring.html",
     cover = "refactoring.jpg",
     author = "Martin Fowler",
+    timestamp = { 1601746458, "2020-10-03T17:34:18" },
     rss = false,
     content = lines {
         par [[

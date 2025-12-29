@@ -224,7 +224,7 @@ here</a> (thanks to sources.debian.net for their awesome service).
 
 return {
     title = "Uploading files the unix way",
-    date  = { "1393892760", "2014-03-04T00:26:00" },
+    timestamp = { 1393892760, "2014-03-04T00:26:00" },
     tags = {
         "cowsay", "potato souffle", "webserver", "perl", "nsa", "vim",
         "raspberry pi", "ssh", "shell", "netcat", "less", "man", "debian",

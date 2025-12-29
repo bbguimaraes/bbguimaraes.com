@@ -31,7 +31,7 @@ local function process_item(t)
     t.video = path.join(FILES_DIR, file_name .. ".mp4")
     t.image = generate_image(t)
     t.audio = generate_audio(t)
-    t.timestamp = math.tointeger(t.date[1])
+    t.timestamp[1] = math.tointeger(t.timestamp[1])
     t.info = info
     return t
 end
@@ -53,7 +53,7 @@ local function generate_item(_, t)
         table.insert(info, x)
     end
     table.insert(info,
-        inline_tag("span", {class = "date"}, t.date[2]:gsub("T.*$", "")))
+        inline_tag("span", {class = "date"}, t.timestamp[2]:gsub("T.*$", "")))
     local attrs <const> = {
         {"id", id}, {"class", "video"}, {"href", t.id .. ".html"},
         {"data-tags", table.concat(util.sorted(t.tags), ",")},
@@ -90,7 +90,7 @@ local files <const> = {}
 for x in path.each(DIR)do
     table.insert(files, process_item(generate.load(path.join(DIR, x))))
 end
-table.sort(files, function(x, y) return y.timestamp < x.timestamp end)
+table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
 for _, x in ipairs(files) do
     generate_page(x)

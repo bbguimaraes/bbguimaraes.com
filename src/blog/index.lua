@@ -27,13 +27,12 @@ local file_names <const> = {}
 for x in path.each(DIR) do
     local t <const> = generate.load(path.join(DIR, x))
     t.file = x
-    t.timestamp = math.tointeger(t.date[1])
-    t.date = t.date[2]
+    t.timestamp[1] = math.tointeger(t.timestamp[1])
     files[x] = t
     table.insert(file_names, x)
 end
 table.sort(file_names, function(x, y)
-    return files[y].timestamp < files[x].timestamp
+    return files[y].timestamp[1] < files[x].timestamp[1]
 end)
 
 local all_tags <const> = {}
@@ -43,7 +42,7 @@ for _, x in ipairs(file_names) do
     for _, x in ipairs(t.tags) do
         all_tags[x] = true
     end
-    local year <const> = t.date:match("^%d+")
+    local year <const> = t.timestamp[2]:match("^%d+")
     local yt = years[year]
     if not yt then
         yt = {}

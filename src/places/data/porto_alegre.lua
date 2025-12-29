@@ -42,7 +42,7 @@ local images <const> = {{
 return {
     id = "porto-alegre",
     title = "Porto Alegre",
-    timestamp = {"1705708800", "2024-01-20"},
+    timestamp = { 1705708800, "2024-01-20" },
     citation = citation,
     images = images,
     links = {

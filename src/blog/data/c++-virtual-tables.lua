@@ -1493,7 +1493,7 @@ examples.
 
 return {
     title = "C++ virtual tables",
-    date  = { "1645560550", "2022-02-22T20:09:10" },
+    timestamp = { 1645560550, "2022-02-22T20:09:10" },
     tags = { "assembly", "c", "c++", "linux", "programming", "unix" },
     description = description,
     content = content,

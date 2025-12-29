@@ -47,7 +47,7 @@ but they fit the theme)
 return {
     id = "torino",
     title = "Torino",
-    timestamp = {"1697500800", "2023-10-17"},
+    timestamp = { 1697500800, "2023-10-17" },
     description = description,
     content = content,
     citation = citation,

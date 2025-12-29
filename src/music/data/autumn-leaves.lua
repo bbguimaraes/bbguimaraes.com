@@ -37,7 +37,7 @@ return {
     id = "autumn-leaves-solo",
     title = "Autumn leaves (solo)",
     author = "Eric Clapton",
-    date = {"1754155877", "2025-08-02T17:31:17"},
+    timestamp = { 1754155877, "2025-08-02T17:31:17" },
     duration = "1:24",
     poster = "0:27",
     tags = {"guitar", "vocals", "short"},

@@ -202,7 +202,7 @@ retire than into his own soul”<br />
 return {
     title = "~/places",
     style = "w80 roman white-bg",
-    date = {"1717138320", "2024-05-31T06:52:00"},
+    timestamp = { 1717138320, "2024-05-31T06:52:00" },
     tags = {
     },
     description = description,

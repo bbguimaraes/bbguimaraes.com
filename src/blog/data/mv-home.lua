@@ -139,7 +139,7 @@ As always, thanks for reading.
 
 return {
     title = "mv ~",
-    date  = { "1563744373", "2019-07-21T21:26:13" },
+    timestamp = { 1563744373, "2019-07-21T21:26:13" },
     tags = { "facebook", "google", "meta" },
     description = description,
     content = content,

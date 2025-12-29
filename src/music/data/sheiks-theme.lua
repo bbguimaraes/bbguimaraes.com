@@ -7,7 +7,7 @@ return {
     file_name = "sheik",
     title = "Sheik's theme",
     author = "Koji Kondo",
-    date = { "1499299200", "2017-07-06T00:00:00" },
+    timestamp = { 1499299200, "2017-07-06T00:00:00" },
     duration = "0:40",
     poster = "0:03",
     tags = {"piano"},

@@ -2,7 +2,7 @@ return {
     id = "choo-choo-chboogie",
     title = "Choo choo ch'boogie",
     author = "Louis Jordan",
-    date = { "1461974400", "2016-04-30T00:00:00" },
+    timestamp = { 1461974400, "2016-04-30T00:00:00" },
     duration = "1:59",
     poster = "1:01",
     tags = {"piano"},

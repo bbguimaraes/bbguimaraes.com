@@ -6,7 +6,7 @@ return {
     id = "bron-yr-aur",
     title = "Bron-Yr-Aur",
     author = "Led Zeppelin",
-    date = { "1692133997", "2023-08-15T21:13:17" },
+    timestamp = { 1692133997, "2023-08-15T21:13:17" },
     duration = "1:48",
     poster = "0:10",
     scores = {

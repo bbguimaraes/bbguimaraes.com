@@ -1937,7 +1937,7 @@ return {
         en = "Václav Havel",
         pt = "Václav Havel",
     },
-    date = { 1694444767, "2023-09-11T15:06:07" },
+    timestamp = { 1694444767, "2023-09-11T15:06:07" },
     languages = { "en", "pt" },
     description = table.concat(description, " "),
     intro = intro,

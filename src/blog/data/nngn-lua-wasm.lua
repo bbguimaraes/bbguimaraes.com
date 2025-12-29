@@ -243,7 +243,7 @@ program.
 
 return {
     title = "nngn - lua &amp; wasm",
-    date  = { "1616494225", "2021-03-23T10:10:25" },
+    timestamp = { 1616494225, "2021-03-23T10:10:25" },
     tags = { "c", "lua", "nngn", "programming", "wasm" },
     description = description,
     content = content,

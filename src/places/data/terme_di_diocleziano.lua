@@ -305,7 +305,7 @@ behind it.
 return {
     id = "terme-di-diocleziano",
     title = "Terme di Diocleziano",
-    timestamp = {"1709337600", "2024-03-02"},
+    timestamp = { 1709337600, "2024-03-02" },
     description = description,
     content = content,
     citation = citation,

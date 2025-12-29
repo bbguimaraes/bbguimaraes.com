@@ -209,7 +209,7 @@ Recovering back in Napoli with some spaghetti alle vongole.
 return {
     id = "ischia",
     title = "Ischia",
-    timestamp = {"1708992000", "2024-02-27"},
+    timestamp = { 1708992000, "2024-02-27" },
     description = description,
     content = content,
     citation = citation,

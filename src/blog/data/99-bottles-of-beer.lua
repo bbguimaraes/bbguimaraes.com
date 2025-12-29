@@ -27,7 +27,7 @@ _start:
 
 return {
     title = "99 Bottles of Beer",
-    date  = { "1349061180", "2012-10-01T03:13:00" },
+    timestamp = { 1349061180, "2012-10-01T03:13:00" },
     tags = { "programming", "hello world", "assembly", "vim" },
     content = content,
 }

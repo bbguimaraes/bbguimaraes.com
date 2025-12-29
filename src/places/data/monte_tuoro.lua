@@ -85,7 +85,7 @@ Scattered sunset light dances on the gulf of Napoli.
 return {
     id = "monte-tuoro",
     title = "Monte Tuoro, Capri",
-    timestamp = {"1707091202", "2024-02-05"},
+    timestamp = { 1707091202, "2024-02-05" },
     description = description,
     content = content,
     citation = citation,

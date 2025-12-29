@@ -54,7 +54,7 @@ Ventosa, with its 12th-century watchtower overlooking the valley.
 return {
     id = "coreno-ausonio",
     title = "Coreno Ausonio",
-    timestamp = {"1706054400", "2024-01-24"},
+    timestamp = { 1706054400, "2024-01-24" },
     description = description,
     content = content,
     images = images,

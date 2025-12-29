@@ -28,7 +28,7 @@ return {
     id = "running-away",
     title = "Running away",
     author = "Joey Dosik",
-    date = {"1725725529", "2024-09-07T16:12:09"},
+    timestamp = { 1725725529, "2024-09-07T16:12:09" },
     duration = "1:45",
     poster = "1:00",
     scores = {

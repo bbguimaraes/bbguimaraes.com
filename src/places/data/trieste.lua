@@ -49,7 +49,7 @@ local images <const> = {{
 return {
     id = "trieste",
     title = "Trieste",
-    timestamp = {"1696896000", "2023-10-10"},
+    timestamp = { 1696896000, "2023-10-10" },
     description = description,
     content = content,
     citation = citation,

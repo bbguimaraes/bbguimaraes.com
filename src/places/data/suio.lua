@@ -91,7 +91,7 @@ A look back at the sentiero.
 return {
     id = "suio",
     title = "Suio",
-    timestamp = {"1707436801", "2024-02-09"},
+    timestamp = { 1707436801, "2024-02-09" },
     description = description,
     content = content,
     citation = citation,

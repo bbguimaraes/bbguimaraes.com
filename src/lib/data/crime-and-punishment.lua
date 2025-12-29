@@ -4,6 +4,7 @@ return {
     author = "Fyodor Dostoevsky",
     link = "https://gutenberg.org/ebooks/2554",
     cover = "crime_and_punishment.jpg",
+    timestamp = { 1672531403, "2023-01-01T00:03:23" },
     rss = false,
     content = lines {
         par [[

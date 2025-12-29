@@ -69,7 +69,7 @@ of the engine.  These and all further posts can be found in the
 
 return {
     title = "nngn",
-    date  = { "1598810048", "2020-08-30T17:54:08" },
+    timestamp = { 1598810048, "2020-08-30T17:54:08" },
     tags = { "nngn", "programming" },
     description = description,
     content = content,

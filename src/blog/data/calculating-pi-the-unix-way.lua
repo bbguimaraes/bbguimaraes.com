@@ -236,7 +236,7 @@ And there you have it. Enjoy your unix π.
 
 return {
     title = "Calculating π the unix way",
-    date  = { "1418338260", "2014-12-11T22:51:00" },
+    timestamp = { 1418338260, "2014-12-11T22:51:00" },
     tags = {
         "printf", "head", "python", "pi", "bash", "bc", "math", "grep",
         "whatis", "man", "pipe", "paste", "seq", "unix", "shell",

@@ -162,7 +162,7 @@ Coming next: <em>actually</em> increasing productivity.
 
 return {
     title = "perl is beautiful",
-    date  = { "1349144280", "2012-10-02T02:18:00" },
+    timestamp = { 1349144280, "2012-10-02T02:18:00" },
     tags = { "programming", "perl" },
     description = description,
     content = content,

@@ -1349,7 +1349,7 @@ return {
         en = "Plato",
         pt = "Platão",
     },
-    date = { "1689185059", "2023-07-12T18:04:19" },
+    timestamp = { 1689185059, "2023-07-12T18:04:19" },
     languages = { "en", "pt" },
     description = description,
     intro = intro,

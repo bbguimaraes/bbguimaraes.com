@@ -148,7 +148,7 @@ for the blog post that got me started with this rabbit hole)</i>
 return {
     title = "<code>SIGFPE</code>",
     short_title  = "SIGFPE",
-    date = { "1590011812", "2020-05-20T21:56:52" },
+    timestamp = { 1590011812, "2020-05-20T21:56:52" },
     tags = {
         "assembly", "c", "debugging", "linux", "math", "programming", "unix",
     },

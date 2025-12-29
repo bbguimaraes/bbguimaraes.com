@@ -2,7 +2,7 @@ return {
     id = "fado-tropical",
     title = "Fado tropical",
     author = "Chico Buarque, Ruy Guerra",
-    date = { "1476576000", "2016-10-16T00:00:00" },
+    timestamp = { 1476576000, "2016-10-16T00:00:00" },
     duration = "3:28",
     poster = "0:45",
     tags = {"piano", "mandolin"},

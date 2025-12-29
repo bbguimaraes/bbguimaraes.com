@@ -91,7 +91,7 @@ Napoli, with no one around except for the occasional seagull flying by.
 return {
     id = "sorrento",
     title = "Sorrento",
-    timestamp = {"1707177600", "2024-02-06"},
+    timestamp = { 1707177600, "2024-02-06" },
     description = description,
     content = content,
     citation = citation,

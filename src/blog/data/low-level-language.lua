@@ -13,7 +13,7 @@ horrenda espessa treva enoita as ondas.
 
 return {
     title = "Low-level language",
-    date  = { "1350874860", "2012-10-22T03:01:00" },
+    timestamp = { 1350874860, "2012-10-22T03:01:00" },
     tags = { "portuguese", "language" },
     description = description,
     content = content,

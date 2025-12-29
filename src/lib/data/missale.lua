@@ -2,6 +2,7 @@ return {
     id = "missale",
     title = "Missale",
     cover = "missale_cover.jpg",
+    timestamp = { 1671298973, "2022-12-17T17:42:53" },
     rss = false,
     content = lines {
         par [[

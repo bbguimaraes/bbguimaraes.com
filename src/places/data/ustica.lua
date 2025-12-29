@@ -305,7 +305,7 @@ A reluctant departure.
 return {
     id = "ustica",
     title = "Ustica",
-    timestamp = {"1745539200", "2025-04-25"},
+    timestamp = { 1745539200, "2025-04-25" },
     description = description,
     content = content,
     citation = citation,

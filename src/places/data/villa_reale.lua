@@ -43,7 +43,7 @@ this is our road to Elysium
 return {
     id = "villa_reale",
     title = "Villa Reale, Milano",
-    timestamp = {"1697760000", "2023-10-20"},
+    timestamp = { 1697760000, "2023-10-20" },
     description = description,
     content = content,
     citation = citation,

@@ -321,7 +321,7 @@ You can see the result of my first try <a href="/lib#missale">here</a>.
 
 return {
     title = "Booklet printing with LaTeX",
-    date  = { "1671299341", "2022-12-17T17:49:01" },
+    timestamp = { 1671299341, "2022-12-17T17:49:01" },
     tags = { "books", "latex", "linux", "unix" },
     description = description,
     content = content,

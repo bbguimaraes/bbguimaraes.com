@@ -10,7 +10,7 @@ return {
     id = "godfather",
     title = "The godfather",
     author = "Nino Rota",
-    date = {"1739694078", "2025-02-16T08:21:18"},
+    timestamp = { 1739694078, "2025-02-16T08:21:18" },
     duration = "0:46",
     poster = "0:10",
     scores = {

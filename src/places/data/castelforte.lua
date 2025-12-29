@@ -101,7 +101,7 @@ One of the many olive plantations at dusk.
 return {
     id = "castelforte",
     title = "Castelforte",
-    timestamp = {"1706054401", "2024-01-24"},
+    timestamp = { 1706054401, "2024-01-24" },
     description = description,
     content = content,
     citation = citation,

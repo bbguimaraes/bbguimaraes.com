@@ -230,7 +230,7 @@ Architecture of Open Source Applications.
 
 return {
     title = "2014 books",
-    date = { "1421772120", "2015-01-20T16:42:00" },
+    timestamp = { 1421772120, "2015-01-20T16:42:00" },
     tags = {
         "c", "vim", "tdd", "oreilly", "tmux", "programming", "linux", "apache",
         "books", "unix", "shell", "sicp",

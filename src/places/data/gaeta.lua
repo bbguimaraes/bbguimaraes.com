@@ -118,7 +118,7 @@ Sunset in the gulf and the Monti Aurunci.
 return {
     id = "gaeta",
     title = "Gaeta",
-    timestamp = {"1706659200", "2024-01-31"},
+    timestamp = { 1706659200, "2024-01-31" },
     description = description,
     content = content,
     citation = citation,

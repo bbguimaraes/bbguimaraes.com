@@ -2,7 +2,7 @@ return {
     id = "prelude-cello-suite-no-1",
     title = "Cello suite no. 1 (prelude)",
     author = "Johann Sebastian Bach",
-    date = { "1562371200", "2019-07-06T00:00:00" },
+    timestamp = { 1562371200, "2019-07-06T00:00:00" },
     duration = "2:06",
     poster = "0:03",
     scores = {

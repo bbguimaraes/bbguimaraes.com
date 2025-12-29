@@ -21,7 +21,7 @@ Happy winter solstice.
 
 return {
     title = "The super user is more powerful than god",
-    date  = { "1356086880", "2012-12-21T10:48:00" },
+    timestamp = { 1356086880, "2012-12-21T10:48:00" },
     tags = { "shell", "linux" },
     content = content,
 }

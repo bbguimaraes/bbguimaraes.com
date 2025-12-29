@@ -145,7 +145,7 @@ the valley.
 return {
     id = "santi-cosma-e-damiano",
     title = "Santi Cosma e Damiano",
-    timestamp = {"1706486400", "2024-01-29"},
+    timestamp = { 1706486400, "2024-01-29" },
     description = description,
     content = content,
     citation = citation,

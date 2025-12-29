@@ -44,7 +44,7 @@ it even advertises my blog.  Yay!
 
 return {
     title = "Hiding text in LaTeX",
-    date  = { "1352067840", "2012-11-04T22:24:00" },
+    timestamp = { 1352067840, "2012-11-04T22:24:00" },
     tags = { "dissertation", "latex" },
     description = description,
     content = content,

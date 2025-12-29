@@ -69,7 +69,7 @@ they say "a classic!".
 return {
     id = "trento",
     title = "Trento, Padova, Bologna",
-    timestamp = {"1697414400", "2023-10-16"},
+    timestamp = { 1697414400, "2023-10-16" },
     description = description,
     content = content,
     citation = citation,

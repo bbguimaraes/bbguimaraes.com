@@ -106,7 +106,7 @@ Monte D'Argento.
 return {
     id = "minturno",
     title = "Minturno",
-    timestamp = {"1709078401", "2024-02-28"},
+    timestamp = { 1709078401, "2024-02-28" },
     description = description,
     content = content,
     citation = citation,

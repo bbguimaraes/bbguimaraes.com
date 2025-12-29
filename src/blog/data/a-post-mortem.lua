@@ -76,7 +76,7 @@ installation steps later.
 
 return {
     title = "A post-mortem",
-    date  = { "1373840040", "2013-07-14T22:14:00" },
+    timestamp = { 1373840040, "2013-07-14T22:14:00" },
     tags = { "programming", "raspbian", "linux", "arch", "raspberry pi" },
     description = description,
     content = content,

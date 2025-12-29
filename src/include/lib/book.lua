@@ -60,7 +60,7 @@ end
 
 if full then
     table.insert(content,
-        html(string.format("<p><i>%s</i></p>", var("date")[2])))
+        html(string.format("<p><i>%s</i></p>", var("timestamp")[2])))
 end
 
 if intro then

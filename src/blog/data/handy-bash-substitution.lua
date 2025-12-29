@@ -272,7 +272,7 @@ cache file name on my file system).
 
 return {
     title = "Handy bash substitution",
-    date  = { "1361678760", "2013-02-24T04:06:00" },
+    timestamp = { 1361678760, "2013-02-24T04:06:00" },
     tags = {
         "tar", "awk", "jethro tull", "perl", "wget", "find",
         "bash substitution", "bash expansion", "shell", "programming", "linux",

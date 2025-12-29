@@ -8,7 +8,7 @@ return {
     file_name = "lemon_song",
     title = "The lemon song",
     author = "Led Zeppelin",
-    date = { "1502582400", "2017-08-13T00:00:00" },
+    timestamp = { 1502582400, "2017-08-13T00:00:00" },
     duration = "2:45",
     poster = "0:18",
     tags = {"bass", "short"},

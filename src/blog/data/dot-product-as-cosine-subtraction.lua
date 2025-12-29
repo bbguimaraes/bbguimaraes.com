@@ -57,7 +57,7 @@ All that is left is to apply the cosine subtraction formula:
 
 return {
     title = "Dot product as cosine subtraction",
-    date  = { "1579975440", "2020-01-25T18:04:00" },
+    timestamp = { 1579975440, "2020-01-25T18:04:00" },
     tags = { "math" },
     description = description,
     content = content,

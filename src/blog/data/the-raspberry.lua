@@ -115,7 +115,7 @@ Raspberry Pi foundation</a>, which is the OS we'll use.
 
 return {
     title = "The raspberry",
-    date  = { "1358983740", "2013-01-23T23:29:00" },
+    timestamp = { 1358983740, "2013-01-23T23:29:00" },
     tags = { "raspbian", "linux", "raspberry pi" },
     description = description,
     content = content,
