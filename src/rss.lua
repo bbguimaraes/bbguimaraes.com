@@ -1,98 +1,92 @@
+local data_dir <const> = require "lib.data_dir"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 
 local files <const> = {}
-local file_names <const> = {}
 
-local function generate_common(dir, file_name, t, tag)
-    local t <const> = generate.load(path.join("src", dir, "data", file_name))
+local function generate_common(dir, t, tag)
     if t.rss ~= nil and not t.rss then
         return
     end
-    t.file = path.join(
-        dir, file_name:gsub("%.lua$", ".html"):gsub("_", "-"), nil)
+    t.file = path.join(dir, t.id .. ".html")
     if t.tags then
         table.insert(t.tags, 1, tag or dir)
     else
         t.tags = {tag or dir}
     end
-    files[file_name] = t
-    table.insert(file_names, file_name)
+    table.insert(files, t)
     return t
 end
 
-local blog_dir <const> = path.join("src", "blog", "data")
-for x in path.each(blog_dir) do
-    generate_common("blog", x, t)
+local blog_dir <const> = data_dir.new(var, "blog")
+for _, x in ipairs(blog_dir:load()) do
+    generate_common("blog", x)
 end
 
-local lib_dir <const> = path.join("src", "lib", "data")
-for x in path.each(lib_dir) do
-    local t <const> = generate_common("lib", x, t, "books")
-    if not t then
+local lib_dir <const> = data_dir.new(var, "lib")
+for _, x in ipairs(lib_dir:load()) do
+    if not generate_common("lib", x, "books") then
         goto continue
     end
-    local title, author = t.title, t.author
-    if t.languages then
+    local title, author = x.title, x.author
+    if x.languages then
         title = title.en
         author = author.en
     end
-    t.title = title
-    t.short_title = nil
-    if t.description then
-        t.description = string.format(
+    x.title = title
+    x.short_title = nil
+    if x.description then
+        x.description = string.format(
             "<p>%s, %s</p><p>%s</p>",
-            title, author, t.description:gsub("\n$", ""):gsub("\n", " "))
+            title, author, x.description:gsub("\n$", ""):gsub("\n", " "))
     else
-        t.description = string.format("%s, %s", title, author)
+        x.description = string.format("%s, %s", title, author)
     end
     ::continue::
 end
 
-local music_dir <const> = path.join("src", "music", "data")
-for x in path.each(music_dir) do
-    local t <const> = generate_common("music", x, t)
+local music_dir <const> = data_dir.new(var, "music")
+for _, x in ipairs(music_dir:load()) do
+    generate_common("music", x)
     local desc = {}
     table.insert(desc, "<p>")
-    table.insert(desc, table.concat(t.tags, " "))
+    table.insert(desc, table.concat(x.tags, " "))
     table.insert(desc, "</p>")
-    if t.author then
+    if x.author then
         table.insert(desc, "<p>")
-        table.insert(desc, t.author)
+        table.insert(desc, x.author)
         table.insert(desc, "</p>")
     end
-    if t.description then
+    if x.description then
         table.insert(desc, "<p>")
-        table.insert(desc, (t.description:gsub("\n$", ""):gsub("\n", " ")))
+        table.insert(desc, (x.description:gsub("\n$", ""):gsub("\n", " ")))
         table.insert(desc, "</p>")
     end
-    t.description = table.concat(desc)
+    x.description = table.concat(desc)
 end
 
-local places_dir <const> = path.join("src", "places", "data")
-for x in path.each(places_dir) do
-    local t <const> = generate_common("places", x, t, "place")
-    if t.description then
-        t.description = t.description:gsub("\n$", ""):gsub("\n", " ")
+local places_dir <const> = data_dir.new(var, "places")
+for _, x in ipairs(places_dir:load()) do
+    generate_common("places", x, "place")
+    if x.description then
+        x.description = x.description:gsub("\n$", ""):gsub("\n", " ")
     end
 end
 
-local pictures_dir <const> = path.join("src", "pictures", "data")
-for x in path.each(pictures_dir) do
-    generate_common("pictures", x, t)
+local pictures_dir <const> = data_dir.new(var, "pictures")
+for _, x in ipairs(pictures_dir:load()) do
+    generate_common("pictures", x)
 end
 
-local writing_dir <const> = path.join("src", "writing", "data")
-for x in path.each(writing_dir) do
-    generate_common("writing", x, t)
+local writing_dir <const> = data_dir.new(var, "writing")
+for _, x in ipairs(writing_dir:load()) do
+    generate_common("writing", x)
 end
 
-table.sort(file_names, function(x, y)
-    return files[y].timestamp[1] < files[x].timestamp[1]
-end)
+table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 local posts <const> = {}
-for _, x in ipairs(file_names) do
-    table.insert(posts, files[x])
+for _, x in ipairs(files) do
+    table.insert(posts, x)
 end
 
 return lines {

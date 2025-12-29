@@ -1,21 +1,17 @@
 local convert <const> = require "lib.convert"
+local data_dir <const> = require "lib.data_dir"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local include_path <const> = var "include_path"
-local page_path <const> = var "page_path"
 local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 local base_url <const> = var "base_url"
 
 local DIR <const> = "places"
-local DATA_DIR <const> = path.join("src", DIR, "data")
-local PAGE <const> = include_path(DIR, "page.lua")
-local PREVIEW <const> = include_path(DIR, "preview.lua")
+local PREVIEW <const> = var("include_path")(DIR, "preview.lua")
 local PAGE_ENV <const> = {
     css = {"/main.css", "/gallery.css", "places.css"},
-    file_url = function(...) return file_url(DIR, ...) end,
 }
 
 local IMAGES <const> = path.set(
@@ -61,28 +57,21 @@ else than the good ordering of the mind.]]):gsub("\n", " ") .. [[
 ]]
 
 local generate_images
-local function process_item(file_name, t)
-    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
+local function process_item(_, t)
+    if t.images then
+        for _, x in ipairs(t.images) do
+            x.alt = x.path
+            x.path = path.join(DIR, x.path)
+        end
+    end
     t.images = generate_images(t)
-    return t
-end
-
-local function generate_page(t)
-    local file_name <const> = page_path(DIR, t.id) .. ".html"
-    local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, PAGE_ENV, t, {
-        nav_path = {{".", "places"}, {nil, t.title}},
-        url = path.join(base_url, "places", t.id .. ".html"),
-    })
 end
 
 local render_without_links
 local function generate_item(_, t)
-    local tt
-    if t.content then
-        tt = {content = render_without_links(t.content)}
-    end
-    return generate.load(PREVIEW, PAGE_ENV, t, tt)
+    return generate.load(PREVIEW, PAGE_ENV, t, {
+        content = render_without_links(t.content),
+    })
 end
 
 function render_without_links(t)
@@ -108,22 +97,21 @@ end
 
 function generate_image(t, suffix, size)
     local src <const> = t.path
-    local dst <const> =
-        file_path(DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
+    local dst <const> = file_path(src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
     if not IMAGES[dst] then
-        convert.generate_image(dst, file_path(DIR, src), size, t.poster)
+        convert.generate_image(dst, file_path(src), size, t.poster)
     end
 end
 
-local files <const> = {}
-for x in path.each(DATA_DIR) do
-    table.insert(files, process_item(x, generate.load(path.join(DATA_DIR, x))))
-end
-table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
-
-for _, x in ipairs(files) do
-    generate_page(x)
-end
+local d <const> = data_dir.new(var, DIR)
+local files <const> = d:load()
+util.ieach(process_item, files)
+d:generate_pages(files, function(x)
+    return PAGE_ENV, {
+        nav_path = {{".", "places"}, {nil, x.title}},
+        url = path.join(base_url, DIR, x.id .. ".html"),
+    }
+end)
 
 return include "master.lua" {
     title = "places",

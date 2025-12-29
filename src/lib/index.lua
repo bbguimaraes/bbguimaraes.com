@@ -1,9 +1,13 @@
+local data_dir <const> = require "lib.data_dir"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local DATA_DIR <const> = path.join("src", "lib", "data")
+local include_path <const> = var "include_path"
+local file_url <const> = var "file_url"
 
+local DIR <const> = "lib"
+local BOOK <const> = path.join(DIR, "book.lua")
 local categories <const> =
     util.table_default_assign(function() return {} end)
 
@@ -163,13 +167,6 @@ to live. Which is better God only knows.
 ]],
 }
 
-local function load_book(file_name)
-    local t <const> =
-        assert(loadfile(path.join(DATA_DIR, file_name), nil, _ENV))()
-    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
-    return t
-end
-
 local function process_item(_, t)
     table.insert(categories[t.category], t)
 end
@@ -183,7 +180,7 @@ local function toc_link(_, x)
 end
 
 local function render_book(_, t)
-    return include(path.join("..", "include", "lib", "book.lua"))(t)
+    return include(BOOK)(t)
 end
 
 local function books(t)
@@ -198,7 +195,7 @@ local function honorable(href, title_fmt, title, id, cover, author)
             {id = id, class = "book"},
             tag("a", {href = href}, lines {
                 image {
-                    src = "/files/lib/" .. cover,
+                    src = file_url(DIR, cover),
                     alt = "cover",
                     class = "image book-cover",
                 },
@@ -208,23 +205,14 @@ local function honorable(href, title_fmt, title, id, cover, author)
     }
 end
 
-local function generate_book_page(_, t)
-    if not t.intro then
-        return
-    end
-    local tt <const> = {}
-    for _, lang in ipairs(t.languages or {"en"}) do
-        local file_name = path.join("bbguimaraes.com", "lib", t.id)
-        if lang == "en" then
-            file_name = file_name .. ".html"
-        else
-            file_name = string.format("%s-%s.html", file_name, lang)
-        end
-        local f <close> = assert(io.open(file_name, "w"))
-        tt.lang = lang
-        generate.generate(f, "src/include/lib/page.lua", t, tt)
-    end
-end
+local d <const> = data_dir.new(var, DIR)
+local files <const> = d:load()
+util.each(process_item, files)
+d:generate_pages(categories.general)
+
+local toc_publications <const> = util.imap(toc_link, categories.publications)
+local toc_general <const> = util.imap(toc_link, categories.general)
+local toc_technical <const> = util.imap(toc_link, categories.technical)
 
 local honorable <const> = {
     honorable(
@@ -383,19 +371,6 @@ local honorable <const> = {
         "memorabilia.jpg",
         "Xenophon"),
 }
-
-local files <const> = {}
-for x in path.each(path.join(DATA_DIR)) do
-    local t <const> = load_book(x)
-    table.insert(files, t)
-end
-table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
-util.ieach(process_item, files)
-
-local toc_publications <const> = util.imap(toc_link, categories.publications)
-local toc_general <const> = util.imap(toc_link, categories.general)
-local toc_technical <const> = util.imap(toc_link, categories.technical)
-util.ieach(generate_book_page, categories.general)
 
 return include "master.lua" {
     title = "books",

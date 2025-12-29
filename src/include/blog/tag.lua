@@ -1,11 +1,12 @@
+local path <const> = require "lib.path"
 local util <const> = require "lib.util"
+
 local tag <const> = var "tag"
 
 local function page_link(_, t)
-    local page <const>, title <const> = table.unpack(t)
     return link {
-        href = "../" .. page:gsub("%.lua$", ".html"),
-        content = title,
+        href = path.join("..", t.id .. ".html"),
+        content = t.short_title or t.title,
     }
 end
 

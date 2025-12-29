@@ -1,19 +1,13 @@
 local convert <const> = require "lib.convert"
-local generate <const> = require "lib.generate"
+local data_dir <const> = require "lib.data_dir"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local include_path <const> = var "include_path"
-local page_path <const> = var "page_path"
+local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
 local DIR <const> = "writing"
-local DATA_DIR <const> = path.join("src", DIR, "data")
-local FILES_URL <const> = file_url(DIR)
-local FILES_DIR <const> = "bbguimaraes.com" .. FILES_URL
-local PAGE <const> = include_path(DIR, "page.lua")
-
-local IMAGES <const> = path.set(path.join(FILES_DIR, "*.jpg"))
+local IMAGES <const> = path.set(file_path(DIR, "*.jpg"))
 
 local cit <const> = [[
 Ἐν ἀρχῇ ἦν ὁ λόγος
@@ -28,16 +22,9 @@ In the beginning was the Word
 ]]
 
 local generate_image
-local function process_item(file_name, t)
-    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
+local function process_item(_, t)
+    t.image.src = path.join(DIR, t.image.src)
     generate_image(t.image.src, "_small", "512x384")
-    return t
-end
-
-local function generate_page(t)
-    local file_name <const> = page_path(DIR, t.id) .. ".html"
-    local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, t)
 end
 
 local function generate_item(_, t)
@@ -61,22 +48,16 @@ local function generate_item(_, t)
 end
 
 function generate_image(src, suffix, size)
-    local dst <const> = path.join(
-        FILES_DIR, src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
+    local dst <const> = file_path(src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
     if not IMAGES[dst] then
-        convert.generate_image(dst, path.join(FILES_DIR, src), size)
+        convert.generate_image(dst, file_path(src), size)
     end
 end
 
-local files <const> = {}
-for x in path.each(DATA_DIR) do
-    table.insert(files, process_item(x, generate.load(path.join(DATA_DIR, x))))
-end
-table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
-
-for _, x in ipairs(files) do
-    generate_page(x)
-end
+local d <const> = data_dir.new(var, DIR)
+local files <const> = d:load()
+util.ieach(process_item, files)
+d:generate_pages(files, PAGE_ENV)
 
 return include "master.lua" {
     title = "writing",
