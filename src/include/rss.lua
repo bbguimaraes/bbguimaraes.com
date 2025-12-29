@@ -51,14 +51,14 @@ for _, x in ipairs(var("posts")) do
     local desc <const> = x.description
     local url <const> = string.format(
         "https://bbguimaraes.com/%s",
-        x.file:gsub("%.lua$", ".html"))
+        x.file)
     local l <const> = {}
     table.insert(l, inline_tag("title", nil, x.short_title or x.title))
     table.insert(l, inline_tag("link", nil, url))
     table.insert(l, inline_tag("guid", nil, url))
     table.insert(l,
         inline_tag("pubDate", nil,
-            os.date("!%a, %d %b %Y %H:%M:%S %Z", x.timestamp)))
+            os.date("!%a, %d %b %Y %H:%M:%S %Z", x.timestamp[1])))
     for _, x in ipairs(x.tags or {}) do
         table.insert(l, inline_tag("category", nil, x))
     end
