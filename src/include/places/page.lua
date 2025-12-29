@@ -24,6 +24,7 @@ local function generate_image(_, t)
     return {
         path = name,
         poster = poster,
+        alt = t.alt,
         text = t.text,
         width = t.width,
         height = t.height,
@@ -45,7 +46,7 @@ local function generate_figure(_, t)
     else
         content = image {
             class = "gallery-shadow",
-            alt = name,
+            alt = t.alt,
             src = file_url(poster),
         }
     end

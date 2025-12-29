@@ -43,7 +43,7 @@ end
 
 local content <const> = {}
 table.insert(content, image {
-    src = "/files/lib/" .. var "cover",
+    src = var("file_url")("lib", var "cover"),
     alt = "cover",
     class = "image book-cover",
 })
