@@ -110,12 +110,12 @@ Modules include:
 <code>thermal</code>: ACPI thermal measurement.
 ]],
         },
-        html [[<hr class="small-div" />]],
+        hr(),
         par [[
 Example:
 ]],
         example,
-        html [[<hr class="small-div" />]],
+        hr(),
         par [[
 Configuration file:
 ]],

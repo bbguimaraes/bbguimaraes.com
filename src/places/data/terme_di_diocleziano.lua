@@ -30,7 +30,7 @@ Empire; right next to it the epigraphic section has historical artefacts of
 Greek and Roman writing; finally, there are archaeological finds from the baths
 themselves as well as other areas of the city.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 The main reason for my visit was to see a few famous items housed there (at
 least “famous” for those like me).  First, a piece of pottery containing the

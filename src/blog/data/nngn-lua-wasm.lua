@@ -52,13 +52,13 @@ your operating system.
         title = "Lua Wasm demo - write some lua code and press enter",
         alt = "Lua Wasm demo - write some lua code and press enter",
     },
-    html "<hr />",
+    hr(),
     image {
         src = "/files/blog/lua_wasm_demo1.png",
         title = ('Lua Wasm demo - "hello" .. ", " .. "lua"'):gsub('"', "&quot;"),
         alt = ('Lua Wasm demo - "hello" .. ", " .. "lua"'):gsub('"', "&quot;"),
     },
-    html "<hr />",
+    hr(),
     image {
         src = "/files/blog/lua_wasm_demo2.png",
         title = "Lua Wasm demo - hello, lua",

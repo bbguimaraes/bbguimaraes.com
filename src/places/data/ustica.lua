@@ -20,7 +20,7 @@ when the Sicilian heat got too intense (I still got badly sunburned), all the
 while being by myself for nearly the entire day, with no one around as far as
     the eye could see.  A day in paradise.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 According to some interpretations of the Homeric geographical descriptions, this
 is the ancient Aeaea, the island of the goddess Circe, the beautiful sorceress
@@ -41,7 +41,7 @@ land: it was formed from magma originated from the depths of the Earth's mantle,
 and the island is in fact the tip of a volcanic complex more than six times
 larger, now mostly submerged.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 I arrived early in the morning — the hydrofoil takes 90 minutes to arrive — and
 walked around the center just long enough to visit <i lang="it">Chiesa di

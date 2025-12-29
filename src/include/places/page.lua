@@ -61,11 +61,11 @@ local images <const> = util.imap(generate_image, var("images", {}))
 local l <const> = {}
 var_and("content", function(x)
     table.insert(l, x)
-    table.insert(l, tag("hr", {class = "small-div"}))
+    table.insert(l, hr())
 end)
 var_and("citation", function(x)
     table.insert(l, blockquote(x))
-    table.insert(l, tag("hr", {class = "small-div"}))
+    table.insert(l, hr())
 end)
 
 return include "master.lua" {

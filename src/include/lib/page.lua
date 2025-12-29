@@ -16,7 +16,7 @@ table.insert(content, include("lib/book.lua") { full = true })
 if lang == "en" then
     local citations <const> = var("citations", false)
     if citations then
-        table.insert(content, html "<hr />")
+        table.insert(content, hr())
         table.insert(content, include "lib/citations.lua" {
             citations = citations,
         })

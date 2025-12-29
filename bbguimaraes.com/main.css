@@ -51,12 +51,6 @@ body {
     visibility: hidden;
 }
 
-.small-div {
-    width: 38.2%;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
 h1, h2, h3 {
     font-style: italic;
     font-weight: normal;
@@ -133,6 +127,23 @@ figcaption {
     font-size: 2rem;
     list-style-position: inside;
     cursor: default;
+}
+
+hr {
+    filter: invert(1);
+    background-image: url("/files/monviso_div.svg");
+    border: 0;
+    max-width: 100%;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.white-bg hr {
+    filter: initial;
 }
 
 @media(max-width: 800px) {

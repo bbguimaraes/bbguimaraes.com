@@ -57,18 +57,18 @@ other men", betraying this commandment would be not only immoral, but impious:
         par [[
 I shall never alter my ways, not even if I have to die many times.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 I would rather die having spoken after my manner, than speak in your manner and
 live.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 A man who is good for anything ought only to consider whether in doing anything
 he is doing right or wrong[&hellip;]; he should not think of death or anything
 but of disgrace.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 For if, O men of Athens, by force of persuasion and entreaty I could overpower
 your oaths, then I should be teaching you to believe that there are no gods, and
@@ -155,17 +155,17 @@ outros homens", trair esse mandamento seria não só imoral, mas ímpio:
         par [[
 Nunca alterarei meu modo, nem que tenha que morrer várias vezes.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 Preferiria morrer tendo falado da minha maneira, a falar da sua maneira e viver.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 Um homem que é bom para qualquer coisa deve somente considerar se ao fazer algo
 faz o certo ou o errado[&hellip;]; não deve pensar na morte ou em qualquer coisa
 senão na desgraça.
 ]],
-    html "<hr />",
+    hr(),
     par [[
 Porque se, ó homens de Atenas, por força de persuasão e súplica eu pudesse
 compelir seus juramentos, então estaria os ensinando a acreditar que não existem

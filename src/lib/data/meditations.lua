@@ -21,12 +21,12 @@ local content <const> = lines {
 Nothing is either bad or good which can happen equally to the bad man and the
 good.
 ]],
-        html "<hr />",
+        hr(),
         par [[
 I seek the truth by which no man has ever injured, but he is injured who abides
 in his error and ignorance.
 ]],
-        html "<hr />",
+        hr(),
         par [[
 Cast away opinion: thou art saved.  Who then hinders thee from casting it away?
 ]],
@@ -64,12 +64,12 @@ um forte tom pessoal, e uma abundância de aforismos incisivos:
         par [[
 Nada é ruim ou bom que pode acontecer igualmente ao homem ruim e ao bom.
 ]],
-        html "<hr />",
+        hr(),
         par [[
 Eu busco a verdade pela qual nenhum homem já foi ferido, mas é ferido quem
 persiste em seu erro e ignorância.
 ]],
-        html "<hr />",
+        hr(),
         par [[
 Rejeite a opinião: és salvo.  Quem então tem impede de rejeitá-la?
 ]],

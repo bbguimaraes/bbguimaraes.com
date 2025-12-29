@@ -39,7 +39,7 @@ this point.  All this by the somewhat obscure general Gaius Lutatius Catulus, a
 This event is still celebrated in Favignana more than two thousand years later —
 and I have <em>two</em> shirts to prove it (this is why I love Italy).
 ]],
-    html "<hr />",
+    hr(),
     par [[
 Favignana is the perfect exemplar of the Scilian islands.  Other than monte
 Santa Caterina at its center, the land is mostly flat, making its coast ideal to

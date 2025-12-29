@@ -21,7 +21,7 @@ for _, x in ipairs(var "citations") do
     local ret <const> = {}
     if title then
         title = string.format("%s &ndash; %s", source, title)
-        table.insert(l, html("<hr />"))
+        table.insert(l, hr())
     else
         title = source
     end

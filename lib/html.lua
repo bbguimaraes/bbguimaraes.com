@@ -281,6 +281,8 @@ function blockquote(s) return tag:new("blockquote", nil, s) end
 function blockquote_par(s) return blockquote(par(s)) end
 --- Shortcut for \ref tag for an `<audio>`.
 function audio(t) return inline_tag:new("audio", t, "") end
+--- Shortcut for \ref tag for an `<hr>`.
+function hr(...) return tag:new("hr", ...) end
 
 --- Meta tag containing a property and its value.
 function property(k, v)
