@@ -103,6 +103,10 @@ body {
 .roman {
     font-family: "P052", Palatino, 'Times New Roman', Times, serif;
     font-size: var(--font-size-roman);
+
+    code {
+        font-weight: normal;
+    }
 }
 
 .inline-block {
@@ -217,22 +221,6 @@ hr {
 
     .roman {
         font-size: calc(10px + 1vw);
-    }
-}
-
-@media not (max-width: 50ch) {
-    .side-content-three-quarters {
-        float: right;
-        margin-left: 2em;
-    }
-}
-
-@media (max-width: 50ch) {
-    .side-content-three-quarters {
-        float: none;
-        display: block;
-        max-width: 100%;
-        margin: 2em auto;
     }
 }
 
