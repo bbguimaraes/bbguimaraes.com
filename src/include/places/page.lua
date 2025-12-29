@@ -71,21 +71,19 @@ var_and("citation", function(x)
 end)
 
 return include "master.lua" {
-    css = {"/main.css", "places.css"},
     og = {
         type = "article",
         title = title,
         image = #images ~= 0
             and (base_url .. file_url(images[1].poster))
             or nil,
-        url = path.join(var "base_url_sub", var("id") .. ".html"),
+        url = var "url",
     },
     body_class = "white-bg roman",
+    nav_path = false,
     main = main({class = "post"}, lines {
         div({class = "w80"}, lines {
-            include "nav.lua" {
-                nav_path = {{".", "places"}, {nil, title}},
-            },
+            include "nav.lua" {},
             tag("h1", nil, title),
             generate_info(),
             table.unpack(l),
