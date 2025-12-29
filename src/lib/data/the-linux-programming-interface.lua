@@ -1,5 +1,4 @@
 return {
-    id = "the-linux-programming-interface",
     title = "The Linux Programming Interface",
     cover = "tlpi.jpg",
     link = "https://www.man7.org/tlpi/index.html",

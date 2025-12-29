@@ -60,7 +60,8 @@ else than the good ordering of the mind.]]):gsub("\n", " ") .. [[
 ]]
 
 local generate_images
-local function process_item(t)
+local function process_item(file_name, t)
+    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
     t.images = generate_images(t)
     return t
 end
@@ -112,7 +113,7 @@ end
 
 local files <const> = {}
 for x in path.each(DATA_DIR) do
-    table.insert(files, process_item(generate.load(path.join(DATA_DIR, x))))
+    table.insert(files, process_item(x, generate.load(path.join(DATA_DIR, x))))
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 

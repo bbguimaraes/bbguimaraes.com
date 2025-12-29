@@ -1,5 +1,4 @@
 return {
-    id = "prelude-cello-suite-no-1",
     title = "Cello suite no. 1 (prelude)",
     author = "Johann Sebastian Bach",
     timestamp = { 1562371200, "2019-07-06T00:00:00" },

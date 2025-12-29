@@ -1,5 +1,4 @@
 return {
-    id = "the-design-of-the-unix-operating-system",
     title = "The Design of the UNIX Operating System",
     link = "https://www.pearson.com/us/higher-education/program/Bach-Design-of-the-UNIX-Operating-System/PGM81513.html",
     cover = "unix.jpg",

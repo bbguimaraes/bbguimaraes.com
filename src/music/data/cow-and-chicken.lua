@@ -5,7 +5,6 @@ quality. But I couldn't resist the urge to record it after seeing
 ]]
 
 return {
-    id = "cow-and-chicken",
     title = "Cow and chicken",
     timestamp = { 1403481600, "2014-06-23T00:00:00" },
     duration = "0:40",

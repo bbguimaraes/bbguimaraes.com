@@ -1,5 +1,4 @@
 return {
-    id = "choo-choo-chboogie",
     title = "Choo choo ch'boogie",
     author = "Louis Jordan",
     timestamp = { 1461974400, "2016-04-30T00:00:00" },

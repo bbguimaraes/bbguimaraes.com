@@ -3,7 +3,6 @@ Forgive me, Ludwig, wherever you are.
 ]]
 
 return {
-    id = "not-for-elise",
     title = "Not for Elise",
     author = "Ludwig van Beethoven",
     timestamp = { 1456617600, "2016-02-28T00:00:00" },

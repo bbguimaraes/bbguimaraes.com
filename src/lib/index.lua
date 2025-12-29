@@ -158,9 +158,12 @@ to live. Which is better God only knows.
 ]],
 }
 
-local function load_book(_, filename)
-    filename = path.join("src", "lib", "data", filename)
-    return assert(loadfile(filename, nil, _ENV))()
+local function load_book(_, file_name)
+    local id <const> = file_name:gsub("%.lua$", ""):gsub("_", "-")
+    file_name = path.join("src", "lib", "data", file_name)
+    local t <const> = assert(loadfile(file_name, nil, _ENV))()
+    t.id = id
+    return t
 end
 
 local function toc_link(_, x)

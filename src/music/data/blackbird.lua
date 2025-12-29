@@ -1,5 +1,4 @@
 return {
-    id = "blackbird",
     title = "Blackbird",
     author = "The Beatles",
     timestamp = { 1501977600, "2017-08-06T00:00:00" },

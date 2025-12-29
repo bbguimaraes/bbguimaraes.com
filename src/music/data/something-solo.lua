@@ -35,7 +35,6 @@ I don't know, I don't know
 }
 
 return {
-    id = "something-solo",
     title = "Something (guitar solo)",
     author = "The Beatles",
     timestamp = { 1707784486, "2024-02-13T00:34:46" },

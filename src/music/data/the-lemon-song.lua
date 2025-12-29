@@ -4,7 +4,6 @@ of Becherovka to get this song down.
 ]]
 
 return {
-    id = "the-lemon-song",
     file_name = "lemon_song",
     title = "The lemon song",
     author = "Led Zeppelin",

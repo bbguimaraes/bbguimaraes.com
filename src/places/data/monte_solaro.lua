@@ -90,7 +90,6 @@ Punta Carena.
 }}
 
 return {
-    id = "monte-solaro",
     title = "Monte Solaro, Capri",
     timestamp = { 1707091200, "2024-02-05" },
     description = description,

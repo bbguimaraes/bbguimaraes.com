@@ -115,7 +115,6 @@ Somewhere close to the border between Tunisia and Algeria, by my calculation.
 }}
 
 return {
-    id = "mediterranean",
     title = "Mediterranean sea",
     timestamp = { 1698019200, "2023-10-23" },
     description = description,

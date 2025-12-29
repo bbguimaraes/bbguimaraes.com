@@ -1926,7 +1926,6 @@ can save us.
 }}
 
 return {
-    id = "the-power-of-the-powerless",
     title = {
         en = "The power of the powerless",
         pt = "O poder dos impotentes",

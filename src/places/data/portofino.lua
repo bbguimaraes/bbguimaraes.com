@@ -212,7 +212,6 @@ Saying goodbye from Santa Margherita Ligure, after another swim.
 }}
 
 return {
-    id = "portofino",
     title = "Portofino",
     timestamp = { 1743446292, "2025-03-31" },
     description = description,

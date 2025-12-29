@@ -106,7 +106,6 @@ in the world.
 }}
 
 return {
-    id = "minturnae",
     title = "Minturnae, Minturno",
     timestamp = { 1706313600, "2024-01-27" },
     description = description,

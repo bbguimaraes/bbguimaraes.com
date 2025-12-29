@@ -47,7 +47,6 @@ back.
 local images <const> = {{path = "brno/0.jpg"}}
 
 return {
-    id = "brno",
     title = "Brno",
     timestamp = { 1695945600, "2023-09-29" },
     citation = citation,

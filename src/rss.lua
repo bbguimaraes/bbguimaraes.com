@@ -66,7 +66,7 @@ for x in path.each(music_dir) do
         table.insert(desc, (description:gsub("\n$", ""):gsub("\n", " ")))
         table.insert(desc, "</p>")
     end
-    t.file = path.join("music", t.id .. ".html")
+    t.file = path.join("music", x:gsub("%.lua$", ".html"):gsub("_", "-"), nil)
     table.insert(tags, 1, "music")
     t.description = table.concat(desc)
     t.timestamp = math.tointeger(t.timestamp[1])
@@ -81,7 +81,7 @@ for x in path.each(places_dir) do
     if desc then
         t.description = desc:gsub("\n$", ""):gsub("\n", " ")
     end
-    t.file = path.join("places", t.id .. ".html")
+    t.file = path.join("places", x:gsub("%.lua$", ".html"):gsub("_", "-"), nil)
     t.timestamp = math.tointeger(t.timestamp[1])
     t.tags = {"place"}
     files[x] = t

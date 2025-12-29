@@ -7,7 +7,6 @@ You knew this had to be the first one.
 }
 
 return {
-    id = "godfather",
     title = "The godfather",
     author = "Nino Rota",
     timestamp = { 1739694078, "2025-02-16T08:21:18" },

@@ -93,7 +93,6 @@ The ten Virtues.
 }}
 
 return {
-    id = "sansevero",
     title = "Cappella Sansevero",
     timestamp = { 1709078400, "2024-02-28" },
     description = description,

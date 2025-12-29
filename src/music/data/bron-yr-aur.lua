@@ -3,7 +3,6 @@ Meditation.
 ]]
 
 return {
-    id = "bron-yr-aur",
     title = "Bron-Yr-Aur",
     author = "Led Zeppelin",
     timestamp = { 1692133997, "2023-08-15T21:13:17" },

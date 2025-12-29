@@ -39,7 +39,6 @@ I'm just going over home
 }
 
 return {
-    id = "wayfaring-stranger",
     title = "Wayfaring stranger",
     timestamp = { 1718802939, "2024-06-19T15:15:39" },
     duration = "2:23",

@@ -1,5 +1,4 @@
 return {
-    id = "effective-modern-c++",
     title = "Effective Modern C++",
     link = "https://www.aristeia.com/books.html",
     cover = "effc++.jpg",

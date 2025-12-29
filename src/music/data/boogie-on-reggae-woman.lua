@@ -1,5 +1,4 @@
 return {
-    id = "boogie-on-reggae-woman",
     title = "Boogie on reggae woman",
     author = "Steview Wonder",
     timestamp = { 1491609600, "2017-04-08T00:00:00" },

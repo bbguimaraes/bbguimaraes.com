@@ -1,5 +1,4 @@
 return {
-    id = "crime-and-punishment",
     title = "Crime and punishment",
     author = "Fyodor Dostoevsky",
     link = "https://gutenberg.org/ebooks/2554",

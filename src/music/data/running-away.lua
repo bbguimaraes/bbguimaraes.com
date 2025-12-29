@@ -25,7 +25,6 @@ Why'd you keep on, why'd you keep on running away
 }
 
 return {
-    id = "running-away",
     title = "Running away",
     author = "Joey Dosik",
     timestamp = { 1725725529, "2024-09-07T16:12:09" },

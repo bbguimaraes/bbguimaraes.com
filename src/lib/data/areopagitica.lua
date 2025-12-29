@@ -1,5 +1,4 @@
 return {
-    id = "areopagitica",
     title = "Areopagitica",
     cover = "areopagitica.jpg",
     timestamp = { 1671298972, "2022-12-17T17:42:52" },

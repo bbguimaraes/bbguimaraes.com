@@ -1,5 +1,4 @@
 return {
-    id = "un-sospiro",
     title = "Un sospiro",
     author = "Franz Liszt",
     timestamp = { 1692576000, "2023-08-21T00:00:00" },

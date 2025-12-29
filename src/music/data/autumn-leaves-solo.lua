@@ -34,7 +34,6 @@ When autumn leaves start to fall
 }
 
 return {
-    id = "autumn-leaves-solo",
     title = "Autumn leaves (solo)",
     author = "Eric Clapton",
     timestamp = { 1754155877, "2025-08-02T17:31:17" },
