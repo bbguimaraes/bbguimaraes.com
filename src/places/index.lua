@@ -65,13 +65,12 @@ end
 
 local render_without_links
 local function generate_item(_, t)
-    local content <const> = t.content
-    if content then
-        t = util.copy(t)
-        t.content = render_without_links(content)
+    local tt
+    if t.content then
+        tt = {content = render_without_links(t.content)}
     end
     return generate.load(
-        path.join("src", "include", "places", "preview.lua"), t)
+        path.join("src", "include", "places", "preview.lua"), t, tt)
 end
 
 function render_without_links(t)
