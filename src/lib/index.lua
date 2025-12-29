@@ -201,7 +201,7 @@ local function generate_book_page(_, t)
     if not t.intro then
         return
     end
-    t = util.copy(t)
+    local tt <const> = {}
     for _, lang in ipairs(t.languages or {"en"}) do
         local file_name = path.join("bbguimaraes.com", "lib", t.id)
         if lang == "en" then
@@ -210,8 +210,8 @@ local function generate_book_page(_, t)
             file_name = string.format("%s-%s.html", file_name, lang)
         end
         local f <close> = assert(io.open(file_name, "w"))
-        t.lang = lang
-        generate.generate(f, "src/include/lib/page.lua", t)
+        tt.lang = lang
+        generate.generate(f, "src/include/lib/page.lua", t, tt)
     end
 end
 
