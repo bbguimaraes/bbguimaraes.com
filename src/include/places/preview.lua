@@ -12,7 +12,7 @@ var_and("images", function(x)
         content,
         div({class = "gallery"}, lines(util.imap(function(_, x)
             return image {
-                alt = x.path,
+                alt = x.alt,
                 src = file_url(x.path:gsub("%.[^.]+$", "_tiny.jpg"), nil),
             }
         end, x))))

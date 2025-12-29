@@ -1,24 +1,20 @@
 local convert <const> = require "lib.convert"
-local generate <const> = require "lib.generate"
+local data_dir <const> = require "lib.data_dir"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
 local title <const> = "música · μουσική · music"
 local base_url <const> = var "base_url"
-local page_path <const> = var "page_path"
 local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
 local DIR <const> = "music"
-local DATA_DIR <const> = path.join("src", DIR, "data")
-local PAGE <const> = path.join("src", "include", DIR, "page.lua")
-
 local VIDEOS <const> = path.set(file_path(DIR, "*.mp4"))
 local IMAGES <const> = path.set(file_path(DIR, "*.png"))
 local AUDIOS <const> = path.set(file_path(DIR, "*.ogg"))
 
 local generate_image, generate_audio
-local function process_item(file_name, t)
+local function process_item(_, t)
     local author <const> = t.author
     local info <const> = {}
     if author then
@@ -28,19 +24,10 @@ local function process_item(file_name, t)
     if tags then
         table.insert(info, table.concat(t.tags, ", "))
     end
-    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
     t.video = file_path(DIR, t.id .. ".mp4")
     t.image = generate_image(t)
     t.audio = generate_audio(t)
-    t.timestamp[1] = math.tointeger(t.timestamp[1])
     t.info = info
-    return t
-end
-
-local function generate_page(t)
-    local file_name <const> = page_path(DIR, t.id) .. ".html"
-    local f <close> = assert(io.open(file_name, "w"))
-    generate.generate(f, PAGE, t)
 end
 
 local function generate_item(_, t)
@@ -86,15 +73,10 @@ function generate_audio(t)
     end
 end
 
-local files <const> = {}
-for x in path.each(DATA_DIR)do
-    table.insert(files, process_item(x, generate.load(path.join(DATA_DIR, x))))
-end
-table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
-
-for _, x in ipairs(files) do
-    generate_page(x)
-end
+local d <const> = data_dir.new(var, DIR)
+local files <const> = d:load()
+util.ieach(process_item, files)
+d:generate_pages(files)
 
 return include "master.lua" {
     title = title,

@@ -1,7 +1,7 @@
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local FILES_URL <const> = path.join("", "files", "writing")
+local FILES_URL <const> = path.join("", "files")
 
 local base_url <const> = var "base_url"
 local title <const> = var "title"
