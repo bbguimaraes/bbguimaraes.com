@@ -159,7 +159,6 @@ Torre dell'Orologio (1596).
 }}
 
 return {
-    id = "trapani",
     title = "Trapani",
     timestamp = { 1745366400, "2025-04-23" },
     description = description,

@@ -587,7 +587,6 @@ Sanctam Trinitatem Angelos Astantes Sanctos[q.] pinxit A.D. [M]DV</i>.
 }}
 
 return {
-    id = "perugia",
     title = "Perugia",
     timestamp = { 1752451200, "2025-07-14" },
     description = description,

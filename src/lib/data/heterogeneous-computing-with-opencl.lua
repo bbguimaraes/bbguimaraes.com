@@ -1,5 +1,4 @@
 return {
-    id = "heterogeneous-computing-with-opencl",
     title = "Heterogeneous Computing with OpenCL",
     author = table.concat({
         "Benedict Gaster",

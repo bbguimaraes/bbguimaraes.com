@@ -200,7 +200,6 @@ Sunset behind the promontory of Gaeta.
 }}
 
 return {
-    id = "formia",
     title = "Formia",
     timestamp = { 1709164800, "2024-02-29" },
     description = description,

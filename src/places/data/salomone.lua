@@ -63,7 +63,6 @@ local images <const> = {{
 }}
 
 return {
-    id = "salomone",
     title = "Fonte di Salomone, Sant'Andrea del Garigliano",
     timestamp = { 1707436800, "2024-02-09" },
     description = description,

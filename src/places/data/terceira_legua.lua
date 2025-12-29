@@ -42,7 +42,6 @@ local images <const> = {{
 }}
 
 return {
-    id = "terceira-legua",
     title = "São Luiz da Terceira Légua",
     timestamp = { 1701734400, "2023-12-05" },
     citation = citation,

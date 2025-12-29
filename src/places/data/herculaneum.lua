@@ -232,7 +232,6 @@ The modern city of Ercolano.
 }}
 
 return {
-    id = "herculaneum",
     title = "Herculaneum",
     timestamp = { 1708819200, "2024-02-25" },
     description = description,

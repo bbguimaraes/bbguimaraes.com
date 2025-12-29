@@ -550,7 +550,6 @@ forgotten that every man lives the present time only, and loses only this.
 }}
 
 return {
-    id = "meditations",
     short_title = {
         en = 'Meditations',
         pt = 'Meditações',

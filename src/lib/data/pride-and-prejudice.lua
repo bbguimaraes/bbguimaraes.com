@@ -1630,7 +1630,6 @@ unable to respect your partner in life.  You know not what you are about".
 }}
 
 return {
-    id = "pride-and-prejudice",
     title = {
         en = "Pride and prejudice",
         pt = "Orgulho e preconceito",

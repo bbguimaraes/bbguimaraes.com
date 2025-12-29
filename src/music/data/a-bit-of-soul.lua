@@ -1,5 +1,4 @@
 return {
-    id = "a-bit-of-soul",
     title = "A bit of soul (blues hangover)",
     author = "Ray Charles",
     timestamp = { 1482969600, "2016-12-29T00:00:00" },

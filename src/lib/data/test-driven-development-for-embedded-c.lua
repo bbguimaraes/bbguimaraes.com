@@ -1,5 +1,4 @@
 return {
-    id = "test-driven-development-for-embedded-c",
     title = "Test Driven Development for Embedded C",
     link = "https://pragprog.com/titles/jgade/test-driven-development-for-embedded-c/",
     cover = "tdd_c.jpg",

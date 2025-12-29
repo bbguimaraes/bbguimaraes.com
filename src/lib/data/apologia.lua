@@ -1334,7 +1334,6 @@ to live.  Which is better God only knows.
 }}
 
 return {
-    id = "apologia",
     short_title = {
         en = "Apology of Socrates",
         pt = "Apologia de Sócrates",

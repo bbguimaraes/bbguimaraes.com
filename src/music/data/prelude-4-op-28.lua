@@ -39,7 +39,6 @@ everything you do in life.
 }
 
 return {
-    id = "prelude-4-op-28",
     title = "Prelude 4, op. 28",
     author = "Frédéric François Chopin",
     timestamp = { 1690716480, "2023-07-30T11:28:00" },

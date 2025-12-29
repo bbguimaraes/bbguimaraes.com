@@ -3,7 +3,6 @@ The legend of Zelda - Ocarina of time
 ]]
 
 return {
-    id = "sheiks-theme",
     file_name = "sheik",
     title = "Sheik's theme",
     author = "Koji Kondo",

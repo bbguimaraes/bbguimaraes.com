@@ -38,7 +38,6 @@ I'll be on my way
 }
 
 return {
-    id = "lonely-stranger",
     title = "Lonely stranger",
     author = "Eric Clapton",
     timestamp = { 1739287293, "2025-02-11T15:21:33" },

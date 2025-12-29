@@ -1,5 +1,4 @@
 return {
-    id = "fado-tropical",
     title = "Fado tropical",
     author = "Chico Buarque, Ruy Guerra",
     timestamp = { 1476576000, "2016-10-16T00:00:00" },

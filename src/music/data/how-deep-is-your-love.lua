@@ -54,7 +54,6 @@ How deep is your love
 }
 
 return {
-    id = "how-deep-is-your-love",
     title = "How deep is your love",
     author = "Bee Gees",
     timestamp = { 1723402285, "2024-08-11T18:51:25" },

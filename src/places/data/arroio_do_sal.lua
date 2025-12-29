@@ -34,7 +34,6 @@ local images <const> = {{
 }}
 
 return {
-    id = "arroio-do-sal",
     title = "Arroio do Sal",
     timestamp = { 1703203200, "2023-12-22" },
     description = description,

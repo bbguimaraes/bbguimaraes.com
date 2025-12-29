@@ -159,7 +159,6 @@ href="https://www.viefrancigene.org">viefrancigene.org</a>.
 }}
 
 return {
-    id = "via-francigena",
     title = "Via Francigena",
     timestamp = { 1709164801, "2024-02-29" },
     description = description,

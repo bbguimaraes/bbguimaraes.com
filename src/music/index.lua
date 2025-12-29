@@ -18,7 +18,7 @@ local IMAGES <const> = path.set(file_path(DIR, "*.png"))
 local AUDIOS <const> = path.set(file_path(DIR, "*.ogg"))
 
 local generate_image, generate_audio
-local function process_item(t)
+local function process_item(file_name, t)
     local author <const> = t.author
     local info <const> = {}
     if author then
@@ -28,9 +28,8 @@ local function process_item(t)
     if tags then
         table.insert(info, table.concat(t.tags, ", "))
     end
-    local file_name <const> = t.file_name or t.id:gsub("-", "_")
-    t.file_name = file_name
-    t.video = file_path(DIR, file_name .. ".mp4")
+    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
+    t.video = file_path(DIR, t.id .. ".mp4")
     t.image = generate_image(t)
     t.audio = generate_audio(t)
     t.timestamp[1] = math.tointeger(t.timestamp[1])
@@ -47,7 +46,7 @@ end
 local function generate_item(_, t)
     local id <const> = t.id
     local file_name <const> =
-        t.file_name_url or t.file_name or id:gsub("-", "_")
+        t.file_name_url or t.file_name or t.id:gsub("-", "_")
     local info <const> = {}
     table.insert(info, inline_tag("h2", nil, t.title))
     for _, x in ipairs(t.info) do
@@ -89,7 +88,7 @@ end
 
 local files <const> = {}
 for x in path.each(DATA_DIR)do
-    table.insert(files, process_item(generate.load(path.join(DATA_DIR, x))))
+    table.insert(files, process_item(x, generate.load(path.join(DATA_DIR, x))))
 end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 

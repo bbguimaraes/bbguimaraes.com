@@ -97,7 +97,6 @@ eu quero bondade.<br />
 }
 
 return {
-    id = "brave-new-world",
     title = {
         en = "Brave new world",
         pt = "Admirável mundo novo",

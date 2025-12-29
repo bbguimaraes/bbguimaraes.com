@@ -1,5 +1,4 @@
 return {
-    id = "structure-and-interpretation-of-computer-programs",
     title = "Structure and Interpretation of Computer Programs",
     link = "https://mitpress.mit.edu/sites/default/files/sicp/index.html",
     cover = "sicp.jpg",

@@ -1,5 +1,4 @@
 return {
-    id = "programming-in-lua",
     title = "Programming in Lua",
     link = "https://www.lua.org/pil/",
     cover = "pil.jpg",

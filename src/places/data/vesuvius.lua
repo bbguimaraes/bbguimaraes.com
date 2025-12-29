@@ -94,7 +94,6 @@ John Martin, “The Destruction of Pompeii and Herculaneum” (1822).
 }}
 
 return {
-    id = "vesuvius",
     title = "Vesuvius",
     timestamp = { 1706832000, "2024-02-02" },
     description = description,

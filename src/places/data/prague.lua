@@ -11,7 +11,6 @@ local images <const> = {{
 }}
 
 return {
-    id = "prague",
     title = "Praha",
     timestamp = { 1696204800, "2023-10-02" },
     description = description,

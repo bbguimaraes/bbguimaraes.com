@@ -114,7 +114,6 @@ I believe this one is Heybeliada.
 }}
 
 return {
-    id = "istanbul",
     title = "Istanbul",
     timestamp = { 1697846400, "2023-10-21" },
     description = description,

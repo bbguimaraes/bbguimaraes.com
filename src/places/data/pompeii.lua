@@ -244,7 +244,6 @@ of Pompei.
 }}
 
 return {
-    id = "pompeii",
     title = "Pompeii",
     timestamp = { 1708905600, "2024-02-26" },
     description = description,
