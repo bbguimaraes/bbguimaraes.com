@@ -219,26 +219,26 @@ local function generate_book_page(_, t)
 end
 
 local publications <const> = util.imap(load_book, {
-    "areopagitica.lua",
     "missale.lua",
+    "areopagitica.lua",
 })
 local general <const> = util.imap(load_book, {
-    "crime-and-punishment.lua",
-    "meditations.lua",
-    "brave-new-world.lua",
-    "apologia.lua",
-    "pride-and-prejudice.lua",
     "the-power-of-the-powerless.lua",
+    "pride-and-prejudice.lua",
+    "apologia.lua",
+    "brave-new-world.lua",
+    "meditations.lua",
+    "crime-and-punishment.lua",
 })
 local technical <const> = util.imap(load_book, {
-    "refactoring.lua",
-    "the-design-of-the-unix-operating-system.lua",
-    "structure-and-interpretation-of-computer-programs.lua",
-    "test-driven-development-for-embedded-c.lua",
-    "effective-modern-c++.lua",
-    "programming-in-lua.lua",
-    "the-linux-programming-interface.lua",
     "heterogeneous-computing-with-opencl.lua",
+    "the-linux-programming-interface.lua",
+    "programming-in-lua.lua",
+    "effective-modern-c++.lua",
+    "test-driven-development-for-embedded-c.lua",
+    "structure-and-interpretation-of-computer-programs.lua",
+    "the-design-of-the-unix-operating-system.lua",
+    "refactoring.lua",
 })
 local toc_publications <const> = util.imap(toc_link, publications)
 local toc_general <const> = util.imap(toc_link, general)
