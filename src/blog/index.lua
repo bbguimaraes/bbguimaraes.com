@@ -1,21 +1,18 @@
-local generate <const> = require "lib.generate"
+local data_dir <const> = require "lib.data_dir"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local DIR <const> = "src/blog/data"
+local all_tags <const> = util.set:new()
 
-local function generate_file(t)
-    local file_name <const> =
-        path.join("bbguimaraes.com", "blog", t.id .. ".html")
-    local f <close> = io.open(file_name, "w")
-    generate.generate(f, "src/include/blog/post.lua", t)
+local function process_item(_, t)
+    all_tags:union(t.tags)
 end
 
 local function year_list(_, t)
     local k <const>, v <const> = table.unpack(t)
     return lines {
         html(k),
-        ul(util.map(function(_, x)
+        ul(util.imap(function(_, x)
             return link {
                 href = x.id .. ".html",
                 content = x.title,
@@ -31,20 +28,10 @@ local function tag_link(_, x)
     }
 end
 
-local files <const> = {}
-for x in path.each(DIR) do
-    local t <const> = generate.load(path.join(DIR, x))
-    t.id = x:gsub("%.lua$", ""):gsub("_", "-")
-    t.timestamp[1] = math.tointeger(t.timestamp[1])
-    table.insert(files, t)
-end
-table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
-
-local all_tags <const> = util.set:new()
-for _, x in ipairs(files) do
-    all_tags:union(x.tags)
-    generate_file(x)
-end
+local d <const> = data_dir.new(var, "blog")
+local files <const> = d:load()
+util.ieach(process_item, files)
+d:generate_pages(files)
 
 local by_year <const> = util.igroup_by_sorted(
     files,
