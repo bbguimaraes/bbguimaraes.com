@@ -6,27 +6,31 @@ local title <const> = var "title"
 local images <const> = var "images"
 
 local content <const> = {}
-table.insert(content, div({class = "gallery"}, lines(util.imap(function(_, x)
-    return image {
-        alt = x.path,
-        src = path.join(
-            FILES_URL,
-            x.path:gsub("%.[^.]+", "_tiny.jpg"), nil),
-    }
-end, images))))
+local l <const> = {}
+
+var_and("images", function(x)
+    table.insert(
+        content,
+        div({class = "gallery"}, lines(util.imap(function(_, x)
+            return image {
+                alt = x.path,
+                src = path.join(
+                    FILES_URL,
+                    x.path:gsub("%.[^.]+", "_tiny.jpg"), nil),
+            }
+        end, x))))
+    if #x ~= 0 then
+        table.insert(l, image {
+            class = "main-img",
+            alt = title,
+            src = path.join(FILES_URL, x[1].path:gsub("%.", "_small."), nil),
+        })
+    end
+end)
+
 var_and("content", function(x)
     table.insert(content, div({class = "description"}, x))
 end)
-
-local l <const> = {}
-
-if #images ~= 0 then
-    table.insert(l, image {
-    class = "main-img",
-    alt = title,
-    src = path.join(FILES_URL, images[1].path:gsub("%.", "_small."), nil),
-    })
-end
 
 table.insert(l, div({class = "title"}, lines {
     inline_tag("h2", nil, title),

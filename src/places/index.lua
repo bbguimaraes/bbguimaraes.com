@@ -86,9 +86,11 @@ end
 local generate_image
 function generate_images(t)
     local ret <const> = t.images
-    for _, x in ipairs(ret) do
-        generate_image(x, "_small", "512x384")
-        generate_image(x, "_tiny", "128x87")
+    if ret then
+        for _, x in ipairs(ret) do
+            generate_image(x, "_small", "512x384")
+            generate_image(x, "_tiny", "128x87")
+        end
     end
     return ret
 end

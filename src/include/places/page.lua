@@ -62,7 +62,7 @@ local function add_sep(t)
     end
 end
 
-local images <const> = util.imap(generate_image, var("images"))
+local images <const> = util.imap(generate_image, var("images", {}))
 
 local l <const> = {}
 var_and("content", function(x)
