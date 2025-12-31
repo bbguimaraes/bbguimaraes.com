@@ -565,6 +565,7 @@ return {
     link = "http://classics.mit.edu/Antoninus/meditations.html",
     cover = "meditations.jpg",
     timestamp = { 1672575683, "2023-01-01T12:21:23" },
+    category = "general",
     languages = { "en", "pt" },
     description = description,
     intro = intro,

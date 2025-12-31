@@ -4,6 +4,7 @@ return {
     cover = "tdd_c.jpg",
     author = "James W. Grenning",
     timestamp = { 1601746461, "2020-10-03T17:34:21" },
+    category = "technical",
     rss = false,
     content = par [[
 A very good introduction to Test Driven Development with an emphasis on systems

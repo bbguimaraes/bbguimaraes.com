@@ -1349,6 +1349,7 @@ return {
         pt = "Platão",
     },
     timestamp = { 1689185059, "2023-07-12T18:04:19" },
+    category = "general",
     languages = { "en", "pt" },
     description = description,
     intro = intro,

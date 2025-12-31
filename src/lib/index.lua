@@ -2,6 +2,11 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local DATA_DIR <const> = path.join("src", "lib", "data")
+
+local categories <const> =
+    util.table_default_assign(function() return {} end)
+
 local citations_left <const> = {
     blockquote(lines {
         par "But I don't want comfort.\n",
@@ -158,12 +163,15 @@ to live. Which is better God only knows.
 ]],
 }
 
-local function load_book(_, file_name)
-    local id <const> = file_name:gsub("%.lua$", ""):gsub("_", "-")
-    file_name = path.join("src", "lib", "data", file_name)
-    local t <const> = assert(loadfile(file_name, nil, _ENV))()
-    t.id = id
+local function load_book(file_name)
+    local t <const> =
+        assert(loadfile(path.join(DATA_DIR, file_name), nil, _ENV))()
+    t.id = file_name:gsub("%.lua$", ""):gsub("_", "-")
     return t
+end
+
+local function process_item(_, t)
+    table.insert(categories[t.category], t)
 end
 
 local function toc_link(_, x)
@@ -217,32 +225,6 @@ local function generate_book_page(_, t)
         generate.generate(f, "src/include/lib/page.lua", t, tt)
     end
 end
-
-local publications <const> = util.imap(load_book, {
-    "missale.lua",
-    "areopagitica.lua",
-})
-local general <const> = util.imap(load_book, {
-    "the-power-of-the-powerless.lua",
-    "pride-and-prejudice.lua",
-    "apologia.lua",
-    "brave-new-world.lua",
-    "meditations.lua",
-    "crime-and-punishment.lua",
-})
-local technical <const> = util.imap(load_book, {
-    "heterogeneous-computing-with-opencl.lua",
-    "the-linux-programming-interface.lua",
-    "programming-in-lua.lua",
-    "effective-modern-c++.lua",
-    "test-driven-development-for-embedded-c.lua",
-    "structure-and-interpretation-of-computer-programs.lua",
-    "the-design-of-the-unix-operating-system.lua",
-    "refactoring.lua",
-})
-local toc_publications <const> = util.imap(toc_link, publications)
-local toc_general <const> = util.imap(toc_link, general)
-local toc_technical <const> = util.imap(toc_link, technical)
 
 local honorable <const> = {
     honorable(
@@ -402,7 +384,18 @@ local honorable <const> = {
         "Xenophon"),
 }
 
-util.ieach(generate_book_page, general)
+local files <const> = {}
+for x in path.each(path.join(DATA_DIR)) do
+    local t <const> = load_book(x)
+    table.insert(files, t)
+end
+table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
+util.ieach(process_item, files)
+
+local toc_publications <const> = util.imap(toc_link, categories.publications)
+local toc_general <const> = util.imap(toc_link, categories.general)
+local toc_technical <const> = util.imap(toc_link, categories.technical)
+util.ieach(generate_book_page, categories.general)
 
 return include "master.lua" {
     title = "books",
@@ -476,7 +469,8 @@ return include "master.lua" {
 My own arrangements/formattings of classic books.  See original and LaTeX
 sources linked in each entry.
 ]],
-                    table.unpack(util.imap(render_book, publications)),
+                    table.unpack(
+                        util.imap(render_book, categories.publications)),
                 },
                 h1_link { "reading-list", "reading list" },
                 par [[
@@ -485,7 +479,7 @@ read, by year.  Book reviews also sometimes appear in my <a
 href="/blog/tags/books.html">blog</a>.
 ]],
                 h2_link { "general", "general" },
-                books(util.imap(render_book, general)),
+                books(util.imap(render_book, categories.general)),
                 h2_link { "honorable", "honorable mentions" },
                 div(
                     {class = "books honorable-mentions"},
@@ -497,7 +491,7 @@ href="/blog/tags/books.html">blog</a>.
 Code/exercises based on some of these books can be found
 <a href="https://gitlab.bbguimaraes.com/bbguimaraes/books">here</a>.
 ]],
-                books(util.imap(render_book, technical)),
+                books(util.imap(render_book, categories.technical)),
             }),
         }),
     },
