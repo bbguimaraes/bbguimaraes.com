@@ -5,7 +5,8 @@ return {
     cover = "crime_and_punishment.jpg",
     timestamp = { 1672531403, "2023-01-01T00:03:23" },
     rss = false,
-    content = lines {
+    category = "general",
+    intro = lines {
         par [[
 Dostoevsky's brutal masterpiece forces the reader to develop and refine his own
 internal moral code as he follows Raskolnikov through the streets of

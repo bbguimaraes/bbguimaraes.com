@@ -4,6 +4,7 @@ return {
     cover = "unix.jpg",
     author = "Maurice J. Bach",
     timestamp = { 1601746459, "2020-10-03T17:34:19" },
+    category = "technical",
     rss = false,
     content = lines {
         par [[

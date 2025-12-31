@@ -6,7 +6,6 @@ local author <const> = var("author", false)
 local lang <const> = var("lang", "en")
 local languages <const> = var("languages", false)
 local intro <const> = lang == "en" and var("intro", false)
-local text <const> = var "content"
 
 local function book_title(title, author)
     local ret = inline_tag("i", nil, title)
@@ -73,12 +72,14 @@ if intro then
     end
 end
 
-if full or not intro then
-    if languages then
-        table.insert(content, text[lang])
-    else
-        table.insert(content, text)
+var_and("content", function(x)
+    if full or not intro then
+        if languages then
+            table.insert(content, x[lang])
+        else
+            table.insert(content, x)
+        end
     end
-end
+end)
 
 return div({class = "book"}, lines(content))

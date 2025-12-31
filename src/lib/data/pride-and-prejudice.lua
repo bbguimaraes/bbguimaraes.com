@@ -1824,6 +1824,7 @@ return {
         pt = "Jane Austen",
     },
     timestamp = { 1690400089, "2023-07-26T19:34:49" },
+    category = "general",
     languages = { "en", "it", "pt" },
     description = description,
     intro = intro,

@@ -10,6 +10,20 @@ function defer:__close()
     self:f()
 end
 
+local function table_default(f)
+    return setmetatable({}, {__index = function(...) return f(...) end})
+end
+
+local function table_default_assign(f)
+    return setmetatable({}, {
+        __index = function(t, k)
+            local v <const> = f(t, k)
+            t[k] = v
+            return v
+        end,
+    })
+end
+
 --- Calls a function for each key/value pair in \p t.
 local function each(f, t)
     for k, v in pairs(t) do
@@ -82,6 +96,8 @@ local function exists(file_name)
 end
 
 return {
+    table_default = table_default,
+    table_default_assign = table_default_assign,
     each = each,
     ieach = ieach,
     map = map,
