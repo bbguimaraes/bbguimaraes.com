@@ -11,13 +11,17 @@ local function generate_file(t)
     generate.generate(f, "src/include/blog/post.lua", t)
 end
 
-local function year_list(t)
-    return ul(util.map(function(_, v)
-        return link {
-            href = v.id .. ".html",
-            content = v.title,
-        }
-    end, t))
+local function year_list(_, t)
+    local k <const>, v <const> = table.unpack(t)
+    return lines {
+        html(k),
+        ul(util.map(function(_, x)
+            return link {
+                href = x.id .. ".html",
+                content = x.title,
+            }
+        end, v))
+    }
 end
 
 local function tag_link(_, x)
@@ -37,18 +41,14 @@ end
 table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
 local all_tags <const> = util.set:new()
-local years <const> = {}
-for _, t in ipairs(files) do
-    all_tags:union(t.tags)
-    local year <const> = t.timestamp[2]:match("^%d+")
-    local yt = years[year]
-    if not yt then
-        yt = {}
-        years[year] = yt
-    end
-    table.insert(yt, t)
-    generate_file(t)
+for _, x in ipairs(files) do
+    all_tags:union(x.tags)
+    generate_file(x)
 end
+
+local by_year <const> = util.igroup_by_sorted(
+    files,
+    function(_, x) return x.timestamp[2]:match("^%d+") end)
 
 return include "master.lua" {
     title = "iffalse",
@@ -59,13 +59,7 @@ return include "master.lua" {
         html "<h1>iffalse</h1>",
         html '<p><i>assert("this should not be happening");</i></p>',
         html '<h2 id="posts"><a href="#posts">Posts</a></h2>',
-        ul(util.imap(
-            function(k, v) return
-                lines { html(v), year_list(years[v]) }
-            end,
-            util.sorted(
-                util.keys(years),
-                function(x, y) return y < x end))),
+        ul(util.imap(year_list, by_year)),
         h2_link { "tags", "Tags" },
         tag(
             "p", {class = "tags"},
