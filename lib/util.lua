@@ -10,6 +10,34 @@ function defer:__close()
     self:f()
 end
 
+--- Convenience class for using a table as a set.
+--- Stores elements as keys with the value \p true.
+local set <const> = {}
+set.__name = "set"
+set.__index = set
+
+--- Creates a set.
+--- \param t Optional array, the set is initialized to contain its elements.
+function set:new(t)
+    local ret <const> = setmetatable({}, self)
+    if t ~= nil then
+        ret:union(t)
+    end
+    return ret
+end
+
+--- Adds an element to the set.
+function set:add(x)
+    self[x] = true
+end
+
+--- Adds all elements of the array \p t to the set.
+function set:union(t)
+    for _, x in ipairs(t) do
+        self[x] = true
+    end
+end
+
 local function table_default(f)
     return setmetatable({}, {__index = function(...) return f(...) end})
 end
@@ -95,6 +123,9 @@ local function exists(file_name)
     return f ~= nil
 end
 
+--- Creates a list with all values in the set.
+function set:values() return keys(self) end
+
 return {
     table_default = table_default,
     table_default_assign = table_default_assign,
@@ -110,4 +141,5 @@ return {
     copy = copy,
     exists = exists,
     defer = function(...) return defer:new(...) end,
+    set = set,
 }
