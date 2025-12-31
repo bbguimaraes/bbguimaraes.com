@@ -4,19 +4,17 @@ local util <const> = require "lib.util"
 
 local DIR <const> = "src/blog/data"
 
-local function generate_file(name)
-    local file_name <const> = path.join(
-        "bbguimaraes.com", "blog", name:gsub("%.lua$", ".html"), nil)
+local function generate_file(t)
+    local file_name <const> =
+        path.join("bbguimaraes.com", "blog", t.id .. ".html")
     local f <close> = io.open(file_name, "w")
-    generate.generate(
-        f, "src/include/blog/post.lua",
-        { file = path.join(DIR, name) })
+    generate.generate(f, "src/include/blog/post.lua", t)
 end
 
 local function year_list(t)
     return ul(util.map(function(_, v)
         return link {
-            href = v.file:gsub("%.lua$", ".html"),
+            href = v.id .. ".html",
             content = v.title,
         }
     end, t))
@@ -30,22 +28,17 @@ local function tag_link(_, x)
 end
 
 local files <const> = {}
-local file_names <const> = {}
 for x in path.each(DIR) do
     local t <const> = generate.load(path.join(DIR, x))
-    t.file = x
+    t.id = x:gsub("%.lua$", ""):gsub("_", "-")
     t.timestamp[1] = math.tointeger(t.timestamp[1])
-    files[x] = t
-    table.insert(file_names, x)
+    table.insert(files, t)
 end
-table.sort(file_names, function(x, y)
-    return files[y].timestamp[1] < files[x].timestamp[1]
-end)
+table.sort(files, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
 
 local all_tags <const> = util.set:new()
 local years <const> = {}
-for _, x in ipairs(file_names) do
-    local t <const> = files[x]
+for _, t in ipairs(files) do
     all_tags:union(t.tags)
     local year <const> = t.timestamp[2]:match("^%d+")
     local yt = years[year]
@@ -54,7 +47,7 @@ for _, x in ipairs(file_names) do
         years[year] = yt
     end
     table.insert(yt, t)
-    generate_file(x)
+    generate_file(t)
 end
 
 return include "master.lua" {

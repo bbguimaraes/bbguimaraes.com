@@ -5,19 +5,19 @@ local head_extra <const> = html [[
     rel="alternate" type="application/rss+xml" title="RSS"
     href="https://bbguimaraes.com/blog/rss.xml" />]]
 
-local t <const> = generate.load(var("file"))
-local title <const>, short_title <const> = t.title, t.short_title
+local title <const> = var "title"
+local short_title <const> = var("short_title", title)
 
 return include "master.lua" {
-    title = short_title or title,
+    title = short_title,
     css = {"/main.css", "blog.css"},
     head_extra = head_extra,
-    body_class = t.style or "w80",
-    nav_path = {{".", "blog"}, {nil, short_title or title}},
+    body_class = var("style", "w80"),
+    nav_path = {{".", "blog"}, {nil, short_title}},
     main = main({class = "blog"}, lines {
         inline_tag("h1", nil, title),
-        inline_tag("p", nil, "<i>" .. t.timestamp[2] .. "</i>"),
-        lines(t.content),
-        include "blog/tags.lua" { tags = t.tags },
+        inline_tag("p", nil, inline_tag("i", nil, var("timestamp")[2])),
+        lines(var("content")),
+        include "blog/tags.lua" {},
     }),
 }
