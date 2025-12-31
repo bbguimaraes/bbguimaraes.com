@@ -99,6 +99,28 @@ local function sorted(t, f)
     return t
 end
 
+local function group_by_sorted_common(t, f, iter)
+    local ret <const>, g, gk = {}
+    for k, v in iter(t) do
+        local vk <const> = f(k, v)
+        if vk == gk then
+            table.insert(g, v)
+        else
+            g, gk = {v}, vk
+            table.insert(ret, {gk, g})
+        end
+    end
+    return ret
+end
+
+local function group_by_sorted(t, f)
+    return group_by_sorted_common(t, f, pairs)
+end
+
+local function igroup_by_sorted(t, f)
+    return group_by_sorted_common(t, f, ipairs)
+end
+
 --- Returns a sequence of all keys in \p t.
 local function keys(t)    return ins_map(function(k, _) return k end, t) end
 --- Returns a sequence of all values in \p t.
@@ -135,6 +157,8 @@ return {
     imap = imap,
     ins_map = ins_map,
     sorted = sorted,
+    group_by_sorted = group_by_sorted,
+    igroup_by_sorted = igroup_by_sorted,
     keys = keys,
     values = values,
     ivalues = ivalues,
