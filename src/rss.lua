@@ -17,8 +17,8 @@ end
 local lib_dir <const> = path.join("src", "lib", "data")
 for x in path.each(lib_dir) do
     local t <const> = generate.load(path.join(lib_dir, x))
-    local date <const> = t.date
-    if not date then
+    local rss <const> = t.rss
+    if rss ~= nil and not rss then
         goto continue
     end
     local title, author = t.title, t.author
@@ -38,7 +38,7 @@ for x in path.each(lib_dir) do
     else
         t.description = string.format("%s, %s", title, author)
     end
-    t.timestamp = math.tointeger(date[1])
+    t.timestamp = math.tointeger(t.date[1])
     files[x] = t
     table.insert(file_names, x)
     ::continue::

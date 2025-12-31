@@ -4,6 +4,7 @@ return {
     link = "https://martinfowler.com/books/refactoring.html",
     cover = "refactoring.jpg",
     author = "Martin Fowler",
+    rss = false,
     content = lines {
         par [[
 An introduction to the extremely effective combination of Test Driven

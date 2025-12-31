@@ -4,6 +4,7 @@ return {
     link = "https://pragprog.com/titles/jgade/test-driven-development-for-embedded-c/",
     cover = "tdd_c.jpg",
     author = "James W. Grenning",
+    rss = false,
     content = par [[
 A very good introduction to Test Driven Development with an emphasis on systems
 programming for embedded devices.  Always in a very practical manner, sample

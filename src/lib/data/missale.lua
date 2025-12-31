@@ -2,6 +2,7 @@ return {
     id = "missale",
     title = "Missale",
     cover = "missale_cover.jpg",
+    rss = false,
     content = lines {
         par [[
 Roman rite missal in Latin, formatted to be printed as a booklet guide for the

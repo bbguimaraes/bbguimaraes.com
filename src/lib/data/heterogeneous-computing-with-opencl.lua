@@ -10,6 +10,7 @@ return {
     }, ", "),
     link = "http://www.heterogeneouscompute.org/?page_id=7",
     cover = "hcwocl.jpg",
+    rss = false,
     content = par [[
 A detailed introduction to programming for heterogeneous devices, this book
 presents the OpenCL language along with its C API.  Additionally, each component

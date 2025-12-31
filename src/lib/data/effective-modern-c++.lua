@@ -4,6 +4,7 @@ return {
     link = "https://www.aristeia.com/books.html",
     cover = "effc++.jpg",
     author = "Scott Meyers",
+    rss = false,
     content = par [[
 The latest revision of the mandatory reading series for C++ programmers.  Each
 new revision of the language (a steady process every three years now, since

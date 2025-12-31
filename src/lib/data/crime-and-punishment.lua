@@ -4,6 +4,7 @@ return {
     author = "Fyodor Dostoevsky",
     link = "https://gutenberg.org/ebooks/2554",
     cover = "crime_and_punishment.jpg",
+    rss = false,
     content = lines {
         par [[
 Dostoevsky's brutal masterpiece forces the reader to develop and refine his own

@@ -4,6 +4,7 @@ return {
     link = "https://mitpress.mit.edu/sites/default/files/sicp/index.html",
     cover = "sicp.jpg",
     author = "Harold Abelson, Gerald Jay Sussman, Julie Sussman",
+    rss = false,
     content = lines {
         par [[
 Undoubtedly the best introductory programming book for Compute Science courses.

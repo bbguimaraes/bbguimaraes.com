@@ -2,6 +2,7 @@ return {
     id = "areopagitica",
     title = "Areopagitica",
     cover = "areopagitica.jpg",
+    rss = false,
     content = lines {
         par [[
 John Milton's 1644 speech to the Parlament of England, reproduced as faithfully

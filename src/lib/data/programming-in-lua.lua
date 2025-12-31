@@ -4,6 +4,7 @@ return {
     link = "https://www.lua.org/pil/",
     cover = "pil.jpg",
     author = "Roberto Ierusalimschy",
+    rss = false,
     content = lines {
         par [[
 A programming guide for this extremely elegant language.  Lua is unique in many

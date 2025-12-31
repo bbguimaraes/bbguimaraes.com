@@ -4,6 +4,7 @@ return {
     cover = "tlpi.jpg",
     link = "https://www.man7.org/tlpi/index.html",
     author = "Michael Kerrisk",
+    rss = false,
     content = lines {
         par [[
 A comprehensive and detailed exposition of the entire API of the Linux kernel.

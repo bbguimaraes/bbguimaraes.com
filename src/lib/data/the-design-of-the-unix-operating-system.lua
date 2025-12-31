@@ -4,6 +4,7 @@ return {
     link = "https://www.pearson.com/us/higher-education/program/Bach-Design-of-the-UNIX-Operating-System/PGM81513.html",
     cover = "unix.jpg",
     author = "Maurice J. Bach",
+    rss = false,
     content = lines {
         par [[
 A detailed, low-level analysis of the implementation of operating systems with
