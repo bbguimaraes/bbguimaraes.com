@@ -22,6 +22,13 @@ local function year_list(t)
     end, t))
 end
 
+local function tag_link(_, x)
+    return link {
+        href = string.format("tags/%s.html", x:gsub(" ", "-")),
+        content = x,
+    }
+end
+
 local files <const> = {}
 local file_names <const> = {}
 for x in path.each(DIR) do
@@ -35,13 +42,11 @@ table.sort(file_names, function(x, y)
     return files[y].timestamp[1] < files[x].timestamp[1]
 end)
 
-local all_tags <const> = {}
+local all_tags <const> = util.set:new()
 local years <const> = {}
 for _, x in ipairs(file_names) do
     local t <const> = files[x]
-    for _, x in ipairs(t.tags) do
-        all_tags[x] = true
-    end
+    all_tags:union(t.tags)
     local year <const> = t.timestamp[2]:match("^%d+")
     local yt = years[year]
     if not yt then
@@ -69,11 +74,8 @@ return include "master.lua" {
                 util.keys(years),
                 function(x, y) return y < x end))),
         h2_link { "tags", "Tags" },
-        tag("p", {class = "tags"}, lines(util.imap(function(_, x)
-            return link {
-                href = string.format("tags/%s.html", x:gsub(" ", "-")),
-                content = x,
-            }
-        end, util.sorted(util.keys(all_tags))))),
+        tag(
+            "p", {class = "tags"},
+            lines(util.imap(tag_link, util.sorted(all_tags:values())))),
     }),
 }
