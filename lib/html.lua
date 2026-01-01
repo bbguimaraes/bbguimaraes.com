@@ -16,11 +16,21 @@ end
 --- Recursively renders \p x.
 --- See \ref str.lua
 local function render(x, out, indent)
+    if type(x) == "function" then
+        x = x()
+    end
     if type(x) == "string" then
         str.write_indent(out, indent)
         return out:write(x)
     end
     return x:render(out, indent)
+end
+
+local function render_simple(x)
+    if type(x) == "function" then
+        x = x()
+    end
+    return tostring(x)
 end
 
 --- Like \ref write_attr, for value-less attributes.
@@ -37,7 +47,7 @@ local function write_attr_common(out, k, v)
     out:write(" ")
     out:write(k)
     out:write('="')
-    out:write(v)
+    out:write(render_simple(v))
     out:write('"')
 end
 
