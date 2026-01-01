@@ -1,20 +1,19 @@
 local path <const> = require "lib.path"
 
-local base_url <const> = var "base_url"
 local file_url <const> = var "file_url"
+local base_url <const> = var "base_url"
 
 local DIR <const> = "music"
 
+local generator <const> = var "generator"
 local id <const> = var "id"
 local title <const> = var "title"
-local file_name <const> =
-    var("file_name", false)
-    or id:gsub("-", "_")
+local file_name <const> = path.join(
+    DIR, var("file_name", false) or id:gsub("-", "_"))
 local scores <const> = var("scores", false)
 
-local poster_url <const> = file_url(DIR, file_name .. ".png")
-local video_url <const> = file_url(DIR, file_name .. ".mp4")
-local audio_url <const> = file_url(DIR, file_name .. ".ogg")
+local video_file_name <const> = file_name .. ".mp4"
+local video_url <const> = file_url(video_file_name)
 
 local info <const> = {}
 table.insert(info, inline_tag("i", nil, var("timestamp")[2]))
@@ -28,12 +27,12 @@ if type(scores) == "table" then
 elseif scores then
     table.insert(info, lines {
         link {
-            href = file_url(DIR, file_name .. ".pdf"),
+            href = file_url(file_name .. ".pdf"),
             content = "score",
             target = "_blank",
         },
         link {
-            href = file_url(DIR, file_name .. ".mscz"),
+            href = file_url(file_name .. ".mscz"),
             content = "src",
             target = "_blank",
         },
@@ -52,7 +51,7 @@ return include "master.lua" {
         type = "music.song",
         title = title,
         url = path.join(base_url, DIR, id .. ".html"),
-        image = base_url .. poster_url,
+        image = base_url .. generator:file_url(var, "small", video_file_name),
         video = base_url .. video_url,
     },
     body_class = "w80 roman",
@@ -61,13 +60,13 @@ return include "master.lua" {
         video {
             preload = "metadata",
             controls = true,
-            poster = poster_url,
+            poster = generator:generate_image(var, "small", video_file_name),
             sources = {video_url},
         },
         audio {
             preload = "metadata",
             controls = true,
-            src = audio_url,
+            src = generator:generate_audio(var, video_file_name),
         },
         inline_tag("h1", nil, title),
         div({class = "info"}, ul(info)),

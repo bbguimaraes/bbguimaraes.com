@@ -7,7 +7,14 @@ local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
 local DIR <const> = "writing"
-local IMAGES <const> = path.set(file_path(DIR, "*.jpg"))
+local PAGE_ENV <const> = {
+    generator = convert.deferred_generator:new {
+        path_cache = path.set(file_path(DIR, "*.jpg")),
+        profiles = {
+            small = {size = "512x384", suffix = "_small"},
+        },
+    }
+}
 
 local cit <const> = [[
 Ἐν ἀρχῇ ἦν ὁ λόγος
@@ -20,11 +27,6 @@ In principio erat Verbum
 local cit_en <const> = [[
 In the beginning was the Word
 ]]
-
-local generate_image
-local function process_item(_, t)
-    generate_image(t.image.src, "_small", "512x384")
-end
 
 local function generate_item(_, t)
     local href <const> = t.id .. ".html"
@@ -46,16 +48,8 @@ local function generate_item(_, t)
     })
 end
 
-function generate_image(src, suffix, size)
-    local dst <const> = file_path(src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
-    if not IMAGES[dst] then
-        convert.generate_image(dst, file_path(src), size)
-    end
-end
-
 local d <const> = data_dir.new(var, DIR)
 local files <const> = d:load()
-util.ieach(process_item, files)
 d:generate_pages(files, PAGE_ENV)
 
 return include "master.lua" {

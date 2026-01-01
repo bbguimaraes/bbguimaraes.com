@@ -2,6 +2,7 @@ local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
 local file_url <const> = var "file_url"
+local generator <const> = var "generator"
 local title <const> = var "title"
 
 local content <const> = {}
@@ -13,14 +14,14 @@ var_and("images", function(x)
         div({class = "gallery"}, lines(util.imap(function(_, x)
             return image {
                 alt = x.alt,
-                src = file_url(x.path:gsub("%.[^.]+$", "_tiny.jpg"), nil),
+                src = generator:generate_image(var, "tiny", x.path, x.poster),
             }
         end, x))))
     if #x ~= 0 then
         table.insert(l, image {
             class = "main-img",
             alt = title,
-            src = file_url(path.prepend_extension(x[1].path, "_small")),
+            src = generator:generate_image(var, "small", x[1].path, x.poster),
         })
     end
 end)

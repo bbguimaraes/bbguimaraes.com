@@ -6,6 +6,11 @@ local file_url <const> = var "file_url"
 
 local DIR <const> = "pictures"
 
+local generator <const> = convert.deferred_generator:new {
+    path_cache = path.set(path.join(file_path(DIR), "*.jpg")),
+    profiles = {small = {size = "512x384", suffix = "_small"}},
+}
+
 local toc <const> = ul {
     link { href = "#licence", content = "licence" },
     lines {
@@ -111,7 +116,8 @@ regular photography shop in Italy.
         link {
             href = file_url(DIR, "canon_eos_250D.jpg"),
             content = image {
-                src = file_url(DIR, "canon_eos_250D_small.jpg"),
+                src = generator:generate_image(
+                    var, "small", path.join(DIR, "canon_eos_250D.jpg")),
                 alt = "Canon EOS 250D",
                 class = "hor-center image",
             },
@@ -186,7 +192,8 @@ person, which is what I believe image editing should correct.
             href = file_url(DIR, "editing.jpg"),
             content = image {
                 alt = "GIMP",
-                src = file_url(DIR, "editing_small.jpg"),
+                src = generator:generate_image(
+                    var, "small", path.join(DIR, "editing.jpg")),
                 class = "image",
             },
         },
@@ -202,7 +209,8 @@ daily for all types of image editing.
         href = file_url(DIR, "gimp.jpg"),
         content = image {
             alt = "GIMP",
-            src = file_url(DIR, "gimp_small.jpg"),
+            src = generator:generate_image(
+                var, "small", path.join(DIR, "gimp.jpg")),
             class = "image",
         },
     },
@@ -218,7 +226,8 @@ iteratively edited independently and are combined in the final image.
         href = file_url(DIR, "darktable.jpg"),
         content = image {
             alt = "darktable",
-            src = file_url(DIR, "darktable_small.jpg"),
+            src = generator:generate_image(
+                var, "small", path.join(DIR, "darktable.jpg")),
             class = "image",
         },
     },
