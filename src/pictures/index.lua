@@ -12,9 +12,14 @@ local DIR <const> = "pictures"
 local PREVIEW <const> = var("include_path")("places", "preview.lua")
 local PAGE_ENV = {
     css = {"/main.css", "/gallery.css", "pictures.css"},
+    generator = convert.deferred_generator:new {
+        path_cache = path.set(file_path(DIR, "*/*.jpg")),
+        profiles = {
+            small = {size = "512x512", suffix = "_small"},
+            tiny = {size = "128x87", suffix = "_tiny"},
+        },
+    }
 }
-
-local IMAGES <const> = path.set(file_path(DIR, "*/*.jpg"))
 
 local cit0 <const> = blockquote(lines {
     text_tag("p", {lang = "grc"}, [[
@@ -69,14 +74,12 @@ true virtue, become the friend of God and be immortal, if mortal man may.
             "&nbsp;&nbsp;&nbsp;&nbsp;"),
         })
 
-local generate_images
 local function process_item(_, t)
     if t.images then
         for _, x in ipairs(t.images) do
             x.alt = x.path
             x.path = path.join(DIR, x.path)
         end
-        generate_images(t.images)
     end
 end
 
@@ -94,22 +97,6 @@ function render_without_links(t)
     return generate.render(t)
         :gsub('<a%s+href="[^"]+"[^>]*>', "")
         :gsub("</a>", "")
-end
-
-local generate_image
-function generate_images(t)
-    for _, x in ipairs(t) do
-        generate_image(x, "_small", "512x512")
-        generate_image(x, "_tiny", "128x87")
-    end
-end
-
-function generate_image(t, suffix, size)
-    local src <const> = t.path
-    local dst <const> = file_path(src:gsub("%.[^.]+$", suffix .. ".jpg"), nil)
-    if not IMAGES[dst] then
-        convert.generate_image(dst, src, size)
-    end
 end
 
 local d <const> = data_dir.new(
