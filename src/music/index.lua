@@ -9,46 +9,52 @@ local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
 local DIR <const> = "music"
-local VIDEOS <const> = path.set(file_path(DIR, "*.mp4"))
-local IMAGES <const> = path.set(file_path(DIR, "*.png"))
-local AUDIOS <const> = path.set(file_path(DIR, "*.ogg"))
+local generator <const> = convert.deferred_generator:new {
+    path_cache = path.set(
+        file_path(DIR, "*.mp4"),
+        file_path(DIR, "*.png"),
+        file_path(DIR, "*.ogg")),
+    profiles = {
+        small = {size = "400x225", format = "png"},
+        audio = {format = "ogg"},
+    },
+}
+local PAGE_ENV <const> = {generator = generator}
 
-local generate_image, generate_audio
+local generate_info
 local function process_item(_, t)
-    local author <const> = t.author
-    local info <const> = {}
-    if author then
-        table.insert(info, author)
+    t.info = generate_info(t)
+end
+
+function generate_info(t)
+    local ret <const> = {}
+    if t.author then
+        table.insert(ret, t.author)
     end
-    local tags <const> = t.tags
-    if tags then
-        table.insert(info, table.concat(t.tags, ", "))
+    if t.tags then
+        table.insert(ret, table.concat(t.tags, ", "))
     end
-    t.video = file_path(DIR, t.id .. ".mp4")
-    t.image = generate_image(t)
-    t.audio = generate_audio(t)
-    t.info = info
+    return ret
 end
 
 local function generate_item(_, t)
     local id <const> = t.id
-    local file_name <const> =
-        t.file_name_url or t.file_name or t.id:gsub("-", "_")
+    local file_name <const> = t.file_name or t.id:gsub("-", "_")
     local info <const> = {}
     table.insert(info, inline_tag("h2", nil, t.title))
-    for _, x in ipairs(t.info) do
-        table.insert(info, x)
-    end
-    table.insert(info,
-        inline_tag("span", {class = "date"}, t.timestamp[2]:gsub("T.*$", "")))
+    table.move(t.info, 1, #t.info, 2, info)
+    table.insert(info, inline_tag(
+        "span", {class = "date"},
+        t.timestamp[2]:gsub("T.*$", "")))
     local attrs <const> = {
         {"id", id}, {"class", "video"}, {"href", t.id .. ".html"},
-        {"data-tags", table.concat(util.sorted(t.tags), ",")},
+        {"data-tags", table.concat(util.sorted(util.copy(t.tags)), ",")},
     }
     return generic_tag("a", attrs, lines {
         div({class = "preview"}, lines {
             image {
-                src = file_url(DIR, file_name .. ".png"),
+                src = PAGE_ENV.generator:generate_image(
+                    var, "small", path.join(DIR, file_name .. ".mp4")),
                 alt = "video poster",
             },
             inline_tag("span", {class = "duration"}, t.duration),
@@ -57,26 +63,10 @@ local function generate_item(_, t)
     })
 end
 
-function generate_image(t)
-    local src <const> = t.video
-    local dst <const> = src:gsub("%.[^.]+$", ".png")
-    if not IMAGES[dst] and t.poster and VIDEOS[src] then
-        convert.generate_image(dst, src, "400x225", t.poster)
-    end
-end
-
-function generate_audio(t)
-    local src <const> = t.video
-    local dst <const> = src:gsub("%.[^.]+$", ".ogg")
-    if not AUDIOS[dst] and VIDEOS[src] then
-        convert.generate_audio(dst, src)
-    end
-end
-
 local d <const> = data_dir.new(var, DIR)
 local files <const> = d:load()
 util.ieach(process_item, files)
-d:generate_pages(files)
+d:generate_pages(files, PAGE_ENV)
 
 return include "master.lua" {
     title = title,
