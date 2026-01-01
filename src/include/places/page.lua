@@ -3,7 +3,9 @@ local util <const> = require "lib.util"
 
 local file_url <const> = var "file_url"
 local base_url <const> = var "base_url"
+local generator <const> = var("generator", false)
 local title <const> = var "title"
+local images <const> = var("images", {})
 
 local function generate_info()
     local l <const> = {}
@@ -14,25 +16,9 @@ local function generate_info()
     return div({class = "info"}, lines(l))
 end
 
-local function generate_image(_, t)
-    local name <const>, poster = t.path
-    if name:match("%.mp4$") then
-        poster = name:gsub("%.mp4$", "_small.jpg")
-    else
-        poster = name:gsub("%.", "_small.")
-    end
-    return {
-        path = name,
-        poster = poster,
-        alt = t.alt,
-        text = t.text,
-        width = t.width,
-        height = t.height,
-    }
-end
-
 local function generate_figure(_, t)
-    local name <const>, poster <const>, text <const> = t.path, t.poster, t.text
+    local name <const>, text <const> = t.path, t.text
+    local src <const> = generator:generate_image(var, "small", t.path, t.poster)
     if name:match("%.mp4$") then
         content = video {
             class = "gallery-shadow",
@@ -40,14 +26,14 @@ local function generate_figure(_, t)
             preload = "none",
             width = t.width,
             height = t.height,
-            poster = file_url(poster),
+            poster = src,
             sources = { file_url(name) },
         }
     else
         content = image {
             class = "gallery-shadow",
             alt = t.alt,
-            src = file_url(poster),
+            src = src,
         }
     end
     local l <const> = {}
@@ -60,8 +46,6 @@ local function generate_figure(_, t)
     end
     return tag("figure", {class = "gallery-item"}, lines(l))
 end
-
-local images <const> = util.imap(generate_image, var("images", {}))
 
 local l <const> = {}
 var_and("content", function(x)
@@ -78,7 +62,7 @@ return include "master.lua" {
         type = "article",
         title = title,
         image = #images ~= 0
-            and (base_url .. file_url(images[1].poster))
+            and (base_url .. generator:file_url(var, "small", images[1].path))
             or nil,
         url = var "url",
     },

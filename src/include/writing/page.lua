@@ -1,21 +1,22 @@
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
-local FILES_URL <const> = path.join("", "files")
-
+local DIR <const> = "writing"
+local file_url <const> = var "file_url"
 local base_url <const> = var "base_url"
+local generator <const> = var "generator"
 local title <const> = var "title"
 
 local l <const> = {}
 
 var_and("image", function(x)
-    x = util.copy(x)
     local src <const> = x.src
+    x = util.copy(x)
     x.class = "image"
-    x.src = path.join(FILES_URL, (src:gsub("%.", "_small.")))
+    x.src = generator:generate_image(var, "small", src)
     table.insert(l, link {
         class = "hor-center",
-        href = path.join(FILES_URL, src),
+        href = file_url(src),
         content = image(x),
     })
 end)
