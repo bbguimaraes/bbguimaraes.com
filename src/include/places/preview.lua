@@ -20,7 +20,7 @@ var_and("images", function(x)
         table.insert(l, image {
             class = "main-img",
             alt = title,
-            src = file_url(x[1].path:gsub("%.([^.]+)$", "_small.%1"), nil),
+            src = file_url(path.prepend_extension(x[1].path, "_small")),
         })
     end
 end)
