@@ -5,7 +5,6 @@ For a friend.
 return {
     id = "jo-soares",
     file_name = "jô_soares",
-    file_name_url = "j%C3%B4_soares",
     title = "Jô Soares",
     timestamp = { 1416096000, "2014-11-16T00:00:00" },
     duration = "0:24",

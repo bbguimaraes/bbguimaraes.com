@@ -1,6 +1,18 @@
 local str <const> = require "lib.str"
 local util <const> = require "lib.util"
 
+local URL_ESCAPES <const> = {
+    ["á"] = "%%c3%%a1",
+    ["ô"] = "%%c3%%b4",
+}
+
+local function url_escape(x)
+    for k, v in pairs(URL_ESCAPES) do
+        x = x:gsub(k, v)
+    end
+    return x
+end
+
 --- Recursively renders \p x.
 --- See \ref str.lua
 local function render(x, out, indent)
@@ -543,6 +555,7 @@ function src_ref(t)
 end
 
 return {
+    url_escape = url_escape,
     str = function(...) return html_str:new(...) end,
     html = function(...) return html:new(...) end,
     generic_tag = function(...) return generic_tag:new(...) end,

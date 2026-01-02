@@ -8,8 +8,7 @@ local DIR <const> = "music"
 local id <const> = var "id"
 local title <const> = var "title"
 local file_name <const> =
-    var("file_name_url", false)
-    or var("file_name", false)
+    var("file_name", false)
     or id:gsub("-", "_")
 local scores <const> = var("scores", false)
 
