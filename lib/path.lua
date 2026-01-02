@@ -18,6 +18,15 @@ local function base(path)
     return path:sub((i or 0) + 1)
 end
 
+--- Replaces the part after the final \p . in \p path.
+local function replace_extension(path, ext)
+    return (path:gsub("%.[^.]+$", ext))
+end
+
+local function prepend_extension(path, s)
+    return (path:gsub("(%.[^.]+)$", s .. "%1"))
+end
+
 --- Concatenates all arguments, with a path separator between each.
 local function join(...)
     return table.concat({...}, SEP)
@@ -78,6 +87,8 @@ return {
     SEP = SEP,
     dir = dir,
     base = base,
+    replace_extension = replace_extension,
+    prepend_extension = prepend_extension,
     join = join,
     clean = clean,
     exists = exists,
