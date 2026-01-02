@@ -19,6 +19,28 @@ Que mis huesos, piel y sal abonen mi suelo natal.
         "Entre a mi pago sin golpear"),
 }
 
+local images <const> = {{
+    path = "terceira_legua0.jpg",
+}, {
+    path = "terceira_legua1.jpg",
+}, {
+    path = "terceira_legua2.jpg",
+}, {
+    path = "terceira_legua3.jpg",
+}, {
+    path = "terceira_legua4.jpg",
+}, {
+    path = "terceira_legua5.jpg",
+}, {
+    path = "terceira_legua6.jpg",
+}, {
+    path = "terceira_legua7.jpg",
+}, {
+    path = "terceira_legua8.jpg",
+}, {
+    path = "terceira_legua9.jpg",
+}}
+
 return {
     id = "terceira-legua",
     title = "São Luiz da Terceira Légua",

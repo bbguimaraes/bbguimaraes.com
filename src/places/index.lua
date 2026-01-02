@@ -83,35 +83,12 @@ function render_without_links(t)
         :gsub("</a>", "")
 end
 
-local find_images
 local generate_image
 function generate_images(t)
-    local id <const> = t.id:gsub("-", "_")
-    local ret <const> = t.images or find_images(id)
+    local ret <const> = t.images
     for _, x in ipairs(ret) do
         generate_image(x, "_small", "512x384")
         generate_image(x, "_tiny", "128x87")
-    end
-    return ret
-end
-
-function find_images(id)
-    local ret <const> = {}
-    local pat <const> = path.join("", id .. ".*%.jpg$")
-    for x in pairs(IMAGES) do
-        if not x:match(pat) then
-            goto continue
-        end
-        x = path.base(x)
-        if x:match("_small.jpg$") or x:match("_tiny.jpg$") then
-            goto continue
-        end
-        table.insert(ret, x)
-        ::continue::
-    end
-    table.sort(ret)
-    for k, v in pairs(ret) do
-        ret[k] = {path = v}
     end
     return ret
 end

@@ -32,6 +32,10 @@ Quando uma estrela matreira se perde no continente
     quote_footer("Noel Guarany", "Filosofia de gaudério"),
 }
 
+local images <const> = {{
+    path = "arroio_do_sal.jpg",
+}}
+
 return {
     id = "arroio-do-sal",
     title = "Arroio do Sal",

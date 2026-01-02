@@ -44,6 +44,24 @@ instruction.
     }),
 }
 
+local images <const> = {{
+    path = "salomone0.jpg",
+}, {
+    path = "salomone1.jpg",
+}, {
+    path = "salomone2.jpg",
+}, {
+    path = "salomone3.jpg",
+}, {
+    path = "salomone4.jpg",
+}, {
+    path = "salomone5.jpg",
+}, {
+    path = "salomone6.jpg",
+}, {
+    path = "salomone7.jpg",
+}}
+
 return {
     id = "salomone",
     title = "Fonte di Salomone, Sant'Andrea del Garigliano",

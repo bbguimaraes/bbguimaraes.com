@@ -33,6 +33,12 @@ Me voy andando.
         "Preguntan de donde soy / Piedra y camino"),
 }
 
+local images <const> = {{
+    path = "porto_alegre0.jpg",
+}, {
+    path = "porto_alegre1.jpg",
+}}
+
 return {
     id = "porto-alegre",
     title = "Porto Alegre",
