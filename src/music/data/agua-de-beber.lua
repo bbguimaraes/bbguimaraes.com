@@ -1,7 +1,6 @@
 return {
     id = "agua-de-beber",
     file_name = "água_de_beber",
-    file_name_url = "%c3%a1gua_de_beber",
     title = "Água de beber",
     author = "Tom Jobim",
     timestamp = { 1482537600, "2016-12-24T00:00:00" },
