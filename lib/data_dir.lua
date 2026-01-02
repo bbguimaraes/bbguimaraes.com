@@ -20,7 +20,7 @@ function data_dir:load()
     local d <const> = path.join("src", self.d, "data")
     for x in path.each(d) do
         local t <const> = generate.load(path.join(d, x))
-        t.id = x:gsub("%.lua$", ""):gsub("_", "-")
+        t.id = path.replace_extension(x:gsub("_", "-"), "")
         table.insert(ret, t)
     end
     table.sort(ret, function(x, y) return y.timestamp[1] < x.timestamp[1] end)
