@@ -41,55 +41,55 @@ And whosoever shall compel thee to go a mile, go with him twain.
 }
 
 local images <const> = {{
-    path = "capri0.jpg",
+    path = "capri/0.jpg",
     text = [[
 Faraglioni from belvedere Cannone.
 ]],
 }, {
-    path = "capri1.jpg",
+    path = "capri/1.jpg",
     text = [[
 Capri from the shore of Ercolano.
 ]],
 }, {
-    path = "capri2.jpg",
+    path = "capri/2.jpg",
     text = [[
 Porto di Marina Grande, monte Tiberio.
 ]],
 }, {
-    path = "capri3.jpg",
+    path = "capri/3.jpg",
     text = [[
 <a href="monte-solaro.html">Monte Solaro</a>.
 ]],
 }, {
-    path = "capri4.jpg",
+    path = "capri/4.jpg",
     text = [[
 Here you can swim among the ruins of a Roman port.
 ]],
 }, {
-    path = "capri5.jpg",
+    path = "capri/5.jpg",
     text = [[
 From Piazzeta di Capri: <a href="monte-solaro.html">monte Solaro</a>, the gulf,
 the island of Ischia and <a href="napoli.html">Napoli</a> faintly in the
 distance.
 ]],
 }, {
-    path = "capri6.jpg",
+    path = "capri/6.jpg",
     text = [[
 Marina Piccola from belvedere Cannone.
 ]],
 }, {
-    path = "capri7.jpg",
+    path = "capri/7.jpg",
     text = [[
 Arco naturale.
 ]],
 }, {
-    path = "capri8.jpg",
+    path = "capri/8.jpg",
     text = [[
 Sunset (a pity my camera did not capture how incandescent the bougainvillea —
 “três-marias” — were).
 ]],
 }, {
-    path = "capri9.jpg",
+    path = "capri/9.jpg",
     text = [[
 A sad farewell, with Ischia outlined by the sunset glow.
 ]],

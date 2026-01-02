@@ -56,49 +56,49 @@ désert…
 }
 
 local images <const> = {{
-    path = "minturnae0.jpg",
+    path = "minturnae/0.jpg",
     text = [[
 Details of the elaborate construction.
 ]],
 }, {
-    path = "minturnae1.jpg",
+    path = "minturnae/1.jpg",
     text = [[
 Acquedotto Vespasiano.
 ]],
 }, {
-    path = "minturnae2.jpg",
+    path = "minturnae/2.jpg",
     text = [[
 Monte Aurunci, the origin of the aqueduct.
 ]],
 }, {
-    path = "minturnae3.jpg",
+    path = "minturnae/3.jpg",
     text = [[
 Theater.
 ]],
 }, {
-    path = "minturnae4.jpg",
+    path = "minturnae/4.jpg",
     text = [[
 Decumanus maximus, the original via Appia.
 ]],
 }, {
-    path = "minturnae5.jpg",
+    path = "minturnae/5.jpg",
     text = [[
 Reconstruction of the main temples.
 ]],
 }, {
-    path = "minturnae6.jpg",
+    path = "minturnae/6.jpg",
     text = [[
 Arch forming the entrance of the market and thermae.
 ]],
 }, {
-    path = "minturnae7.jpg",
+    path = "minturnae/7.jpg",
 }, {
-    path = "minturnae8.jpg",
+    path = "minturnae/8.jpg",
     text = [[
 Thermae.
 ]],
 }, {
-    path = "minturnae9.jpg",
+    path = "minturnae/9.jpg",
     text = [[
 Ponte Real Ferdinando (1832), one of the first iron catenary suspension bridges
 in the world.

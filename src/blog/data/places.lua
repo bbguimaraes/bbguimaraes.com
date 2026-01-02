@@ -9,7 +9,7 @@ local content <const> = {
         content = link {
             href = "/places",
             content = image {
-                src = "/files/places/coreno_ausonio0_small.jpg",
+                src = "/files/places/coreno_ausonio/0_small.jpg",
                 alt = "Sunset behind the promontory of Gaeta, January 2024",
             },
         },

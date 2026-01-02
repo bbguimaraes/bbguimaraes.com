@@ -23,60 +23,60 @@ Write with blood, and thou wilt find that blood is spirit.
 }
 
 local images <const> = {{
-    path = "sorrento0.jpg",
+    path = "sorrento/0.jpg",
     text = [[
 Porto di Marina Piccola.
 ]],
 }, {
-    path = "sorrento1.jpg",
+    path = "sorrento/1.jpg",
     text = [[
 <a href="vesuvius.html">Vesuvius</a>, always visible in the gulf, here seen from
 Marina Grande.
 ]],
 }, {
-    path = "sorrento2.jpg",
+    path = "sorrento/2.jpg",
     text = [[
 The walls of Sorrento.
 ]],
 }, {
-    path = "sorrento3.jpg",
+    path = "sorrento/3.jpg",
     text = [[
 Corso Italia.
 ]],
 }, {
-    path = "sorrento4.jpg",
+    path = "sorrento/4.jpg",
     text = [[
 Bagni della Regina Giovanna.
 ]],
 }, {
-    path = "sorrento5.jpg",
+    path = "sorrento/5.jpg",
 }, {
-    path = "sorrento6.jpg",
+    path = "sorrento/6.jpg",
 }, {
-    path = "sorrento7.jpg",
+    path = "sorrento/7.jpg",
     text = [[
 Top part of the ruins, with the Northern portion of the Monti Lattari in the
 background.
 ]],
 }, {
-    path = "sorrento8.jpg",
+    path = "sorrento/8.jpg",
 }, {
-    path = "sorrento9.jpg",
+    path = "sorrento/9.jpg",
     text = [[
 Natural swimming pool.
 ]],
 }, {
-    path = "sorrento10.jpg",
+    path = "sorrento/10.jpg",
     text = [[
 Unbelievably clear waters around the ruins.
 ]],
 }, {
-    path = "sorrento11.jpg",
+    path = "sorrento/11.jpg",
     text = [[
 Marina di Puolo.
 ]],
 }, {
-    path = "sorrento12.mp4",
+    path = "sorrento/12.mp4",
     width = "640",
     text = [[
 I've posted some pictures of extravagant meals I sometimes like to have when I'm

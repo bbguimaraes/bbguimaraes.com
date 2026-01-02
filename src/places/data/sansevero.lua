@@ -68,28 +68,28 @@ than ourselves?
 }
 
 local images <const> = {{
-    path = "sansevero0.jpg",
+    path = "sansevero/0.jpg",
     text = [[
 Wide view of the area near the altar, showing all four of the most renowned
 works of the Cappella.
 ]],
 }, {
-    path = "sansevero1.jpg",
+    path = "sansevero/1.jpg",
     text = [[
 The back of the altar and some of the freschi covering the walls and ceiling.
 ]],
 }, {
-    path = "sansevero2.jpg",
+    path = "sansevero/2.jpg",
     text = [[
 Cristo velato.
 ]],
 }, {
-    path = "sansevero3.jpg",
+    path = "sansevero/3.jpg",
     text = [[
 The ten Virtues.
 ]],
 }, {
-    path = "sansevero4.jpg",
+    path = "sansevero/4.jpg",
 }}
 
 return {

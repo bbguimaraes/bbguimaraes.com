@@ -21,19 +21,19 @@ crescente…: il cielo stellato sopra di me e la legge morale in me
 }
 
 local images <const> = {{
-    path = "belvedere_filosofico0.jpg",
+    path = "belvedere_filosofico/0.jpg",
     text = [[
 Plaque in Belvedere Filosofico, with the inscription found in Kant's tombstone
 in Kaliningrad.
 ]],
 }, {
-    path = "belvedere_filosofico1.jpg",
+    path = "belvedere_filosofico/1.jpg",
     text = [[
 View from the belvedere: <a href="monte-solaro.html">the mount where the goats
 from the last post live</a>, Punta Ventroso, and the Faraglioni.
 ]],
 }, {
-    path = "belvedere_filosofico2.jpg",
+    path = "belvedere_filosofico/2.jpg",
     text = [[
 In Parco Filosofico.
 ]],

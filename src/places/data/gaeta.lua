@@ -37,79 +37,79 @@ bottom; and the earth did quake, and the rocks rent
 }
 
 local images <const> = {{
-    path = "gaeta0.jpg",
+    path = "gaeta/0.jpg",
     text = [[
 Falesia della Montagna Spaccata, seen from above from a trail in Parco Urbano
 Monte Orlando.
 ]],
 }, {
-    path = "gaeta1.jpg",
+    path = "gaeta/1.jpg",
     text = [[
 The top of Cattedrale dei Santi Erasmo e Marciano e di Santa Maria Assunta and
 its campanile, with the gulf, the city of Formia, and the Monti Aurunci in the
 background.
 ]],
 }, {
-    path = "gaeta2.jpg",
+    path = "gaeta/2.jpg",
 }, {
-    path = "gaeta3.jpg",
+    path = "gaeta/3.jpg",
 }, {
-    path = "gaeta4.jpg",
+    path = "gaeta/4.jpg",
 }, {
-    path = "gaeta5.jpg",
+    path = "gaeta/5.jpg",
 }, {
-    path = "gaeta6.jpg",
+    path = "gaeta/6.jpg",
     text = [[
 Tempio di San Francesco, founded by Francesco d'Assisi in 1222 during his stay
 in Gaeta.
 ]],
 }, {
-    path = "gaeta7.jpg",
+    path = "gaeta/7.jpg",
     text = [[
 Statue on the stairs to the Tempio, “Allegoria della Religione” (1858), Luigi
 Persico.
 ]],
 }, {
-    path = "gaeta8.jpg",
+    path = "gaeta/8.jpg",
     text = [[
 Castello Angioino-Aragonese seen from the Western cliffs of Mount Orlando.
 ]],
 }, {
-    path = "gaeta9.jpg",
+    path = "gaeta/9.jpg",
 }, {
-    path = "gaeta10.jpg",
+    path = "gaeta/10.jpg",
 }, {
-    path = "gaeta11.jpg",
+    path = "gaeta/11.jpg",
 }, {
-    path = "gaeta12.jpg",
+    path = "gaeta/12.jpg",
     text = [[
 Grotta del Turco: a fantastic grotto under Mount Orlando, a historic hiding
 place for Saracen pirates.
 ]],
 }, {
-    path = "gaeta13.mp4",
+    path = "gaeta/13.mp4",
     width = "640",
 }, {
-    path = "gaeta14.jpg",
+    path = "gaeta/14.jpg",
     text = [[
 The cleft of Montagna Spaccata, seen from the Santuario della Santissima
 Trinità, an XI-century sanctuary founded by benedictine monks.
 ]],
 }, {
-    path = "gaeta15.mp4",
+    path = "gaeta/15.mp4",
     height = "384",
 }, {
-    path = "gaeta16.jpg",
+    path = "gaeta/16.jpg",
     text = [[
 Spiaggia di Serapo.
 ]],
 }, {
-    path = "gaeta17.jpg",
+    path = "gaeta/17.jpg",
     text = [[
 Votapiatto di calamarelle, a typical dish from Gaeta.
 ]],
 }, {
-    path = "gaeta18.jpg",
+    path = "gaeta/18.jpg",
     text = [[
 Sunset in the gulf and the Monti Aurunci.
 ]],

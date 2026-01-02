@@ -74,18 +74,18 @@ Only are at leisure those who dedicate their time to wisdom, only those live
 }
 
 local images <const> = {{
-    path = "herculaneum0.jpg",
+    path = "herculaneum/0.jpg",
     text = [[
 The ruins of Herculaneum (what has so far been excavated) from above, just after
 the entrance.
 ]],
 }, {
-    path = "herculaneum1.jpg",
+    path = "herculaneum/1.jpg",
     text = [[
 Entrance gate to the ruins.
 ]],
 }, {
-    path = "herculaneum2.jpg",
+    path = "herculaneum/2.jpg",
     text = [[
 View from the opposite side, showing the modern city in the distance, and just
 how close Vesuvius is.  If you <a href="vesuvius.html">remember</a>, the
@@ -94,138 +94,138 @@ volcano, mount Somma, which was destroyed in that eruption.  Mount Vesuvius as
 seen today is what survived from that catastrophic event.
 ]],
 }, {
-    path = "herculaneum3.jpg",
+    path = "herculaneum/3.jpg",
     text = [[
 A view of what would, in 79 AD, be the port.  Seen from the south-western
 entrance bridge.
 ]],
 }, {
-    path = "herculaneum4.jpg",
+    path = "herculaneum/4.jpg",
     text = [[
 Great arches on top of the docks, where those who sought shelter from the
 eruption waiting for rescue were found.
 ]],
 }, {
-    path = "herculaneum5.jpg",
+    path = "herculaneum/5.jpg",
     text = [[
 Boat recovered from the docks in 1982.  9m long, with its wood and tools (even
 fishing nets) incredibly preserved.
 ]],
 }, {
-    path = "herculaneum6.jpg",
+    path = "herculaneum/6.jpg",
 }, {
-    path = "herculaneum7.jpg",
+    path = "herculaneum/7.jpg",
     text = [[
 Lararium in Casa dello scheletro.
 ]],
 }, {
-    path = "herculaneum8.jpg",
+    path = "herculaneum/8.jpg",
     text = [[
 Sede degli Augustali, where many amazingly-preserved two-thousand-year-old
 freschi can still be seen.
 ]],
 }, {
-    path = "herculaneum9.jpg",
+    path = "herculaneum/9.jpg",
     text = [[
 Entrance of Hercules into Olympus.
 ]],
 }, {
-    path = "herculaneum10.jpg",
+    path = "herculaneum/10.jpg",
     text = [[
 Contest between Hercules and the river Achelous for the hand of Deianira.
 ]],
 }, {
-    path = "herculaneum11.jpg",
+    path = "herculaneum/11.jpg",
     text = [[
 Atrium in Casa del salone nero.
 ]],
 }, {
-    path = "herculaneum12.jpg",
+    path = "herculaneum/12.jpg",
     text = [[
 The columns of the gymnasium.
 ]],
 }, {
-    path = "herculaneum13.jpg",
+    path = "herculaneum/13.jpg",
     text = [[
 Also seen here is the layer of sediments on which the modern city was built.
 ]],
 }, {
-    path = "herculaneum14.jpg",
+    path = "herculaneum/14.jpg",
 }, {
-    path = "herculaneum15.jpg",
+    path = "herculaneum/15.jpg",
     text = [[
 Mosaic of Neptune and Amphitrite, Casa di Nettuno.
 ]],
 }, {
-    path = "herculaneum16.jpg",
+    path = "herculaneum/16.jpg",
     text = [[
 Casa del tramezzo di legno.
 ]],
 }, {
-    path = "herculaneum17.jpg",
+    path = "herculaneum/17.jpg",
     text = [[
 “Conoscono l'ozio soltanto coloro che dedicano il loro tempo alla sapienza; solo
 essi vivono” — Seneca
 ]],
 }, {
-    path = "herculaneum18.jpg",
+    path = "herculaneum/18.jpg",
     text = [[
 Garden of Casa dei cervi.
 ]],
 }, {
-    path = "herculaneum19.jpg",
+    path = "herculaneum/19.jpg",
     text = [[
 Terrace, which at the time would have been directly over the waters of the gulf,
 facing right between the islands of Ischia and Capri.
 ]],
 }, {
-    path = "herculaneum20.jpg",
+    path = "herculaneum/20.jpg",
     text = [[
 Excerpts from the letter of Pliny the Younger recounting his uncle's description
 of the eruption.
 ]],
 }, {
-    path = "herculaneum21.jpg",
+    path = "herculaneum/21.jpg",
 }, {
-    path = "herculaneum22.jpg",
+    path = "herculaneum/22.jpg",
     text = [[
 Original Latin text.
 ]],
 }, {
-    path = "herculaneum23.jpg",
+    path = "herculaneum/23.jpg",
     text = [[
 <i>Head of an amazon</i>, originally found in Villa dei papiri, now in the
 antiquarium.
 ]],
 }, {
-    path = "herculaneum24.jpg",
+    path = "herculaneum/24.jpg",
     text = [[
 Gold coins.
     ]],
 }, {
-    path = "herculaneum25.jpg",
+    path = "herculaneum/25.jpg",
     text = [[
 Decumanus maximus from above.  The entire span seen here forms the south-western
 wall of the Augusteum (a site dedicated to the cult of the emperor), which still
 remains buried underneath the city.
 ]],
 }, {
-    path = "herculaneum26.jpg",
+    path = "herculaneum/26.jpg",
     text = [[
 Napoli from the shore of Ercolano.
 ]],
 }, {
-    path = "herculaneum27.jpg",
+    path = "herculaneum/27.jpg",
     text = [[
 Vesuvius from the center of the city (and with less clouds in front of it).
 ]],
 }, {
-    path = "herculaneum28.jpg",
+    path = "herculaneum/28.jpg",
     text = [[
 What has to be the greatest brand in the history of marketing.
 ]],
 }, {
-    path = "herculaneum29.jpg",
+    path = "herculaneum/29.jpg",
     text = [[
 The modern city of Ercolano.
 ]],

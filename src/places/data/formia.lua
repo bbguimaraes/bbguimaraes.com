@@ -57,146 +57,146 @@ be seen not supplicant as a defendant, but great as a master of the judges.
 }
 
 local images <const> = {{
-    path = "formia0.jpg",
+    path = "formia/0.jpg",
     text = [[
 Sunset in Gaeta seen from the ruins of a Roman port.
 ]],
 }, {
-    path = "formia1.jpg",
+    path = "formia/1.jpg",
     text = [[
 Monti Aurunci and the sea in Minturno.
 ]],
 }, {
-    path = "formia2.jpg",
+    path = "formia/2.jpg",
     text = [[
 Monte Argento (right) and Monte Orlando (left).
 ]],
 }, {
-    path = "formia3.jpg",
+    path = "formia/3.jpg",
 }, {
-    path = "formia4.jpg",
+    path = "formia/4.jpg",
 }, {
-    path = "formia5.jpg",
+    path = "formia/5.jpg",
     text = [[
 The monumental tomb of Cicero (under heavy restoration that day).
 ]],
 }, {
-    path = "formia6.jpg",
+    path = "formia/6.jpg",
 }, {
-    path = "formia7.jpg",
+    path = "formia/7.jpg",
     text = [[
 As many of the locations in via Appia, Formia is on the path of
 <a href="francigena.html">via Francigena</a>.
 ]],
 }, {
-    path = "formia8.jpg",
+    path = "formia/8.jpg",
     text = [[
 <span lang="it">Città di Cicerone</span>.
 ]],
 }, {
-    path = "formia9.jpg",
+    path = "formia/9.jpg",
     text = [[
 Street art by Apolo Torres.
 ]],
 }, {
-    path = "formia10.jpg",
+    path = "formia/10.jpg",
 }, {
-    path = "formia11.jpg",
+    path = "formia/11.jpg",
     text = [[
 <a href="https://www.formiae.it/siti/cisternone-romano/" lang="it">Cisternone
 romano</a>, one of the largest cisterns in the world, from the 1st century B.C.
 ]],
 }, {
-    path = "formia12.jpg",
+    path = "formia/12.jpg",
     text = [[
 Old city center around the cistern.
 ]],
 }, {
-    path = "formia13.jpg",
+    path = "formia/13.jpg",
 }, {
-    path = "formia14.jpg",
+    path = "formia/14.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/1160023521">Torre di Castellone</a>.
 ]],
 }, {
-    path = "formia15.jpg",
+    path = "formia/15.jpg",
 }, {
-    path = "formia16.jpg",
+    path = "formia/16.jpg",
     text = [[
 Via Francigena where it reaches the coast.
 ]],
 }, {
-    path = "formia17.jpg",
+    path = "formia/17.jpg",
     text = [[
 Criptoportici right under
 <a href="https://www.openstreetmap.org/relation/9192510" lang="it">Villa
 Comunale Umberto I</a>, a park in the city center.
 ]],
 }, {
-    path = "formia18.jpg",
+    path = "formia/18.jpg",
 }, {
-    path = "formia19.jpg",
+    path = "formia/19.jpg",
     text = [[
 Remains of the Roman port next to the portici.
 ]],
 }, {
-    path = "formia20.jpg",
+    path = "formia/20.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/8390626570">Villa Pellegrini</a>.
 ]],
 }, {
-    path = "formia21.jpg",
+    path = "formia/21.jpg",
     text = [[
 The gulf of Gaeta from the Roman ruins of
 <a href="https://www.openstreetmap.org/way/151095052">Cisterna Maggiore</a>.
 ]],
 }, {
-    path = "formia22.jpg",
+    path = "formia/22.jpg",
     text = [[
 The villa from the other side.
 ]],
 }, {
-    path = "formia23.jpg",
+    path = "formia/23.jpg",
     text = [[
 Gaeta from the ruins of a Roman port.
 ]],
 }, {
-    path = "formia24.jpg",
+    path = "formia/24.jpg",
     text = [[
 I'll stop at nothing for a picture.
 ]],
 }, {
-    path = "formia25.jpg",
+    path = "formia/25.jpg",
 }, {
-    path = "formia26.jpg",
+    path = "formia/26.jpg",
 }, {
-    path = "formia27.jpg",
+    path = "formia/27.jpg",
     text = [[
 Monti Aurunci from the port.
 ]],
 }, {
-    path = "formia28.jpg",
+    path = "formia/28.jpg",
     text = [[
 One of the mosaics buried under the rocks.
 ]],
 }, {
-    path = "formia29.jpg",
+    path = "formia/29.jpg",
 }, {
-    path = "formia30.jpg",
+    path = "formia/30.jpg",
     text = [[
 The sun begins to set in the gulf.
 ]],
 }, {
-    path = "formia31.jpg",
+    path = "formia/31.jpg",
 }, {
-    path = "formia32.jpg",
+    path = "formia/32.jpg",
 }, {
-    path = "formia33.jpg",
+    path = "formia/33.jpg",
     text = [[
 Sunset behind the promontory of Gaeta.
 ]],
 }, {
-    path = "formia34.mp4",
+    path = "formia/34.mp4",
 }}
 
 return {

@@ -55,49 +55,49 @@ must be either a lower animal or a god
 }
 
 local images <const> = {{
-    path = "minturno0.jpg",
+    path = "minturno/0.jpg",
     text = [[
 Castrum Argentum, a Roman fortress on monte D'Argento, with the medieval
 Minturno behind it.
 ]],
 }, {
-    path = "minturno1.jpg",
+    path = "minturno/1.jpg",
     text = [[
 Corso Vittorio Emanuele III.
 ]],
 }, {
-    path = "minturno2.jpg",
+    path = "minturno/2.jpg",
     text = [[
 One of the many vichi in the medieval center.
 ]],
 }, {
-    path = "minturno3.jpg",
+    path = "minturno/3.jpg",
     text = [[
 Chiesa dell'Annunziata.
 ]],
 }, {
-    path = "minturno4.jpg",
+    path = "minturno/4.jpg",
     text = [[
 Chiesa di San Francesco.
 ]],
 }, {
-    path = "minturno5.jpg",
+    path = "minturno/5.jpg",
     text = [[
 Cattedrale di San Pietro Apostolo.
 ]],
 }, {
-    path = "minturno6.jpg",
+    path = "minturno/6.jpg",
 }, {
-    path = "minturno7.jpg",
+    path = "minturno/7.jpg",
 }, {
-    path = "minturno8.jpg",
+    path = "minturno/8.jpg",
 }, {
-    path = "minturno9.jpg",
+    path = "minturno/9.jpg",
     text = [[
 Coast and the monte Aurunci.
 ]],
 }, {
-    path = "minturno10.jpg",
+    path = "minturno/10.jpg",
     text = [[
 Monte D'Argento.
 ]],

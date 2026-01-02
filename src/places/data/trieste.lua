@@ -28,16 +28,23 @@ local citation <const> = lines {
     quote_footer("Publius Vergilius Maro", "Aeneis", "I.241"),
 }
 
-local images <const> = {
-    {path = "trieste0.jpg"},
-    {path = "trieste1.jpg"},
-    {path = "trieste2.jpg"},
-    {path = "trieste3.jpg"},
-    {path = "trieste4.jpg"},
-    {path = "trieste5.jpg"},
-    {path = "trieste6.jpg"},
-    {path = "trieste7.jpg"},
-}
+local images <const> = {{
+    path = "trieste/0.jpg",
+}, {
+    path = "trieste/1.jpg",
+}, {
+    path = "trieste/2.jpg",
+}, {
+    path = "trieste/3.jpg",
+}, {
+    path = "trieste/4.jpg",
+}, {
+    path = "trieste/5.jpg",
+}, {
+    path = "trieste/6.jpg",
+}, {
+    path = "trieste/7.jpg",
+}}
 
 return {
     id = "trieste",

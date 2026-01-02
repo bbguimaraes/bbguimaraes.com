@@ -39,37 +39,37 @@ yourself, and that will be the test.
 }
 
 local images <const> = {{
-    path = "pompei0.jpg",
+    path = "pompei/0.jpg",
     text = [[
 San Michele.
 ]],
 }, {
-    path = "pompei1.jpg",
+    path = "pompei/1.jpg",
     text = [[
 Entrance — virgini dicatum.
 ]],
 }, {
-    path = "pompei2.jpg",
+    path = "pompei/2.jpg",
     text = [[
 Bell tower — cordi Iesu sacrum, venite ad me omnes.
 ]],
 }, {
-    path = "pompei3.jpg",
+    path = "pompei/3.jpg",
     text = [[
 Cappella di San Francesco, Ponziano Loverini (1892).
 ]],
 }, {
-    path = "pompei4.jpg",
+    path = "pompei/4.jpg",
     text = [[
 Altar.
 ]],
 }, {
-    path = "pompei5.jpg",
+    path = "pompei/5.jpg",
     text = [[
 inter roseta lilium
 ]],
 }, {
-    path = "pompei6.jpg",
+    path = "pompei/6.jpg",
     text = [[
 in hoc signo vinces
 ]],

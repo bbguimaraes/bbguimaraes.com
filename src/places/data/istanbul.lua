@@ -17,7 +17,7 @@ I hope to return here someday for a longer stay.
 }
 
 local images <const> = {{
-    path = "istanbul0.jpg",
+    path = "istanbul/0.jpg",
     text = lines {
         par [[
 Βόσπορος.  The strait dividing Istanbul in half, with Europe on the Western and
@@ -30,12 +30,12 @@ cow and forced to wander the earth.
 ]],
     },
 }, {
-    path = "istanbul1.jpg",
+    path = "istanbul/1.jpg",
     text = [[
 The Bosphorus and the Karaköy district from Süleymaniye Mahallesi.
 ]],
 }, {
-    path = "istanbul2.jpg",
+    path = "istanbul/2.jpg",
     text = lines {
         par [[
 One of the many amazing opportunities in this trip was the honor of visiting a
@@ -49,58 +49,58 @@ Here, the awesome interior of Süleymaniye Camii.
 ]],
     },
 }, {
-    path = "istanbul3.jpg",
+    path = "istanbul/3.jpg",
     text = [[
 Gülhane Parkı, with the Bosphorus (again) in the distance.
 ]],
 }, {
-    path = "istanbul4.jpg",
+    path = "istanbul/4.jpg",
     text = [[
 Sunset behind Atatürk Köprüsü and the Golden Horn, from Karaköy.
 ]],
 }, {
-    path = "istanbul5.jpg",
+    path = "istanbul/5.jpg",
     text = [[
 A dish I've always loved, now consumed in loco: dolma, stuffed grape leaves.
 ]],
 }, {
-    path = "istanbul6.jpg",
+    path = "istanbul/6.jpg",
     text = [[
 The omnipresent cats of Istanbul.
 ]],
 }, {
-    path = "istanbul7.jpg",
+    path = "istanbul/7.jpg",
     text = [[
 It is a little-known fact about Istanbul that if you order a kokoreç or katmer
 and a Turkish coffee, you get a cat as a bonus.
 ]],
 }, {
-    path = "istanbul8.jpg",
+    path = "istanbul/8.jpg",
 }, {
-    path = "istanbul9.jpg",
+    path = "istanbul/9.jpg",
 }, {
-    path = "istanbul10.jpg",
+    path = "istanbul/10.jpg",
     text = [[
 View of the Golden Horn from one of the public transport ferries.
 ]],
 }, {
-    path = "istanbul11.jpg",
+    path = "istanbul/11.jpg",
     text = [[
 Büyükada, the largest of the islands of Istanbul (its name is literally "big
 island" in Turkish), in the sea of Marmara.
 ]],
 }, {
-    path = "istanbul12.jpg",
+    path = "istanbul/12.jpg",
     text = [[
 Aya Nikola Halk Plajı, Büyükada.
 ]],
 }, {
-    path = "istanbul13.jpg",
+    path = "istanbul/13.jpg",
     text = [[
 The pier of Büyükada, with Heybeliada in the background.
 ]],
 }, {
-    path = "istanbul14.jpg",
+    path = "istanbul/14.jpg",
     text = lines {
         par [[
 The mortal struggle between cellphone cameras and low-light environments.  But

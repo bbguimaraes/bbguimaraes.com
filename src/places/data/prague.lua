@@ -4,10 +4,11 @@ local content <const> = par [[
 Parting with a dear old friend is always painful, but sometimes inevitable.
 ]]
 
-local images <const> = {
-    {path = "prague0.jpg"},
-    {path = "prague1.jpg"},
-}
+local images <const> = {{
+    path = "prague/0.jpg",
+}, {
+    path = "prague/1.jpg",
+}}
 
 return {
     id = "prague",

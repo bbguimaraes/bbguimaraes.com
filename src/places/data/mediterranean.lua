@@ -52,63 +52,63 @@ power.
 }
 
 local images <const> = {{
-    path = "mediterranean0.jpg",
+    path = "mediterranean/0.jpg",
     text = [[
 القرين (Al-Qurayn), Tunisia.
 ]],
 }, {
-    path = "mediterranean1.jpg",
+    path = "mediterranean/1.jpg",
     text = [[
 Κεραμωτή (Keramoti) and the islands of Θάσος (Thasos) and Θασοπούλα
 (Thasopoula).
 ]],
 }, {
-    path = "mediterranean2.jpg",
+    path = "mediterranean/2.jpg",
     text = [[
 Κόλπος Καβάλας (the gulf of Kavala).
 ]],
 }, {
-    path = "mediterranean3.jpg",
+    path = "mediterranean/3.jpg",
     text = [[
 Ολυμπιάδα (Olympiada) and Σταυρός (Stavros).
 ]],
 }, {
-    path = "mediterranean4.jpg",
+    path = "mediterranean/4.jpg",
     text = [[
 Θεσσαλονίκη (Thessaloniki).
 ]],
 }, {
-    path = "mediterranean5.jpg",
+    path = "mediterranean/5.jpg",
     text = [[
 Ηγουμενίτσα (Igoumenitsa) and the island of Κέρκυρα (Kerkyra).
 ]],
 }, {
-    path = "mediterranean6.jpg",
+    path = "mediterranean/6.jpg",
     text = [[
 Mount Etna visible over the clouds.
 ]],
 }, {
-    path = "mediterranean7.jpg",
+    path = "mediterranean/7.jpg",
     text = [[
 Sicily and mount Etna.
 ]],
 }, {
-    path = "mediterranean8.jpg",
+    path = "mediterranean/8.jpg",
     text = [[
 The island of Gozo in Malta.
 ]],
 }, {
-    path = "mediterranean9.jpg",
+    path = "mediterranean/9.jpg",
     text = [[
 The island of Lampedusa.
 ]],
 }, {
-    path = "mediterranean10.jpg",
+    path = "mediterranean/10.jpg",
     text = [[
 The island of شرقي (Chergui) in Tunisia.
 ]],
 }, {
-    path = "mediterranean11.jpg",
+    path = "mediterranean/11.jpg",
     text = [[
 Somewhere close to the border between Tunisia and Algeria, by my calculation.
 ]],

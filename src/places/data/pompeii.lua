@@ -70,36 +70,36 @@ age, I let my thoughts fly to them.
 }
 
 local images <const> = {{
-    path = "pompeii0.jpg",
+    path = "pompeii/0.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/395802069">Forum</a>, with Vesuvius
 in the background and <i>Centauro</i>, a modern statue in classical style by
 Polish sculptor Igor Mitoraj.
 ]],
 }, {
-    path = "pompeii1.jpg",
+    path = "pompeii/1.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/relation/57304">Amphitheater</a>.
 ]],
 }, {
-    path = "pompeii2.jpg",
+    path = "pompeii/2.jpg",
 }, {
-    path = "pompeii3.jpg",
+    path = "pompeii/3.jpg",
     text = [[
 Pink Floyd exhibition in the amphitheater galleries.
 ]],
 }, {
-    path = "pompeii4.jpg",
+    path = "pompeii/4.jpg",
 }, {
-    path = "pompeii5.jpg",
+    path = "pompeii/5.jpg",
 }, {
-    path = "pompeii6.jpg",
+    path = "pompeii/6.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/738804679">Porta Nocera</a>, the
 exit to the necropolis on the southern side.
 ]],
 }, {
-    path = "pompeii7.jpg",
+    path = "pompeii/7.jpg",
     text = [[
 A view of Vesuvius behind <a href="https://www.openstreetmap.org/way/28929572"
 lang="it">Orto dei Fuggiaschi</a> (the “garden of the fugitives”), where some of
@@ -108,7 +108,7 @@ the bodies of the victims of the eruption can be seen, in their original
 location.
 ]],
 }, {
-    path = "pompeii8.jpg",
+    path = "pompeii/8.jpg",
     text = [[
 <span lang="it">“Negli anni 1594–1600 l'architetto Domenico Fontana scavò questo
 canale per portare le acque del fiume Sarno alle fabbriche d'armi di Torre
@@ -116,96 +116,96 @@ Annunziata.  Durante la sua costruzione apparvero, per la prima volta, le rovine
 de Pompei.”</span>
 ]],
 }, {
-    path = "pompeii9.jpg",
+    path = "pompeii/9.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/28930585">Giardino di Octavius
 Quartio</a>.
 ]],
 }, {
-    path = "pompeii10.jpg",
+    path = "pompeii/10.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/356648459">Praedia di Giulia
 Felice</a>.
 ]],
 }, {
-    path = "pompeii11.jpg",
+    path = "pompeii/11.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/28929970">Palestra grande</a>.
 ]],
 }, {
-    path = "pompeii12.jpg",
+    path = "pompeii/12.jpg",
 }, {
-    path = "pompeii13.jpg",
+    path = "pompeii/13.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/3672508577">Casa di Paquius
 Proculus</a>.
 ]],
 }, {
-    path = "pompeii14.jpg",
+    path = "pompeii/14.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/2033057307">Casa di Casca
 Longus</a>.
 ]],
 }, {
-    path = "pompeii15.jpg",
+    path = "pompeii/15.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/relation/14673806">Teatro grande</a>.
 ]],
 }, {
-    path = "pompeii16.jpg",
+    path = "pompeii/16.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/28904348">Teatro piccolo /
 Odeion</a>.
 ]],
 }, {
-    path = "pompeii17.jpg",
+    path = "pompeii/17.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/5842363687">Statue of
 <i>Daedalus</i></a>, mythical Greek sculptor, by Igor Mitoraj, overlooking the
 modern city of Pompei and the monti Lattari.
 ]],
 }, {
-    path = "pompeii18.jpg",
+    path = "pompeii/18.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/240573968">Tempio di Apollo</a>.
 ]],
 }, {
-    path = "pompeii19.jpg",
+    path = "pompeii/19.jpg",
 }, {
-    path = "pompeii20.jpg",
+    path = "pompeii/20.jpg",
     text = [[
 The gulf and the Sorrento peninsula from <a
 href="https://www.openstreetmap.org/way/193055552">Torre di Mercurio</a>.
 ]],
 }, {
-    path = "pompeii21.jpg",
+    path = "pompeii/21.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/192721909">Via di Mercurio</a>.
     ]],
 }, {
-    path = "pompeii22.jpg",
+    path = "pompeii/22.jpg",
     text = [[
 For the <a href="https://lingualatina.dk/wp">Hans Ørberg</a> fans: <i
 lang="la">cave canem</i>.
 ]],
 }, {
-    path = "pompeii23.jpg",
+    path = "pompeii/23.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/240715554">Casa del Fauno</a>.
 ]],
 }, {
-    path = "pompeii24.jpg",
+    path = "pompeii/24.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/319406677">Casa della Caccia
 Antica</a>.
 ]],
 }, {
-    path = "pompeii25.jpg",
+    path = "pompeii/25.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/5010108075">Casa degli Epidii</a>.
 ]],
 }, {
-    path = "pompeii26.jpg",
+    path = "pompeii/26.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/9955240776">Thermopolium</a> (a
 Roman restaurant) next to <a
@@ -213,33 +213,33 @@ href="https://www.openstreetmap.org/way/501856034">Casa e Thermopolium di
 Vetutius Placidus</a>.
 ]],
 }, {
-    path = "pompeii27.jpg",
+    path = "pompeii/27.jpg",
     text = [[
 Chancel and dome of the cathedral.
 ]],
 }, {
-    path = "pompeii28.jpg",
+    path = "pompeii/28.jpg",
     text = [[
 <span lang="la">“In me gratia omnis viae et veritatis:<br />
 in me omnis spes vitae et virtutis”<br />
 — Ecclesiasticus 24:25</span>
 ]],
 }, {
-    path = "pompeii29.jpg",
+    path = "pompeii/29.jpg",
     text = [[
 <i>Morte di San Giuseppe</i>,<br />
 Ponziano Loverini, 1890.
 ]],
 }, {
-    path = "pompeii30.jpg",
+    path = "pompeii/30.jpg",
 }, {
-    path = "pompeii31.jpg",
+    path = "pompeii/31.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/23732990">Via Lepanto</a> in the city
 of Pompei.
 ]],
 }, {
-    path = "pompeii32.jpg",
+    path = "pompeii/32.jpg",
 }}
 
 return {

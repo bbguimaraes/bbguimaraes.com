@@ -34,9 +34,9 @@ Me voy andando.
 }
 
 local images <const> = {{
-    path = "porto_alegre0.jpg",
+    path = "porto_alegre/0.jpg",
 }, {
-    path = "porto_alegre1.jpg",
+    path = "porto_alegre/1.jpg",
 }}
 
 return {

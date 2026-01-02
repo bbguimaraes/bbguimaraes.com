@@ -17,17 +17,17 @@ local citation <const> = lines {
 }
 
 local images <const> = {{
-    path = "trento0.jpg",
+    path = "trento/0.jpg",
 }, {
-    path = "trento1.jpg",
+    path = "trento/1.jpg",
 }, {
-    path = "trento2.jpg",
+    path = "trento/2.jpg",
 }, {
-    path = "trento3.jpg",
+    path = "trento/3.jpg",
 }, {
-    path = "trento4.jpg",
+    path = "trento/4.jpg",
 }, {
-    path = "trento5.jpg",
+    path = "trento/5.jpg",
     text = par(lines {
         link {
             href = "https://upload.wikimedia.org/wikipedia/commons/5/5d/Elia_naurizio%2C_congregazione_generale_del_concilio_di_trento_in_s.m._maggiore%2C_1633%2C_01.jpg",
@@ -39,24 +39,24 @@ Vulgate of Saint Jerome and the Tridentine Mass.
 ]],
     }),
 }, {
-    path = "trento6.jpg",
+    path = "trento/6.jpg",
     text = [[
 La Specola, Padova.
 ]],
 }, {
-    path = "trento7.jpg",
+    path = "trento/7.jpg",
     text = [[
 Bologna from Santuario della Madonna di San Luca.
 ]],
 }, {
-    path = "trento8.jpg",
+    path = "trento/8.jpg",
     text = [[
 La ninfa e il cavallo marino.
 ]],
 }, {
-    path = "trento9.jpg",
+    path = "trento/9.jpg",
 }, {
-    path = "trento10.jpg",
+    path = "trento/10.jpg",
     text = lines {
         par [[
 The most <a href="https://en.wikipedia.org/wiki/Know_thyself">enlightened and

@@ -41,99 +41,99 @@ will tell thee of both ways.
 }
 
 local images <const> = {{
-    path = "napoli0.jpg",
+    path = "napoli/0.jpg",
     text = [[
 From Castel Sant'Elmo.
 ]],
 }, {
-    path = "napoli1.jpg",
+    path = "napoli/1.jpg",
     text = [[
 Galleria Umberto I.
 ]],
 }, {
-    path = "napoli2.jpg",
+    path = "napoli/2.jpg",
     text = [[
 Duomo.
 ]],
 }, {
-    path = "napoli3.jpg",
+    path = "napoli/3.jpg",
     text = [[
 Some of the walks by the many ports.
 ]],
 }, {
-    path = "napoli4.jpg",
+    path = "napoli/4.jpg",
 }, {
-    path = "napoli5.jpg",
+    path = "napoli/5.jpg",
     text = [[
 Porta di Massa and Collina del Vomero.
 ]],
 }, {
-    path = "napoli6.mp4",
+    path = "napoli/6.mp4",
     width = "640",
     poster = "0:03",
 }, {
-    path = "napoli7.mp4",
+    path = "napoli/7.mp4",
     width = "640",
     poster = "0:09",
 }, {
-    path = "napoli8.jpg",
+    path = "napoli/8.jpg",
     text = [[
 Basilica di Santa Chiara.
 ]],
 }, {
-    path = "napoli9.jpg",
+    path = "napoli/9.jpg",
     text = [[
 A perfect depiction of the different aspects of the city.
 ]],
 }, {
-    path = "napoli10.jpg",
+    path = "napoli/10.jpg",
     text = [[
 You won't be hungry here.
 ]],
-    path = "napoli11.jpg",
+    path = "napoli/11.jpg",
     text = [[
 Duomo.
 ]],
 }, {
-    path = "napoli12.jpg",
+    path = "napoli/12.jpg",
     text = [[
 Cripta di San Gennaro.
 ]],
 }, {
-    path = "napoli13.jpg",
+    path = "napoli/13.jpg",
     text = [[
 beatus vir qui inventus est sine macula /<br />
 veni sponsa Christi accipe coronam
 ]],
 }, {
-    path = "napoli14.jpg",
+    path = "napoli/14.jpg",
     text = [[
 vidi et credidi
 ]],
 }, {
-    path = "napoli15.jpg",
+    path = "napoli/15.jpg",
     text = [[
 Galleria Umberto I.
 ]],
 }, {
-    path = "napoli16.jpg",
+    path = "napoli/16.jpg",
     text = [[
 Chiesa del Gesù Nuovo.
 ]],
 }, {
-    path = "napoli17.jpg",
+    path = "napoli/17.jpg",
     text = [[
 Chiesa dei Girolamini.
 ]],
 }, {
-    path = "napoli18.jpg",
+    path = "napoli/18.jpg",
     text = [[
 Basilica di San Domenico Maggiore.
 ]],
 }, {
-    path = "napoli19.jpg",
+    path = "napoli/19.jpg",
 }, {
-    path = "napoli20.jpg",
+    path = "napoli/20.jpg",
     text = [[
 Piazza Dante.
 ]],

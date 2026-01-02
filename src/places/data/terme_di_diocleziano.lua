@@ -190,111 +190,112 @@ belong to myself
 }
 
 local images <const> = {{
-    path = "diocleziano0.jpg",
+    path = "diocleziano/0.jpg",
     text = [[
 Chiostro di Michelangelo.
 ]],
 }, {
-    path = "diocleziano1.jpg",
+    path = "diocleziano/1.jpg",
     text = [[
 Entrance from Viale Enrico De Nicola and Piazza del Cinquecento.
 ]],
 }, {
-    path = "diocleziano2.jpg",
+    path = "diocleziano/2.jpg",
     text = [[
 Relief map showing the peoples of the ancient Latium and the Italian peninsula.
 ]],
 }, {
-    path = "diocleziano3.jpg",
+    path = "diocleziano/3.jpg",
     text = [[
 The oldest inscription found in Italy.
 ]],
 }, {
-    path = "diocleziano4.jpg",
+    path = "diocleziano/4.jpg",
     text = [[
 ΙΧΘΥϹ ΖΩΝΤΩΝ
 ]],
 }, {
-    path = "diocleziano5.jpg",
+    path = "diocleziano/5.jpg",
     text = [[
 Chiostro, with the museum sections behind it.
 ]],
 }, {
-    path = "diocleziano6.jpg",
+    path = "diocleziano/6.jpg",
     text = [[
 Always good to find old friends<br />
 — bust of Marcus Aurelius.
 ]],
-}, { path = "diocleziano7.jpg",
+}, {
+    path = "diocleziano/7.jpg",
     text = [[
 Some of the best preserved sections of the original bath walls.
 ]],
 }, {
-    path = "diocleziano8.jpg",
+    path = "diocleziano/8.jpg",
     text = [[
 Remains of the <span lang="la">natatio</span>, the monumental swimming pool,
 with over 4000m².
 ]],
 }, {
-    path = "diocleziano9.jpg",
+    path = "diocleziano/9.jpg",
 }, {
-    path = "diocleziano10.jpg",
+    path = "diocleziano/10.jpg",
     text = [[
 Aula VIII.
 ]],
 }, {
-    path = "diocleziano11.jpg",
+    path = "diocleziano/11.jpg",
 }, {
-    path = "diocleziano12.jpg",
+    path = "diocleziano/12.jpg",
 }, {
-    path = "diocleziano13.jpg",
+    path = "diocleziano/13.jpg",
     text = [[
 Aula XI — Mosaico di Ercole.
 ]],
 }, {
-    path = "diocleziano14.jpg",
+    path = "diocleziano/14.jpg",
     text = [[
 Art piece in gold from Dacia (modern Romania), on the eastern confines of the
 Empire.
 ]],
 }, {
-    path = "diocleziano15.jpg",
+    path = "diocleziano/15.jpg",
     text = [[
 ΓΝΩΘΙ ΣΑΥΤΟΝ
 ]],
 }, {
-    path = "diocleziano16.jpg",
+    path = "diocleziano/16.jpg",
     text = [[
 Difficult to capture in a picture the dimensions of it.  Those are bricks, so
 it's <em>big</em>.
 ]],
 }, {
-    path = "diocleziano17.jpg",
+    path = "diocleziano/17.jpg",
     text = [[
 Aula X — Tomba di Sulpicio Platorini.
 ]],
 }, {
-    path = "diocleziano18.jpg",
+    path = "diocleziano/18.jpg",
 }, {
-    path = "diocleziano19.jpg",
+    path = "diocleziano/19.jpg",
 }, {
-    path = "diocleziano20.jpg",
+    path = "diocleziano/20.jpg",
     text = [[
 Front view from Piazza della Repubblica.
 ]],
 }, {
-    path = "diocleziano21.jpg",
+    path = "diocleziano/21.jpg",
     text = [[
 Basilica di Santa Maria degli Angeli e dei Martiri.
 ]],
 }, {
-    path = "diocleziano22.jpg",
+    path = "diocleziano/22.jpg",
     text = [[
 Apse of the basilica, whose entire structure is embedded into the ancient walls
 of the baths.
 ]],
 }, {
-    path = "diocleziano23.jpg",
+    path = "diocleziano/23.jpg",
     text = [[
 Piazza della Repubblica and its famous Fontana delle Naiadi, with the baths
 behind it.

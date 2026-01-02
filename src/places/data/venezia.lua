@@ -5,10 +5,11 @@ Always a delight to revisit the Repubblica Marinara and see how it's fared since
 the fall of the Byzantine Empire.
 ]]
 
-local images <const> = {
-    {path = "venezia0.jpg"},
-    {path = "venezia1.jpg"},
-}
+local images <const> = {{
+    path = "venezia/0.jpg",
+}, {
+    path = "venezia/1.jpg",
+}}
 
 return {
     id = "venezia",

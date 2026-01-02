@@ -24,15 +24,15 @@ hac iter Elysium nobis
 }
 
 local images <const> = {{
-    path = "villa_reale0.jpg",
+    path = "villa_reale/0.jpg",
 }, {
-    path = "villa_reale1.jpg",
+    path = "villa_reale/1.jpg",
     text = [[
 but the left works punishment on the wicked<br />
 and sends them to impious Tartarus
 ]],
 }, {
-    path = "villa_reale2.jpg",
+    path = "villa_reale/2.jpg",
     text = [[
 a day of Fate<br />
 and inimical force approaches<br />

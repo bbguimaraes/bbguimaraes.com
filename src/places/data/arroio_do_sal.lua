@@ -33,7 +33,7 @@ Quando uma estrela matreira se perde no continente
 }
 
 local images <const> = {{
-    path = "arroio_do_sal.jpg",
+    path = "arroio_do_sal/0.jpg",
 }}
 
 return {

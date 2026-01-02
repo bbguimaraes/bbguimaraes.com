@@ -87,120 +87,120 @@ Be thou erect, or be made erect.
 }
 
 local images <const> = {{
-    path = "ischia0.jpg",
+    path = "ischia/0.jpg",
     text = [[
 Castello Aragonese, originally built in 474 B.C. (that's right, it's <em>almost
 exactly 2500 years old</em>).
 ]],
 }, {
-    path = "ischia1.jpg",
+    path = "ischia/1.jpg",
     text = [[
 The ferry departing from Porta di Massa.
 ]],
 }, {
-    path = "ischia2.jpg",
+    path = "ischia/2.jpg",
     text = [[
 From left to right: Ischia, Nisida, Capo di Posilipo.
 ]],
 }, {
-    path = "ischia3.jpg",
+    path = "ischia/3.jpg",
     text = [[
 Leaving Vesuvius behind.
 ]],
 }, {
-    path = "ischia4.jpg",
+    path = "ischia/4.jpg",
     text = [[
 Pozzuoli seen in the distance between Monte di Procida and Capo di Posilipo.
 ]],
 }, {
-    path = "ischia5.jpg",
+    path = "ischia/5.jpg",
     text = [[
 The tip of the peninsula and Vesuvius.
 ]],
 }, {
-    path = "ischia6.jpg",
+    path = "ischia/6.jpg",
     text = [[
 The port of Procida.
 ]],
 }, {
-    path = "ischia7.jpg",
+    path = "ischia/7.jpg",
     text = [[
 Vesuvius from the northeastern shore of Ischia.
 ]],
 }, {
-    path = "ischia8.jpg",
+    path = "ischia/8.jpg",
     text = [[
 The sea around the island.
 ]],
 }, {
-    path = "ischia9.jpg",
+    path = "ischia/9.jpg",
     text = [[
 Castello Aragonese from across the bridge.
 ]],
 }, {
-    path = "ischia10.jpg",
+    path = "ischia/10.jpg",
     text = [[
 Zingara ischitana (the gypsy sandwich), a local dish, at BisBoccia Bistro, next
 to the castle.
 ]],
 }, {
-    path = "ischia11.jpg",
+    path = "ischia/11.jpg",
     text = [[
 The type of place I get myself into when I'm exploring.
 ]],
 }, {
-    path = "ischia12.jpg",
+    path = "ischia/12.jpg",
     text = [[
 The peak of monte Epomeo.
 ]],
 }, {
-    path = "ischia13.jpg",
+    path = "ischia/13.jpg",
     text = [[
 Lido di San Montano and Marina di Lacco Ameno from the highest point of the
 island.
 ]],
 }, {
-    path = "ischia14.jpg",
+    path = "ischia/14.jpg",
     text = [[
 The peak is formed by white lava rocks such as these.
 ]],
 }, {
-    path = "ischia15.jpg",
+    path = "ischia/15.jpg",
     text = [[
 Vesuvius floating in the mist.
 ]],
 }, {
-    path = "ischia16.jpg",
+    path = "ischia/16.jpg",
     text = [[
 The port of Forio.
 ]],
 }, {
-    path = "ischia17.jpg",
+    path = "ischia/17.jpg",
     text = [[
 Stone gate on the way to Pietra dell'Acqua.
 ]],
 }, {
-    path = "ischia18.jpg",
+    path = "ischia/18.jpg",
     text = [[
 The way down to Sant'Angelo.
 ]],
 }, {
-    path = "ischia19.jpg",
+    path = "ischia/19.jpg",
     text = [[
 Clear distinction between sea water and volcanic springs.
 ]],
 }, {
-    path = "ischia20.jpg",
+    path = "ischia/20.jpg",
     text = [[
 The natural pool of Sant'Angelo.
 ]],
 }, {
-    path = "ischia21.jpg",
+    path = "ischia/21.jpg",
     text = [[
 Making my way back to the port at night.
 ]],
 }, {
-    path = "ischia22.jpg",
+    path = "ischia/22.jpg",
     text = [[
 Recovering back in Napoli with some spaghetti alle vongole.
 ]],
