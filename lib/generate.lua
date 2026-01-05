@@ -6,18 +6,6 @@ local util <const> = require "lib.util"
 local NOT_FOUND <const> = 2
 local CONF
 
-local buffer <const> = {}
-buffer.__name = "buffer"
-buffer.__index = buffer
-
-function buffer:new()
-    return setmetatable({t = {}}, self)
-end
-
-function buffer:write(x)
-    table.insert(self.t, x)
-end
-
 --- Determines the location of the configuration file based on the environment.
 local function conf_file_name()
     local d <const> = os.getenv("XDG_CONFIG_DIR") or os.getenv("HOME")
@@ -69,9 +57,9 @@ end
 
 --- Shortcut for rendering the contents of a renderer tree.
 local function render(x)
-    local out <const> = buffer:new()
+    local out <const> = str.buffer:new()
     x:render(out, 0)
-    return table.concat(out.t)
+    return out:output()
 end
 
 --- Creates a new environment containing variables in \p conf and loads a file.

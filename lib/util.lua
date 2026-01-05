@@ -52,6 +52,21 @@ local function table_default_assign(f)
     })
 end
 
+--- Clears the array part of a table.
+local function iclear(t)
+    for i = 1, #t do
+        rawset(t, i, nil)
+    end
+end
+
+--- Removes all keys/values from a table.
+local function clear(t)
+    iclear(t)
+    for k in pairs(t) do
+        t[k] = nil
+    end
+end
+
 --- Calls a function for each key/value pair in \p t.
 local function each(f, t)
     for k, v in pairs(t) do
@@ -151,6 +166,8 @@ function set:values() return keys(self) end
 return {
     table_default = table_default,
     table_default_assign = table_default_assign,
+    iclear = iclear,
+    clear = clear,
     each = each,
     ieach = ieach,
     map = map,
