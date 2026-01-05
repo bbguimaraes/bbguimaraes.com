@@ -541,6 +541,31 @@ function video:render(out, indent)
     out:write("</video>")
 end
 
+local notes <const> = {}
+notes.__index = notes
+notes.__name = "notes"
+
+function notes:new()
+    return setmetatable({}, self)
+end
+
+function notes:add(x)
+    local n <const> = #self
+    table.insert(self, x)
+    return link:new {
+        href = "#note" .. n,
+        content = string.format("<sup>%d</sup>", n),
+    }
+end
+
+function notes:render(out, indent)
+    local l <const> = {}
+    for i, x in ipairs(self) do
+        table.insert(l, tag:new("li", {id = "note" .. (i - 1)}, x))
+    end
+    tag:new("ol", {start = 0}, str.lines(l)):render(out, indent)
+end
+
 --- Shortcut for a source reference with `src-ref` and `data-hash`.
 --- \ref scripts/urls.py
 function src_ref(t)
@@ -583,5 +608,6 @@ return {
     h1_link = h1_link,
     h2_link = h2_link,
     h3_link = h3_link,
+    notes = notes,
     src_ref = src_ref,
 }
