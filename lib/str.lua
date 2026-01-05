@@ -1,5 +1,28 @@
 local util <const> = require "lib.util"
 
+local buffer <const> = {}
+buffer.__name = "buffer"
+buffer.__index = buffer
+
+function buffer:new()
+    local ret <const> = setmetatable({}, self)
+    return ret
+end
+
+function buffer:clear()
+    util.iclear(self)
+end
+
+function buffer:output()
+    return table.concat(self)
+end
+
+function buffer:write(...)
+    for _, x in ipairs{...} do
+        table.insert(self, x)
+    end
+end
+
 --- Recursively renders \p x.
 --- \p x should be either a string, which is written to \p out directly, or a
 --- renderer, which should have a method accepting \p out and an `indent`
@@ -18,6 +41,24 @@ end
 --- Writes \p n indentation levels to \p out.
 local function write_indent(out, n)
     out:write(make_indent(n))
+end
+
+local format <const> = {}
+format.__index = format
+format.__name = "format"
+
+function format:new(t)
+    return setmetatable({t = t}, self)
+end
+
+function format:render(out, indent)
+    local t <const>, b <const> = self.t, buffer:new()
+    for i = 2, #self.t do
+        b:clear()
+        render(t[i], b, 0)
+        t[i] = b:output()
+    end
+    render(string.format(table.unpack(t)), out, indent)
 end
 
 local concat <const> = {}
@@ -68,8 +109,10 @@ function indent:render(out, indent)
 end
 
 return {
+    buffer = buffer,
     make_indent = make_indent,
     write_indent = write_indent,
+    format = function(...) return format:new(...) end,
     concat = function(...) return concat:new(...) end,
     lines = function(...) return lines:new(..., "\n") end,
     indent = function(...) return indent:new(...) end,
