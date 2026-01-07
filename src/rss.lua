@@ -9,6 +9,10 @@ local function generate_common(dir, t, tag)
         return
     end
     t.file = path.join(dir, t.id .. ".html")
+    local desc <const> = t.description
+    if desc and type(desc) ~= "string" then
+        t.description = generate.render(desc)
+    end
     if t.tags then
         table.insert(t.tags, 1, tag or dir)
     else

@@ -1,7 +1,46 @@
-local description <const> = [[The last stop of my marathon in the Gulf of Napoli.  I had become so enamored of the island from watching it all the way across the Gulf of Gaeta, more than 60km away — it is located right between the two gulfs, in the area where Campi Flegrei, the huge volcanic caldera, enters the Mediterranean sea, forming Penisola flegrea and the surrounding islands — seeing its dim figure through the maritime mist, its shaded contour against the colored sky at sunset, its dark green suspended in the bright blue where both sky and sea meet on sunny days (<a href="https://bbguimaraes.com/places/coreno-ausonio.html">see</a> <a href="https://bbguimaraes.com/places/castelforte.html">the</a> <a href="https://bbguimaraes.com/places/santi-cosma-e-damiano.html">other</a> <a href="https://bbguimaraes.com/places/gaeta.html">posts</a> <a href="https://bbguimaraes.com/places/napoli.html">where</a> <a href="https://bbguimaraes.com/places/capri.html">it</a> <a href="https://bbguimaraes.com/places/monte-solaro.html">makes</a> <a href="https://bbguimaraes.com/places/sorrento.html">an</a> <a href="https://bbguimaraes.com/places/herculaneum.html">appearance</a>), that I could not leave Campania without going there.]]
+local description <const> = indented(format {
+    [[The last stop of my marathon in the Gulf of Napoli.  I had become so enamored of the island from watching it all the way across the Gulf of Gaeta, more than 60km away — it is located right between the two gulfs, in the area where Campi Flegrei, the huge volcanic caldera, enters the Mediterranean sea, forming Penisola flegrea and the surrounding islands — seeing its dim figure through the maritime mist, its shaded contour against the colored sky at sunset, its dark green suspended in the bright blue where both sky and sea meet on sunny days (%s %s %s %s %s %s %s %s %s), that I could not leave Campania without going there.]],
+    link {
+        href = "https://bbguimaraes.com/places/coreno-ausonio.html",
+        content = "see",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/castelforte.html",
+        content = "the",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/santi-cosma-e-damiano.html",
+        content = "other",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/gaeta.html",
+        content = "posts",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/napoli.html",
+        content = "where",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/capri.html",
+        content = "it",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/monte-solaro.html",
+        content = "makes",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/sorrento.html",
+        content = "an",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/herculaneum.html",
+        content = "appearance",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 The last stop of my marathon in the Gulf of Napoli.  I had become so enamored of
 the island from watching it all the way across the Gulf of Gaeta, more than 60km
 away — it is located right between the two gulfs, in the area where Campi
@@ -9,13 +48,50 @@ Flegrei, the huge volcanic caldera, enters the Mediterranean sea, forming
 Penisola flegrea and the surrounding islands — seeing its dim figure through the
 maritime mist, its shaded contour against the colored sky at sunset, its dark
 green suspended in the bright blue where both sky and sea meet on sunny days
-(<a href="coreno-ausonio.html">see</a> <a href="castelforte.html">the</a>
-<a href="santi-cosma-e-damiano.html">other</a> <a href="gaeta.html">posts</a>
-<a href="napoli.html">where</a> <a href="capri.html">it</a>
-<a href="monte-solaro.html">makes</a> <a href="sorrento.html">an</a>
-<a href="herculaneum.html">appearance</a>), that I could not leave Campania
+(%s %s
+%s %s
+%s %s
+%s %s
+%s), that I could not leave Campania
 without going there.
 ]],
+        link {
+            href = "coreno-ausonio.html",
+            content = "see",
+        },
+        link {
+            href = "castelforte.html",
+            content = "the",
+        },
+        link {
+            href = "santi-cosma-e-damiano.html",
+            content = "other",
+        },
+        link {
+            href = "gaeta.html",
+            content = "posts",
+        },
+        link {
+            href = "napoli.html",
+            content = "where",
+        },
+        link {
+            href = "capri.html",
+            content = "it",
+        },
+        link {
+            href = "monte-solaro.html",
+            content = "makes",
+        },
+        link {
+            href = "sorrento.html",
+            content = "an",
+        },
+        link {
+            href = "herculaneum.html",
+            content = "appearance",
+        },
+    }),
     par [[
 Napoli, the <a href="napoli.html" lang="grc">Νεάπολις</a>, and the surrounding
 area was the center of <span lang="la">Magna Graecia</span>, the Greek colonies

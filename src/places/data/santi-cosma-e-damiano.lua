@@ -1,20 +1,56 @@
-local description <const> = [[The equally small comune of Santi Cosma e Damiano is situated right next to <a href="https://bbguimaraes.com/places/castelforte.html">Castelforte</a>, on the same hillside overlooking the Garigliano valley and the gulf of <a href="https://bbguimaraes.com/places/gaeta.html">Gaeta</a> (but don't mix the two towns, or you'll upset the locals on both sides).  There is a stony road which climbs almost to the top of the hill, the highest point in the surrounding area, the village of <a href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its 12th-century Romanesque watch tower, with a view of not only the valley and the vastness of the gulf, but stretching all the way to monte Cairo in the north, monti Aurunci in the west, Roccamonfina to the east, and going as far as <a href="vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east when the weather is sufficiently clear.]]
+local description <const> = indented(format {
+    [[The equally small comune of Santi Cosma e Damiano is situated right next to %s, on the same hillside overlooking the Garigliano valley and the gulf of %s (but don't mix the two towns, or you'll upset the locals on both sides).  There is a stony road which climbs almost to the top of the hill, the highest point in the surrounding area, the village of %s and its 12th-century Romanesque watch tower, with a view of not only the valley and the vastness of the gulf, but stretching all the way to monte Cairo in the north, monti Aurunci in the west, Roccamonfina to the east, and going as far as %s and the island of Ischia in the south-east when the weather is sufficiently clear.]],
+    link {
+        href = "https://bbguimaraes.com/places/castelforte.html",
+        content = "Castelforte",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/gaeta.html",
+        content = "Gaeta",
+    },
+    link {
+        href = "https://www.openstreetmap.org/node/1235709903",
+        content = "Ventosa",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/vesuvius.html",
+        content = "Vesuvius",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 The equally small comune of Santi Cosma e Damiano is situated right next to
-<a href="castelforte.html">Castelforte</a>, on the same hillside overlooking the
-Garigliano valley and the gulf of <a href="gaeta.html">Gaeta</a> (but don't mix
+%s, on the same hillside overlooking the
+Garigliano valley and the gulf of %s (but don't mix
 the two towns, or you'll upset the locals on both sides).  There is a stony road
 which climbs almost to the top of the hill, the highest point in the surrounding
 area, the village of
-<a href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its
+%s and its
 12th-century Romanesque watch tower, with a view of not only the valley and the
 vastness of the gulf, but stretching all the way to monte Cairo in the north,
 monti Aurunci in the west, Roccamonfina to the east, and going as far as
-<a href="vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east
+%s and the island of Ischia in the south-east
 when the weather is sufficiently clear.
 ]],
+        link {
+            href = "castelforte.html",
+            content = "Castelforte",
+        },
+        link {
+            href = "gaeta.html",
+            content = "Gaeta",
+        },
+        link {
+            href = "https://www.openstreetmap.org/node/1235709903",
+            content = "Ventosa",
+        },
+        link {
+            href = "vesuvius.html",
+            content = "Vesuvius",
+        },
+    }),
     par [[
 Having moved to a larger city now (<em>much</em> larger, but thankfully not
 without a few places like this), to this day I miss being able to retreat to one

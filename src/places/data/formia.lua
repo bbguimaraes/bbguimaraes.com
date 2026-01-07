@@ -1,7 +1,14 @@
-local description <const> = [[As many of the cities along the Tyrrhenian coast on the ancient via Appia, Formia was a favored place for Roman seaside villae — including one belonging to the stepfather of the emperor Augustus.  Its Greek name <span lang="grc">Όρμιαι</span> (<span lang="la">Hormiae</span> in Latin, from a word for “harbor”) refers to its many ports and the mild maritime climate provided by its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many of these villae and ports can still be seen all they from the city center to the rocky shore on the way to <a href="https://www.openstreetmap.org/node/8390626221">monte Scauri</a>, with salient pieces of two-thousand-year-old mosaics coming out of the rock every now and then.]]
+local description <const> = indented(format {
+    [[As many of the cities along the Tyrrhenian coast on the ancient via Appia, Formia was a favored place for Roman seaside villae — including one belonging to the stepfather of the emperor Augustus.  Its Greek name <span lang="grc">Όρμιαι</span> (<span lang="la">Hormiae</span> in Latin, from a word for “harbor”) refers to its many ports and the mild maritime climate provided by its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many of these villae and ports can still be seen all they from the city center to the rocky shore on the way to %s, with salient pieces of two-thousand-year-old mosaics coming out of the rock every now and then.]],
+    link {
+        href = "https://www.openstreetmap.org/node/8390626221",
+        content = "monte Scauri",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 As many of the cities along the Tyrrhenian coast on the ancient via Appia,
 Formia was a favored place for Roman seaside villae — including one belonging to
 the stepfather of the emperor Augustus.  Its Greek name <span
@@ -10,10 +17,15 @@ for “harbor”) refers to its many ports and the mild maritime climate provide
 its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many
 of these villae and ports can still be seen all they from the city center to the
 rocky shore on the way to
-<a href="https://www.openstreetmap.org/node/8390626221">monte Scauri</a>, with
+%s, with
 salient pieces of two-thousand-year-old mosaics coming out of the rock every now
 and then.
 ]],
+        link {
+            href = "https://www.openstreetmap.org/node/8390626221",
+            content = "monte Scauri",
+        },
+    }),
     par [[
 One of the most famous residents of Formiae was the illustrious <i
 lang="la">novus homo</i> <a href="https://en.wikipedia.org/wiki/Cicero"

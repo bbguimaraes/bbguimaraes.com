@@ -1,12 +1,34 @@
-local description <const> = [[The 4th edition of the <a href="https://www.tbmf.eu">baroque music festival</a> organized by <a href="https://www.accademiadelsantospirito.it" lang="it">Accademia del Santo Spirito</a>, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.]]
+local description <const> = indented(format {
+    [[The 4th edition of the %s organized by %s, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.]],
+    link {
+        href = "https://www.tbmf.eu",
+        content = "baroque music festival",
+    },
+    link {
+        href = "https://www.accademiadelsantospirito.it",
+        lang = "it",
+        content = "Accademia del Santo Spirito",
+    },
+})
 
 local content <const> = lines {
-    par [[
-The 4th edition of the <a href="https://www.tbmf.eu">baroque music festival</a>
-organized by <a href="https://www.accademiadelsantospirito.it" lang="it">Accademia del Santo Spirito</a>,
+    par(format {
+        [[
+The 4th edition of the %s
+organized by %s,
 which took place in June–July and October–November 2025 in some of the most
 beautiful churches and palaces in Torino.
 ]],
+        link {
+            href = "https://www.tbmf.eu",
+            content = "baroque music festival",
+        },
+        link {
+            href = "https://www.accademiadelsantospirito.it",
+            lang = "it",
+            content = "Accademia del Santo Spirito",
+        },
+    }),
     par [[
 These pictures and videos are from the following concerts:
 ]],
