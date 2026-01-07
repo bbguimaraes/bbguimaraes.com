@@ -15,15 +15,15 @@ end
 
 --- Recursively renders \p x.
 --- See \ref str.lua
-local function render(x, out, indent)
+local function render(x, ctx)
     if type(x) == "function" then
         x = x()
     end
     if type(x) == "string" then
-        str.write_indent(out, indent)
-        return out:write(x)
+        str.write_indent(ctx)
+        return ctx.out:write(x)
     end
-    return x:render(out, indent)
+    return x:render(ctx)
 end
 
 local function render_simple(x)
@@ -110,8 +110,7 @@ local function write_close_tag(out, name)
 end
 
 --- Auxiliary function to write a generic opening tag.
-local function write_generic_open_tag(out, indent, name, attrs)
-    str.write_indent(out, indent)
+local function write_generic_open_tag(out, name, attrs)
     out:write("<")
     out:write(name)
     write_generic_attrs(out, attrs)
@@ -125,8 +124,8 @@ function html_str:new(s)
     return setmetatable({ s = s }, self)
 end
 
-function html_str:render(out)
-    out:write(self.s)
+function html_str:render(ctx)
+    ctx.out:write(self.s)
 end
 
 local html <const> = {}
@@ -138,12 +137,12 @@ function html:new(s)
 end
 
 --- Creates a renderer which indents and writes pre-formatted HTML text.
-function html:render(out, indent)
-    str.write_indent(out, indent)
+function html:render(ctx)
+    str.write_indent(ctx)
     -- indent all but the last (empty) line
-    local r <const> = "\n" .. str.make_indent(indent) .. "%1"
+    local r <const> = "\n" .. str.make_indent(ctx.indent) .. "%1"
     local s <const> = self.s:gsub("\n(.)", r)
-    return out:write(s)
+    return ctx.out:write(s)
 end
 
 local tag <const> = {}
@@ -160,16 +159,21 @@ function tag:new(name, attrs, content)
     return setmetatable({ name = name, attrs = attrs, content = content }, self)
 end
 
-function tag:render(out, indent)
+function tag:render(ctx)
+    local out <const> = ctx.out
     local name <const>, attrs <const>, content <const> =
         self.name, self.attrs, self.content
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     write_open_tag(out, name, attrs)
     if content then
         out:write(">\n")
-        render(content, out, indent + 1)
+        do
+            local _ <close> = ctx:save("indent")
+            ctx.indent = ctx.indent + 1
+            render(content, ctx)
+        end
         out:write("\n")
-        str.write_indent(out, indent)
+        str.write_indent(ctx)
         write_close_tag(out, name)
     else
         out:write(" />")
@@ -188,13 +192,16 @@ end
 --- Format:
 ---
 ---     <${name} ${attrs...}>${content}</${name}>
-function inline_tag:render(out, indent)
+function inline_tag:render(ctx)
+    local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     write_open_tag(out, name, self.attrs)
     if content then
         out:write(">")
-        render(content, out, 0)
+        local _ <close> = ctx:save("indent")
+        ctx.indent = 0
+        render(content, ctx)
         write_close_tag(out, name)
     else
         out:write(" />")
@@ -210,14 +217,20 @@ function generic_tag:new(name, attrs, content)
     return setmetatable({ name = name, attrs = attrs, content = content }, self)
 end
 
-function generic_tag:render(out, indent)
+function generic_tag:render(ctx)
+    local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
-    write_generic_open_tag(out, indent, name, self.attrs)
+    str.write_indent(ctx)
+    write_generic_open_tag(out, name, self.attrs)
     if content then
         out:write(">\n")
-        render(content, out, indent + 1)
+        do
+            local _ <close> = ctx:save("indent")
+            ctx.indent = ctx.indent + 1
+            render(content, ctx)
+        end
         out:write("\n")
-        str.write_indent(out, indent)
+        str.write_indent(ctx)
         write_close_tag(out, name)
     else
         out:write(" />")
@@ -233,12 +246,16 @@ function generic_inline_tag:new(name, attrs, content)
     return setmetatable({ name = name, attrs = attrs, content = content }, self)
 end
 
-function generic_inline_tag:render(out, indent)
+function generic_inline_tag:render(ctx)
+    local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
-    write_generic_open_tag(out, indent, name, self.attrs)
+    str.write_indent(ctx)
+    write_generic_open_tag(out, name, self.attrs)
     if content then
         out:write(">")
-        render(content, out, 0)
+        local _ <close> = ctx:save("indent")
+        ctx.indent = 0
+        render(content, ctx)
         write_close_tag(out, name)
     else
         out:write(" />")
@@ -259,13 +276,18 @@ end
 ---     <${name} ${attrs...}>
 ---     ${content}
 ---     </${name}>
-function text_tag:render(out, indent)
+function text_tag:render(ctx)
+    local out <const> = ctx.out
     local name <const> = self.name
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     write_full_open_tag(out, name, self.attrs)
     out:write("\n")
-    render(self.content, out, 0)
-    str.write_indent(out, indent)
+    do
+        local _ <close> = ctx:save("indent")
+        ctx.indent = 0
+        render(self.content, ctx)
+    end
+    str.write_indent(ctx)
     write_close_tag(out, name)
 end
 
@@ -282,12 +304,17 @@ function code_tag:new(name, attrs, content)
     return setmetatable({ name = name, attrs = attrs, content = content }, self)
 end
 
-function code_tag:render(out, indent)
+function code_tag:render(ctx)
+    local out <const> = ctx.out
     local name <const> = self.name
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     write_full_open_tag(out, name, self.attrs)
-    render(self.content, out, 0)
-    str.write_indent(out, indent)
+    do
+        local _ <close> = ctx:save("indent")
+        ctx.indent = 0
+        render(self.content, ctx)
+    end
+    str.write_indent(ctx)
     write_close_tag(out, name)
 end
 
@@ -356,23 +383,30 @@ function list:new(name, attrs)
     return setmetatable({ name = name, attrs = attrs }, self)
 end
 
-function list:render(out, indent)
+function list:render(ctx)
+    local out <const>, i1 <const>, i2 <const> =
+        ctx.out, ctx.indent + 1, ctx.indent + 2
     local name <const>, attrs <const> = self.name, self.attrs
-    local i1 <const>, i2 <const> = indent + 1, indent + 2
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<")
     out:write(name)
     write_attr(out, attrs, "start")
     out:write(">\n")
-    for _, x in ipairs(attrs) do
-        str.write_indent(out, i1)
-        out:write("<li>\n")
-        render(x, out, i2)
-        out:write("\n")
-        str.write_indent(out, i1)
-        out:write("</li>\n")
+    do
+        local _ <close> = ctx:save("indent")
+        for _, x in ipairs(attrs) do
+            ctx.indent = i1
+            str.write_indent(ctx)
+            out:write("<li>\n")
+            ctx.indent = i2
+            render(x, ctx)
+            out:write("\n")
+            ctx.indent = i1
+            str.write_indent(ctx)
+            out:write("</li>\n")
+        end
     end
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     write_close_tag(out, name)
 end
 
@@ -392,13 +426,16 @@ function link:new(t)
     return setmetatable({ t = t }, self)
 end
 
-function link:render(out, indent)
+function link:render(ctx)
+    local out <const> = ctx.out
     local t <const> = self.t
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<a")
     write_attrs(out, t)
     out:write(">")
-    render(t.content or "", out, 0)
+    local _ <close> = ctx:save("indent")
+    ctx.indent = 0
+    render(t.content or "", ctx)
     out:write("</a>")
 end
 
@@ -411,9 +448,10 @@ function image:new(t)
     return setmetatable({ t = t }, self)
 end
 
-function image:render(out, indent)
+function image:render(ctx)
+    local out <const> = ctx.out
     local t <const> = self.t
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<img")
     write_attr(out, t, "id")
     write_attr(out, t, "class")
@@ -435,33 +473,37 @@ function figure:new(t)
     return setmetatable({ t = t }, self)
 end
 
-function figure:render(out, indent)
+function figure:render(ctx)
+    local out <const> = ctx.out
     local t <const> = self.t
     local img <const>, content <const>, caption <const> =
         t.image, t.content, t.caption
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<figure")
     write_attr(out, t, "id")
     write_attr(out, t, "class")
     write_attr(out, t, "style")
     out:write(">\n")
-    indent = indent + 1
-    if img then
-        image:new({src = img}):render(out, indent)
-        out:write("\n")
+    do
+        local _ <close> = ctx:save("indent")
+        ctx.indent = ctx.indent + 1
+        if img then
+            image:new({src = img}):render(ctx)
+            out:write("\n")
+        end
+        if content then
+            content:render(ctx)
+            out:write("\n")
+        end
+        if caption then
+            str.write_indent(ctx)
+            out:write("<figcaption>")
+            ctx.indent = 0
+            render(caption, ctx)
+            out:write("</figcaption>\n")
+        end
     end
-    if content then
-        content:render(out, indent)
-        out:write("\n")
-    end
-    if caption then
-        str.write_indent(out, indent)
-        out:write("<figcaption>")
-        render(caption, out, 0)
-        out:write("</figcaption>\n")
-    end
-    indent = indent - 1
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("</figure>")
 end
 
@@ -494,12 +536,13 @@ function pre:new(content)
     return setmetatable({ content = content }, self)
 end
 
-function pre:render(out, indent)
-    str.write_indent(out, indent)
+function pre:render(ctx)
+    local out <const> = ctx.out
+    str.write_indent(ctx)
     out:write("<pre>\n")
     out:write(self.content)
     out:write("\n")
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("</pre>")
 end
 
@@ -512,9 +555,10 @@ function code:new(content)
     return setmetatable({ content = content }, self)
 end
 
-function code:render(out, indent)
+function code:render(ctx)
+    local out <const> = ctx.out
     local s <const> = self.content:gsub("\n$", "")
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<pre><code>")
     out:write(s)
     out:write("</code></pre>")
@@ -529,9 +573,10 @@ function video:new(t)
     return setmetatable({ t = t }, self)
 end
 
-function video:render(out, indent)
+function video:render(ctx)
+    local out <const> = ctx.out
     local t <const> = self.t
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("<video")
     write_flag(out, t, "controls")
     write_flag(out, t, "loop")
@@ -542,16 +587,20 @@ function video:render(out, indent)
     write_attr(out, t, "style")
     write_attr(out, t, "poster")
     out:write(">")
-    for _, x in ipairs(t.sources) do
-        out:write("\n")
-        str.write_indent(out, indent + 1)
-        out:write('<source src="')
-        out:write(x)
-        out:write('" />\n')
+    do
+        local _ <close> = ctx:save("indent")
+        ctx.indent = ctx.indent + 1
+        for _, x in ipairs(t.sources) do
+            out:write("\n")
+            str.write_indent(ctx)
+            out:write('<source src="')
+            out:write(x)
+            out:write('" />\n')
+        end
+        str.write_indent(ctx)
+        out:write("Your browser doesn't support the &lt;video&gt; tag.\n")
     end
-    str.write_indent(out, indent + 1)
-    out:write("Your browser doesn't support the &lt;video&gt; tag.\n")
-    str.write_indent(out, indent)
+    str.write_indent(ctx)
     out:write("</video>")
 end
 
@@ -572,12 +621,12 @@ function notes:add(x)
     }
 end
 
-function notes:render(out, indent)
+function notes:render(ctx)
     local l <const> = {}
     for i, x in ipairs(self) do
         table.insert(l, tag:new("li", {id = "note" .. (i - 1)}, x))
     end
-    tag:new("ol", {start = 0}, str.lines(l)):render(out, indent)
+    tag:new("ol", {start = 0}, str.lines(l)):render(ctx)
 end
 
 --- Shortcut for a source reference with `src-ref` and `data-hash`.

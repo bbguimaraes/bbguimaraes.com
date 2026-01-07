@@ -6,6 +6,29 @@ local util <const> = require "lib.util"
 local NOT_FOUND <const> = 2
 local CONF
 
+local context <const> = {}
+context.__index = context
+context.__name = "context"
+
+function context:new(t)
+    return setmetatable(t, self)
+end
+
+function context:save(...)
+    local dst <const>, src <const> = self, {}
+    for _, x in ipairs({...}) do
+        table.insert(src, x)
+        table.insert(src, dst[x])
+    end
+    return setmetatable(src, {
+        __close = function(src)
+            for i = 1, #src, 2 do
+                dst[src[i]] = src[i + 1]
+            end
+        end,
+    })
+end
+
 --- Determines the location of the configuration file based on the environment.
 local function conf_file_name()
     local d <const> = os.getenv("XDG_CONFIG_DIR") or os.getenv("HOME")
@@ -58,7 +81,7 @@ end
 --- Shortcut for rendering the contents of a renderer tree.
 local function render(x)
     local out <const> = str.buffer:new()
-    x:render(out, 0)
+    x:render(context:new{out = out, indent = 0})
     return out:output()
 end
 
@@ -73,7 +96,7 @@ end
 
 --- Fully renders the contents of a file.
 local function generate(out, file_name, ...)
-    return load_file(file_name, ...):render(out, 0)
+    return load_file(file_name, ...):render(context:new{out = out, indent = 0})
 end
 
 --- Fully renders the contents of a file or generates an error report.

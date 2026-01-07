@@ -24,14 +24,14 @@ function buffer:write(...)
 end
 
 --- Recursively renders \p x.
---- \p x should be either a string, which is written to \p out directly, or a
---- renderer, which should have a method accepting \p out and an `indent`
+--- \p x should be either a string, which is written to \p ctx.out directly, or
+--- a renderer, which should have a method accepting \p out and a `ctx`
 --- argument.
-local function render(x, out, ...)
+local function render(x, ctx)
     if type(x) == "string" then
-        return out:write(x)
+        return ctx.out:write(x)
     end
-    return x:render(out, ...)
+    return x:render(ctx)
 end
 
 local function make_indent(n)
@@ -39,8 +39,8 @@ local function make_indent(n)
 end
 
 --- Writes \p n indentation levels to \p out.
-local function write_indent(out, n)
-    out:write(make_indent(n))
+local function write_indent(ctx)
+    ctx.out:write(make_indent(ctx.indent))
 end
 
 local format <const> = {}
@@ -51,15 +51,21 @@ function format:new(t)
     return setmetatable({t = t}, self)
 end
 
-function format:render(out, indent)
+function format:render(ctx)
     local dst <const>, src <const>, b <const> = {}, self.t, buffer:new()
-    dst[1] = src[1]
-    for i = 2, #self.t do
-        b:clear()
-        render(src[i], b, 0)
-        dst[i] = b:output()
+    do
+        local out <const>, indent <const> = ctx.out, ctx.indent
+        local _ <close> = ctx:save("out", "indent")
+        ctx.out = b
+        ctx.indent = 0
+        dst[1] = src[1]
+        for i = 2, #self.t do
+            b:clear()
+            render(src[i], ctx)
+            dst[i] = b:output()
+        end
     end
-    render(string.format(table.unpack(dst)), out, indent)
+    render(string.format(table.unpack(dst)), ctx)
 end
 
 local concat <const> = {}
@@ -71,10 +77,11 @@ function concat:new(t, ...)
     return setmetatable({ t = t, ... }, self)
 end
 
-function concat:render(out, indent)
+function concat:render(ctx)
+    local _ <close> = ctx:save("indent")
     for _, x in ipairs(self.t) do
-        render(x, out, indent)
-        indent = 0
+        render(x, ctx)
+        ctx.indent = 0
     end
 end
 
@@ -87,12 +94,13 @@ function lines:new(t)
 end
 
 --- Creates a renderer which writes all elements of \p t with lines in between.
-function lines:render(out, indent)
+function lines:render(ctx)
+    local out <const> = ctx.out
     local d = ""
     for _, x in ipairs(self.t) do
         out:write(d)
         d = "\n"
-        render(x, out, indent)
+        render(x, ctx)
     end
 end
 
@@ -105,8 +113,10 @@ function indent:new(n, t)
     return setmetatable({ n = n, t = t }, self)
 end
 
-function indent:render(out, indent)
-    return render(self.t, out, indent + self.n)
+function indent:render(ctx)
+    local _ <close> = ctx:save("indent")
+    ctx.indent = ctx.indent + self.n
+    return render(self.t, ctx)
 end
 
 return {
