@@ -86,13 +86,16 @@ end
 local render_without_links
 local function generate_item(_, t)
     return generate.load(PREVIEW, PAGE_ENV, t, {
-        content = render_without_links(t.content),
+        content = render_without_links(t.description),
     })
 end
 
 function render_without_links(t)
     if not t then
         return
+    end
+    if type(t) == "string" then
+        return t
     end
     return generate.render(t)
         :gsub('<a%s+href="[^"]+"[^>]*>', "")
