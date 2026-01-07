@@ -118,6 +118,20 @@ function indent:render(ctx)
     return render(self.t, ctx)
 end
 
+local indented <const> = {}
+indented.__index = indented
+indented.__name = "indented"
+
+--- Creates a renderer which writes \p t after \p n indentation levels.
+function indented:new(t)
+    return setmetatable({ t = t }, self)
+end
+
+function indented:render(ctx)
+    write_indent(ctx)
+    return render(self.t, ctx)
+end
+
 return {
     buffer = buffer,
     make_indent = make_indent,
@@ -126,4 +140,5 @@ return {
     concat = function(...) return concat:new(...) end,
     lines = function(...) return lines:new(..., "\n") end,
     indent = function(...) return indent:new(...) end,
+    indented = function(...) return indented:new(...) end,
 }
