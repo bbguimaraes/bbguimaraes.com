@@ -1,23 +1,49 @@
-local description <const> = [[
-My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the <a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of <a href="https://bbguimaraes.com/places/trapani.html">Trapani</a> and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to <a href="https://bbguimaraes.com/places/capri.html">Capri</a>), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.
-]]
+local description <const> = indented(format {
+    [[My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the %s. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of %s and Marsala. The Greeks called them <span lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly related to %s), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.]],
+    link {
+        href = "https://www.openstreetmap.org/relation/1405747",
+        content = "Aegadian Islands",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/trapani.html",
+        content = "Trapani",
+    },
+    link {
+        href = "https://bbguimaraes.com/places/capri.html",
+        content = "Capri",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 My first stop in Sicily — and I could not have chosen a better one — was
 Favignana, the largest of the
-<a href="https://www.openstreetmap.org/relation/1405747">Aegadian Islands</a>.
+%s.
 These are an archipelago of five islands in the Strait of Sicily, the closest
 about 7km from its western end, in the region of
-<a href="trapani.html">Trapani</a> and Marsala.  The Greeks called them <span
+%s and Marsala.  The Greeks called them <span
 lang="grc">Aἰγάται Νῆσοι</span> (<i>Aigátai Nésoi</i>, <span lang="la">Aegates
 Insulae</span> in Latin), the “islands of the goats” (making them etymologicaly
-related to <a href="capri.html">Capri</a>), and according to English novelist
+related to %s), and according to English novelist
 Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900,
 their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo,
 furthest from the coast, is none other than Ithaca, the famous homeland that
 Odysseus seeks throughout the epic.
 ]],
+        link {
+            href = "https://www.openstreetmap.org/relation/1405747",
+            content = "Aegadian Islands",
+        },
+        link {
+            href = "trapani.html",
+            content = "Trapani",
+        },
+        link {
+            href = "capri.html",
+            content = "Capri",
+        },
+    }),
     par [[
 Regardless of the veracity of this claim, the islands have significant
 historical importance, as can be seen from the archaeological remains from the

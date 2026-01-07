@@ -1,13 +1,25 @@
-local description <const> = [[Recently, I was recommended a trip to Perugia to attend the <a href="https://www.umbriajazz.it">Umbria Jazz festival</a> (my friends are <i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I saw how incredible the program was, with artists such as Herbie Hancock, and Marcus Miller, Jacob Collier all in the same festival.]]
+local description <const> = indented(format {
+    [[Recently, I was recommended a trip to Perugia to attend the %s (my friends are <i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I saw how incredible the program was, with artists such as Herbie Hancock, and Marcus Miller, Jacob Collier all in the same festival.]],
+    link {
+        href = "https://www.umbriajazz.it",
+        content = "Umbria Jazz festival",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 Recently, I was recommended a trip to Perugia to attend the
-<a href="https://www.umbriajazz.it">Umbria Jazz festival</a> (my friends are
+%s (my friends are
 <i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I
 saw how incredible the program was, with artists such as Herbie Hancock, Marcus
 Miller, and Jacob Collier all in the same festival.
 ]],
+        link {
+            href = "https://www.umbriajazz.it",
+            content = "Umbria Jazz festival",
+        },
+    }),
     par [[
 While it was challenging to balance working, exploring the city, and watching
 all the amazing concerts (and trying to get some sleep), I still managed to run
