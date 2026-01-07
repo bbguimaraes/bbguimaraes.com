@@ -6,11 +6,26 @@ local URL_ESCAPES <const> = {
     ["ô"] = "%%c3%%b4",
 }
 
+local PLAIN_ATTRS <const> = {"lang"}
+
 local function url_escape(x)
     for k, v in pairs(URL_ESCAPES) do
         x = x:gsub(k, v)
     end
     return x
+end
+
+local function is_plain(ctx, name)
+    return ctx.plain ~= nil
+        and ctx.plain[name]
+end
+
+local function plain_attrs(t)
+    local ret <const> = {}
+    for _, x in ipairs(PLAIN_ATTRS) do
+        ret[x] = t[x]
+    end
+    return ret
 end
 
 --- Recursively renders \p x.
@@ -143,6 +158,20 @@ function html:render(ctx)
     local r <const> = "\n" .. str.make_indent(ctx.indent) .. "%1"
     local s <const> = self.s:gsub("\n(.)", r)
     return ctx.out:write(s)
+end
+
+local plain <const> = {}
+plain.__index = plain
+plain.__name = "plain"
+
+function plain:new(t, x)
+    return setmetatable({ t = util.set:new(t), x = x }, self)
+end
+
+function plain:render(ctx)
+    local _ <close> = ctx:save("plain")
+    ctx.plain = self.t
+    render(self.x, ctx)
 end
 
 local tag <const> = {}
@@ -428,15 +457,27 @@ end
 
 function link:render(ctx)
     local out <const> = ctx.out
-    local t <const> = self.t
-    str.write_indent(ctx)
-    out:write("<a")
-    write_attrs(out, t)
-    out:write(">")
+    local t <const>, plain <const> = self.t, is_plain(ctx, "a")
+    local tag
+    if plain then
+        local attrs <const> = plain_attrs(t)
+        if next(attrs) then
+            return render(inline_tag:new("span", attrs, t.content), ctx)
+        end
+        str.write_indent(ctx)
+    else
+        str.write_indent(ctx)
+        tag = "a"
+        out:write("<", tag)
+        write_attrs(out, t)
+        out:write(">")
+    end
     local _ <close> = ctx:save("indent")
     ctx.indent = 0
     render(t.content or "", ctx)
-    out:write("</a>")
+    if tag then
+        out:write("</", tag, ">")
+    end
 end
 
 local image <const> = {}
@@ -646,6 +687,7 @@ return {
     url_escape = url_escape,
     str = function(...) return html_str:new(...) end,
     html = function(...) return html:new(...) end,
+    plain = function(...) return plain:new(...) end,
     generic_tag = function(...) return generic_tag:new(...) end,
     generic_inline_tag = function(...) return generic_inline_tag:new(...) end,
     tag = function(...) return tag:new(...) end,
