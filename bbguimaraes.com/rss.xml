@@ -33,8 +33,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Fri, 09 Jan 2026 09:57:01 +0000</pubDate>
-        <lastBuildDate>Fri, 09 Jan 2026 09:57:01 +0000</lastBuildDate>
+        <pubDate>Fri, 09 Jan 2026 10:10:32 +0000</pubDate>
+        <lastBuildDate>Fri, 09 Jan 2026 10:10:32 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -59,7 +59,7 @@
             <guid>https://bbguimaraes.com/pictures/turin-baroque.html</guid>
             <pubDate>Sat, 25 Oct 2025 00:00:00 GMT</pubDate>
             <category>pictures</category>
-            <description>The 4th edition of the <a href="https://www.tbmf.eu">baroque music festival</a> organized by <a href="https://www.accademiadelsantospirito.it" lang="it">Accademia del Santo Spirito</a>, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.</description>
+            <description>The 4th edition of the <a href="https://www.tbmf.eu">baroque music festival</a> organized by <a lang="it" href="https://www.accademiadelsantospirito.it">Accademia del Santo Spirito</a>, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.</description>
         </item>
         <item>
             <title>Costigliole d'Asti</title>
@@ -369,7 +369,7 @@
             <guid>https://bbguimaraes.com/places/santi-cosma-e-damiano.html</guid>
             <pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate>
             <category>place</category>
-            <description>The equally small comune of Santi Cosma e Damiano is situated right next to <a href="https://bbguimaraes.com/places/castelforte.html">Castelforte</a>, on the same hillside overlooking the Garigliano valley and the gulf of <a href="https://bbguimaraes.com/places/gaeta.html">Gaeta</a> (but don't mix the two towns, or you'll upset the locals on both sides).  There is a stony road which climbs almost to the top of the hill, the highest point in the surrounding area, the village of <a href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its 12th-century Romanesque watch tower, with a view of not only the valley and the vastness of the gulf, but stretching all the way to monte Cairo in the north, monti Aurunci in the west, Roccamonfina to the east, and going as far as <a href="vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east when the weather is sufficiently clear.</description>
+            <description>The equally small comune of Santi Cosma e Damiano is situated right next to <a href="https://bbguimaraes.com/places/castelforte.html">Castelforte</a>, on the same hillside overlooking the Garigliano valley and the gulf of <a href="https://bbguimaraes.com/places/gaeta.html">Gaeta</a> (but don't mix the two towns, or you'll upset the locals on both sides).  There is a stony road which climbs almost to the top of the hill, the highest point in the surrounding area, the village of <a href="https://www.openstreetmap.org/node/1235709903">Ventosa</a> and its 12th-century Romanesque watch tower, with a view of not only the valley and the vastness of the gulf, but stretching all the way to monte Cairo in the north, monti Aurunci in the west, Roccamonfina to the east, and going as far as <a href="https://bbguimaraes.com/places/vesuvius.html">Vesuvius</a> and the island of Ischia in the south-east when the weather is sufficiently clear.</description>
         </item>
         <item>
             <title>Minturnae, Minturno</title>

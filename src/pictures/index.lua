@@ -83,25 +83,6 @@ local function process_item(_, t)
     end
 end
 
-local render_without_links
-local function generate_item(_, t)
-    return generate.load(PREVIEW, PAGE_ENV, t, {
-        content = render_without_links(t.description),
-    })
-end
-
-function render_without_links(t)
-    if not t then
-        return
-    end
-    if type(t) == "string" then
-        return t
-    end
-    return generate.render(t)
-        :gsub('<a%s+href="[^"]+"[^>]*>', "")
-        :gsub("</a>", "")
-end
-
 local d <const> = data_dir.new(
     var, DIR, var("include_path")("places", "page.lua"))
 local files <const> = d:load()
@@ -135,6 +116,8 @@ return include "master.lua" {
         hr(),
         main(
             {class = "gallery"},
-            lines(util.imap(generate_item, files))),
+            lines(util.imap(function(_, t)
+                return generate.load(PREVIEW, PAGE_ENV, t)
+            end, files))),
     },
 }

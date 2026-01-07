@@ -1,9 +1,16 @@
-local description <const> = [[The trip across Sicily started at the western end, in the city of Trapani and the adjoining archipelago, <a href="https://bbguimaraes.com/places/favignana.html">Isole Egadi</a>. Before Greeks, Phoenicians, and Romans competed for dominance over Sicily — possibly even before the fall of Troy in the XII century B.C. — this region was inhabited by the <span lang="grc">Ελυμοι</span> (<i>Elymoi</i>, “Elymians”), who had built a city and a temple in the nearby mount <span lang="grc">Ἔρυξ</span> (<i>Éryx</i>, modern Erice). It even appears in Virgil's Aeneid, as the place where Aeneas burries his father Anchise before sailing to the penninsula.]]
+local description <const> = indented(format {
+    [[The trip across Sicily started at the western end, in the city of Trapani and the adjoining archipelago, %s. Before Greeks, Phoenicians, and Romans competed for dominance over Sicily — possibly even before the fall of Troy in the XII century B.C. — this region was inhabited by the <span lang="grc">Ελυμοι</span> (<i>Elymoi</i>, “Elymians”), who had built a city and a temple in the nearby mount <span lang="grc">Ἔρυξ</span> (<i>Éryx</i>, modern Erice). It even appears in Virgil's Aeneid, as the place where Aeneas burries his father Anchise before sailing to the penninsula.]],
+    link {
+        href = "https://bbguimaraes.com/places/favignana.html",
+        content = "Isole Egadi",
+    },
+})
 
 local content <const> = lines {
-    par [[
+    par(format {
+        [[
 The trip across Sicily started at the western end, in the city of Trapani and
-the adjoining archipelago, <a href="favignana.html">Isole Egadi</a>.  Before
+the adjoining archipelago, %s.  Before
 Greeks, Phoenicians, and Romans competed for dominance over Sicily — possibly
 even before the fall of Troy in the XII century B.C. — this region was
 inhabited by the <span lang="grc">Ελυμοι</span> (<i>Elymoi</i>, “Elymians”),
@@ -12,6 +19,11 @@ lang="grc">Ἔρυξ</span> (<i>Éryx</i>, modern Erice).  It even appears in
 Virgil's Aeneid, as the place where Aeneas burries his father Anchise before
 sailing to the penninsula.
 ]],
+        link {
+            href = "favignana.html",
+            content = "Isole Egadi",
+        },
+    }),
     par [[
 Following a victory by the Carthaginians in 260 B.C., the mountainous city was
 almost completely destroyed, and its inhabitants transferred to the nearby
