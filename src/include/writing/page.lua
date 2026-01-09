@@ -8,12 +8,14 @@ local generator <const> = var "generator"
 local title <const> = var "title"
 
 local l <const> = {}
+local og_image
 
 var_and("image", function(x)
     local src <const> = x.src
     x = util.copy(x)
     x.class = "image"
     x.src = generator:generate_image(var, "small", src)
+    og_image = base_url .. generator:file_url(var, "small", src)
     table.insert(l, link {
         class = "hor-center",
         href = file_url(src),
@@ -32,6 +34,7 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
+        image = og_image,
         url = path.join(base_url, "writing", var("id") .. ".html"),
     },
     title = title,

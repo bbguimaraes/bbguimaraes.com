@@ -7,6 +7,8 @@ local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
 local DIR <const> = "writing"
+local base_url <const> = var "base_url"
+local header_cropped <const> = file_url(DIR, "header_cropped.jpg")
 local PAGE_ENV = {
     generator = convert.deferred_generator:new {
         path_cache = path.set(file_path(DIR, "*.jpg")),
@@ -59,6 +61,12 @@ d:generate_pages(files, PAGE_ENV)
 
 return include "master.lua" {
     title = "writing",
+    og = {
+        type = "website",
+        title = DIR,
+        image = base_url .. header_cropped,
+        url = path.join(base_url, DIR),
+    },
     css = {"/main.css", "writing.css"},
     body_class = "roman white-bg",
     main = lines {
@@ -71,7 +79,7 @@ return include "master.lua" {
                     href = file_url(DIR, "header.jpg"),
                     content = image {
                         class = "image",
-                        src = file_url(DIR, "header_cropped.jpg"),
+                        src = header_cropped,
                         alt = "writing",
                     },
                 },
