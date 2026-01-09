@@ -17,25 +17,27 @@ Neumatic notation for the chants are taken from the 1961
 A bilingual Latin/English version in the same spirit can be found
 <a href="https://maternalheart.org/library/missal.pdf">here</a>.
 ]],
-        link {
-            href = "/files/lib/missale.pdf",
-            content = "PDF",
-        },
-        link {
-            href = "/files/lib/missale-book.pdf",
-            content = "PDF (booklet)",
-        },
-        link {
-            href = "/blog/booklet-printing-with-latex.html",
-            content = "printing",
-        },
-        link {
-            href = "https://gitlab.bbguimaraes.com/bbguimaraes/libri/-/blob/master/missale",
-            content = "source",
-        },
-        link {
-            href = "/files/lib/missale.jpg",
-            content = "pictures",
-        },
+        par(lines {
+            link {
+                href = "/files/lib/missale.pdf",
+                content = "PDF",
+            },
+            link {
+                href = "/files/lib/missale-book.pdf",
+                content = "PDF (booklet)",
+            },
+            link {
+                href = "/blog/booklet-printing-with-latex.html",
+                content = "printing",
+            },
+            link {
+                href = "https://gitlab.bbguimaraes.com/bbguimaraes/libri/-/blob/master/missale",
+                content = "source",
+            },
+            link {
+                href = "/files/lib/missale.jpg",
+                content = "pictures",
+            },
+        }),
     },
 }

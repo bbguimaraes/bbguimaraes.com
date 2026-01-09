@@ -12,13 +12,15 @@ as possible to the
 modern text rendition can be found
 <a href="https://milton.host.dartmouth.edu/reading_room/areopagitica/text.html">here</a>.
 ]],
-        link {
-            href = "/files/lib/areopagitica.pdf",
-            content = "PDF",
-        },
-        link {
-            href = "https://gitlab.bbguimaraes.com/bbguimaraes/libri/-/blob/master/areopagitica",
-            content = "source",
-        },
+        par(lines {
+            link {
+                href = "/files/lib/areopagitica.pdf",
+                content = "PDF",
+            },
+            link {
+                href = "https://gitlab.bbguimaraes.com/bbguimaraes/libri/-/blob/master/areopagitica",
+                content = "source",
+            },
+        }),
     },
 }
