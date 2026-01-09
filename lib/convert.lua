@@ -5,7 +5,8 @@ local function generate_image(dst, src, size, time)
         assert(os.execute(string.format(
             "ffmpeg"
                 .. " -loglevel warning -ss %s -i %s"
-                .. " -vf scale=%s -update 1 -vframes 1 %s",
+                .. " -vf scale=%s:force_original_aspect_ratio=decrease"
+                .. " -update 1 -vframes 1 %s",
             time or "0:00", src, size, dst)))
     else
         assert(os.execute(string.format(
