@@ -645,6 +645,54 @@ function video:render(ctx)
     out:write("</video>")
 end
 
+local toc <const> = {}
+toc.__index = toc
+toc.__name = "toc"
+
+function toc:new()
+    return setmetatable({}, self)
+end
+
+function toc:add(id, content)
+    table.insert(self, {id, content})
+    return h2_link { id, content }
+end
+
+function toc:add_sub(h, id, content)
+    local t <const> = assert(self[#self])
+    local l = self[#self][3]
+    if not l then
+        l = {}
+        t[3] = l
+    end
+    table.insert(l, {id, content})
+    if h == 3 then
+        return h3_link { id, content }
+    else
+        return link:new { id = id }
+    end
+end
+
+local function toc_link(id, content)
+    return link:new { href = "#" .. id, content = content }
+end
+
+local function toc_render(_, t)
+    local id <const>, content <const>, l <const> = table.unpack(t)
+    if l then
+        return str.lines {
+            toc_link(id, content),
+            ul(util.imap(toc_render, l)),
+        }
+    else
+        return toc_link(id, content)
+    end
+end
+
+function toc:render(ctx)
+    ul(util.imap(toc_render, self)):render(ctx)
+end
+
 local notes <const> = {}
 notes.__index = notes
 notes.__name = "notes"
@@ -714,6 +762,7 @@ return {
     h1_link = h1_link,
     h2_link = h2_link,
     h3_link = h3_link,
+    toc = toc,
     notes = notes,
     src_ref = src_ref,
 }

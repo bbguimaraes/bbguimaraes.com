@@ -1,44 +1,10 @@
 local img_class <const> = "hor-center image"
 
-local toc <const> = ul {
-    link { href = "#licence", content = "licence" },
-    lines {
-        link { href = "#sheets", content = "sheets" },
-        ul {
-            link { href = "#musescore", content = "musescore" },
-            link { href = "#imslp", content = "IMSLP" },
-        },
-    },
-    lines {
-        link { href = "#instruments", content = "instruments" },
-        ul {
-            link { href = "#bass", content = "bass" },
-            link { href = "#guitar", content = "guitar" },
-            link { href = "#piano", content = "piano" },
-            link { href = "#acoustic-guitar", content = "acoustic guitar" },
-            link { href = "#mandolin", content = "mandolin" },
-        },
-    },
-    lines {
-        link { href = "#recording", content = "recording" },
-        ul {
-            link { href = "#microphone", content = "microphone" },
-            link { href = "#pre-amp", content = "pre-amp" },
-            link { href = "#camera", content = "camera" },
-        },
-    },
-    lines {
-        link { href = "#software", content = "software" },
-        ul {
-            link { href = "#audio", content = "audio" },
-            link { href = "#video", content = "video" },
-        },
-    },
-}
+local toc <const> = toc:new()
 
 local content <const> = lines {
     inline_tag("h1", nil, "music"),
-    tag("aside", nil, lines {
+    tag("aside", {class = "toc"}, lines {
         html "<i>Contents</i>",
         toc,
     }),
@@ -67,7 +33,7 @@ I enjoy bringing into the world the music I have inside of me.]],
     par [[
 And I hope you enjoy them too =)
 ]],
-    h2_link { "licence", "licence" },
+    toc:add("licence", "licence"),
     par [[
 First, the disclaimers.
 ]],
@@ -79,7 +45,7 @@ purpose.  Copyright of the music obviously does not belong to me.
 Everything music-related I do, from studying to composing to recording and
 publishing, is done exclusively using <a href="https://en.wikipedia.org/wiki/Free_software">free and open-source software</a>.
 ]],
-    h2_link { "sheets", "sheets" },
+    toc:add("sheets", "sheets"),
     par [[
 My memory is terrible, so I write down almost everything I study.  I am not a
 professional musician (clearly), so it may happen that I will not play a piece
@@ -99,7 +65,7 @@ try to keep them as close to the recording as I can, though what I play may not
 be 100% pre-written, so some details may escape me when I re-edit the sheet, but
 they should be close enough to be helpful.
 ]],
-    h3_link { "musescore", "musescore" },
+    toc:add_sub(3, "musescore", "musescore"),
     par [[
 I do all my music transcription and composition using <a
 href="https://musescore.org">MuseScore</a>, a fantastic piece of software, which
@@ -116,7 +82,7 @@ recreated, edited, and adapted for any use.
             class = img_class,
         },
     },
-    h3_link { "imslp", "IMSLP" },
+    toc:add_sub(3, "imslp", "IMSLP"),
     par [[
 I also cannot fail to mention the amazing <a href="https://imslp.org">Petrucci
 Music Library</a>, a web site which makes available public-domain music sheets,
@@ -135,7 +101,7 @@ contemporaries.
             class = img_class,
         },
     },
-    h2_link { "instruments", "instruments" },
+    toc:add("instruments", "instruments"),
     par [[
 The obligatory obsessively-detailed description of the recording equipment.
 ]],
@@ -144,7 +110,7 @@ These days, I have arrived at my dream collection of instruments: a small set,
 all of which I love very much.  In no particular order:
 ]],
     tag("ul", nil, lines {
-        link { id = "bass" },
+        toc:add_sub(nil, "bass" ,"bass"),
         link {
             href = "/files/music/jazz_bass.jpg",
             content = image {
@@ -160,7 +126,7 @@ learned to play, and the one which defined my playing and how I like things to
 sound.  This Jazz bass was the first “real” instrument I bought, and is still
 one of my favorites.
 ]]),
-        link { id = "guitar" },
+        toc:add_sub(nil, "guitar" ,"guitar"),
         link {
             href = "/files/music/telecaster.jpg",
             content = image {
@@ -176,7 +142,7 @@ knew anything about guitars, I knew I wanted a Tele.  I'm not a phenomenal
 guitar player, but I love the way it sounds, so it features frequently in my
 arrangements.
 ]]),
-        link { id = "piano" },
+        toc:add_sub(nil, "piano", "piano"),
         link {
             href = "/files/music/fp_80.jpg",
             content = image {
@@ -201,7 +167,7 @@ see a Yamaha DGX-620, my first “real” digital piano, back when I was just
 learning to play (but you can skip those =).
 ]],
         }),
-        link { id = "acoustic-guitar" },
+        toc:add_sub(nil, "acoustic-guitar", "acoustic guitar"),
         link {
             href = "/files/music/ibanez.jpg",
             content = image {
@@ -217,7 +183,7 @@ Latin America, the classical guitar resonates deep in my soul, and I really like
 the sound of this Ibanez.  Even though it's a pain to play and record, I include
 it whenever I can.
 ]]),
-        link { id = "mandolin" },
+        toc:add_sub(nil, "mandolin", "mandolin"),
         link {
             href = "/files/music/richwood.jpg",
             content = image {
@@ -233,12 +199,12 @@ Richwood F-style mandolin.  Unfortunately, it no longer lives (R.I.P.), but I
 loved playing it and plan to get myself another one as soon as possible.
 ]]),
     }),
-    h2_link { "recording", "recording" },
+    toc:add("recording", "recording"),
     par [[
 My recording setup is almost comically simple:
 ]],
     tag("ul", nil, lines {
-        link { id = "microphone" },
+        toc:add_sub(nil, "microphone", "microphone"),
         link {
             href = "/files/music/zoom.jpg",
             content = image {
@@ -259,7 +225,7 @@ anywhere, and can record two stereo tracks (or up to four mono tracks) at once.
 I also use it as my poor-man's sound interface: every electric instrument I
 record goes through its line-in input to the computer.
 ]]),
-        link { id = "pre-amp" },
+        toc:add_sub(nil, "pre-amp", "pre-amp"),
         link {
             href = "/files/music/behringer.jpg",
             content = image {
@@ -277,7 +243,7 @@ put it to good use.  It has a nice signal boost and drive (the configuration you
 see in the picture is pretty much what I use for everything) so, even though
 it's a bass pedal, I now pass every (mono) instrument through it.
 ]]),
-        link { id = "camera" },
+        toc:add_sub(nil, "camera", "camera"),
         li(par [[
 “<b>camera</b>”: videos are recorded using my Android (<a
 href="https://lineageos.org">LineageOS</a>) phone, a cheap Motorola Moto G7.
@@ -285,13 +251,13 @@ The camera is passable when there is enough light, but not great, I need to get
 me a real camera at some point.
 ]]),
     }),
-    h2_link { "software", "software" },
+    toc:add("software", "software"),
     par [[
 Everything audio- and video-related is done on my personal Linux computer, an
 aging 2018 Lenovo Thinkpad T480s, running <a href="https://archlinux.org">Arch
 Linux</a> (BTW).
 ]],
-    h3_link { "audio", "audio" },
+    toc:add_sub(3, "audio", "audio"),
     par [[
 I do all recording, mixing, and editing using <a
 href="https://ardour.org">Ardour</a>, combined with some of the amplifier
@@ -350,7 +316,7 @@ mixing, the result is surprisingly very decent.
             class = img_class,
         },
     },
-    h3_link { "video", "video" },
+    toc:add_sub(3, "video", "video"),
     par [[
 With the audio portion done, I then export it from Ardour and synchronize with
 the video(s) and do some minor editing using <a
