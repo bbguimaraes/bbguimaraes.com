@@ -1,4 +1,5 @@
 local generate <const> = require "lib.generate"
+local path <const> = require "lib.path"
 
 local head_extra <const> = html [[
 <link
@@ -10,6 +11,14 @@ local short_title <const> = var("short_title", title)
 
 return include "master.lua" {
     title = short_title,
+    og = {
+        type = "article",
+        title = title,
+        description = var_and("description", function(x)
+            return generate.render(plain({"a", "span"}, x))
+        end),
+        url = path.join(var("base_url"), "blog", var("id") .. ".html"),
+    },
     css = {"/main.css", "blog.css"},
     head_extra = head_extra,
     body_class = var("style", "w80"),
