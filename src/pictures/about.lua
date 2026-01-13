@@ -11,24 +11,13 @@ local generator <const> = convert.deferred_generator:new {
     profiles = {small = {size = "512x384", suffix = "_small"}},
 }
 
-local toc <const> = ul {
-    link { href = "#licence", content = "licence" },
-    lines {
-        link { href = "#equipment", content = "equipment" },
-        ul {
-            link { href = "#camera", content = "camera" },
-            link { href = "#lens", content = "lens" },
-        },
-    },
-    link { href = "#software", content = "software" },
-    link { href = "#notes", content = "notes" },
-}
+local toc <const> = toc:new()
 
 local notes <const> = notes:new()
 
 local content <const> = lines {
     inline_tag("h1", nil, "pictures"),
-    tag("aside", nil, lines {
+    tag("aside", {class = "toc"}, lines {
         html "<i>Contents</i>",
         toc,
     }),
@@ -95,7 +84,7 @@ professional and have no intention of becoming one, this page is for the Muses,
 <i lang="la">ars gratia artis</i>, and a celebration of the beauty of the world
 and our gift and priviledge of being capable of contemplating it.  Enjoy.
 ]],
-    h2_link { "licence", "licence" },
+    toc:add("licence", "licence"),
     par [[
 It feels a bit ridiculous to write this on a page for amateur photography, but
 since it has to be stated: all pictures hosted here were taken by myself (and
@@ -103,7 +92,7 @@ for myself) with my own equipment and are free to use by anyone for any purpose
 without any cost, though it would be nice to be notified and mentioned (well,
 and paid, but a link to this web site is enough) in case they are used.
 ]],
-    h2_link { "equipment", "equipment" },
+    toc:add("equipment", "equipment"),
     par [[
 Listed here just for completeness/curiosity, since it is very boring to anyone
 who knows anything about photography.  There is nothing special about what I
@@ -112,7 +101,7 @@ cameras and accessories), entry-level camera-lens pair, both bought from a
 regular photography shop in Italy.
 ]],
     tag("ul", nil, lines {
-        link { id = "camera" },
+        toc:add_sub(nil, "camera", "camera"),
         link {
             href = file_url(DIR, "canon_eos_250D.jpg"),
             content = image {
@@ -136,7 +125,7 @@ Rebel SL3, Kiss X10.
 ]],
             }),
         }),
-        link { id = "lens" },
+        toc:add_sub(nil, "lens", "lens"),
         li(lines {
             par(lines {
                 "<b>lens</b>:",
@@ -166,7 +155,7 @@ Which is not to denigrate the technical wonder those things are, considering the
 incredibly tight physical constraints.
 ]]),
     }),
-    h2_link { "software", "software" },
+    toc:add("software", "software"),
     par [[
 I have one simple guiding principle when it comes to editing pictures: to try to
 make them as faithful to what my eyes saw as possible.  I dislike the
@@ -236,7 +225,7 @@ And there is not much more to it, other than a few home-made scripts to transfer
 pictures from the camera's SD card, name them according to the EXIF data, resize
 them for previews in this web site, etc.
 ]],
-    h2_link { "notes", "notes" },
+    toc:add("notes", "notes"),
     notes,
 }
 

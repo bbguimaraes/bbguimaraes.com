@@ -155,6 +155,19 @@ select:invalid, select option[value="x"]{
     font-style: italic;
 }
 
+.toc {
+    float: right;
+    border: 1px solid;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.toc ul {
+    margin-bottom: 0;
+    padding-left: 1em;
+}
+
 details > summary {
     cursor: pointer;
 }
