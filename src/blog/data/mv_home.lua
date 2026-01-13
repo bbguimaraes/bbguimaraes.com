@@ -1,4 +1,10 @@
-local description <const> = [[&lt;p&gt;Both from personal experience and from having read all sorts of blogs, I learned that the secret to not having to give excuses for updating a blog in a very infrequent and irregular fashion is to completely ignore the fact that it has been more than a year since the last post (I would say this is an autological self-reference, but that would be paradoxically contradictory).&lt;/p&gt;&lt;p&gt;The big news this time is that from now on, the new home for this blog is:&lt;/p&gt;&lt;blockquote&gt;&lt;a href="https://bbguimaraes.com/blog"&gt;https://bbguimaraes.com/blog&lt;/a&gt;&lt;/blockquote&gt;]]
+local description <const> = format {
+    [[Both from personal experience and from having read all sorts of blogs, I learned that the secret to not having to give excuses for updating a blog in a very infrequent and irregular fashion is to completely ignore the fact that it has been more than a year since the last post (I would say this is an autological self-reference, but that would be paradoxically contradictory).  The big news this time is that from now on, the new home for this blog is: %s]],
+    link {
+        href = "https://bbguimaraes.com/blog",
+        content = "https://bbguimaraes.com/blog",
+    },
+}
 
 local content <const> = {
     par [[

@@ -16,6 +16,7 @@
 <!ELEMENT a (#PCDATA|code)*>
 <!ELEMENT code (#PCDATA)>
 <!ELEMENT i (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
 <!ELEMENT p (#PCDATA|i|span|a)*>
 <!ELEMENT span (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>
@@ -33,8 +34,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Tue, 13 Jan 2026 10:04:19 +0000</pubDate>
-        <lastBuildDate>Tue, 13 Jan 2026 10:04:19 +0000</lastBuildDate>
+        <pubDate>Tue, 13 Jan 2026 13:39:11 +0000</pubDate>
+        <lastBuildDate>Tue, 13 Jan 2026 13:39:11 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -615,7 +616,7 @@
             <category>latex</category>
             <category>linux</category>
             <category>unix</category>
-            <description>In another episode of "there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine": booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.</description>
+            <description>In another episode of &quot;there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine&quot;: booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.</description>
         </item>
         <item>
             <title>Wish you were here</title>
@@ -718,7 +719,7 @@
             <pubDate>Sat, 25 Jan 2020 18:04:00 GMT</pubDate>
             <category>blog</category>
             <category>math</category>
-            <description>The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;em&gt;I&lt;/em&gt; can understand a mathematical concept, so can you.</description>
+            <description>The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a <a href="https://math.stackexchange.com/a/348744">math.stackexchange.com question</a> finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if <em>I</em> can understand a mathematical concept, so can you.</description>
         </item>
         <item>
             <title>Black mountain side / Bron-Y-Aur stomp</title>
@@ -738,7 +739,7 @@
             <category>facebook</category>
             <category>google</category>
             <category>meta</category>
-            <description>&lt;p&gt;Both from personal experience and from having read all sorts of blogs, I learned that the secret to not having to give excuses for updating a blog in a very infrequent and irregular fashion is to completely ignore the fact that it has been more than a year since the last post (I would say this is an autological self-reference, but that would be paradoxically contradictory).&lt;/p&gt;&lt;p&gt;The big news this time is that from now on, the new home for this blog is:&lt;/p&gt;&lt;blockquote&gt;&lt;a href="https://bbguimaraes.com/blog"&gt;https://bbguimaraes.com/blog&lt;/a&gt;&lt;/blockquote&gt;</description>
+            <description>Both from personal experience and from having read all sorts of blogs, I learned that the secret to not having to give excuses for updating a blog in a very infrequent and irregular fashion is to completely ignore the fact that it has been more than a year since the last post (I would say this is an autological self-reference, but that would be paradoxically contradictory).  The big news this time is that from now on, the new home for this blog is: <a href="https://bbguimaraes.com/blog">https://bbguimaraes.com/blog</a></description>
         </item>
         <item>
             <title>O pato</title>
@@ -1043,7 +1044,7 @@
             <category>linux</category>
             <category>arch</category>
             <category>raspberry pi</category>
-            <description>&lt;a href="https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html" target="_blank"&gt;A lot&lt;/a&gt; has happened since &lt;a href="https://bbguimaraes.com/blog/the-raspberry.html" target="_blank"&gt;my first rπ post&lt;/a&gt;.</description>
+            <description><a href="https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html">A lot</a> has happened since <a href="https://bbguimaraes.com/blog/the-raspberry.html">my first rπ post</a>.</description>
         </item>
         <item>
             <title>That moment you realize something really wrong is going on</title>
@@ -1146,7 +1147,7 @@
             <category>curl</category>
             <category>git</category>
             <category>github</category>
-            <description>Recently, I had I problem with github. I couldn't add SSH keys anymore, the web page would just hang and present me a "Connection reset" error after a few (annoying) minutes. I struggled for a week, but have finally found a solution, which is not the best, but at least I can access github from my machine once again.</description>
+            <description>Recently, I had I problem with github. I couldn't add SSH keys anymore, the web page would just hang and present me a “Connection reset” error after a few (annoying) minutes. I struggled for a week, but have finally found a solution, which is not the best, but at least I can access github from my machine once again.</description>
         </item>
         <item>
             <title>perl is beautiful - part 3</title>
@@ -1166,7 +1167,7 @@
             <category>blog</category>
             <category>portuguese</category>
             <category>language</category>
-            <description>"Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas." MARÃO, Públio Virgílio. &lt;i&gt;Eneida&lt;/i&gt;.</description>
+            <description>“Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas”. MARÃO, Públio Virgílio. <i>Eneida</i>.</description>
         </item>
         <item>
             <title>perl is beautiful - part 2</title>

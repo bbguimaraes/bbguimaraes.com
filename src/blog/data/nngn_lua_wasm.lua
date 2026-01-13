@@ -1,4 +1,14 @@
-local description <const> = [[This is a short interlude in my series of posts.  The original post in the series <a href="https://bbguimaraes.com/blog/nngn.html#ubi">briefly mentioned</a> that one of my build targets is WebAssembly, and the <a href="https://bbguimaraes.com/blog/nngn-lua.html">last one</a> was all about how Lua is a fundamental piece of the architecture.  How that build process works did not seem particularly interesting, so I did not write about it.]]
+local description <const> = format {
+    [[This is a short interlude in my series of posts.  The original post in the series %s that one of my build targets is WebAssembly, and the %s was all about how Lua is a fundamental piece of the architecture.  How that build process works did not seem particularly interesting, so I did not write about it.]],
+    link {
+        href = "https://bbguimaraes.com/blog/nngn.html#ubi",
+        content = "briefly mentioned",
+    },
+    link {
+        href = "https://bbguimaraes.com/blog/nngn-lua.html",
+        content = "last one",
+    },
+}
 
 local content <const> = {
     div({class = "img-group img-group2"}, lines {

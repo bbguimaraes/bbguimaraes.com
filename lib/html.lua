@@ -224,6 +224,9 @@ end
 function inline_tag:render(ctx)
     local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
+    if is_plain(ctx, name) then
+        return render(content, ctx)
+    end
     str.write_indent(ctx)
     write_open_tag(out, name, self.attrs)
     if content then

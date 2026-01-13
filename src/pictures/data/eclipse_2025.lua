@@ -1,4 +1,11 @@
-local description <const> = [[Seen from <span lang="it">Torino</span>, Italy, behind <span lang="it">Collina di Superga</span> and <span lang="it">Chiesa della Gran Madre di Dio</span>, from <span lang="it">Lungo Po Armando Diaz</span> across <span lang="it">Ponte Vittorio Emanuele</span> I and the river Po.]]
+local description <const> = indented(format {
+    [[Seen from %s, Italy, behind %s and %s, from %s across %s I and the river Po.]],
+    inline_tag("span", {lang = "it"}, "Torino"),
+    inline_tag("span", {lang = "it"}, "Collina di Superga"),
+    inline_tag("span", {lang = "it"}, "Chiesa della Gran Madre di Dio"),
+    inline_tag("span", {lang = "it"}, "Lungo Po Armando Diaz"),
+    inline_tag("span", {lang = "it"}, "Ponte Vittorio Emanuele"),
+})
 
 local content <const> = lines {
     par [[

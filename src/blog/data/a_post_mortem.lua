@@ -1,4 +1,14 @@
-local description <const> = [[&lt;a href="https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html" target="_blank"&gt;A lot&lt;/a&gt; has happened since &lt;a href="https://bbguimaraes.com/blog/the-raspberry.html" target="_blank"&gt;my first rπ post&lt;/a&gt;.]]
+local description <const> = format {
+    "%s has happened since %s.",
+    link {
+        href = "https://bbguimaraes.com/blog/that-moment-you-realize-something-really-wrong-is-going-on.html",
+        content = "A lot",
+    },
+    link {
+        href = "https://bbguimaraes.com/blog/the-raspberry.html",
+        content = "my first rπ post",
+    },
+}
 
 local content <const> = {
     inline_tag("p", nil, link {
