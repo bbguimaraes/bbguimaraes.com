@@ -1,6 +1,8 @@
+local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
 local file_url <const> = var "file_url"
+local base_url <const> = var "base_url"
 
 local function generate_section(_, t)
     return tag("section", nil, lines {
@@ -115,6 +117,12 @@ Personal information, other places to find me, about this page, etc.
 
 return include "master.lua" {
     title = "bbguimaraes.com",
+    og = {
+        type = "website",
+        title = "bbguimaraes.com",
+        description = "Bruno Barcarol Guimarães",
+        url = base_url,
+    },
     body_class = "white-bg roman",
     css = {"main.css", "index.css"},
     main = lines {
