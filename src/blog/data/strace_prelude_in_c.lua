@@ -1,4 +1,10 @@
-local description <const> = [[Much has been written about the venerable <a href="https://strace.io/"><code>strace</code></a>, one of the most important allies of the systems programmer.  However, the focus is often on the specifics of the particular program being examined, not on the functioning of <code>strace</code> itself and the operating system environment involved in the execution of the process.  Today we explore this neglected part of the system call trace.]]
+local description <const> = format {
+    [[Much has been written about the venerable %s, one of the most important allies of the systems programmer.  However, the focus is often on the specifics of the particular program being examined, not on the functioning of <code>strace</code> itself and the operating system environment involved in the execution of the process.  Today we explore this neglected part of the system call trace.]],
+    link {
+        href = "https://strace.io/",
+        content = "<code>strace</code>",
+    },
+}
 
 local content <const> = {
     par [[

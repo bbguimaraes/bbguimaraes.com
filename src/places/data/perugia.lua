@@ -1,9 +1,10 @@
 local description <const> = indented(format {
-    [[Recently, I was recommended a trip to Perugia to attend the %s (my friends are <i lang="it">pochi ma buoni</i>) — or rather was compelled to go the moment I saw how incredible the program was, with artists such as Herbie Hancock, and Marcus Miller, Jacob Collier all in the same festival.]],
+    [[Recently, I was recommended a trip to Perugia to attend the %s (my friends are %s) — or rather was compelled to go the moment I saw how incredible the program was, with artists such as Herbie Hancock, and Marcus Miller, Jacob Collier all in the same festival.]],
     link {
         href = "https://www.umbriajazz.it",
         content = "Umbria Jazz festival",
     },
+    inline_tag("i", {lang = "it"}, "pochi ma buoni"),
 })
 
 local content <const> = lines {

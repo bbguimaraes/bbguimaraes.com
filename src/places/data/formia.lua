@@ -1,5 +1,7 @@
 local description <const> = indented(format {
-    [[As many of the cities along the Tyrrhenian coast on the ancient via Appia, Formia was a favored place for Roman seaside villae — including one belonging to the stepfather of the emperor Augustus.  Its Greek name <span lang="grc">Όρμιαι</span> (<span lang="la">Hormiae</span> in Latin, from a word for “harbor”) refers to its many ports and the mild maritime climate provided by its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many of these villae and ports can still be seen all they from the city center to the rocky shore on the way to %s, with salient pieces of two-thousand-year-old mosaics coming out of the rock every now and then.]],
+    [[As many of the cities along the Tyrrhenian coast on the ancient via Appia, Formia was a favored place for Roman seaside villae — including one belonging to the stepfather of the emperor Augustus.  Its Greek name %s (%s in Latin, from a word for “harbor”) refers to its many ports and the mild maritime climate provided by its surroundings: the gulf of Gaeta and the monti Aurunci.  The remains of many of these villae and ports can still be seen all they from the city center to the rocky shore on the way to %s, with salient pieces of two-thousand-year-old mosaics coming out of the rock every now and then.]],
+    inline_tag("span", {lang = "grc"}, "Όρμιαι"),
+    inline_tag("span", {lang = "la"}, "Hormiae"),
     link {
         href = "https://www.openstreetmap.org/node/8390626221",
         content = "monte Scauri",

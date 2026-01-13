@@ -1,4 +1,4 @@
-local description <const> = [["Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas." MARÃO, Públio Virgílio. &lt;i&gt;Eneida&lt;/i&gt;.]]
+local description <const> = [[“Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas”. MARÃO, Públio Virgílio. <i>Eneida</i>.]]
 
 local content <const> = {
     [[
