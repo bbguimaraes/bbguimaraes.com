@@ -33,10 +33,27 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 11 Jan 2026 08:08:33 +0000</pubDate>
-        <lastBuildDate>Sun, 11 Jan 2026 08:08:33 +0000</lastBuildDate>
+        <pubDate>Tue, 13 Jan 2026 10:04:19 +0000</pubDate>
+        <lastBuildDate>Tue, 13 Jan 2026 10:04:19 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>The beauty of Unix</title>
+            <link>https://bbguimaraes.com/blog/unix.html</link>
+            <guid>https://bbguimaraes.com/blog/unix.html</guid>
+            <pubDate>Mon, 12 Jan 2026 19:50:41 GMT</pubDate>
+            <category>blog</category>
+            <category>filesystem</category>
+            <category>gdb</category>
+            <category>linux</category>
+            <category>pacman</category>
+            <category>proc</category>
+            <category>ptrace</category>
+            <category>strace</category>
+            <category>tmux</category>
+            <category>unix</category>
+            <description>One of the greatest advantages of using a Unix system is its openness and intelligibility: it rewards users who invest time into knowing and exploring its design.  Just going about daily life using your computer offers the opportunity to learn about technical concepts that are elegant and (you could say) beautiful, not to mention extremely useful and applicable in many situations, personal as well as professional — though sadly this type of knowledge is not as common as it should be.  Well, that is why this blog exists.</description>
+        </item>
         <item>
             <title>Nel mezzo del cammin di nostra vita</title>
             <link>https://bbguimaraes.com/writing/nel-mezzo-del-cammin.html</link>
