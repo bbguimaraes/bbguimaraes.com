@@ -3,54 +3,63 @@
     inherits: true;
     initial-value: 16px;
 }
+:root { --font-size-mono: 16px; }
 
 @property --font-size-roman {
     syntax: "<length>";
     inherits: true;
     initial-value: 18px;
 }
+:root { --font-size-roman 18px; }
 
 @property --bg-black {
     syntax: "<color>";
     inherits: true;
     initial-value: black;
 }
+:root { --bg-black: black; }
 
 @property --bg-white {
     syntax: "<color>";
     inherits: true;
     initial-value: white;
 }
+:root { --bg-white: white; }
 
 @property --text-color-white {
     syntax: "<color>";
     inherits: true;
     initial-value: #444444;
 }
+:root { --text-color-white: #444444; }
 
 @property --text-color-base {
     syntax: "<color>";
     inherits: true;
     initial-value: #a0a0a0;
 }
+:root { --text-color-base:  #a0a0a0; }
 
 @property --text-color-black {
     syntax: "<color>";
     inherits: true;
     initial-value: #a0a0a0;
 }
+:root { --text-color-black: #a0a0a0; }
 
 @property --text-color-visited {
     syntax: "<color>";
     inherits: true;
     initial-value: #606060;
 }
+:root { --text-color-visited: #606060; }
 
 @property --margin-body {
     syntax: "*";
     inherits: true;
     initial-value: 1rem;
 }
+:root { --margin-body: 1rem; }
 
 @font-face {
     font-family: "P052";
