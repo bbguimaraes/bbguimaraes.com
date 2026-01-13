@@ -1,3 +1,4 @@
+local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
@@ -61,6 +62,9 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
+        description = var_and("description", function(x)
+            return generate.render(plain({"a", "i", "span"}, x))
+        end),
         image = #images ~= 0
             and (base_url .. generator:file_url(var, "small", images[1].path))
             or nil,
