@@ -2,15 +2,16 @@
 use strict;
 use warnings;
 
-use constant C_BOLD => '(?:\#include)
+use constant C_BOLD => '(?:\#include\b)
+    | (?:\#define\b)
     | (\'[^\']*\') | (\"[^"]*")
     | \b(
-        const | extern | goto | return | struct | union | void
-        | alignas | __asm__ | noreturn | offsetof | sizeof | static_assert
-        | thread_local
+        __asm__ | alignas | bool | case | const | default | extern | false | for
+        | goto | noreturn | offsetof | return | sizeof | static | static_assert
+        | struct | switch | thread_local | true | union | void
         | char | int | unsigned | ptrdiff_t | size_t
-        | ([ui](8|16|32|64))
-        | ([0-9]+)
+        | ([ui](8|16|32|64|128|256))
+        | ([0-9]+(?:ul?)?)
         | __FILE__ | __LINE__ | __func__
 ';
 
