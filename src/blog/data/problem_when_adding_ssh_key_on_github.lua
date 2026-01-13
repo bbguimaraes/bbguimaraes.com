@@ -1,4 +1,4 @@
-local description <const> = [[Recently, I had I problem with github. I couldn't add SSH keys anymore, the web page would just hang and present me a "Connection reset" error after a few (annoying) minutes. I struggled for a week, but have finally found a solution, which is not the best, but at least I can access github from my machine once again.]]
+local description <const> = [[Recently, I had I problem with github. I couldn't add SSH keys anymore, the web page would just hang and present me a “Connection reset” error after a few (annoying) minutes. I struggled for a week, but have finally found a solution, which is not the best, but at least I can access github from my machine once again.]]
 
 local content <const> = {
     par [[

@@ -1,4 +1,10 @@
-local description <const> = [[Out of sheer patriotic duty, the main component of the engine is <a href="https://www.lua.org">Lua</a>.  The famous tiny scripting language is the only hard dependency (other than a C++ compiler and a vaguely POSIX-compliant operating system) and is the interstitial fluid that coordinates all the other components.]]
+local description <const> = format {
+    [[Out of sheer patriotic duty, the main component of the engine is %s.  The famous tiny scripting language is the only hard dependency (other than a C++ compiler and a vaguely POSIX-compliant operating system) and is the interstitial fluid that coordinates all the other components.]],
+    link {
+        href = "https://www.lua.org",
+        content = "Lua",
+    },
+}
 
 local content <const> = {
     tag("a", {href = "https://www.lua.org"}, image {

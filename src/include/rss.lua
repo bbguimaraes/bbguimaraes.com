@@ -24,6 +24,7 @@ local header <const> = [[
 <!ELEMENT a (#PCDATA|code)*>
 <!ELEMENT code (#PCDATA)>
 <!ELEMENT i (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
 <!ELEMENT p (#PCDATA|i|span|a)*>
 <!ELEMENT span (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>

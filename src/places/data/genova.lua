@@ -1,4 +1,8 @@
-local description <const> = [[Legend says the city was founded by the god Janus, whose two faces watch over past and future — the ruler of time, of gates and passages, of beginnings and endings, of traveling, commerce, and sailing, of war and peace, of morning, birth, journey, transition, and change (it was in honor of him that the Romans named the first month of the year, <i lang="la">Ianuarius</i>, which marks the winter solstice and the transition between years).  This is attested by <span lang="it">Pozzo di Giano</span>, a well in what is considered the founding place of the city of Genova which, like the two-faced Janus, faces both sea and mountain.]]
+local description <const> = indented(format {
+    [[Legend says the city was founded by the god Janus, whose two faces watch over past and future — the ruler of time, of gates and passages, of beginnings and endings, of traveling, commerce, and sailing, of war and peace, of morning, birth, journey, transition, and change (it was in honor of him that the Romans named the first month of the year, %s, which marks the winter solstice and the transition between years).  This is attested by %s, a well in what is considered the founding place of the city of Genova which, like the two-faced Janus, faces both sea and mountain.]],
+    inline_tag("i", {lang = "la"}, "Ianuarius"),
+    inline_tag("span", {lang = "it"}, "Pozzo di Giano"),
+})
 
 local content <const> = lines {
     par [[

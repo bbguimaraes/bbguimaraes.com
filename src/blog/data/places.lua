@@ -1,6 +1,21 @@
 local description <const> = concat {
-    inline_tag("p", nil, [[You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, <span lang="la">“caelum, nón animum mútant, quí tráns mare currunt”</span>.]]),
-    inline_tag("p", nil,  [[But that has gradually changed over the past few years, to the point that I have now, after a week of furious programming, added a new <a href="https://bbguimaraes.com/places">section</a> to this web site dedicated to it.  Read on for an explanation, jump to the <a href="https://bbguimaraes.com/blog/places.html#conclusion">conclusion</a> if you do not like to read (but then this is probably not the place for you in the first place…), or just go directly there and explore.]]),
+    inline_tag("p", nil, format {
+        [[You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, %s.]],
+        inline_tag(
+            "span", {lang = "la"},
+            [[“caelum, nón animum mútant, quí tráns mare currunt”]]),
+    }),
+    inline_tag("p", nil, format {
+        [[But that has gradually changed over the past few years, to the point that I have now, after a week of furious programming, added a new %s to this web site dedicated to it.  Read on for an explanation, jump to the %s if you do not like to read (but then this is probably not the place for you in the first place…), or just go directly there and explore.]],
+        link {
+            href = "https://bbguimaraes.com/places",
+            content = "section",
+        },
+        link {
+            href = "https://bbguimaraes.com/blog/places.html#conclusion",
+            content = "conclusion",
+        },
+    }),
 }
 
 local content <const> = {

@@ -1,4 +1,10 @@
-local description <const> = [[The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a &lt;a href="https://math.stackexchange.com/a/348744"&gt;math.stackexchange.com question&lt;/a&gt; finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if &lt;em&gt;I&lt;/em&gt; can understand a mathematical concept, so can you.]]
+local description <const> = format {
+    [[The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a %s finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if <em>I</em> can understand a mathematical concept, so can you.]],
+    link {
+        href = "https://math.stackexchange.com/a/348744",
+        content = "math.stackexchange.com question",
+    },
+}
 
 local content <const> = {
     par [[
