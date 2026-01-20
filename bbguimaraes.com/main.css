@@ -285,6 +285,12 @@ body.no-hor-margin #page-nav {
     height: 16px;
 }
 
+#page-nav .nav-path {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 #page-nav .nav-opt {
     float: right;
     margin-left: 1em;
