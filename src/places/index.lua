@@ -17,7 +17,7 @@ local PAGE_ENV <const> = {
             file_path(DIR, "*.jpg"),
             file_path(DIR, "*/*.jpg")),
         profiles = {
-            small = {size = "512x384", suffix = "_small"},
+            small = {size = "600x400", suffix = "_small"},
             tiny = {size = "128x87", suffix = "_tiny"},
         },
     }
