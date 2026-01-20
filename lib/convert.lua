@@ -10,7 +10,7 @@ local function generate_image(dst, src, size, time)
             time or "0:00", src, size, dst)))
     else
         assert(os.execute(string.format(
-            "magick convert -resize '%s>' %s %s", size, src, dst)))
+            "magick convert -auto-orient -resize '%s>' %s %s", size, src, dst)))
     end
 end
 
