@@ -37,6 +37,14 @@ local function join(...)
     return table.concat({...}, SEP)
 end
 
+--- Checks that \p x is a subpath of \p and removes the prefix.
+local function remove_prefix(p, x)
+    p = join(p, "")
+    if x:sub(1, #p) == p then
+        return x:sub(#p + 1)
+    end
+end
+
 --- Removes `..` and redundant path separators from a path.
 local function clean(x)
     local t <const> = {}
@@ -96,6 +104,7 @@ return {
     replace_extension = replace_extension,
     prepend_extension = prepend_extension,
     join = join,
+    remove_prefix = remove_prefix,
     clean = clean,
     exists = exists,
     each = each,

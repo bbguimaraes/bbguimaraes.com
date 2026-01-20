@@ -1,3 +1,4 @@
+local path <const> = require "lib.path"
 local str <const> = require "lib.str"
 local util <const> = require "lib.util"
 
@@ -10,9 +11,21 @@ local URL_ESCAPES <const> = {
 
 local PLAIN_ATTRS <const> = {"lang"}
 
+local IS_FILE_ATTR <const> = {
+    href = true,
+    src = true,
+}
+
 local function url_escape(x)
     for k, v in pairs(URL_ESCAPES) do
         x = x:gsub(k, v)
+    end
+    return x
+end
+
+local function url_unescape(x)
+    for k, v in pairs(URL_ESCAPES) do
+        x = x:gsub(v, k)
     end
     return x
 end
@@ -50,72 +63,92 @@ local function render_simple(x)
     return tostring(x)
 end
 
+local function check_local_file(ctx, s)
+    if s:match("^%w+://") or s:match("^mailto:") then
+        return
+    end
+    s = s:gsub("#[^#]*$", "")
+    local ext <const> = path.ext(s)
+    if not ext or ext == "html" then
+        return
+    end
+    ctx.local_files:add(url_unescape(s))
+end
+
 --- Like \ref write_attr, for value-less attributes.
-local function write_flag(out, t, k)
+local function write_flag(ctx, t, k)
     if not t[k] then
         return
     end
+    local out <const> = ctx.out
     out:write(" ")
     out:write(k)
 end
 
 --- Writes an HTML attribute (format: ` ${k}="${t[k]}"`).
-local function write_attr_common(out, k, v)
+local function write_attr_common(ctx, k, v)
+    v = render_simple(v)
+    if IS_FILE_ATTR[k] then
+        check_local_file(ctx, v)
+    end
+    local out <const> = ctx.out
     out:write(" ")
     out:write(k)
     out:write('="')
-    out:write(render_simple(v))
+    out:write(v)
     out:write('"')
 end
 
 --- Writes the attribute \p k from table \t, if it exists.
-local function write_attr(out, t, k)
+local function write_attr(ctx, t, k)
     local v <const> = t[k]
     if not v then
         return
     end
-    write_attr_common(out, k, v)
+    write_attr_common(ctx, k, v)
 end
 
 --- Writes a fixed and ordered set of attributes from table \p t.
-local function write_attrs(out, t)
+local function write_attrs(ctx, t)
     if not t then
         return
     end
-    write_attr(out, t, "id")
-    write_attr(out, t, "name")
-    write_attr(out, t, "lang")
-    write_attr(out, t, "dir")
-    write_attr(out, t, "class")
-    write_attr(out, t, "rel")
-    write_attr(out, t, "type")
-    write_attr(out, t, "title")
-    write_attr(out, t, "preload")
-    write_flag(out, t, "controls")
-    write_attr(out, t, "href")
-    write_attr(out, t, "src")
-    write_attr(out, t, "target")
-    write_attr(out, t, "start")
-    write_attr(out, t, "style")
+    write_attr(ctx, t, "id")
+    write_attr(ctx, t, "name")
+    write_attr(ctx, t, "lang")
+    write_attr(ctx, t, "dir")
+    write_attr(ctx, t, "class")
+    write_attr(ctx, t, "rel")
+    write_attr(ctx, t, "type")
+    write_attr(ctx, t, "title")
+    write_attr(ctx, t, "preload")
+    write_flag(ctx, t, "controls")
+    write_attr(ctx, t, "href")
+    write_attr(ctx, t, "src")
+    write_attr(ctx, t, "target")
+    write_attr(ctx, t, "start")
+    write_attr(ctx, t, "style")
 end
 
 --- Writes each attribute pair in \p t (format: `{{k0 = v0}, {k1 = v1}, ...}`).
-local function write_generic_attrs(out, t)
+local function write_generic_attrs(ctx, t)
     for _, x in pairs(t) do
-        write_attr_common(out, table.unpack(x))
+        write_attr_common(ctx, table.unpack(x))
     end
 end
 
 --- Auxiliary function to write an opening tag (`<${name} ${attrs...}`).
-local function write_open_tag(out, name, attrs)
+local function write_open_tag(ctx, name, attrs)
+    local out <const> = ctx.out
     out:write("<")
     out:write(name)
-    write_attrs(out, attrs)
+    write_attrs(ctx, attrs)
 end
 
 --- Auxiliary function to write an opening tag (`<${name} ${attrs...}>`).
-local function write_full_open_tag(out, name, attrs)
-    write_open_tag(out, name, attrs)
+local function write_full_open_tag(ctx, name, attrs)
+    write_open_tag(ctx, name, attrs)
+    local out <const> = ctx.out
     out:write(">")
 end
 
@@ -127,10 +160,11 @@ local function write_close_tag(out, name)
 end
 
 --- Auxiliary function to write a generic opening tag.
-local function write_generic_open_tag(out, name, attrs)
+local function write_generic_open_tag(ctx, name, attrs)
+    local out <const> = ctx.out
     out:write("<")
     out:write(name)
-    write_generic_attrs(out, attrs)
+    write_generic_attrs(ctx, attrs)
 end
 
 local html_str <const> = {}
@@ -195,7 +229,7 @@ function tag:render(ctx)
     local name <const>, attrs <const>, content <const> =
         self.name, self.attrs, self.content
     str.write_indent(ctx)
-    write_open_tag(out, name, attrs)
+    write_open_tag(ctx, name, attrs)
     if content then
         out:write(">\n")
         do
@@ -230,7 +264,7 @@ function inline_tag:render(ctx)
         return render(content, ctx)
     end
     str.write_indent(ctx)
-    write_open_tag(out, name, self.attrs)
+    write_open_tag(ctx, name, self.attrs)
     if content then
         out:write(">")
         local _ <close> = ctx:save("indent")
@@ -255,7 +289,7 @@ function generic_tag:render(ctx)
     local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
     str.write_indent(ctx)
-    write_generic_open_tag(out, name, self.attrs)
+    write_generic_open_tag(ctx, name, self.attrs)
     if content then
         out:write(">\n")
         do
@@ -284,7 +318,7 @@ function generic_inline_tag:render(ctx)
     local out <const> = ctx.out
     local name <const>, content <const> = self.name, self.content
     str.write_indent(ctx)
-    write_generic_open_tag(out, name, self.attrs)
+    write_generic_open_tag(ctx, name, self.attrs)
     if content then
         out:write(">")
         local _ <close> = ctx:save("indent")
@@ -314,7 +348,7 @@ function text_tag:render(ctx)
     local out <const> = ctx.out
     local name <const> = self.name
     str.write_indent(ctx)
-    write_full_open_tag(out, name, self.attrs)
+    write_full_open_tag(ctx, name, self.attrs)
     out:write("\n")
     do
         local _ <close> = ctx:save("indent")
@@ -342,7 +376,7 @@ function code_tag:render(ctx)
     local out <const> = ctx.out
     local name <const> = self.name
     str.write_indent(ctx)
-    write_full_open_tag(out, name, self.attrs)
+    write_full_open_tag(ctx, name, self.attrs)
     do
         local _ <close> = ctx:save("indent")
         ctx.indent = 0
@@ -432,7 +466,7 @@ function list:render(ctx)
     str.write_indent(ctx)
     out:write("<")
     out:write(name)
-    write_attr(out, attrs, "start")
+    write_attr(ctx, attrs, "start")
     out:write(">\n")
     do
         local _ <close> = ctx:save("indent")
@@ -482,7 +516,7 @@ function link:render(ctx)
         str.write_indent(ctx)
         tag = "a"
         out:write("<", tag)
-        write_attrs(out, t)
+        write_attrs(ctx, t)
         out:write(">")
     end
     local _ <close> = ctx:save("indent")
@@ -507,14 +541,14 @@ function image:render(ctx)
     local t <const> = self.t
     str.write_indent(ctx)
     out:write("<img")
-    write_attr(out, t, "id")
-    write_attr(out, t, "class")
-    write_attr(out, t, "src")
-    write_attr(out, t, "alt")
-    write_attr(out, t, "title")
-    write_attr(out, t, "width")
-    write_attr(out, t, "height")
-    write_attr(out, t, "style")
+    write_attr(ctx, t, "id")
+    write_attr(ctx, t, "class")
+    write_attr(ctx, t, "src")
+    write_attr(ctx, t, "alt")
+    write_attr(ctx, t, "title")
+    write_attr(ctx, t, "width")
+    write_attr(ctx, t, "height")
+    write_attr(ctx, t, "style")
     out:write(" />")
 end
 
@@ -534,9 +568,9 @@ function figure:render(ctx)
         t.image, t.content, t.caption
     str.write_indent(ctx)
     out:write("<figure")
-    write_attr(out, t, "id")
-    write_attr(out, t, "class")
-    write_attr(out, t, "style")
+    write_attr(ctx, t, "id")
+    write_attr(ctx, t, "class")
+    write_attr(ctx, t, "style")
     out:write(">\n")
     do
         local _ <close> = ctx:save("indent")
@@ -632,14 +666,14 @@ function video:render(ctx)
     local t <const> = self.t
     str.write_indent(ctx)
     out:write("<video")
-    write_flag(out, t, "controls")
-    write_flag(out, t, "loop")
-    write_attr(out, t, "preload")
-    write_attr(out, t, "width")
-    write_attr(out, t, "height")
-    write_attr(out, t, "class")
-    write_attr(out, t, "style")
-    write_attr(out, t, "poster")
+    write_flag(ctx, t, "controls")
+    write_flag(ctx, t, "loop")
+    write_attr(ctx, t, "preload")
+    write_attr(ctx, t, "width")
+    write_attr(ctx, t, "height")
+    write_attr(ctx, t, "class")
+    write_attr(ctx, t, "style")
+    write_attr(ctx, t, "poster")
     out:write(">")
     do
         local _ <close> = ctx:save("indent")
@@ -746,6 +780,7 @@ end
 
 return {
     url_escape = url_escape,
+    url_unescape = url_unescape,
     str = function(...) return html_str:new(...) end,
     html = function(...) return html:new(...) end,
     plain = function(...) return plain:new(...) end,

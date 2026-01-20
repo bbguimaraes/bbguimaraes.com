@@ -82,11 +82,52 @@ local function new_env()
     return ret
 end
 
+local function check_local_files(src, dst, t)
+    local file_url_to_path <const> = load_conf().file_url_to_path
+    local errs <const> = {}
+    for x in pairs(util.sorted(t)) do
+        local file_name <const> =
+            file_url_to_path(x)
+            or path.join(path.dir(dst), x)
+        local f <close>, err <const> = io.open(file_name)
+        if not f then
+            table.insert(errs, err)
+        end
+    end
+    if #errs == 0 then
+        return true
+    end
+    if src then
+        io.stderr:write(src, "\n")
+    end
+    io.stderr:write("warning: failed to find one or more local files:\n")
+    for _, x in ipairs(errs) do
+        io.stderr:write("- ", x, "\n")
+    end
+    return false
+end
+
+local function check(src, dst, ctx)
+    local ret = true
+    ret = check_local_files(src, dst, ctx.local_files) and ret
+    return ret
+end
+
+local function _render(out, src, dst, x)
+    local ctx <const> = context:new {
+        out = out,
+        indent = 0,
+        local_files = util.set:new(),
+    }
+    local ret <const> = x:render(ctx)
+    return ret, check(src, dst, ctx)
+end
+
 --- Shortcut for rendering the contents of a renderer tree.
 local function render(x)
     local out <const> = str.buffer:new()
-    x:render(context:new{out = out, indent = 0})
-    return out:output()
+    local ok <const> = _render(out, nil, nil, x)
+    return out:output(), ok
 end
 
 --- Creates a new environment containing variables in \p conf and loads a file.
