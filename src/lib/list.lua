@@ -287,7 +287,7 @@ end
 return include "master.lua" {
     title = "reading list",
     css = {"/main.css", "lib.css"},
-    body_class = "no-margin white-bg roman",
+    body_class = "no-hor-margin white-bg roman",
     main = div({class = "w80"}, lines {
         include "nav.lua" {
             nav_path = {{".", "lib"}, {nil, "reading list"}},
