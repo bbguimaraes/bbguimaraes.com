@@ -1,5 +1,8 @@
 local l <const> = {}
-table.insert(l, link {
+
+local path <const> = {}
+
+table.insert(path, link {
     href = "/",
     content = image {
         id = "logo",
@@ -8,14 +11,16 @@ table.insert(l, link {
     },
 })
 for _, t in ipairs(var("nav_path")) do
-    table.insert(l, html "/")
+    table.insert(path, html "/")
     local href, content = table.unpack(t)
     if href then
-        table.insert(l, link {href = href, content = content})
+        table.insert(path, link {href = href, content = content})
     else
-        table.insert(l, html(content))
+        table.insert(path, html(content))
     end
 end
+table.insert(l, div({class = "nav-path"}, lines(path)))
+
 local extra <const> = var("nav_extra", false)
 if extra then
     table.insert(l, extra)
