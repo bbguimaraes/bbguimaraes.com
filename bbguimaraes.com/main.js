@@ -44,7 +44,8 @@ if(document.getElementById("page-nav")) {
         div, "background color", "bg_color", "color", "white-bg",
         ["black", "white"]);
     div.appendChild(document.querySelector("#rss-icon"));
-    document.getElementById("page-nav").appendChild(div);
+    let nav = document.getElementById("page-nav");
+    nav.insertBefore(div, nav.firstChild);
 }
 
 if(window.matchMedia('(pointer: coarse)').matches) {
