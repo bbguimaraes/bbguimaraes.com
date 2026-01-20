@@ -57,9 +57,9 @@
 @property --margin-body {
     syntax: "*";
     inherits: true;
-    initial-value: 1rem;
+    initial-value: 2rem;
 }
-:root { --margin-body: 1rem; }
+:root { --margin-body: 2rem; }
 
 @font-face {
     font-family: "P052";
@@ -90,8 +90,7 @@ body {
     font-family: Monospace;
     font-size: var(--font-size-mono);
     color: var(--text-color-base);
-    margin-left: var(--margin-body);
-    margin-right: var(--margin-body);
+    margin: var(--margin-body);
     hyphens: auto;
 }
 
@@ -99,10 +98,6 @@ body {
     background-color: var(--bg-white);
     color: var(--text-color-white);
     --text-color-base: var(--text-color-white);
-}
-
-.no-margin {
-    margin: 0;
 }
 
 .black-bg {
@@ -236,6 +231,15 @@ hr {
     box-shadow: 4px 4px 12px var(--text-color-white);
 }
 
+.no-margin {
+    margin: 0;
+}
+
+.no-hor-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 @media(max-width: 800px) {
     body {
         font-size: calc(8px + 1vw);
@@ -262,10 +266,9 @@ hr {
     width: 100%;
     line-height: 32px;
     margin-bottom: 0.5em;
-    margin-top: 1.5em;
 }
 
-body.no-margin #page-nav {
+body.no-hor-margin #page-nav {
     padding-left: var(--margin-body);
     padding-right: var(--margin-body);
 }
@@ -295,15 +298,10 @@ body.no-margin #page-nav {
     float: right;
 }
 
-.w80, body.w80:not(.no-margin) {
-    max-width: 80ch;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (max-width: 80ch) {
-    body.w80:not(.no-margin) {
-        margin-left: var(--margin-body);
-        margin-right: var(--margin-body);
+@media (min-width: 80ch) {
+    .w80, body.w80:not(.no-hor-margin) {
+        max-width: 80ch;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

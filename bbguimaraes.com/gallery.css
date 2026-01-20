@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5em;
-    padding: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .gallery img,
