@@ -1,16 +1,17 @@
 local path <const> = require "lib.path"
 
-local function generate_image(dst, src, size, time)
+local function generate_image(dst, src, args)
     if src:match("%.mp4$") then
         assert(os.execute(string.format(
             "ffmpeg"
                 .. " -loglevel warning -ss %s -i %s"
                 .. " -vf scale=%s:force_original_aspect_ratio=decrease"
                 .. " -update 1 -vframes 1 %s",
-            time or "0:00", src, size, dst)))
+            args.time or "0:00", src, args.size, dst)))
     else
         assert(os.execute(string.format(
-            "magick convert -auto-orient -resize '%s>' %s %s", size, src, dst)))
+            "magick convert -auto-orient -resize '%s>' %s %s",
+            args.size, src, dst)))
     end
 end
 
@@ -42,17 +43,18 @@ local function generator_generate(
     return ret
 end
 
-function generator_generate_image(self, file_path, file_url, profile, src, time)
+function generator_generate_image(self, file_path, file_url, profile, src, args)
+    args = args or {}
     profile = generator_get_profile(self, profile)
+    args.size = args.size or profile.size
     return generator_generate(
-        self, file_path, file_url, generate_image, profile, src, profile.size,
-        time)
+        self, file_path, file_url, generate_image, profile, src, args)
 end
 
-function generator_generate_audio(self, file_path, file_url, src)
+function generator_generate_audio(self, file_path, file_url, ...)
     return generator_generate(
         self, file_path, file_url, generate_audio,
-        generator_get_profile(self, "audio"), src)
+        generator_get_profile(self, "audio"), ...)
 end
 
 local generator <const> = {}

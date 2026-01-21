@@ -19,7 +19,9 @@ end
 
 local function generate_figure(_, t)
     local name <const>, text <const> = t.path, t.text
-    local src <const> = generator:generate_image(var, "small", t.path, t.poster)
+    local src <const> = generator:generate_image(var, "small", t.path, {
+        time = t.poster,
+    })
     if name:match("%.mp4$") then
         content = video {
             class = "gallery-shadow",
