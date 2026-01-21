@@ -20,6 +20,7 @@ end
 local function generate_figure(_, t)
     local name <const>, text <const> = t.path, t.text
     local src <const> = generator:generate_image(var, "small", t.path, {
+        size = t.small_size,
         time = t.poster,
     })
     if name:match("%.mp4$") then
