@@ -32,7 +32,9 @@ function generate_info(t)
         table.insert(ret, t.author)
     end
     if t.tags then
-        table.insert(ret, table.concat(t.tags, ", "))
+        table.insert(ret, inline_tag(
+            "span", {class = "tags"},
+            table.concat(t.tags, " · ")))
     end
     return ret
 end

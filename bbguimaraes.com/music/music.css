@@ -134,6 +134,7 @@ img {
     hyphens: none;
 }
 
+.videos .video .info .tags,
 .videos .video .info .date {
     font-size: 75%;
 }
