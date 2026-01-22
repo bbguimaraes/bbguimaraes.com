@@ -10,6 +10,7 @@
     object-fit: cover;
     margin-top: 2.5em;
     margin-bottom: 1.5em;
+    box-shadow: 0 0 24px var(--text-color-white);
 }
 
 .header .header-text {
@@ -87,7 +88,6 @@
 
 .videos {
     padding: 2em 1.5em 1.5em 1.5em;
-    background-color: black;
 }
 
 .video .preview {
