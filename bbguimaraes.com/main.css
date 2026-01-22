@@ -268,11 +268,6 @@ hr {
     margin-bottom: 0.5em;
 }
 
-body.no-hor-margin #page-nav {
-    padding-left: var(--margin-body);
-    padding-right: var(--margin-body);
-}
-
 #page-nav img {
     display: inline-block;
     margin: 0;
@@ -302,6 +297,13 @@ body.no-hor-margin #page-nav {
 
 #page-nav #rss-icon {
     float: right;
+}
+
+@media (max-width: 80ch) {
+    body.no-hor-margin #page-nav {
+        padding-left: var(--margin-body);
+        padding-right: var(--margin-body);
+    }
 }
 
 @media (min-width: 80ch) {
