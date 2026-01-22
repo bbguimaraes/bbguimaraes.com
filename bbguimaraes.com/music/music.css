@@ -1,14 +1,6 @@
-img {
-    max-width: 100%;
-}
-
-.header {
-    text-align: right;
-}
-
 .header .header-imgs {
     position: relative;
-    text-align: right;
+    max-width: 100%;
 }
 
 .header .header-background {
@@ -88,8 +80,6 @@ img {
 
     .video .info {
         float: right;
-        position: relative;
-        z-index: 1;
         margin-left: 2em;
         margin-bottom: 1em;
     }
@@ -106,6 +96,7 @@ img {
 
 .video .preview img {
     display: block;
+    max-width: 100%;
 }
 
 .video .preview .duration {
