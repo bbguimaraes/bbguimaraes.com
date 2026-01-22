@@ -38,35 +38,29 @@
     clear: both;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 80ch) {
     .header .bottom {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
+        margin-left: var(--margin-body);
+        margin-right: var(--margin-body);
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 580px) {
     .videos .video,
     .videos .video .preview img {
         width: 100%;
     }
 }
 
-@media not (max-width: 720px) {
-    .videos .video .preview img {
-        width: 320px;
-    }
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 580px) {
     .videos .video .preview {
         margin-bottom: 1em;
     }
 }
 
-@media not (max-width: 1200px) {
+@media not (max-width: 580px) {
     .videos .video {
-        width: 720px;
+        width: 580px;
     }
 
     .videos .video .preview {
@@ -87,7 +81,7 @@
 }
 
 .videos {
-    padding: 2em 1.5em 1.5em 1.5em;
+    padding: var(--margin-body);
 }
 
 .video .preview {
@@ -97,6 +91,7 @@
 .video .preview img {
     display: block;
     max-width: 100%;
+    width: 300px;
 }
 
 .video .preview .duration {
@@ -125,6 +120,10 @@
     hyphens: none;
 }
 
+.videos .video .info {
+    font-size: medium;
+}
+
 .videos .video .info .tags,
 .videos .video .info .date,
 .videos .video .info .description {
@@ -138,6 +137,7 @@
 }
 
 .videos .video {
-    max-width: 560px;
+    display: block;
+    max-width: 580px;
     text-decoration: none;
 }
