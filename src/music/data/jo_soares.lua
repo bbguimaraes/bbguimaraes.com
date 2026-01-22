@@ -1,4 +1,6 @@
-local description <const> = [[
+local description <const> = [[For a friend.]]
+
+local content <const> = par [[
 For a friend.
 ]]
 
@@ -13,5 +15,5 @@ return {
         youtube = "6WGpJBZ9cOw",
     },
     description = description,
-    content = par(description),
+    content = content,
 }

@@ -1,4 +1,6 @@
-local description <const> = [[
+local description <const> = [[An (old) newly developed love for thumbpicking and Jimmy Page. Some parts are better than others.]]
+
+local content <const> = par [[
 An (old) newly developed love for thumbpicking and Jimmy Page. Some parts are
 better than others.
 ]]
@@ -41,5 +43,5 @@ return {
         facebook = "bruno.barcarolguimaraes/posts/pfbid0RzJN4FTTbhbrhqXMuwf33tk1Jd6TEXnp4nnBCWFkGpbt8bnjcJPocxaHiNj3QouNl",
     },
     description = description,
-    content = par(description),
+    content = content,
 }

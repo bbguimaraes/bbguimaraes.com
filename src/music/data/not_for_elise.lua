@@ -1,4 +1,6 @@
-local description <const> = [[
+local description <const> = [[Forgive me, Ludwig, wherever you are.]]
+
+local content <const> = par [[
 Forgive me, Ludwig, wherever you are.
 ]]
 
@@ -14,5 +16,5 @@ return {
         facebook = "bruno.barcarolguimaraes/posts/pfbid0swm822UhB18S5vZZLpjC9WmYjLdyWeJaUFMiLYBrSSM7RSRwzorVHuBmsZrgCA9Yl",
     },
     description = description,
-    content = par(description),
+    content = content,
 }

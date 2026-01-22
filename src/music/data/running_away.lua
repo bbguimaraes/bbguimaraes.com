@@ -1,9 +1,9 @@
-local description <const> = [[
-Continuing the theme of perfect love songs with a 70's feel and a deadly groove.
-]]
+local description <const> = [[Continuing the theme of perfect love songs with a 70's feel and a deadly groove.]]
 
 local content <const> = lines {
-    par(description),
+    par [[
+Continuing the theme of perfect love songs with a 70's feel and a deadly groove.
+]],
     par [[
 It was about time my beloved Roland made a reappearance, and with it I can now
 assemble in one video all of the pinnacles of man's creation — viz.: the Rhodes

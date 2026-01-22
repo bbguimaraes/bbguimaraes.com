@@ -1,7 +1,9 @@
+local description <const> = [[Old folk/gospel songs have always been some of my favorites, this one in particular.  The lyrics and the atmosphere are just perfect, and it was made to be played on a Telecaster.]]
+
 local content <const> = lines {
     par [[
 Old folk/gospel songs have always been some of my favorites, this one in
-particular. The lyrics and the atmosphere are just perfect, and it was made to
+particular.  The lyrics and the atmosphere are just perfect, and it was made to
 be played on a Telecaster.
 ]],
     par [[
@@ -12,10 +14,10 @@ play the song earlier that day (as you can tell).
 ]],
     par [[
 This stream is small but mighty, so much so you can hear the water through the
-pick-ups of the guitar, so there is quite a bit of background noise. But at
+pick-ups of the guitar, so there is quite a bit of background noise.  But at
 least you get to hear what it actually sounded like (as opposed to a sanitized
-studio sound) spending the afternoon in this fantastic place. There is nothing
-in this world like playing music out in nature. At some point while I was
+studio sound) spending the afternoon in this fantastic place.  There is nothing
+in this world like playing music out in nature.  At some point while I was
 recording, I even got to make the soundtrack for a bird bathing in the river.
 ]],
     par [[
@@ -49,5 +51,6 @@ return {
         facebook = "reel/3593407364256210",
         instagram = "C8bsQrTKJ3p",
     },
+    description = description,
     content = content,
 }

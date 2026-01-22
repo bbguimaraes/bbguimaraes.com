@@ -1,9 +1,9 @@
-local description <const> = [[
-Some songs are just perfect, and this is one of them.
-]]
+local description <const> = [[Some songs are just perfect, and this is one of them.]]
 
 local content <const> = lines {
-    par(description),
+    par [[
+Some songs are just perfect, and this is one of them.
+]],
     par [[
 This song from the Bee Gees has always been a favorite of mine to strum on the
 guitar, ever since I learned it years ago — I believe after watching a video (of

@@ -1,5 +1,7 @@
-local description <const> = [[
-The legend of Zelda - Ocarina of time
+local description <const> = [[The legend of Zelda – Ocarina of time]]
+
+local content <const> = par [[
+The legend of Zelda – Ocarina of time
 ]]
 
 return {
@@ -15,5 +17,5 @@ return {
         facebook = "bruno.barcarolguimaraes/posts/pfbid02Ny8F8iKhDh9rMCgT9nkYDBgzBUYAMnP4vZjy8j8pnKoPPCNdkHnDufbW8tDH5TRFl",
     },
     description = description,
-    content = par(description),
+    content = content,
 }

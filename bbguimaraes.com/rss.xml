@@ -34,8 +34,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Tue, 13 Jan 2026 13:39:11 +0000</pubDate>
-        <lastBuildDate>Tue, 13 Jan 2026 13:39:11 +0000</lastBuildDate>
+        <pubDate>Thu, 22 Jan 2026 10:22:06 +0000</pubDate>
+        <lastBuildDate>Thu, 22 Jan 2026 10:22:06 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -71,7 +71,7 @@
             <category>music</category>
             <category>piano</category>
             <category>short</category>
-            <description><p>music piano short</p><p>Lucio Dalla</p></description>
+            <description><p>music piano short</p><p>Lucio Dalla</p><p><span lang="it">“Sentì il dolore nella musica, si alzò dal pianoforte, ma quando vide la luna uscire da una nuvola gli sembrò più dolce anche la morte”.</span></p></description>
         </item>
         <item>
             <title>Monviso from Moncalieri</title>
@@ -210,7 +210,7 @@
             <category>guitar</category>
             <category>vocals</category>
             <category>short</category>
-            <description><p>music guitar vocals short</p></description>
+            <description><p>music guitar vocals short</p><p>Old folk/gospel songs have always been some of my favorites, this one in particular.  The lyrics and the atmosphere are just perfect, and it was made to be played on a Telecaster.</p></description>
         </item>
         <item>
             <title>~/places</title>
@@ -301,7 +301,7 @@
             <category>guitar</category>
             <category>bass</category>
             <category>short</category>
-            <description><p>music guitar bass short</p><p>The Beatles</p></description>
+            <description><p>music guitar bass short</p><p>The Beatles</p><p>Day 24 without a musical instrument, I think the longest I've ever been without playing music since I was 15.  So here I am editing old, unfinished recordings to try to stay sane.</p></description>
         </item>
         <item>
             <title>Suio</title>
@@ -797,7 +797,7 @@
             <pubDate>Thu, 06 Jul 2017 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>piano</category>
-            <description><p>music piano</p><p>Koji Kondo</p><p>The legend of Zelda - Ocarina of time</p></description>
+            <description><p>music piano</p><p>Koji Kondo</p><p>The legend of Zelda – Ocarina of time</p></description>
         </item>
         <item>
             <title>Boogie on reggae woman</title>
@@ -977,7 +977,7 @@
             <category>music</category>
             <category>piano</category>
             <category>short</category>
-            <description><p>music piano short</p><p>A quick jam with a song from the Elysian Shadows team. Check them out at <a href="http://elysianshadows.com">http://elysianshadows.com</a>.</p></description>
+            <description><p>music piano short</p><p>A quick jam with a song from the Elysian Shadows team.  Check them out at <a href="http://elysianshadows.com">elysianshadows.com</a>.</p></description>
         </item>
         <item>
             <title>Cow and chicken</title>
@@ -987,7 +987,7 @@
             <category>music</category>
             <category>piano</category>
             <category>short</category>
-            <description><p>music piano short</p><p>First and only take. From ear. From memory. Bad recording. Bad angle. Bad sound quality. But I couldn't resist the urge to record it after seeing <a href="https://pbs.twimg.com/profile_images/419767343309660160/SbtebImM.jpeg">this</a>.</p></description>
+            <description><p>music piano short</p><p>First and only take.  From ear.  From memory.  Bad recording.  Bad angle.  Bad sound quality.  But I couldn't resist the urge to record it after seeing <a href="https://pbs.twimg.com/profile_images/419767343309660160/SbtebImM.jpeg">this</a>.</p></description>
         </item>
         <item>
             <title>Manufacturer's blues</title>
