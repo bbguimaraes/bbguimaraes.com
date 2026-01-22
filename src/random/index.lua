@@ -1,6 +1,6 @@
 return include "master.lua" {
     title = "/dev/random",
-    body_class = "w80",
+    body_class_extra = "w80",
     nav_path = {{nil, "random"}},
     main = lines {
         ul {

@@ -6,7 +6,13 @@ table.insert(ret, html([[
 table.insert(ret, indent(1, include "head.lua" {}))
 
 local body <const> = var("body", false)
-local body_class <const> = var("body_class", false)
+local body_class <const> = (function()
+    local ret <const> = {}
+    var_and("body_class", function(x) table.insert(ret, x) end)
+    var_and("body_class_extra", function(x) table.insert(ret, x) end)
+    return table.concat(ret, " ")
+end)()
+
 if body then
     table.insert(ret, indent(1, body))
     table.insert(ret, "\n")

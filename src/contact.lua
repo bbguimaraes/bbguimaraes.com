@@ -67,7 +67,6 @@ local sections <const> = {{
 
 return include "list_simple.lua" {
     title = "contact",
-    body_class = "white-bg roman",
     list_title = "Bruno Barcarol Guimarães",
     description = lines {
         blockquote(lines {

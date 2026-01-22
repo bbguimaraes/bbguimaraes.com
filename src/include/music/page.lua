@@ -54,7 +54,7 @@ return include "master.lua" {
         image = base_url .. generator:file_url(var, "small", video_file_name),
         video = base_url .. video_url,
     },
-    body_class = "w80 white-bg roman",
+    body_class_extra = "w80",
     nav_path = {{".", "music"}, {nil, title}},
     main = main({class = "video"}, lines {
         video {

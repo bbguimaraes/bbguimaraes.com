@@ -159,10 +159,10 @@ local log <const> = item {
 }
 
 return include "master.lua" {
-    body_class = "w80",
     title = "bbguimaraes.com",
     css = {"/main.css", "comp.css"},
     js = {},
+    body_class = "black-bg mono w80",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "comp"}},

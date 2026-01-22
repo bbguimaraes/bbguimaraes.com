@@ -70,7 +70,6 @@ return include "master.lua" {
             or nil,
         url = var "url",
     },
-    body_class = "white-bg roman",
     nav_path = false,
     main = main({class = "post"}, lines {
         div({class = "w80"}, lines {

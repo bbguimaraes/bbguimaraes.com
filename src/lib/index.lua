@@ -375,7 +375,7 @@ local honorable <const> = {
 return include "master.lua" {
     title = "books",
     css = {"/main.css", "lib.css"},
-    body_class = "no-hor-margin white-bg roman",
+    body_class_extra = "no-hor-margin",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "lib"}},

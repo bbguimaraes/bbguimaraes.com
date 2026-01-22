@@ -21,7 +21,8 @@ return include "master.lua" {
     },
     css = {"/main.css", "blog.css"},
     head_extra = head_extra,
-    body_class = var("style", "w80"),
+    body_class = var("style", "black-bg mono"),
+    body_class_extra = "w80",
     nav_path = {{".", "blog"}, {nil, short_title}},
     main = main({class = "blog"}, lines {
         inline_tag("h1", nil, title),

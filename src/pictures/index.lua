@@ -97,7 +97,6 @@ end)
 return include "master.lua" {
     title = "pictures",
     css = {"/main.css", "/gallery.css", "pictures.css"},
-    body_class = "white-bg roman",
     main = lines {
         div({class = "w80"}, lines {
             include "nav.lua" {

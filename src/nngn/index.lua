@@ -1,6 +1,7 @@
 return include "master.lua" {
     title = "nngn",
     css = {"/main.css", "nngn.css"},
+    body_class = "black-bg mono",
     nav_path = {{nil, "nngn"}},
     main = main(nil, lines {
         html "<h1>nngn</h1>",

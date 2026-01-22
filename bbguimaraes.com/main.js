@@ -1,21 +1,23 @@
 import { select_create } from "./js/html.mjs";
 
 if(document.getElementById("page-nav")) {
-    let make_listener = (key, cls) => {
-        let l = document.body.classList;
-        let reset = l.contains(cls) ? l.add : l.remove;
+    let make_listener = (key, classes) => {
+        let body = document.body;
+        let l = body.classList;
+        let orig = Array.prototype.find.call(classes, x => l.contains(x));
+        if(orig)
+            body.dataset[key] = orig;
         return e => {
-            let sel = e.target;
-            let i = sel.selectedIndex;
+            let l = body.classList;
+            Array.prototype.forEach.call(classes, x => l.remove(x));
+            let i = e.target.selectedIndex;
             if(i) {
-                localStorage[key] = sel.options[i].value;
-                switch(i) {
-                case 1: l.remove(cls); break;
-                case 2: l.add(cls); break;
-                }
+                let v = e.target.options[i].value
+                localStorage[key] = v;
+                l.add(classes[i - 1]);
             } else {
                 localStorage.removeItem(key);
-                reset.call(l, cls);
+                l.add(body.dataset[key]);
             }
         };
     };
@@ -31,18 +33,20 @@ if(document.getElementById("page-nav")) {
         sel.selectedIndex = o.index;
         sel.dispatchEvent(new Event("change"));
     };
-    let create = (div, title, key, unset_opt, cls, values) => {
+    let create = (div, title, key, unset_opt, classes, values) => {
         let sel = select_create(
-            title, unset_opt, values, make_listener(key, cls));
+            title, unset_opt, values, make_listener(key, classes));
         div.appendChild(sel);
         set_initial(key, sel);
     };
     let div = document.createElement("div");
     div.classList.add("nav-opt");
-    create(div, "font style", "font", "font", "roman", ["mono", "roman"]);
     create(
-        div, "background color", "bg_color", "color", "white-bg",
-        ["black", "white"]);
+        div, "font style", "font", "font",
+        ["mono", "roman"], ["mono", "roman"]);
+    create(
+        div, "background color", "bg_color", "color",
+        ["black-bg", "white-bg"], ["black", "white"]);
     div.appendChild(document.querySelector("#rss-icon"));
     let nav = document.getElementById("page-nav");
     nav.insertBefore(div, nav.firstChild);

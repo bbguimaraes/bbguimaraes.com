@@ -45,6 +45,7 @@ local sections <const> = {{
 
 return include "list_simple.lua" {
     title = "bin",
+    body_class = "black-bg mono",
     list_title = "bin",
     nav_path = {{nil, "bin"}},
     sections = sections,

@@ -55,8 +55,9 @@ end
 table.insert(content, div({class = "screenshots"}, lines(sections)))
 
 return include "master.lua" {
-    css = {"/main.css", "../nngn.css"},
     title = "nngn - screenshots - " .. title,
+    css = {"/main.css", "../nngn.css"},
+    body_class = "black-bg mono",
     nav_path = {{"/nngn", "nngn"}, {nil, "screenshots"}, {nil, title}},
     main = main(nil, lines {
         html "<h1>nngn</h1>",

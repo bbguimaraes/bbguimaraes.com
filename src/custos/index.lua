@@ -53,7 +53,7 @@ file_systems <b>{</b>
 
 return include "master.lua" {
     title = "custos",
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{nil, "custos"}},
     main = main(nil, lines {
         html "<h1>custos</h1>",

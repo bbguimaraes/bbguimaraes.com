@@ -86,15 +86,11 @@
 }
 
 body {
-    background-color: var(--bg-black);
-    font-family: Monospace;
-    font-size: var(--font-size-mono);
-    color: var(--text-color-base);
     margin: var(--margin-body);
     hyphens: auto;
 }
 
-.white-bg:not(.black-bg) {
+.white-bg {
     background-color: var(--bg-white);
     color: var(--text-color-white);
     --text-color-base: var(--text-color-white);
@@ -102,6 +98,8 @@ body {
 
 .black-bg {
     background-color: var(--bg-black);
+    color: var(--text-color-black);
+    --text-color-base: var(--text-color-black);
 }
 
 .roman {
@@ -109,7 +107,16 @@ body {
     font-size: var(--font-size-roman);
 }
 
-.roman code {
+.mono {
+    font-family: Monospace;
+    font-size: var(--font-size-mono);
+}
+
+.mono code {
+    font-weight: bold;
+}
+
+.mono pre code {
     font-weight: normal;
 }
 
@@ -191,16 +198,8 @@ blockquote::before {
     left: -0.4em;
 }
 
-code {
-    font-weight: bold;
-}
-
 pre {
     overflow: auto;
-}
-
-pre code {
-    font-weight: normal;
 }
 
 figcaption {
@@ -241,12 +240,12 @@ hr {
 }
 
 @media(max-width: 800px) {
-    body {
-        font-size: calc(8px + 1vw);
-    }
-
     .roman {
         font-size: calc(10px + 1vw);
+    }
+
+    .mono {
+        font-size: calc(8px + 1vw);
     }
 }
 
