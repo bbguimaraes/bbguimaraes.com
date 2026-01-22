@@ -64,6 +64,7 @@ local function generate_item(_, t)
                 src = PAGE_ENV.generator:generate_image(
                     var, "small", path.join(DIR, file_name .. ".mp4")),
                 alt = "video poster",
+                class = "no-margin image",
             },
             inline_tag("span", {class = "duration"}, t.duration),
         }),
@@ -86,7 +87,7 @@ return include "master.lua" {
     },
     css = {"/main.css", "/gallery.css", "music.css"},
     js = {"/main.js", "music.js"},
-    body_class = "no-hor-margin roman",
+    body_class = "no-hor-margin white-bg roman",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "music"}},
