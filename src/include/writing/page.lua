@@ -39,7 +39,6 @@ return include "master.lua" {
     },
     title = title,
     css = {"/main.css", "writing.css"},
-    body_class = "white-bg roman",
     main = lines {
         div({class = "w80"}, lines {
             include "nav.lua" {

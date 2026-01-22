@@ -22,7 +22,7 @@ number</code></pre>
 return include "master.lua" {
     title = "gdb_lua",
     css = {"/main.css", "/description.css"},
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{nil, "gdb_lua"}},
     main = main(nil, lines {
         html "<h1>gdb_lua</h1>",

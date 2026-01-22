@@ -34,7 +34,7 @@ util.each(generate_tag_file, tags)
 return include "master.lua" {
     title = "blog - tags",
     css = {"/main.css", "../blog.css"},
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{"..", "blog"}, {nil, "tags"}},
     main = main({class = "blog"}, lines {
         html("<h1>Tags</h1>"),

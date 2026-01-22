@@ -20,7 +20,7 @@ end
 
 return include "master.lua" {
     title = "talks",
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{nil, "talks"}},
     main = lines {
         h2_link { "red-hat", "<code>Red Hat</code>" },

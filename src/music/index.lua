@@ -87,7 +87,7 @@ return include "master.lua" {
     },
     css = {"/main.css", "/gallery.css", "music.css"},
     js = {"/main.js", "music.js"},
-    body_class = "no-hor-margin white-bg roman",
+    body_class_extra = "no-hor-margin",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "music"}},

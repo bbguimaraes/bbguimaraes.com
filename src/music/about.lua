@@ -339,7 +339,7 @@ Kdenlive uses to render video).
 return include "master.lua" {
     title = "music – about",
     css = {"/main.css", "music.css"},
-    body_class = "w80 white-bg roman",
+    body_class_extra = "w80",
     nav_path = {{".", "music"}, {nil, "about"}},
     main = main(nil, content),
 }

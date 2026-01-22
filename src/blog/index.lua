@@ -40,7 +40,7 @@ local by_year <const> = util.igroup_by_sorted(
 return include "master.lua" {
     title = "iffalse",
     css = {"/main.css", "blog.css"},
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{nil, "blog"}},
     main = div({class = "blog"}, lines {
         html "<h1>iffalse</h1>",

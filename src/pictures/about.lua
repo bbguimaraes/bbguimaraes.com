@@ -232,7 +232,7 @@ them for previews in this web site, etc.
 return include "master.lua" {
     title = "pictures – about",
     css = {"/main.css", "pictures.css"},
-    body_class = "w80 white-bg roman",
+    body_class_extra = "w80",
     nav_path = {{".", "pictures"}, {nil, "about"}},
     main = main(nil, content),
 }

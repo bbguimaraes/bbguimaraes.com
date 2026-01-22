@@ -1,6 +1,7 @@
 return include "master.lua" {
     title = "subs",
     css = {"/main.css", "/description.css"},
+    body_class = "black-bg mono",
     main = lines {
         div({class = "w80"}, include "nav.lua" {
             nav_path = {{nil, "subs"}},

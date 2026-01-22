@@ -24,7 +24,7 @@ English
 return include "master.lua" {
     title = "machinatrix",
     css = {"/main.css", "/description.css"},
-    body_class = "w80",
+    body_class = "black-bg mono w80",
     nav_path = {{nil, "machinatrix"}},
     main = main(nil, lines {
         html "<h1>machinatrix</h1>",

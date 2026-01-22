@@ -68,7 +68,6 @@ return include "master.lua" {
         url = path.join(base_url, DIR),
     },
     css = {"/main.css", "writing.css"},
-    body_class = "roman white-bg",
     main = lines {
         div({class = "w80"}, lines {
             include "nav.lua" {

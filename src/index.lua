@@ -123,7 +123,6 @@ return include "master.lua" {
         description = "Bruno Barcarol Guimarães",
         url = base_url,
     },
-    body_class = "white-bg roman",
     css = {"main.css", "index.css"},
     main = lines {
         div({class = "w80"}, include "nav.lua" {
