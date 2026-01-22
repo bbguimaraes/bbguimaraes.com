@@ -135,7 +135,8 @@ img {
 }
 
 .videos .video .info .tags,
-.videos .video .info .date {
+.videos .video .info .date,
+.videos .video .info .description {
     font-size: 75%;
 }
 

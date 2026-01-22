@@ -1,5 +1,6 @@
 local convert <const> = require "lib.convert"
 local data_dir <const> = require "lib.data_dir"
+local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
@@ -48,6 +49,11 @@ local function generate_item(_, t)
     table.insert(info, inline_tag(
         "span", {class = "date"},
         t.timestamp[2]:gsub("T.*$", "")))
+    if t.description then
+        table.insert(info, inline_tag(
+            "p", {class = "description"},
+            generate.render(plain({"a"}, t.description))))
+    end
     local attrs <const> = {
         {"id", id}, {"class", "video"}, {"href", t.id .. ".html"},
         {"data-tags", table.concat(util.sorted(util.copy(t.tags)), ",")},
