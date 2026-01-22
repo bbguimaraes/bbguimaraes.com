@@ -1,3 +1,7 @@
+local description <const> = inline_tag(
+    "span", {lang = "it"},
+    [[“Sentì il dolore nella musica, si alzò dal pianoforte, ma quando vide la luna uscire da una nuvola gli sembrò più dolce anche la morte”.]])
+
 local content <const> = blockquote(text_tag("p", {lang = "it"}, [[
 Sentì il dolore nella musica, si alzò dal pianoforte<br />
 ma quando vide la luna uscire da una nuvola<br />
@@ -16,5 +20,6 @@ return {
         facebook = "bruno.barcarolguimaraes/posts/pfbid0Azvertb7eWZBwVxDXrbybUEFozw9knkbwyN2yZMtbwi4AJa3sGzSHW2AS85KfhKQl",
         instagram = "DRPbHXdDIEL/",
     },
+    description = description,
     content = content,
 }

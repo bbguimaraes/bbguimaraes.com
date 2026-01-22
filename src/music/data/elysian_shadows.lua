@@ -1,7 +1,21 @@
-local description <const> = [[
-A quick jam with a song from the Elysian Shadows team. Check them out at
-<a href="http://elysianshadows.com">http://elysianshadows.com</a>.
-]]
+local description <const> = format {
+    [[A quick jam with a song from the Elysian Shadows team.  Check them out at %s.]],
+    link {
+        href = "http://elysianshadows.com",
+        content = "elysianshadows.com",
+    },
+}
+
+local content <const> = par(format {
+    [[
+A quick jam with a song from the Elysian Shadows team.  Check them out at
+%s.
+]],
+    link {
+        href = "http://elysianshadows.com",
+        content = "http://elysianshadows.com",
+    },
+})
 
 return {
     title = "Elysian Shadows",
@@ -13,5 +27,5 @@ return {
         youtube = "nJDZkEGm9t8",
     },
     description = description,
-    content = par(description),
+    content = content,
 }

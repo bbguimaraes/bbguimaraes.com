@@ -1,13 +1,15 @@
+local description <const> = [[Day 24 without a musical instrument, I think the longest I've ever been without playing music since I was 15.  So here I am editing old, unfinished recordings to try to stay sane.]]
+
 local content <const> = lines {
     par [[
 Day 24 without a musical instrument, I think the longest I've ever been without
-playing music since I was 15. So here I am editing old, unfinished recordings to
-try to stay sane.
+playing music since I was 15.  So here I am editing old, unfinished recordings
+to try to stay sane.
 ]],
     par [[
 Here is a rough version of the guitar solo from “Something”, one of George
-Harrison's finest songs and guitar works. The recording is from some months ago,
-but I learned it years before and it has been the soundtrack of many nights
+Harrison's finest songs and guitar works.  The recording is from some months
+ago, but I learned it years before and it has been the soundtrack of many nights
 where it's just me and my guitar.
 ]],
     par [[
@@ -59,5 +61,6 @@ return {
         facebook = "reel/1391962705043972",
         instagram = "C3QhqZ4qk9i",
     },
+    description = description,
     content = content,
 }

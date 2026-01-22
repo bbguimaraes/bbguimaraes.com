@@ -1,9 +1,9 @@
-local description <const> = [[
-The sound of absence and longing.
-]]
+local description <const> = [[The sound of absence and longing.]]
 
 local content <const> = lines {
-    par(description),
+    par [[
+The sound of absence and longing.
+]],
     tag("blockquote", nil, lines {
         par [[
 With all that I tried to suggest to students, you get a feeling of a piece… one
