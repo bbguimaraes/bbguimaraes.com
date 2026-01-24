@@ -120,6 +120,10 @@ body {
     font-weight: normal;
 }
 
+.text-large {
+    font-size: 150%;
+}
+
 .inline-block {
     display: inline-block;
 }
