@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-t=${1+$(TZ=UTC date +%s --date "$1")}
+t=$(TZ=UTC date +%s --date "${1-now}")
 d=$(TZ=UTC date --date "@$t" +%Y-%m-%dT%H:%M:%S)
 printf 'timestamp = { %d, "%s" }\n' "$t" "$d"
