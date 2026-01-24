@@ -7,4 +7,7 @@ local function tag_link(_, x)
     }
 end
 
-return div({class = "tags"}, lines(util.imap(tag_link, var("tags"))))
+return div({class = "tags"}, lines {
+    html "tags:",
+    table.unpack(util.imap(tag_link, var("tags"))),
+})
