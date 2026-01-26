@@ -11,7 +11,7 @@ local description <const> = format {
 }
 
 local content <const> = {
-    div({class = "img-group img-group2"}, lines {
+    div({class = "img-group"}, lines {
         tag("a", {href = "https://www.lua.org"}, image {
             src = "/files/blog/lua.png",
             alt = "Lua logo",
