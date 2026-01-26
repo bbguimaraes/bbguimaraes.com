@@ -2,6 +2,13 @@ local l <const> = {}
 
 local path <const> = {}
 
+local extra <const> = var("nav_extra", false)
+if extra then
+    table.insert(l, extra)
+else
+    table.insert(l, include "rss_icon.lua" {})
+end
+
 table.insert(path, link {
     href = "/",
     content = image {
@@ -20,12 +27,5 @@ for _, t in ipairs(var("nav_path")) do
     end
 end
 table.insert(l, div({class = "nav-path"}, lines(path)))
-
-local extra <const> = var("nav_extra", false)
-if extra then
-    table.insert(l, extra)
-else
-    table.insert(l, include "rss_icon.lua" {})
-end
 
 return tag("nav", {id = "page-nav"}, lines(l))
