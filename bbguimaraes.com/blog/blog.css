@@ -43,21 +43,15 @@
 }
 
 .blog .img-group {
-    text-align: center;
-}
-
-.blog .img-group a {
-    display: inline-block;
-    vertical-align:middle;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
 }
 
 .blog .img-group img {
     max-width: 100%;
-    margin: 1em auto;
-}
-
-.blog .img-group2 a:not(:last-child) {
-    margin-right: 8em;
+    margin: 0;
 }
 
 .blog pre, .blog .src-ref {
