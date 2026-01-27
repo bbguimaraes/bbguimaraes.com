@@ -94,6 +94,11 @@ local function load_file(file_name, ...)
     return assert(loadfile(file_name, nil, env))()
 end
 
+--- Loads a file as pure data, with no access to the environment.
+local function load_data(file_name)
+    return assert(loadfile(file_name, nil, nil))()
+end
+
 --- Fully renders the contents of a file.
 local function generate(out, file_name, ...)
     return load_file(file_name, ...):render(context:new{out = out, indent = 0})
@@ -112,6 +117,7 @@ end
 return {
     new_env = new_env,
     load = load_file,
+    load_data = load_data,
     render = render,
     generate = generate,
     generate_and_print = generate_and_print,
