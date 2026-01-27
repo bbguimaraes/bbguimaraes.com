@@ -189,20 +189,20 @@ local function books(t)
     return div({class = "books"}, lines(t))
 end
 
-local function honorable(href, title_fmt, title, id, cover, author)
+local function load_honorable(_, t)
     return {
-        id = id,
-        title = title,
+        id = t.id,
+        title = t.title,
         content = div(
-            {id = id, class = "book"},
-            tag("a", {href = href}, lines {
+            {id = t.id, class = "book"},
+            tag("a", {href = t.href}, lines {
                 image {
-                    src = file_url(DIR, cover),
+                    src = file_url(DIR, t.cover),
                     alt = "cover",
                     class = "image book-cover",
                 },
-                h3(title_fmt),
-                inline_tag("span", nil, author),
+                h3(t.title_fmt),
+                inline_tag("span", nil, t.author),
             })),
     }
 end
@@ -216,163 +216,9 @@ local toc_publications <const> = util.imap(toc_link, categories.publications)
 local toc_general <const> = util.imap(toc_link, categories.general)
 local toc_technical <const> = util.imap(toc_link, categories.technical)
 
-local honorable <const> = {
-    honorable(
-        "https://global.oup.com/academic/product/the-nicomachean-ethics-9780199213610",
-        '<span lang="grc">Ἠθικὰ Νικομάχεια</span>'
-            .. "<br />(The Nicomachean<br />Ethics)",
-        '<span lang="grc">Ἠθικὰ Νικομάχεια</span> (The Nicomachean Ethics)',
-        "the-nicomachean-ethics",
-        "the_nicomachean_ethics.jpg",
-        "Aristotle"),
-    honorable(
-        "https://www.harpercollins.com/products/wuthering-heights-collins-classics-emily-bronte",
-        "Wuthering heights",
-        "Wuthering heights",
-        "wuthering-heights",
-        "wuthering_heights.jpg",
-        "Emily Brontë"),
-    honorable(
-        "https://www.rizzolilibri.it/libri/alcesti/",
-        '<span lang="grc">Ἄλκηστις</span><br />(Alcestis)',
-        '<span lang="grc">Ἄλκηστις</span> (Alcestis)',
-        "alcestis",
-        "alcesti.jpg",
-        "Euripides"),
-    honorable(
-        "https://www.williamcollinsbooks.co.uk/products/mere-christianity-c-s-lewis-9780007332243/",
-        "Notes from the<br />underground",
-        "Notes from the underground",
-        "notes-from-the-underground",
-        "ricordi_dal_sottosuolo.jpg",
-        "Fyodor Dostoevsky"),
-    honorable(
-        "https://www.penguinrandomhouse.com/books/241840/the-brothers-karamazov-by-fyodor-dostoevsky-translated-by-richard-pevear-and-larissa-volokhonsky-introduction-by-malcolm-jones/",
-        "The brothers<br />Karamazov",
-        "The brothers Karamazov",
-        "the-brothers-karamazov",
-        "the_brothers_karamazov.jpg",
-        "Fyodor Dostoevsky"),
-    honorable(
-        "https://www.penguin.co.uk/books/57587/siddhartha-by-hermann-hesse-intro--paulo-coelho/9780141189574",
-        "Siddhartha",
-        "Siddhartha",
-        "siddhartha",
-        "siddhartha.png",
-        "Hermann Hesse"),
-    honorable(
-        "https://store.dailywire.com/products/the-kingdom-of-cain",
-        "The kingdom of Cain",
-        "The kingdom of Cain",
-        "the-kingdom-of-cain",
-        "the_kingdom_of_cain.jpg",
-        "Andrew Klavan"),
-    honorable(
-        "https://store.dailywire.com/products/the-kingdom-of-cain",
-        "Light of the mind,<br />light of the world",
-        "Light of the mind, light of the world",
-        "light-of-the-mind-light-of-the-world",
-        "light_of_the_mind_light_of_the_world.jpg",
-        "Spencer A. Klavan"),
-    honorable(
-        "https://www.williamcollinsbooks.co.uk/products/mere-christianity-c-s-lewis-9780007332243/",
-        "Mere Christianity",
-        "Mere Christianity",
-        "mere-christianity",
-        "mere_christianity.jpg",
-        "C. S. Lewis"),
-    honorable(
-        "https://www.harpercollins.com/products/out-of-the-silent-planet-c-s-lewis",
-        "Out of the silent planet",
-        "Out of the silent planet",
-        "out-of-the-silent-planet",
-        "out_of_the_silent_planet.jpg",
-        "C. S. Lewis"),
-    honorable(
-        "https://www.williamcollinsbooks.co.uk/products/the-screwtape-letters-letters-from-a-senior-to-a-junior-devil-c-s-lewis-signature-classic-c-s-lewis-9780007461240/",
-        "The Screwtape<br />letters",
-        "The Screwtape letters",
-        "the-screwtape-letters",
-        "the_screwtape_letters.jpg",
-        "C. S. Lewis"),
-    honorable(
-        "https://www.harpercollins.com/products/the-call-of-the-wild-collins-classics-jack-london",
-        "The call<br />of the wild",
-        "The call of the wild",
-        "the-call-of-the-wild",
-        "the_call_of_the_wild.jpg",
-        "Jack London"),
-    honorable(
-        "https://www.harpercollins.com/products/white-fang-collins-classics-jack-london",
-        "White fang",
-        "White fang",
-        "white-fang",
-        "white_fang.jpg",
-        "Jack London"),
-    honorable(
-        "https://www.penguin.co.uk/books/57033/animal-farm-by-orwell-george/9780241453865",
-        "Animal farm",
-        "Animal farm",
-        "animal-farm",
-        "animal_farm.jpg",
-        "George Orwell"),
-    honorable(
-        "https://www.jordanbpeterson.com/12-rules-for-life/",
-        "12 rules for life",
-        "12 rules for life",
-        "12-rules-for-life",
-        "12_rules_for_life.jpg",
-        "Jordan B. Peterson"),
-    honorable(
-        "https://www.jordanbpeterson.com/beyond-order/",
-        "Beyond order",
-        "Beyond order",
-        "beyond-order",
-        "beyond_order.jpg",
-        "Jordan B. Peterson"),
-    honorable(
-        "https://www.gutenberg.org/ebooks/1600",
-        '<span lang="grc">Συμπόσιον</span><br />(The Symposium)',
-        '<span lang="grc">Συμπόσιον</span> (The Symposium)',
-        "the-symposium",
-        "symposium.jpg",
-        "Plato"),
-    honorable(
-        "https://www.oscarmondadori.it/libri/fedro-platone/",
-        '<span lang="grc">Φαῖδρος</span><br />(Phaedrus)',
-        '<span lang="grc">Φαῖδρος</span> (Phaedrus)',
-        "phaedrus",
-        "fedro.jpg",
-        "Plato"),
-    honorable(
-        "https://www.ragazzimondadori.it/libri/il-piccolo-principe-antoine-de-saint-exupery-9788804648826/",
-        '<span lang="fr">Le petit prince</span><br />(The little prince)',
-        '<span lang="fr">Le petit prince</span>',
-        "the-little-prince",
-        "il_piccolo_principe.jpg",
-        "Antoine de Saint-Exupéry"),
-    honorable(
-        "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a1999.01.0192",
-        '<span lang="grc">Οἰδίπους Τύραννος</span><br />(Oedipus Rex)',
-        '<span lang="grc">Οἰδίπους Τύραννος</span>',
-        "oedipus-rex",
-        "edipo_re.jpg",
-        "Sophocles"),
-    honorable(
-        "https://global.oup.com/academic/product/the-merchant-of-venice-the-oxford-shakespeare-9780199535859",
-        "The merchant<br />of Venice",
-        'The merchant of Venice',
-        "the-merchant-of-venice",
-        "the_merchant_of_venice.jpg",
-        "William Shakespeare"),
-    honorable(
-        "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0208",
-        '<span lang="grc">Ἀπομνημονεύματα</span><br />(Memorabilia)',
-        '<span lang="grc">Ἀπομνημονεύματα</span> (Memorabilia)',
-        "memorabilia",
-        "memorabilia.jpg",
-        "Xenophon"),
-}
+local honorable <const> = util.imap(
+    load_honorable,
+    generate.load_data(path.join("src", DIR, "honorable.lua")))
 
 return include "master.lua" {
     title = "books",
