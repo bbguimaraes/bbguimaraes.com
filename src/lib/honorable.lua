@@ -112,7 +112,7 @@ return {{
     cover = "beyond_order.jpg",
     author = "Jordan B. Peterson",
 }, {
-    href = "https://www.gutenberg.org/ebooks/1600",
+    href = "https://global.oup.com/academic/product/symposium-9780199540198",
     title_fmt = '<span lang="grc">Συμπόσιον</span><br />(The Symposium)',
     title = '<span lang="grc">Συμπόσιον</span> (The Symposium)',
     id = "the-symposium",
@@ -133,7 +133,7 @@ return {{
     cover = "il_piccolo_principe.jpg",
     author = "Antoine de Saint-Exupéry",
 }, {
-    href = "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a1999.01.0192",
+    href = "https://www.lafeltrinelli.it/edipo-re-testo-greco-a-libro-sofocle/e/9788807900471",
     title_fmt = '<span lang="grc">Οἰδίπους Τύραννος</span><br />(Oedipus Rex)',
     title = '<span lang="grc">Οἰδίπους Τύραννος</span>',
     id = "oedipus-rex",
