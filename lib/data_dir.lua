@@ -12,6 +12,7 @@ function data_dir:new(var, d, page_gen_path)
         d = d,
         page_path = var("page_path")(d),
         page_gen_path = page_gen_path or var("include_path")(d, "page.lua"),
+        def_lang = var("default_language"),
     }, self)
 end
 
@@ -62,7 +63,7 @@ local function generate_page_lang(self, env, d, lang, t)
     local g <const> = function(...)
         return lang_env(env, lang, t, ...)
     end
-    local suffix <const> = (lang == "en") and "" or ("-" .. lang)
+    local suffix <const> = (lang == self.def_lang) and "" or ("-" .. lang)
     return generate_page(self, g, d, suffix, t)
 end
 

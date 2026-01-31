@@ -3,8 +3,9 @@ local full <const> = var("full", false)
 local title <const> = var "title"
 local book_link <const> = var("link", false)
 local author <const> = var("author", false)
-local lang <const> = var("lang", "en")
-local intro <const> = lang == "en" and var("intro", false)
+local def_lang <const> = var("default_language")
+local lang <const> = var("lang", false) or def_lang
+local intro <const> = lang == def_lang and var("intro", false)
 
 local function book_title(title, author)
     local ret = inline_tag("i", nil, title)

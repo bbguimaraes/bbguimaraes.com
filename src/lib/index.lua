@@ -3,6 +3,7 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local def_lang <const> = var "default_language"
 local include_path <const> = var "include_path"
 local file_url <const> = var "file_url"
 
@@ -174,13 +175,14 @@ end
 local function toc_link(_, x)
     local title = x.title
     if x.languages then
-        title = title.en
+        title = title[def_lang]
     end
     return link { href = "#" .. x.id, content = title }
 end
 
 local function render_book(_, t)
-    return include(BOOK)(t, t.languages and data_dir.lang_vars(t, "en") or nil)
+    return include(BOOK)(
+        t, t.languages and data_dir.lang_vars(t, def_lang) or nil)
 end
 
 local function books(t)
