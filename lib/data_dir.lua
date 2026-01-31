@@ -41,11 +41,15 @@ local function generate_page(self, env, d, suffix, t)
     return generate.generate(f, self.page_gen_path, t, resolve_env(env, t))
 end
 
+local function lang_env(env, lang, t, ...)
+    local ret <const> = {resolve_env(env, ...)}
+    table.insert(ret, {lang = lang})
+    return table.unpack(ret)
+end
+
 local function generate_page_lang(self, env, d, lang, t)
     local g <const> = function(...)
-        local t <const> = {resolve_env(env, ...)}
-        table.insert(t, {lang = lang})
-        return table.unpack(t)
+        return lang_env(env, lang, t, ...)
     end
     local suffix <const> = (lang == "en") and "" or ("-" .. lang)
     return generate_page(self, g, d, suffix, t)
