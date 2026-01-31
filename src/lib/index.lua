@@ -180,7 +180,7 @@ local function toc_link(_, x)
 end
 
 local function render_book(_, t)
-    return include(BOOK)(t)
+    return include(BOOK)(t, t.languages and data_dir.lang_vars(t, "en") or nil)
 end
 
 local function books(t)

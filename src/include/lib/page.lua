@@ -1,14 +1,7 @@
 local util <const> = require "lib.util"
 
 local lang <const> = var "lang"
-
-local title <const> = (function()
-    local ret = var("short_title", false) or var("title")
-    if var("languages", false) then
-        ret = ret[lang]
-    end
-    return ret
-end)()
+local title <const> = var("short_title", false) or var("title")
 
 local content <const> = {}
 table.insert(content, include("lib/book.lua") { full = true })

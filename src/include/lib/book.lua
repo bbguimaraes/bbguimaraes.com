@@ -48,13 +48,12 @@ table.insert(content, image {
     class = "image book-cover",
 })
 
+table.insert(content, book_title(title, author))
+
 if languages then
-    table.insert(content, book_title(title[lang], author[lang]))
     if full then
         table.insert(content, language_links())
     end
-else
-    table.insert(content, book_title(title, author))
 end
 
 if full then
@@ -72,14 +71,10 @@ if intro then
     end
 end
 
-var_and("content", function(x)
-    if full or not intro then
-        if languages then
-            table.insert(content, x[lang])
-        else
-            table.insert(content, x)
-        end
-    end
-end)
+if full or not intro then
+    var_and("content", function(x)
+        table.insert(content, x)
+    end)
+end
 
 return div({class = "book"}, lines(content))
