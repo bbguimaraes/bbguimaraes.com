@@ -41,9 +41,20 @@ local function generate_page(self, env, d, suffix, t)
     return generate.generate(f, self.page_gen_path, t, resolve_env(env, t))
 end
 
+local function lang_vars(t, lang)
+    local ret <const> = {lang = lang}
+    for _, k in ipairs{"short_title", "title", "author", "content"} do
+        local v <const> = t[k]
+        if v then
+            ret[k] = v[lang]
+        end
+    end
+    return ret
+end
+
 local function lang_env(env, lang, t, ...)
     local ret <const> = {resolve_env(env, ...)}
-    table.insert(ret, {lang = lang})
+    table.insert(ret, lang_vars(t, lang))
     return table.unpack(ret)
 end
 
@@ -71,4 +82,5 @@ end
 
 return {
     new = function(...) return data_dir:new(...) end,
+    lang_vars = lang_vars,
 }

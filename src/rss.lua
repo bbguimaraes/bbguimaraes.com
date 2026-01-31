@@ -9,6 +9,13 @@ local function generate_common(dir, t, tag)
         return
     end
     t.file = path.join(dir, t.id .. ".html")
+    if t.languages then
+        for _, x in ipairs{"title", "author"} do
+            if t[x] then
+                t[x] = t[x].en
+            end
+        end
+    end
     local desc <const> = t.description
     if desc and type(desc) ~= "string" then
         t.description = generate.render(desc)
@@ -32,17 +39,11 @@ for _, x in ipairs(lib_dir:load()) do
     if not generate_common("lib", x, "books") then
         goto continue
     end
-    local title, author = x.title, x.author
-    if x.languages then
-        title = title.en
-        author = author.en
-    end
-    x.title = title
     x.short_title = nil
     if x.description then
         x.description = string.format(
             "<p>%s, %s</p><p>%s</p>",
-            title, author, x.description:gsub("\n$", ""):gsub("\n", " "))
+            x.title, x.author, x.description:gsub("\n$", ""):gsub("\n", " "))
     else
         x.description = string.format("%s, %s", title, author)
     end
