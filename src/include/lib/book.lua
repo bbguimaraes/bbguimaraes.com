@@ -38,7 +38,7 @@ local function language_links()
             table.insert(ret, link { href = href, content = x })
         end
     end
-    return tag("p", {class = "languages"}, lines(ret))
+    return tag("p", {class = "language-links"}, lines(ret))
 end
 
 local content <const> = {}
