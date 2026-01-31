@@ -34,8 +34,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 26 Jan 2026 10:00:04 +0000</pubDate>
-        <lastBuildDate>Mon, 26 Jan 2026 10:00:04 +0000</lastBuildDate>
+        <pubDate>Sun, 01 Feb 2026 05:11:31 +0000</pubDate>
+        <lastBuildDate>Sun, 01 Feb 2026 05:11:31 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -446,7 +446,7 @@
             <guid>https://bbguimaraes.com/writing/dostoevsky.html</guid>
             <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
             <category>writing</category>
-            <description>I met Dostoevsky, so to speak, a little more than a year ago. I won't go into how I got to <i>Crime and Punishment</i>, but reading it (in the span of a single weekend) was the principal — though not singular or initial — cause of the most profound transformation I have ever suffered: at the same time a reorientation of my life and the consummation of my personality, a reconciliation of every internal doubt I had about me and my choices (if one may call them that) in life.</description>
+            <description>I met Dostoevsky, so to speak, a little more than a year ago. I won't go into how I got to <i>Crime and punishment</i>, but reading it (in the span of a single weekend) was the principal — though not singular or initial — cause of the most profound transformation I have ever suffered: at the same time a reorientation of my life and the consummation of my personality, a reconciliation of every internal doubt I had about me and my choices (if one may call them that) in life.</description>
         </item>
         <item>
             <title>Tennessee whiskey</title>

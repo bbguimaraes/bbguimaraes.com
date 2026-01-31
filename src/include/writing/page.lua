@@ -24,6 +24,11 @@ var_and("image", function(x)
 end)
 
 table.insert(l, tag("h1", {class = "article-title"}, title))
+
+var_and("languages", function()
+    table.insert(l, include("languages.lua") {})
+end)
+
 table.insert(l,
     inline_tag(
         "p", {class = "article-date"},
