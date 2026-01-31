@@ -3,6 +3,7 @@ local data_dir <const> = require "lib.data_dir"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local def_lang <const> = var "default_language"
 local file_path <const> = var "file_path"
 local file_url <const> = var "file_url"
 
@@ -41,7 +42,7 @@ local function generate_item(_, t)
             href = href,
             content = text_tag(
                 "h1", {class = "article-title"},
-                t.languages and t.title.en or t.title),
+                t.languages and t.title[def_lang] or t.title),
         },
         inline_tag(
             "p", {class = "article-date"},

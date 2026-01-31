@@ -2,6 +2,8 @@ local data_dir <const> = require "lib.data_dir"
 local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 
+local def_lang <const> = var "default_language"
+
 local files <const> = {}
 
 local function generate_common(dir, t, tag)
@@ -12,7 +14,7 @@ local function generate_common(dir, t, tag)
     if t.languages then
         for _, x in ipairs{"title", "author"} do
             if t[x] then
-                t[x] = t[x].en
+                t[x] = t[x][def_lang]
             end
         end
     end

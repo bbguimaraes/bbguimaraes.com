@@ -6,7 +6,7 @@ local title <const> = var("short_title", false) or var("title")
 local content <const> = {}
 table.insert(content, include("lib/book.lua") { full = true })
 
-if lang == "en" then
+if lang == var("default_language") then
     local citations <const> = var("citations", false)
     if citations then
         table.insert(content, hr())

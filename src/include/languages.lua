@@ -1,5 +1,6 @@
 local util <const> = require "lib.util"
 
+local def_lang <const> = var "default_language"
 local lang <const> = var "lang"
 local id <const> = var "id"
 
@@ -8,7 +9,7 @@ local function f(_, x)
         return inline_tag("b", nil, x)
     end
     return link {
-        href = (x == "en")
+        href = (x == def_lang)
             and (id .. ".html")
             or string.format("%s-%s.html", id, x),
         content = x,
