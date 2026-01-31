@@ -4,7 +4,6 @@ local title <const> = var "title"
 local book_link <const> = var("link", false)
 local author <const> = var("author", false)
 local lang <const> = var("lang", "en")
-local languages <const> = var("languages", false)
 local intro <const> = lang == "en" and var("intro", false)
 
 local function book_title(title, author)
@@ -23,24 +22,6 @@ local function book_title(title, author)
     return ret
 end
 
-local function language_links()
-    local ret <const> = {}
-    for _, x in ipairs(languages) do
-        if x == lang then
-            table.insert(ret, inline_tag("b", nil, x))
-        else
-            local href = id
-            if x == "en" then
-                href = href .. ".html"
-            else
-                href = string.format("%s-%s.html", href, x)
-            end
-            table.insert(ret, link { href = href, content = x })
-        end
-    end
-    return tag("p", {class = "language-links"}, lines(ret))
-end
-
 local content <const> = {}
 table.insert(content, image {
     src = var("file_url")("lib", var "cover"),
@@ -50,10 +31,10 @@ table.insert(content, image {
 
 table.insert(content, book_title(title, author))
 
-if languages then
-    if full then
-        table.insert(content, language_links())
-    end
+if full then
+    var_and("languages", function()
+        table.insert(content, include("languages.lua") {})
+    end)
 end
 
 if full then

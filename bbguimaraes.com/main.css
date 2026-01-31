@@ -183,6 +183,12 @@ select:invalid, select option[value="x"]{
     padding-left: 1em;
 }
 
+.language-links {
+    float: right;
+    margin-top: 0;
+    margin-left: 2em;
+}
+
 details > summary {
     cursor: pointer;
 }
