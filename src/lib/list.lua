@@ -293,7 +293,7 @@ return include "master.lua" {
             nav_path = {{".", "lib"}, {nil, "reading list"}},
         },
         main({id = "reading-list"}, lines {
-            inline_tag("h1", nil, "reading list"),
+            h1 "reading list",
             par [[
 This is a list of every book I have ever read, as best as I have been able to
 keep track.  The list is in reverse chronological order, except for some unknown

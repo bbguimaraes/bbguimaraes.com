@@ -77,7 +77,10 @@ something to what <i>-n</i> adds:
     <b>print</b>
 }
 ]],
-    h2_link { "regular-expressions-revisited", "Regular expressions revisited" },
+    h2_link {
+        "regular-expressions-revisited",
+        "Regular expressions revisited",
+    },
     par [[
 Now, this is already fun.  We can make a program that does anything to each
 line of input (like using <i>ssh -Y</i>, a list of swear words and

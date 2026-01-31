@@ -16,7 +16,7 @@ local toc <const> = toc:new()
 local notes <const> = notes:new()
 
 local content <const> = lines {
-    inline_tag("h1", nil, "pictures"),
+    h1 "pictures",
     tag("aside", {class = "toc"}, lines {
         html "<i>Contents</i>",
         toc,

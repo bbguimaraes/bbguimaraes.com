@@ -44,7 +44,7 @@ local function generate_item(_, t)
     local id <const> = t.id
     local file_name <const> = t.file_name or t.id:gsub("-", "_")
     local info <const> = {}
-    table.insert(info, inline_tag("h2", nil, t.title))
+    table.insert(info, h2(t.title))
     table.move(t.info, 1, #t.info, 2, info)
     table.insert(info, inline_tag(
         "span", {class = "date"},

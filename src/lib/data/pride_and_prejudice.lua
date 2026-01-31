@@ -22,7 +22,7 @@ local img <const> = image {
 }
 
 local content <const> = lines {
-    tag("h3", nil, "The true philosopher"),
+    h3 "The true philosopher",
     blockquote(par [[
 To his wife he was very little otherwise indebted than as her ignorance and
 folly had contributed to his amusement.  This is not the sort of happiness which
@@ -94,7 +94,7 @@ any meaningful relationship is one of the central tenets of the book.  One
 cannot respect someone he does not trust to be honest.  This is brilliantly
 shown by counter-example in other marriages in the story.
 ]],
-    tag("h3", nil, "Three types of relationships"),
+    h3 "Three types of relationships",
     par [[
 Aristotle identifies in his <a href="/lib#the-nicomachean-ethics"><i>Ethics</i></a>,
 one of the greatest works of philosophy of all time, three types of
@@ -128,7 +128,7 @@ involves her in endless ruin, that her reputation is no less brittle than it is
 beautiful, and that she cannot be too much guarded in her behaviour towards the
 undeserving of the other sex.
 ]]),
-    tag("h3", nil, "The deepest love"),
+    h3 "The deepest love",
     par [[
 This juxtaposition of fragility and beauty is another mark of Austen's greatness
 as a novelist.  Writing at a time when feminism &mdash; the most
@@ -201,7 +201,7 @@ parte di Austen è quella di un pittore o un poeta: non formale, ma astratta, pi
 profonda e accattivante, esprimendo quello che si può sentire ma che non può
 essere facilmente razionalizzato.
 ]],
-    tag("h3", nil, "Il vero filosofo"),
+    h3 "Il vero filosofo",
     blockquote(par [[
 Verso la moglie provava un'unica e molto scarsa gratitudine, quella di aver
 contribuito a divertirlo con la sua ignoranza e la sua stupidità.  Non è certo
@@ -274,7 +274,7 @@ ogni rapporto significativo è uno dei principi fondamentali del libro.  Non si
 può rispettare qualcuno di cui non ci si fida per la sua onestà.  Questo è
 brillantemente dimostrato dal controesempio negli altri matrimoni della storia.
 ]],
-    tag("h3", nil, "Tre tipi di relazione"),
+    h3 "Tre tipi di relazione",
     par [[
 Aristotele identifica nella sua
 <a href="/lib#the-nicomachean-ethics"><i>Etica</i></a>, una delle più grandi
@@ -309,7 +309,7 @@ falso la conduce alla rovina eterna, che la sua reputazione non è meno fragile
 della sua bellezza, e che la cautela non sarà mai troppa nel modo di comportarsi
 verso l'indegnità dell'altro sesso.
 ]]),
-    tag("h3", nil, "L'amore più profondo"),
+    h3 "L'amore più profondo",
     par [[
 Questa giustapposizione di fragilità e bellezza è un altro segno della grandezza
 di Austen come romanziera.  Scrivendo in un momento in cui il femminismo — il
@@ -383,7 +383,7 @@ tema por Austen é a de um pintor ou poeta: não formal, mas abstrata, mais
 profunda e cativante, expressando o que pode ser sentido mas não facilmente
 racionalizado.
 ]],
-    tag("h3", nil, "O verdadeiro filósofo"),
+    h3 "O verdadeiro filósofo",
     blockquote(par [[
 À sua esposa ele era muito pouco debitado além da ignorância e estupidez dela
 terem contribuído para a diversão dele.  Esse não é o tipo de felicidade que um
@@ -455,7 +455,7 @@ virtudes e para qualquer relação significativa é um dos preceitos centrais do
 livro.  Não se pode respeitar alguém que não se confia ser honesto.  Isso é
 mostrado brilhantemente por contra-exemplo em outros casamentos na história.
 ]],
-    tag("h3", nil, "Três tipos de relação"),
+    h3 "Três tipos de relação",
     par [[
 Aristóteles identifica em sua <a href="/lib#the-nicomachean-ethics"><i>Ética</i></a>,
 uma das maiores obras de filosofia de todos os tempos, três tipos de relações,
@@ -487,7 +487,7 @@ envolve em infindável ruína, que sua reputação é tão quebradiça quanto é
 que ela não pode se guardar suficientemente em seu comportamento em relação aos
 indignos do sexo oposto.
 ]]),
-    tag("h3", nil, "O amor mais profundo"),
+    h3 "O amor mais profundo",
     par [[
 Essa justaposição de fragilidade e beleza é outra marca da grandeza de Austen
 como romancista.  Escrevendo num tempo em que o feminismo &mdash; o movimento

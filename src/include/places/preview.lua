@@ -31,7 +31,7 @@ var_and("description", function(x)
 end)
 
 table.insert(l, div({class = "gallery-title"}, lines {
-    inline_tag("h2", nil, title),
+    h2(title),
     html(var("timestamp")[2]),
 }))
 

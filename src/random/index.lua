@@ -4,7 +4,7 @@ return include "master.lua" {
     nav_path = {{nil, "random"}},
     main = lines {
         ul {
-            tag("h2", nil, link {
+            h2(link {
                 href = "the_jack/",
                 content = "The Jack (music blog)",
             }),

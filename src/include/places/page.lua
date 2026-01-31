@@ -74,7 +74,7 @@ return include "master.lua" {
     main = main({class = "post"}, lines {
         div({class = "w80"}, lines {
             include "nav.lua" {},
-            tag("h1", nil, title),
+            h1(title),
             generate_info(),
             table.unpack(l),
         }),

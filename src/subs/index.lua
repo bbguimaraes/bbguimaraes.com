@@ -8,7 +8,7 @@ return include "master.lua" {
         }),
         main(nil, lines {
             div({class = "w80"}, lines {
-                html "<h1>subs</h1>",
+                h1 "subs",
                 par [[
 Subscription manager.
 ]],

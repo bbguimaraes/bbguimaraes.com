@@ -16,10 +16,7 @@ local function generate_section(_, t)
             },
         },
         div(nil, lines {
-            inline_tag("h2", nil, link {
-                href = t.href,
-                content = t.title,
-            }),
+            h2(link { href = t.href, content = t.title }),
             par(inline_tag("i", nil, t.subtitle)),
             t.content,
         }),

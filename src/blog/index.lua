@@ -43,9 +43,12 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{nil, "blog"}},
     main = div({class = "blog"}, lines {
-        html "<h1>iffalse</h1>",
+        h1 "iffalse",
         html '<p><i>assert("this should not be happening");</i></p>',
-        html '<h2 id="posts"><a href="#posts">Posts</a></h2>',
+        inline_tag("h2", {id = "posts"}, link {
+            href = "#posts",
+            content = "Posts",
+        }),
         ul(util.imap(year_list, by_year)),
         h2_link { "tags", "Tags" },
         tag(
