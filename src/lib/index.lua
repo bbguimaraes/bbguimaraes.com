@@ -201,7 +201,7 @@ local function honorable(href, title_fmt, title, id, cover, author)
                     alt = "cover",
                     class = "image book-cover",
                 },
-                inline_tag("h3", nil, title_fmt),
+                h3(title_fmt),
                 inline_tag("span", nil, author),
             })),
     }

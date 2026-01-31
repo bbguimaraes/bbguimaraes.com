@@ -68,7 +68,7 @@ return include "master.lua" {
             controls = true,
             src = generator:generate_audio(var, video_file_name),
         },
-        inline_tag("h1", nil, title),
+        h1(title),
         div({class = "info"}, ul(info)),
         var("content", false) or nil,
     }),

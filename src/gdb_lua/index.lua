@@ -25,7 +25,7 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{nil, "gdb_lua"}},
     main = main(nil, lines {
-        html "<h1>gdb_lua</h1>",
+        h1 "gdb_lua",
         par [[
 A set of custom GDB commands that are useful when working with Lua programs.
 ]],

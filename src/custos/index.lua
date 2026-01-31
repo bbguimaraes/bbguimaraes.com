@@ -56,7 +56,7 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{nil, "custos"}},
     main = main(nil, lines {
-        html "<h1>custos</h1>",
+        h1 "custos",
         blockquote(lines {
             par [[
 Quis custodiet ipsos custodes?

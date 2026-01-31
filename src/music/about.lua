@@ -3,7 +3,7 @@ local img_class <const> = "hor-center image"
 local toc <const> = toc:new()
 
 local content <const> = lines {
-    inline_tag("h1", nil, "music"),
+    h1 "music",
     tag("aside", {class = "toc"}, lines {
         html "<i>Contents</i>",
         toc,

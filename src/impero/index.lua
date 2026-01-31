@@ -8,7 +8,7 @@ return include "master.lua" {
         }),
         main(nil, lines {
             div({class = "w80"}, lines {
-                html "<h1>impero</h1>",
+                h1 "impero",
                 par [[
 A graphical command executor, intended to be used via a keyboard shortcut.
 ]],

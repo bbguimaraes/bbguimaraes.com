@@ -25,7 +25,7 @@ return include "master.lua" {
     body_class_extra = "w80",
     nav_path = {{".", "blog"}, {nil, short_title}},
     main = main({class = "blog"}, lines {
-        inline_tag("h1", nil, title),
+        h1(title),
         inline_tag("p", nil, inline_tag("i", nil, var("timestamp")[2])),
         lines(var("content")),
         include "blog/tags.lua" {},

@@ -94,7 +94,7 @@ tampouco existe nada mais tormentador.
     text_tag("p", {lang = "ru"}, [[
 Кланяюсь вам, Фёдор Михайлович Достоевский.
 ]]),
-    inline_tag("h2", nil, "notas"),
+    h2 "notas",
     notes_pt,
 }
 

@@ -4,7 +4,7 @@ return include "master.lua" {
     body_class = "black-bg mono",
     nav_path = {{nil, "nngn"}},
     main = main(nil, lines {
-        html "<h1>nngn</h1>",
+        h1 "nngn",
         div({class = "main-video"}, lines {
             video {
                 controls = true,

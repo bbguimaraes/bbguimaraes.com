@@ -27,7 +27,7 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{nil, "machinatrix"}},
     main = main(nil, lines {
-        html "<h1>machinatrix</h1>",
+        h1 "machinatrix",
         div({class = "description"}, lines {
             tag("p", nil, html [[
 A very silly <a href="https://matrix.org">Matrix</a> bot

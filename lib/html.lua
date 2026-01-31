@@ -350,6 +350,12 @@ function code_tag:render(ctx)
     write_close_tag(out, name)
 end
 
+--- Shortcut for a simple inline text `<h1>`.
+function h1(x) return inline_tag:new("h1", nil, x) end
+--- Shortcut for a simple inline text `<h2>`.
+function h2(x) return inline_tag:new("h2", nil, x) end
+--- Shortcut for a simple inline text `<h3>`.
+function h3(x) return inline_tag:new("h3", nil, x) end
 --- Paragraph tag, renderer as a \ref text_tag.
 function par(content) return text_tag:new("p", nil, content) end
 --- Shortcut for \ref tag for a `<div>`.
@@ -745,6 +751,9 @@ return {
     inline_tag = function(...) return inline_tag:new(...) end,
     text_tag = function(...) return text_tag:new(...) end,
     code_tag = function(...) return code_tag:new(...) end,
+    h1 = h1,
+    h2 = h2,
+    h3 = h3,
     par = par,
     div = div,
     main = main,

@@ -60,8 +60,8 @@ return include "master.lua" {
     body_class = "black-bg mono",
     nav_path = {{"/nngn", "nngn"}, {nil, "screenshots"}, {nil, title}},
     main = main(nil, lines {
-        html "<h1>nngn</h1>",
-        inline_tag("h2", nil, "screenshots - " .. title),
+        h1 "nngn",
+        h2("screenshots - " .. title),
         table.unpack(content),
     }),
 }

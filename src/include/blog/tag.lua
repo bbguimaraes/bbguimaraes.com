@@ -16,7 +16,7 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{"..", "blog"}, {".", "tags"}, {nil, tag}},
     main = main({class = "blog"}, lines {
-        html(string.format("<h1>tag - %s</h1>", tag)),
+        h1("tag - " .. tag),
         ul(util.imap(page_link, var "pages")),
     }),
 }

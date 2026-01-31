@@ -37,7 +37,7 @@ return include "master.lua" {
     body_class = "black-bg mono w80",
     nav_path = {{"..", "blog"}, {nil, "tags"}},
     main = main({class = "blog"}, lines {
-        html("<h1>Tags</h1>"),
+        h1 "Tags",
         tag(
             "p", {class = "tags"},
             lines(util.imap(generate_tag, util.sorted(util.keys(tags))))),
