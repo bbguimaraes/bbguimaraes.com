@@ -6,15 +6,8 @@
     width: 62em;
 }
 
-.sections hr {
-    height: 2em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-}
-
 .sections section {
     width: 100%;
-    font-size: 110%;
 }
 
 .sections section a {
