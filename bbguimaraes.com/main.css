@@ -203,13 +203,21 @@ blockquote {
 }
 
 blockquote::before {
-    content: '“';
+    content: "";
+    background-image: url("/files/quote.svg");
+    background-repeat: no-repeat;
+    filter: invert(80%);
     font-size: 4em;
-    font-style: normal;
-    filter: brightness(40%);
     position: absolute;
-    top: -0.2em;
-    left: -0.4em;
+    z-index: -1;
+    top: -0.1em;
+    left: 0;
+    width: 1em;
+    height: 1em;
+}
+
+.black-bg blockquote::before {
+    filter: invert(20%);
 }
 
 pre {
