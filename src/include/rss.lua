@@ -25,7 +25,7 @@ local header <const> = [[
 <!ELEMENT code (#PCDATA)>
 <!ELEMENT i (#PCDATA)>
 <!ELEMENT em (#PCDATA)>
-<!ELEMENT p (#PCDATA|i|span|a)*>
+<!ELEMENT p (#PCDATA|i|span|a|em)*>
 <!ELEMENT span (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>
 <!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
