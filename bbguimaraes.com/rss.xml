@@ -17,7 +17,7 @@
 <!ELEMENT code (#PCDATA)>
 <!ELEMENT i (#PCDATA)>
 <!ELEMENT em (#PCDATA)>
-<!ELEMENT p (#PCDATA|i|span|a)*>
+<!ELEMENT p (#PCDATA|i|span|a|em)*>
 <!ELEMENT span (#PCDATA)>
 <!ELEMENT item (title, link, guid, pubDate, category+, description)>
 <!ATTLIST rss version CDATA #REQUIRED xmlns:atom CDATA #REQUIRED>
@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 01 Feb 2026 18:27:28 +0000</pubDate>
-        <lastBuildDate>Sun, 01 Feb 2026 18:27:28 +0000</lastBuildDate>
+        <pubDate>Sun, 22 Feb 2026 23:01:33 +0000</pubDate>
+        <lastBuildDate>Sun, 22 Feb 2026 23:01:33 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Giaveno</title>
+            <link>https://bbguimaraes.com/places/giaveno.html</link>
+            <guid>https://bbguimaraes.com/places/giaveno.html</guid>
+            <pubDate>Sat, 21 Feb 2026 00:00:00 GMT</pubDate>
+            <category>place</category>
+            <description>Milk. Raw milk, to be more specific — not only fresh, having been just recently extracted, but also not processed in any way to increase its longevity, such as pasteurizing (that is, boiling to eliminate any potentially harmful organisms). It is the closest you can get to milk straight out of a cow. For a long time I had been searching for it: I had managed to find a few distributors of <em>fresh</em> whole milk, which is already incomparably better not only in terms of taste, but especially of nutritional value (this is one of the reasons for my weekly peregrination to the nearby town of <span lang="it">Settimo Torinese</span>). But raw milk is very difficult to find.</description>
+        </item>
         <item>
             <title>Redesign</title>
             <link>https://bbguimaraes.com/blog/redesign.html</link>
