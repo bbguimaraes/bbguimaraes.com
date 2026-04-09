@@ -34,10 +34,21 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sat, 25 Apr 2026 20:34:45 +0000</pubDate>
-        <lastBuildDate>Sat, 25 Apr 2026 20:34:45 +0000</lastBuildDate>
+        <pubDate>Sat, 25 Apr 2026 20:35:08 +0000</pubDate>
+        <lastBuildDate>Sat, 25 Apr 2026 20:35:08 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Incomunicabilità</title>
+            <link>https://bbguimaraes.com/music/incomunicabilità.html</link>
+            <guid>https://bbguimaraes.com/music/incomunicabilità.html</guid>
+            <pubDate>Thu, 09 Apr 2026 19:59:58 GMT</pubDate>
+            <category>music</category>
+            <category>piano</category>
+            <category>short</category>
+            <category>original</category>
+            <description><p>music piano short original</p><p>Bruno Barcarol Guimarães</p><p>It's been a while since I last published some music.  But today I have something very unusual, in many ways: a composition of my own.</p></description>
+        </item>
         <item>
             <title>Giaveno</title>
             <link>https://bbguimaraes.com/places/giaveno.html</link>
