@@ -19,7 +19,7 @@ table.insert(path, link {
 })
 for _, t in ipairs(var("nav_path")) do
     table.insert(path, html "/")
-    local href, content = table.unpack(t)
+    local href <const>, content <const> = t[1], t[2]
     if href then
         table.insert(path, link {href = href, content = content})
     else
