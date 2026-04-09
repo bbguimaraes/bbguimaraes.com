@@ -60,7 +60,9 @@ return include "master.lua" {
         video {
             preload = "metadata",
             controls = true,
-            poster = generator:generate_image(var, "small", video_file_name),
+            poster = generator:generate_image(var, "small", video_file_name, {
+                time = var("poster", false),
+            }),
             sources = {video_url},
         },
         audio {
