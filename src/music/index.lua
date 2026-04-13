@@ -106,9 +106,15 @@ return include "master.lua" {
                     alt = "música · μουσική",
                 },
             }),
-            div({class = "w80 bottom"}, link {
-                href = "about.html",
-                content = "about this page",
+            div({class = "w80 bottom"}, lines {
+                link {
+                    href = "about.html",
+                    content = "about this page",
+                },
+                link {
+                    href = "scores.html",
+                    content = "scores",
+                },
             }),
         }),
         main(
