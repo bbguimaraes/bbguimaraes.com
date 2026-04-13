@@ -9,7 +9,6 @@ gli sembrò più dolce anche la morte
 ]]))
 
 return {
-    id = "caruso",
     title = "Caruso",
     author = "Lucio Dalla",
     timestamp = { 1763565776, "2025-11-19T15:22:56" },

@@ -34,8 +34,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sun, 22 Feb 2026 23:01:33 +0000</pubDate>
-        <lastBuildDate>Sun, 22 Feb 2026 23:01:33 +0000</lastBuildDate>
+        <pubDate>Sat, 25 Apr 2026 20:34:45 +0000</pubDate>
+        <lastBuildDate>Sat, 25 Apr 2026 20:34:45 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -326,7 +326,7 @@
             <category>guitar</category>
             <category>bass</category>
             <category>short</category>
-            <description><p>music guitar bass short</p><p>The Beatles</p><p>Day 24 without a musical instrument, I think the longest I've ever been without playing music since I was 15.  So here I am editing old, unfinished recordings to try to stay sane.</p></description>
+            <description><p>music guitar bass short</p><p>The beatles</p><p>Day 24 without a musical instrument, I think the longest I've ever been without playing music since I was 15.  So here I am editing old, unfinished recordings to try to stay sane.</p></description>
         </item>
         <item>
             <title>Suio</title>
@@ -813,7 +813,7 @@
             <category>music</category>
             <category>mandolin</category>
             <category>short</category>
-            <description><p>music mandolin short</p><p>traditional</p></description>
+            <description><p>music mandolin short</p></description>
         </item>
         <item>
             <title>Sheik's theme</title>
@@ -901,7 +901,7 @@
             <pubDate>Sun, 24 Apr 2016 00:00:00 GMT</pubDate>
             <category>music</category>
             <category>piano</category>
-            <description><p>music piano</p><p>Hugh Laurie</p></description>
+            <description><p>music piano</p><p>Hoagy Carmichael, Stuart Gorrell / Hugh Laurie</p></description>
         </item>
         <item>
             <title>I will survive</title>
