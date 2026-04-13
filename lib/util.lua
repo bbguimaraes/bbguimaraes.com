@@ -52,6 +52,15 @@ local function table_default_assign(f)
     })
 end
 
+--- Creates a sequence containing the values <tt>[b, e)</tt>.
+local function range(b, e)
+    local ret <const> = {}
+    for i = b, e - 1 do
+        table.insert(ret, i)
+    end
+    return ret
+end
+
 --- Clears the array part of a table.
 local function iclear(t)
     for i = 1, #t do
@@ -146,6 +155,21 @@ local function table_concat(t, x)
     return ret
 end
 
+--- Inserts an element into a sorted squence.
+local function insert_sorted(t, x, f)
+    local b, e = 1, #t + 1
+    while b < e do
+        local i <const> = (b + e) // 2
+        local y <const> = t[i]
+        if f(x, y) then
+            e = i
+        else
+            b = i + 1
+        end
+    end
+    table.insert(t, b, x)
+end
+
 --- Sorts \p t in place and returns it.
 local function sorted(t, f)
     table.sort(t, f)
@@ -204,6 +228,7 @@ function set:values() return keys(self) end
 return {
     table_default = table_default,
     table_default_assign = table_default_assign,
+    range = range,
     iclear = iclear,
     clear = clear,
     each = each,
@@ -214,6 +239,7 @@ return {
     filter = filter,
     ifilter = ifilter,
     table_concat = table_concat,
+    insert_sorted = insert_sorted,
     sorted = sorted,
     group_by_sorted = group_by_sorted,
     igroup_by_sorted = igroup_by_sorted,

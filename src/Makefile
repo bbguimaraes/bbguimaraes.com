@@ -16,6 +16,7 @@ FILES = \
 	machinatrix/index \
 	music/about \
 	music/index \
+	music/scores \
 	nngn/index \
 	nngn/screenshots/compute \
 	nngn/screenshots/engine \

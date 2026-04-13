@@ -30,6 +30,7 @@
 
 .header .bottom a {
     float: right;
+    margin-left: 0.5em;
 }
 
 .header .bottom::after {
@@ -140,4 +141,71 @@
     display: block;
     max-width: 580px;
     text-decoration: none;
+}
+
+.scores .index {
+    position: relative;
+    font-size: 150%;
+    text-align: center;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.scores .index img {
+    width: auto;
+    min-width: 500px;
+    max-width: 100%;
+}
+
+.scores .index span,
+.scores .index a {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+}
+
+.scores .index #letter-a { top: 53%; left: 35%; }
+.scores .index #letter-b { top: 46%; left: 41%; }
+.scores .index #letter-c { top: 39%; left: 47%; }
+.scores .index #letter-d { top: 33%; left: 53%; }
+.scores .index #letter-e { top: 26%; left: 59%; }
+.scores .index #letter-f { top: 20%; left: 65%; }
+.scores .index #letter-g { top: 12%; left: 71%; }
+.scores .index #letter-h { top: 67%; left: 35%; }
+.scores .index #letter-i { top: 60%; left: 41%; }
+.scores .index #letter-j { top: 53%; left: 47%; }
+.scores .index #letter-k { top: 46%; left: 53%; }
+.scores .index #letter-l { top: 39%; left: 59%; }
+.scores .index #letter-m { top: 33%; left: 65%; }
+.scores .index #letter-n { top: 26%; left: 71%; }
+.scores .index #letter-o { top: 20%; left: 77%; }
+.scores .index #letter-p { top: 12%; left: 83%; }
+.scores .index #letter-q { top: 79%; left: 35%; }
+.scores .index #letter-r { top: 73%; left: 41%; }
+.scores .index #letter-s { top: 67%; left: 47%; }
+.scores .index #letter-t { top: 60%; left: 53%; }
+.scores .index #letter-u { top: 53%; left: 59%; }
+.scores .index #letter-v { top: 46%; left: 65%; }
+.scores .index #letter-w { top: 39%; left: 71%; }
+.scores .index #letter-x { top: 33%; left: 77%; }
+.scores .index #letter-y { top: 26%; left: 83%; }
+.scores .index #letter-z { top: 20%; left: 89%; }
+
+.scores .description {
+    text-align: right;
+}
+
+.scores ul {
+    padding: 0 1em;
+    line-height: 1.75em;
+}
+
+.scores ul img {
+    vertical-align: text-bottom;
+    width: 24px;
+    margin-left: 0.1em;
+}
+
+.scores .score-title {
+    font-style: italic;
 }

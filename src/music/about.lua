@@ -65,6 +65,12 @@ try to keep them as close to the recording as I can, though what I play may not
 be 100% pre-written, so some details may escape me when I re-edit the sheet, but
 they should be close enough to be helpful.
 ]],
+    par [[
+There is also a <a href="scores.html">page</a> which contains a big list with
+all the scores I have published, including for pieces that I have not yet
+recorded, and maybe never will.  For those I have, there is a link pointing back
+to that recording, so you can hear/watch it being performed.
+]],
     toc:add_sub(3, "musescore", "musescore"),
     par [[
 I do all my music transcription and composition using <a
