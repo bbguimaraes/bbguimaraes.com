@@ -55,7 +55,8 @@ local function generate_item(_, t)
             generate.render(plain({"a"}, t.description))))
     end
     local attrs <const> = {
-        {"id", id}, {"class", "video"}, {"href", t.id .. ".html"},
+        {"id", id}, {"class", "video"},
+        {"href", url_escape(t.id .. ".html")},
         {"data-tags", table.concat(util.sorted(util.copy(t.tags)), ",")},
     }
     return generic_tag("a", attrs, lines {
