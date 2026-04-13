@@ -30,18 +30,7 @@ return {
     timestamp = { 1725725529, "2024-09-07T16:12:09" },
     duration = "1:45",
     poster = "1:00",
-    scores = {
-        link {
-            href = "/files/music/running_away.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/running_away.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"piano", "guitar", "bass", "short"},
     links = {
         youtube = "NiXynjq0hnw",

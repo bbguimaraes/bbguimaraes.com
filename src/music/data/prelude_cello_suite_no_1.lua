@@ -5,11 +5,7 @@ return {
     duration = "2:06",
     poster = "0:03",
     scores = {
-        link {
-            href = "https://imslp.org/wiki/6_Cello_Suites%2C_BWV_1007-1012_(Bach%2C_Johann_Sebastian)",
-            content = "score",
-            target = "_blank",
-        },
+        "https://imslp.org/wiki/6_Cello_Suites%2C_BWV_1007-1012_(Bach%2C_Johann_Sebastian)",
     },
     tags = {"mandolin"},
     links = {

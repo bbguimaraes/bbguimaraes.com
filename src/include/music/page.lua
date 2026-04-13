@@ -18,14 +18,8 @@ local video_url <const> = file_url(video_file_name)
 local info <const> = {}
 table.insert(info, inline_tag("i", nil, var("timestamp")[2]))
 
-var_and("info", function(x)
-    table.move(x, 1, #x, #info + 1, info)
-end)
-
-if type(scores) == "table" then
-    table.move(scores, 1, #scores, #info + 1, info)
-elseif scores then
-    table.insert(info, lines {
+local function generate_default_scores()
+    return  {
         link {
             href = file_url(file_name .. ".pdf"),
             content = "score",
@@ -33,10 +27,46 @@ elseif scores then
         },
         link {
             href = file_url(file_name .. ".mscz"),
-            content = "src",
+            content = "source",
             target = "_blank",
         },
-    })
+    }
+end
+
+local function generate_scores(dst, t)
+    local ret <const> = {}
+    local n_scores, n_sources = 0, 0
+    for _, x in ipairs(scores) do
+        local ext <const> = path.ext(x)
+        if not x:match("://") then
+            x = file_url(DIR, x)
+        end
+        if ext == "mscz" then
+            table.insert(ret, link {
+                href = x,
+                content = string.format("source%d", n_scores),
+            })
+            n_sources = n_sources + 1
+        else
+            table.insert(ret, link {
+                href = x,
+                content = string.format("score%d", n_scores),
+            })
+            n_scores = n_scores + 1
+        end
+    end
+    return ret
+end
+
+var_and("info", function(x)
+    table.move(x, 1, #x, #info + 1, info)
+end)
+
+if type(scores) == "table" then
+    local t <const> = generate_scores(info, scores)
+    table.move(t, 1, #t, #info + 1, info)
+elseif scores then
+    table.insert(info, lines(generate_default_scores()))
 end
 
 var_and("links", function()

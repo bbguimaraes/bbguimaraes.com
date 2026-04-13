@@ -11,6 +11,7 @@ return {
     timestamp = { 1499299200, "2017-07-06T00:00:00" },
     duration = "0:40",
     poster = "0:03",
+    scores = true,
     tags = {"piano"},
     links = {
         youtube = "8AnQZy7ErP4",

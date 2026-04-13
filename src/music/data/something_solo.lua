@@ -42,18 +42,7 @@ return {
     timestamp = { 1707784486, "2024-02-13T00:34:46" },
     duration = "0:37",
     poster = "0:07.8",
-    scores = {
-        link {
-            href = "/files/music/something_solo.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/something_solo.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"guitar", "bass", "short"},
     links = {
         youtube = "mCWKgva04ms",

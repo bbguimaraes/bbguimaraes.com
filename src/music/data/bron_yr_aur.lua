@@ -10,18 +10,7 @@ return {
     timestamp = { 1692133997, "2023-08-15T21:13:17" },
     duration = "1:48",
     poster = "0:10",
-    scores = {
-        link {
-            href = "/files/music/bron_yr_aur.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/bron_yr_aur.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"guitar"},
     links = {
         youtube = "PjMn1GCGcSE",

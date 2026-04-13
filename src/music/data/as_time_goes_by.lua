@@ -43,18 +43,7 @@ return {
     timestamp = { 1775806426, "2026-04-10T07:33:46" },
     duration = "0:31",
     poster = "0:21.7",
-    scores = {
-        link {
-            href = "/files/music/as_time_goes_by.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/as_time_goes_by.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"piano", "short"},
     links = {
         facebook = "reel/2109440246500116",
