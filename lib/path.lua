@@ -18,6 +18,11 @@ local function base(path)
     return path:sub((i or 0) + 1)
 end
 
+--- Returns the file extension part of a path.
+local function ext(path)
+    return path:match("%.([^.]+)$")
+end
+
 --- Replaces the part after the final \p . in \p path.
 local function replace_extension(path, ext)
     return (path:gsub("%.[^.]+$", ext))
@@ -87,6 +92,7 @@ return {
     SEP = SEP,
     dir = dir,
     base = base,
+    ext = ext,
     replace_extension = replace_extension,
     prepend_extension = prepend_extension,
     join = join,

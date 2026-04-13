@@ -43,18 +43,7 @@ return {
     timestamp = { 1739287293, "2025-02-11T15:21:33" },
     duration = "1:07",
     poster = "0:24",
-    scores = {
-        link {
-            href = "/files/music/lonely_stranger.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/lonely_stranger.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"guitar", "vocals", "short"},
     links = {
         youtube = "HwzKzfG0Wn8",

@@ -45,11 +45,7 @@ return {
     duration = "2:30",
     poster = "0:39",
     scores = {
-        link {
-            href = "https://imslp.org/wiki/Preludes%2C_Op.28_(Chopin%2C_Fr%C3%A9d%C3%A9ric)",
-            content = "score",
-            target = "_blank",
-        },
+        "https://imslp.org/wiki/Preludes%2C_Op.28_(Chopin%2C_Fr%C3%A9d%C3%A9ric)",
     },
     tags = {"piano"},
     links = {

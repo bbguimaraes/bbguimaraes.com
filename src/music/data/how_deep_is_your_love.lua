@@ -59,18 +59,7 @@ return {
     timestamp = { 1723402285, "2024-08-11T18:51:25" },
     duration = "1:25",
     poster = "0:57.5",
-    scores = {
-        link {
-            href = "/files/music/how_deep_is_your_love.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/how_deep_is_your_love.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"guitar", "bass", "short"},
     links = {
         youtube = "B09bdzJT7Vw",

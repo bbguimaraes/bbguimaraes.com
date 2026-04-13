@@ -43,18 +43,7 @@ return {
     timestamp = { 1775764798, "2026-04-09T19:59:58" },
     duration = "0:25",
     poster = "0:06",
-    scores = {
-        link {
-            href = "/files/music/incomunicabilità.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/incomunicabilità.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"piano", "short", "original"},
     links = {
         facebook = "bruno.barcarolguimaraes/posts/pfbid0Ss6NxLyTtFp672DejXcaDM1UzEW3S6KvAABkuJ9Q6RmqpahynpMABua4bctXxW6ql",

@@ -108,6 +108,31 @@ local function ins_map(f, t)
     return ret
 end
 
+--- Keeps in table \p t only the elements for which \p f returns \p true.
+local function filter(f, t)
+    for k, v in pairs(t) do
+        if not f(k, v) then
+            t[k] = nil
+        end
+    end
+end
+
+--- Keeps in sequence \p t only the elements for which \p f returns \p true.
+local function ifilter(f, t)
+    local n <const>, dst = #t, 1
+    for i, x in ipairs(t) do
+        if f(i, x) then
+            if i ~= dst then
+                t[dst] = x
+            end
+            dst = dst + 1
+        end
+    end
+    for i = dst, n do
+        t[i] = nil
+    end
+end
+
 --- Similar to the Lua function, but generates a table.
 local function table_concat(t, x)
     local ret <const>, next_x = {}
@@ -186,6 +211,8 @@ return {
     map = map,
     imap = imap,
     ins_map = ins_map,
+    filter = filter,
+    ifilter = ifilter,
     table_concat = table_concat,
     sorted = sorted,
     group_by_sorted = group_by_sorted,

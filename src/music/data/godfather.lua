@@ -12,18 +12,7 @@ return {
     timestamp = { 1739694078, "2025-02-16T08:21:18" },
     duration = "0:46",
     poster = "0:10",
-    scores = {
-        link {
-            href = "/files/music/godfather.pdf",
-            content = "score",
-            target = "_blank",
-        },
-        link {
-            href = "/files/music/godfather.mscz",
-            content = "source",
-            target = "_blank",
-        },
-    },
+    scores = true,
     tags = {"mandolin", "piano", "short"},
     links = {
         youtube = "Xk7tTGdts_E",

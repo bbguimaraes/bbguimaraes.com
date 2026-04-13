@@ -12,6 +12,7 @@ return {
     timestamp = { 1502582400, "2017-08-13T00:00:00" },
     duration = "2:45",
     poster = "0:18",
+    scores = true,
     tags = {"bass", "short"},
     links = {
         youtube = "6m_apoFkUos",
