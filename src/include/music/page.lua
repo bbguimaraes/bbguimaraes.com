@@ -45,12 +45,14 @@ local function generate_scores(dst, t)
             table.insert(ret, link {
                 href = x,
                 content = string.format("source%d", n_scores),
+                target = "_blank",
             })
             n_sources = n_sources + 1
         else
             table.insert(ret, link {
                 href = x,
                 content = string.format("score%d", n_scores),
+                target = "_blank",
             })
             n_scores = n_scores + 1
         end

@@ -28,6 +28,7 @@ local function generate_link(icon, title, alt, ...)
     end
     return link {
         href = url,
+        target = "_blank",
         content = image {
             src = icon,
             title = title,
