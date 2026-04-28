@@ -273,7 +273,6 @@ return {
     links = {
         {"website", "https://pompeiisites.org"},
         map = "way/26707240",
-        mastodon = "112823742579554325",
         facebook = "bruno.barcarolguimaraes/posts/pfbid0sJa6quxoCxBkeyMa4WpCANcQJ6owY6MtD51xkQxiEtyb8Mf47KhMQCDw3k85dmwl",
         instagram = "C9rd9nhqohB",
     },

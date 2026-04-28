@@ -98,7 +98,6 @@ return {
     images = images,
     links = {
         map = "node/1474276095",
-        mastodon = "112050341002664985",
         facebook = "bruno.barcarolguimaraes/posts/pfbid03K9Ve2mq1ucTp6po2Jhm5HjFW42aWUSGhBX5YNkJomWmN8VJDwEVPZ8YZt1pwMZTl",
         instagram = "C4LvXWGKNr9",
     },

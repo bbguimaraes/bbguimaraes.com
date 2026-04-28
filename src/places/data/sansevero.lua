@@ -102,7 +102,6 @@ return {
     links = {
         {"website", "https://www.museosansevero.it"},
         map = "way/123977918",
-        mastodon = "113148647300428162",
         facebook = "bruno.barcarolguimaraes/posts/pfbid0Mx4YnAn1fjj2XkkRRkmv1ybdSoTbffrCcmoHpUUw6YgBVVt2Y1KNpijWtiuKND22l",
         instagram = "C__O5DXqwmV",
     },

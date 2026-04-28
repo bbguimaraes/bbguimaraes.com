@@ -16,7 +16,6 @@ return {
     tags = {"mandolin", "piano", "short"},
     links = {
         youtube = "Xk7tTGdts_E",
-        mastodon = "114012678262351830",
         facebook = "reel/1202961127827273",
         instagram = "DGIJ2vBonUX",
     },

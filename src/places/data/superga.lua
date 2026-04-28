@@ -459,7 +459,6 @@ return {
     links = {
         {"website", "https://www.basilicadisuperga.org"},
         map = "relation/13136043",
-        mastodon = "115996946549323092",
         facebook = "bruno.barcarolguimaraes/posts/pfbid029MHsjQzdoffgBu6QsFLHE1Bphxnp4sCH2wVxuu27QTfK5KEZyXjKuHJw2pJabSail",
         instagram = "DUOjyBHDMky",
 

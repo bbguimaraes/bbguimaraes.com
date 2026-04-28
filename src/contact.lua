@@ -32,13 +32,6 @@ local sections <const> = {{
                 content = "@bbguimaraes:matrix.bbguimaraes.com",
             },
         },
-        lines {
-            html "mastodon:",
-            link {
-                href = "https://mastodon.bbguimaraes.com/@bbguimaraes",
-                content = " @bbguimaraes@bbguimaraes.com",
-            },
-        },
     },
 }, {
     items = {

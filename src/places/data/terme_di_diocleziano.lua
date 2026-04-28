@@ -312,7 +312,6 @@ return {
     links = {
         {"website", "https://museonazionaleromano.beniculturali.it"},
         map = "way/201568922",
-        mastodon = "113669983914659352",
         facebook = "bruno.barcarolguimaraes/posts/pfbid02hfS5YTTN8K7hsbLdcST2fk3hMEfDxi5NriBh3dG8tbgDYyk41ABvYeJLu2UGSDVzl",
         instagram = "DDsTIopIDzZ",
     },

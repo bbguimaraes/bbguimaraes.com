@@ -34,7 +34,6 @@ return {
     tags = {"piano", "guitar", "bass", "short"},
     links = {
         youtube = "NiXynjq0hnw",
-        mastodon = "113097433962533086",
         facebook = "reel/863597932105968",
         instagram = "C_n8Ek4K2dq",
     },

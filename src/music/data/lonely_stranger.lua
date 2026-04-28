@@ -47,7 +47,6 @@ return {
     tags = {"guitar", "vocals", "short"},
     links = {
         youtube = "HwzKzfG0Wn8",
-        mastodon = "113986183293359442",
         facebook = "reel/625871430137895",
         instagram = "DF8I752IhKn/",
     },
