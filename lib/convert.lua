@@ -1,18 +1,22 @@
 local path <const> = require "lib.path"
 
 local function generate_image(dst, src, args)
+    local cmd <const> = {}
     if src:match("%.mp4$") then
-        assert(os.execute(string.format(
-            "ffmpeg"
-                .. " -loglevel warning -ss %s -i %s"
-                .. " -vf scale=%s:force_original_aspect_ratio=decrease"
-                .. " -update 1 -vframes 1 %s",
-            args.time or "0:00", src, args.size, dst)))
+        table.insert(cmd,
+            string.format(
+                "ffmpeg"
+                    .. " -loglevel warning -ss %s -i %s"
+                    .. " -update 1 -vframes 1"
+                    .. " -vf scale=%s:force_original_aspect_ratio=decrease",
+                args.time or "0:00", src, args.size))
     else
-        assert(os.execute(string.format(
-            "magick convert -auto-orient -resize '%s>' %s %s",
-            args.size, src, dst)))
+        table.insert(cmd, string.format(
+            "magick convert -auto-orient -resize '%s>' %s",
+            args.size, src))
     end
+    table.insert(cmd, dst)
+    assert(os.execute(table.concat(cmd, " ")))
 end
 
 local function generate_audio(dst, src)
