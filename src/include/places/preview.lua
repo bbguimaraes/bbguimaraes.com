@@ -14,16 +14,15 @@ var_and("images", function(x)
         div({class = "gallery"}, lines(util.imap(function(_, x)
             return image {
                 alt = x.alt,
-                src = generator:generate_image(
-                    var, "tiny", x.path, {time = x.poster}),
+                src = generator:generate_image(var, "tiny", x.path, x),
             }
         end, x))))
     if #x ~= 0 then
+        x = x[1]
         table.insert(l, image {
             class = "main-img",
             alt = title,
-            src = generator:generate_image(
-                var, "small", x[1].path, {time = x.poster}),
+            src = generator:generate_image(var, "small", x.path, x),
         })
     end
 end)
