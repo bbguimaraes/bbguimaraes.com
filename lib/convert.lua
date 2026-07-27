@@ -10,10 +10,17 @@ local function generate_image(dst, src, args)
                     .. " -update 1 -vframes 1"
                     .. " -vf scale=%s:force_original_aspect_ratio=decrease",
                 args.time or "0:00", src, args.size))
+        if args.crop then
+            table.insert(cmd, "-vf crop=" .. args.crop)
+        end
     else
+        table.insert(cmd, "magick convert " .. src)
+        if args.crop then
+            table.insert(cmd, "-gravity Center -crop " .. args.crop)
+        end
         table.insert(cmd, string.format(
-            "magick convert -auto-orient -resize '%s>' %s",
-            args.size, src))
+            "-auto-orient -resize '%s>'",
+            args.size))
     end
     table.insert(cmd, dst)
     assert(os.execute(table.concat(cmd, " ")))
