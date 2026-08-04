@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 27 Jul 2026 10:42:19 +0000</pubDate>
-        <lastBuildDate>Mon, 27 Jul 2026 10:42:19 +0000</lastBuildDate>
+        <pubDate>Tue, 04 Aug 2026 23:30:04 +0000</pubDate>
+        <lastBuildDate>Tue, 04 Aug 2026 23:30:04 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>On immigration</title>
+            <link>https://bbguimaraes.com/writing/on-migration.html</link>
+            <guid>https://bbguimaraes.com/writing/on-migration.html</guid>
+            <pubDate>Sun, 02 Aug 2026 22:36:59 GMT</pubDate>
+            <category>writing</category>
+            <description><i>A specter is haunting Europe</i> once again.  For a time it hid behind yet another of its ever-changing disguises, festering and growing, but its devastating effects have become increasingly evident, and impossible to ignore.</description>
+        </item>
         <item>
             <title>Mercuzio &amp; Tebaldo</title>
             <link>https://bbguimaraes.com/pictures/mercuzio-tebaldo.html</link>

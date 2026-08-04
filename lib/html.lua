@@ -4,6 +4,7 @@ local util <const> = require "lib.util"
 local URL_ESCAPES <const> = {
     ["à"] = "%%c3%%a0",
     ["á"] = "%%c3%%a1",
+    ["ã"] = "%%c3%%a3",
     ["ô"] = "%%c3%%b4",
 }
 
