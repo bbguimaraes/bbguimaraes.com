@@ -170,12 +170,18 @@ select:invalid, select option[value="x"]{
     font-style: italic;
 }
 
-.toc {
-    float: right;
-    border: 1px solid;
-    margin-left: 1em;
+aside, .toc {
+    border: 1px solid var(--text-color-base);
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
     margin-bottom: 1em;
-    padding: 1em;
+}
+
+.toc, .language-links {
+    float: right;
+    margin-top: 0;
+    margin-left: 1em;
 }
 
 .toc ul {
@@ -184,9 +190,7 @@ select:invalid, select option[value="x"]{
 }
 
 .language-links {
-    float: right;
-    margin-top: 0;
-    margin-left: 2em;
+    margin-bottom: 0;
 }
 
 details > summary {
