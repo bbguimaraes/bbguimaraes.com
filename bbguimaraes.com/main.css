@@ -251,6 +251,12 @@ figure .image {
     margin-bottom: 0;
 }
 
+.row {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
 .no-margin {
     margin: 0;
 }
