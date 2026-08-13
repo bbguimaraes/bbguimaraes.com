@@ -38,6 +38,14 @@
     margin: 0;
 }
 
+.gallery figcaption {
+    font-size: 80%;
+    min-width: 80%;
+    max-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .gallery .gallery-item .main-img {
     z-index: 0;
     display: block;
