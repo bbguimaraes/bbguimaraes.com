@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Tue, 04 Aug 2026 23:30:04 +0000</pubDate>
-        <lastBuildDate>Tue, 04 Aug 2026 23:30:04 +0000</lastBuildDate>
+        <pubDate>Fri, 14 Aug 2026 06:02:37 +0000</pubDate>
+        <lastBuildDate>Fri, 14 Aug 2026 06:02:37 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Partial solar eclipse</title>
+            <link>https://bbguimaraes.com/pictures/eclipse-2026.html</link>
+            <guid>https://bbguimaraes.com/pictures/eclipse-2026.html</guid>
+            <pubDate>Wed, 12 Aug 2026 20:21:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>Following the bad news about the weather at dawn, there were good news, then more bad news, then more good news.  They day started with heavy rain and complete cloud cover, and the forecast for the evening was of dense clouds all over the western Alpine arc (these are all accepted facts of life for the calloused <i lang="it">torinese</i>, in case you don't know).</description>
+        </item>
         <item>
             <title>On immigration</title>
             <link>https://bbguimaraes.com/writing/on-migration.html</link>
