@@ -66,18 +66,6 @@ this planet.  Writing about those experiences makes me learn even more, and
 serves as a lasting memory — <i lang="la">verba volant, scripta manent</i>.
 ]],
 }, {
-    href = "lib",
-    title = "literature",
-    subtitle = "reading lists, book reviews, publications",
-    image = file_url("lib", "header_small.jpg"),
-    content = par [[
-Books have always been my closest companions, and I've been a voracious reader
-from infancy.  There is nothing like the world of literature, where we can
-“abstract ourselves from our own petty fleeting span of time, and give ourselves
-up with our whole mind to what is vast, what is eternal, what we share with
-better men than ourselves” (Seneca, <i lang="la">De brevitate vitae</i>).
-]],
-}, {
     href = "writing",
     title = "writing",
     subtitle = "essays, divagations, encomia, diatribes",
@@ -101,6 +89,18 @@ Recently I decided what was really lacking in my life was yet another activity
 which demands a lifetime to master, to obsess over and occupy all the free time
 that is already completely occupied by all my other interests.  So I got myself
 a camera.
+]],
+}, {
+    href = "lib",
+    title = "literature",
+    subtitle = "reading lists, book reviews, publications",
+    image = file_url("lib", "header_small.jpg"),
+    content = par [[
+Books have always been my closest companions, and I've been a voracious reader
+from infancy.  There is nothing like the world of literature, where we can
+“abstract ourselves from our own petty fleeting span of time, and give ourselves
+up with our whole mind to what is vast, what is eternal, what we share with
+better men than ourselves” (Seneca, <i lang="la">De brevitate vitae</i>).
 ]],
 }, {
     href = "contact.html",
