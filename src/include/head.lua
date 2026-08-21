@@ -1,5 +1,4 @@
 local generate <const> = require "lib.generate"
-local path <const> = require "lib.path"
 
 local ret <const> = {}
 table.insert(ret, html([[
@@ -18,8 +17,7 @@ for _, x in ipairs(var("js", {})) do
 end
 
 var_and("og", function(t)
-    t = generate.load(path.join("src", "include", "og.lua"), t)
-    table.insert(ret, indent(1, t))
+    table.insert(ret, indent(1, include("og.lua")(t)))
 end)
 
 var_and("head_extra", function(extra)
