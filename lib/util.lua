@@ -1,3 +1,6 @@
+local function identity(x) return x end
+local function identity_value(_, x) return x end
+
 local defer <const> = {}
 setmetatable(defer, {__index = defer})
 
@@ -124,10 +127,14 @@ local function filter(f, t)
             t[k] = nil
         end
     end
+    return t
 end
 
 --- Keeps in sequence \p t only the elements for which \p f returns \p true.
 local function ifilter(f, t)
+    if t == nil then
+        f, t = identity_value, f
+    end
     local n <const>, dst = #t, 1
     for i, x in ipairs(t) do
         if f(i, x) then
@@ -140,6 +147,7 @@ local function ifilter(f, t)
     for i = dst, n do
         t[i] = nil
     end
+    return t
 end
 
 --- Similar to the Lua function, but generates a table.

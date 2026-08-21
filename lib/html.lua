@@ -57,6 +57,9 @@ local function render(x, ctx)
 end
 
 local function render_simple(x)
+    if x == nil then
+        return
+    end
     if type(x) == "function" then
         x = x()
     end
@@ -94,9 +97,11 @@ local function write_attr_common(ctx, k, v)
     local out <const> = ctx.out
     out:write(" ")
     out:write(k)
-    out:write('="')
-    out:write(v)
-    out:write('"')
+    if v then
+        out:write('="')
+        out:write(v)
+        out:write('"')
+    end
 end
 
 --- Writes the attribute \p k from table \t, if it exists.
@@ -300,6 +305,8 @@ function generic_tag:render(ctx)
         out:write("\n")
         str.write_indent(ctx)
         write_close_tag(out, name)
+    elseif name:sub(1, 1) == "!" then
+        out:write(">")
     else
         out:write(" />")
     end
@@ -386,6 +393,8 @@ function code_tag:render(ctx)
     write_close_tag(out, name)
 end
 
+--- Shortcut for HTML `<!doctype>`.
+local doctype <const> = generic_tag:new("!doctype", {{"html"}})
 --- Shortcut for a simple inline text `<h1>`.
 function h1(x) return inline_tag:new("h1", nil, x) end
 --- Shortcut for a simple inline text `<h2>`.
@@ -790,6 +799,7 @@ return {
     inline_tag = function(...) return inline_tag:new(...) end,
     text_tag = function(...) return text_tag:new(...) end,
     code_tag = function(...) return code_tag:new(...) end,
+    doctype = doctype,
     h1 = h1,
     h2 = h2,
     h3 = h3,

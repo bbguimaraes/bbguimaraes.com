@@ -1,31 +1,25 @@
-local generate <const> = require "lib.generate"
-
 local ret <const> = {}
-table.insert(ret, html([[
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>]] ..  var "title" .. "</title>"))
 
 for _, x in ipairs(var("css", {})) do
-    table.insert(ret, html([[
-    <link rel="stylesheet" type="text/css" href="]] .. x .. [[" />]]))
+    table.insert(ret, generic_tag("link", {
+        {"rel", "stylesheet"}, {"type", "text/css"}, {"href", x},
+    }))
 end
 for _, x in ipairs(var("js", {})) do
-    table.insert(ret, html([[
-    <script type="module" src="]] .. x .. [["></script>]]))
+    table.insert(ret, generic_inline_tag("script", {
+        {"type", "module"}, {"src", x},
+    }, ""))
 end
 
-var_and("og", function(t)
-    table.insert(ret, indent(1, include("og.lua")(t)))
-end)
+var_and("og", function(x) table.insert(ret, include("og.lua")(x)) end)
+var_and("head_extra", function(x) table.insert(ret, x) end)
 
-var_and("head_extra", function(extra)
-    table.insert(ret, indent(1, extra))
-end)
-
-table.insert(ret, html [[
-</head>
-]])
-
-return lines(ret)
+return tag("head", nil, lines {
+    generic_tag("meta", {{"charset", "utf-8"}}),
+    generic_tag("meta", {
+        {"name", "viewport"},
+        {"content", "width=device-width, initial-scale=1"},
+    }),
+    inline_tag("title", nil, var "title"),
+    table.unpack(ret),
+})
