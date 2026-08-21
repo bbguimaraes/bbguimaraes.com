@@ -83,6 +83,10 @@ function env:var_and(k, f)
     end
 end
 
+function env:var_or(k, f)
+    return top(self)[k] or f(v)
+end
+
 function env:set_var(k, v)
     self.vars[#self.vars][k] = v
 end
@@ -104,7 +108,10 @@ end
 
 local function include(env, file_env, name)
     return function(...)
-        local file <const> = path.clean(path.join("src", "include", name))
+        local file = name
+        if not util.exists(file) then
+            file = env:var("include_path")(file)
+        end
         if not util.exists(file) then
             print_stack(env, name, file)
         end
