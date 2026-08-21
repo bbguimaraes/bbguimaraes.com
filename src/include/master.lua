@@ -1,6 +1,6 @@
 local ret <const> = {}
 table.insert(ret, html([[
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="]] .. var("lang", "en") .. [[">
 ]]))
 table.insert(ret, indent(1, include "head.lua" {}))
