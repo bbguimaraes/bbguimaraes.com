@@ -1,12 +1,15 @@
 .sections {
-    padding-top: 2em;
+    margin-top: 4em;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    width: 62em;
+    width: 66em;
 }
 
 .sections section {
+    display: flex;
+    align-items: center;
+    gap: 2em;
     width: 100%;
 }
 
@@ -18,7 +21,6 @@
     box-sizing: border-box;
     margin-top: 0;
     margin-bottom: 0;
-    max-width: 100%;
     width: 480px;
     height: 320px;
     object-fit: cover;
@@ -30,30 +32,42 @@
     margin-bottom: -0.25em;
 }
 
-@media(max-width: 1000px) {
+.sections section :last-child {
+    margin-block-end: 0;
+}
+
+.sections hr {
+    margin: 4em auto;
+}
+
+@media(max-width: 999px) {
+    .sections {
+        margin-top: 2em;
+    }
+
     .sections section {
-        max-width: 80ch;
+        flex-direction: column;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 1em;
     }
 
     .sections section .section-header img {
-        margin-bottom: 0.5em;
+        max-width: 100%;
+    }
+
+    .sections hr {
+        margin: 2em auto;
     }
 }
 
 @media(min-width: 1000px) {
-    section:nth-of-type(odd) .section-header {
-        float: left;
-        margin-right: 2em;
+    section:nth-of-type(even) {
+        flex-direction: row-reverse;
     }
 
-    section:nth-of-type(even) .section-header {
-        float: right;
-        margin-left: 2em;
-    }
-
-    section::after {
-        content: "";
-        display: block;
-        clear: both;
+    section:nth-of-type(odd) {
+        flex-direction: row;
     }
 }
