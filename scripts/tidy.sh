@@ -1,6 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
+TIDY_ARGS=(
+    -quiet
+    -errors
+    --warn-proprietary-attributes=no
+)
+
+filter() {
+    grep --invert-match \
+        --regexp 'Warning: <video> proprietary attribute "loading"' \
+        --regexp 'Warning: <video> proprietary attribute "muted"' \
+        || true
+}
+
 if [[ "$#" -eq 0 ]]; then
     set -- $(find \
         bbguimaraes.com/ \
@@ -8,7 +21,8 @@ if [[ "$#" -eq 0 ]]; then
     )
 fi
 for f; do
-    if ! out=$(tidy -quiet -errors "$f" 2>&1); then
-        printf '%s\n%s\n' "$f" "$out"
+    if ! out=$(tidy "${TIDY_ARGS[@]}" "$f" 2>&1); then
+        echo "$f"
+        filter <<< $out
     fi
 done
