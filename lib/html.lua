@@ -3,6 +3,7 @@ local str <const> = require "lib.str"
 local util <const> = require "lib.util"
 
 local URL_ESCAPES <const> = {
+    ["\n"] = "%%0a",
     ["à"] = "%%c3%%a0",
     ["á"] = "%%c3%%a1",
     ["ã"] = "%%c3%%a3",
@@ -28,6 +29,14 @@ local function url_unescape(x)
         x = x:gsub(v, k)
     end
     return x
+end
+
+local function url_encode(path, req)
+    local r <const> = {}
+    for _, x in ipairs(req) do
+        table.insert(r, string.format("%s=%s", x[1], url_escape(x[2])))
+    end
+    return string.format("%s?%s", url_escape(path), table.concat(r, "&"))
 end
 
 local function is_plain(ctx, name)
@@ -790,6 +799,7 @@ end
 return {
     url_escape = url_escape,
     url_unescape = url_unescape,
+    url_encode = url_encode,
     str = function(...) return html_str:new(...) end,
     html = function(...) return html:new(...) end,
     plain = function(...) return plain:new(...) end,
