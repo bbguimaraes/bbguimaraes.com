@@ -114,6 +114,7 @@ Personal information, other places to find me, about this page, etc.
 
 return include "master.lua" {
     title = "bbguimaraes.com",
+    title_suffix = false,
     og = {
         type = "website",
         title = "bbguimaraes.com",

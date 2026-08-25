@@ -1,3 +1,5 @@
+local util <const> = require "lib.util"
+
 local ret <const> = {}
 
 for _, x in ipairs(var("css", {})) do
@@ -20,6 +22,9 @@ return tag("head", nil, lines {
         {"name", "viewport"},
         {"content", "width=device-width, initial-scale=1"},
     }),
-    inline_tag("title", nil, var "title"),
+    inline_tag("title", nil, table.concat(util.ifilter {
+        var "title",
+        var("title_suffix", false),
+    }), ""),
     table.unpack(ret),
 })
