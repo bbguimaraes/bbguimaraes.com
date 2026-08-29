@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Fri, 14 Aug 2026 06:02:37 +0000</pubDate>
-        <lastBuildDate>Fri, 14 Aug 2026 06:02:37 +0000</lastBuildDate>
+        <pubDate>Sat, 29 Aug 2026 17:48:28 +0000</pubDate>
+        <lastBuildDate>Sat, 29 Aug 2026 17:48:28 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Serata flamenco, Reggia di Venaria Reale</title>
+            <link>https://bbguimaraes.com/pictures/venaria-flamenco.html</link>
+            <guid>https://bbguimaraes.com/pictures/venaria-flamenco.html</guid>
+            <pubDate>Fri, 28 Aug 2026 19:30:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>An evening of music, dance, and immense beauty at <i lang="it">Reggia di Venaria Reale</i>.</description>
+        </item>
         <item>
             <title>Partial solar eclipse</title>
             <link>https://bbguimaraes.com/pictures/eclipse-2026.html</link>
