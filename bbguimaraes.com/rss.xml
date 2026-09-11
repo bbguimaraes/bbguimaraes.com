@@ -13,9 +13,9 @@
 <!ELEMENT generator (#PCDATA)>
 <!ELEMENT guid (#PCDATA)>
 <!ELEMENT category (#PCDATA)>
-<!ELEMENT a (#PCDATA|code)*>
+<!ELEMENT a (#PCDATA|code|i)*>
 <!ELEMENT code (#PCDATA)>
-<!ELEMENT i (#PCDATA)>
+<!ELEMENT i (#PCDATA|a)*>
 <!ELEMENT em (#PCDATA)>
 <!ELEMENT p (#PCDATA|i|span|a|em)*>
 <!ELEMENT span (#PCDATA)>
@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Sat, 29 Aug 2026 17:48:28 +0000</pubDate>
-        <lastBuildDate>Sat, 29 Aug 2026 17:48:28 +0000</lastBuildDate>
+        <pubDate>Fri, 11 Sep 2026 09:15:37 +0000</pubDate>
+        <lastBuildDate>Fri, 11 Sep 2026 09:15:37 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Il giardino dei poeti</title>
+            <link>https://bbguimaraes.com/pictures/giardino-dei-poeti.html</link>
+            <guid>https://bbguimaraes.com/pictures/giardino-dei-poeti.html</guid>
+            <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+            <category>pictures</category>
+            <description>On 6 September, to celebrate <i>Read a book</i> day, <a href="https://museireali.beniculturali.it"><i lang="it">Musei Reali</i></a> hosted <a href="https://museireali.beniculturali.it/events/il-giardino-dei-poeti-2026/"><i lang="it">Il giardino dei poeti</i></a>, an evening of literature, poetry, and music in the beautiful <i lang="it">Giardini Reali</i>, the vast gardens of the royal palace of the <i lang="it">Savoia</i>.  It was one of the last events of their fantastic series of summer evenings at the museums, <a href="https://museireali.beniculturali.it/estate-reale-2026-una-sera-al-museo/">Estate reale</a>.</description>
+        </item>
         <item>
             <title>Serata flamenco, Reggia di Venaria Reale</title>
             <link>https://bbguimaraes.com/pictures/venaria-flamenco.html</link>

@@ -21,9 +21,9 @@ local header <const> = [[
 <!ELEMENT generator (#PCDATA)>
 <!ELEMENT guid (#PCDATA)>
 <!ELEMENT category (#PCDATA)>
-<!ELEMENT a (#PCDATA|code)*>
+<!ELEMENT a (#PCDATA|code|i)*>
 <!ELEMENT code (#PCDATA)>
-<!ELEMENT i (#PCDATA)>
+<!ELEMENT i (#PCDATA|a)*>
 <!ELEMENT em (#PCDATA)>
 <!ELEMENT p (#PCDATA|i|span|a|em)*>
 <!ELEMENT span (#PCDATA)>
