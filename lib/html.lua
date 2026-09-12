@@ -364,6 +364,8 @@ function par(content) return text_tag:new("p", nil, content) end
 function div(attrs, s) return tag:new("div", attrs, s) end
 --- Shortcut for \ref tag for a `<main>`.
 function main(attrs, s) return tag:new("main", attrs, s) end
+--- Shortcut for \ref tag for an `<aside>`.
+function aside(s) return tag:new("aside", nil, s) end
 --- Shortcut for \ref tag for a `<blockquote>`.
 function blockquote(s) return tag:new("blockquote", nil, s) end
 --- Shortcut for \ref blockquote with a `<p>`.

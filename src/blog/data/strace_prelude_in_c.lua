@@ -58,20 +58,20 @@ on building a minimal tracing tool using <code>ptrace(2)</code> has an excellent
 explanation of the reason why this is always the first line, as well as the path
 that gets there and much more.
 ]],
-    [[
-            <aside>
-                <p>
+    tag("aside", nil, lines {
+        par [[
 The <code>min.s</code> file instructs the assembler to manually create an ELF
 file.  This and all other files presented are built on and for an x86-64 Linux
 machine.  They inevitably display platform-specific aspects, but the concepts
 are still generally applicable.  The exact details of generating such a file
 will not be covered: many resources on this subject can be found on the
 internet.  Consult the source code and the <code>elf(5)</code> manual page.
-                </p>
-                <p>
+]],
+        par [[
 The entirety of the instruction stream is encoded in four bytes in the binary:
-                </p>
-                <pre><code>$ objdump --disassemble=_start min.o
+]],
+        code [[
+$ objdump --disassemble=_start min.o
 
 min.o:     file format elf64-x86-64
 
@@ -80,20 +80,21 @@ Disassembly of section .text:
 
 0000000000000078 &lt;_start&gt;:
   78:   b0 3c                   mov    $0x3c,%al
-  7a:   0f 05                   syscall</code></pre>
-                <p>
+  7a:   0f 05                   syscall
+]],
+        par [[
 This program simply sets up the <code>rax</code> register and issues a system
 call.  <code>rax</code> receives the value <code>3c<sub>16</sub></code> /
 <code>60<sub>10</sub></code>, which is the code for <code>sys_exit</code> on
 x86-64.  <code>rdi</code>, implicitly set to zero, indicates the status code.
-                </p>
-                <p>
+]],
+        par [[
 Depending on the version of <code>binutils</code>, it may be necessary to use
 <code>as --mx86-used-note no</code> in order to generate an unadulterated object
 file (or, alternatively, to remove that section post factum with <code>objcopy
 --remove-section .note.gnu.property</code> before the linking step).
-                </p>
-            </aside>]],
+]],
+    }),
     h2_link { "c", "C" },
     par [[
 To start moving to more complex examples, the previous program can be rewritten

@@ -14,12 +14,9 @@ than a year.  Because of the circumstances, it ended up never having its own
 entry here in this blog.  That is finally being corrected, and I am going to
 write not just one, but a series of posts about it.
 ]],
-    [[
-            <aside>
-                <p>
+    tag("aside", nil, par [[
 See the <a href="tags/nngn.html">nngn</a> tag for other posts on this series.
-                </p>
-            </aside>]],
+]]),
     h2_link { "quid", "quid" },
     par [[
 It is always difficult for me to even explain exactly what it is.  The shortest

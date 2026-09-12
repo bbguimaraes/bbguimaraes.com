@@ -22,13 +22,10 @@ local content <const> = {
             style = "width: 100px",
         }),
     }),
-    [[
-            <aside>
-                <p>
+    tag("aside", nil, par [[
 This post is part of a series.  You should probably start
 <a href="nngn.html">here</a>.
-                </p>
-            </aside>]],
+]]),
     par [[
 This is a short interlude in my series of posts.  The original post in the
 series <a href="nngn.html#ubi">briefly mentioned</a> that one of my build
@@ -207,25 +204,21 @@ simple C entry point is included in the program:
 }
 <b>#endif</b>
 ]],
-    [[
-            <aside>
-                <p>For completeness:</p>
-                <ul>
-                    <li>
+    tag("aside", nil, lines {
+        html [[<p>For completeness:</p>]],
+        ul {
+            str [[
 <code>NNGN_PLATFORM_EMSCRIPTEN</code> is a simple preprocessor directive that is
-used to only compile the function in <code>emscripten</code> builds.
-                    </li>
-                    <li>
+used to only compile the function in <code>emscripten</code> builds.]],
+            str [[
 <code>NNGN_LOG_CONTEXT_F</code> is a macro that declares a helper object used in
-the stack-based logging module.
-                    </li>
-                    <li>
+the stack-based logging module.]],
+            str [[
 <code>p_nngn</code> is a global variable with internal linkage that points to
 the main engine object, used exclusively for this purpose.  The <code>lua</code>
-member is the object that wraps the <code>lua_State*</code>.
-                    </li>
-                </ul>
-            </aside>]],
+member is the object that wraps the <code>lua_State*</code>.]],
+        },
+    }),
     par [[
 This function is then exposed as described in the documentation linked above:
 ]],

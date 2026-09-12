@@ -11,13 +11,10 @@ local content <const> = {
         src = "/files/blog/lua.png",
         alt = "Lua logo",
     }),
-    [[
-            <aside>
-                <p>
+    aside(par [[
 This post is part of a series.  You should probably start
 <a href="nngn.html">here</a>.
-                </p>
-            </aside>]],
+]]),
     par [[
 Out of sheer patriotic duty, the main component of the engine is
 <a href="https://www.lua.org">Lua</a>.  The famous tiny scripting language is

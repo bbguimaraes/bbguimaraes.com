@@ -109,7 +109,7 @@ another of its ever-changing disguises, festering and growing, but its
 devastating effects have become increasingly evident, and impossible to ignore.
 ]],
     figure_news,
-    tag("aside", nil, lines {
+    aside(lines {
         par [[
 For context, this article is based on a short post published on social media,
 commenting on the invasion of Ceuta, where it received some positive responses
@@ -440,7 +440,7 @@ cambiamento, suppurando e crescendo, ma i suoi effetti devastanti sono diventati
 sempre più evidenti, e impossibili da ignorare.
 ]],
     figure_news,
-    tag("aside", nil, lines {
+    aside(lines {
         par [[
 Per contesto, questo articolo si basa su una breve pubblicazione sui media
 sociali, commentando l'invasione di Ceuta, dove ha ricevuto risposte positive e
@@ -776,7 +776,7 @@ mas os seus efeitos devastadores têm se tornado crescentemente evidentes, e
 impossíveis de ignorar.
 ]],
     figure_news,
-    tag("aside", nil, lines {
+    aside(lines {
         par [[
 Como contexto, este artigo é baseado numa publicação curta nas redes sociais,
 comentando a invasão de Ceuta, onde recebeu respostas positivas bem como pedidos
