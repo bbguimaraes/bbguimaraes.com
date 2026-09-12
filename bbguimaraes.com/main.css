@@ -173,20 +173,24 @@ select:invalid, select option[value="x"]{
 
 aside, .toc {
     border: 1px solid var(--text-color-base);
-    padding-left: 1em;
-    padding-right: 1em;
-    margin-top: 1em;
+    padding: 0 1em;
     margin-bottom: 1em;
+}
+
+aside {
+    margin-top: 1em;
 }
 
 .toc, .language-links {
     float: right;
-    margin-top: 0;
     margin-left: 1em;
 }
 
+.toc {
+    margin-top: 0;
+}
+
 .toc ul {
-    margin-bottom: 0;
     padding-left: 1em;
 }
 

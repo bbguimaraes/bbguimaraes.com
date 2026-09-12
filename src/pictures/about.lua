@@ -18,7 +18,7 @@ local notes <const> = notes:new()
 local content <const> = lines {
     h1 "pictures",
     tag("aside", {class = "toc"}, lines {
-        html "<i>Contents</i>",
+        inline_tag("p", nil, inline_tag("i", nil, "Contents")),
         toc,
     }),
     par [[

@@ -4,7 +4,7 @@ local toc <const> = toc:new()
 
 local content <const> = {
     tag("aside", {class = "toc"}, lines {
-        html "<i>Contents</i>",
+        inline_tag("p", nil, inline_tag("i", nil, "Contents")),
         toc,
     }),
     par [[
