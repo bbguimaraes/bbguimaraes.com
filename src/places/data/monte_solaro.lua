@@ -42,50 +42,50 @@ semper sursum
 }
 
 local images <const> = {{
-    path = "monte_solaro/0.jpg",
+    path = "monte_solaro/IMG_20240205_115522.jpg",
     text = [[
 From monte Cappello: Capri, monte Tiberio, and the Sorrento peninsula.
 ]],
 }, {
-    path = "monte_solaro/1.jpg",
+    path = "monte_solaro/IMG_20240203_125747.jpg",
     text = [[
 Arrival, both monte Tiberio and Solaro can be seen.
 ]],
 }, {
-    path = "monte_solaro/2.jpg",
+    path = "monte_solaro/IMG_20240203_132212.jpg",
     text = [[
 Beginning the path in Spiaggia di Marina Grande.
 ]],
 }, {
-    path = "monte_solaro/3.jpg",
+    path = "monte_solaro/IMG_20240205_111344.jpg",
     text = [[
 Roman port from <a href="capri.html">last time</a>, from above.
 ]],
 }, {
-    path = "monte_solaro/4.jpg",
+    path = "monte_solaro/IMG_20240205_131240.jpg",
     text = [[
 Faraglioni and Marina Piccola from ~50m below the top of monte Solaro.
 ]],
 }, {
-    path = "monte_solaro/5.jpg",
+    path = "monte_solaro/IMG_20240205_135017.jpg",
     text = [[
 The Southern portion of the path is all vertical cliffs like this leading to
 beautiful rocky shores.
 ]],
 }, {
-    path = "monte_solaro/6.jpg",
+    path = "monte_solaro/IMG_20240205_134538.jpg",
     text = [[
 Capreae.
 ]],
 }, {
-    path = "monte_solaro/7.jpg",
+    path = "monte_solaro/IMG_20240205_134745.jpg",
 }, {
-    path = "monte_solaro/8.jpg",
+    path = "monte_solaro/IMG_20240205_135821.jpg",
     text = [[
 Punta Carena.
 ]],
 }, {
-    path = "monte_solaro/9.mp4",
+    path = "monte_solaro/VID_20240205_131319.mp4",
     width = "640",
 }}
 

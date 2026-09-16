@@ -119,189 +119,189 @@ but go thyself to the dank house of Hades.
 }
 
 local images <const> = {{
-    path = "ustica/0.jpg",
+    path = "ustica/IMG_20250425_082516.jpg",
     text = [[
 First view of Ustica: <i lang="it">Cala Santa Maria</i>, with the hydrofoil
 still docked.
 ]],
 }, {
-    path = "ustica/1.jpg",
+    path = "ustica/IMG_20250425_083838.jpg",
     text = [[
 <i lang="it">Piazza Umberto Primo</i>, the small town center.
 ]],
 }, {
-    path = "ustica/2.jpg",
+    path = "ustica/IMG_20250425_084721.jpg",
     text = [[
 The many <i lang="it">sentieri</i> which cross the island.
 ]],
 }, {
-    path = "ustica/3.jpg",
+    path = "ustica/IMG_20250425_085130.jpg",
     text = [[
 One look back at the port before departing to the trails.
 ]],
 }, {
-    path = "ustica/4.jpg",
+    path = "ustica/IMG_20250425_085418.jpg",
     text = [[
 Starting on <i lang="it">Sentiero del Mezzogiorno</i>.
 ]],
 }, {
-    path = "ustica/5.jpg",
+    path = "ustica/IMG_20250425_085637.jpg",
     text = [[
 The coastal region around <i lang="it">Grotta Azzurra</i>.
 ]],
 }, {
-    path = "ustica/6.jpg",
+    path = "ustica/IMG_20250425_090108.jpg",
     text = [[
 Finally in paradise.
 ]],
 }, {
-    path = "ustica/7.jpg",
+    path = "ustica/IMG_20250425_091919.jpg",
     text = [[
 First climb down to the sea, around <i lang="it">Grotta della Pastizza</i>.
 ]],
 }, {
-    path = "ustica/8.mp4",
+    path = "ustica/VID_20250425_092223.mp4",
 }, {
-    path = "ustica/9.jpg",
+    path = "ustica/IMG_20250425_092400.jpg",
 }, {
-    path = "ustica/10.jpg",
+    path = "ustica/IMG_20250425_092440.jpg",
 }, {
-    path = "ustica/11.jpg",
+    path = "ustica/IMG_20250425_095149.jpg",
     text = [[
 Near <i lang="it">Grotta delle Barche</i>.
 ]],
 }, {
-    path = "ustica/12.jpg",
+    path = "ustica/IMG_20250425_100115.jpg",
 }, {
-    path = "ustica/13.jpg",
+    path = "ustica/IMG_20250425_103837.jpg",
     text = [[
 <i lang="it">Punta Galera</i>.
 ]],
 }, {
-    path = "ustica/14.jpg",
+    path = "ustica/IMG_20250425_104748.jpg",
 }, {
-    path = "ustica/15.mp4",
+    path = "ustica/VID_20250425_104548.mp4",
 }, {
-    path = "ustica/16.jpg",
+    path = "ustica/IMG_20250425_112425.jpg",
     text = [[
 <i lang="it">Punta dell'Arpa</i>.
 ]],
 }, {
-    path = "ustica/17.jpg",
+    path = "ustica/IMG_20250425_113919.jpg",
 }, {
-    path = "ustica/18.jpg",
+    path = "ustica/IMG_20250425_114531.jpg",
 }, {
-    path = "ustica/19.jpg",
+    path = "ustica/IMG_20250425_115527.jpg",
 }, {
-    path = "ustica/20.jpg",
+    path = "ustica/IMG_20250425_115623.jpg",
 }, {
-    path = "ustica/21.jpg",
+    path = "ustica/IMG_20250425_115914.jpg",
 }, {
-    path = "ustica/22.jpg",
+    path = "ustica/IMG_20250425_120037.jpg",
 }, {
-    path = "ustica/23.jpg",
+    path = "ustica/IMG_20250425_121301.jpg",
 }, {
-    path = "ustica/24.jpg",
+    path = "ustica/IMG_20250425_121315.jpg",
 }, {
-    path = "ustica/25.jpg",
+    path = "ustica/IMG_20250425_122640.jpg",
 }, {
-    path = "ustica/26.jpg",
+    path = "ustica/IMG_20250425_122646.jpg",
 }, {
-    path = "ustica/27.jpg",
+    path = "ustica/IMG_20250425_122757.jpg",
     text = [[
 <i lang="it">Faro di Punta Cavazzi</i>.
 ]],
 }, {
-    path = "ustica/28.jpg",
+    path = "ustica/IMG_20250425_123034.jpg",
     text = [[
 Natural swimming pool of <i lang="it">Punta Cavazzi</i>.
 ]],
 }, {
-    path = "ustica/29.jpg",
+    path = "ustica/IMG_20250425_123854.jpg",
 }, {
-    path = "ustica/30.jpg",
+    path = "ustica/IMG_20250425_123236.jpg",
 }, {
-    path = "ustica/31.jpg",
+    path = "ustica/IMG_20250425_135033.jpg",
 }, {
-    path = "ustica/32.jpg",
+    path = "ustica/IMG_20250425_135654.jpg",
     text = [[
 <i lang="it">Cala Sidoti</i>.
 ]],
 }, {
-    path = "ustica/33.jpg",
+    path = "ustica/IMG_20250425_142337.jpg",
 }, {
-    path = "ustica/34.jpg",
+    path = "ustica/IMG_20250425_143702.jpg",
 }, {
-    path = "ustica/35.jpg",
+    path = "ustica/IMG_20250425_145757.jpg",
     text = [[
 <i lang="it">Punta Gorgo Salato</i>.
 ]],
 }, {
-    path = "ustica/36.jpg",
+    path = "ustica/IMG_20250425_150438.jpg",
     text = [[
 <i lang="it">Scoglio Colombara</i>, the <i lang="it">fariglioni</i> of Ustica.
 ]],
 }, {
-    path = "ustica/37.jpg",
+    path = "ustica/IMG_20250425_150707.jpg",
 }, {
-    path = "ustica/38.jpg",
+    path = "ustica/IMG_20250425_151450.jpg",
 }, {
-    path = "ustica/39.jpg",
+    path = "ustica/IMG_20250425_151613.jpg",
 }, {
-    path = "ustica/40.jpg",
+    path = "ustica/IMG_20250425_153451.jpg",
     text = [[
 The road to <i lang="it">Rocca della Falconiera</i>.
 ]],
 }, {
-    path = "ustica/41.jpg",
+    path = "ustica/IMG_20250425_153317.jpg",
     text = [[
 Paleo-Christian tombs under the <i lang="it">rocca</i>.
 ]],
 }, {
-    path = "ustica/42.jpg",
+    path = "ustica/IMG_20250425_154334.jpg",
     text = [[
 Roman necropolis.
 ]],
 }, {
-    path = "ustica/43.jpg",
+    path = "ustica/IMG_20250425_154123.jpg",
     text = [[
 <i lang="it">Punta Gorgo Salato</i> and the <i lang="it">fariglioni</i> seen
 from the WWII <i lang="it">avamposto</i> at the northwest end.
 ]],
 }, {
-    path = "ustica/44.jpg",
+    path = "ustica/IMG_20250425_154937.jpg",
 }, {
-    path = "ustica/45.jpg",
+    path = "ustica/IMG_20250425_155634.jpg",
     text = [[
 The port from above.
 ]],
 }, {
-    path = "ustica/46.jpg",
+    path = "ustica/IMG_20250425_155702.jpg",
     text = [[
 <i lang="it">Punta Omo Morto</i>.
 ]],
 }, {
-    path = "ustica/47.jpg",
+    path = "ustica/IMG_20250425_160321.jpg",
 }, {
-    path = "ustica/48.jpg",
+    path = "ustica/IMG_20250425_160216.jpg",
 }, {
-    path = "ustica/49.jpg",
+    path = "ustica/IMG_20250425_160852.jpg",
 }, {
-    path = "ustica/50.jpg",
+    path = "ustica/IMG_20250425_161026.jpg",
     text = [[
 View of the entire northern part of the island from <i lang="it">Castello
 Saraceno</i>.
 ]],
 }, {
-    path = "ustica/51.jpg",
+    path = "ustica/IMG_20250425_161336.jpg",
 }, {
-    path = "ustica/52.jpg",
+    path = "ustica/IMG_20250425_162710.jpg",
 }, {
-    path = "ustica/53.jpg",
+    path = "ustica/IMG_20250425_162645.jpg",
 }, {
-    path = "ustica/54.jpg",
+    path = "ustica/IMG_20250425_162830.jpg",
 }, {
-    path = "ustica/55.jpg",
+    path = "ustica/IMG_20250425_170428.jpg",
     text = [[
 A reluctant departure.
 ]],

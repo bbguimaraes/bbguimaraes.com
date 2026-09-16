@@ -29,21 +29,21 @@ local citation <const> = lines {
 }
 
 local images <const> = {{
-    path = "trieste/0.jpg",
+    path = "trieste/IMG_20231009_075606.jpg",
 }, {
-    path = "trieste/1.jpg",
+    path = "trieste/IMG_20231009_135915.jpg",
 }, {
-    path = "trieste/2.jpg",
+    path = "trieste/IMG_20231009_142016.jpg",
 }, {
-    path = "trieste/3.jpg",
+    path = "trieste/IMG_20231009_155527.jpg",
 }, {
-    path = "trieste/4.jpg",
+    path = "trieste/IMG_20231009_172858.jpg",
 }, {
-    path = "trieste/5.jpg",
+    path = "trieste/IMG_20231009_171948.jpg",
 }, {
-    path = "trieste/6.jpg",
+    path = "trieste/IMG_20231006_074207.jpg",
 }, {
-    path = "trieste/7.jpg",
+    path = "trieste/IMG_20231006_074104.jpg",
 }}
 
 return {

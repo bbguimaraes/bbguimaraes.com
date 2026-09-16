@@ -77,148 +77,148 @@ and whither the tempest carries me off, I am borne a stranger.
 }
 
 local images <const> = {{
-    path = "portofino/0.jpg",
+    path = "portofino/IMG_20250330_180752.jpg",
     text = [[
 Monte Pollone and the promontory of Portofino from Bogliasco.
 ]],
 }, {
-    path = "portofino/1.jpg",
+    path = "portofino/IMG_20250330_161252.jpg",
     text = [[
 Departing from Genova.
 ]],
 }, {
-    path = "portofino/2.jpg",
+    path = "portofino/IMG_20250330_170604.jpg",
     text = [[
 First bath in Punta Vagno.
 ]],
 }, {
-    path = "portofino/3.jpg",
+    path = "portofino/IMG_20250315_164506.jpg",
     text = [[
 Boccadasse.
 ]],
 }, {
-    path = "portofino/4.jpg",
+    path = "portofino/IMG_20250330_175540.jpg",
     text = [[
 Ponte romano di Nervi.
 ]],
 }, {
-    path = "portofino/5.jpg",
+    path = "portofino/IMG_20250330_181255.jpg",
     text = [[
 Train in Bogliasco.
 ]],
 }, {
-    path = "portofino/6.jpg",
+    path = "portofino/IMG_20250330_184253.jpg",
     text = [[
 Recco.
 ]],
 }, {
-    path = "portofino/7.jpg",
+    path = "portofino/IMG_20250330_184414.jpg",
 }, {
-    path = "portofino/8.jpg",
+    path = "portofino/IMG_20250330_185000.jpg",
 }, {
-    path = "portofino/9.jpg",
+    path = "portofino/IMG_20250330_193749.jpg",
     text = [[
 Rapallo at dusk.
 ]],
 }, {
-    path = "portofino/10.jpg",
+    path = "portofino/IMG_20250330_201921.jpg",
 }, {
-    path = "portofino/11.jpg",
+    path = "portofino/IMG_20250330_202826.jpg",
 }, {
-    path = "portofino/12.jpg",
+    path = "portofino/IMG_20250331_093302.jpg",
     text = [[
 The promontory from Rapallo.
 ]],
 }, {
-    path = "portofino/13.jpg",
+    path = "portofino/IMG_20250331_100520.jpg",
     text = [[
 Chiosco della musica.
 ]],
 }, {
-    path = "portofino/14.jpg",
+    path = "portofino/IMG_20250331_100454.jpg",
 }, {
-    path = "portofino/15.jpg",
+    path = "portofino/IMG_20250331_100419.jpg",
 }, {
-    path = "portofino/16.jpg",
+    path = "portofino/IMG_20250331_101256.jpg",
     text = [[
 The port of Rapallo, towards La Spezia.
 ]],
 }, {
-    path = "portofino/17.jpg",
+    path = "portofino/IMG_20250331_103832.jpg",
     text = [[
 First stop in Santa Margherita Ligure.
 ]],
 }, {
-    path = "portofino/18.jpg",
+    path = "portofino/IMG_20250331_105737.jpg",
     text = [[
 The water color announces the imminent arrival.
 ]],
 }, {
-    path = "portofino/19.jpg",
+    path = "portofino/IMG_20250331_105812.jpg",
     text = [[
 Turning back towards Rapallo.
 ]],
 }, {
-    path = "portofino/20.jpg",
+    path = "portofino/IMG_20250331_110018.jpg",
 }, {
-    path = "portofino/21.jpg",
+    path = "portofino/IMG_20250331_111053.jpg",
 }, {
-    path = "portofino/22.jpg",
+    path = "portofino/IMG_20250331_112814.jpg",
     text = [[
 La Piazzetta.
 ]],
 }, {
-    path = "portofino/23.jpg",
+    path = "portofino/IMG_20250331_113500.jpg",
     text = [[
 Portofino.
 ]],
 }, {
-    path = "portofino/24.jpg",
+    path = "portofino/IMG_20250331_114642.jpg",
     text = [[
 Walking the park around Castello Brown.
 ]],
 }, {
-    path = "portofino/25.jpg",
+    path = "portofino/IMG_20250331_114942.jpg",
 }, {
-    path = "portofino/26.jpg",
+    path = "portofino/IMG_20250331_115037.jpg",
 }, {
-    path = "portofino/27.jpg",
+    path = "portofino/IMG_20250331_115339.jpg",
 }, {
-    path = "portofino/28.jpg",
+    path = "portofino/IMG_20250331_115617.jpg",
 }, {
-    path = "portofino/29.jpg",
+    path = "portofino/IMG_20250331_115831.jpg",
     text = [[
 The Alps, always unmistakably visible from the Ligurian coast, on the other side
 of the gulf.
 ]],
 }, {
-    path = "portofino/30.jpg",
+    path = "portofino/IMG_20250331_115843.jpg",
     text = [[
 Faro di Portofino.
 ]],
 }, {
-    path = "portofino/31.jpg",
+    path = "portofino/IMG_20250331_122629.jpg",
     text = [[
 How can one resist?
 ]],
 }, {
-    path = "portofino/32.jpg",
+    path = "portofino/IMG_20250331_130123.jpg",
 }, {
-    path = "portofino/33.jpg",
+    path = "portofino/IMG_20250331_130324.jpg",
 }, {
-    path = "portofino/34.jpg",
+    path = "portofino/IMG_20250331_130331.jpg",
 }, {
-    path = "portofino/35.jpg",
+    path = "portofino/IMG_20250331_130527.jpg",
 }, {
-    path = "portofino/36.jpg",
+    path = "portofino/IMG_20250331_131024.jpg",
 }, {
-    path = "portofino/37.jpg",
+    path = "portofino/IMG_20250401_233253.jpg",
     text = [[
 Beautiful painting by local artist <a href="https://www.maraportofino.it">Mara
 Sanguineti</a>.
 ]],
 }, {
-    path = "portofino/38.jpg",
+    path = "portofino/IMG_20250331_161138.jpg",
     text = [[
 Saying goodbye from Santa Margherita Ligure, after another swim.
 ]],

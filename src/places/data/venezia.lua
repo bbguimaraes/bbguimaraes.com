@@ -6,9 +6,9 @@ the fall of the Byzantine Empire.
 ]]
 
 local images <const> = {{
-    path = "venezia/0.jpg",
+    path = "venezia/IMG_20231006_145934.jpg",
 }, {
-    path = "venezia/1.jpg",
+    path = "venezia/IMG_20231006_185114.jpg",
 }}
 
 return {

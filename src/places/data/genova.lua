@@ -64,117 +64,117 @@ men and walls, whose very aspect declares herself master of the sea.
 }
 
 local images <const> = {{
-    path = "genova/0.jpg",
+    path = "genova/IMG_20240428_110916.jpg",
     text = [[
 Part of the old town and the port, seen from my favorite place in the city:
 <a href="https://www.openstreetmap.org/way/9961020" lang="it">Villetta di
 Negro</a>.
 ]],
 }, {
-    path = "genova/1.jpg",
+    path = "genova/IMG_20230329_095941.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/154545927" lang="it">Castello
 d'Albertis</a>.
 ]],
 }, {
-    path = "genova/2.jpg",
+    path = "genova/IMG_20230329_095919.jpg",
     text = [[
 View of the gulf and port of Genova from the castle.
 ]],
 }, {
-    path = "genova/3.jpg",
+    path = "genova/IMG_20230330_103341.jpg",
     text = [[
 From the beautiful park of <a href="https://www.openstreetmap.org/way/25501638"
 lang="it">Villa Rosazza</a>.
 ]],
 }, {
-    path = "genova/4.jpg",
+    path = "genova/IMG_20240427_112510.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/41677804" lang="it">Sottomarino
 Nazario Sauro</a> next to the aquarium.
 ]],
 }, {
-    path = "genova/5.jpg",
+    path = "genova/IMG_20240427_120240.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/245280430" lang="it">Lanterna di
 Genova</a>.
 ]],
 }, {
-    path = "genova/6.jpg",
+    path = "genova/IMG_20240427_121436.jpg",
 }, {
-    path = "genova/7.jpg",
+    path = "genova/IMG_20240427_125550.jpg",
     text = [[
 The lighthouse, at 117m from sea level (the highest in the world from the time
 it was built in 1543 until 1902), watches over the entire port.
 ]],
 }, {
-    path = "genova/8.jpg",
+    path = "genova/IMG_20240427_130038.jpg",
 }, {
-    path = "genova/9.jpg",
+    path = "genova/IMG_20240427_195417.jpg",
     text = [[
 Ruins of <a href="https://www.openstreetmap.org/way/34886346" lang="it">Chiostro
 di Sant'Andrea</a>.
 ]],
 }, {
-    path = "genova/10.jpg",
+    path = "genova/IMG_20240427_195437.jpg",
     text = [[
 Museum of <a href="https://www.openstreetmap.org/way/198253017" lang="it">Casa
 di Cristoforo Colombo</a>.
 ]],
 }, {
-    path = "genova/11.jpg",
+    path = "genova/IMG_20240428_092413.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/28846464" lang="it">Piazza Raffaele
 de Ferrari</a>.
 ]],
 }, {
-    path = "genova/12.jpg",
+    path = "genova/IMG_20240428_104306.jpg",
     text = [[
 Giuseppe Garibaldi (another Ligurian).
 ]],
 }, {
-    path = "genova/13.jpg",
+    path = "genova/IMG_20240428_104521.jpg",
     text = [[
 Statue of Niccolò Paganini (born in Genova) in front of <a
 href="https://www.openstreetmap.org/way/24033163" lang="it">Teatro Carlo
 Felice</a>.
 ]],
 }, {
-    path = "genova/14.jpg",
+    path = "genova/IMG_20240428_110424.jpg",
     text = [[
 Villetta di Negro.
 ]],
 }, {
-    path = "genova/15.jpg",
+    path = "genova/IMG_20240428_112331.jpg",
 }, {
-    path = "genova/16.jpg",
+    path = "genova/IMG_20240428_112455.jpg",
     text = [[
 <span lang="it">Grotta artificiale</span> in the middle of the park.
 ]],
 }, {
-    path = "genova/17.jpg",
+    path = "genova/IMG_20240428_114450.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/276696400" lang="it">Galleria
 Giuseppe Mazzini</a>.
 ]],
 }, {
-    path = "genova/18.jpg",
+    path = "genova/IMG_20240428_120903.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/42116330" lang="it">Arco ai
 Caduti</a>.
 ]],
 }, {
-    path = "genova/19.jpg",
+    path = "genova/IMG_20240428_120935.jpg",
 }, {
-    path = "genova/20.jpg",
+    path = "genova/IMG_20240428_122943.jpg",
 }, {
-    path = "genova/21.jpg",
+    path = "genova/IMG_20240428_145057.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/610430306" lang="it">Basilica di
 Santa Maria Assunta di Carignano</a>.
 ]],
 }, {
-    path = "genova/22.jpg",
+    path = "genova/IMG_20240428_145158.jpg",
 }, {
     path = "genova/23.jpg",
     text = [[

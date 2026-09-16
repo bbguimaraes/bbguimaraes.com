@@ -40,49 +40,49 @@ heart.  The really great men must, I think, have great sadness on earth.
 }
 
 local images <const> = {{
-    path = "suio/0.jpg",
+    path = "suio/IMG_20240126_164531.jpg",
     text = [[
 First sight of Campania, near the end of the sentiero, the sun beginning to set.
 ]],
 }, {
-    path = "suio/1.jpg",
+    path = "suio/IMG_20240126_152059.jpg",
     text = [[
 The road to Suio Alto.
 ]],
 }, {
-    path = "suio/2.jpg",
+    path = "suio/IMG_20240209_143402.jpg",
 }, {
-    path = "suio/3.jpg",
+    path = "suio/IMG_20240209_144959.jpg",
     text = [[
 Medieval roads.
 ]],
 }, {
-    path = "suio/4.jpg",
+    path = "suio/IMG_20240126_153536.jpg",
     text = [[
 Garigliano valley from the Western end.
 ]],
 }, {
-    path = "suio/5.jpg",
+    path = "suio/IMG_20240126_153627.jpg",
     text = [[
 Terra di Suio veduta a volo d'ucello.
 ]],
 }, {
-    path = "suio/6.jpg",
+    path = "suio/IMG_20240126_155000.jpg",
     text = [[
 Remains of the Northern tower.
 ]],
 }, {
-    path = "suio/7.jpg",
+    path = "suio/IMG_20240209_150054.jpg",
     text = [[
 Eastern tower near the remains of the castle.
 ]],
 }, {
-    path = "suio/8.jpg",
+    path = "suio/IMG_20240126_160115.jpg",
     text = [[
 Suio Alto from via Valle di Suio.
 ]],
 }, {
-    path = "suio/9.jpg",
+    path = "suio/IMG_20240209_154919.jpg",
     text = [[
 A look back at the sentiero.
 ]],

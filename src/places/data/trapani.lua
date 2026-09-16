@@ -76,97 +76,97 @@ The mighty may fall, but not yield
 }
 
 local images <const> = {{
-    path = "trapani/0.jpg",
+    path = "trapani/IMG_20250423_103711.jpg",
     text = [[
 Fontana della Venere Anadiomene.
 ]],
 }, {
-    path = "trapani/1.jpg",
+    path = "trapani/IMG_20250422_194730.jpg",
     text = [[
 First sight of Trapani: the port looking out west to the Mediterranean.
 ]],
 }, {
-    path = "trapani/2.jpg",
+    path = "trapani/IMG_20250422_212005.jpg",
     text = [[
 No better way to get acquainted with the local food. Also the beginning of my
 acciughe addiction.
 ]],
 }, {
-    path = "trapani/3.jpg",
+    path = "trapani/IMG_20250423_100507.jpg",
     text = [[
 My morning walks along lungomare Dant Alighieri, on the north coast of the
 promontory.
 ]],
 }, {
-    path = "trapani/4.jpg",
+    path = "trapani/IMG_20250423_103245.jpg",
 }, {
-    path = "trapani/5.jpg",
+    path = "trapani/IMG_20250423_100043.jpg",
 }, {
-    path = "trapani/6.jpg",
+    path = "trapani/IMG_20250423_100113.jpg",
 }, {
-    path = "trapani/7.jpg",
+    path = "trapani/IMG_20250423_103402.jpg",
 }, {
-    path = "trapani/8.jpg",
+    path = "trapani/IMG_20250423_103919.jpg",
     text = [[
 Via Torrearsa, the heart of the old city center.
 ]],
 }, {
-    path = "trapani/9.jpg",
+    path = "trapani/IMG_20250423_105015.jpg",
     text = [[
 If you are going to have your first breakfast in Sicily, better make it count.
 ]],
 }, {
-    path = "trapani/10.jpg",
+    path = "trapani/IMG_20250423_123250.jpg",
     text = [[
 Isola and Castello della Colombaia (through a very dirty boat window), on the
 way to the <a href="favignana.lua">Isole Egadi</a>.
 ]],
 }, {
-    path = "trapani/11.jpg",
+    path = "trapani/IMG_20250423_123559.jpg",
     text = [[
 Monte Erice.
 ]],
 }, {
-    path = "trapani/12.jpg",
+    path = "trapani/IMG_20250423_125218.jpg",
     text = [[
 After the first stop in Levanzo.
 ]],
 }, {
-    path = "trapani/13.jpg",
+    path = "trapani/IMG_20250424_111018.jpg",
     text = [[
 From Torre di Ligny.
     ]],
 }, {
-    path = "trapani/14.jpg",
+    path = "trapani/IMG_20250424_120950.jpg",
     text = [[
 Cattedrale di San Lorenzo (1102).
 ]],
 }, {
-    path = "trapani/15.jpg",
+    path = "trapani/IMG_20250424_124507.jpg",
     text = [[
 <span lang="it">Fontana di Saturno</span> (1342), mythical founder of the city.
 ]],
 }, {
-    path = "trapani/16.jpg",
+    path = "trapani/IMG_20250424_130223.jpg",
     text = [[
 Cuscus di pesce.
 ]],
 }, {
-    path = "trapani/17.jpg",
+    path = "trapani/IMG_20250424_144854.jpg",
     text = [[
 The sea at Lido Paradiso.
 ]],
 }, {
-    path = "trapani/18.mp4",
+    path = "trapani/VID_20250424_144720.mp4",
     poster = "0:20",
 }, {
-    path = "trapani/19.jpg",
+    path = "trapani/IMG_20250424_155350.jpg",
     text = [[
 Plaque commemorating Giuseppe Garibaldi and the birth of Risorgimento in
 Trapani in 1862.
 ]],
 }, {
-    path = "trapani/20.jpg",
+    path = "trapani/IMG_20250424_155510.jpg",
     text = [[
 Torre dell'Orologio (1596).
 ]],

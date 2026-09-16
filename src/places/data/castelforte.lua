@@ -49,50 +49,50 @@ for a defence”.
 }
 
 local images <const> = {{
-    path = "castelforte/0.jpg",
+    path = "castelforte/IMG_20240129_073918.jpg",
     text = [[
 Sunrise illuminating the misty valley, Castelforte in the middle, <a
 href="santi-cosma-e-damiano.html">Santi Cosma e Damiano</a> below.
 ]],
 }, {
-    path = "castelforte/1.jpg",
+    path = "castelforte/IMG_20240122_173642.jpg",
     text = [[
 Chiesa di San Giovanni Battista.
 ]],
 }, {
-    path = "castelforte/2.jpg",
+    path = "castelforte/IMG_20240121_164119.jpg",
     text = [[
 Sunset from the church.
 ]],
 }, {
-    path = "castelforte/3.jpg",
+    path = "castelforte/IMG_20240122_173408.jpg",
     text = [[
 Again.
 ]],
 }, {
-    path = "castelforte/4.jpg",
+    path = "castelforte/IMG_20240123_173957.jpg",
     text = [[
 And again.
 ]],
 }, {
-    path = "castelforte/5.jpg",
+    path = "castelforte/IMG_20240122_170736.jpg",
     text = [[
 Old city center from one of the roads.
 ]],
 }, {
-    path = "castelforte/6.jpg",
+    path = "castelforte/IMG_20240124_164950.jpg",
     text = [[
 The valley from one of the surrounding mountains, immersed in mist at sunset
 (the peak in the far distance is monte Epomeo in the island of Ischia, some 64km
 away).
 ]],
 }, {
-    path = "castelforte/7.jpg",
+    path = "castelforte/IMG_20240126_140045.jpg",
     text = [[
 Capre.
 ]],
 }, {
-    path = "castelforte/8.jpg",
+    path = "castelforte/IMG_20240123_171626.jpg",
     text = [[
 One of the many olive plantations at dusk.
 ]],

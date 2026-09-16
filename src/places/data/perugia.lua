@@ -224,60 +224,60 @@ impossible for a man to be free who is governed by his passions.
 }
 
 local images <const> = {{
-    path = "perugia/0.jpg",
+    path = "perugia/IMG_20250716_172151.jpg",
     text = [[
 <span lang="it">Arco Etrusco</span>.
 ]],
 }, {
-    path = "perugia/1.jpg",
+    path = "perugia/IMG_20250714_073129.jpg",
     text = [[
 <span lang="it">Rione San Pietro</span> from <span lang="it">Giardini
 Carducci</span>.
 ]],
 }, {
-    path = "perugia/2.jpg",
+    path = "perugia/IMG_20250714_104138.jpg",
     text = [[
 A different face each day.
 ]],
 }, {
-    path = "perugia/3.jpg",
+    path = "perugia/IMG_20250716_193125.jpg",
 }, {
-    path = "perugia/4.jpg",
+    path = "perugia/IMG_20250714_073141.jpg",
     text = [[
 The eastern side of the valley covered in fog.
 ]],
 }, {
-    path = "perugia/5.jpg",
+    path = "perugia/IMG_20250715_155228.jpg",
     text = [[
 Assisi in the distance at the foot of Monte Subasio.
 ]],
 }, {
-    path = "perugia/6.jpg",
+    path = "perugia/IMG_20250716_193146.jpg",
     text = [[
 View of the southern plain, with the arena and <span lang="it">Chiesa di Santa
 Giuliana</span> in sight.
 ]],
 }, {
-    path = "perugia/7.jpg",
+    path = "perugia/IMG_20250714_071339.jpg",
     text = [[
 Via Luigi Massi.
 ]],
 }, {
-    path = "perugia/8.jpg",
+    path = "perugia/IMG_20250714_090555.jpg",
     text = [[
 <span lang="it">Colle del Sole</span> from <span lang="it">Università degli
 Studi di Perugia</span>.
 ]],
 }, {
-    path = "perugia/9.jpg",
+    path = "perugia/IMG_20250714_104815.jpg",
     text = [[
 <span lang="it">Giardini Carducci</span> ready to host the festival later that
 day.
 ]],
 }, {
-    path = "perugia/10.jpg",
+    path = "perugia/IMG_20250714_125451.jpg",
 }, {
-    path = "perugia/11.jpg",
+    path = "perugia/IMG_20250714_132204.jpg",
     text = [[
 <span lang="it">Tagliata di bavetta</span>.  I have to mention this was at <a
 lang="it" href="https://www.locandadelbartoccio.it">Locanda del Bartoccio</a>,
@@ -285,318 +285,318 @@ since they informed me this plate <span lang="it">“si può fare solo al
 sangue”</span>.  That's when I knew I had come to the right place.
 ]],
 }, {
-    path = "perugia/12.jpg",
+    path = "perugia/IMG_20250714_140906.jpg",
     text = [[
 <span lang="it">Fontana Maestà delle Volte</span>.
 ]],
 }, {
-    path = "perugia/13.jpg",
+    path = "perugia/IMG_20250714_140642.jpg",
 }, {
-    path = "perugia/14.jpg",
+    path = "perugia/IMG_20250714_140840.jpg",
     text = [[
 <span lang="it">Arco di Via delle Volte</span>.
 ]],
 }, {
-    path = "perugia/15.jpg",
+    path = "perugia/IMG_20250714_141141.jpg",
 }, {
-    path = "perugia/16.jpg",
+    path = "perugia/IMG_20250715_191146.jpg",
     text = [[
 <span lang="it">Porta San Pietro</span>.
 ]],
 }, {
-    path = "perugia/17.jpg",
+    path = "perugia/IMG_20250715_191219.jpg",
 }, {
-    path = "perugia/18.jpg",
+    path = "perugia/IMG_20250715_191415.jpg",
 }, {
-    path = "perugia/19.jpg",
+    path = "perugia/IMG_20250715_191624.jpg",
 }, {
-    path = "perugia/20.jpg",
+    path = "perugia/IMG_20250715_183323.jpg",
     text = [[
 <span lang="it">Basilica di San Pietro</span>.
 ]],
 }, {
-    path = "perugia/21.jpg",
+    path = "perugia/IMG_20250715_174307.jpg",
 }, {
-    path = "perugia/22.jpg",
+    path = "perugia/IMG_20250715_180211.jpg",
 }, {
-    path = "perugia/23.jpg",
+    path = "perugia/IMG_20250715_180622.jpg",
 }, {
-    path = "perugia/24.jpg",
+    path = "perugia/IMG_20250715_180650.jpg",
 }, {
-    path = "perugia/25.jpg",
+    path = "perugia/IMG_20250715_180759.jpg",
 }, {
-    path = "perugia/26.jpg",
+    path = "perugia/IMG_20250715_184637.jpg",
 }, {
-    path = "perugia/27.jpg",
+    path = "perugia/IMG_20250715_180959.jpg",
     text = [[
 Mediaeval garden.
 ]],
 }, {
-    path = "perugia/28.jpg",
+    path = "perugia/IMG_20250715_182937.jpg",
 }, {
-    path = "perugia/29.jpg",
+    path = "perugia/IMG_20250715_203209.jpg",
     text = [[
 <span lang="it">Corso Pietro Vannucci</span>.
 ]],
 }, {
-    path = "perugia/30.jpg",
+    path = "perugia/IMG_20250714_164140.jpg",
     text = [[
 <span lang="it">Cattedrale di San Lorenzo</span> and <span lang="it">Fontana
 Maggiore</span>.
 ]],
 }, {
-    path = "perugia/31.jpg",
+    path = "perugia/IMG_20250716_123108.jpg",
 }, {
-    path = "perugia/32.jpg",
+    path = "perugia/IMG_20250716_121928.jpg",
 }, {
-    path = "perugia/33.jpg",
+    path = "perugia/IMG_20250716_122619.jpg",
 }, {
-    path = "perugia/34.jpg",
+    path = "perugia/IMG_20250716_122839.jpg",
     text = [[
 Chapel of the Holy Ring.
 ]],
 }, {
-    path = "perugia/35.jpg",
+    path = "perugia/IMG_20250716_122851.jpg",
 }, {
-    path = "perugia/36.jpg",
+    path = "perugia/IMG_20250716_124609.jpg",
     text = [[
 <span lang="it">Pozzo Etrusco</span>.
 ]],
 }, {
-    path = "perugia/37.jpg",
+    path = "perugia/IMG_20250716_124425.jpg",
 }, {
-    path = "perugia/38.jpg",
+    path = "perugia/IMG_20250716_124501.jpg",
 }, {
-    path = "perugia/39.jpg",
+    path = "perugia/IMG_20250716_124529.jpg",
 }, {
-    path = "perugia/40.jpg",
+    path = "perugia/IMG_20250716_125853.jpg",
     text = [[
 <span lang="it">Rione Porta Sole</span>.
 ]],
 }, {
-    path = "perugia/41.jpg",
+    path = "perugia/IMG_20250716_125915.jpg",
 }, {
-    path = "perugia/42.jpg",
+    path = "perugia/IMG_20250716_131805.jpg",
     text = [[
 View from <span lang="it">Porta Sole</span>.
 ]],
 }, {
-    path = "perugia/43.jpg",
+    path = "perugia/IMG_20250716_132643.jpg",
     text = [[
 <span lang="it">Rione Sant'Angelo</span>.
 ]],
 }, {
-    path = "perugia/44.jpg",
+    path = "perugia/IMG_20250716_130021.jpg",
     text = [[
 <span lang="it">Cappella San Severo</span>.
 ]],
 }, {
-    path = "perugia/45.jpg",
+    path = "perugia/IMG_20250716_130037.jpg",
     text = [[
 <i lang="la">Quid Raphael puber longoevus quidque valeret Petrus opus muro
 ductum testatur eodem</i>.
 ]],
 }, {
-    path = "perugia/46.jpg",
+    path = "perugia/IMG_20250716_130528.jpg",
     text = [[
 <i lang="it">Trinità e santi</i>.
 ]],
 }, {
-    path = "perugia/47.jpg",
+    path = "perugia/IMG_20250716_130625.jpg",
     text = [[
 Bust of <span lang="it">Raffaello</span>.
 ]],
 }, {
-    path = "perugia/48.jpg",
+    path = "perugia/IMG_20250716_130748.jpg",
     text = [[
 <i lang="la">Rafael de Urbino Domino Octaviano Stephani Volate[r]ano priore
 Sanctam Trinitatem Angelos Astantes Sanctos[q.] pinxit A.D. [M]DV</i>.
 ]],
 }, {
-    path = "perugia/49.jpg",
+    path = "perugia/IMG_20250716_140550.jpg",
     text = [[
 <span lang="it">Rione Sant'Angelo</span>.
 ]],
 }, {
-    path = "perugia/50.jpg",
+    path = "perugia/IMG_20250716_143136.jpg",
 }, {
-    path = "perugia/51.jpg",
+    path = "perugia/IMG_20250716_140535.jpg",
 }, {
-    path = "perugia/52.jpg",
+    path = "perugia/IMG_20250716_143051.jpg",
     text = [[
 <span lang="it">Chiesa di San Michele Arcangelo</span>.
 ]],
 }, {
-    path = "perugia/53.jpg",
+    path = "perugia/IMG_20250716_142943.jpg",
 }, {
-    path = "perugia/54.jpg",
+    path = "perugia/IMG_20250716_142244.jpg",
 }, {
-    path = "perugia/55.jpg",
+    path = "perugia/IMG_20250716_141724.jpg",
 }, {
-    path = "perugia/56.jpg",
+    path = "perugia/IMG_20250716_141041.jpg",
 }, {
-    path = "perugia/57.jpg",
+    path = "perugia/IMG_20250716_141309.jpg",
 }, {
-    path = "perugia/58.jpg",
+    path = "perugia/IMG_20250716_141334.jpg",
 }, {
-    path = "perugia/59.jpg",
+    path = "perugia/IMG_20250716_141523.jpg",
 }, {
-    path = "perugia/60.jpg",
+    path = "perugia/IMG_20250716_142544.jpg",
     text = [[
 <span lang="it">Porta Sant'Angelo</span>.
 ]],
 }, {
-    path = "perugia/61.jpg",
+    path = "perugia/IMG_20250716_142724.jpg",
 }, {
-    path = "perugia/62.jpg",
+    path = "perugia/IMG_20250716_142900.jpg",
 }, {
-    path = "perugia/63.jpg",
+    path = "perugia/IMG_20250716_144753.jpg",
     text = [[
 <span lang="it">Via dell'Acquedotto</span>.
 ]],
 }, {
-    path = "perugia/64.jpg",
+    path = "perugia/IMG_20250716_145055.jpg",
 }, {
-    path = "perugia/65.jpg",
+    path = "perugia/IMG_20250716_145348.jpg",
 }, {
-    path = "perugia/66.jpg",
+    path = "perugia/IMG_20250716_145433.jpg",
 }, {
-    path = "perugia/67.jpg",
+    path = "perugia/IMG_20250716_145915.jpg",
 }, {
-    path = "perugia/68.jpg",
+    path = "perugia/IMG_20250716_171423.jpg",
 }, {
-    path = "perugia/69.jpg",
+    path = "perugia/IMG_20250716_161758.jpg",
     text = [[
 <span lang="it">Piazza d'Italia</span>.
 ]],
 }, {
-    path = "perugia/70.jpg",
+    path = "perugia/IMG_20250716_161744.jpg",
 }, {
-    path = "perugia/71.jpg",
+    path = "perugia/IMG_20250716_162953.jpg",
     text = [[
 <span lang="it">Porta Trasimena</span>.
 ]],
 }, {
-    path = "perugia/72.jpg",
+    path = "perugia/IMG_20250716_163610.jpg",
     text = [[
 <span lang="it">Oratorio di San Bernardino</span>.
 ]],
 }, {
-    path = "perugia/73.jpg",
+    path = "perugia/IMG_20250716_164003.jpg",
     text = [[
 <span lang="it">Chiesa di San Francesco al Prato</span>.
 ]],
 }, {
-    path = "perugia/74.jpg",
+    path = "perugia/IMG_20250716_163924.jpg",
 }, {
-    path = "perugia/75.jpg",
+    path = "perugia/IMG_20250716_164200.jpg",
 }, {
-    path = "perugia/76.jpg",
+    path = "perugia/IMG_20250716_164321.jpg",
 }, {
-    path = "perugia/77.jpg",
+    path = "perugia/IMG_20250716_172033.jpg",
     text = [[
 <span lang="it">Arco Etrusco</span>.
 ]],
 }, {
-    path = "perugia/78.jpg",
+    path = "perugia/IMG_20250716_172239.jpg",
 }, {
-    path = "perugia/79.jpg",
+    path = "perugia/IMG_20250716_133027.jpg",
 }, {
-    path = "perugia/80.jpg",
+    path = "perugia/IMG_20250716_203447.jpg",
     text = [[
 <span lang="it">Fonte Lomellina</span>.
 ]],
 }, {
-    path = "perugia/81.jpg",
+    path = "perugia/IMG_20250716_203539.jpg",
     text = [[
 <span lang="it">Porta Marzia</span>.
 ]],
 }, {
-    path = "perugia/82.jpg",
+    path = "perugia/IMG_20250716_203509.jpg",
     text = [[
 <span lang="it">Rocca Paolina</span>.
 ]],
 }, {
-    path = "perugia/83.jpg",
+    path = "perugia/IMG_20250717_195223.jpg",
 }, {
-    path = "perugia/84.jpg",
+    path = "perugia/IMG_20250717_195403.jpg",
 }, {
-    path = "perugia/85.jpg",
+    path = "perugia/IMG_20250717_195610.jpg",
 }, {
-    path = "perugia/86.jpg",
+    path = "perugia/IMG_20250717_182826.jpg",
     text = [[
 <span lang="it">Chiesa di San Domenico</span>.
 ]],
 }, {
-    path = "perugia/87.jpg",
+    path = "perugia/IMG_20250717_170624.jpg",
 }, {
-    path = "perugia/88.jpg",
+    path = "perugia/IMG_20250717_170953.jpg",
 }, {
-    path = "perugia/89.jpg",
+    path = "perugia/IMG_20250717_175444.jpg",
     text = [[
 <span lang="it">Museo Archeologico Nazionale dell'Umbria</span>.
 ]],
 }, {
-    path = "perugia/90.jpg",
+    path = "perugia/IMG_20250717_175940.jpg",
 }, {
-    path = "perugia/91.jpg",
+    path = "perugia/IMG_20250717_172119.jpg",
 }, {
-    path = "perugia/92.jpg",
+    path = "perugia/IMG_20250717_180850.jpg",
 }, {
-    path = "perugia/93.jpg",
+    path = "perugia/IMG_20250717_181455.jpg",
 }, {
-    path = "perugia/94.jpg",
+    path = "perugia/IMG_20250717_174639.jpg",
     text = [[
 <span lang="it">Cippus Peruginus</span>.
 ]],
 }, {
-    path = "perugia/95.jpg",
+    path = "perugia/IMG_20250717_181224.jpg",
 }, {
-    path = "perugia/96.jpg",
+    path = "perugia/IMG_20250717_184139.jpg",
     text = [[
 <span lang="it">Chiesa di Sant'Ercolano</span>.
 ]],
 }, {
-    path = "perugia/97.jpg",
+    path = "perugia/IMG_20250717_183445.jpg",
 }, {
-    path = "perugia/98.jpg",
+    path = "perugia/IMG_20250717_183510.jpg",
 }, {
-    path = "perugia/99.jpg",
+    path = "perugia/IMG_20250717_201641.jpg",
     text = [[
 <span lang="it">Antica porchetteria Granieri</span>.
 ]],
 }, {
-    path = "perugia/100.jpg",
+    path = "perugia/IMG_20250717_201908.jpg",
 }, {
-    path = "perugia/101.jpg",
+    path = "perugia/IMG_20250718_081136.jpg",
     text = [[
 <span lang="it">Via Ulisse Rocchi</span>.
 ]],
 }, {
-    path = "perugia/102.jpg",
+    path = "perugia/IMG_20250718_083406.jpg",
     text = [[
 <span lang="it">Rione Porta Santa Susanna</span>.
 ]],
 }, {
-    path = "perugia/103.jpg",
+    path = "perugia/IMG_20250718_083732.jpg",
 }, {
-    path = "perugia/104.jpg",
+    path = "perugia/IMG_20250718_083835.jpg",
 }, {
-    path = "perugia/105.jpg",
+    path = "perugia/IMG_20250718_084023.jpg",
 }, {
-    path = "perugia/106.jpg",
+    path = "perugia/IMG_20250718_084154.jpg",
 }, {
-    path = "perugia/107.jpg",
+    path = "perugia/IMG_20250718_084247.jpg",
     text = [[
 <span lang="it">Porta San Giacomo</span>.
 ]],
 }, {
-    path = "perugia/108.jpg",
+    path = "perugia/IMG_20250718_091040.jpg",
     text = [[
 <span lang="it">Stazione di Perugia Fontivegge</span>.
 ]],
 }, {
-    path = "perugia/109.jpg",
+    path = "perugia/IMG_20250718_091201.jpg",
 }}
 
 return {

@@ -75,7 +75,7 @@ etc. grazing on the green mountain slopes.
     }),
     par(format {
         [[
-From the few hours I spent in Giaveno itself (this was tight a day trip), I can
+From the few hours I spent in Giaveno itself (this was a tight day trip), I can
 say it is a beautiful small town (just above 15 thousand inhabitants) and
 <em>very</em> old: the name is said to derive from Latin <i lang="la">iam
 veni</i>, “I have arrived”, pronounced by Hannibal after his crossing of the

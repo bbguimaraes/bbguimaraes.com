@@ -44,7 +44,9 @@ back.
     quote_footer("Hermann Hesse", "Siddhartha"),
 }
 
-local images <const> = {{path = "brno/0.jpg"}}
+local images <const> = {{
+    path = "brno/IMG_20230304_053829.jpg",
+}}
 
 return {
     title = "Brno",

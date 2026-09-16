@@ -5,9 +5,9 @@ Parting with a dear old friend is always painful, but sometimes inevitable.
 ]]
 
 local images <const> = {{
-    path = "prague/0.jpg",
+    path = "prague/IMG_20230930_182840.jpg",
 }, {
-    path = "prague/1.jpg",
+    path = "prague/IMG_20230930_190450.jpg",
 }}
 
 return {

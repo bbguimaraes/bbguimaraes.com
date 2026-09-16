@@ -30,52 +30,52 @@ a vine goes on to produce again the grapes in season.
 }
 
 local images <const> = {{
-    path = "monte_tuoro/0.jpg",
+    path = "monte_tuoro/IMG_20240203_162006.jpg",
     text = [[
 Penisola Sorrentina from via Pizzolungo.
 ]],
 }, {
-    path = "monte_tuoro/1.jpg",
+    path = "monte_tuoro/IMG_20240203_152703.jpg",
     text = [[
 The Faraglioni.
 ]],
 }, {
-    path = "monte_tuoro/2.jpg",
+    path = "monte_tuoro/IMG_20240203_153905.jpg",
     text = [[
 Marina Piccola from the Faraglioni.
 ]],
 }, {
-    path = "monte_tuoro/3.jpg",
+    path = "monte_tuoro/IMG_20240203_155527.jpg",
     text = [[
 View of the sea around them from via Tragara.
 ]],
 }, {
-    path = "monte_tuoro/4.jpg",
+    path = "monte_tuoro/IMG_20240203_160832.jpg",
     text = [[
 Going up to monte Tuoro.
 ]],
 }, {
-    path = "monte_tuoro/5.jpg",
+    path = "monte_tuoro/IMG_20240203_171429.jpg",
     text = [[
 The Amalfi coast at sunset.
 ]],
 }, {
-    path = "monte_tuoro/6.jpg",
+    path = "monte_tuoro/IMG_20240205_152223.jpg",
     text = [[
 Punta Carena from Fortino di Pino.
 ]],
 }, {
-    path = "monte_tuoro/7.jpg",
+    path = "monte_tuoro/IMG_20240205_162022.jpg",
     text = [[
 Sea near Fortino di Mesola.
 ]],
 }, {
-    path = "monte_tuoro/8.jpg",
+    path = "monte_tuoro/IMG_20240205_170436.jpg",
     text = [[
 Wrong focus, but too good to discard.
 ]],
 }, {
-    path = "monte_tuoro/9.mp4",
+    path = "monte_tuoro/VID_20240205_161318.mp4",
     width = "640",
     text = [[
 Scattered sunset light dances on the gulf of Napoli.

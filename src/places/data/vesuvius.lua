@@ -41,55 +41,50 @@ that the final endless night of which we have heard had come upon the world.
 }
 
 local images <const> = {{
-    path = "vesuvius/0.jpg",
+    path = "vesuvius/IMG_20240203_121440.jpg",
     text = [[
 From the gulf.
 ]],
 }, {
-    path = "vesuvius/1.jpg",
+    path = "vesuvius/IMG_20240202_112819.jpg",
     text = [[
 Remnants of Monte Somma.
 ]],
 }, {
-    path = "vesuvius/2.jpg",
+    path = "vesuvius/IMG_20240202_101122.jpg",
     text = [[
 Napoli.
 ]],
 }, {
-    path = "vesuvius/3.jpg",
+    path = "vesuvius/IMG_20240202_111129.jpg",
     text = [[
 The crater.
 ]],
 }, {
-    path = "vesuvius/4.jpg",
+    path = "vesuvius/IMG_20240202_103306.jpg",
     text = [[
 Sobreviventes da subida, em clima sul-riograndense.
 ]],
 }, {
-    path = "vesuvius/5.jpg",
+    path = "vesuvius/IMG_20240202_105449.jpg",
     text = [[
 Path to the caldera.
 ]],
 }, {
-    path = "vesuvius/6.jpg",
+    path = "vesuvius/IMG_20240201_133739.jpg",
     text = [[
 From Castel Sant'Elmo.
 ]],
 }, {
-    path = "vesuvius/7.jpg",
+    path = "vesuvius/IMG_20240202_172229.jpg",
     text = [[
 At sunset, with the Sorrento peninsula.
 ]],
 }, {
-    path = "vesuvius/8.mp4",
+    path = "vesuvius/VID_20240202_103409.mp4",
     width = "640",
     text = [[
 Sulphuric gas constantly coming out of the rock.
-]],
-}, {
-    path = "vesuvius/9.jpg",
-    text = [[
-John Martin, “The Destruction of Pompeii and Herculaneum” (1822).
 ]],
 }}
 

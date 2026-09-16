@@ -12,36 +12,36 @@ Sejamos gregos na glória e na virtude, romanos
 ]]
 
 local images <const> = {{
-    path = "torino/0.jpg",
+    path = "torino/IMG_20231017_190653.jpg",
 }, {
-    path = "torino/1.jpg",
+    path = "torino/IMG_20231017_103930.jpg",
 }, {
-    path = "torino/2.jpg",
+    path = "torino/IMG_20231017_144112.jpg",
     text = [[
 Porta Palatina, the most well-preserved Roman ruins I have ever seen.  It is
 incredible that it has stood here for two thousand years.
 ]],
 }, {
-    path = "torino/3.jpg",
+    path = "torino/IMG_20231017_144203.jpg",
     text = [[
 Augusta Taurinorum
 ]],
 }, {
-    path = "torino/4.jpg",
+    path = "torino/IMG_20231017_160532.jpg",
     text = [[
 Next to it, across the street, il Duomo di Torino, the resting place of the Holy
 Shroud.
 ]],
 }, {
-    path = "torino/5.jpg",
+    path = "torino/IMG_20231017_131228.jpg",
 }, {
-    path = "torino/6.jpg",
+    path = "torino/IMG_20231011_120000.jpg",
     text = [[
 How to make me extremely happy.  (I got these back in the university of Padova,
 but they fit the theme)
 ]],
 }, {
-    path = "torino/7.jpg",
+    path = "torino/IMG_20231017_211026.jpg",
 }}
 
 return {

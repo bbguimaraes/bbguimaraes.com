@@ -85,93 +85,93 @@ local citation <const> = lines {
 }
 
 local images <const> = {{
-    path = "santi_cosma_e_damiano/0.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_083833.jpg",
     text = [[
 One of my favorite activities during this time: waking up before sunrise on
 chilly winter mornings and walking on the hills next to Ventosa, admiring the
 view of the gulf and the valley.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/1.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240121_144836.jpg",
     text = [[
 The watch tower in Ventosa, built in the 12th century.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/2.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240123_162548.jpg",
     text = [[
 An afternoon walk in San Lorenzo…
 ]],
 }, {
-    path = "santi_cosma_e_damiano/3.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240123_163137.jpg",
     text = [[
 … and then resting under a stone pine next to an abandoned house as the sunset
 begins to paint the horizon and the mountains golden.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/4.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240123_162131.jpg",
     text = [[
 Traffic jams in Santi Cosma.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/5.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240124_144121.jpg",
     text = [[
 Stone roads leading to <a href="coreno-ausonio.html">monte Maio</a>.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/6.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_073056.jpg",
     text = [[
 The sun rising behind monte Massico, with the church of Santi Cosma e Damiano on
 the foreground.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/7.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_074108.jpg",
     text = [[
 Sunlight at dawn among the old houses in the village of Ventosa.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/8.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_075740.jpg",
     text = [[
 The lower regions of Santi Cosma immersed in mist at sunrise.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/9.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_075917.jpg",
     text = [[
 <a href="https://instagram.com/reel/C2sOHUwq2dd">Sitting on top of the
 world</a>.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/10.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_080420.jpg",
     text = [[
 Too many beautiful views of the gulf.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/11.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_080619.jpg",
     text = [[
 <a href="gaeta.html">Monte Orlando in Gaeta</a> and the Pontine Islands in the
 far distance.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/12.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_095618.jpg",
     text = [[
 A “luogo sacro di preghiera”…
 ]],
 }, {
-    path = "santi_cosma_e_damiano/13.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240129_095551.jpg",
     text = [[
 … in some ruins by the side of the road coming down from Ventosa.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/14.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240224_103226.jpg",
     text = [[
 The old streets of Ventosa.
 ]],
 }, {
-    path = "santi_cosma_e_damiano/15.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240224_103239.jpg",
     text = [[
 Stairs down the hill from Ventosa to Santi Cosma…
 ]],
 }, {
-    path = "santi_cosma_e_damiano/16.jpg",
+    path = "santi_cosma_e_damiano/IMG_20240224_103642.jpg",
     text = [[
 …along which there are many nice points where you can stop and enjoy views of
 the valley.

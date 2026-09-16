@@ -71,146 +71,146 @@ be seen not supplicant as a defendant, but great as a master of the judges.
 }
 
 local images <const> = {{
-    path = "formia/0.jpg",
+    path = "formia/IMG_20240229_174246.jpg",
     text = [[
 Sunset in Gaeta seen from the ruins of a Roman port.
 ]],
 }, {
-    path = "formia/1.jpg",
+    path = "formia/IMG_20240228_162902.jpg",
     text = [[
 Monti Aurunci and the sea in Minturno.
 ]],
 }, {
-    path = "formia/2.jpg",
+    path = "formia/IMG_20240228_162909.jpg",
     text = [[
 Monte Argento (right) and Monte Orlando (left).
 ]],
 }, {
-    path = "formia/3.jpg",
+    path = "formia/IMG_20240228_164237.jpg",
 }, {
-    path = "formia/4.jpg",
+    path = "formia/IMG_20240229_113721.jpg",
 }, {
-    path = "formia/5.jpg",
+    path = "formia/IMG_20240229_114358.jpg",
     text = [[
 The monumental tomb of Cicero (under heavy restoration that day).
 ]],
 }, {
-    path = "formia/6.jpg",
+    path = "formia/IMG_20240229_113952.jpg",
 }, {
-    path = "formia/7.jpg",
+    path = "formia/IMG_20240229_114921.jpg",
     text = [[
 As many of the locations in via Appia, Formia is on the path of
 <a href="francigena.html">via Francigena</a>.
 ]],
 }, {
-    path = "formia/8.jpg",
+    path = "formia/IMG_20240229_114947.jpg",
     text = [[
 <span lang="it">Città di Cicerone</span>.
 ]],
 }, {
-    path = "formia/9.jpg",
+    path = "formia/IMG_20240229_122247.jpg",
     text = [[
 Street art by Apolo Torres.
 ]],
 }, {
-    path = "formia/10.jpg",
+    path = "formia/IMG_20240229_122302.jpg",
 }, {
-    path = "formia/11.jpg",
+    path = "formia/IMG_20240229_132243.jpg",
     text = [[
 <a href="https://www.formiae.it/siti/cisternone-romano/" lang="it">Cisternone
 romano</a>, one of the largest cisterns in the world, from the 1st century B.C.
 ]],
 }, {
-    path = "formia/12.jpg",
+    path = "formia/IMG_20240229_125909.jpg",
     text = [[
 Old city center around the cistern.
 ]],
 }, {
-    path = "formia/13.jpg",
+    path = "formia/IMG_20240229_133739.jpg",
 }, {
-    path = "formia/14.jpg",
+    path = "formia/IMG_20240229_131509.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/way/1160023521">Torre di Castellone</a>.
 ]],
 }, {
-    path = "formia/15.jpg",
+    path = "formia/IMG_20240229_141527.jpg",
 }, {
-    path = "formia/16.jpg",
+    path = "formia/IMG_20240229_142204.jpg",
     text = [[
 Via Francigena where it reaches the coast.
 ]],
 }, {
-    path = "formia/17.jpg",
+    path = "formia/IMG_20240229_143018.jpg",
     text = [[
 Criptoportici right under
 <a href="https://www.openstreetmap.org/relation/9192510" lang="it">Villa
 Comunale Umberto I</a>, a park in the city center.
 ]],
 }, {
-    path = "formia/18.jpg",
+    path = "formia/IMG_20240229_143103.jpg",
 }, {
-    path = "formia/19.jpg",
+    path = "formia/IMG_20240229_143335.jpg",
     text = [[
 Remains of the Roman port next to the portici.
 ]],
 }, {
-    path = "formia/20.jpg",
+    path = "formia/IMG_20240229_155211.jpg",
     text = [[
 <a href="https://www.openstreetmap.org/node/8390626570">Villa Pellegrini</a>.
 ]],
 }, {
-    path = "formia/21.jpg",
+    path = "formia/IMG_20240229_165036.jpg",
     text = [[
 The gulf of Gaeta from the Roman ruins of
 <a href="https://www.openstreetmap.org/way/151095052">Cisterna Maggiore</a>.
 ]],
 }, {
-    path = "formia/22.jpg",
+    path = "formia/IMG_20240229_170807.jpg",
     text = [[
 The villa from the other side.
 ]],
 }, {
-    path = "formia/23.jpg",
+    path = "formia/IMG_20240229_171048.jpg",
     text = [[
 Gaeta from the ruins of a Roman port.
 ]],
 }, {
-    path = "formia/24.jpg",
+    path = "formia/IMG_20240229_171138.jpg",
     text = [[
 I'll stop at nothing for a picture.
 ]],
 }, {
-    path = "formia/25.jpg",
+    path = "formia/IMG_20240229_171456.jpg",
 }, {
-    path = "formia/26.jpg",
+    path = "formia/IMG_20240229_171657.jpg",
 }, {
-    path = "formia/27.jpg",
+    path = "formia/IMG_20240229_171849.jpg",
     text = [[
 Monti Aurunci from the port.
 ]],
 }, {
-    path = "formia/28.jpg",
+    path = "formia/IMG_20240229_172026.jpg",
     text = [[
 One of the mosaics buried under the rocks.
 ]],
 }, {
-    path = "formia/29.jpg",
+    path = "formia/IMG_20240229_172208.jpg",
 }, {
-    path = "formia/30.jpg",
+    path = "formia/IMG_20240229_173049.jpg",
     text = [[
 The sun begins to set in the gulf.
 ]],
 }, {
-    path = "formia/31.jpg",
+    path = "formia/IMG_20240229_173659.jpg",
 }, {
-    path = "formia/32.jpg",
+    path = "formia/IMG_20240229_174350.jpg",
 }, {
-    path = "formia/33.jpg",
+    path = "formia/IMG_20240229_174956.jpg",
     text = [[
 Sunset behind the promontory of Gaeta.
 ]],
 }, {
-    path = "formia/34.mp4",
+    path = "formia/VID_20240229_172616.mp4",
 }}
 
 return {

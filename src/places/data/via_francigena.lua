@@ -52,104 +52,104 @@ and few there be that find it.
 }
 
 local images <const> = {{
-    path = "via_francigena/0.jpg",
+    path = "via_francigena/IMG_20240126_141152.jpg",
     text = [[
 A sign in <a href="castelforte.html">Castelforte</a> showing the path from Rome
 to southeastern Lazio.
 ]],
 }, {
-    path = "via_francigena/1.jpg",
+    path = "via_francigena/IMG_20240126_143842.jpg",
     text = [[
 Church of Santa Maria del Buon Rimedio in <a href="suio.html">Suio</a>.
 ]],
 }, {
-    path = "via_francigena/2.jpg",
+    path = "via_francigena/IMG_20240126_143914.jpg",
     text = [[
 In <a href="suio.html">Suio</a>.
 ]],
 }, {
-    path = "via_francigena/3.jpg",
+    path = "via_francigena/IMG_20240126_151845.jpg",
     text = [[
 On the road to <a href="suio.html">Suio Alto</a>.
 ]],
 }, {
-    path = "via_francigena/4.jpg",
+    path = "via_francigena/IMG_20240126_152222.jpg",
     text = [[
 Life-size nativity scene display inside a grotto on the side of that road
 (missing on that particular day).
 ]],
 }, {
-    path = "via_francigena/5.jpg",
+    path = "via_francigena/IMG_20240127_120500.jpg",
     text = [[
 On the road to the <a href="minturnae.html">Roman ruins</a> in <a
 href="minturno.html">Minturno</a>.
 ]],
 }, {
-    path = "via_francigena/6.jpg",
+    path = "via_francigena/IMG_20240127_121912.jpg",
     text = [[
 Next to the Vespasian aqueduct.
 ]],
 }, {
-    path = "via_francigena/7.jpg",
+    path = "via_francigena/IMG_20240127_122656.jpg",
     text = [[
 At the entrance of the <a href="minturnae.html">Roman ruins</a>.
 ]],
 }, {
-    path = "via_francigena/8.jpg",
+    path = "via_francigena/IMG_20240127_122723.jpg",
     text = [[
 <i>Roma: 215,4km</i><br />
 <i>Canterbury: 2.451km</i>
 ]],
 }, {
-    path = "via_francigena/9.jpg",
+    path = "via_francigena/IMG_20240127_152334.jpg",
     text = [[
 Next to Monte d'Argento in <a href="minturno.html">Minturno</a>.
 ]],
 }, {
-    path = "via_francigena/10.jpg",
+    path = "via_francigena/IMG_20240127_152553.jpg",
 }, {
-    path = "via_francigena/11.jpg",
+    path = "via_francigena/IMG_20240209_190027.jpg",
     text = [[
 In via Bagni di <a href="suio.html">Suio</a>.
 ]],
 }, {
-    path = "via_francigena/12.jpg",
+    path = "via_francigena/IMG_20240229_114921.jpg",
     text = [[
 At the entrance of Formia.
 ]],
 }, {
-    path = "via_francigena/13.jpg",
+    path = "via_francigena/IMG_20240229_122552.jpg",
 }, {
-    path = "via_francigena/14.jpg",
+    path = "via_francigena/IMG_20240229_131509.jpg",
     text = [[
 Next to Torre di Castellone in Formia.
 ]],
 }, {
-    path = "via_francigena/15.jpg",
+    path = "via_francigena/IMG_20240229_131618.jpg",
     text = [[
 In Piazza Sant'Erasmo.
 ]],
 }, {
-    path = "via_francigena/16.jpg",
+    path = "via_francigena/IMG_20240229_132243.jpg",
     text = [[
 Next to the colossal Roman cistern.
 ]],
 }, {
-    path = "via_francigena/17.jpg",
+    path = "via_francigena/IMG_20240229_133739.jpg",
 }, {
-    path = "via_francigena/18.jpg",
+    path = "via_francigena/IMG_20240229_142204.jpg",
     text = [[
 In Piazza della Vittoria.
 ]],
 }, {
-    path = "via_francigena/19.jpg",
+    path = "via_francigena/IMG_20240229_150340.jpg",
 }, {
-    path = "via_francigena/20.jpg",
+    path = "via_francigena/IMG_20240229_153922.jpg",
     text = [[
 On the coastal roads between Formia and Scauri.
 ]],
 }, {
-    path = "via_francigena/21.jpg",
+    path = "via_francigena/IMG_20240229_154828.jpg",
 }, {
     path = "via_francigena/22.jpg",
     text = [[

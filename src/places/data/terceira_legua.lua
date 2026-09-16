@@ -20,25 +20,25 @@ Que mis huesos, piel y sal abonen mi suelo natal.
 }
 
 local images <const> = {{
-    path = "terceira_legua/0.jpg",
+    path = "terceira_legua/IMG_20231203_161001.jpg",
 }, {
-    path = "terceira_legua/1.jpg",
+    path = "terceira_legua/IMG_20231203_172731.jpg",
 }, {
-    path = "terceira_legua/2.jpg",
+    path = "terceira_legua/IMG_20231201_173621.jpg",
 }, {
-    path = "terceira_legua/3.jpg",
+    path = "terceira_legua/IMG_20231201_173502.jpg",
 }, {
-    path = "terceira_legua/4.jpg",
+    path = "terceira_legua/IMG_20231203_172659.jpg",
 }, {
-    path = "terceira_legua/5.jpg",
+    path = "terceira_legua/IMG_20231203_165810.jpg",
 }, {
-    path = "terceira_legua/6.jpg",
+    path = "terceira_legua/IMG_20231203_162806.jpg",
 }, {
-    path = "terceira_legua/7.jpg",
+    path = "terceira_legua/IMG_20231203_163458.jpg",
 }, {
-    path = "terceira_legua/8.jpg",
+    path = "terceira_legua/IMG_20231203_163318.jpg",
 }, {
-    path = "terceira_legua/9.jpg",
+    path = "terceira_legua/IMG_20231203_172011.jpg",
 }}
 
 return {

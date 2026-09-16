@@ -41,99 +41,100 @@ will tell thee of both ways.
 }
 
 local images <const> = {{
-    path = "napoli/0.jpg",
+    path = "napoli/IMG_20240201_134744.jpg",
     text = [[
 From Castel Sant'Elmo.
 ]],
 }, {
-    path = "napoli/1.jpg",
+    path = "napoli/IMG_20240201_105950.jpg",
     text = [[
 Galleria Umberto I.
 ]],
 }, {
-    path = "napoli/2.jpg",
+    path = "napoli/IMG_20240201_165147.jpg",
     text = [[
 Duomo.
 ]],
 }, {
-    path = "napoli/3.jpg",
+    path = "napoli/IMG_20240202_171334.jpg",
     text = [[
 Some of the walks by the many ports.
 ]],
 }, {
-    path = "napoli/4.jpg",
+    path = "napoli/IMG_20240202_172349.jpg",
 }, {
-    path = "napoli/5.jpg",
+    path = "napoli/IMG_20240203_120845.jpg",
     text = [[
 Porta di Massa and Collina del Vomero.
 ]],
 }, {
-    path = "napoli/6.mp4",
+    path = "napoli/VID_20240205_101425.mp4",
     width = "640",
     poster = "0:03",
 }, {
-    path = "napoli/7.mp4",
+    path = "napoli/VID_20240203_122059.mp4",
     width = "640",
     poster = "0:09",
 }, {
-    path = "napoli/8.jpg",
+    path = "napoli/IMG_20240204_135639.jpg",
     text = [[
 Basilica di Santa Chiara.
 ]],
 }, {
-    path = "napoli/9.jpg",
+    path = "napoli/IMG_20240204_174454.jpg",
     text = [[
 A perfect depiction of the different aspects of the city.
 ]],
 }, {
-    path = "napoli/10.jpg",
+    path = "napoli/IMG_20240201_120931.jpg",
     text = [[
 You won't be hungry here.
 ]],
-    path = "napoli/11.jpg",
+}, {
+    path = "napoli/IMG_20240201_170128.jpg",
     text = [[
 Duomo.
 ]],
 }, {
-    path = "napoli/12.jpg",
+    path = "napoli/IMG_20240201_170524.jpg",
     text = [[
 Cripta di San Gennaro.
 ]],
 }, {
-    path = "napoli/13.jpg",
+    path = "napoli/IMG_20240201_171239.jpg",
     text = [[
 beatus vir qui inventus est sine macula /<br />
 veni sponsa Christi accipe coronam
 ]],
 }, {
-    path = "napoli/14.jpg",
+    path = "napoli/IMG_20240201_171433.jpg",
     text = [[
 vidi et credidi
 ]],
 }, {
-    path = "napoli/15.jpg",
+    path = "napoli/IMG_20240201_110256.jpg",
     text = [[
 Galleria Umberto I.
 ]],
 }, {
-    path = "napoli/16.jpg",
+    path = "napoli/IMG_20240202_192817.jpg",
     text = [[
 Chiesa del Gesù Nuovo.
 ]],
 }, {
-    path = "napoli/17.jpg",
+    path = "napoli/IMG_20240204_095603.jpg",
     text = [[
 Chiesa dei Girolamini.
 ]],
 }, {
-    path = "napoli/18.jpg",
+    path = "napoli/IMG_20240201_153418.jpg",
     text = [[
 Basilica di San Domenico Maggiore.
 ]],
 }, {
-    path = "napoli/19.jpg",
+    path = "napoli/IMG_20240201_155059.jpg",
 }, {
-    path = "napoli/20.jpg",
+    path = "napoli/IMG_20240204_111618.jpg",
     text = [[
 Piazza Dante.
 ]],

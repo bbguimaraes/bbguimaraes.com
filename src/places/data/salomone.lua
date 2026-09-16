@@ -45,21 +45,21 @@ instruction.
 }
 
 local images <const> = {{
-    path = "salomone/0.jpg",
+    path = "salomone/IMG_20240209_164102.jpg",
 }, {
-    path = "salomone/1.jpg",
+    path = "salomone/IMG_20240209_163219.jpg",
 }, {
-    path = "salomone/2.jpg",
+    path = "salomone/IMG_20240209_163513.jpg",
 }, {
-    path = "salomone/3.jpg",
+    path = "salomone/IMG_20240209_163448.jpg",
 }, {
-    path = "salomone/4.jpg",
+    path = "salomone/IMG_20240209_165423.jpg",
 }, {
-    path = "salomone/5.jpg",
+    path = "salomone/IMG_20240126_172728.jpg",
 }, {
-    path = "salomone/6.jpg",
+    path = "salomone/IMG_20240126_172800.jpg",
 }, {
-    path = "salomone/7.jpg",
+    path = "salomone/IMG_20240209_171239.jpg",
 }}
 
 return {

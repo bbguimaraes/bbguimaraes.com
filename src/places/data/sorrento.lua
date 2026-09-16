@@ -23,60 +23,60 @@ Write with blood, and thou wilt find that blood is spirit.
 }
 
 local images <const> = {{
-    path = "sorrento/0.jpg",
+    path = "sorrento/IMG_20240206_092245.jpg",
     text = [[
 Porto di Marina Piccola.
 ]],
 }, {
-    path = "sorrento/1.jpg",
+    path = "sorrento/IMG_20240206_082131.jpg",
     text = [[
 <a href="vesuvius.html">Vesuvius</a>, always visible in the gulf, here seen from
 Marina Grande.
 ]],
 }, {
-    path = "sorrento/2.jpg",
+    path = "sorrento/IMG_20240206_093023.jpg",
     text = [[
 The walls of Sorrento.
 ]],
 }, {
-    path = "sorrento/3.jpg",
+    path = "sorrento/IMG_20240206_103129.jpg",
     text = [[
 Corso Italia.
 ]],
 }, {
-    path = "sorrento/4.jpg",
+    path = "sorrento/IMG_20240206_114729.jpg",
     text = [[
 Bagni della Regina Giovanna.
 ]],
 }, {
-    path = "sorrento/5.jpg",
+    path = "sorrento/IMG_20240206_115407.jpg",
 }, {
-    path = "sorrento/6.jpg",
+    path = "sorrento/IMG_20240206_115942.jpg",
 }, {
-    path = "sorrento/7.jpg",
+    path = "sorrento/IMG_20240206_120228.jpg",
     text = [[
 Top part of the ruins, with the Northern portion of the Monti Lattari in the
 background.
 ]],
 }, {
-    path = "sorrento/8.jpg",
+    path = "sorrento/IMG_20240206_121835.jpg",
 }, {
-    path = "sorrento/9.jpg",
+    path = "sorrento/IMG_20240206_122410.jpg",
     text = [[
 Natural swimming pool.
 ]],
 }, {
-    path = "sorrento/10.jpg",
+    path = "sorrento/IMG_20240206_121526.jpg",
     text = [[
 Unbelievably clear waters around the ruins.
 ]],
 }, {
-    path = "sorrento/11.jpg",
+    path = "sorrento/IMG_20240206_134001.jpg",
     text = [[
 Marina di Puolo.
 ]],
 }, {
-    path = "sorrento/12.mp4",
+    path = "sorrento/VID_20240206_125107.mp4",
     width = "640",
     text = [[
 I've posted some pictures of extravagant meals I sometimes like to have when I'm

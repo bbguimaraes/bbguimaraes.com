@@ -64,63 +64,63 @@ power.
 }
 
 local images <const> = {{
-    path = "mediterranean/0.jpg",
+    path = "mediterranean/IMG_20231023_163627.jpg",
     text = [[
 القرين (Al-Qurayn), Tunisia.
 ]],
 }, {
-    path = "mediterranean/1.jpg",
+    path = "mediterranean/IMG_20231023_145146.jpg",
     text = [[
 Κεραμωτή (Keramoti) and the islands of Θάσος (Thasos) and Θασοπούλα
 (Thasopoula).
 ]],
 }, {
-    path = "mediterranean/2.jpg",
+    path = "mediterranean/IMG_20231023_145316.jpg",
     text = [[
 Κόλπος Καβάλας (the gulf of Kavala).
 ]],
 }, {
-    path = "mediterranean/3.jpg",
+    path = "mediterranean/IMG_20231023_145753.jpg",
     text = [[
 Ολυμπιάδα (Olympiada) and Σταυρός (Stavros).
 ]],
 }, {
-    path = "mediterranean/4.jpg",
+    path = "mediterranean/IMG_20231023_150347.jpg",
     text = [[
 Θεσσαλονίκη (Thessaloniki).
 ]],
 }, {
-    path = "mediterranean/5.jpg",
+    path = "mediterranean/IMG_20231023_152137.jpg",
     text = [[
 Ηγουμενίτσα (Igoumenitsa) and the island of Κέρκυρα (Kerkyra).
 ]],
 }, {
-    path = "mediterranean/6.jpg",
+    path = "mediterranean/IMG_20231023_155250.jpg",
     text = [[
 Mount Etna visible over the clouds.
 ]],
 }, {
-    path = "mediterranean/7.jpg",
+    path = "mediterranean/IMG_20231023_155935.jpg",
     text = [[
 Sicily and mount Etna.
 ]],
 }, {
-    path = "mediterranean/8.jpg",
+    path = "mediterranean/IMG_20231023_160817.jpg",
     text = [[
 The island of Gozo in Malta.
 ]],
 }, {
-    path = "mediterranean/9.jpg",
+    path = "mediterranean/IMG_20231023_161823.jpg",
     text = [[
 The island of Lampedusa.
 ]],
 }, {
-    path = "mediterranean/10.jpg",
+    path = "mediterranean/IMG_20231023_162816.jpg",
     text = [[
 The island of شرقي (Chergui) in Tunisia.
 ]],
 }, {
-    path = "mediterranean/11.jpg",
+    path = "mediterranean/IMG_20231023_163838.jpg",
     text = [[
 Somewhere close to the border between Tunisia and Algeria, by my calculation.
 ]],
