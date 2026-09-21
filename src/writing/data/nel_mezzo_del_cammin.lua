@@ -1,6 +1,6 @@
 local path <const> = require "lib.path"
 
-local img <const> =     figure {
+local img <const> = figure {
     class = "float-right",
     content = image_link {
         class = "hor-center",
@@ -14,7 +14,7 @@ local img <const> =     figure {
 local description <const> = format {
     [[Since I'm now, according to the %s, %s, I thought I'd write to my younger self, something I'd have liked a Virgil to have taught me as I struggled to find my way out of the %s.]],
     link {
-        href = "https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&amp;INP_SECT=1&amp;INP_START=1&amp;INP_LEN=2&amp;LANG=2",
+        href = "https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&INP_SECT=1&INP_START=1&INP_LEN=2&LANG=2",
         content = "famous incipit",
     },
     inline_tag("i", {lang = "it"}, "nel mezzo del cammin di nostra vita"),
@@ -24,12 +24,12 @@ local description <const> = format {
 local content <const> = lines {
     par [[
 Since I'm now, according to the
-<a href="https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&amp;INP_SECT=1&amp;INP_START=1&amp;INP_LEN=2&amp;LANG=2">famous incipit</a>,
+<a href="https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&INP_SECT=1&INP_START=1&INP_LEN=2&LANG=2">famous incipit</a>,
 <i lang="it">nel mezzo del cammin di nostra vita</i>, I thought I'd write to my
 younger self, something I'd have liked a Virgil to have taught me as I struggled
 to find my way out of the <i lang="it">selva oscura</i>.  At some point, a man
 finds himself like Xenophon's
-<a href="https://www.perseus.tufts.edu/hopper/text?doc=Xen.+Mem.+2.1.21&amp;fromdoc=Perseus%3Atext%3A1999.01.0208"><i>Heracles at the crossroads</i></a>.
+<a href="https://www.perseus.tufts.edu/hopper/text?doc=Xen.+Mem.+2.1.21&fromdoc=Perseus%3Atext%3A1999.01.0208"><i>Heracles at the crossroads</i></a>.
 This was early adolescence for me, a period I passionately hated.  Somewhat less
 idealistically than the Herculean myth, I cannot say I made a choice, since it
 was long before I could articulate any of this to myself.  The alternative was
@@ -68,7 +68,7 @@ You should not pray for an easy life.  You'll also be lonely, most of the time
 not even liked.  You'll learn to let go of people, of those who do not have the
 same fire burning inside, who want to go on living like infants.  It will hurt.
 But you'll get accustomed, and will begin to see it as a gift:
-<a href="https://www.biblegateway.com/passage/?search=matthew+16%3A26&amp;version=KJV"><i>for
+<a href="https://www.biblegateway.com/passage/?search=matthew+16%3A26&version=KJV"><i>for
 what is a man profited, if he shall gain the whole world, and lose his own
 soul?</i></a>
 ]],
@@ -91,12 +91,12 @@ I have searched myself
 local content_pt <const> = lines {
     par [[
 Já que estou, de acordo com o
-<a href="https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&amp;INP_SECT=1&amp;INP_START=1&amp;INP_LEN=2&amp;LANG=2">famoso incipit</a>,
+<a href="https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM=Inf&INP_SECT=1&INP_START=1&INP_LEN=2&LANG=2">famoso incipit</a>,
 <i lang="it">nel mezzo del cammin di nostra vita</i>, pensei em escrever para o
 meu eu mais jovem, algo que gostaria que um Virgílio tivesse me ensinado quando
 penava para encontrar o caminho de saída da <i lang="it">selva oscura</i>.  Num
 certo ponto da vida, um homem se encontra como o
-<a href="https://www.perseus.tufts.edu/hopper/text?doc=Xen.+Mem.+2.1.21&amp;fromdoc=Perseus%3Atext%3A1999.01.0208"><i>Heracles na encruzilhada</i></a>
+<a href="https://www.perseus.tufts.edu/hopper/text?doc=Xen.+Mem.+2.1.21&fromdoc=Perseus%3Atext%3A1999.01.0208"><i>Heracles na encruzilhada</i></a>
 de Xenofonte.  Isso foi para mim o início da adolescência, um período que
 ardentemente detestava.  Numa forma um tanto menos idealística que o mito
 hercúleo, não posso dizer que fiz uma escolha, já que foi muito antes que
@@ -136,7 +136,7 @@ Não deves suplicar por uma vida fácil.  Serás solitário, e na maior parte do
 tempo não serás nem apreciado.  Terás que aprender a desistir de pessoas, dos
 que não têm o mesmo fogo ardendo dentro deles, os que querem continuar a viver
 uma vida infantil.  Doerá.  Mas te habituarás, e começarás a ver como um dom:
-<a href="https://www.biblegateway.com/passage/?search=matthew+16%3A26&amp;version=KJV"><i>pois
+<a href="https://www.biblegateway.com/passage/?search=matthew+16%3A26&version=KJV"><i>pois
 que aproveita ao homem ganhar o mundo inteiro, se perder a sua alma?</i></a>
 ]],
     par [[

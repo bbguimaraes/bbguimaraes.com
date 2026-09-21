@@ -63,11 +63,7 @@ for _, x in ipairs(var("posts")) do
     for _, x in ipairs(x.tags or {}) do
         table.insert(l, inline_tag("category", nil, x))
     end
-    if desc then
-        table.insert(l, inline_tag("description", nil, desc))
-    else
-        table.insert(l, html "<description />")
-    end
+    table.insert(l, inline_tag("description", nil, desc))
     table.insert(items, tag("item", nil, lines(l)))
 end
 

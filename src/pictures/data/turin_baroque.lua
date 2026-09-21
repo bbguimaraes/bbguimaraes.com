@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[The 4th edition of the %s organized by %s, which took place in June–July and October–November 2025 in some of the most beautiful churches and palaces in Torino.]],
     link {
         href = "https://www.tbmf.eu",
@@ -9,7 +9,7 @@ local description <const> = indented(format {
         lang = "it",
         content = "Accademia del Santo Spirito",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

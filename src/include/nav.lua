@@ -23,7 +23,7 @@ for _, t in ipairs(var("nav_path")) do
     if href then
         table.insert(path, link {href = href, content = content})
     else
-        table.insert(path, html(content))
+        table.insert(path, content)
     end
 end
 table.insert(l, div({class = "nav-path"}, lines(path)))

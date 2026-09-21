@@ -70,7 +70,7 @@ but be ye doers of the word, and not hearers only, deceiving your own selves
         nil,
         "James",
         link {
-            href = "https://www.biblegateway.com/passage/?search=james%201%3A22&amp;version=KJV",
+            href = "https://www.biblegateway.com/passage/?search=james%201%3A22&version=KJV",
             content = "1:22",
         }),
 }

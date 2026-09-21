@@ -62,8 +62,8 @@ your operating system.
     hr(),
     image {
         src = "/files/blog/lua_wasm_demo1.png",
-        title = ('Lua Wasm demo - "hello" .. ", " .. "lua"'):gsub('"', "&quot;"),
-        alt = ('Lua Wasm demo - "hello" .. ", " .. "lua"'):gsub('"', "&quot;"),
+        title = 'Lua Wasm demo - "hello" .. ", " .. "lua"',
+        alt = 'Lua Wasm demo - "hello" .. ", " .. "lua"',
     },
     hr(),
     image {
@@ -245,7 +245,7 @@ program.
 }
 
 return {
-    title = "nngn - lua &amp; wasm",
+    title = "nngn - lua & wasm",
     timestamp = { 1616494225, "2021-03-23T10:10:25" },
     tags = { "c", "lua", "nngn", "programming", "wasm" },
     description = description,

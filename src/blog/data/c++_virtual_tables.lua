@@ -1,7 +1,7 @@
 local function inline_code(x)
     return inline_tag(
         "pre", {class = "inline-code"},
-        code_tag("code", nil, x:gsub("\n$", "")))
+        code_tag("code", nil, str(x:gsub("\n$", ""))))
 end
 
 local description <const> = [[One of the principal differences between C and C++ is the latter's direct support for virtual functions.  While it is entirely possible, as will be demonstrated, to implement virtual dispatch in C, C++ offers language primitives that instruct the compiler to generate the necessary back end code automatically.]]

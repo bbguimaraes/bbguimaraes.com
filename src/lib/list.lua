@@ -221,7 +221,7 @@ local t <const> = {
         {"9788589189088", "O primeiro guerreiro"},
         {"9788525405364", "Os tambores silenciosos"},
     }},
-    {"D&amp;D", {
+    {"D&D", {
         {"9788575320532", "Canção e silêncio"},
         {"9788575320402", "Cenário de campanha Forgotten Realms"},
         {"9788575321072", "Livro do jogador v. 3.5"},
@@ -271,7 +271,9 @@ local function generate_item(i, t)
     local ret <const> = {}
     for _, x in ipairs(l) do
         table.insert(ret, concat {
-            inline_tag("span", {class = "isbn"}, x[1] and x[1] or "&nbsp;"),
+            inline_tag(
+                "span", {class = "isbn"},
+                x[1] and x[1] or str("&nbsp;")),
             x[2],
         })
     end

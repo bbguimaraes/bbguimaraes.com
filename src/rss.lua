@@ -18,10 +18,6 @@ local function generate_common(dir, t, tag)
             end
         end
     end
-    local desc <const> = t.description
-    if desc and type(desc) ~= "string" then
-        t.description = generate.render(desc)
-    end
     if t.tags then
         table.insert(t.tags, 1, tag or dir)
     else
@@ -43,9 +39,12 @@ for _, x in ipairs(lib_dir:load()) do
     end
     x.short_title = nil
     if x.description then
-        x.description = string.format(
+        x.description = format {
             "<p>%s, %s</p><p>%s</p>",
-            x.title, x.author, x.description:gsub("\n$", ""):gsub("\n", " "))
+            x.title,
+            x.author,
+            join_lines(x.description),
+        }
     else
         x.description = string.format("%s, %s", title, author)
     end
@@ -65,19 +64,14 @@ for _, x in ipairs(music_dir:load()) do
         table.insert(desc, "</p>")
     end
     if x.description then
-        table.insert(desc, "<p>")
-        table.insert(desc, (x.description:gsub("\n$", ""):gsub("\n", " ")))
-        table.insert(desc, "</p>")
+        table.insert(desc, inline_tag("p", nil, join_lines(x.description)))
     end
-    x.description = table.concat(desc)
+    x.description = concat(desc)
 end
 
 local places_dir <const> = data_dir.new(var, "places")
 for _, x in ipairs(places_dir:load()) do
     generate_common("places", x, "place")
-    if x.description then
-        x.description = x.description:gsub("\n$", ""):gsub("\n", " ")
-    end
 end
 
 local pictures_dir <const> = data_dir.new(var, "pictures")

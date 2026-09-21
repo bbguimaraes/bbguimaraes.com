@@ -2,8 +2,18 @@ local path <const> = require "lib.path"
 local str <const> = require "lib.str"
 local util <const> = require "lib.util"
 
+local ESCAPES <const> = {
+    -- must be the first
+    {"&", "&amp;"},
+}
+
+local ESCAPES_FULL <const> = {
+    {'"', "&quot;"},
+}
+
 local URL_ESCAPES <const> = {
     ["\n"] = "%%0a",
+    [" "] = "%%20",
     ["à"] = "%%c3%%a0",
     ["á"] = "%%c3%%a1",
     ["ã"] = "%%c3%%a3",
@@ -16,6 +26,16 @@ local IS_FILE_ATTR <const> = {
     href = true,
     src = true,
 }
+
+local function escape(x, t)
+    if type(x) ~= "string" then
+        return x
+    end
+    for _, t in ipairs(t or ESCAPES) do
+        x = x:gsub(table.unpack(t))
+    end
+    return x
+end
 
 local function url_escape(x)
     for k, v in pairs(URL_ESCAPES) do
@@ -55,23 +75,18 @@ end
 --- Recursively renders \p x.
 --- See \ref str.lua
 local function render(x, ctx)
-    if type(x) == "function" then
-        x = x()
-    end
-    if type(x) == "string" then
-        str.write_indent(ctx)
-        return ctx.out:write(x)
-    end
-    return x:render(ctx)
+    return str.render(x, ctx)
 end
 
-local function render_simple(x)
+local function render_simple(x, ctx)
     if x == nil then
         return
     end
     if type(x) == "function" then
         x = x()
     end
+    x = ctx.escape(x)
+    x = escape(x, ESCAPES_FULL)
     return tostring(x)
 end
 
@@ -99,7 +114,7 @@ end
 
 --- Writes an HTML attribute (format: ` ${k}="${t[k]}"`).
 local function write_attr_common(ctx, k, v)
-    v = render_simple(v)
+    v = render_simple(v, ctx)
     if IS_FILE_ATTR[k] then
         check_local_file(ctx, v)
     end
@@ -181,6 +196,8 @@ local function write_generic_open_tag(ctx, name, attrs)
     write_generic_attrs(ctx, attrs)
 end
 
+--- Creates a renderer which writes a string unchanged.
+--- N.b.: the content is not escaped.
 local html_str <const> = {}
 html_str.__index = html_str
 html_str.__name = "html_str"
@@ -190,9 +207,28 @@ function html_str:new(s)
 end
 
 function html_str:render(ctx)
-    ctx.out:write(self.s)
+    local _ <close> = ctx:save("indent", "escape")
+    ctx.indent = 0
+    ctx.escape = function(x) return x end
+    render(self.s, ctx)
 end
 
+--- Creates a renderer which escapes but does not otherwise process a string.
+local escaped <const> = {}
+escaped.__index = escaped
+escaped.__name = "escaped"
+
+function escaped:new(s)
+    return setmetatable({ s = s }, self)
+end
+
+function escaped:render(ctx)
+    local _ <close> = ctx:save("indent")
+    ctx.indent = 0
+    render(self.s, ctx)
+end
+
+--- Creates a renderer which indents and writes pre-formatted HTML text.
 local html <const> = {}
 html.__index = html
 html.__name = "html"
@@ -201,7 +237,6 @@ function html:new(s)
     return setmetatable({ s = s }, self)
 end
 
---- Creates a renderer which indents and writes pre-formatted HTML text.
 function html:render(ctx)
     str.write_indent(ctx)
     -- indent all but the last (empty) line
@@ -666,7 +701,7 @@ function code:render(ctx)
     local s <const> = self.content:gsub("\n$", "")
     str.write_indent(ctx)
     out:write("<pre><code>")
-    out:write(s)
+    html_str:new(s):render(ctx)
     out:write("</code></pre>")
 end
 
@@ -800,10 +835,12 @@ function src_ref(t)
 end
 
 return {
+    escape = escape,
     url_escape = url_escape,
     url_unescape = url_unescape,
     url_encode = url_encode,
     str = function(...) return html_str:new(...) end,
+    escaped = function(...) return escaped:new(...) end,
     html = function(...) return html:new(...) end,
     plain = function(...) return plain:new(...) end,
     generic_tag = function(...) return generic_tag:new(...) end,

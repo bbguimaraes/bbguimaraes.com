@@ -89,21 +89,21 @@ return include "master.lua" {
                     quote_footer(
                         nil, '<span lang="grc">Εὐαγγέλιον κατὰ Ἰωάννην</span>',
                         link {
-                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&amp;version=SBLGNT",
+                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&version=SBLGNT",
                             content = "1:1",
                         }),
                     quote_footer(
                         nil,
                         '<span lang="la">Evangelium secundum Ioannem</span>',
                         link {
-                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&amp;version=VULGATE",
+                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&version=VULGATE",
                             content = "1:1",
                         },
                         "&nbsp;&nbsp;&nbsp;&nbsp;"),
                     quote_footer(
                         nil, "John",
                         link {
-                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&amp;version=KJV",
+                            href = "https://www.biblegateway.com/passage/?search=john%201%3A1&version=KJV",
                             content = "1:1",
                         },
                         "&nbsp;&nbsp;&nbsp;&nbsp;"),

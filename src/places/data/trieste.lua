@@ -10,20 +10,20 @@ Trieste / Opicina / Prosecco / Miramare / Barcola
 }
 
 local citation <const> = lines {
-    "Great king, what end to their efforts will you give?<br />",
-    "Antenor could escape through the thick of the Greek army,<br />",
-    "and safely enter the Illyrian gulfs, and deep into the realms<br />",
-    "of the Liburnians, and pass the founts of Timavus,<br />",
-    "from which the river bursts, with a huge mountainous roar,<br />",
-    "through nine mouths, and buries the fields under its noisy flood.<br />",
-    "Here, nonetheless, he sited the city of Padua, and homes<br />",
-    "for Teucrians, and gave the people a name, and hung up<br />",
-    "the arms of Troy: now he’s calmly settled, in tranquil peace.<br />",
-    "But we, your race, to whom you permit the heights of heaven,<br />",
-    "lose our ships (shameful!), betrayed, because of one person’s anger,"
-        .. "<br />",
-    "and kept far away from the shores of Italy.<br />",
-    "Is this the prize for virtue? Is this how you restore our rule?<br />",
+    str [[
+Great king, what end to their efforts will you give?<br />
+Antenor could escape through the thick of the Greek army,<br />
+and safely enter the Illyrian gulfs, and deep into the realms<br />
+of the Liburnians, and pass the founts of Timavus,<br />
+from which the river bursts, with a huge mountainous roar,<br />
+through nine mouths, and buries the fields under its noisy flood.<br />
+Here, nonetheless, he sited the city of Padua, and homes<br />
+for Teucrians, and gave the people a name, and hung up<br />
+the arms of Troy: now he’s calmly settled, in tranquil peace.<br />
+But we, your race, to whom you permit the heights of heaven,<br />
+lose our ships (shameful!), betrayed, because of one person’s anger,<br />
+and kept far away from the shores of Italy.<br />
+Is this the prize for virtue? Is this how you restore our rule?<br />]],
     "<br />",
     quote_footer("Publius Vergilius Maro", "Aeneis", "I.241"),
 }

@@ -118,6 +118,7 @@ local function _render(out, src, dst, x)
         out = out,
         indent = 0,
         local_files = util.set:new(),
+        escape = html.escape,
     }
     local ret <const> = x:render(ctx)
     return ret, check(src, dst, ctx)

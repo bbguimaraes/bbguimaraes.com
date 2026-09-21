@@ -247,7 +247,8 @@ return include "master.lua" {
             div({class = "w80"}, lines {
                 tag("h1", {style = "text-align: center"}, lines {
                     inline_tag("span", {lang = "grc"}, "γνῶθι σεαυτόν"),
-                    "&middot; gnosce teipsum",
+                    "·",
+                    inline_tag("span", {lang = "la"}, "gnosce teipsum"),
                 }),
                 ul {
                     lines {

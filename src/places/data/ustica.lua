@@ -113,7 +113,7 @@ there do thou beach thy ship by the deep eddying Oceanus,<br />
 but go thyself to the dank house of Hades.
 ]],
     quote_footer("Homer", "Odyssey", link {
-        href = "https://www.perseus.tufts.edu/hopper/text?doc=Hom.+Od.+10&amp;fromdoc=Perseus%3Atext%3A1999.01.0136",
+        href = "https://www.perseus.tufts.edu/hopper/text?doc=Hom.+Od.+10&fromdoc=Perseus%3Atext%3A1999.01.0136",
         content = "10.503",
     }),
 }

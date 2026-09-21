@@ -85,7 +85,7 @@ age, I let my thoughts fly to them.
         "Lucius Annaeus Seneca",
         inline_tag("span", {lang = "la"}, "Ad Lucilium Epistulae Morales"),
         link {
-            href = "https://www.perseus.tufts.edu/hopper/text?doc=Sen.+Ep.+62.2&amp;fromdoc=Perseus%3Atext%3A2007.01.0080",
+            href = "https://www.perseus.tufts.edu/hopper/text?doc=Sen.+Ep.+62.2&fromdoc=Perseus%3Atext%3A2007.01.0080",
             content = "62.2",
         }),
 }

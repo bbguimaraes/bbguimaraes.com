@@ -124,7 +124,7 @@ Towards dusk; the rest, apart, face dawn and sun.
         "Homer",
         "Odyssey",
         link {
-            href = "https://www.perseus.tufts.edu/hopper/text?doc=Hom.+Od.+9.19&amp;fromdoc=Perseus%3Atext%3A1999.01.0136",
+            href = "https://www.perseus.tufts.edu/hopper/text?doc=Hom.+Od.+9.19&fromdoc=Perseus%3Atext%3A1999.01.0136",
             content = "9.19–26",
         }),
 }

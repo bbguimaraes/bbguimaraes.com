@@ -143,7 +143,7 @@ finishes reading and writing the data, it dies[<a href="#note8">8</a>] and so
 does the ssh client process, which was also sitting there, waiting for it's
 child process to die[<a href="#note9">9</a>].  The shell that spawned the ssh
 client has long died: it had nothing more to do because we started the process
-asynchronously (using the <i>&</i> on the command line), so that's the end
+asynchronously (using the <i>&amp;</i> on the command line), so that's the end
 of that (process) family tree[<a href="#note10">10</a>].
             </p>
             <p>

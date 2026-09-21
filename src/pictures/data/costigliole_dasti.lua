@@ -1,9 +1,9 @@
-local description <const> = indented(format {
+local description <const> = format {
     "%s.",
     inline_tag(
         "span", {lang = "it"},
         "Chiesa della Confraternita di San Gerolamo"),
-})
+}
 
 local content <const> = lines {
     par [[

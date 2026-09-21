@@ -6,12 +6,13 @@ Bologna.
 ]]
 
 local citation <const> = lines {
-    "Del cerro vengo bajando, camino y piedra<br />",
-    "Traigo enredada en el alma, viday, una tristeza<br />",
-    "A veces soy como el río, llego cantando<br />",
-    "Y sin que nadie lo sepa, viday, me voy llorando<br />",
-    "Es mi destino, piedra y camino<br />",
-    "De un sueño lejano y bello, viday, soy peregrino<br />",
+    str [[
+Del cerro vengo bajando, camino y piedra<br />
+Traigo enredada en el alma, viday, una tristeza<br />
+A veces soy como el río, llego cantando<br />
+Y sin que nadie lo sepa, viday, me voy llorando<br />
+Es mi destino, piedra y camino<br />
+De un sueño lejano y bello, viday, soy peregrino<br />]],
     "<br />",
     quote_footer("Atahualpa Yupanqui", "Piedra y Camino"),
 }

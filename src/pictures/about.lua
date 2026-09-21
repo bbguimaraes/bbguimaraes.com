@@ -170,7 +170,7 @@ the lens the next day.
             "<b>tripod</b>:",
             link {
                 href = "https://www.kfconcept.com/KF09.159_75-lightweight-travel-tripod-phone-camera",
-                content = "K&amp;F Concept tripod",
+                content = "K&F Concept tripod",
             },
             [[
 (€30).  A good “travel” tripod, with universal attachments for cameras and

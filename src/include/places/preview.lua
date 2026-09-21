@@ -28,7 +28,9 @@ var_and("images", function(x)
 end)
 
 var_and("description", function(x)
-    table.insert(content, div({class = "description"}, plain({"a"}, x)))
+    table.insert(content, div(
+        {class = "description"},
+        plain({"a"}, escaped(x))))
 end)
 
 table.insert(l, div({class = "gallery-title"}, lines {

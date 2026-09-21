@@ -23,17 +23,6 @@ function buffer:write(...)
     end
 end
 
---- Recursively renders \p x.
---- \p x should be either a string, which is written to \p ctx.out directly, or
---- a renderer, which should have a method accepting \p out and a `ctx`
---- argument.
-local function render(x, ctx)
-    if type(x) == "string" then
-        return ctx.out:write(x)
-    end
-    return x:render(ctx)
-end
-
 local function make_indent(n)
     return string.rep(" ", 4 * n)
 end
@@ -41,6 +30,24 @@ end
 --- Writes \p n indentation levels to \p out.
 local function write_indent(ctx)
     ctx.out:write(make_indent(ctx.indent))
+end
+
+--- Recursively renders \p x.
+--- \p x should be either a string, which is written to \p ctx.out directly, or
+--- a renderer, which should have a method accepting \p out and a `ctx`
+--- argument.
+local function render(x, ctx)
+    if type(x) == "function" then
+        x = x()
+    end
+    if type(x) == "string" then
+        write_indent(ctx)
+        if ctx.escape then
+            x = ctx.escape(x)
+        end
+        return ctx.out:write(x)
+    end
+    return x:render(ctx)
 end
 
 local format <const> = {}
@@ -55,9 +62,10 @@ function format:render(ctx)
     local dst <const>, src <const>, b <const> = {}, self.t, buffer:new()
     do
         local out <const>, indent <const> = ctx.out, ctx.indent
-        local _ <close> = ctx:save("out", "indent")
+        local _ <close> = ctx:save("out", "indent", "escape")
         ctx.out = b
         ctx.indent = 0
+        ctx.escape = function(x) return x end
         dst[1] = src[1]
         for i = 2, #self.t do
             b:clear()
@@ -133,8 +141,29 @@ function indented:render(ctx)
     return render(self.t, ctx)
 end
 
+local join_lines <const> = {}
+join_lines.__index = join_lines
+join_lines.__name = "join_lines"
+
+--- Creates a renderer which removes new-line characters.
+function join_lines:new(t)
+    return setmetatable({ t = t }, self)
+end
+
+function join_lines:render(ctx)
+    local b <const> = buffer:new()
+    do
+        local _ <close> = ctx:save("out", "indent")
+        ctx.out = b
+        ctx.indent = 0
+        render(self.t, ctx)
+    end
+    return render(b:output():gsub("\n$", ""):gsub("\n", " "), ctx)
+end
+
 return {
     buffer = buffer,
+    render = render,
     make_indent = make_indent,
     write_indent = write_indent,
     format = function(...) return format:new(...) end,
@@ -142,4 +171,5 @@ return {
     lines = function(...) return lines:new(..., "\n") end,
     indent = function(...) return indent:new(...) end,
     indented = function(...) return indented:new(...) end,
+    join_lines = function(...) return join_lines:new(...) end,
 }

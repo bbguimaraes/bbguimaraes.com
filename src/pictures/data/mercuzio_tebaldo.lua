@@ -38,7 +38,7 @@ local citation <const> = lines {
     par [[
 Wisely and slow; they stumble that run fast
 ]],
-    quote_footer("William Shakespeare", "Romeo &amp; Juliet", "2.2"),
+    quote_footer("William Shakespeare", "Romeo & Juliet", "2.2"),
 }
 
 local images <const> = {{
@@ -167,7 +167,7 @@ Tebaldo preparing for the daring jump.
 
 return {
     timestamp = { 1784913572, "2026-07-24" },
-    title = "Mercuzio &amp; Tebaldo",
+    title = "Mercuzio & Tebaldo",
     description = description,
     content = content,
     citation = citation,

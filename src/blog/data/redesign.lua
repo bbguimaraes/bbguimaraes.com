@@ -102,30 +102,30 @@ restrictive platforms, more and more varied sections started to appear:
             },
     }),
     ul {
-        format {
+        escaped(format {
             [[
 the first, and most significant, was the %s section,
 added in %s]],
             link { href = "/music", content = "music" },
             link { href = "music.html", content = "2017" },
-        },
-        format {
+        }),
+        escaped(format {
             "a page dedicated to %s in 2020",
             link { href = "lib.html", content = "literature" },
-        },
-        format {
+        }),
+        escaped(format {
             "a %s in %s",
             link { href = "/places", content = "traveling journal" },
             link { href = "places.html", content = "2024" },
-        },
-        format {
+        }),
+        escaped(format {
             [[
 those dedicated to %s and
 %s, added just last month
 ]],
             link { href = "pictures.html", content = "photography" },
             link { href = "writing.html", content = "writing" },
-        },
+        }),
     },
     par(format {
         [[

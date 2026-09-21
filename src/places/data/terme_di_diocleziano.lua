@@ -152,7 +152,7 @@ man, but to the God of Delphi himself.
         "Marcus Tullius Cicero",
         "De Legibus",
         link {
-            href = "https://www.perseus.tufts.edu/hopper/text?doc=Cic.+Leg.+1&amp;fromdoc=Perseus%3Atext%3A2007.01.0030",
+            href = "https://www.perseus.tufts.edu/hopper/text?doc=Cic.+Leg.+1&fromdoc=Perseus%3Atext%3A2007.01.0030",
             content = "I.XXI.58",
         }),
     }),
