@@ -5,7 +5,7 @@ all: generate check
 check: tidy xmllint
 generate:
 	$(MAKE) -C src/ $@
-tidy:
+tidy: | generate
 	scripts/tidy.sh
-xmllint:
+xmllint: | generate
 	xmllint --valid --noout bbguimaraes.com/rss.xml

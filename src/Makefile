@@ -1,6 +1,7 @@
 .PHONY: generate
 
-FILES = \
+OUTDIR := bbguimaraes.com
+FILES := \
 	bin \
 	blog/index \
 	blog/tags/index \
@@ -42,9 +43,9 @@ FILES = \
 	$(wildcard writing/data/*)
 ../bbguimaraes.com/rss.xml:
 	cd ../ && src/generate.lua src/rss.lua > src/$@
+.PHONY: $(FILES)
 
-generate: ../bbguimaraes.com/rss.xml
-	@cd ../ && for x in $(FILES); do \
-		src/generate.lua src/$$x.lua bbguimaraes.com/$$x.html \
-			> bbguimaraes.com/$$x.html || exit; \
-	done
+$(FILES):
+	cd .. && src/generate.lua src/$@.lua $(OUTDIR)/$@.html > $(OUTDIR)/$@.html
+
+generate: $(FILES) ../bbguimaraes.com/rss.xml
