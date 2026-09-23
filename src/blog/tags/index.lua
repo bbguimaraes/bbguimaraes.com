@@ -6,11 +6,11 @@ local util <const> = require "lib.util"
 local DIR <const> = "blog"
 
 local function generate_tag_file(name, t)
-    local file_name <const> =
+    local dst <const> =
         var("page_path")("blog", "tags", name:gsub(" ", "-") .. ".html")
-    local f <close> = assert(io.open(file_name, "w"))
+    local f <close> = assert(io.open(dst, "w"))
     generate.generate(
-        f, var("include_path")(DIR, "tag.lua"),
+        f, var("include_path")(DIR, "tag.lua"), dst,
         {tag = name, pages = t})
 end
 

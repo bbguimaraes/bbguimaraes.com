@@ -36,10 +36,11 @@ local function resolve_env(env, t)
 end
 
 local function generate_page(self, env, d, suffix, t)
-    local file_name <const> =
+    local dst <const> =
         path.join(d, string.format("%s%s.html", t.id, suffix or ""))
-    local f <close> = assert(io.open(file_name, "w"))
-    return generate.generate(f, self.page_gen_path, t, resolve_env(env, t))
+    local f <close> = assert(io.open(dst, "w"))
+    return generate.generate(
+        f, self.page_gen_path, dst, t, resolve_env(env, t))
 end
 
 local function lang_vars(t, lang)

@@ -45,5 +45,6 @@ FILES = \
 
 generate: ../bbguimaraes.com/rss.xml
 	@cd ../ && for x in $(FILES); do \
-		src/generate.lua src/$$x.lua > bbguimaraes.com/$$x.html || exit; \
+		src/generate.lua src/$$x.lua bbguimaraes.com/$$x.html \
+			> bbguimaraes.com/$$x.html || exit; \
 	done

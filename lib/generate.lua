@@ -104,16 +104,16 @@ local function load_data(file_name)
 end
 
 --- Fully renders the contents of a file.
-local function generate(out, file_name, ...)
-    return load_file(file_name, ...):render(context:new{out = out, indent = 0})
+local function generate(out, src, dst, ...)
+    return _render(out, src, dst, load_file(src, ...))
 end
 
 --- Fully renders the contents of a file or generates an error report.
-local function generate_and_print(file_name)
+local function generate_and_print(src, dst)
     local ok <const>, err <const> =
-        xpcall(generate, debug.traceback, io.stdout, file_name)
+        xpcall(generate, debug.traceback, io.stdout, src, dst)
     if not ok then
-        io.stderr:write(file_name, ": ", err, "\n")
+        io.stderr:write(src, ": ", err, "\n")
         return 1
     end
 end
