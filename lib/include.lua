@@ -1,43 +1,15 @@
-local html <const> = require "lib.html"
 local path <const> = require "lib.path"
-local str <const> = require "lib.str"
 local util <const> = require "lib.util"
 
-local VARS <const> = {}
-local FILES <const> = {}
+local env <const> = {}
+env.__index = env
+env.__name = env
 
-local function top()
-    return VARS[#VARS]
+local function top(env)
+    return env.vars[#env.vars]
 end
 
-local function push(name, ...)
-    local ts <const> = {...}
-    do
-        local prev = top()
-        for _, t in ipairs(ts) do
-            assert(not getmetatable(t))
-            if prev then
-                setmetatable(t, {__index = prev})
-            end
-            table.insert(VARS, t)
-            table.insert(FILES, name)
-            prev = t
-        end
-    end
-    return setmetatable({}, {
-        __close = function()
-            for i = #ts, 1, -1 do
-                local t <const> = ts[i]
-                assert(VARS[#VARS] == t)
-                setmetatable(t, nil)
-                table.remove(VARS)
-                table.remove(FILES)
-            end
-        end,
-    })
-end
-
-local function print_stack(name, dir, file)
+local function print_stack(env, name, dir, file)
     if name then
         io.stderr:write("error: file not found:\n")
         io.stderr:write("  name: ", name, "\n")
@@ -47,17 +19,52 @@ local function print_stack(name, dir, file)
         end
     end
     io.stderr:write("include stack:\n")
-    local path <const> = top()["PATH"]
+    local path <const> = top(env)["PATH"]
     if path then
         io.stderr:write("  ", path, "\n")
     end
-    for _, x in ipairs(FILES) do
+    for _, x in ipairs(env.files) do
         io.stderr:write("  ", x, "\n")
     end
 end
 
-function var(k, def)
-    local ret <const> = top()[k]
+function env:new(file_env)
+    return setmetatable({
+        file_env = file_env,
+        vars = {},
+        files = {},
+    }, self)
+end
+
+function env:push(name, ...)
+    local ts <const> = {...}
+    do
+        local prev = top(self)
+        for _, t in ipairs(ts) do
+            assert(not getmetatable(t))
+            if prev then
+                setmetatable(t, {__index = prev})
+            end
+            table.insert(self.vars, t)
+            table.insert(self.files, name)
+            prev = t
+        end
+    end
+    return setmetatable({}, {
+        __close = function()
+            for i = #ts, 1, -1 do
+                local t <const> = ts[i]
+                assert(self.vars[#self.vars] == t)
+                setmetatable(t, nil)
+                table.remove(self.vars)
+                table.remove(self.files)
+            end
+        end,
+    })
+end
+
+function env:var(k, def)
+    local ret <const> = top(self)[k]
     if ret ~= nil then
         return ret
     end
@@ -65,52 +72,53 @@ function var(k, def)
         return def
     end
     io.stderr:write("error: undefined variable: ", k, "\n")
-    print_stack()
+    print_stack(self)
     error("undefined variable: " .. k)
 end
 
-function var_and(k, f)
-    local v <const> = top()[k]
+function env:var_and(k, f)
+    local v <const> = top(self)[k]
     if v then
         return f(v)
     end
 end
 
-function set_var(k, v)
-    VARS[#VARS][k] = v
+function env:set_var(k, v)
+    self.vars[#self.vars][k] = v
 end
 
-function set_vars(src)
-    local dst <const> = top()
+function env:set_vars(src)
+    local dst <const> = top(self)
     for k, v in pairs(src) do
         dst[k] = v
     end
 end
 
-function unset_var(k)
-    local t <const> = top()
+function env:unset_var(k)
+    local t <const> = top(self)
     if not t[k] then
         error("undefined variable: " .. k)
     end
     t[k] = nil
 end
 
-function include(name)
+local function include(env, file_env, name)
     return function(...)
         local file <const> = path.clean(path.join("src", "include", name))
         if not util.exists(file) then
-            print_stack(name, file)
+            print_stack(env, name, file)
         end
-        local _ <close> = push(name, ...)
-        return assert(loadfile(file, nil, setmetatable({}, {__index = _ENV})))()
+        local _ <close> = env:push(name, ...)
+        return assert(loadfile(
+            file, nil, setmetatable({}, {__index = file_env})))()
     end
 end
 
+function env:include(name)
+    return include(self, self.file_env, name)
+end
+
 return {
-    var = var,
-    var_and = var_and,
-    set_var = set_var,
-    set_vars = set_vars,
+    env = env,
     include = include,
-    push = push,
 }

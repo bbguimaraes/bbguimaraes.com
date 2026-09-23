@@ -1,4 +1,5 @@
 local html <const> = require "lib.html"
+local include <const> = require "lib.include"
 local path <const> = require "lib.path"
 local str <const> = require "lib.str"
 local util <const> = require "lib.util"
@@ -74,7 +75,10 @@ local function new_env()
     local ret <const> = setmetatable({}, {__index = _ENV})
     util.copy(ret, html)
     util.copy(ret, str)
-    util.copy(ret, assert(loadfile("lib/include.lua", nil, ret))())
+    local env <const> = include.env:new(ret)
+    for k, v in pairs(getmetatable(env)) do
+        ret[k] = function(...) return env[k](env, ...) end
+    end
     return ret
 end
 
