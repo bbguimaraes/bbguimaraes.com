@@ -36,7 +36,7 @@ it.
 ]],
     par [[
 I have since been involved in discussions and seen enough interest in blog posts
-&mdash; none of which I find satisfactory &mdash; that changed my mind, so here
+— none of which I find satisfactory — that changed my mind, so here
 is an overview.
 ]],
     h2_link { "demo", "demo" },

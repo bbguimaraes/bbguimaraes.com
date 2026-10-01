@@ -25,9 +25,8 @@ coordinates all the other components.
     par [[
 The language needs no introduction: it is powerful, tiny, fast, portable, free,
 built for extensibility and interoperability, has an amazing (and amazingly
-simple) API&#8230; The list of compliments is almost endless, and it is
-unsurprising that it is part of so many applications in vastly different
-domains.
+simple) API…  The list of compliments is almost endless, and it is unsurprising
+that it is part of so many applications in vastly different domains.
 ]],
     par [[
 Lua plays a vital role in the engine.  Starting the program without further

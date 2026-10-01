@@ -57,7 +57,7 @@ local function generate_item(_, t)
         table.insert(l, inline_tag("span", {class = "score-title"}, t.title))
     end
     if t.author then
-        table.insert(l, html(" – " .. t.author))
+        table.insert(l, " – " .. t.author)
     end
     local scores <const> = t.scores
     if scores then

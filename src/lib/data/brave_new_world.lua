@@ -29,8 +29,8 @@ happy</i>, <i>in your own way</i>.  <i>To feel something strongly</i>.  To <i>do
 something much more important</i>, <i>more intense</i>, <i>more violent</i>.
 ]],
         par [[
-Huxley's novel is remarkable in its prophecy &mdash; now more than ever since
-its publishing in 1932.  But it is primarily an ode to the human spirit and its
+Huxley's novel is remarkable in its prophecy — now more than ever since its
+publishing in 1932.  But it is primarily an ode to the human spirit and its
 rebellion against the forces that seek to dominate and control it.
 ]],
     blockquote(lines {
@@ -75,9 +75,9 @@ possam nomear.  <i>Ser livre para ser feliz</i>, <i>da sua própria forma</i>.
 intenso</i>, <i>mais violento</i>.
 ]],
         par [[
-O romance de Huxley é notável na sua profecia &mdash; mais agora do que já foi
-desde sua publicação em 1932.  Mas é primariamente uma ode ao espírito humano e
-sua rebeldia contra as forças que buscam dominá-lo e controlá-lo.
+O romance de Huxley é notável na sua profecia — mais agora do que já foi desde
+sua publicação em 1932.  Mas é primariamente uma ode ao espírito humano e sua
+rebeldia contra as forças que buscam dominá-lo e controlá-lo.
 ]],
     blockquote(lines {
         par "Mas eu não quero conforto.\n",

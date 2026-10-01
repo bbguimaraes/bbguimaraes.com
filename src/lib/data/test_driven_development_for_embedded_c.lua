@@ -9,8 +9,8 @@ return {
     content = par [[
 A very good introduction to Test Driven Development with an emphasis on systems
 programming for embedded devices.  Always in a very practical manner, sample
-programs of progressive complexity &mdash; from simple unit tests to black-box
-integration tests involving several components &mdash; are presented along with
+programs of progressive complexity — from simple unit tests to black-box
+integration tests involving several components — are presented along with
 techniques to address the challenges inherent in designing software for
 constrained hardware platforms.
 ]],

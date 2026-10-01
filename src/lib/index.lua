@@ -76,15 +76,15 @@ related. They were natural and just.
 ]],
     blockquote_par [[
 A man who is good for anything ought only to consider whether in doing anything
-he is doing right or wrong[&hellip;]; he should not think of death or anything
+he is doing right or wrong[…]; he should not think of death or anything
 but of disgrace.
 ]],
     blockquote_par [[
-You said I killed you &mdash; haunt me, then!  The murdered do haunt their
-murderers, I believe &mdash; I know that ghosts have wandered the earth.  Be
-with me always &mdash; take any form &mdash; drive me mad! only do not leave me
-in this abyss, where I cannot find you!  Oh, God! it is unutterable!  I cannot
-live without my life!  I cannot live without my soul!
+You said I killed you — haunt me, then!  The murdered do haunt their murderers,
+I believe — I know that ghosts have wandered the earth.  Be with me always —
+take any form — drive me mad! only do not leave me in this abyss, where I cannot
+find you!  Oh, God! it is unutterable!  I cannot live without my life!  I cannot
+live without my soul!
 ]],
     blockquote_par [[
 tecum habita: noris, quam sit tibi curta supellex<br /><br />
@@ -127,13 +127,13 @@ For nowhere either with more quiet or more freedom from trouble does a man
 retire than into his own soul
 ]],
     blockquote_par [[
-By you, I was properly humbled.  [&hellip;] You showed me how insufficient were
+By you, I was properly humbled.  […] You showed me how insufficient were
 all my pretensions to please a woman worthy of being pleased.
 ]],
     blockquote_par [[
-And now I depart hence condemned by you to suffer the penalty of death &mdash;
-they too go their ways condemned by the truth to suffer the penalty of villainy
-and wrong
+And now I depart hence condemned by you to suffer the penalty of death — they
+too go their ways condemned by the truth to suffer the penalty of villainy and
+wrong
 ]],
     blockquote_par [[
 Only the deepest love will persuade me into matrimony, which is why I will end
@@ -156,15 +156,15 @@ things, but do not understand the meaning of them.
 One word from you will silence me on this subject for ever.
 ]],
     blockquote_par [[
-I have not broken your heart &mdash; you have broken it; and in breaking it, you
-have broken mine.
+I have not broken your heart — you have broken it; and in breaking it, you have
+broken mine.
 ]],
     blockquote_par [[
 There are few people whom I really love, and still fewer of whom I think well.
 ]],
     blockquote_par [[
-The hour of departure has arrived, and we go our ways &mdash; I to die, and you
-to live. Which is better God only knows.
+The hour of departure has arrived, and we go our ways — I to die, and you to
+live. Which is better God only knows.
 ]],
 }
 

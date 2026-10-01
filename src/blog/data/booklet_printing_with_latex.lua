@@ -1,10 +1,10 @@
-local description <const> = [[In another episode of &quot;there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine&quot;: booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.]]
+local description <const> = [[In another episode of “there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine”: booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.]]
 
 local content <const> = {
     par [[
                 <i>
-In another episode of "there was something very peculiar I wanted to do, there
-existed no decent guides on the internet, so here is mine": booklet printing.  I
+In another episode of “there was something very peculiar I wanted to do, there
+existed no decent guides on the internet, so here is mine”: booklet printing.  I
 had the need to turn a LaTeX document I had produced into something physical
 which could be taken with me easily.  After a few days of research and
 experimentation and some wasted paper, I arrived at a very satisfying result.
@@ -16,8 +16,8 @@ document you might have.
     par [[
 One learns many things in university.  To the horror of my former teachers, if I
 had to elect the most useful and enduring skill I learned back then, one which I
-use extensively to this day&hellip; learning to use LaTeX effectively would be
-among the primary choices.  From <a href="/codex">notes</a> to
+use extensively to this day… learning to use LaTeX effectively would be among
+the primary choices.  From <a href="/codex">notes</a> to
 <a href="/talks">presentations</a> to <a href="/lib">books</a> to the
 <a href="https://gitlab.bbguimaraes.com/bbguimaraes/bbguimaraes.com/-/tree/master/bbguimaraes.com/blog/booklet-printing-with-latex/">images</a>
 in this very post, few tools are more essential to my daily routine.
@@ -141,7 +141,7 @@ axis).
             par [[
 <i>Portrait/landscape</i>: books are usually printed in portrait mode, in which
 the long edges are parallel to the Y axis as explained above.  Landscape mode is
-a 90&deg; counter-clockwise rotation along the Z axis, such that the long edges
+a 90° counter-clockwise rotation along the Z axis, such that the long edges
 become parallel to the X axis.  For a book, this would turn the binding towards
 the reader.
 ]],
@@ -222,9 +222,9 @@ The first requirement is to know the number of pages in the document.  Since
 each sheet will contain four pages (think of a single-sheet signature), this
 should ideally be a multiple of four.  Blank pages will be inserted
 automatically at the end if it is not.  This is important since the two
-inner-most pages &mdash; i.e. those at exactly half the page count &mdash; must
-be printed on the same (inner) side of the sheet, as in the image above.  The
-following commands can be used to extract the number of pages from a file
+inner-most pages — i.e. those at exactly half the page count — must be printed
+on the same (inner) side of the sheet, as in the image above.  The following
+commands can be used to extract the number of pages from a file
 (<code>pdfinfo</code> is from
 <a href="https://poppler.freedesktop.org/"><code>poppler</code></a>):
 ]],

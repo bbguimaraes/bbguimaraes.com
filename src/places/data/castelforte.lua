@@ -1,5 +1,4 @@
-local description <const> = [[Castelforte is a small comune in the Garigliano valley.  It is where Suio (see previous post) is contained and together with it, as the name suggests, served as a protective and vigilant center for the entire valley, from the surrounding mountains down to the delta of the river in the gulf of Gaeta.
-]]
+local description <const> = [[Castelforte is a small comune in the Garigliano valley.  It is where Suio (see previous post) is contained and together with it, as the name suggests, served as a protective and vigilant center for the entire valley, from the surrounding mountains down to the delta of the river in the gulf of Gaeta.]]
 
 local content <const> = lines {
     par [[

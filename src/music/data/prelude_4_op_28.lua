@@ -9,10 +9,10 @@ The sound of absence and longing.
 With all that I tried to suggest to students, you get a feeling of a piece… one
 of the most profound ones that Chopin ever wrote.  It's a beloved piece.  In
 fact, it's so beloved that it was performed at Chopin's funeral.  And everything
-in the piece &mdash; the chromatic harmonies, and the two-note phrases, crying
-&mdash; it's a piece that projects deep emotion of the most intense kind, of a
-man who is really dying in his thirties.  And it's rewarding for us to go into
-that area of emotional understanding.
+in the piece — the chromatic harmonies, and the two-note phrases, crying — it's
+a piece that projects deep emotion of the most intense kind, of a man who is
+really dying in his thirties.  And it's rewarding for us to go into that area of
+emotional understanding.
 ]],
         par [[
 Because you see, in the final analysis musicians are very fortunate people
@@ -26,14 +26,13 @@ our talent, and that's what you take away from your practice sessions.  So that
 everything that you learn through the discipline of music you project into
 everything you do in life.
 ]],
-        tag("footer", nil, par(concat {
-            "&mdash; ",
+        tag("footer", nil, tag("p", nil, lines {
+            html "—",
             tag("cite", nil, link {
                 href = "https://www.youtube.com/watch?v=pRLBBJLX-dQ",
                 content = "Seymour Bernstein",
                 target = "_blank",
             }),
-            "\n",
         })),
     }),
 }

@@ -155,11 +155,11 @@ enjoyment of pleasure, should come into competition with that which is
 rationally and politically or practically good.  All these things, even though
 they may seem to adapt themselves to the better things in a small degree, obtain
 the superiority all at once, and carry us away.  But do thou, I say, simply and
-freely choose the better, and hold to it.  &mdash; But that which is useful is
-the better.  &mdash; Well then, if it is useful to thee as a rational being,
-keep to it; but if it is only useful to thee as an animal, say so, and maintain
-thy judgement without arrogance: only take care that thou makest the inquiry by
-a sure method.
+freely choose the better, and hold to it.  — But that which is useful is the
+better.  — Well then, if it is useful to thee as a rational being, keep to it;
+but if it is only useful to thee as an animal, say so, and maintain thy
+judgement without arrogance: only take care that thou makest the inquiry by a
+sure method.
 ]],
         par [[
 Εἰ μὲν κρεῖττον εὑρίσκεις ἐν τῷ ἀνθρωπίνῳ βίῳ δικαιοσύνης, ἀληθείας, σωφροσύνης,
@@ -226,23 +226,22 @@ of men?  Recall to thy mind this conclusion, that rational animals exist for one
 another, and that to endure is a part of justice, and that men do wrong
 involuntarily; and consider how many already, after mutual enmity, suspicion,
 hatred, and fighting, have been stretched dead, reduced to ashes; and be quiet
-at last.  &mdash; But perhaps thou art dissatisfied with that which is assigned
-to thee out of the universe.  &mdash; Recall to thy recollection this
-alternative; either there is providence or atoms, fortuitous concurrence of
-things; or remember the arguments by which it has been proved that the world is
-a kind of political community, and be quiet at last.  &mdash; But perhaps
-corporeal things will still fasten upon thee.  &mdash; Consider then further
-that the mind mingles not with the breath, whether moving gently or violently,
-when it has once drawn itself apart and discovered its own power, and think also
-of all that thou hast heard and assented to about pain and pleasure, and be
-quiet at last.  &mdash; But perhaps the desire of the thing called fame will
-torment thee.  &mdash; See how soon everything is forgotten, and look at the
-chaos of infinite time on each side of the present, and the emptiness of
-applause, and the changeableness and want of judgement in those who pretend to
-give praise, and the narrowness of the space within which it is circumscribed,
-and be quiet at last.  For the whole earth is a point, and how small a nook in
-it is this thy dwelling, and how few are there in it, and what kind of people
-are they who will praise thee.
+at last.  — But perhaps thou art dissatisfied with that which is assigned to
+thee out of the universe.  — Recall to thy recollection this alternative; either
+there is providence or atoms, fortuitous concurrence of things; or remember the
+arguments by which it has been proved that the world is a kind of political
+community, and be quiet at last.  — But perhaps corporeal things will still
+fasten upon thee.  — Consider then further that the mind mingles not with the
+breath, whether moving gently or violently, when it has once drawn itself apart
+and discovered its own power, and think also of all that thou hast heard and
+assented to about pain and pleasure, and be quiet at last.  — But perhaps the
+desire of the thing called fame will torment thee.  — See how soon everything is
+forgotten, and look at the chaos of infinite time on each side of the present,
+and the emptiness of applause, and the changeableness and want of judgement in
+those who pretend to give praise, and the narrowness of the space within which
+it is circumscribed, and be quiet at last.  For the whole earth is a point, and
+how small a nook in it is this thy dwelling, and how few are there in it, and
+what kind of people are they who will praise thee.
 ]],
             par [[
 This then remains: Remember to retire into this little territory of thy own, and
@@ -440,17 +439,17 @@ share and the things which cause pain.  And further, he who is afraid of pain
 will sometimes also be afraid of some of the things which will happen in the
 world, and even this is impiety.  And he who pursues pleasure will not abstain
 from injustice, and this is plainly impiety.  Now with respect to the things
-towards which the universal nature is equally affected &mdash; for it would not
-have made both, unless it was equally affected towards both &mdash; towards
-these they who wish to follow nature should be of the same mind with it, and
-equally affected.  With respect to pain, then, and pleasure, or death and life,
-or honour and dishonour, which the universal nature employs equally, whoever is
-not equally affected is manifestly acting impiously.  And I say that the
-universal nature employs them equally, instead of saying that they happen alike
-to those who are produced in continuous series and to those who come after them
-by virtue of a certain original movement of Providence, according to which it
-moved from a certain beginning to this ordering of things, having conceived
-certain principles of the things which were to be, and having determined powers
+towards which the universal nature is equally affected — for it would not have
+made both, unless it was equally affected towards both — towards these they who
+wish to follow nature should be of the same mind with it, and equally affected.
+With respect to pain, then, and pleasure, or death and life, or honour and
+dishonour, which the universal nature employs equally, whoever is not equally
+affected is manifestly acting impiously.  And I say that the universal nature
+employs them equally, instead of saying that they happen alike to those who are
+produced in continuous series and to those who come after them by virtue of a
+certain original movement of Providence, according to which it moved from a
+certain beginning to this ordering of things, having conceived certain
+principles of the things which were to be, and having determined powers
 productive of beings and of changes and of suchlike successions.
 ]],
         par [[

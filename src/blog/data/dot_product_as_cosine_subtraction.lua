@@ -12,8 +12,8 @@ The two principal definitions of the dot product have always seemed incoherent
 to me.  After trying (and failing) to research this many times, a <a
 href="https://math.stackexchange.com/a/348744">math.stackexchange.com
 question</a> finally gave an explanation that made sense to me.  Here is my
-interpretation of it — and trust me, if <em>I</em> can understand a
-mathematical concept, so can you.
+interpretation of it — and trust me, if <em>I</em> can understand a mathematical
+concept, so can you.
 ]],
     par [[
 The dot product is a fundamental vector operation in mathematics.  Graphics
@@ -42,8 +42,8 @@ To review, the dot (or scalar) product of vectors <b>a</b> and <b>b</b> is:
     },
     par [[
 The key for the connection is expressing the vectors as angles and the dot
-product as the subtraction of those angles: let <i>&alpha;</i> and
-<i>&beta;</i> be the angles between the <i>x</i> axis (i.e. <b>i</b>) and
+product as the subtraction of those angles: let <i>α</i> and
+<i>β</i> be the angles between the <i>x</i> axis (i.e. <b>i</b>) and
 <b>a</b> and <b>b</b> respectively.  In two dimensions:
 ]],
     image {

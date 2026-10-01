@@ -29,7 +29,7 @@ What interests me are the <em>components</em> of game engines, and in reality,
 it is simply a place for me to explore those in a coherent manner.  I
 implemented it from scratch based on just a few low-level libraries.  From its
 humble beginnings in the sleepless nights of my period in college, it has
-developed scripting, graphics, physics, and much more &mdash; and consumed an
+developed scripting, graphics, physics, and much more — and consumed an
 inordinate amount of time and effort.
 ]],
     par [[

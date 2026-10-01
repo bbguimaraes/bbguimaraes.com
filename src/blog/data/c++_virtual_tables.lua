@@ -68,13 +68,13 @@ in the <a href="https://gitlab.bbguimaraes.com/bbguimaraes/bbguimaraes.com.git">
     par [[
 To limit the scope to even a reasonably long description, virtual inheritance is
 almost completely disregarded.  It significantly complicates the implementation,
-but is mostly orthogonal &mdash; if related &mdash; to the concepts presented
-here.  It will be mentioned briefly in cases where it influences the table
-layout, but the discussion of several aspects will omit the details that pertain
-to virtual inheritance (e.g. the "trivial" case is described as an object with
-no virtual functions, when in fact it has the additional restriction of having
-no virtual bases).  Readers interested in the details are encouraged to consult
-the original document.
+but is mostly orthogonal — if related — to the concepts presented here.  It will
+be mentioned briefly in cases where it influences the table layout, but the
+discussion of several aspects will omit the details that pertain to virtual
+inheritance (e.g. the "trivial" case is described as an object with no virtual
+functions, when in fact it has the additional restriction of having no virtual
+bases).  Readers interested in the details are encouraged to consult the
+original document.
 ]],
     h2_link { "motivation", "Motivation" },
     par [[
@@ -947,12 +947,11 @@ g(D*):
 ]],
     par [[
 This sub-object needs to be indistinguishable from a regular object of the base
-class.  Ultimately, this means each sub-object needs its own virtual table
-&mdash; the derived object is no longer a concatenation of all classes with a
-single virtual pointer at the top.  Even worse, it means a given class will have
-multiple virtual tables: one for objects of that type and an additional one for
-each hierarchy where that type appears in a sub-object due to multiple
-inheritance.
+class.  Ultimately, this means each sub-object needs its own virtual table — the
+derived object is no longer a concatenation of all classes with a single virtual
+pointer at the top.  Even worse, it means a given class will have multiple
+virtual tables: one for objects of that type and an additional one for each
+hierarchy where that type appears in a sub-object due to multiple inheritance.
 ]],
     par [[
 In general, the reverse operation is not as trivial.  Given a base type, it is
@@ -1265,8 +1264,8 @@ are valid at all points as defined by the standard.  Destructors are also
 virtual functions whose implementation needs some care.
 ]],
         par [[
-In general, an immense amount of detail has been omitted &mdash; destructor
-variants, covariant return types, construction tables, to name a few.
+In general, an immense amount of detail has been omitted — destructor variants,
+covariant return types, construction tables, to name a few.
 ]],
         par [[
 Bjarne Stroustrup's original
@@ -1292,8 +1291,8 @@ and <a href="https://www.cs.rit.edu/~ats/books">online</a>.
         par [[
 Neil Brown's <a href="https://lwn.net/Articles/444910">series</a> in LWN, <i>
 Object-oriented design patterns in the kernel</i>, explores the manifestation of
-many of these patterns &mdash; some less orthodox than others &mdash; in the
-Linux kernel, where object-oriented programming is heavily used.
+many of these patterns — some less orthodox than others — in the Linux kernel,
+where object-oriented programming is heavily used.
 ]],
     },
     par [[

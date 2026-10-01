@@ -117,26 +117,26 @@ Wickham no longer sees a benefit in being with his current companion, he moves
 on to another.  To these is opposed Elizabeth's relation with Darcy, the
 <i>relationship of virtue</i>.  It is the only one that can endure: as the
 Philosopher says, and the novel corroborates, it “lasts as long as they are good
-&mdash; and goodness is an enduring thing”.  And it is virtue that Austen extols
+— and goodness is an enduring thing”.  And it is virtue that Austen extols
 through Mary when she, in a lucid moment of departure from her usual overbearing
 erudite tone, proclaims:
 ]],
     blockquote(par [[
 Unhappy as the event must be for Lydia, we may draw from it this useful lesson:
-&mdash; that loss of virtue in a female is irretrievable, that one false step
-involves her in endless ruin, that her reputation is no less brittle than it is
+— that loss of virtue in a female is irretrievable, that one false step involves
+her in endless ruin, that her reputation is no less brittle than it is
 beautiful, and that she cannot be too much guarded in her behaviour towards the
 undeserving of the other sex.
 ]]),
     h3 "The deepest love",
     par [[
 This juxtaposition of fragility and beauty is another mark of Austen's greatness
-as a novelist.  Writing at a time when feminism &mdash; the most
-ironically-named movement in history &mdash; and similar philosophies were
-starting to take form, she annihilates their propositions by making her female
-characters awesome not because they protest societal standards by completely
-rejecting morality and decency, but because they show, through their adherence
-to these without ever betraying their own (feminine) spirit, true magnanimity.
+as a novelist.  Writing at a time when feminism — the most ironically-named
+movement in history — and similar philosophies were starting to take form, she
+annihilates their propositions by making her female characters awesome not
+because they protest societal standards by completely rejecting morality and
+decency, but because they show, through their adherence to these without ever
+betraying their own (feminine) spirit, true magnanimity.
 ]],
     par [[
 Elizabeth's wild character is consummated in her relationship with Darcy (and so
@@ -170,7 +170,7 @@ to honesty and to each other, they are compelled to mutual improvement.  As
 Darcy says when they are finally engaged:
 ]],
     blockquote(par [[
-By you, I was properly humbled.  [&hellip;] You showed me how insufficient were
+By you, I was properly humbled.  […] You showed me how insufficient were
 all my pretensions to please a woman worthy of being pleased.
 ]]),
     par [[
@@ -178,11 +178,10 @@ all my pretensions to please a woman worthy of being pleased.
 <i>deepest love</i> is a universal desire.  <i>Pride and Prejudice</i>,
 extremely daring for the beginning of the nineteenth century, and written at the
 remarkable age of twenty one (though it was revised fifteen years later prior to
-its publication), continues to be one of the most popular novels &mdash; and
-here “popular” is deserved and not an insult &mdash; because it shows true love:
-what it requires and what it effects in the soul of those it touches.  And for
-this it will be perpetually relevant.  It is, as its author, femininity at its
-best.
+its publication), continues to be one of the most popular novels — and here
+“popular” is deserved and not an insult — because it shows true love: what it
+requires and what it effects in the soul of those it touches.  And for this it
+will be perpetually relevant.  It is, as its author, femininity at its best.
 ]],
     img,
 }
@@ -476,26 +475,26 @@ seu enfatuamento termina, a relação do Sr. e Sra. Bennet se deteriora.  Quando
 Wickham não vê mais benefício em estar com sua parceira atual, muda para outra.
 A essas é oposta a relação de Elizabeth com Darcy, a <i>relação de virtude</i>.
 É a única que perdura: como o Filósofo diz, e o romance corrobora, ela “dura
-enquanto forem bons &mdash; e a bondade é algo duradouro”.  E é a virtude que
-Austen exalta através de Mary, quando, num momento lúcido de abandono do seu tom
+enquanto forem bons — e a bondade é algo duradouro”.  E é a virtude que Austen
+exalta através de Mary, quando, num momento lúcido de abandono do seu tom
 gravemente erudito, proclama:
 ]],
     blockquote(par [[
 Infeliz que esse evento deva ser para Lydia, podemos tomar dele essa útil lição:
-&mdash; que perda da virtude numa fêmea é irreparável, que um passo falso a
-envolve em infindável ruína, que sua reputação é tão quebradiça quanto é bela, e
-que ela não pode se guardar suficientemente em seu comportamento em relação aos
-indignos do sexo oposto.
+— que perda da virtude numa fêmea é irreparável, que um passo falso a envolve em
+infindável ruína, que sua reputação é tão quebradiça quanto é bela, e que ela
+não pode se guardar suficientemente em seu comportamento em relação aos indignos
+do sexo oposto.
 ]]),
     h3 "O amor mais profundo",
     par [[
 Essa justaposição de fragilidade e beleza é outra marca da grandeza de Austen
-como romancista.  Escrevendo num tempo em que o feminismo &mdash; o movimento
-mais ironicamente nomeado da história &mdash; e filosofias similares começavam a
-tomar forma, ela aniquila as suas proposições fazendo suas personagens
-magníficas não porque protestam os padrões sociais rejeitando completamente a
-moralidade e a decência, mas porque mostram, pela sua aderência a esses sem
-nunca trair seu próprio espírito (feminino), verdadeira magnanimidade.
+como romancista.  Escrevendo num tempo em que o feminismo — o movimento mais
+ironicamente nomeado da história — e filosofias similares começavam a tomar
+forma, ela aniquila as suas proposições fazendo suas personagens magníficas não
+porque protestam os padrões sociais rejeitando completamente a moralidade e a
+decência, mas porque mostram, pela sua aderência a esses sem nunca trair seu
+próprio espírito (feminino), verdadeira magnanimidade.
 ]],
     par [[
 A personalidade bravia de Elizabeth é consumada em sua relação com Darcy (e
@@ -530,7 +529,7 @@ seu comprometimento à honestidade e um ao outro, são compelidos ao aprimoramen
 mútuo.  Como Darcy diz quando finalmente ficam noivos:
 ]],
     blockquote(par [[
-Por ti, me tornei propriamente humilde.  [&hellip;] Me mostraste como eram
+Por ti, me tornei propriamente humilde.  […] Me mostraste como eram
 insuficientes todas as minhas pretensões de satisfazer uma mulher que merece ser
 satisfeita.
 ]]),
@@ -539,10 +538,10 @@ satisfeita.
 mais profundo</i> é um desejo universal.  <i>Orgulho e preconceito</i>,
 extremamente audaz para o início do século XIX, e escrito notavelmente aos vinte
 e um anos de idade (apesar de ter sido revisado quinze anos depois antes de sua
-publicação), continua sendo um dos romances mais populares &mdash; e aqui
-“popular” é merecido e não um insulto &mdash; porque mostra o amor verdadeiro: o
-que requer e o efeito que tem nas almas daqueles que toca.  E por isso vai ser
-perpetuamente relevante.  É, como sua autora, a feminilidade no seu melhor.
+publicação), continua sendo um dos romances mais populares — e aqui “popular” é
+merecido e não um insulto — porque mostra o amor verdadeiro: o que requer e o
+efeito que tem nas almas daqueles que toca.  E por isso vai ser perpetuamente
+relevante.  É, como sua autora, a feminilidade no seu melhor.
 ]],
     img,
 }
@@ -596,9 +595,8 @@ think".
 "I know you do: and it is that which makes the wonder.  With your good sense, to
 be so honestly blind to the follies and nonsense of others!  Affectation of
 candour is common enough; one meets with it everywhere.  But to be candid
-without ostentation or design, &mdash; to take the good of everybody's character
-and make it still better, and say nothing of the bad, &mdash; belongs to you
-alone".
+without ostentation or design, — to take the good of everybody's character and
+make it still better, and say nothing of the bad, — belongs to you alone".
 ]],
     },
 }, {
@@ -654,7 +652,7 @@ in dancing at one end of the room.
 Mr. Darcy stood near them in silent indignation at such a mode of passing the
 evening, to the exclusion of all conversation, and was too much engrossed by his
 own thoughts to perceive that Sir William Lucas was his neighbour, till Sir
-William thus began:&mdash;
+William thus began:—
 ]],
         par [[
 "What a charming amusement for young people this is, Mr. Darcy!  There is
@@ -699,7 +697,7 @@ with Lady Lucas".
 ]],
         par [[
 He paused in hopes of an answer: but his companion was not disposed to make any;
-[&hellip;]
+[…]
 ]],
     },
 }, {
@@ -790,7 +788,7 @@ present, however, I consider myself as quite fixed here".
 "You begin to comprehend me, do you?" cried he, turning towards her.
 ]],
         par [[
-"Oh yes &mdash; I understand you perfectly".
+"Oh yes — I understand you perfectly".
 ]],
         par [[
 "I wish I might take this for a compliment; but to be so easily seen through, I
@@ -819,7 +817,7 @@ advantage".
     title = "Poetry as the food of love",
     content = lines {
         par [[
-"[&hellip;] When she was only fifteen there was a gentleman at my brother
+"[…] When she was only fifteen there was a gentleman at my brother
 Gardiner's in town so much in love with her, that my sister-in-law was sure he
 would make her an offer before we came away.  But, however, he did not.  Perhaps
 he thought her too young.  However, he wrote some verses on her, and very pretty
@@ -886,8 +884,7 @@ show off before the ladies".
 gone with such celerity.  Your conduct would be quite as dependent on chance as
 that of any man I know; and if, as you were mounting your horse, a friend were
 to say, 'Bingley, you had better stay till next week', you would probably do it
-&mdash; you would probably not go &mdash; and, at another word, might stay a
-month".
+— you would probably not go — and, at another word, might stay a month".
 ]],
         par [[
 "You have only proved by this", cried Elizabeth, "that Mr. Bingley did not do
@@ -906,7 +903,7 @@ flat denial, and ride off as fast as I could".
 for by your obstinacy in adhering to it?".
 ]],
         par [[
-"Upon my word, I cannot exactly explain the matter &mdash; Darcy must speak for
+"Upon my word, I cannot exactly explain the matter — Darcy must speak for
 himself".
 ]],
         par [[
@@ -918,8 +915,8 @@ merely desired it, asked it without offering one argument in favour of its
 propriety".
 ]],
         par [[
-"To yield readily &mdash; easily &mdash; to the persuasion of a friend is no
-merit with you".
+"To yield readily — easily — to the persuasion of a friend is no merit with
+you".
 ]],
         par [[
 "To yield without conviction is no compliment to the understanding of either".
@@ -959,7 +956,7 @@ especially, and of a Sunday evening, when he has nothing to do".
 Miss Bingley made no answer, and soon afterwards got up and walked about the
 room.  Her figure was elegant, and she walked well; but Darcy, at whom it was
 all aimed, was still inflexibly studious.  In the desperation of her feelings,
-she resolved on one effort more; and, turning to Elizabeth, said, &mdash;
+she resolved on one effort more; and, turning to Elizabeth, said, —
 ]],
         par [[
 "Miss Eliza Bennet, let me persuade you to follow my example, and take a turn
@@ -974,8 +971,8 @@ and unconsciously closed his book.  He was directly invited to join their party,
 but he declined it, observing that he could imagine but two motives for their
 choosing to walk up and down the room together, with either of which motives his
 joining them would interfere.  What could he mean?  She was dying to know what
-could be his meaning &mdash; and asked Elizabeth whether she could at all
-understand him.
+could be his meaning — and asked Elizabeth whether she could at all understand
+him.
 ]],
         par [[
 "Not at all", was her answer; "but, depend upon it, he means to be severe on us,
@@ -999,8 +996,8 @@ shall we punish him for such a speech?".
 ]],
         par [[
 "Nothing so easy if you have but the inclination", said Elizabeth.  "We can all
-plague and punish one another.  Tease him &mdash; laugh at him.  Intimate as you
-are, you must know how it is to be done".
+plague and punish one another.  Tease him — laugh at him.  Intimate as you are,
+you must know how it is to be done".
 ]],
         par [[
 "But upon my honour I do not.  I do assure you that my intimacy has not yet
@@ -1015,8 +1012,8 @@ me to have many such acquaintance.  I dearly love a laugh".
 ]],
         par [[
 "Miss Bingley", said he, "has given me credit for more than can be.  The wisest
-and best of men, &mdash; nay, the wisest and best of their actions, &mdash; may
-be rendered ridiculous by a person whose first object in life is a joke".
+and best of men, — nay, the wisest and best of their actions, — may be rendered
+ridiculous by a person whose first object in life is a joke".
 ]],
         par [[
 "Certainly", replied Elizabeth, "there are such people, but I hope I am not one
@@ -1033,8 +1030,8 @@ ridicule".
 "Such as vanity and pride".
 ]],
         par [[
-"Yes, vanity is a weakness indeed.  But pride &mdash; where there is a real
-superiority of mind &mdash; pride will be always under good regulation".
+"Yes, vanity is a weakness indeed.  But pride — where there is a real
+superiority of mind — pride will be always under good regulation".
 ]],
         par [[
 Elizabeth turned away to hide a smile.
@@ -1089,7 +1086,7 @@ and she began to imagine that their silence was to last through the two dances,
 and, at first, was resolved not to break it; till suddenly fancying that it
 would be the greater punishment to her partner to oblige him to talk, she made
 some slight observation on the dance.  He replied, and was again silent.  After
-a pause of some minutes, she addressed him a second time, with&mdash;
+a pause of some minutes, she addressed him a second time, with—
 ]],
         par [[
 "It is your turn to say something now, Mr. Darcy.  I talked about the dance, and
@@ -1133,7 +1130,7 @@ faithful portrait, undoubtedly".
 ]],
         par [[
 He made no answer; and they were again silent till they had gone down the
-dance[&hellip;]
+dance[…]
 ]],
     },
 }, {
@@ -1160,8 +1157,8 @@ Elizabeth looked at her sister with incredulous solicitude, but said nothing.
 "You doubt me", cried Jane slightly colouring; "indeed, you have no reason.  He
 may live in my memory as the most amiable man of my acquaintance, but that is
 all.  I have nothing either to hope or fear, and nothing to reproach him with.
-Thank God!  I have not <em>that</em> pain.  A little time therefore. &mdash; I
-shall certainly try to get the better".
+Thank God!  I have not <em>that</em> pain.  A little time therefore. — I shall
+certainly try to get the better".
 ]],
         par [[
 With a stronger voice she soon added, "I have this comfort immediately, that it
@@ -1277,9 +1274,9 @@ think".
 her mistress of this fortune?".
 ]],
         par [[
-"No &mdash; why should he?  If it were not allowable for him to gain my
-affections, because I had no money, what occasion could there be for making love
-to a girl whom he did not care about, and who was equally poor?".
+"No — why should he?  If it were not allowable for him to gain my affections,
+because I had no money, what occasion could there be for making love to a girl
+whom he did not care about, and who was equally poor?".
 ]],
         par [[
 "But there seems indelicacy in directing his attentions towards her so soon
@@ -1291,7 +1288,7 @@ which other people may observe.  If she does not object to it, why should we?".
 ]],
         par [[
 "Her not objecting does not justify him.  It only shows her being deficient in
-something herself &mdash; sense or feeling".
+something herself — sense or feeling".
 ]],
         par [[
 "Well", cried Elizabeth, "have it as you choose.  He shall be mercenary, and she
@@ -1333,9 +1330,9 @@ cried, "what delight! what felicity!  You give me fresh life and vigour.  Adieu
 to disappointment and spleen.  What are men to rocks and mountains?  Oh, what
 hours of transport we shall spend!  And when we do return, it shall not be like
 other travellers, without being able to give one accurate idea of anything.  We
-will know where we have gone &mdash; we will recollect what we have seen.
-Lakes, mountains, and rivers, shall not be jumbled together in our imaginations;
-nor, when we attempt to describe any particular scene, will we begin quarrelling
+will know where we have gone — we will recollect what we have seen.  Lakes,
+mountains, and rivers, shall not be jumbled together in our imaginations; nor,
+when we attempt to describe any particular scene, will we begin quarrelling
 about its relative situation.  Let our first effusions be less insupportable
 than those of the generality of travellers".
 ]],
@@ -1353,7 +1350,7 @@ to her other nephew; till the latter walked away from her, and moving with his
 usual deliberation towards the pianoforte, stationed himself so as to command a
 full view of the fair performer's countenance.  Elizabeth saw what he was doing,
 and at the first convenient pause turned to him with an arch smile, and
-said,&mdash;
+said,—
 ]],
         par [[
 "You mean to frighten me, Mr. Darcy, by coming in all this state to hear me.
@@ -1374,8 +1371,8 @@ you not to believe a word I say.  I am particularly unlucky in meeting with a
 person so well able to expose my real character, in a part of the world where I
 had hoped to pass myself off with some degree of credit.  Indeed, Mr. Darcy, it
 is very ungenerous in you to mention all that you knew to my disadvantage in
-Hertfordshire &mdash; and, give me leave to say, very impolitic too &mdash; for
-it is provoking me to retaliate, and such things may come out as will shock your
+Hertfordshire — and, give me leave to say, very impolitic too — for it is
+provoking me to retaliate, and such things may come out as will shock your
 relations to hear".
 ]],
         par [[
@@ -1386,12 +1383,12 @@ relations to hear".
 "I should like to know how he behaves among strangers".
 ]],
         par [[
-"You shall hear, then &mdash; but prepare for something very dreadful.  The
-first time of my ever seeing him in Hertfordshire, you must know, was at a ball
-&mdash; and at this ball, what do you think he did?  He danced only four dances!
-I am sorry to pain you, but so it was.  He danced only four dances, though
-gentlemen were scarce; and, to my certain knowledge, more than one young lady
-was sitting down in want of a partner. Mr. Darcy, you cannot deny the fact".
+"You shall hear, then — but prepare for something very dreadful.  The first time
+of my ever seeing him in Hertfordshire, you must know, was at a ball — and at
+this ball, what do you think he did?  He danced only four dances!  I am sorry to
+pain you, but so it was.  He danced only four dances, though gentlemen were
+scarce; and, to my certain knowledge, more than one young lady was sitting down
+in want of a partner. Mr. Darcy, you cannot deny the fact".
 ]],
         par [[
 "I had not at that time the honour of knowing any lady in the assembly beyond my
@@ -1425,7 +1422,7 @@ done".
 "My fingers", said Elizabeth, "do not move over this instrument in the masterly
 manner which I see so many women's do.  They have not the same force or
 rapidity, and do not produce the same expression.  But then I have always
-supposed it to be my own fault &mdash; because I would not take the trouble of
+supposed it to be my own fault — because I would not take the trouble of
 practising.  It is not that I do not believe my fingers as capable as any other
 woman's of superior execution".
 ]],
@@ -1458,7 +1455,7 @@ They then sat down, and when her inquiries after Rosings were made, seemed in
 danger of sinking into total silence.  It was absolutely necessary, therefore,
 to think of something; and in this emergency recollecting when she had seen him
 last in Hertfordshire, and feeling curious to know what he would say on the
-subject of their hasty departure, she observed,&mdash;
+subject of their hasty departure, she observed,—
 ]],
     },
 }, {
@@ -1478,22 +1475,22 @@ at last only suppose his visit to proceed from the difficulty of finding
 anything to do, which was the more probable from the time of year.
 ]],
         par [[
-[&hellip;]
+[…]
 ]],
         par [[
 But why Mr. Darcy came so often to the Parsonage it was more difficult to
 understand. It could not be for society, as he frequently sat there ten minutes
 together without opening his lips; and when he did speak, it seemed the effect
-of necessity rather than of choice &mdash; a sacrifice to propriety, not a
-pleasure to himself.  He seldom appeared really animated.  Mrs.  Collins knew
-not what to make of him.  Colonel Fitzwilliam's occasionally laughing at his
-stupidity proved that he was generally different, which her own knowledge of him
-could not have told her; and as she would have liked to believe this change the
-effect of love, and the object of that love her friend Eliza, she set herself
-seriously to work to find it out: she watched him whenever they were at Rosings,
-and whenever he came to Hunsford; but without much success.  He certainly looked
-at her friend a great deal, but the expression of that look was disputable.  It
-was an earnest, steadfast gaze, but she often doubted whether there were much
+of necessity rather than of choice — a sacrifice to propriety, not a pleasure to
+himself.  He seldom appeared really animated.  Mrs.  Collins knew not what to
+make of him.  Colonel Fitzwilliam's occasionally laughing at his stupidity
+proved that he was generally different, which her own knowledge of him could not
+have told her; and as she would have liked to believe this change the effect of
+love, and the object of that love her friend Eliza, she set herself seriously to
+work to find it out: she watched him whenever they were at Rosings, and whenever
+he came to Hunsford; but without much success.  He certainly looked at her
+friend a great deal, but the expression of that look was disputable.  It was an
+earnest, steadfast gaze, but she often doubted whether there were much
 admiration in it, and sometimes it seemed nothing but absence of mind.
 ]],
     },
@@ -1512,15 +1509,15 @@ occasions it was not merely a few formal inquiries and an awkward pause and then
 away, but he actually thought it necessary to turn back and walk with her.  He
 never said a great deal, nor did she give herself the trouble of talking or of
 listening much; but it struck her in the course of their third rencounter that
-he was asking some odd unconnected questions &mdash; about her pleasure in being
-at Hunsford, her love of solitary walks, and her opinion of Mr. and Mrs.
-Collins's happiness; and that in speaking of Rosings, and her not perfectly
-understanding the house, he seemed to expect that whenever she came into Kent
-again she would be staying there too.  His words seemed to imply it.  Could he
-have Colonel Fitzwilliam in his thoughts?  She supposed, if he meant anything,
-he must mean an allusion to what might arise in that quarter.  It distressed her
-a little, and she was quite glad to find herself at the gate in the pales
-opposite the Parsonage.
+he was asking some odd unconnected questions — about her pleasure in being at
+Hunsford, her love of solitary walks, and her opinion of Mr. and Mrs.  Collins's
+happiness; and that in speaking of Rosings, and her not perfectly understanding
+the house, he seemed to expect that whenever she came into Kent again she would
+be staying there too.  His words seemed to imply it.  Could he have Colonel
+Fitzwilliam in his thoughts?  She supposed, if he meant anything, he must mean
+an allusion to what might arise in that quarter.  It distressed her a little,
+and she was quite glad to find herself at the gate in the pales opposite the
+Parsonage.
 ]],
 }, {
     id = "XXXIII-1",
@@ -1536,7 +1533,7 @@ respectability which he will probably never reach.
     source = "XXXIV",
     title = "Disguise of every sort is my abhorrence",
     content = par [[
-"[&hellip;] My faults, according to this calculation, are heavy indeed!  But,
+"[…] My faults, according to this calculation, are heavy indeed!  But,
 perhaps", added he, stopping in his walk, and turning towards her, "these
 offences might have been overlooked, had not your pride been hurt by my
 honest confession of the scruples that had long prevented my forming any
@@ -1553,7 +1550,7 @@ and just.
     title = "The generality of the female minds",
     content = lines {
         par [[
-"[&hellip;] I was ready to die of laughter.  And then we were so merry all the
+"[…] I was ready to die of laughter.  And then we were so merry all the
 way home! we talked and laughed so loud, that anybody might have heard us ten
 miles off!".
 ]],
@@ -1607,7 +1604,7 @@ would have been perfect.
     content = lines {
         par [[
 As for Mary, she was mistress enough of herself to whisper to Elizabeth, with a
-countenance of grave reflection, soon after they were seated at table, &mdash;
+countenance of grave reflection, soon after they were seated at table, —
 ]],
         par [[
 "This is a most unfortunate affair, and will probably be much talked of.  But we
@@ -1616,11 +1613,11 @@ balm of sisterly consolation".
 ]],
         par [[
 Then perceiving in Elizabeth no inclination of replying, she added, "Unhappy as
-the event must be for Lydia, we may draw from it this useful lesson: &mdash;
-that loss of virtue in a female is irretrievable, that one false step involves
-her in endless ruin, that her reputation is no less brittle than it is
-beautiful, and that she cannot be too much guarded in her behaviour towards the
-undeserving of the other sex".
+the event must be for Lydia, we may draw from it this useful lesson: — that loss
+of virtue in a female is irretrievable, that one false step involves her in
+endless ruin, that her reputation is no less brittle than it is beautiful, and
+that she cannot be too much guarded in her behaviour towards the undeserving of
+the other sex".
 ]],
             par [[
 Elizabeth lifted up her eyes in amazement, but was too much oppressed to make
@@ -1784,13 +1781,12 @@ the house.
     content = lines {
         par [[
 "Good heaven! can it be really so?  Yet now I must believe you", cried Jane.
-"My dear, dear Lizzy, I would, I do congratulate you; but are you certain
-&mdash; forgive the question &mdash; are you quite certain that you can be happy
-with him?".
+"My dear, dear Lizzy, I would, I do congratulate you; but are you certain —
+forgive the question — are you quite certain that you can be happy with him?".
 ]],
         par [[
 "There can be no doubt of that. It is settled between us already that we are to
-be the happiest couple in the world[&hellip;]".
+be the happiest couple in the world[…]".
 ]],
     },
 }, {

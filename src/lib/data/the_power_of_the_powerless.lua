@@ -62,9 +62,9 @@ ideology is the consignment of reason and conscience to a higher authority.
 It is this which more than anything made the book relevant even outside the
 Eastern sphere then (when it was, for this reason, just as much a critique of
 Western democracies) and still does today almost fifty years later.  While it
-discusses a particular point in political history, much of it can be read
-&mdash; as is the case with great literature &mdash; as if it were written
-today: its subject is the eternal struggle of the human soul.
+discusses a particular point in political history, much of it can be read — as
+is the case with great literature — as if it were written today: its subject is
+the eternal struggle of the human soul.
 ]],
     blockquote(lines {
         par [[
@@ -104,14 +104,14 @@ unification might occur and what it would mean?
 ]],
     par [[
 The apathy and complacency of those who choose to display signs of their
-conformance and obedience &mdash; a spectacle as common today as it was in 1978
-&mdash; is where the blame is to fall: on those who willingly let themselves be
-normalized and trivialized.  This cuts across all of society, it is not "the
-product of some diabolical higher will"; as Solzhenitsyn famously wrote, "the
-line separating good and evil passes not through states, nor between classes,
-nor between political parties either &mdash; but right through every human heart
-&mdash; and through all human hearts".  Prime-minister and greengrocer are
-equally "unfree" in their ignominy.
+conformance and obedience — a spectacle as common today as it was in 1978 — is
+where the blame is to fall: on those who willingly let themselves be normalized
+and trivialized.  This cuts across all of society, it is not "the product of
+some diabolical higher will"; as Solzhenitsyn famously wrote, "the line
+separating good and evil passes not through states, nor between classes, nor
+between political parties either — but right through every human heart — and
+through all human hearts".  Prime-minister and greengrocer are equally "unfree"
+in their ignominy.
 ]],
     blockquote [[
 Let us take note: if the greengrocer had been instructed to display the slogan
@@ -138,7 +138,7 @@ illusion of an identity, of dignity, and of morality while making it easier for
 them to <em>part</em> with them.  As the repository of something suprapersonal
 and objective, it enables people to deceive their conscience and conceal their
 true position and their inglorious <i>modus vivendi</i>, both from the world and
-from themselves.  [&hellip;] It is directed toward people and toward God.  It is
+from themselves.  […] It is directed toward people and toward God.  It is
 a veil behind which human beings can hide their own fallen existence, their
 trivialization, and their adaptation to the status quo.
 ]],
@@ -329,10 +329,10 @@ If Western young people so often discover that retreat to an Indian monastery
 fails them as an individual or group solution, then this is obviously because,
 and only because, it lacks that element of universality, since not everyone can
 retire to an ashram.  Christianity is an example of an opposite way out: it is a
-point of departure for me here and now &mdash; but only because anyone,
-anywhere, at any time, may avail themselves of it.  In other words, the parallel
-<i>polis</i> points beyond itself and makes sense only as an act of deepening
-one's responsibility to and for the whole, as a way of discovering the most
+point of departure for me here and now — but only because anyone, anywhere, at
+any time, may avail themselves of it.  In other words, the parallel <i>polis</i>
+points beyond itself and makes sense only as an act of deepening one's
+responsibility to and for the whole, as a way of discovering the most
 appropriate locus for this responsibility, not as an escape from it.
 ]],
     par [[
@@ -419,9 +419,9 @@ autoridade maior.
 É isso que mais que qualquer coisa tornou o livro relevante mesmo fora da esfera
 do oriente na época (quando era, por esse motivo, também uma crítica das
 democracias ocidentais) e ainda o faz hoje, quase cinquenta anos depois.  Apesar
-de discutir um ponto particular da história política, muito dele pode ser lido
-&mdash; como é o caso na grande literatura &mdash; como se tivesse sido escrito
-hoje: seu tema é a luta eterna da alma humana.
+de discutir um ponto particular da história política, muito dele pode ser lido —
+como é o caso na grande literatura — como se tivesse sido escrito hoje: seu tema
+é a luta eterna da alma humana.
 ]],
     blockquote(lines {
         par [[
@@ -461,14 +461,14 @@ poderia ocorrer e o que significaria?
 ]],
     par [[
 A apatia e complacência daqueles que escolhem mostrar sinais de sua conformidade
-e obediência &mdash; um espetáculo tão comum hoje quanto era em 1978 &mdash; é
-onde a culpa deve ser posta: naqueles que por vontade própria se deixam ser
-normalizados e trivializados.  Isso corta a sociedade como um todo, não é "o
-produto de alguma vontade diabólica superior"; como Solzhenitsyn famosamente
-escreveu: "a linha separando o bem do mal passa não por estados, ou por classes,
-ou sequer entre partidos políticos &mdash; mas por todo coração humano &mdash; e
-por todos os corações humanos".  Primeiro-ministro e verdureiro são igualmente
-"não-livres" em sua ignomínia.
+e obediência — um espetáculo tão comum hoje quanto era em 1978 — é onde a culpa
+deve ser posta: naqueles que por vontade própria se deixam ser normalizados e
+trivializados.  Isso corta a sociedade como um todo, não é "o produto de alguma
+vontade diabólica superior"; como Solzhenitsyn famosamente escreveu: "a linha
+separando o bem do mal passa não por estados, ou por classes, ou sequer entre
+partidos políticos — mas por todo coração humano — e por todos os corações
+humanos".  Primeiro-ministro e verdureiro são igualmente "não-livres" em sua
+ignomínia.
 ]],
     blockquote [[
 Notemos: se o verdureiro tivesse sido instruído a mostrar a declaração "eu sou
@@ -495,7 +495,7 @@ seres humanos a ilusão de uma identidade, de dignidade, e de moralidade enquant
 torna mais fácil para eles <em>se separarem</em> delas.  Como o repositório de
 algo supra-pessoal e objetivo, habilita as pessoas a enganarem sua própria
 consciência e disfarçarem sua posição verdadeira e seu <i>modus vivendi</i>
-inglório, tanto do mundo quanto delas mesmas.  [&hellip;] É direcionada às
+inglório, tanto do mundo quanto delas mesmas.  […] É direcionada às
 pessoas e a Deus.  É um véu por trás do qual seres humanos podem esconder sua
 própria existência caída, sua trivialização, e sua adaptação ao status quo.
 ]],
@@ -686,11 +686,11 @@ frequentemente descobrem que um retiro para um monastério indiano os falha como
 solução individual ou em grupo, então é obviamente porque, e somente porque, não
 têm esse elemento de universalidade, já que nem todos podem se retirar a um
 ashram.  O cristianismo é um exemplo do caminho oposto de saída: é um ponto de
-partida para mim aqui e agora &mdash; mas somente porque qualquer um, em
-qualquer lugar, a qualquer tempo, pode fazer uso dele.  Em outras palavras, a
-polis paralela aponta além de si mesma e só faz sentido como um ato que
-aprofunda a própria responsabilidade por e para o todo, e como uma forma de
-descobrir o local dessa responsabilidade, não como um escape dela.
+partida para mim aqui e agora — mas somente porque qualquer um, em qualquer
+lugar, a qualquer tempo, pode fazer uso dele.  Em outras palavras, a polis
+paralela aponta além de si mesma e só faz sentido como um ato que aprofunda a
+própria responsabilidade por e para o todo, e como uma forma de descobrir o
+local dessa responsabilidade, não como um escape dela.
 ]],
     par [[
 Essa é a sua proposição para nossa crise moral.  Citando a proclamação de Martin
@@ -710,8 +710,8 @@ encontrar nelas aquele deus que pode nos salvar.
 Essas são todas áreas onde as consequências de uma revolução existencial podem e
 devem ser sentidas; mas o seu local mais intrínseco só pode ser a existência
 humana no sentido mais profundo da palavra.  É só com essa base que pode se
-tornar uma reconstituição ética em geral &mdash; e, é claro, ultimamente
-política &mdash; da sociedade.
+tornar uma reconstituição ética em geral — e, é claro, ultimamente política — da
+sociedade.
 ]],
     par [[
 <i>E conhecereis a verdade,</i><br />
@@ -1013,18 +1013,18 @@ under its <i>diktat</i>.  Both, however, assist in the creation of that
 panorama, and therefore they assist in the creation of that <i>diktat</i> as
 well.  The greengrocer and the office worker have both adapted to the conditions
 in which they live, but in doing so, they help to create those conditions.  They
-do what is done, what is to be done, what must be done, but at the same time
-&mdash; by that very token &mdash; they confirm that it must be done in fact.
-They conform to a particular requirement and in so doing they themselves
-perpetuate that requirement.  Metaphysically speaking, without the greengrocer's
-slogan the office workers slogan could not exist, and vice versa.  Each proposes
-to the other that something be repeated and each accepts the others proposal.
-Their mutual indifference to each others slogans is only an illusion: in
-reality, by exhibiting their slogans, each compels the other to accept the rules
-of the game and to confirm thereby the power that requires the slogans in the
-first place.  Quite simply, each helps the other to be obedient.  Both are
-objects in a system of control, but at the same time they are its subjects as
-well.  They are both victims of the system and its instruments.
+do what is done, what is to be done, what must be done, but at the same time —
+by that very token — they confirm that it must be done in fact.  They conform to
+a particular requirement and in so doing they themselves perpetuate that
+requirement.  Metaphysically speaking, without the greengrocer's slogan the
+office workers slogan could not exist, and vice versa.  Each proposes to the
+other that something be repeated and each accepts the others proposal.  Their
+mutual indifference to each others slogans is only an illusion: in reality, by
+exhibiting their slogans, each compels the other to accept the rules of the game
+and to confirm thereby the power that requires the slogans in the first place.
+Quite simply, each helps the other to be obedient.  Both are objects in a system
+of control, but at the same time they are its subjects as well.  They are both
+victims of the system and its instruments.
 ]],
     },
 }, {
@@ -1242,10 +1242,10 @@ integrity of the world of appearances in order to defend itself.  For the crust
 presented by the life of lies is made of strange stuff.  As long as it seals off
 hermetically the entire society, it appears to be made of stone.  But the moment
 someone breaks through in one place, when one person cries out, "The emperor is
-naked!" &mdash; when a single person breaks the rules of the game, thus exposing
-it as a game &mdash; everything suddenly appears in another light and the whole
-crust seems then to be made of a tissue on the point of tearing and
-disintegrating uncontrollably.
+naked!" — when a single person breaks the rules of the game, thus exposing it as
+a game — everything suddenly appears in another light and the whole crust seems
+then to be made of a tissue on the point of tearing and disintegrating
+uncontrollably.
 ]],
 }, {
     id = "IX",
@@ -1274,9 +1274,9 @@ gamble, and it is difficult to imagine a reasonable person embarking on such a
 course merely because he reckons that sacrifice today will bring rewards
 tomorrow, be it only in the form of general gratitude.  (By the way, the
 representatives of power invariably come to terms with those who live within the
-truth by persistently ascribing utilitarian motivations to them &mdash; a lust
-for power or fame or wealth &mdash; and thus they try, at least, to implicate
-    them in their own world, the world of general demoralization.)
+truth by persistently ascribing utilitarian motivations to them — a lust for
+power or fame or wealth — and thus they try, at least, to implicate them in
+their own world, the world of general demoralization.)
 ]],
         par [[
 If living within the truth in the post-totalitarian system becomes the chief
@@ -1289,11 +1289,11 @@ dimension and, in one way or another, from including it in their view of the
 world, it is to their own detriment: an anxious fidelity to the postulates of
 that world view prevents them from properly understanding the mechanisms of
 their own political influence, thus paradoxically making them precisely what
-they, as Marxists, so often suspect others of being &mdash; victims of "false
+they, as Marxists, so often suspect others of being — victims of "false
 consciousness".)  The very special political significance of morality in the
 post-totalitarian system is a phenomenon that is at the very least unusual in
-modern political history, a phenomenon that might well have &mdash; as I shall
-soon attempt to show &mdash; far-reaching consequences.
+modern political history, a phenomenon that might well have — as I shall soon
+attempt to show — far-reaching consequences.
 ]],
     },
 }, {
@@ -1413,16 +1413,16 @@ manipulation: you simply straighten your backbone and live in greater dignity as
 an individual.
 ]],
         par [[
-Here and there &mdash; thanks to the nature, the assumptions, and the
-professions of some people, but also thanks to a number of accidental
-circumstances such as the specific nature of the local milieu, friends, and so
-on &mdash; a more coherent and visible initiative may emerge from this wide and
-anonymous hinterland, an initiative that transcends "merely" individual revolt
-and is transformed into more conscious, structured, and purposeful work.  The
-point where living within the truth ceases to be a mere negation of living with
-a lie and becomes articulate in a particular way is the point at which something
-is born that might be called the "independent spiritual, social, and political
-life of society".  This independent life is not separated from the rest of life
+Here and there — thanks to the nature, the assumptions, and the professions of
+some people, but also thanks to a number of accidental circumstances such as the
+specific nature of the local milieu, friends, and so on — a more coherent and
+visible initiative may emerge from this wide and anonymous hinterland, an
+initiative that transcends "merely" individual revolt and is transformed into
+more conscious, structured, and purposeful work.  The point where living within
+the truth ceases to be a mere negation of living with a lie and becomes
+articulate in a particular way is the point at which something is born that
+might be called the "independent spiritual, social, and political life of
+society".  This independent life is not separated from the rest of life
 ("dependent life") by some sharply defined line.  Both types frequently co-exist
 in the same people.  Nevertheless, its most important focus is marked by a
 relatively high degree of inner emancipation.  It sails upon the vast ocean of
@@ -1468,24 +1468,24 @@ is impossible to talk about what in fact ``dissidents'' do and the effect of
 their work without first talking about the work of all those who, in one way or
 an other, take part in the independent life of society and who are not
 necessarily "dissidents" at all.  They may be writers who write as they wish
-without regard for censorship or official demands and who issue their work
-&mdash; when official publishers refuse to print it &mdash; as <i>samizdat</i>.
-They may be philosophers, historians, sociologists, and all those who practice
-independent scholarship and, if it is impossible through official or
-semi-official channels, who also circulate their work in <i>samizdat</i> or who
-organize private discussions, lectures, and seminars.  They may be teachers who
-privately teach young people things that are kept from them in the state
-schools; clergymen who either in office or, if they are deprived of their
-charges, outside it, try to carry on a free religious life; painters, musicians,
-and singers who practice their work regardless of how it is looked upon by
-official institutions; everyone who shares this independent culture and helps to
-spread it; people who, using the means available to them, try to express and
-defend the actual social interests of workers, to put real meaning back into
-trade unions or to form independent ones; people who are not afraid to call the
-attention of officials to cases of injustice and who strive to see that the laws
-are observed; and the different groups of young people who try to extricate
-themselves from manipulation and live in their own way, in the spirit of their
-own hierarchy of values.  The list could go on.
+without regard for censorship or official demands and who issue their work —
+when official publishers refuse to print it — as <i>samizdat</i>.  They may be
+philosophers, historians, sociologists, and all those who practice independent
+scholarship and, if it is impossible through official or semi-official channels,
+who also circulate their work in <i>samizdat</i> or who organize private
+discussions, lectures, and seminars.  They may be teachers who privately teach
+young people things that are kept from them in the state schools; clergymen who
+either in office or, if they are deprived of their charges, outside it, try to
+carry on a free religious life; painters, musicians, and singers who practice
+their work regardless of how it is looked upon by official institutions;
+everyone who shares this independent culture and helps to spread it; people who,
+using the means available to them, try to express and defend the actual social
+interests of workers, to put real meaning back into trade unions or to form
+independent ones; people who are not afraid to call the attention of officials
+to cases of injustice and who strive to see that the laws are observed; and the
+different groups of young people who try to extricate themselves from
+manipulation and live in their own way, in the spirit of their own hierarchy of
+values.  The list could go on.
 ]],
         par [[
 Very few would think of calling all these people "dissidents".  And yet are not
@@ -1530,10 +1530,10 @@ and ultimately misleading because it makes the doubtful assumption that you can
 negotiate in good faith with your exploiters on the basis of a false legality.
 The problem is that they are unable to find anyone determined enough to carry
 out this revolution, with the result that they become bitter, skeptical,
-passive, and ultimately apathetic &mdash; in other words, they end up precisely
-where the system wants them to be.  This is one example of how far one can be
-misled by mechanically applying, in post-totalitarian circumstances, ideological
-models from another world and another time.
+passive, and ultimately apathetic — in other words, they end up precisely where
+the system wants them to be.  This is one example of how far one can be misled
+by mechanically applying, in post-totalitarian circumstances, ideological models
+from another world and another time.
 ]],
 }, {
     id = "XVII-1",
@@ -1544,9 +1544,9 @@ models from another world and another time.
 In a narrower sense the legal code serves the post-totalitarian system in this
 direct way as well, that is, it too forms a part of the world of regulations and
 prohibitions.  At the same time, however, it performs the same service in
-another indirect way, one that brings it remarkably closer &mdash; depending on
-which level of the law is involved &mdash; to ideology and in some cases makes
-it a direct component of that ideology.
+another indirect way, one that brings it remarkably closer — depending on which
+level of the law is involved — to ideology and in some cases makes it a direct
+component of that ideology.
 ]],
         par [[
 Like ideology, the legal code functions as an excuse.  It wraps the base
@@ -1582,9 +1582,9 @@ on down to the defendant).  Yet all of this somehow remains in the background.
 The falsified testimony is not necessarily obvious from the trial documents and
 the section of the Criminal Code dealing with incitement does not formally
 exclude the application of that charge to the copying of a banned novel.  In
-other words, the legal code &mdash; at least in several areas &mdash; is no more
-than a facade, an aspect of the world of appearances.  Then why is it there at
-all?  For exactly the same reason as ideology is there: it provides a bridge of
+other words, the legal code — at least in several areas — is no more than a
+facade, an aspect of the world of appearances.  Then why is it there at all?
+For exactly the same reason as ideology is there: it provides a bridge of
 excuses between the system and individuals, making it easier for them to enter
 the power structure and serve the arbitrary deceives history itself.
 ]],
@@ -1686,10 +1686,10 @@ system have their essential beginnings in the "pre-political" area.  For what
 else are parallel structures than an area where a different life can be lived, a
 life that is in harmony with its own aims and which in turn structures itself in
 harmony with those aims?  What else are those initial attempts at social self
-organization than the efforts of a certain part of society to live &mdash; as a
-society &mdash; within the truth, to rid itself of the self-sustaining aspects
-of totalitarianism and, thus, to extricate itself radically from its involvement
-in the post-totalitarian system?  What else is it but a nonviolent attempt by
+organization than the efforts of a certain part of society to live — as a
+society — within the truth, to rid itself of the self-sustaining aspects of
+totalitarianism and, thus, to extricate itself radically from its involvement in
+the post-totalitarian system?  What else is it but a nonviolent attempt by
 people to negate the system within themselves and to establish their lives on a
 new basis, that of their own proper identity?  And does this tendency not
 confirm once more the principle of returning the focus to actual individuals?
@@ -1723,9 +1723,9 @@ groups and would recall the false notion of "dissidents" as an exclusive group
 with exclusive interests, carrying on their own exclusive dialogue with the
 powers that be.  In any case, even the most highly developed forms of life in
 the parallel structures, even that most mature form of the parallel <i>polis</i>
-can only exist &mdash; at least in post-totalitarian circumstances &mdash; when
-the individual is at the same time lodged in the "first", official structure by
-a thousand different relationships, even though it may only be the fact that one
+can only exist — at least in post-totalitarian circumstances — when the
+individual is at the same time lodged in the "first", official structure by a
+thousand different relationships, even though it may only be the fact that one
 buys what one needs in their stores, uses their money, and obeys their laws.
 Certainly one can imagine life in its baser aspects flourishing in the parallel
 <i>polis</i>, but would not such a life, lived deliberately that way, as a
@@ -1742,10 +1742,10 @@ it by moving somewhere else, whether it be to an Indian ashram or to a parallel
 Indian monastery fails them as an individual or group solution, then this is
 obviously because, and only because, it lacks that element of universality,
 since not everyone can retire to an ashram.  Christianity is an example of an
-opposite way out: it is a point of departure for me here and now &mdash; but
-only because anyone, anywhere, at any time, may avail themselves of it.  In
-other words, the parallel <i>polis</i> points beyond itself and makes sense only
-as an act of deepening one's responsibility to and for the whole, as a way of
+opposite way out: it is a point of departure for me here and now — but only
+because anyone, anywhere, at any time, may avail themselves of it.  In other
+words, the parallel <i>polis</i> points beyond itself and makes sense only as an
+act of deepening one's responsibility to and for the whole, as a way of
 discovering the most appropriate locus for this responsibility, not as an escape
 from it.
 ]],
@@ -1761,22 +1761,22 @@ have seen, to have an impact on society, not to affect the power structure, at
 least not directly and immediately.  Independent initiatives address the hidden
 sphere; they demonstrate that living within the truth is a human and social
 alternative and they struggle to expand the space available for that life; they
-help &mdash; even though it is, of course, indirect help &mdash; to raise the
-confidence of citizens; they shatter the world of appearances and unmask the
-real nature of power.  They do not assume a messianic role; they are not a
-social avant-garde or elite that alone knows best, and whose task it is to
-"raise the consciousness" of the "unconscious" masses (that arrogant
-self-projection is, once again, intrinsic to an essentially different way of
-thinking, the kind that feels it has a patent on some ideal project and
-therefore that it has the right to impose it on society).  Nor do they want to
-lead anyone.  They leave it up to each individual to decide what he will or will
-not take from their experience and work.  (If official Czechoslovak propaganda
-described the Chartists as "self-appointees", it was not in order to emphasize
-any real avant-garde ambitions on their part, but rather a natural expression of
-how the regime thinks, its tendency to judge others according to itself, since
-behind any expression of criticism it automatically sees the desire to cast the
-mighty from their seats and rule in their places "in the name of the people",
-the same pretext the regime itself has used for years.)
+help — even though it is, of course, indirect help — to raise the confidence of
+citizens; they shatter the world of appearances and unmask the real nature of
+power.  They do not assume a messianic role; they are not a social avant-garde
+or elite that alone knows best, and whose task it is to "raise the
+consciousness" of the "unconscious" masses (that arrogant self-projection is,
+once again, intrinsic to an essentially different way of thinking, the kind that
+feels it has a patent on some ideal project and therefore that it has the right
+to impose it on society).  Nor do they want to lead anyone.  They leave it up to
+each individual to decide what he will or will not take from their experience
+and work.  (If official Czechoslovak propaganda described the Chartists as
+"self-appointees", it was not in order to emphasize any real avant-garde
+ambitions on their part, but rather a natural expression of how the regime
+thinks, its tendency to judge others according to itself, since behind any
+expression of criticism it automatically sees the desire to cast the mighty from
+their seats and rule in their places "in the name of the people", the same
+pretext the regime itself has used for years.)
 ]],
         par [[
 These movements, therefore, always affect the power structure as such
@@ -1799,30 +1799,30 @@ independent social self-realization.
     title = "Being and existing",
     content = lines {
         par [[
-The specific nature of post-totalitarian conditions &mdash; with their absence
-of a normal political life and the fact that any far-reaching political change
-is utterly unforeseeable &mdash; has one positive aspect: it compels us to
-examine our situation in terms of its deeper coherences and to consider our
-future in the context of global, long-range prospects of the world of which we
-are a part.  The fact that the most intrinsic and fundamental confrontation
-between human beings and the system takes place at a level incomparably more
-profound than that of traditional politics would seem, at the same time, to
-determine as well the direction such considerations will take.
+The specific nature of post-totalitarian conditions — with their absence of a
+normal political life and the fact that any far-reaching political change is
+utterly unforeseeable — has one positive aspect: it compels us to examine our
+situation in terms of its deeper coherences and to consider our future in the
+context of global, long-range prospects of the world of which we are a part.
+The fact that the most intrinsic and fundamental confrontation between human
+beings and the system takes place at a level incomparably more profound than
+that of traditional politics would seem, at the same time, to determine as well
+the direction such considerations will take.
 ]],
         par [[
 Our attention, therefore, inevitably turns to the most essential matter: the
 crisis of contemporary technological society as a whole, the crisis that
 Heidegger describes as the ineptitude of humanity face to face with the
-planetary power of technology.  Technology &mdash; that child of modern science,
-which in turn is a child of modern metaphysics &mdash; is out of humanity's
-control, has ceased to serve us, has enslaved us and compelled us to participate
-in the preparation of our own destruction.  And humanity can find no way out: we
-have no idea and no faith, and even less do we have a political conception to
-help us bring things back under human control.  We look on helplessly as that
-coldly functioning machine we have created inevitably engulfs us, tearing us
-away from our natural affiliations (for instance, from our habitat in the widest
-sense of that word, including our habitat in the biosphere) just as it removes
-us from the experience of "being" and casts us into the world of "existences".
+planetary power of technology.  Technology — that child of modern science, which
+in turn is a child of modern metaphysics — is out of humanity's control, has
+ceased to serve us, has enslaved us and compelled us to participate in the
+preparation of our own destruction.  And humanity can find no way out: we have
+no idea and no faith, and even less do we have a political conception to help us
+bring things back under human control.  We look on helplessly as that coldly
+functioning machine we have created inevitably engulfs us, tearing us away from
+our natural affiliations (for instance, from our habitat in the widest sense of
+that word, including our habitat in the biosphere) just as it removes us from
+the experience of "being" and casts us into the world of "existences".
 ]],
     },
 }, {
@@ -1846,8 +1846,8 @@ in a revolution that is merely philosophical, merely social, merely
 technological, or even merely political.  These are all areas where the
 consequences of an existential revolution can and must be felt; but their most
 intrinsic locus can only be human existence in the profoundest sense of the
-word.  It is only from that basis that it can become a generally ethical &mdash;
-and, of course, ultimately a political &mdash; reconstitution of society.
+word.  It is only from that basis that it can become a generally ethical — and,
+of course, ultimately a political — reconstitution of society.
 ]],
         par [[
 What we call the consumer and industrial (or postindustrial) society, and Ortega
@@ -1855,11 +1855,11 @@ y Gasset once understood as "the revolt of the masses", as well as the
 intellectual, moral, political, and social misery in the world today: all of
 this is perhaps merely an aspect of the deep crisis in which humanity, dragged
 helplessly along by the automatism of global technological civilization, finds
-itself.  The post-totalitarian system is only one aspect &mdash; a particularly
-drastic aspect and thus all the more revealing of its real origins &mdash; of
-this general inability of modern humanity to be the master of its own situation.
-The automatism of the post-totalitarian system is merely an extreme version of
-the global automatism of technological civilization.  The human failure that it
+itself.  The post-totalitarian system is only one aspect — a particularly
+drastic aspect and thus all the more revealing of its real origins — of this
+general inability of modern humanity to be the master of its own situation.  The
+automatism of the post-totalitarian system is merely an extreme version of the
+global automatism of technological civilization.  The human failure that it
 mirrors is only one variant of the general failure of modern humanity.
 ]],
         par [[

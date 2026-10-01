@@ -41,7 +41,7 @@ If the eye were an animal, vision would be its soul.
                 href = "https://classics.mit.edu/Aristotle/soul.2.ii.html",
                 content = "412b18",
             },
-            "&nbsp;&nbsp;&nbsp;&nbsp;"),
+            html "&nbsp;&nbsp;&nbsp;&nbsp;"),
         })
 
 local cit1 <const> = blockquote(lines {
@@ -71,7 +71,7 @@ true virtue, become the friend of God and be immortal, if mortal man may.
                 href = "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0174%3Atext%3DSym.%3Asection%3D211d",
                 content = "211d",
             },
-            "&nbsp;&nbsp;&nbsp;&nbsp;"),
+            html "&nbsp;&nbsp;&nbsp;&nbsp;"),
         })
 
 local function process_item(_, t)

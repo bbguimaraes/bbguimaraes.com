@@ -9,7 +9,7 @@ for _, x in ipairs(var "citations") do
     if title then
         table.insert(toc, link {
             href = "#" .. id,
-            content = string.format("%s &ndash; %s", source, title),
+            content = string.format("%s – %s", source, title),
         })
     end
     if #text == 2 then
@@ -20,7 +20,7 @@ for _, x in ipairs(var "citations") do
     end
     local ret <const> = {}
     if title then
-        title = string.format("%s &ndash; %s", source, title)
+        title = string.format("%s – %s", source, title)
         table.insert(l, hr())
     else
         title = source
