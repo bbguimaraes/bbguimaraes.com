@@ -68,31 +68,28 @@ Other than the name, another important part of the document class are the
 options, which go inside <code>[brackets]</code> between
 <code>\documentclass</code> and <code>{book}</code>.  Relevant here are:
 ]],
-    [[
-            <ul>
-                <li>
-                    <p>
+    ul {
+        par [[
 Paper size: choose whatever size is appropriate for your printer.
 <code>letterpaper</code> (5in x 11in) is the default.  <code>a4paper</code> will
 produce the standard A4 size (210mm x 297mm).
-                    </p>
-                </li>
-                <li>
-                    <p>
+]],
+        lines {
+            par [[
 Font size: the default size of <code>10pt</code> may be too small depending on
 the type of booklet and the intended usage.  Other available values are
 <code>11pt</code> and <code>12pt</code>.  If these are still not sufficient,
 package <a href="https://www.ctan.org/pkg/extsizes"><code>extsizes</code></a>
 provides <code>\documentclass{extbook}</code>, which adds several more options.
 For my particular case, <code>14pt</code> was the best choice.
-                    </p>
-                    <p>
+]],
+            par [[
 It may be necessary to actually print a test page with a few lines in some of
 these font sizes to determine the best one, since the electronic version does
 not give a good idea of how text will look on real paper.
-                    </p>
-                </li>
-            </ul>]],
+]],
+        },
+    },
     h3_link { "geometry", "<code>geometry</code>" },
     par [[
 The <code>book</code> document class predefines very spacious margin sizes.
@@ -127,57 +124,73 @@ produce a booklet can be explained.  Imagining a traditional book resting on a
 table with the cover facing up, with the traditional Cartesian axes being the
 table surface (XY) and the normal vector pointing up (Z):
 ]],
-    [[
-            <ul>
-                <li>
-                    <p>
+    ul {
+        lines {
+            par [[
 <i>Long/short edges</i>: these refer to the sides of the paper sheets.  The
 binding of a book is usually on the long edge on the left (parallel to the Y
 axis).
-                    </p>
-                    <img alt="long/short edges" title="long/short edges" src="/files/blog/booklet_edges.png" />
-                </li>
-                <li>
-                    <p>
+]],
+            image {
+                alt = "long/short edges",
+                title = "long/short edges",
+                src = "/files/blog/booklet_edges.png",
+            }
+        },
+        lines {
+            par [[
 <i>Portrait/landscape</i>: books are usually printed in portrait mode, in which
 the long edges are parallel to the Y axis as explained above.  Landscape mode is
 a 90&deg; counter-clockwise rotation along the Z axis, such that the long edges
 become parallel to the X axis.  For a book, this would turn the binding towards
 the reader.
-                    </p>
-                    <img alt="page orientation" title="page orientation" src="/files/blog/booklet_orientation.png" />
-                </li>
-                <li>
-                    <p>
+]],
+            image {
+                alt = "page orientation",
+                title = "page orientation",
+                src = "/files/blog/booklet_orientation.png",
+            },
+        },
+        lines {
+            par [[
 <i>One-/two-sided printing</i>: whether pages are printed only on the front or
 on both sides of the paper sheet.  For the latter case, reversing the sheet
 before printing the other page can be done either over the short or the long
 edge, depending on how the two sides of the sheet should be oriented in relation
 to each other.
-                    </p>
-                    <img alt="one-/two-sided printing" title="one-/two-sided printing" src="/files/blog/booklet_sides.png" />
-                    <p>
+]],
+            image {
+                alt = "one-/two-sided printing",
+                title = "one-/two-sided printing",
+                src = "/files/blog/booklet_sides.png",
+            },
+            par [[
 This can require (and will for the booklet format) mirroring the pages on one of
 the sides of the sheet so that they are properly aligned with the content on the
 other.
-                    </p>
-                <li>
-                    <p>
+]],
+        },
+        lines {
+            par [[
 <i>N-up</i>: this is the process of sub-dividing an output page into <i>n</i>
 parts and placing one (resized) input page in each sub-division.  <i>2-up</i>
 means the output page is divided in half, each side containing one page from the
 input that is half its original size.
-                    </p>
-                    <img alt="n-up printing" title="n-up printing" src="/files/blog/booklet_nup.png" />
-                    <p>
+]],
+            image {
+                alt = "n-up printing",
+                title = "n-up printing",
+                src = "/files/blog/booklet_nup.png",
+            },
+            par [[
 While there are two possible sub-divisions for 2-up printing (and many more for
 larger numbers), the one shown in the image above (where the division is done
 along the horizontal &mdash; i.e. X &mdash; axis) is the most common, since it
 preserves the aspect ratio of the pages.
-                    </p>
-                </li>
-                <li>
-                    <p>
+]],
+        },
+        lines {
+            par [[
 <i>Signatures</i>: if you look at the binding of a traditional book, you will
 notice it is not composed of a stack of individual sheets.  Pages are instead
 grouped into what are called signatures: 2-up sheets in landscape orientation
@@ -185,10 +198,14 @@ which are bound together at the fold.  Each of these folded layers can be
 composed of a single folded sheet (four pages) or multiple sheets folded
 together.  Here is an example of a twelve-page signature (composed of three
 sheets):
-                    </p>
-                    <img alt="signature" title="signature" src="/files/blog/booklet_signature.png" />
-                </li>
-            </ul>]],
+]],
+            image {
+                alt = "signature",
+                title = "signature",
+                src = "/files/blog/booklet_signature.png",
+            },
+        },
+    },
     h2_link { "pdfjam", "<code>pdfjam</code>" },
     par [[
 This is a script which uses LaTeX itself to manipulate PDF files.  It can be
@@ -229,21 +246,17 @@ $ pdfbook --signature 28 input.pdf
     par [[
 A few things to keep in mind about this command:
 ]],
-    [[
-            <ul>
-                <li>
-Make sure to use the number of pages reported by <code>pdfinfo</code>.
-                </li>
-                <li>
+    ul {
+        str [[
+Make sure to use the number of pages reported by <code>pdfinfo</code>.]],
+        str [[
 Note that this may be different from the number seen in the last page of the
 document, depending on how it is structured (e.g. if it has a
-<code>\frontmatter</code> section).
-                </li>
-                <li>
+<code>\frontmatter</code> section).]],
+        str [[
 Also note that the argument is the number of pages in each signature, not the
-number of signatures.
-                </li>
-            </ul>]],
+number of signatures.]],
+    },
     par [[
 The command will produce a file called <code>input-book.pdf</code> in the
 desired format.  Opening it in a PDF viewer can be quite confusing, since the

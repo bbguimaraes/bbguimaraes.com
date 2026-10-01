@@ -228,7 +228,7 @@ extension to an already long post.  Maybe I'll cover it in the future.  Anyway,
 happy mocking!
 ]],
     h2_link { "notes", "Notes" },
-    [[
+    str [[
             <ol>
                 <li id="note0">
                     <p>

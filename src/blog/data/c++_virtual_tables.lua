@@ -34,7 +34,7 @@ ABI</a>.  In particular:
                 {href = "https://itanium-cxx-abi.github.io/cxx-abi/abi.html#vcall"},
                 "section 3.2: <i>Virtual Calls</i>"),
     },
-    tag("aside", nil, lines {
+    aside(lines {
         par [[
 The text is divided into sections, mostly following the class categories in the
 document, with some ancillary  material around them:
@@ -466,7 +466,7 @@ corresponds to the first argument and points to the derived object, so calling
 the virtual function <code>f</code> is a simple matter of doing the required
 triple-dereference to transfer execution to method.
 ]],
-    tag("aside", nil, lines {
+    aside(lines {
         par [[
 A quick reference for those unfamiliar with x86 assembly:
 ]],
@@ -498,12 +498,12 @@ The equivalent code in pseudo-C would be:
 <b>u64</b> **rax = *(<b>u64</b>***)rdi; <i>// mov</i>
 <b>goto</b> **rax; <i>// jmp</i>
 ]],
-        par [=[
+        par(html [=[
 Using a fictitious triple-dereference addressing mode, the same could be
 achieved with <code>jmp [QWORD PTR [QWORD PTR [rdi]]]</code> (i.e. <code>goto
 ***rdi</code>).  This is reflected in the triple indirection using the
 <code>-&gt;</code> and <code>()</code> operators in the C implementation below.
-]=],
+]=]),
     }),
     par [[
 And finally, adding more virtual functions to <code>S</code> simply extends the
@@ -1301,9 +1301,9 @@ I hope this was helpful.  Happy hacking.
 ]],
     h2_link { "notes", "Notes" },
     tag("ol", {start = 0}, lines {
-        tag("li", {id = "note0"}, par [[
+        tag("li", {id = "note0"}, par(html [[
 C++ requires <code>sizeof(x) &gt; 0</code> for all objects.
-]]),
+]])),
         tag("li", {id = "note1"}, par [[
 <code>lea</code> is the <i>load effective address</i> x86 instruction.  In this
 case, it is a simpler (to the assembler) form of adding the
@@ -1482,11 +1482,11 @@ allocation for dynamic dispatch.  This will work just fine:
 D d;
 B *b = &amp;d;
 b-&gt;vfn();]],
-            par [[
+            par(html [[
 As will <code>static_cast&lt;B*&gt;(&amp;d)-&gt;vfn()</code>.  It annoys me to no
 end to see <code>B *b = new D</code> or similar atrocities in dynamic dispatch
 examples.
-]],
+]]),
         }),
     }),
 }

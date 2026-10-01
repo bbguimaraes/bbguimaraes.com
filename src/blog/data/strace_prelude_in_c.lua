@@ -164,31 +164,24 @@ exit_group(0)                           = ?
 All changes in the output are related to the threading library and its runtime
 setup:
 ]],
-    [[
-            <ul>
-                <li>
-                    <p>
+    ul {
+        par [[
 <code>arch_prctl(2)</code> is an x86-64 system call for managing thread
 state; the <code>ARCH_SET_FS</code> operation manipulates the <code>FS</code>
 register, used in the implementation of thread-local storage<a href="#note0"><sup>0</sup></a>.
-                    </p>
-                </li>
-                <li>
-                    <p>
+]],
+        par [[
 <code>set_tid_address(2)</code> is used in the <code>pthread(3)</code>
 implementation.  The address passed to it corresponds to the
 <code>child_tid</code> argument of <code>clone(2)</code> and is part of the
 implementation of <code>pthread_create(3)</code>, <code>pthread_join(3)</code>,
 etc.
-                    </p>
-                </li>
-                <li>
-                    <p>
+]],
+        par [[
 <code>exit_group(2)</code> is the real system call behind <code>exit(3)</code>:
 it terminates not only the caller but all threads in a process.
-                    </p>
-                </li>
-            </ul>]],
+]],
+    },
     h2_link { "glibc", "glibc" },
     par [[
 Tracing the same program as before, but now compiled using the GNU standard
@@ -440,7 +433,7 @@ maintainer of Linux manual pages) is a fantastic resource.
 Have fun!
 ]],
     h2_link { "notes", "Notes" },
-    [[
+    str [[
             <ol start=0>
                 <li id="note0">
                     <p>

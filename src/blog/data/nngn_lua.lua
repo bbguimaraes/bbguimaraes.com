@@ -374,25 +374,19 @@ Map files are the primary example.  They encode all the necessary data for an
 individual, self-contained area, as well as the behavior associated with it.
 More specifically, these files usually have:
 ]],
-    [[
-            <ul>
-                <li>
+    ul {
+        str [[
 a function that initializes the area, sometimes relying heavily on loops and
-specific logic
-                </li>
-                <li>
-a function that releases any data still in use when the area is left
-                </li>
-                <li>
-a function that is called every frame to update area-specific objects
-                </li>
-                <li>
-functions to handle special events (e.g. collisions)
-                </li>
-                <li>
-local variables to share data between all of the above
-                </li>
-            </ul>]],
+specific logic]],
+        str [[
+a function that releases any data still in use when the area is left]],
+        str [[
+a function that is called every frame to update area-specific objects]],
+        str [[
+functions to handle special events (e.g. collisions)]],
+        str [[
+local variables to share data between all of the above]],
+    },
     par [[
 While the manner in which the file is processed is necessarily imperative (it
 is simply loaded and executed), several utility functions make the contents

@@ -6,27 +6,22 @@ Every programmer at one point will encounter the arcane semantics of IEEE-754
 floating-point arithmetic.  If for you that point is right now, allow me to
 list the worst offenders of the principle of least surprise:
 ]],
-    [[
-            <ul>
-                <li>
+    ul {
+        str [[
 Division by zero is a (semi-)valid operation that returns
-<code>±infinity</code>.
-                </li>
-                <li>
-Division <em>of zero</em> by zero returns <code>NaN</code> (not-a-number).
-                </li>
-                <li>
+<code>±infinity</code>.]],
+        str [[
+Division <em>of zero</em> by zero returns <code>NaN</code> (not-a-number).]],
+        str [[
 Even invalid operations are also (semi-)valid operations that return
-<code>NaN</code>.
-                </li>
-                <li>
+<code>NaN</code>.]],
+        str [[
 In what has to be considered the clear winner, despite the items above not
 generating an exception by default, an <em>integer</em> division-by-zero will
 generate a <em>floating-point exception</em> (unrelated to exceptions in
 languages such as C++) in POSIX-compliant operating systems — if it does
-generate an exception at all, which is usually the case.
-                </li>
-            </ul>]],
+generate an exception at all, which is usually the case.]],
+    },
     par [[
 Because of the semantics of integer division, it may be very surprising to the
 uninitiated that nonsensical floating-point operations actually "succeed" and

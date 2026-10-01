@@ -173,7 +173,7 @@ This shouldn't happen at /usr/share/perl5/core_perl/Text/Wrap.pm line 84, &lt;st
 shell returned 255
 ]],
     h3_link { "notes", "Notes" },
-    [[
+    str [[
             <ol>
                 <li id="note1">What sane geek uses dropbox, anyway?</li>
                 <li id="note2">

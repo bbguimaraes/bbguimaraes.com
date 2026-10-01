@@ -90,11 +90,11 @@ $ cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cail
 cat: /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_:
 Permission denied
 ]],
-    par [[
+    par(html [[
 You can solve this by typing <i>&lt;UP&gt;&lt;HOME&gt;sudo&lt;SPACE&gt;</i> (if
 you type <i>&lt;UP&gt;&lt;LEFT&gt;{201}sudo&lt;SPACE&gt;</i>, I will personally
 punch you in the face).  But you can save a lot of typing just using
-]],
+]]),
     code [[
 $ sudo !!
 sudo cat /sys/module/fglrx/sections/.gnu.linkonce.t._ZN20OS_COMMON_INTERFACES22cailMicroEngineControlEPv14_MICRO_ENGINE_21_MICRO_ENGINE_ACTION_P28_MICRO_ENGINE_CONTROL_INPUT_P29_MICRO_ENGINE_CONTROL_OUTPUT_
@@ -213,61 +213,66 @@ substitution.
     par [[
 P.S.: I couldn't leave without some closing notes.
 ]],
-    [[
-            <ol>
-                <li>
-                    <p>
+    ol {
+        lines {
+            par [[
 I learned everything shown here from scattered information on the internet.  I
 decided to compile them because I never found a document which explained them
 in detail AND without burying them on other bash-related commands.
-                    </p>
-                    <p>
+]],
+            par [[
 That said, a good reference (not so good for self-learning, but, if you read
 the text, you should be okay) is bash's man page.  Search for "Event
 Designators" or <i>\!\!</i> (escaping is mandatory):
-                    </p>
-                    <pre><code>$ man bash
-/Event Designators&lt;CR&gt;</code></pre>
-                </li>
-                <li>
-                    <p>
+]],
+            code [[
+$ man bash
+/Event Designators&lt;CR&gt;
+]],
+        },
+        par [[
 While all this may seem hard to use practically, I recommend you just keep it
 in a dark corner of your mind.  I promise you'll start to find places where you
 can apply it.  They can be used to write commands quickly, especially several
 one-shot commands in a row.  Just don't try forcing the use when it's not
 necessary.  After all, they were created to save time.
-                    </p>
-                </li>
-                <li>
-                    <p>
+]],
+        lines {
+            par [[
 If you ever got stabbed by not knowing how the bang works (like the examples I
 showed in the beginning), you can avoid getting stabbed again by escaping the
 bangs, either with a backslash or single quotes:
-                    </p>
-                    <pre><code>$ <b>echo</b> Bang\!
+]],
+            code [[
+$ <b>echo</b> Bang\!
 Bang!
-$ <b>echo</b> <b>'balrog:!you shall not pass:/nonexistent:/bin/false'</b> &gt;&gt; /etc/passwd</code></pre>
-                </li>
-                <li>
-                    <p>
+$ <b>echo</b> <b>'balrog:!you shall not pass:/nonexistent:/bin/false'</b> &gt;&gt; /etc/passwd
+]],
+        },
+        lines {
+            par [[
 More of a side note, but to get that humongous file name, I discovered a new
 (string of) command(s) to get the longest line from a text.
-                    </p>
-                    <pre><code>$ find /sys/ | awk <b>'{print length, $0;}'</b> | sort -nr | head -n 1</code></pre>
-                    <p>
+]],
+            code [[
+$ find /sys/ | awk <b>'{print length, $0;}'</b> | sort -nr | head -n 1
+]],
+            par [[
 You can probably do the same thing (although it might be a little slower) using
 a while loop and another bash trick: while <i>$variable</i> (or
 <i>${variable}</i>) will give you the contents of a variable,
 <i>${#variable}</i> will give you the length of that content.
-                    </p>
-                    <pre><code>$ find /sys/ | <b>while</b> <b>read</b> i; <b>do</b> <b>echo</b> <b>"${#i} $i"</b>; <b>done</b> | sort -nr | head -n 1</code></pre>
-                    <p>
+]],
+            code [[
+$ find /sys/ | <b>while</b> <b>read</b> i; <b>do</b> <b>echo</b> <b>"${#i} $i"</b>; <b>done</b> | sort -nr | head -n 1
+]],
+            par [[
 Apparently, Jethro Tull's Too Old to Rock 'n' Roll, Too Old to Die generates
 pretty long file names (the title song is the second only to a really long
 cache file name on my file system).
-                    </p>
-                </li>
-            </ol>]],
+]],
+        },
+    },
 }
 
 return {

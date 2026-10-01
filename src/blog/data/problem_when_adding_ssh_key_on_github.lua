@@ -36,28 +36,27 @@ I am no ssh expert.  So I turned to github's support.  And I have to say, the
 response was really good, fast and to the point.  Sadly, it didn't solve the
 problem.  Here is the response:
 ]],
-    [[
-            <blockquote>
-                <p>
+    blockquote(lines {
+        par [[
 Hi Bruno,
-                </p>
-                <p>
+]],
+        par [[
 What size SSH key are you using? We have a known bug where the page will give a
 500 error if the SSH key is too large.
-                </p>
-                <p>
+]],
+        par [[
 I would recommend using the default size key for now, and hopefully we will
 have this bug fixed soon.
-                </p>
-                <p>
+]],
+        par [[
 Sorry for the trouble.
-                </p>
-                <p>
+]],
+        par [[
 Cheers,
 <br />
 Steve
-                </p>
-            </blockquote>]],
+]],
+    }),
     par [[
 It turns out the problem wasn't the key size, but you can see Steve gave a
 really polite response.  Anyway, I started trying everything to make it work,

@@ -45,14 +45,14 @@ $ perl -n -e <b>'print "hello\n"'</b>
 $ perl -e <b>'print "hello\n"'</b> -n
 $ perl -e -n <b>'print "hello\n"'</b> <i># This is wrong!</i>
 ]],
-    par [[
+    par(html [[
 But what really happened when we ran that program?  If you remember
 <a href="perl-is-beautiful.html">the last post</a>, <i>&lt;&gt;</i> is the input
 operator.  So, <i>while(&lt;&gt;)</i> means "read lines from the input until it
 ends".  And if you have really good memory (or are already tainted by the perl
 way of thinking), you'll remember that the input read will go to the variable
 <i>$_</i>.  We can test it with our reimplementation of <i>cat</i>:
-]],
+]]),
     code [[
 $ perl -ne <b>'print'</b>
 ]],

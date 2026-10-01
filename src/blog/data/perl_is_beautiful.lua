@@ -144,7 +144,7 @@ diamond operator can be used with a loop to read all the lines from the input:
     <b>print</b>;
 }
 ]],
-    par [[
+    par(html [[
 Here, <i>&lt;&gt;</i> causes one line from the input to be read and stored on
 <i>$_</i>.  Then, inside the body of the loop, print is called without
 arguments, causing it to use our old friend <i>$_</i>.  Input, when using the
@@ -154,7 +154,7 @@ input is the content of these files, read sequentially from first to last.  The
 loop keeps reading until the input ends, which means reading until an
 <i>EOF</i> character on <i>stdin</i> or reading all the files.
 Congratulations!  You have just implemented <i>cat</i>.
-]],
+]]),
     par [[
 Coming next: <em>actually</em> increasing productivity.
 ]],

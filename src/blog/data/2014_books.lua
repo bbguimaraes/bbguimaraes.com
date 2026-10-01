@@ -96,18 +96,17 @@ read.
     par [[
 I will take two excerpts from Tim Pope's foreword as my review:
 ]],
-    [[
-            <blockquote>
-                <p>
+    blockquote(lines {
+        par [[
 Practical Vim tips teach lessons in thinking like a proficient Vim user.  In a
 sense, they are more like parables than recipes.
-                </p>
-                <p>
+]],
+        par [[
 It is for this reason that I am excited about the publication of Practical Vim.
 Because now when Vim novices ask me what's the next step, I know what to tell
 them.  After all, Practical Vim even taught me a few things.
-                </p>
-            </blockquote>]],
+]],
+    }),
     h2_link {
         "apache-cookbook",
         "Apache Cookbook",

@@ -1,14 +1,13 @@
 local description <const> = [[“Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e horrenda espessa treva enoita as ondas”. MARÃO, Públio Virgílio. <i>Eneida</i>.]]
 
 local content <const> = {
-    [[
-            <blockquote>
-                <p>
+    blockquote(lines {
+        par [[
 Tudo é céu, tudo é mar; torvo negrume sobre as cabeças borrascoso pesa, e
 horrenda espessa treva enoita as ondas.
-                </p>
-                <p>MARÃO, Públio Virgílio.  <i>Eneida</i>.</p>
-            </blockquote>]],
+]],
+        inline_tag("p", nil, "MARÃO, Públio Virgílio.  <i>Eneida</i>."),
+    }),
 }
 
 return {

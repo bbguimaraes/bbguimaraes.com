@@ -77,28 +77,22 @@ moral confusion.
 To counteract that, I have always opted to use open and free technologies.
 Some examples:
 ]],
-    [[
-            <ul>
-                <li>
+    ul {
+        str [[
 <a href="https://www.kernel.org">Linux</a> as the operating system in all my
-computers.
-                <li>
-<a href="https://lineageos.org">LineageOS</a> on my mobile devices.
-                </li>
-                <li>
-<a href="https://mozilla.org">Firefox</a> as my web browser.
-                </li>
-                <li>
-<a href="https://matrix.org">Matrix</a> for instant messaging and video calls.
-                </li>
-                <li>
-<a href="https://gitlab.com">Gitlab</a> for source code hosting.
-                </li>
-                <li>
+computers.]],
+        str [[
+<a href="https://lineageos.org">LineageOS</a> on my mobile devices.]],
+        str [[
+<a href="https://mozilla.org">Firefox</a> as my web browser.]],
+        str [[
+<a href="https://matrix.org">Matrix</a> for instant messaging and video calls.]],
+        str [[
+<a href="https://gitlab.com">Gitlab</a> for source code hosting.]],
+        str [[
 <a href="https://nextcloud.org">Nextcloud</a> for calendar, contacts, file
-sharing, etc.
-                </li>
-            </ul>]],
+sharing, etc.]],
+    },
     par [[
 I choose to use free or open-source software first and resort to closed-source
 only if it cannot in way be avoided (and, in my experience, it can in virtually
