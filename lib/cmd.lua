@@ -2,7 +2,21 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 
 local function cmd_generate(opts)
-    return generate.generate_and_print(table.unpack(opts))
+    local src <const>, dst <const> = table.unpack(opts)
+    local function f(f)
+        local ok <const>, err <const> =
+            xpcall(generate.generate, debug.traceback, f, src, dst)
+        if not ok then
+            io.stderr:write(src, ": ", err, "\n")
+            return 1
+        end
+    end
+    if dst then
+        local w <close> = io.open(dst, "w")
+        f(w)
+    else
+        f(io.stdout)
+    end
 end
 
 local CMDS <const> = {

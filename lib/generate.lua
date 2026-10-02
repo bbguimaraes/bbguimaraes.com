@@ -150,21 +150,10 @@ local function generate(out, src, dst, ...)
     return _render(out, src, dst, load_file(src, ...))
 end
 
---- Fully renders the contents of a file or generates an error report.
-local function generate_and_print(src, dst)
-    local ok <const>, err <const> =
-        xpcall(generate, debug.traceback, io.stdout, src, dst)
-    if not ok then
-        io.stderr:write(src, ": ", err, "\n")
-        return 1
-    end
-end
-
 return {
     new_env = new_env,
     load = load_file,
     load_data = load_data,
     render = render,
     generate = generate,
-    generate_and_print = generate_and_print,
 }
