@@ -7,6 +7,9 @@ end
 
 local CMDS <const> = {
     generate = {
+        short_opts = {
+            h = { long = "help" },
+        },
         long_opts = {
             help = {},
         },
@@ -21,7 +24,7 @@ local function usage(f, arg)
 Usage: %s [OPTION...] ARG...
 
 Options:
-    --help                  This help.
+    -h, --help              This help.
 ]], arg[0]))
     if f == io.stderr then
         return 1
@@ -34,7 +37,15 @@ end
 --- index of the next argument to process.
 local function parse_short(opts, cmd, arg, i)
     local name <const> = arg[i]:sub(2)
-    io.stderr:write("unknown option: -", name, "\n")
+    local a <const> = cmd.short_opts[name]
+    if not a then
+        io.stderr:write("unknown option: -", name, "\n")
+    end
+    local long_name <const> = a.long
+    local long <const> = cmd.long_opts[long_name]
+    assert(long)
+    opts[long_name] = true
+    return i + 1
 end
 
 --- Parse a single `--long` command line argument.
