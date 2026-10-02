@@ -46,6 +46,6 @@ FILES := \
 .PHONY: $(FILES)
 
 $(FILES):
-	cd .. && src/generate.lua src/$@.lua $(OUTDIR)/$@.html > $(OUTDIR)/$@.html
+	cd .. && src/generate.lua src/$@.lua --output $(OUTDIR)/$@.html
 
 generate: $(FILES) ../bbguimaraes.com/rss.xml

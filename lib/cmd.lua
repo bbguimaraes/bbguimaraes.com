@@ -2,17 +2,17 @@ local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 
 local function cmd_generate(opts)
-    local src <const>, dst <const> = table.unpack(opts)
     local function f(f)
+        local src <const> = table.unpack(opts)
         local ok <const>, err <const> =
-            xpcall(generate.generate, debug.traceback, f, src, dst)
+            xpcall(generate.generate, debug.traceback, f, src, opts.output)
         if not ok then
             io.stderr:write(src, ": ", err, "\n")
             return 1
         end
     end
-    if dst then
-        local w <close> = io.open(dst, "w")
+    if opts.output then
+        local w <close> = io.open(opts.output, "w")
         f(w)
     else
         f(io.stdout)
@@ -24,10 +24,12 @@ local CMDS <const> = {
         short_opts = {
             h = { long = "help" },
             c = { long = "config" },
+            o = { long = "output" },
         },
         long_opts = {
             help = {},
             config = { argument = true },
+            output = { argument = true },
         },
         f = cmd_generate,
     },
@@ -37,7 +39,7 @@ local CMDS <const> = {
 --- The return value is meant to facilitate cases such as `os.exit(usage(...))`.
 local function usage(f, arg)
     f:write(string.format([[
-Usage: %s [OPTION...] ARG...
+Usage: %s [OPTION...] FILE
 
 Options:
     -h, --help              This help.
@@ -45,6 +47,10 @@ Options:
                             bbguimaraes.com/config.lua in the configuration
                             directory, which is $XDG_CONFIG_DIR if set or
                             $HOME/.config otherwise).
+    -o FILE, --output FILE  Write the output to FILE instead of the standard
+                            output file.  Checks which depend on the location of
+                            the output file may fail if this option is not
+                            present.
 ]], arg[0]))
     if f == io.stderr then
         return 1
