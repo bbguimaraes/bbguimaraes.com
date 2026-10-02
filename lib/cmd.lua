@@ -52,7 +52,23 @@ local function parse_short(opts, cmd, arg, i)
         local long_name <const> = a.long
         local long <const> = cmd.long_opts[long_name]
         assert(long)
-        opts[long_name] = true
+        if not long.argument then
+            opts[long_name] = true
+            goto continue
+        end
+        if ai ~= #sa then
+            io.stderr:write("option -", name, " requires an argument\n")
+            return
+        end
+        i = i + 1
+        local v <const> = arg[i]
+        if not v then
+            io.stderr:write("option -", name, " requires an argument\n")
+            return
+        end
+        opts[long_name] = v
+        break
+        ::continue::
     end
     return i + 1
 end
