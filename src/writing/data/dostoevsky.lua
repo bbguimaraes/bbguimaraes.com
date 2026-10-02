@@ -66,10 +66,10 @@ podem ser chamadas assim) de vida.
 Ao mesmo tempo, reencontrei e revivi uma das minhas maiores paixões: a leitura.
 Como costumava fazer na infância, li furiosamente de novo, agora não <i>ansioso
 por escapar para aquele mundo glorioso</i>, mas com aquele prazer raro na vida:
-encontrar conexões verdadeiras com almas simpáticas%s.  E foi assim que, entre
-os tantos incríveis encontros, terminei o ano com o livro retratado aqui, que me
-acompanhou por três continentes numa jornada para e uma estadia na minha antiga
-morada.
+encontrar conexões verdadeiras com almas simpáticas%s.
+E foi assim que, entre os tantos incríveis encontros, terminei o ano com o livro
+retratado aqui, que me acompanhou por três continentes numa jornada para e uma
+estadia na minha antiga morada.
 ]],
         notes:add(par [[
 Nota de tradução: mantido por fieldade ao texto original, mas a palavra

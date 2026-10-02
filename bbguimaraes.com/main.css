@@ -143,6 +143,17 @@ body {
     margin-right: auto;
 }
 
+.note-link {
+    line-height: 50%;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.note-src-link {
+    float: left;
+    margin: 0 0.25em;
+}
+
 .hidden {
     visibility: hidden;
 }

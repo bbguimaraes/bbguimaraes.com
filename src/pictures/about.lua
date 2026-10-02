@@ -30,11 +30,11 @@ a camera.
     par(format {
         [[
 I never gave photography much consideration: though I always have liked the
-visual arts%s, I just did not have the time one
-would need to properly invest in them, much as I wish I did, and my complete
-inability to take on an activity without obsessively setting extremely high
-demands on the quality of the results%s kept me
-from giving it much thought.
+visual arts%s,
+I just did not have the time one would need to properly invest in them, much as
+I wish I did, and my complete inability to take on an activity without
+obsessively setting extremely high demands on the quality of the results%s
+kept me from giving it much thought.
 ]],
         notes:add(par [[
 Drawing, painting, calligraphy, craft, architecture, sculpture, carving,
@@ -51,11 +51,11 @@ travels, which is in a way the precursor to this page.  Although the primary
 medium there is writing (Instagram has given humanity enough travel pictures
 devoid of content), I also include pictures to make the stories there more
 vivid.  Those pictures were taken with the only means I had: my
-cellphone%s.  While that provided a great
-opportunity to learn to make the best out of every
-picture%s, I became increasingly frustrated with
-the discrepancy between what I saw in person and what ended up in the
-photographs.
+cellphone%s.
+While that provided a great opportunity to learn to make the best out of every
+picture%s,
+I became increasingly frustrated with the discrepancy between what I saw in
+person and what ended up in the photographs.
 ]],
         notes:add(par [[
 Which, following my philosophy — i.e. buy the cheapest that is usable and keep
@@ -145,8 +145,7 @@ usually accompanies this camera.  Not the greatest lens, but it does the job.
             },
             format {
                 [[
-(€350, used).  A more recent addition, somewhat
-unexpected%s.
+(€350, used).  A more recent addition, somewhat unexpected%s.
 Like the Cannon lens, it is very decent for the price and enough for my level of
 proficiency.  Because its extremely wide range of focal length and aperture
 encompass that of the other lens (one of the deciding factors for the purchase),

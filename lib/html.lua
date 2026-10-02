@@ -808,6 +808,8 @@ function notes:add(x)
     local n <const> = #self
     table.insert(self, x)
     return link:new {
+        class = "note-link",
+        id = "note-src" .. n,
         href = "#note" .. n,
         content = string.format("<sup>%d</sup>", n),
     }
@@ -816,7 +818,15 @@ end
 function notes:render(ctx)
     local l <const> = {}
     for i, x in ipairs(self) do
-        table.insert(l, tag:new("li", {id = "note" .. (i - 1)}, x))
+        local li <const> = i - 1
+        table.insert(l, tag:new("li", {id = "note" .. li}, str.lines {
+            link:new {
+                class = "note-src-link",
+                href = "#note-src" .. li,
+                content = "^",
+            },
+            x,
+        }))
     end
     tag:new("ol", {start = 0}, str.lines(l)):render(ctx)
 end

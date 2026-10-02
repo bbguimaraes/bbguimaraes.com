@@ -11,8 +11,8 @@ via the Mediterranean, but the conquered territories in the Iberian peninsula.
 When the Punic army descended the mountains on its way to Rome they found the
 city of the Taurini (the “men of the mountains”) on the margins of the river Po.
 After all offers of cooperation were rejected, Hannibal's army razed the city to
-the ground in just three days%s, and the few survivors fled to the hills on the
-eastern side of the river.
+the ground in just three days%s,
+and the few survivors fled to the hills on the eastern side of the river.
 ]],
         notes:add(par [[
 The army consisted of 26,000 men and, even more famously, 21 elephants, against
@@ -104,13 +104,14 @@ lang="it">Basilica della Natività</span>]],
 His first assigned project was the awesome construction of the basilica on top
 of the <span lang="it">collina torinese</span>.  It began in 1716 with the
 lowering of the hill by 41m to create a level surface large enough to serve as
-the foundation%s, an operation which took only a
-year, despite being performed using only shovels, pickaxes, and wheelbarrows,
-with materials carried on the back of donkeys over a road that was little more
-than a mountain trail.  The building was completed in 1731, an architectural
-masterpiece, with its mixture of baroque and neoclassical styles.  It still
-conserves the XVI century wooden statue to which <span lang="it">Vittorio
-Amedeo</span> made his promise, in a chapel next to the main altar,
+the foundation%s,
+an operation which took only a year, despite being performed using only shovels,
+pickaxes, and wheelbarrows, with materials carried on the back of donkeys over a
+road that was little more than a mountain trail.  The building was completed in
+1731, an architectural masterpiece, with its mixture of baroque and neoclassical
+styles.  It still conserves the XVI century wooden statue to which <span
+lang="it">Vittorio Amedeo</span> made his promise, in a chapel next to the main
+altar,
 %s.
 ]],
         notes:add(par [[
@@ -151,10 +152,10 @@ plain (some 500m below).
         [[
 There are many not-so-subtle references to the event the basilica was built to
 celebrate.  It does not face west, as is usual for Christian churches, but is
-instead aligned with a wide and incredibly long
-street%s, conspicuously named <i lang="it">corso
-Francia</i>, and both face directly the country which the <span
-lang="it">Savioa</span> had so fiercely fought against and defeated.
+instead aligned with a wide and incredibly long street%s,
+conspicuously named <i lang="it">corso Francia</i>, and both face directly the
+country which the <span lang="it">Savioa</span> had so fiercely fought against
+and defeated.
 ]],
         notes:add(par [[
 In fact, its 11.75km of extension make it the longest straight street in Europe.
@@ -173,11 +174,11 @@ another victim.
 Because of all its history, Superga became a spiritual center for the <span
 lang="it">Savoia</span>.  By the request of <span lang="it">Vittorio Amedeo
 II</span>, a crypt was excavated under the altar to serve as the burial place
-for the members of the house%s, who ever since
-the move to Torino had not had a place dedicated to the memory and veneration of
-their ancestors.  From then on, all members of the house were buried there —
-until the unification, when those who were kings and queens of Italy started
-being buried in the Pantheon in Rome.
+for the members of the house%s,
+who ever since the move to Torino had not had a place dedicated to the memory
+and veneration of their ancestors.  From then on, all members of the house were
+buried there — until the unification, when those who were kings and queens of
+Italy started being buried in the Pantheon in Rome.
 ]],
         notes:add(par(format {
             [[

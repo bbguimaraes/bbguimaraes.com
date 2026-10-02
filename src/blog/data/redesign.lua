@@ -37,9 +37,9 @@ My web site now has a new appearance.  If you had ever visited it, and you are a
 human being and not a machine, you probably felt a bit lost — and if not, below
 is how the home page used to look like.  There was a reason for this: it was
 conceived, from its humble beginnings back in the prehistorical days of
-2012%s, to be a place where I could publish
-technical content, specifically topics related to computer programming, my area
-of professional expertise.
+2012%s,
+to be a place where I could publish technical content, specifically topics
+related to computer programming, my area of professional expertise.
 ]],
         notes:add(lines {
             par(format {
@@ -165,12 +165,12 @@ outside world and dedicate myself to laboring over something meaningful.
         [[
 What you see now is the product of about two months of work, though more than
 half of that effort was spent on the actual content of the pages and on
-improving the code used to generate them%s.  As a
-result, and I hope you will agree, they all look more unified, human, and I dare
-say beautiful.  In particular, the %s should now be much
-more understandable to everyone%s, while also
-giving a better idea of the multitude of different pages found in here — and of
-the reason why I live the life of a hermit.
+improving the code used to generate them%s.
+As a result, and I hope you will agree, they all look more unified, human, and I
+dare say beautiful.  In particular, the %s
+should now be much more understandable to everyone%s,
+while also giving a better idea of the multitude of different pages found in
+here — and of the reason why I live the life of a hermit.
 ]],
         notes:add(par(format {
             [[
