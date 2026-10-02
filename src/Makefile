@@ -1,6 +1,9 @@
 .PHONY: generate
 
+GEN := src/generate.lua
 OUTDIR := bbguimaraes.com
+INPUT = src/$@.lua
+OUTPUT = $(OUTDIR)/$@.html
 FILES := \
 	bin \
 	blog/index \
@@ -46,6 +49,6 @@ FILES := \
 .PHONY: $(FILES)
 
 $(FILES):
-	cd .. && src/generate.lua src/$@.lua --output $(OUTDIR)/$@.html
+	cd .. && $(GEN) $(INPUT) --output $(OUTPUT)
 
 generate: $(FILES) ../bbguimaraes.com/rss.xml
