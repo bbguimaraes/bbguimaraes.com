@@ -9,9 +9,11 @@ local CMDS <const> = {
     generate = {
         short_opts = {
             h = { long = "help" },
+            c = { long = "config" },
         },
         long_opts = {
             help = {},
+            config = { argument = true },
         },
         f = cmd_generate,
     },
@@ -25,6 +27,10 @@ Usage: %s [OPTION...] ARG...
 
 Options:
     -h, --help              This help.
+    -c FILE, --config FILE  Load the configuration from FILE (deafult:
+                            bbguimaraes.com/config.lua in the configuration
+                            directory, which is $XDG_CONFIG_DIR if set or
+                            $HOME/.config otherwise).
 ]], arg[0]))
     if f == io.stderr then
         return 1
@@ -59,8 +65,17 @@ local function parse_long(opts, long_opts, arg, i)
         return
     end
     i = i + 1
-    opts[name] = true
-    return i
+    if not a.argument then
+        opts[name] = true
+        return i
+    end
+    local v <const> = arg[i]
+    if not v then
+        io.stderr:write("option --", name, " requires an argument\n")
+        return
+    end
+    opts[name] = v
+    return i + 1
 end
 
 --- Parse command line options for a given command.
