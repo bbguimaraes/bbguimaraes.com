@@ -42,15 +42,18 @@ end
 --- followed by an argument for the last one (e.g. `-vf file`).  Returns the
 --- index of the next argument to process.
 local function parse_short(opts, cmd, arg, i)
-    local name <const> = arg[i]:sub(2)
-    local a <const> = cmd.short_opts[name]
-    if not a then
-        io.stderr:write("unknown option: -", name, "\n")
+    local sa <const> = arg[i]
+    for ai = 2, #sa do
+        local name <const> = sa:sub(ai, ai)
+        local a <const> = cmd.short_opts[name]
+        if not a then
+            io.stderr:write("unknown option: -", name, "\n")
+        end
+        local long_name <const> = a.long
+        local long <const> = cmd.long_opts[long_name]
+        assert(long)
+        opts[long_name] = true
     end
-    local long_name <const> = a.long
-    local long <const> = cmd.long_opts[long_name]
-    assert(long)
-    opts[long_name] = true
     return i + 1
 end
 
