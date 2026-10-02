@@ -7,6 +7,9 @@ end
 
 local CMDS <const> = {
     generate = {
+        long_opts = {
+            help = {},
+        },
         f = cmd_generate,
     },
 }
@@ -15,7 +18,10 @@ local CMDS <const> = {
 --- The return value is meant to facilitate cases such as `os.exit(usage(...))`.
 local function usage(f, arg)
     f:write(string.format([[
-Usage: %s ARG...
+Usage: %s [OPTION...] ARG...
+
+Options:
+    --help                  This help.
 ]], arg[0]))
     if f == io.stderr then
         return 1
@@ -36,7 +42,14 @@ end
 --- `--config file`).  Returns the index of the next argument to process.
 local function parse_long(opts, long_opts, arg, i)
     local name <const> = arg[i]:sub(3)
-    io.stderr:write("unknown option: --", name, "\n")
+    local a <const> = long_opts[name]
+    if not a then
+        io.stderr:write("unknown option: --", name, "\n")
+        return
+    end
+    i = i + 1
+    opts[name] = true
+    return i
 end
 
 --- Parse command line options for a given command.
