@@ -31,16 +31,27 @@ function context:save(...)
 end
 
 --- Determines the location of the configuration file based on the environment.
-local function conf_file_name()
-    local d <const> = os.getenv("XDG_CONFIG_DIR") or os.getenv("HOME")
-    if d then
-        return path.join(d, ".config", "bbguimaraes.com", "conf.lua")
+local function conf_file_name(opts)
+    if opts and opts.config then
+        return opts.config
+    end
+    do
+        local d <const> = os.getenv("XDG_CONFIG_DIR")
+        if d then
+            return path.join(d, "bbguimaraes.com", "conf.lua")
+        end
+    end
+    do
+        local d <const> = os.getenv("HOME")
+        if d then
+            return path.join(d, ".config", "bbguimaraes.com", "conf.lua")
+        end
     end
 end
 
 --- Reads configuration file, if it exists.
-local function read_conf()
-    local file_name <const> = conf_file_name()
+local function read_conf(opts)
+    local file_name <const> = conf_file_name(opts)
     if not file_name then
         return
     end
@@ -57,11 +68,11 @@ local function read_conf()
 end
 
 --- Loads configuration file, if necessary.
-local function load_conf(env)
+local function load_conf(opts, env)
     if CONF then
         return CONF
     end
-    local c <const> = read_conf()
+    local c <const> = read_conf(opts)
     if c then
         CONF = assert(load(c, nil, nil, env))()
     else
@@ -82,16 +93,19 @@ local function new_env()
     return ret
 end
 
-local function check_local_files(src, dst, t)
-    local file_url_to_path <const> = load_conf().file_url_to_path
+local function check_local_files(opts, src, t)
+    local output <const> = opts and opts.output
+    local file_url_to_path <const> = load_conf(opts).file_url_to_path
     local errs <const> = {}
     for x in pairs(util.sorted(t)) do
         local file_name <const> =
             file_url_to_path(x)
-            or path.join(path.dir(dst), x)
-        local f <close>, err <const> = io.open(file_name)
-        if not f then
-            table.insert(errs, err)
+            or (output and path.join(path.dir(output), x))
+        if file_name then
+            local f <close>, err <const> = io.open(file_name)
+            if not f then
+                table.insert(errs, err)
+            end
         end
     end
     if #errs == 0 then
@@ -107,13 +121,13 @@ local function check_local_files(src, dst, t)
     return false
 end
 
-local function check(src, dst, ctx)
+local function check(opts, src, ctx)
     local ret = true
-    ret = check_local_files(src, dst, ctx.local_files) and ret
+    ret = check_local_files(opts, src, ctx.local_files) and ret
     return ret
 end
 
-local function _render(out, src, dst, x)
+local function _render(out, opts, src, x)
     local ctx <const> = context:new {
         out = out,
         indent = 0,
@@ -121,7 +135,7 @@ local function _render(out, src, dst, x)
         escape = html.escape,
     }
     local ret <const> = x:render(ctx)
-    return ret, check(src, dst, ctx)
+    return ret, check(opts, src, ctx)
 end
 
 --- Shortcut for rendering the contents of a renderer tree.
@@ -132,9 +146,9 @@ local function render(x)
 end
 
 --- Creates a new environment containing variables in \p conf and loads a file.
-local function load_file(file_name, ...)
+local function load_file(opts, file_name, ...)
     local env <const> = new_env()
-    local global_vars <close> = env.push(nil, load_conf(env))
+    local global_vars <close> = env.push(nil, load_conf(opts, env))
     local path_var <close> = env.push(nil, {PATH = file_name})
     local conf_vars <close> = env.push(nil, ...)
     return assert(loadfile(file_name, nil, env))()
@@ -146,8 +160,8 @@ local function load_data(file_name)
 end
 
 --- Fully renders the contents of a file.
-local function generate(out, src, dst, ...)
-    return _render(out, src, dst, load_file(src, ...))
+local function generate(out, opts, src, ...)
+    return _render(out, opts, src, load_file(opts, src, ...))
 end
 
 return {

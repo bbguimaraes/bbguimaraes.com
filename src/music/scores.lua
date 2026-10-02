@@ -98,7 +98,7 @@ for _, x in ipairs(files) do
 end
 for _, x in ipairs(
     assert(generate.load(
-        path.join("src", DIR, "scores_list.lua")))
+        nil, path.join("src", DIR, "scores_list.lua")))
 ) do
     x.scores = true
     util.insert_sorted(scores[x.id:sub(1, 1)], x, sort_by_id)

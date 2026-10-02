@@ -65,7 +65,7 @@ function cmd_post(args)
     if not path then
         return usage(args)
     end
-    local t <const> = generate.load(path)
+    local t <const> = generate.load(nil, path)
     local content <const>, citation <const>, images <const> =
         t.content, t.citation, t.images
     local sep = false

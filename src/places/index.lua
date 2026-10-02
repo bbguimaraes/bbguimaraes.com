@@ -117,7 +117,7 @@ return include "master.lua" {
         main(
             {class = "places gallery"},
             lines(util.imap(function(_, t)
-                return generate.load(PREVIEW, PAGE_ENV, t)
+                return generate.load(nil, PREVIEW, PAGE_ENV, t)
             end, files))),
     },
 }

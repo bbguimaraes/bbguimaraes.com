@@ -10,7 +10,7 @@ local function generate_tag_file(name, t)
         var("page_path")("blog", "tags", name:gsub(" ", "-") .. ".html")
     local f <close> = assert(io.open(dst, "w"))
     generate.generate(
-        f, var("include_path")(DIR, "tag.lua"), dst,
+        f, nil, var("include_path")(DIR, "tag.lua"),
         {tag = name, pages = t})
 end
 

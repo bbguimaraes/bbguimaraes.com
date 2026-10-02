@@ -5,7 +5,7 @@ local function cmd_generate(opts)
     local function f(f)
         local src <const> = table.unpack(opts)
         local ok <const>, err <const> =
-            xpcall(generate.generate, debug.traceback, f, src, opts.output)
+            xpcall(generate.generate, debug.traceback, f, opts, src)
         if not ok then
             io.stderr:write(src, ": ", err, "\n")
             return 1

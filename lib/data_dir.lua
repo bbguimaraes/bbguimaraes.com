@@ -20,7 +20,7 @@ function data_dir:load()
     local ret <const> = {}
     local d <const> = path.join("src", self.d, "data")
     for x in path.each(d) do
-        local t <const> = generate.load(path.join(d, x))
+        local t <const> = generate.load(nil, path.join(d, x))
         t.id = path.replace_extension(x:gsub("_", "-"), "")
         table.insert(ret, t)
     end
@@ -40,7 +40,7 @@ local function generate_page(self, env, d, suffix, t)
         path.join(d, string.format("%s%s.html", t.id, suffix or ""))
     local f <close> = assert(io.open(dst, "w"))
     return generate.generate(
-        f, self.page_gen_path, dst, t, resolve_env(env, t))
+        f, nil, self.page_gen_path, t, resolve_env(env, t))
 end
 
 local function lang_vars(t, lang)
