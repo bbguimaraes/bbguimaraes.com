@@ -1,5 +1,6 @@
 local path <const> = require "lib.path"
 local str <const> = require "lib.str"
+local url <const> = require "lib.url"
 local util <const> = require "lib.util"
 
 local ESCAPES <const> = {
@@ -9,15 +10,6 @@ local ESCAPES <const> = {
 
 local ESCAPES_FULL <const> = {
     {'"', "&quot;"},
-}
-
-local URL_ESCAPES <const> = {
-    ["\n"] = "%%0a",
-    [" "] = "%%20",
-    ["à"] = "%%c3%%a0",
-    ["á"] = "%%c3%%a1",
-    ["ã"] = "%%c3%%a3",
-    ["ô"] = "%%c3%%b4",
 }
 
 local PLAIN_ATTRS <const> = {"lang"}
@@ -35,28 +27,6 @@ local function escape(x, t)
         x = x:gsub(table.unpack(t))
     end
     return x
-end
-
-local function url_escape(x)
-    for k, v in pairs(URL_ESCAPES) do
-        x = x:gsub(k, v)
-    end
-    return x
-end
-
-local function url_unescape(x)
-    for k, v in pairs(URL_ESCAPES) do
-        x = x:gsub(v, k)
-    end
-    return x
-end
-
-local function url_encode(path, req)
-    local r <const> = {}
-    for _, x in ipairs(req) do
-        table.insert(r, string.format("%s=%s", x[1], url_escape(x[2])))
-    end
-    return string.format("%s?%s", url_escape(path), table.concat(r, "&"))
 end
 
 local function is_plain(ctx, name)
@@ -99,7 +69,7 @@ local function check_local_file(ctx, s)
     if not ext or ext == "html" then
         return
     end
-    ctx.local_files:add(url_unescape(s))
+    ctx.local_files:add(url.unescape(s))
 end
 
 --- Like \ref write_attr, for value-less attributes.
@@ -846,9 +816,9 @@ end
 
 return {
     escape = escape,
-    url_escape = url_escape,
-    url_unescape = url_unescape,
-    url_encode = url_encode,
+    url_escape = url.escape,
+    url_unescape = url.unescape,
+    url_encode = url.encode,
     str = function(...) return html_str:new(...) end,
     escaped = function(...) return escaped:new(...) end,
     html = function(...) return html:new(...) end,
