@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local cit <const> = [[
 οὐδαμοῦ οὔτε ἡσυχιώτερον οὔτε ἀπραγμονέστερον
 ἄνθρωπος ἀναχωρεῖ ἢ εἰς τὴν ἑαυτοῦ ψυχήν
@@ -11,7 +13,7 @@ retire than into his own soul
 local sections <const> = {{
     items = {
         link {
-            href = "/files/cv.pdf",
+            href = file_url "cv.pdf",
             title = "CV",
             content = "curriculum vitae",
         },
@@ -103,10 +105,10 @@ we do for recreation.  You can find all of the code and the history in the
         hr(),
     },
     header = link {
-        href = "/files/contact.jpg",
+        href = file_url "contact.jpg",
         content = image {
             class = "float-right image",
-            src = "/files/contact_small.jpg",
+            src = file_url "contact_small.jpg",
             title = "me",
             alt = "me",
         },

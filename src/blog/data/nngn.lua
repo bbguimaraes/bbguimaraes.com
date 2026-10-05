@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[Back in 2018, I publicized a project I had been working on intently for more than a year.  Because of the circumstances, it ended up never having its own entry here in this blog.  That is finally being corrected, and I am going to write not just one, but a series of posts about it.]]
 
 local content <const> = {
@@ -5,8 +7,8 @@ local content <const> = {
         controls = true,
         loop = true,
         preload = "none",
-        poster = "/files/nngn/fiona_poster.png",
-        sources = {"/files/nngn/fiona.webm"},
+        poster = file_url("nngn", "fiona_poster.png"),
+        sources = {file_url("nngn", "fiona.webm")},
     },
     par [[
 Back in 2018, I publicized a project I had been working on intently for more

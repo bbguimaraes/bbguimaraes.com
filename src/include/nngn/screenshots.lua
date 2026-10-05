@@ -1,9 +1,12 @@
+local path <const> = require "lib.path"
+
 local title <const> = var "title"
 local images <const> = var("images", false)
 local videos_prefix <const> = var("videos_prefix", false)
 local videos <const> = var("videos", false)
 
-local URL <const> = "/files/nngn/screenshots/"
+local file_url <const> = var "file_url"
+local DIR <const> = path.join("nngn", "screenshots")
 
 local function figure(id, caption, s)
     return tag("figure", {id = id}, lines {
@@ -28,7 +31,7 @@ if images then
     end
     for _, x in ipairs(var "images") do
         table.insert(sections, figure(x.id, x.caption, image {
-            src = URL .. x.src,
+            src = file_url(DIR, x.src),
             alt = x.title,
             title = x.title,
         }))
@@ -47,8 +50,8 @@ if videos then
         table.insert(sections, figure(x.id, x.caption, video {
             controls = true,
             preload = "none",
-            poster = string.format("%s%s_poster.png", URL, src),
-            sources = {string.format("%s%s.webm", URL, src)},
+            poster = file_url(DIR, src .. "_poster.png"),
+            sources = {file_url(DIR, src .. ".webm")},
         }))
     end
 end

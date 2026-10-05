@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = format {
     [[This is a short interlude in my series of posts.  The original post in the series %s that one of my build targets is WebAssembly, and the %s was all about how Lua is a fundamental piece of the architecture.  How that build process works did not seem particularly interesting, so I did not write about it.]],
     link {
@@ -13,11 +15,11 @@ local description <const> = format {
 local content <const> = {
     div({class = "img-group"}, lines {
         tag("a", {href = "https://www.lua.org"}, image {
-            src = "/files/blog/lua.png",
+            src = file_url("blog", "lua.png"),
             alt = "Lua logo",
         }),
         tag("a", {href = "https://webassembly.org"}, image {
-            src = "/files/blog/wasm.png",
+            src = file_url("blog", "wasm.png"),
             alt = "WebAssembly logo",
             style = "width: 100px",
         }),
@@ -55,19 +57,19 @@ your operating system.
         name = "demos/repl.lua",
     },
     image {
-        src = "/files/blog/lua_wasm_demo0.png",
+        src = file_url("blog", "lua_wasm_demo0.png"),
         title = "Lua Wasm demo - write some lua code and press enter",
         alt = "Lua Wasm demo - write some lua code and press enter",
     },
     hr(),
     image {
-        src = "/files/blog/lua_wasm_demo1.png",
+        src = file_url("blog", "lua_wasm_demo1.png"),
         title = 'Lua Wasm demo - "hello" .. ", " .. "lua"',
         alt = 'Lua Wasm demo - "hello" .. ", " .. "lua"',
     },
     hr(),
     image {
-        src = "/files/blog/lua_wasm_demo2.png",
+        src = file_url("blog", "lua_wasm_demo2.png"),
         title = "Lua Wasm demo - hello, lua",
         alt = "Lua Wasm demo - hello, lua",
     },
@@ -181,7 +183,7 @@ As a fun coda to this post, here is how access to the Lua interpreter is also
 exposed to Javascript and, by extension, the browser console:
 ]],
     image {
-        src = "/files/blog/lua_wasm_demo3.png",
+        src = file_url("blog", "lua_wasm_demo3.png"),
         alt = "Lua Wasm demo - browser console",
         title = "Lua Wasm demo - browser console",
     },

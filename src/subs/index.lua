@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 return include "master.lua" {
     title = "subs",
     css = {"/main.css", "/description.css"},
@@ -71,9 +73,9 @@ href="https://www.lua.org">Lua</a>.
             controls = true,
             preload = "none",
             class = "demo",
-            poster = "/files/subs/subs_poster.png",
+            poster = file_url("subs", "subs_poster.png"),
             sources = {
-                "/files/subs/subs.webm",
+                file_url("subs", "subs.webm"),
             },
         },
     },

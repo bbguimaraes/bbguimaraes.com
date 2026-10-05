@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[The state of technology sometimes gives me the blues.]]
 
 local content <const> = {
@@ -7,7 +9,7 @@ installing a package called `dosfstools` to format my pendrive.  That's because
 the car's radio wouldn't accept any device with a file system that's not fat32:
 ]],
     image_link {
-        src = "/files/blog/radio_fat32.png",
+        src = file_url("blog", "radio_fat32.png"),
         alt = "not a device",
     },
     par [[

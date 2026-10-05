@@ -1,5 +1,7 @@
 local util <const> = require "lib.util"
 
+local file_url <const> = var "file_url"
+
 local function link_list(title, t)
     local ret <const> = {}
     if t then
@@ -39,30 +41,30 @@ provisioning, test scheduling and execution, release management, etc.
                 href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/-/tree/master/red_hat/ci-operator",
                 content = "src",
             }, {
-                href = "/files/talks/ci-operator_2022.pdf",
+                href = file_url("talks", "ci-operator_2022.pdf"),
                 content = "slides",
             }, {
-                href = "/files/talks/ci-operator_2022_notes.pdf",
+                href = file_url("talks", "ci-operator_2022_notes.pdf"),
                 content = "slides (with notes)",
             }}),
             link_list(inline_tag("i", nil, "End-to-end tests in OpenShift"), {{
                 href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/-/tree/master/red_hat/e2e_tests",
                 content = "src",
             }, {
-                href = "/files/talks/e2e_tests_2022.pdf",
+                href = file_url("talks", "e2e_tests_2022.pdf"),
                 content = "slides",
             }, {
-                href = "/files/talks/e2e_tests_2022_notes.pdf",
+                href = file_url("talks", "e2e_tests_2022_notes.pdf"),
                 content = "slides (with notes)",
             }}),
             link_list(inline_tag("i", nil, "Multi-stage tests"), {{
                 href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/-/tree/master/red_hat/multi_stage",
                 content = "src",
             }, {
-                href = "/files/talks/multi_stage_2022.pdf",
+                href = file_url("talks", "multi_stage_2022.pdf"),
                 content = "slides",
             }, {
-                href = "/files/talks/multi_stage_2022_notes.pdf",
+                href = file_url("talks", "multi_stage_2022_notes.pdf"),
                 content = "slides (with notes)",
             }}),
         },
@@ -85,7 +87,7 @@ utilization.
                     href = "https://linuxconcontainerconeurope2016.sched.com/event/7oHa/containers-you-are-not-expected-to-understand-this-bruno-barcarol-guimaraes-red-hat",
                     content = "Containercon Europe 2016",
                 }, {{
-                    href = "/files/talks/containercon_eu_2016.pdf",
+                    href = file_url("talks", "containercon_eu_2016.pdf"),
                     content = "slides",
                 }, {
                     href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/tree/containercon_eu_2016/linux_containers",
@@ -96,7 +98,7 @@ utilization.
                     href = "http://schedule.fisl16.softwarelivre.org/#/talk/447",
                     content = "FISL16",
                 }, {{
-                    href = "/files/talks/fisl_16.pdf",
+                    href = file_url("talks", "fisl_16.pdf"),
                     content = "slides",
                 }, {
                     href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/tree/fisl16/tchelinux/poa/2014",
@@ -107,7 +109,7 @@ utilization.
                     href = "https://web.archive.org/web/20150224041809/http://poa.tchelinux.org/",
                     content = "TcheLinux Porto Alegre 2014",
                 }, {{
-                    href = "/files/talks/tchelinux_poa_2014.pdf",
+                    href = file_url("talks", "tchelinux_poa_2014.pdf"),
                     content = "slides",
                 }, {
                     href = "https://gitlab.bbguimaraes.com/bbguimaraes/presentations/tree/tchelinux_poa_2014/tchelinux/poa/2014",

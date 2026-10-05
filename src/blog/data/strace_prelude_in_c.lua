@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = format {
     [[Much has been written about the venerable %s, one of the most important allies of the systems programmer.  However, the focus is often on the specifics of the particular program being examined, not on the functioning of <code>strace</code> itself and the operating system environment involved in the execution of the process.  Today we explore this neglected part of the system call trace.]],
     link {
@@ -424,10 +426,10 @@ operating system books than any other category).  In particular, <i>The Linux
 Programming Interface</i> by Michael Kerrisk (who happens to also be the
 maintainer of Linux manual pages) is a fantastic resource.
 ]],
-    tag("a", {href = "/files/blog/strace0.png"}, image {
+    tag("a", {href = file_url("blog", "strace0.png")}, image {
         title = "tlpi",
         alt = "tlpi",
-        src = "/files/blog/strace0_512.png",
+        src = file_url("blog", "strace0_512.png"),
     }),
     par [[
 Have fun!

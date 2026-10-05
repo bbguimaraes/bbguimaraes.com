@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local img_class <const> = "hor-center image"
 
 local toc <const> = toc:new()
@@ -80,9 +82,9 @@ I also include the <code>mscz</code> file which generated it, so it can be
 recreated, edited, and adapted for any use.
 ]],
     link {
-        href = "/files/music/musescore.png",
+        href = file_url("music", "musescore.png"),
         content = image {
-            src = "/files/music/musescore_small.png",
+            src = file_url("music", "musescore_small.png"),
             title = "Musescore",
             alt = "Musescore",
             class = img_class,
@@ -99,9 +101,9 @@ including some of the original manuscripts by the composers themselves or their
 contemporaries.
 ]],
     link {
-        href = "/files/music/imslp.png",
+        href = file_url("music", "imslp.png"),
         content = image {
-            src = "/files/music/imslp_small.png",
+            src = file_url("music", "imslp_small.png"),
             title = "IMSLP",
             alt = "IMSLP",
             class = img_class,
@@ -118,9 +120,9 @@ all of which I love very much.  In no particular order:
     tag("ul", nil, lines {
         toc:add_sub(nil, "bass" ,"bass"),
         link {
-            href = "/files/music/jazz_bass.jpg",
+            href = file_url("music", "jazz_bass.jpg"),
             content = image {
-                src = "/files/music/jazz_bass_small.jpg",
+                src = file_url("music", "jazz_bass_small.jpg"),
                 alt = "Jazz Bass",
                 title = "Jazz Bass",
                 class = img_class,
@@ -134,9 +136,9 @@ one of my favorites.
 ]]),
         toc:add_sub(nil, "guitar" ,"guitar"),
         link {
-            href = "/files/music/telecaster.jpg",
+            href = file_url("music", "telecaster.jpg"),
             content = image {
-                src = "/files/music/telecaster_small.jpg",
+                src = file_url("music", "telecaster_small.jpg"),
                 alt = "Telecaster",
                 title = "Telecaster",
                 class = img_class,
@@ -150,9 +152,9 @@ arrangements.
 ]]),
         toc:add_sub(nil, "piano", "piano"),
         link {
-            href = "/files/music/fp_80.jpg",
+            href = file_url("music", "fp_80.jpg"),
             content = image {
-                src = "/files/music/fp_80_small.jpg",
+                src = file_url("music", "fp_80_small.jpg"),
                 alt = "Roland FP-80",
                 title = "Roland FP-80",
                 class = img_class,
@@ -175,9 +177,9 @@ learning to play (but you can skip those =).
         }),
         toc:add_sub(nil, "acoustic-guitar", "acoustic guitar"),
         link {
-            href = "/files/music/ibanez.jpg",
+            href = file_url("music", "ibanez.jpg"),
             content = image {
-                src = "/files/music/ibanez_small.jpg",
+                src = file_url("music", "ibanez_small.jpg"),
                 alt = "Ibanez",
                 title = "Ibanez",
                 class = img_class,
@@ -191,9 +193,9 @@ it whenever I can.
 ]]),
         toc:add_sub(nil, "mandolin", "mandolin"),
         link {
-            href = "/files/music/richwood.jpg",
+            href = file_url("music", "richwood.jpg"),
             content = image {
-                src = "/files/music/richwood_small.jpg",
+                src = file_url("music", "richwood_small.jpg"),
                 alt = "Richwood",
                 title = "Richwood",
                 class = img_class,
@@ -212,9 +214,9 @@ My recording setup is almost comically simple:
     tag("ul", nil, lines {
         toc:add_sub(nil, "microphone", "microphone"),
         link {
-            href = "/files/music/zoom.jpg",
+            href = file_url("music", "zoom.jpg"),
             content = image {
-                src = "/files/music/zoom_small.jpg",
+                src = file_url("music", "zoom_small.jpg"),
                 alt = "Zoom H2n",
                 title = "Zoom H2n",
                 class = img_class,
@@ -233,9 +235,9 @@ record goes through its line-in input to the computer.
 ]]),
         toc:add_sub(nil, "pre-amp", "pre-amp"),
         link {
-            href = "/files/music/behringer.jpg",
+            href = file_url("music", "behringer.jpg"),
             content = image {
-                src = "/files/music/behringer_small.jpg",
+                src = file_url("music", "behringer_small.jpg"),
                 alt = "Behringer BDI21",
                 title = "Behringer BDI21",
                 class = img_class,
@@ -273,9 +275,9 @@ consists of the generous application of reverb, compression, tape emulation, and
 occasionally some light overdrive/distortion).
 ]],
     link {
-        href = "/files/music/ardour0.png",
+        href = file_url("music", "ardour0.png"),
         content = image {
-            src = "/files/music/ardour0_small.png",
+            src = file_url("music", "ardour0_small.png"),
             title = "Ardour main interface",
             alt = "Ardour main interface",
             class = img_class,
@@ -283,9 +285,9 @@ occasionally some light overdrive/distortion).
     },
     html "<br />",
     link {
-        href = "/files/music/ardour1.png",
+        href = file_url("music", "ardour1.png"),
         content = image {
-            src = "/files/music/ardour1_small.png",
+            src = file_url("music", "ardour1_small.png"),
             title = "Ardour mixer",
             alt = "Ardour mixer",
             class = img_class,
@@ -297,9 +299,9 @@ mention: I sometimes use it for audio analysis and editing (it also gets the
 prize for the greatest name for a piece of audio software).
 ]],
     link {
-        href = "/files/music/audacity.png",
+        href = file_url("music", "audacity.png"),
         content = image {
-            src = "/files/music/audacity_small.png",
+            src = file_url("music", "audacity_small.png"),
             title = "Audacity",
             alt = "Audacity",
             class = img_class,
@@ -314,9 +316,9 @@ velocity, so you can create those lovely snare ghost notes) and, with a bit of
 mixing, the result is surprisingly very decent.
 ]],
     link {
-        href = "/files/music/hydrogen.png",
+        href = file_url("music", "hydrogen.png"),
         content = image {
-            src = "/files/music/hydrogen_small.png",
+            src = file_url("music", "hydrogen_small.png"),
             title = "Hydrogen",
             alt = "Hydrogen",
             class = img_class,
@@ -332,9 +334,9 @@ href="https://ffmpeg.org">ffmpeg</a> (directly, anyway, since it is also what
 Kdenlive uses to render video).
 ]],
     link {
-        href = "/files/music/kdenlive.png",
+        href = file_url("music", "kdenlive.png"),
         content = image {
-            src = "/files/music/kdenlive_small.png",
+            src = file_url("music", "kdenlive_small.png"),
             title = "Kdenlive",
             alt = "Kdenlive",
             class = img_class,

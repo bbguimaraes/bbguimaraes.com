@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[Now we have all the components we need to run our Raspberry Pi, we can start preparing them to actually work together.]]
 
 local content <const> = {
@@ -134,15 +136,15 @@ will get a nice show of lights as it boots.  You can plug the HDMI to a monitor
 and see the boot messages.  Here's a (somewhat light-impaired) gallery:
 ]],
     image_link {
-        src = "/files/blog/an_image0.png",
+        src = file_url("blog", "an_image0.png"),
         alt = "raspberry pi lights",
     },
     image_link {
-        src = "/files/blog/an_image1.png",
+        src = file_url("blog", "an_image1.png"),
         alt = "raspberry pi lights",
     },
     image_link {
-        src = "/files/blog/an_image2.png",
+        src = file_url("blog", "an_image2.png"),
         alt = "raspberry pi starting",
     },
     par [[

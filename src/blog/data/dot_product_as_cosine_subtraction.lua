@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = format {
     [[The two principal definitions of the dot product have always seemed incoherent to me.  After trying (and failing) to research this many times, a %s finally gave an explanation that made sense to me.  Here is my interpretation of it — and trust me, if <em>I</em> can understand a mathematical concept, so can you.]],
     link {
@@ -36,7 +38,7 @@ definitions is very clear.
 To review, the dot (or scalar) product of vectors <b>a</b> and <b>b</b> is:
 ]],
     image {
-        src = "/files/blog/dot_product0.svg",
+        src = file_url("blog", "dot_product0.svg"),
         alt = "dot product definition",
         class = "math",
     },
@@ -47,7 +49,7 @@ product as the subtraction of those angles: let <i>α</i> and
 <b>a</b> and <b>b</b> respectively.  In two dimensions:
 ]],
     image {
-        src = "/files/blog/dot_product1.svg",
+        src = file_url("blog", "dot_product1.svg"),
         alt = "dot product in two dimensions",
         class = "math",
     },
@@ -55,7 +57,7 @@ product as the subtraction of those angles: let <i>α</i> and
 All that is left is to apply the cosine subtraction formula:
 ]],
     image {
-        src = "/files/blog/dot_product2.svg",
+        src = file_url("blog", "dot_product2.svg"),
         alt = "dot product as cosine subtraction",
         class = "math",
     },

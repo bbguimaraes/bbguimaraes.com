@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = concat {
     inline_tag("p", nil, format {
         [[You might have noticed I like to travel.  For a long time, it did not appeal to me to share this aspect of my life, as it is far from being an uncommon interest, especially in the era of vain social media pretension and ostentation, and no end of people traveling to supposedly “find themselves”, but who, in the words of one of the great Roman poets, %s.]],
@@ -24,7 +26,9 @@ local content <const> = {
         content = link {
             href = "/places",
             content = image {
-                src = "/files/places/coreno_ausonio/IMG_20240124_171043_small.jpg",
+                src = file_url(
+                    "places", "coreno_ausonio",
+                    "IMG_20240124_171043_small.jpg"),
                 alt = "Sunset behind the promontory of Gaeta, January 2024",
             },
         },
@@ -51,9 +55,9 @@ or just go directly there and explore.
     figure {
         class = "framed",
         content = link {
-            href = "/files/blog/the_death_of_socrates.jpg",
+            href = file_url("blog", "the_death_of_socrates.jpg"),
             content = image {
-                src = "/files/blog/the_death_of_socrates_small.jpg",
+                src = file_url("blog", "the_death_of_socrates_small.jpg"),
                 alt = "Jacques-Louis David, “La mort de Socrate”, 1787",
             },
         },
@@ -82,9 +86,9 @@ to continue sharing.
     figure {
         class = "framed",
         content = link {
-            href = "/files/blog/vision_of_the_valley_of_dry_bones.jpg",
+            href = file_url("blog", "vision_of_the_valley_of_dry_bones.jpg"),
             content = image {
-                src = "/files/blog/vision_of_the_valley_of_dry_bones_small.jpg",
+                src = file_url("blog", "vision_of_the_valley_of_dry_bones_small.jpg"),
                 alt = "Gustave Doré, “La vision de la vallée des os secs”, 1866",
             },
         },

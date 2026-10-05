@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[In another episode of “there was something very peculiar I wanted to do, there existed no decent guides on the internet, so here is mine”: booklet printing.  I had the need to turn a LaTeX document I had produced into something physical which could be taken with me easily.  After a few days of research and experimentation and some wasted paper, I arrived at a very satisfying result.  There is something about real-life printed books (even a small one) which cannot be translated to digital media.  So here is how you can do the same for any PDF document you might have.]]
 
 local content <const> = {
@@ -31,7 +33,7 @@ pages is printed in a specific format, folded in half, and bound together,
 producing a small book with pages of size A5.
 ]],
     image {
-        src = "/files/blog/booklet_size.png",
+        src = file_url("blog", "booklet_size.png"),
         alt = "booklet size",
         title = "booklet size",
     },
@@ -134,7 +136,7 @@ axis).
             image {
                 alt = "long/short edges",
                 title = "long/short edges",
-                src = "/files/blog/booklet_edges.png",
+                src = file_url("blog", "booklet_edges.png"),
             }
         },
         lines {
@@ -148,7 +150,7 @@ the reader.
             image {
                 alt = "page orientation",
                 title = "page orientation",
-                src = "/files/blog/booklet_orientation.png",
+                src = file_url("blog", "booklet_orientation.png"),
             },
         },
         lines {
@@ -162,7 +164,7 @@ to each other.
             image {
                 alt = "one-/two-sided printing",
                 title = "one-/two-sided printing",
-                src = "/files/blog/booklet_sides.png",
+                src = file_url("blog", "booklet_sides.png"),
             },
             par [[
 This can require (and will for the booklet format) mirroring the pages on one of
@@ -180,7 +182,7 @@ input that is half its original size.
             image {
                 alt = "n-up printing",
                 title = "n-up printing",
-                src = "/files/blog/booklet_nup.png",
+                src = file_url("blog", "booklet_nup.png"),
             },
             par [[
 While there are two possible sub-divisions for 2-up printing (and many more for
@@ -202,7 +204,7 @@ sheets):
             image {
                 alt = "signature",
                 title = "signature",
-                src = "/files/blog/booklet_signature.png",
+                src = file_url("blog", "booklet_signature.png"),
             },
         },
     },

@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[
 While it is on the surface a romance, this alone would not account for the
 immense popularity of this book.  As its initial title, <i>First
@@ -14,7 +16,7 @@ local intro <const> = lines {
 }
 
 local img <const> = image {
-    src = "/files/lib/elizabeth_and_darcy.jpg",
+    src = file_url("lib", "elizabeth_and_darcy.jpg"),
     alt = "Elizabeth and Darcy",
     title = "Elizabeth and Darcy",
     class = "hor-center image",

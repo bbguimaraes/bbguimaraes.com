@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[I read a lot of books.  Last year I had some money laying around and decided to put it to good use.  I ended up buying fourteen books from O'Reilly (simply the best publisher in the technology field) on May and finally finished reading them all (exception bellow) on the first days of this year.  This a quick and informal review of each of them.]]
 
 local content <const> = {
@@ -14,7 +16,7 @@ little-endian, depth-first, heuristic search: I always grabbed the book which
 seemed the smallest from the pile of unread books and read it cover-to-back.
 ]],
     image_link {
-        src = "/files/blog/2014_books0.png",
+        src = file_url("blog", "2014_books0.png"),
         alt = "book stack",
     },
     h2_link {
@@ -205,7 +207,7 @@ Someday I'll definitely read it, but for now it serves both as sporadic
 reference material and deeply intimidating table ornament.
 ]],
     image_link {
-        src = "/files/blog/2014_books1.png",
+        src = file_url("blog", "2014_books1.png"),
         alt = "books",
     },
     par [[

@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local function list(item, t)
     return lines { item, ul(t) }
 end
@@ -96,7 +98,7 @@ local video <const> = item {
 }
 
 local pub_asc <const> = item {
-    href = "/files/pub.asc",
+    href = file_url "pub.asc",
     title = "PGP",
     short = "PGP",
     content = "pub.asc",
@@ -124,7 +126,7 @@ local gdb_lua <const> = item {
 }
 
 local proc <const> = item {
-    href = "/files/cv.pdf",
+    href = file_url "cv.pdf",
     title = "curriculum vitae",
     short = "curriculum vitae",
     content = "self",

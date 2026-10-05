@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 return include "master.lua" {
     title = "nngn",
     css = {"/main.css", "nngn.css"},
@@ -10,14 +12,14 @@ return include "master.lua" {
                 controls = true,
                 loop = true,
                 preload = "none",
-                poster = "/files/nngn/fiona_poster.png",
-                sources = {"/files/nngn/fiona.webm"},
+                poster = file_url("nngn", "fiona_poster.png"),
+                sources = {file_url("nngn", "fiona.webm")},
             },
             video {
                 controls = true,
                 preload = "none",
-                poster = "/files/nngn/screenshots/post_poster.png",
-                sources = {"/files/nngn/screenshots/post.webm"},
+                poster = file_url("nngn", "screenshots", "post_poster.png"),
+                sources = {file_url("nngn", "screenshots", "post.webm")},
             },
         }),
         par [[
@@ -83,9 +85,15 @@ demonstration).
 console can be informative if things go wrong.  The page will also download
 approximately 10MB of data.</small>
 ]],
-        par [[
-Watch an earlier version of the demo <a href="/files/nngn/demo.mkv">here</a> or
+        par(format {
+            [[
+Watch an earlier version of the demo %s or
 on <a href="https://youtube.com/watch?v=T9HBn05Tm4s">Youtube</a>.
 ]],
+            link {
+                href = file_url("nngn", "demo.mkv"),
+                content = "here",
+            },
+        }),
     }),
 }

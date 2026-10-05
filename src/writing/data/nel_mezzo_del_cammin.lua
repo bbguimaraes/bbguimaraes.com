@@ -1,11 +1,14 @@
 local path <const> = require "lib.path"
 
+local file_url <const> = var "file_url"
+
 local img <const> = figure {
     class = "float-right",
     content = image_link {
         class = "hor-center",
         alt = "Pompeo Batoni, Hercules at the crossroads",
-        src = "/files/writing/pompeo_batoni_hercules_at_the_crossroads.jpg",
+        src = file_url(
+            "writing", "pompeo_batoni_hercules_at_the_crossroads.jpg"),
         height = "375",
     },
     caption = "Pompeo Batoni, <i>Hercules at the crossroads</i>",
@@ -37,8 +40,9 @@ just so absolutely, viscerally repugnant, I just followed the dim light I could
 see in the dark.
 ]],
     img,
-    par [[
-<a href="/files/writing/nel_mezzo_del_cammin.jpg">Above</a> is what I've read in
+    par(format {
+        [[
+%s is what I've read in
 the last twelve months (24 books in total, but some are digital/not here, you
 can go to <a href="/lib/list.html#2025">this page</a> for the full list).  The
 Greeks were correct: a <i lang="la">mens sana</i> is built through strife and
@@ -49,6 +53,11 @@ the soul of man with these few words the principles of a happy life (<span
 lang="grc">εὐδαιμονία</span>, not the fleeting feeling we now use that word
 for).
 ]],
+        link {
+            href = file_url("writing", "nel_mezzo_del_cammin.jpg"),
+            content = "Above",
+        },
+    }),
     par [[
 This is the straight and narrow path: cultivate your soul, turn it to ever
 greater things (<i lang="la">semper sursum</i>), to truth, goodness, beauty.
@@ -105,8 +114,9 @@ visceralmente repugnante, que simplesmente segui a luz tênue que via na
 escuridão.
 ]],
     img,
-    par [[
-<a href="/files/writing/nel_mezzo_del_cammin.jpg">Acima</a> é o que li nos
+    par(format {
+        [[
+%s é o que li nos
 últimos doze meses (24 livros no total, mas alguns são digitais ou não tenho
 comigo, a lista completa se encontra <a href="/lib/list.html#2025">nesta
 página</a>).  Os gregos estavam corretos: uma <i lang="la">mens sana</i> é
@@ -117,6 +127,11 @@ do verbo <span lang="grc">χαράσσω</span>) na alma do homem com essas pouc
 palavras os princípios de uma vida feliz (<span lang="grc">εὐδαιμονία</span>,
 não o sentimento fugaz para o qual hoje se usa essa palavra).
 ]],
+        link {
+            href = file_url("writing", "nel_mezzo_del_cammin.jpg"),
+            content = "Acima",
+        },
+    }),
     par [[
 Esse é o caminho reto e estreito: cultivar a própria alma, voltá-la a coisas
 sempre maiores (<i lang="la">semper sursum</i>), para a verdade, o bem, a

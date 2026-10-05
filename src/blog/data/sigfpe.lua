@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[Every programmer at one point will encounter the arcane semantics of IEEE-754 floating-point arithmetic.  If for you that point is right now, allow me to list the worst offenders of the principle of least surprise:]]
 
 local content <const> = {
@@ -58,7 +60,7 @@ and spread quickly <em>without generating an easily identifiable error</em>.
 The result is spectacular, but not ideal if one wants a stable simulation:
 ]],
     image {
-        src = "/files/blog/sigfpe.gif",
+        src = file_url("blog", "sigfpe.gif"),
         alt = "spectacular simulation",
     },
     h2_link { "enter-sigfpe", "Enter <code> SIGFPE</code>" },

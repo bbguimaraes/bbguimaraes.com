@@ -1,6 +1,8 @@
+local file_url <const> = var "file_url"
+
 local content <const> = {
     image_link {
-        src = "/files/blog/ls.png",
+        src = file_url("blog", "ls.png"),
         alt = "ls segfault",
     },
 }

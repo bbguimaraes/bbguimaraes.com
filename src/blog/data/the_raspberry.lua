@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[My late Christmas gift (from me to myself) arrived on Monday, and it is a little Raspberry Pi.]]
 
 local content <const> = {
@@ -27,14 +29,14 @@ price (of course this includes shipping, but it still is absurd).
 So, if you survive that step, you'll get this pretty box:
 ]],
     image_link {
-        src = "/files/blog/the_raspberry0.png",
+        src = file_url("blog", "the_raspberry0.png"),
         alt = "raspberry pi box",
     },
     par [[
 And inside it...
 ]],
     image_link {
-        src = "/files/blog/the_raspberry1.png",
+        src = file_url("blog", "the_raspberry1.png"),
         alt = "raspberry pi",
     },
     h2_link { "prelude", "Prelude" },
@@ -46,7 +48,7 @@ things you absolutely need to get started.
 ]],
     h3_link { "sd-card", "SD card" },
     image_link {
-        src = "/files/blog/the_raspberry2.png",
+        src = file_url("blog", "the_raspberry2.png"),
         alt = "SD card",
     },
     par [[
@@ -59,11 +61,11 @@ any SD card you have laying around, like those used in cameras.
 ]],
     h3_link { "power-supply", "Power supply" },
     image_link {
-        src = "/files/blog/the_raspberry3.png",
+        src = file_url("blog", "the_raspberry3.png"),
         alt = "power supply",
     },
     image_link {
-        src = "/files/blog/the_raspberry4.png",
+        src = file_url("blog", "the_raspberry4.png"),
         alt = "power supply",
     },
     par [[
@@ -80,11 +82,11 @@ requirements (check the picture on the right).
 ]],
     h3_link { "hdmi-or-rca-cable", "HDMI (or RCA) cable" },
     image_link {
-        src = "/files/blog/the_raspberry5.png",
+        src = file_url("blog", "the_raspberry5.png"),
         alt = "HDMI cable",
     },
     image_link {
-        src = "/files/blog/the_raspberry6.png",
+        src = file_url("blog", "the_raspberry6.png"),
         alt = "HDMI cable",
     },
     par [[
@@ -94,11 +96,11 @@ port to connect to older devices.
 ]],
     h3_link { "usb-keyboard", "USB keyboard" },
     image_link {
-        src = "/files/blog/the_raspberry7.png",
+        src = file_url("blog", "the_raspberry7.png"),
         alt = "keyboard",
     },
     image_link {
-        src = "/files/blog/the_raspberry8.png",
+        src = file_url("blog", "the_raspberry8.png"),
         alt = "keyboard",
     },
     par [[

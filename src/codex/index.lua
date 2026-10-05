@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 function line(href, content, ...)
     return lines {
         concat {
@@ -24,7 +26,7 @@ return include "list_simple.lua" {
                 content = "documentation",
             },
             link {
-                href = "/files/codex/codex.pdf",
+                href = file_url("codex", "codex.pdf"),
                 content = "notes",
             },
         },

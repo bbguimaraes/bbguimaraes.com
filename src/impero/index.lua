@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 return include "master.lua" {
     title = "impero",
     css = {"/main.css", "/description.css"},
@@ -41,9 +43,9 @@ A graphical command executor, intended to be used via a keyboard shortcut.
                 controls = true,
                 preload = "none",
                 class = "demo",
-                poster = "/files/impero/impero_poster.png",
+                poster = file_url("impero", "impero_poster.png"),
                 sources = {
-                    "/files/impero/impero.webm",
+                    file_url("impero", "impero.webm"),
                 },
             },
         }),

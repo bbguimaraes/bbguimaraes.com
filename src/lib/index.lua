@@ -231,7 +231,7 @@ return include "master.lua" {
         image_link {
             class = "image",
             id = "header-img",
-            src = "/files/lib/header.jpg",
+            src = file_url("lib", "header.jpg"),
             alt = "lib",
             title = "lib",
         },

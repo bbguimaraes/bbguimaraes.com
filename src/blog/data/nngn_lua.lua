@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = format {
     [[Out of sheer patriotic duty, the main component of the engine is %s.  The famous tiny scripting language is the only hard dependency (other than a C++ compiler and a vaguely POSIX-compliant operating system) and is the interstitial fluid that coordinates all the other components.]],
     link {
@@ -8,7 +10,7 @@ local description <const> = format {
 
 local content <const> = {
     tag("a", {href = "https://www.lua.org"}, image {
-        src = "/files/blog/lua.png",
+        src = file_url("blog", "lua.png"),
         alt = "Lua logo",
     }),
     aside(par [[

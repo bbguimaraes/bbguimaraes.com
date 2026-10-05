@@ -1,3 +1,5 @@
+local file_url <const> = var "file_url"
+
 local description <const> = [[A long time ago, when I was in college, I got involved in two research projects.]]
 
 local content <const> = {
@@ -19,7 +21,7 @@ organ-surgery simulation system.  The team used a haptic feedback device (very
 much like this one:
 ]],
     image_link {
-        src = "/files/blog/phantom.png",
+        src = file_url("blog", "phantom.png"),
         alt = "phantom",
     },
     par [[
