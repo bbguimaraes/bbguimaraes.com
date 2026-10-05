@@ -2,6 +2,7 @@ local html <const> = require "lib.html"
 local include <const> = require "lib.include"
 local path <const> = require "lib.path"
 local str <const> = require "lib.str"
+local url <const> = require "lib.url"
 local util <const> = require "lib.util"
 
 local NOT_FOUND <const> = 2
@@ -106,9 +107,10 @@ local function check_local_files(opts, src, t)
     local file_url_to_path <const> = load_conf(opts).file_url_to_path
     local errs <const> = {}
     for x in pairs(util.sorted(t)) do
-        local file_name <const> =
-            file_url_to_path(x)
-            or (output and path.join(path.dir(output), x))
+        local file_name = url.split_query(x)
+        file_name =
+            file_url_to_path(file_name)
+            or (output and path.join(path.dir(output), file_name))
         if file_name then
             local f <close>, err <const> = io.open(file_name)
             if not f then

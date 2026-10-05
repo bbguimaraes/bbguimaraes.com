@@ -1,15 +1,21 @@
 local util <const> = require "lib.util"
 
+local url_with_content_hash <const> = var "url_with_content_hash"
+local output <const> = var "OUTPUT"
+
 local ret <const> = {}
 
 for _, x in ipairs(var("css", {})) do
     table.insert(ret, generic_tag("link", {
-        {"rel", "stylesheet"}, {"type", "text/css"}, {"href", x},
+        {"rel", "stylesheet"},
+        {"type", "text/css"},
+        {"href", url_with_content_hash(output, x)},
     }))
 end
 for _, x in ipairs(var("js", {})) do
     table.insert(ret, generic_inline_tag("script", {
-        {"type", "module"}, {"src", x},
+        {"type", "module"},
+        {"src", url_with_content_hash(output, x)},
     }, ""))
 end
 

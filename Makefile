@@ -7,5 +7,7 @@ generate:
 	$(MAKE) -C src/ $@
 tidy: | generate
 	scripts/tidy.sh
+check-urls: | generate
+	scripts/check_urls.sh
 xmllint: | generate
 	xmllint --valid --noout bbguimaraes.com/rss.xml
