@@ -1,17 +1,17 @@
 local data_dir <const> = require "lib.data_dir"
-local generate <const> = require "lib.generate"
 local path <const> = require "lib.path"
 local util <const> = require "lib.util"
 
+local generate <const> = var "generate"
+local include_path <const> = var "include_path"
+local page_path <const> = var "page_path"
 local DIR <const> = "blog"
 
 local function generate_tag_file(name, t)
     local dst <const> =
-        var("page_path")("blog", "tags", name:gsub(" ", "-") .. ".html")
+        page_path("blog", "tags", name:gsub(" ", "-") .. ".html")
     local f <close> = assert(io.open(dst, "w"))
-    generate.generate(
-        f, nil, var("include_path")(DIR, "tag.lua"),
-        {tag = name, pages = t})
+    generate(f, include_path(DIR, "tag.lua"), {tag = name, pages = t})
 end
 
 local function generate_tag(_, x)

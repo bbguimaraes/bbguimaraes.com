@@ -145,6 +145,8 @@ local function render(x)
     return out:output(), ok
 end
 
+local generate
+
 --- Creates a new environment containing variables in \p conf and loads a file.
 local function load_file(opts, file_name, ...)
     local env <const> = new_env()
@@ -154,6 +156,11 @@ local function load_file(opts, file_name, ...)
         OUTPUT = opts and opts.output,
     })
     local conf_vars <close> = env.push(nil, ...)
+    local func_vars <close> = env.push(nil, {
+        generate = function(out, src, ...)
+            return generate(out, opts, src, ...)
+        end,
+    })
     return assert(loadfile(file_name, nil, env))()
 end
 
@@ -163,7 +170,7 @@ local function load_data(file_name)
 end
 
 --- Fully renders the contents of a file.
-local function generate(out, opts, src, ...)
+function generate(out, opts, src, ...)
     return _render(out, opts, src, load_file(opts, src, ...))
 end
 
