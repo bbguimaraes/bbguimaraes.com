@@ -149,7 +149,10 @@ end
 local function load_file(opts, file_name, ...)
     local env <const> = new_env()
     local global_vars <close> = env.push(nil, load_conf(opts, env))
-    local path_var <close> = env.push(nil, {PATH = file_name})
+    local path_var <close> = env.push(nil, {
+        PATH = file_name,
+        OUTPUT = opts and opts.output,
+    })
     local conf_vars <close> = env.push(nil, ...)
     return assert(loadfile(file_name, nil, env))()
 end

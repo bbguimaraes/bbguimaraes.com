@@ -40,7 +40,7 @@ local function generate_page(self, env, d, suffix, t)
         path.join(d, string.format("%s%s.html", t.id, suffix or ""))
     local f <close> = assert(io.open(dst, "w"))
     return generate.generate(
-        f, nil, self.page_gen_path, t, resolve_env(env, t))
+        f, {output = dst}, self.page_gen_path, t, resolve_env(env, t))
 end
 
 local function lang_vars(t, lang)
