@@ -30,7 +30,7 @@ local CMDS <const> = {
         },
         long_opts = {
             help = {},
-            config = { argument = true },
+            config = { argument = ARG_TYPE_LIST },
             output = { argument = true },
         },
         f = cmd_generate,

@@ -31,40 +31,47 @@ function context:save(...)
 end
 
 --- Determines the location of the configuration file based on the environment.
-local function conf_file_name(opts)
+local function conf_file_names(opts)
     if opts and opts.config then
         return opts.config
     end
     do
         local d <const> = os.getenv("XDG_CONFIG_DIR")
         if d then
-            return path.join(d, "bbguimaraes.com", "conf.lua")
+            return {path.join(d, "bbguimaraes.com", "conf.lua")}
         end
     end
     do
         local d <const> = os.getenv("HOME")
         if d then
-            return path.join(d, ".config", "bbguimaraes.com", "conf.lua")
+            return {path.join(d, ".config", "bbguimaraes.com", "conf.lua")}
         end
     end
 end
 
 --- Reads configuration file, if it exists.
 local function read_conf(opts)
-    local file_name <const> = conf_file_name(opts)
-    if not file_name then
+    local l = conf_file_names(opts)
+    if not l then
         return
     end
-    local f <close>, err <const>, status <const> = io.open(file_name, "r")
-    if f then
-        return assert(f:read("a"))
+    local ret <const> = {}
+    for _, file_name in ipairs(l) do
+        local f <close>, err <const>, status <const> = io.open(file_name, "r")
+        if f then
+            table.insert(ret, assert(f:read("a")))
+            goto continue
+        end
+        -- TODO only for implicit files
+        if status == NOT_FOUND then
+            goto continue
+        end
+        error(string.format(
+            "failed to load configuration file %s: %s",
+            file_name, err))
+        ::continue::
     end
-    if status == NOT_FOUND then
-        return
-    end
-    error(string.format(
-        "failed to load configuration file %s: %s",
-        file_name, err))
+    return ret
 end
 
 --- Loads configuration file, if necessary.
@@ -72,11 +79,12 @@ local function load_conf(opts, env)
     if CONF then
         return CONF
     end
-    local c <const> = read_conf(opts)
-    if c then
-        CONF = assert(load(c, nil, nil, env))()
-    else
-        CONF = {}
+    local l <const> = read_conf(opts)
+    CONF = {}
+    if l then
+        for _, x in ipairs(l) do
+            util.copy(CONF, assert(load(x, nil, nil, env))())
+        end
     end
     return CONF
 end
