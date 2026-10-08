@@ -9,6 +9,14 @@ local function top(env)
     return env.vars[#env.vars]
 end
 
+local function top_non_empty(env)
+    local ret <const> = top(env)
+    if not ret then
+        error("empty environment")
+    end
+    return ret
+end
+
 local function print_stack(env, name, dir, file)
     if name then
         io.stderr:write("error: file not found:\n")
@@ -19,7 +27,7 @@ local function print_stack(env, name, dir, file)
         end
     end
     io.stderr:write("include stack:\n")
-    local path <const> = top(env)["PATH"]
+    local path <const> = top_non_empty(env)["PATH"]
     if path then
         io.stderr:write("  ", path, "\n")
     end
@@ -64,7 +72,7 @@ function env:push(name, ...)
 end
 
 function env:var(k, def)
-    local ret <const> = top(self)[k]
+    local ret <const> = top_non_empty(self)[k]
     if ret ~= nil then
         return ret
     end
@@ -77,14 +85,14 @@ function env:var(k, def)
 end
 
 function env:var_and(k, f)
-    local v <const> = top(self)[k]
+    local v <const> = top_non_empty(self)[k]
     if v then
         return f(v)
     end
 end
 
 function env:var_or(k, f)
-    return top(self)[k] or f(v)
+    return top_non_empty(self)[k] or f(v)
 end
 
 function env:set_var(k, v)
@@ -92,14 +100,14 @@ function env:set_var(k, v)
 end
 
 function env:set_vars(src)
-    local dst <const> = top(self)
+    local dst <const> = top_non_empty(self)
     for k, v in pairs(src) do
         dst[k] = v
     end
 end
 
 function env:unset_var(k)
-    local t <const> = top(self)
+    local t <const> = top_non_empty(self)
     if not t[k] then
         error("undefined variable: " .. k)
     end
