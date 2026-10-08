@@ -19,6 +19,8 @@ local function cmd_generate(opts)
     end
 end
 
+local ARG_TYPE_LIST <const> = 1
+
 local CMDS <const> = {
     generate = {
         short_opts = {
@@ -57,6 +59,19 @@ Options:
     end
 end
 
+local function process_arg(opts, name, arg_type, x)
+    if arg_type == ARG_TYPE_LIST then
+        local ov = opts[name]
+        if not ov then
+            ov = {}
+            opts[name] = ov
+        end
+        table.insert(ov, x)
+    else
+        opts[name] = x
+    end
+end
+
 --- Parse a single short command line argument.
 --- The argument may consist of several short options in sequence, possibly
 --- followed by an argument for the last one (e.g. `-vf file`).  Returns the
@@ -72,7 +87,8 @@ local function parse_short(opts, cmd, arg, i)
         local long_name <const> = a.long
         local long <const> = cmd.long_opts[long_name]
         assert(long)
-        if not long.argument then
+        local arg_type <const> = long.argument
+        if not arg_type then
             opts[long_name] = true
             goto continue
         end
@@ -86,7 +102,7 @@ local function parse_short(opts, cmd, arg, i)
             io.stderr:write("option -", name, " requires an argument\n")
             return
         end
-        opts[long_name] = v
+        process_arg(opts, long_name, arg_type, v)
         break
         ::continue::
     end
@@ -104,7 +120,8 @@ local function parse_long(opts, long_opts, arg, i)
         return
     end
     i = i + 1
-    if not a.argument then
+    local arg_type <const> = a.argument
+    if not arg_type then
         opts[name] = true
         return i
     end
@@ -113,7 +130,7 @@ local function parse_long(opts, long_opts, arg, i)
         io.stderr:write("option --", name, " requires an argument\n")
         return
     end
-    opts[name] = v
+    process_arg(opts, name, arg_type, v)
     return i + 1
 end
 
