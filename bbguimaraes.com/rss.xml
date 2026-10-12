@@ -34,10 +34,18 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Thu, 01 Oct 2026 09:34:47 +0000</pubDate>
-        <lastBuildDate>Thu, 01 Oct 2026 09:34:47 +0000</lastBuildDate>
+        <pubDate>Mon, 12 Oct 2026 11:57:31 +0000</pubDate>
+        <lastBuildDate>Mon, 12 Oct 2026 11:57:31 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
+        <item>
+            <title>Tebaldo</title>
+            <link>https://bbguimaraes.com/pictures/tebaldo.html</link>
+            <guid>https://bbguimaraes.com/pictures/tebaldo.html</guid>
+            <pubDate>Sun, 11 Oct 2026 07:36:35 GMT</pubDate>
+            <category>pictures</category>
+            <description>Very important update: Tebaldo has found himself a companion.</description>
+        </item>
         <item>
             <title>Il giardino dei poeti</title>
             <link>https://bbguimaraes.com/pictures/giardino-dei-poeti.html</link>
