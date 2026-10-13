@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[The trip across Sicily started at the western end, in the city of Trapani and the adjoining archipelago, %s. Before Greeks, Phoenicians, and Romans competed for dominance over Sicily — possibly even before the fall of Troy in the XII century B.C. — this region was inhabited by the %s (<i>Elymoi</i>, “Elymians”), who had built a city and a temple in the nearby mount %s (<i>Éryx</i>, modern Erice). It even appears in Virgil's Aeneid, as the place where Aeneas burries his father Anchise before sailing to the penninsula.]],
     link {
         href = "https://bbguimaraes.com/places/favignana.html",
@@ -6,7 +6,7 @@ local description <const> = indented(format {
     },
     inline_tag("span", {lang = "grc"}, "Ελυμοι"),
     inline_tag("span", {lang = "grc"}, "Ἔρυξ"),
-})
+}
 
 local content <const> = lines {
     par(format {

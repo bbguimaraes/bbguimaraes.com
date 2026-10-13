@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[My first stop in Sicily — and I could not have chosen a better one — was Favignana, the largest of the %s. These are an archipelago of five islands in the Strait of Sicily, the closest about 7km from its western end, in the region of %s and Marsala. The Greeks called them %s (<i>Aigátai Nésoi</i>, %s in Latin), the “islands of the goats” (making them etymologicaly related to %s), and according to English novelist Samuel Butler, author of a distinguished translation of Homer's Odyssey in 1900, their Ἱερά Νήσος (<i>Hierá Nésos</i>, “holy island”), the island of Marettimo, furthest from the coast, is none other than Ithaca, the famous homeland that Odysseus seeks throughout the epic.]],
     link {
         href = "https://www.openstreetmap.org/relation/1405747",
@@ -14,7 +14,7 @@ local description <const> = indented(format {
         href = "https://bbguimaraes.com/places/capri.html",
         content = "Capri",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

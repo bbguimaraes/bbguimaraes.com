@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[If you are obsessed with Ancient Rome as I am (as I hope you are), you knew this was coming.  After the Palatine hill in Rome itself, the most famous Roman ruins which survive to this day are certainly the city of Pompeii.  As its neighbor %s, it was at the time at the seaside (built on top of a layer of lava from a previous eruption), it was buried under several meters of volcanic material expelled from %s in 79 AD, remained lost for more than a millennium and a half until it was accidentally rediscovered, and now provides an unbelievable view into what life was like in the Roman empire two thousand years ago.]],
     link {
         href = "https://bbguimaraes.com/places/herculaneum.html",
@@ -8,7 +8,7 @@ local description <const> = indented(format {
         href = "https://bbguimaraes.com/places/vesuvius.html",
         content = "mount Vesuvius",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

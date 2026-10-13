@@ -14,9 +14,7 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
-        description = var_and("description", function(x)
-            return generate.render(plain({"a", "span"}, x))
-        end),
+        description = var("description", false),
         url = path.join(var("base_url"), "blog", var("id") .. ".html"),
     },
     css = {"/main.css", "blog.css"},

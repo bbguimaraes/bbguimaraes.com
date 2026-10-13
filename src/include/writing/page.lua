@@ -49,9 +49,7 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
-        description = var_and("description", function(x)
-            return generate.render(plain({"a", "i", "span"}, x))
-        end),
+        description = var("description", false),
         image = og_image,
         url = path.join(base_url, "writing", var("id") .. ".html"),
     },

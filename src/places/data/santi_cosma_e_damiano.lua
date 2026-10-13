@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[The equally small comune of Santi Cosma e Damiano is situated right next to %s, on the same hillside overlooking the Garigliano valley and the gulf of %s (but don't mix the two towns, or you'll upset the locals on both sides).  There is a stony road which climbs almost to the top of the hill, the highest point in the surrounding area, the village of %s and its 12th-century Romanesque watch tower, with a view of not only the valley and the vastness of the gulf, but stretching all the way to monte Cairo in the north, monti Aurunci in the west, Roccamonfina to the east, and going as far as %s and the island of Ischia in the south-east when the weather is sufficiently clear.]],
     link {
         href = "https://bbguimaraes.com/places/castelforte.html",
@@ -16,7 +16,7 @@ local description <const> = indented(format {
         href = "https://bbguimaraes.com/places/vesuvius.html",
         content = "Vesuvius",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

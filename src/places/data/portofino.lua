@@ -1,11 +1,11 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[The %s keeps teaching me about movement and change. Ever since my first visit (of many) to Genova, I wanted to explore the coast around it, the %s. This weekend, after seeing that the gulf of Tigullio is only about 30km away, and that spring weather had arrived with gusto, I did what any sensible man would: got myself a bicycle and departed the very next day.]],
     link {
         href = "https://bbguimaraes.com/places/genova.html",
         content = "city of Ianus",
     },
     inline_tag("i", {lang = "it"}, "riviera ligure"),
-})
+}
 
 local content <const> = lines {
     par(format {

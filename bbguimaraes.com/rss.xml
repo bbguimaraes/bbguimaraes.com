@@ -34,8 +34,8 @@
         <atom:link href="https://bbguimaraes.com/blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>assert("this should not be happening");</description>
         <language>en-us</language>
-        <pubDate>Mon, 12 Oct 2026 11:57:31 +0000</pubDate>
-        <lastBuildDate>Mon, 12 Oct 2026 11:57:31 +0000</lastBuildDate>
+        <pubDate>Mon, 12 Oct 2026 14:10:07 +0000</pubDate>
+        <lastBuildDate>Mon, 12 Oct 2026 14:10:07 +0000</lastBuildDate>
         <docs>http://www.rssboard.org/rss-specification</docs>
         <generator>vim</generator>
         <item>
@@ -682,7 +682,7 @@
             <guid>https://bbguimaraes.com/lib/apologia.html</guid>
             <pubDate>Wed, 12 Jul 2023 18:04:19 GMT</pubDate>
             <category>books</category>
-            <description><p><span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates), Plato</p><p>One of the Platonic dialogues which depicts the last days of Socrates (together with <i>Euthyphro</i>, <i>Crito</i>, <i>Phaedo</i>, and Xenophon's <i>Apology</i>).  Having been accused of "corrupting the youth" and teaching men "not to receive the gods whom the city receives", and knowing what his fate is, the philosopher consults his δαιμόνιον (<i lang="grc">daimonion</i>, his "divine faculty") and decides that, rather than desisting and escaping from his trial, as his prosecutors would have him do, he is to deliver his defense in front of the court and face the ultimate consequence.</p></description>
+            <description><p><span lang="grc">Ἀπολογία Σωκράτους</span> (Apology of Socrates), Plato</p><p>One of the Platonic dialogues which depicts the last days of Socrates (together with <i>Euthyphro</i>, <i>Crito</i>, <i>Phaedo</i>, and Xenophon's <i>Apology</i>).  Having been accused of "corrupting the youth" and teaching men "not to receive the gods whom the city receives", and knowing what his fate is, the philosopher consults his <span lang="grc">δαιμόνιον</span> (<i>daimonion</i>, his "divine faculty") and decides that, rather than desisting and escaping from his trial, as his prosecutors would have him do, he is to deliver his defense in front of the court and face the ultimate consequence.</p></description>
         </item>
         <item>
             <title>Brave new world</title>

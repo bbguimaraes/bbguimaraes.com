@@ -66,9 +66,7 @@ return include "master.lua" {
     og = {
         type = "article",
         title = title,
-        description = var_and("description", function(x)
-            return generate.render(plain({"a", "i", "span"}, x))
-        end),
+        description = var("description", false),
         image = #images ~= 0
             and (base_url .. generator:file_url(var, "small", images[1].path))
             or nil,

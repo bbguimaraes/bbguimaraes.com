@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[At the foot of %s there existed, until the fated year of 79 AD, a Roman town named <i>Herculaneum</i>.  Legend says it was founded by the Greek hero %s (Heracles, known to the Romans as Hercules) himself while returning from Iberia after one of his twelve labors, and named after him.  While not as large as the nearby city of %s, its position at (what was then) the seaside made it a retreat for Roman nobility including, it is believed, Julius Caesar's father-in-law, Lucius Calpurnius Piso Caesonius, and its four thousand inhabitants enjoyed decent prosperity.]],
     link {
         href = "https://bbguimaraes.com/places/vesuvius.html",
@@ -9,7 +9,7 @@ local description <const> = indented(format {
         href = "https://bbguimaraes.com/places/pompeii.html",
         content = "Pompeii",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

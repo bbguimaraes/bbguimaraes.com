@@ -1,4 +1,4 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[The last stop of my marathon in the Gulf of Napoli.  I had become so enamored of the island from watching it all the way across the Gulf of Gaeta, more than 60km away — it is located right between the two gulfs, in the area where Campi Flegrei, the huge volcanic caldera, enters the Mediterranean sea, forming Penisola flegrea and the surrounding islands — seeing its dim figure through the maritime mist, its shaded contour against the colored sky at sunset, its dark green suspended in the bright blue where both sky and sea meet on sunny days (%s %s %s %s %s %s %s %s %s), that I could not leave Campania without going there.]],
     link {
         href = "https://bbguimaraes.com/places/coreno-ausonio.html",
@@ -36,7 +36,7 @@ local description <const> = indented(format {
         href = "https://bbguimaraes.com/places/herculaneum.html",
         content = "appearance",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

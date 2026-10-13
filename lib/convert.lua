@@ -1,4 +1,5 @@
 local path <const> = require "lib.path"
+local util <const> = require "lib.util"
 
 local function generate_image(dst, src, args)
     local cmd <const> = {}
@@ -55,7 +56,7 @@ local function generator_generate(
 end
 
 function generator_generate_image(self, file_path, file_url, profile, src, args)
-    args = args or {}
+    args = args and util.copy(args) or {}
     profile = generator_get_profile(self, profile)
     args.size = args.size or profile.size
     return generator_generate(

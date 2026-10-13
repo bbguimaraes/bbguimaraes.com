@@ -1,10 +1,10 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[While putting together the %s from the last post this past week and going through my photograph archive, I was caught yet again by these ones and put it on my list to share them, since they are some of my favorites among all the pictures I've ever taken.]],
     link {
         href = "https://bbguimaraes.com/places/",
         content = "page",
     },
-})
+}
 
 local content <const> = lines {
     par(format {

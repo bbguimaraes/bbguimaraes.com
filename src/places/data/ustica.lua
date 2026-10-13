@@ -1,9 +1,9 @@
-local description <const> = indented(format {
+local description <const> = format {
     [[Whenever my itinerary includes large cities — which are not my favorite places, you should know by now, I can only take so much of them at a time — I must %s intersperse escapes to remote places. As soon as I got to Sicily's capital and largest city, Palermo (one walk through %s at night, with the incessant chatter of the Italian evenings, was enough), I fled to the small volcanic island of %s, about 70km north towards the heart of the Tyrrhenian sea.]],
     inline_tag("i", {lang = "it"}, "per forza"),
     inline_tag("i", {lang = "it"}, "La Loggia"),
     inline_tag("i", {lang = "it"}, "Ustica"),
-})
+}
 
 local content <const> = lines {
     par [[
