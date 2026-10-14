@@ -1,7 +1,7 @@
 local util <const> = require "lib.util"
 
 local t <const> = {
-    {2025, {
+    {"2025", {
         {"9788897933540", "Superga: la storia, la basilica, la tragedia"},
         {"9781684515332", "Light of the mind, light of the world"},
         {"9780310364610", "The truth and beauty"},
@@ -27,7 +27,7 @@ local t <const> = {
         {"9780718017347", "The great good thing"},
         {"9780007157174", "That hideous strength"},
     }},
-    {2024, {
+    {"2024", {
         {nil            , "De vita beata"},
         {"9788809911710", "Lettera sulla felicità e altri scritti"},
         {"9780007157167", "Perelandra"},
@@ -41,7 +41,7 @@ local t <const> = {
         {"9788578440718", "Fale tudo em italiano em viagens!"},
         {nil            , "Via crucis"},
     }},
-    {2023, {
+    {"2023", {
         {"9781857150704", "The brothers Karamazov"},
         {nil            , "O livro dos manuais"},
         {"9788598559148", "Veronika decide morrer"},
@@ -74,7 +74,7 @@ local t <const> = {
         {"9780099518471", "Brave new world"},
         {nil            , "De vulgari eloquentia"},
     }},
-    {2022, {
+    {"2022", {
         {"9780008425029", "Meditations"},
         {"9780275967307", "The C++ programming language"},
         {"9780198709701", "Crime and punishment"},
@@ -83,12 +83,12 @@ local t <const> = {
         {"9780593084649", "Beyond order: 12 more rules for life"},
         {"9780199535866", "A midsummer night's dream"},
     }},
-    {2021, {
+    {"2021", {
         {"9780131103627", "The C programming language"},
         {"9781645940388", "A Christmas carol"},
         {"0879804211"   , "The knight in rusty armor"},
     }},
-    {2020, {
+    {"2020", {
         {"9781491903995", "Effective modern C++"},
         {"9780201749625", "Effective STL"},
         {"9780201633719", "More effective C++"},
@@ -96,16 +96,16 @@ local t <const> = {
         {"9781617295812", "Modern C"},
         {"9780124058941", "Heterogeneous Computing with OpenCL"},
     }},
-    {2019, {
+    {"2019", {
         {"9780345816023", "12 rules for life"},
     }},
-    {2017, {
+    {"2017", {
         {"853590641X"   , "Além do bem e do mal"},
         {"8588350777"   , "Uma breve história do mundo"},
         {"9780812984415", "Cloud atlas"},
         {"9781400079179", "The Da Vinci code"},
     }},
-    {2014, {
+    {"2014", {
         {"9781449392512", "Physics for game developers"},
         {"9781593271442", "Hacking: the art of exploitation"},
         {"9781593272883", "Metasploit: the penetration tester's guide"},
@@ -120,12 +120,12 @@ local t <const> = {
         {"9781934356791", "The developer's code"},
         {"9781934356968", "tmux: productive mouse-free development"},
     }},
-    {2013, {
+    {"2013", {
         {"0262510871", "Structure and interpretation of computer programs"},
         {"0201485672", "Refactoring: improving the design of existing code"},
         {"8576051281", "Perícia forense computacional: teoria e prática aplicada, como investigar e esclarecer ocorrências no mundo cibernético"},
     }},
-    {2012, {
+    {"2012", {
         {"1584500492", "Game programming gems"},
         {"8529300459", "O segredo de Luísa"},
         {"0596002971", "TCP/IP network administration"},
@@ -137,7 +137,7 @@ local t <const> = {
         {"8572325131", "A divina comédia"},
         {"8535235221", "Metodologia de pesquisa para ciência da computação"},
     }},
-    {2011, {
+    {"2011", {
         {"8586539635", "O senhor dos anéis: da fantasia à ética"},
         {"8536303964", "Inteligência artificial: estruturas e estratégias para a resolução de problemas complexos"},
         {"8501012637", "O jôgo das contas de vidro"},
@@ -155,7 +155,7 @@ local t <const> = {
         {"8588639181", "Redes de computadores e a internet: uma abordagem top-down"},
         {"0133499456", "Computer networks"},
     }},
-    {2010, {
+    {"2010", {
         {"8570017863", "C++: manual de referência comentado"},
         {"8536306386", "Padrões de arquitetura de aplicações corporativas"},
         {"0131038052", "Artificial intelligence: a modern approach"},
@@ -176,12 +176,12 @@ local t <const> = {
         {"972924118X", "Computação gráfica"},
         {"8521605951", "Introdução a computação gráfica"},
     }},
-    {2009, {
+    {"2009", {
         {"8536301236", "Java: como programar"},
         {"8521611544", "Introdução à estatística"},
         {"8532618049", "Fundamentos de metodologia científica: teoria da ciência e iniciação à pesquisa"},
     }},
-    {2008, {
+    {"2008", {
         {"859017851X", "Inglês com textos para informática"},
         {"8522104794", "Cálculo"},
         {"8573744804", "As profecias de Tutankhamon: o segredo sagrado dos maias, egípcios e maçons"},
@@ -259,31 +259,25 @@ local t <const> = {
     }},
 }
 
-local anchors <const> = util.imap(function(_, t)
-    return tostring(t[1])
-        :gsub(" ", "-")
-        :gsub("%.", "")
-        :lower()
-end, t)
-
-local function generate_item(i, t)
-    local year, l <const> = table.unpack(t)
-    local ret <const> = {}
-    for _, x in ipairs(l) do
-        table.insert(ret, concat {
-            inline_tag(
-                "span", {class = "isbn"},
-                x[1] and x[1] or str("&nbsp;")),
-            x[2],
-        })
-    end
+local function generate_item(_, x)
+    local isbn <const>, title <const> = x[1], x[2]
     return lines {
+        inline_tag("span", {class = "isbn"}, isbn or str("&nbsp;")),
+        title,
+    }
+end
+
+local l <const> = {}
+
+for i, t in ipairs(t) do
+    local year <const>, books <const> = table.unpack(t)
+    table.insert(l, lines {
         inline_tag(
             "p",
-            {id = anchors[i]},
-            inline_tag("b", nil, tostring(year))),
-        ul(ret),
-    }
+            {id = year:gsub(" ", "-"):gsub("%.", ""):lower()},
+            inline_tag("b", nil, year)),
+        ul(util.imap(generate_item, books)),
+    })
 end
 
 return include "master.lua" {
@@ -301,12 +295,18 @@ This is a list of every book I have ever read, as best as I have been able to
 keep track.  The list is in reverse chronological order, except for some unknown
 sections at the end.
 ]],
-            par [[
+            par(format {
+                [[
 Most of these I own and have read a physical copy, but some are digital.  Where
 possible, I include the
-<a href="https://en.wikipedia.org/wiki/ISBN">ISBN</a> code of the exact edition.
+%s code of the exact edition.
 ]],
-            ul(util.imap(generate_item, t)),
+                link {
+                    href = "https://en.wikipedia.org/wiki/ISBN",
+                    content = "ISBN",
+                },
+            }),
+            ul(l),
         }),
     }),
 }
