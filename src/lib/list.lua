@@ -272,10 +272,8 @@ local l <const> = {}
 
 for i, t in ipairs(t) do
     local year <const>, books <const> = table.unpack(t)
-    table.insert(l, lines {
-        toc:add(year:lower(), year),
-        ul(util.imap(generate_item, books)),
-    })
+    table.insert(l, toc:add(year:lower(), year))
+    table.insert(l, ul(util.imap(generate_item, books)))
 end
 
 return include "master.lua" {
@@ -305,7 +303,7 @@ possible, I include the
                     content = "ISBN",
                 },
             }),
-            ul(l),
+            table.unpack(l),
         }),
     }),
 }
