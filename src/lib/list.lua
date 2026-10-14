@@ -186,76 +186,78 @@ local t <const> = {
         {"8522104794", "Cálculo"},
         {"8573744804", "As profecias de Tutankhamon: o segredo sagrado dos maias, egípcios e maçons"},
     }},
-    {"Tolkien", {
-        {"9788533624429", "As aventuras de Tom Bombadil"},
-        {"9788578270735", "Contos inacabados"},
-        {"9789721043251", "O Silmarillion"},
-        {"9780358652960", "Tales from the perilous realm"},
-        {"9780547952109", "The children of Húrin"},
-        {"9780395071229", "The hobbit"},
-        {"9780007355143", "The hobbit + The lord of the rings"},
-        {"9780618391110", "The Silmarillion"},
-        {"9788249603060", "Tolkien"},
-        {"9780618154050", "Unfinished tales"},
-    }},
-    {"Rowling", {
-        {"9780747591061", "Harry Potter and the deathly hallows"},
-        {"9789722325691", "Harry Potter e a câmara dos segredos"},
-        {"9788532523099", "Harry Potter e a ordem da fênix"},
-        {"9788532511010", "Harry Potter e a pedra filosofal"},
-        {"9788532512529", "Harry Potter e o cálice de fogo"},
-        {"9788532512062", "Harry Potter e o prisioneiro de Azkaban"},
-    }},
-    {"music", {
-        {"9788537006054", "Dylan - 100 canções"},
-        {"9781846053092", "Eric Clapton"},
-        {"9780060754020", "John Lennon"},
-        {"9788537006030", "Pink Floyd - Primórdios"},
-        {"9788571108912", "Saindo da sarjeta"},
-    }},
-    {"Brazilian", {
-        {"25506838"     , "Matemática (Aluísio Andrade Lemos, Fidefico Higuchi, Salomão Fridman)"},
-        {"1518413"      , "Memórias de um gigolô"},
-        {"9788589885997", "O guerreiro de Deus"},
-        {"B004NJS8BC"   , "O livro dos manuais"},
-        {"9788589189088", "O primeiro guerreiro"},
-        {"9788525405364", "Os tambores silenciosos"},
-    }},
-    {"D&D", {
-        {"9788575320532", "Canção e silêncio"},
-        {"9788575320402", "Cenário de campanha Forgotten Realms"},
-        {"9788575321072", "Livro do jogador v. 3.5"},
-        {"9788575320105", "Livro do mestre v. 3.0"},
-        {"9788575321157", "Livro do mestre v. 3.5"},
-        {"9788575321164", "Livro dos monstros v. 3.5"},
-        {"9788575321607", "Livro dos níveis épicos"},
-    }},
     {"etc", {
-        {"B001IJ6MWM"   , "A leste do Eden"},
-        {"9788525421630", "As aventuras de Huckleberry Finn"},
-        {"9788525412010", "As aventuras de Tom Sawyer"},
-        {"9788525408365", "A volta ao mundo em 80 dias"},
-        {"9788700631625", "Cem anos de solidão"},
-        {"9788525421616", "Morte na Mesopotâmia"},
-        {"9788574480077", "Musashi (v. 1)"},
-        {"9788574480145", "Musashi (v. 2)"},
-        {"15168750"     , "Natacha"},
-        {"9788510287203", "O amor nos tempos do cólera"},
-        {"9788450550467", "O ano de viver perigosamente"},
-        {"9788525412232", "O chamado da floresta"},
-        {"9788572327480", "O conde de Monte Cristo (vol. 1)"},
-        {"9788572327497", "O conde de Monte Cristo (vol. 2)"},
-        {"9788598078694", "O ladrão de raios"},
-        {"9788573743401", "O livro de cinco anéis"},
-        {"9788574024851", "O nome da rosa"},
-        {"9788525422965", "On the road"},
-        {"B00EUAVTLK"   , "O projeto Haigerloch"},
-        {"9788501024985", "O quarto protocolo"},
-        {"9788525419644", "Orgulho e preconceito"},
-        {"B004TIHXNG"   , "Os ricos são diferentes"},
-        {"9788535900910", "Risíveis amores"},
-        {"9788501020307", "Sidarta"},
-        {"9788528612073", "Zorro"},
+        {"Tolkien", {
+            {"9788533624429", "As aventuras de Tom Bombadil"},
+            {"9788578270735", "Contos inacabados"},
+            {"9789721043251", "O Silmarillion"},
+            {"9780358652960", "Tales from the perilous realm"},
+            {"9780547952109", "The children of Húrin"},
+            {"9780395071229", "The hobbit"},
+            {"9780007355143", "The hobbit + The lord of the rings"},
+            {"9780618391110", "The Silmarillion"},
+            {"9788249603060", "Tolkien"},
+            {"9780618154050", "Unfinished tales"},
+        }},
+        {"Rowling", {
+            {"9780747591061", "Harry Potter and the deathly hallows"},
+            {"9789722325691", "Harry Potter e a câmara dos segredos"},
+            {"9788532523099", "Harry Potter e a ordem da fênix"},
+            {"9788532511010", "Harry Potter e a pedra filosofal"},
+            {"9788532512529", "Harry Potter e o cálice de fogo"},
+            {"9788532512062", "Harry Potter e o prisioneiro de Azkaban"},
+        }},
+        {"music", {
+            {"9788537006054", "Dylan - 100 canções"},
+            {"9781846053092", "Eric Clapton"},
+            {"9780060754020", "John Lennon"},
+            {"9788537006030", "Pink Floyd - Primórdios"},
+            {"9788571108912", "Saindo da sarjeta"},
+        }},
+        {"Brazilian", {
+            {"25506838"     , "Matemática (Aluísio Andrade Lemos, Fidefico Higuchi, Salomão Fridman)"},
+            {"1518413"      , "Memórias de um gigolô"},
+            {"9788589885997", "O guerreiro de Deus"},
+            {"B004NJS8BC"   , "O livro dos manuais"},
+            {"9788589189088", "O primeiro guerreiro"},
+            {"9788525405364", "Os tambores silenciosos"},
+        }},
+        {"D&D", {
+            {"9788575320532", "Canção e silêncio"},
+            {"9788575320402", "Cenário de campanha Forgotten Realms"},
+            {"9788575321072", "Livro do jogador v. 3.5"},
+            {"9788575320105", "Livro do mestre v. 3.0"},
+            {"9788575321157", "Livro do mestre v. 3.5"},
+            {"9788575321164", "Livro dos monstros v. 3.5"},
+            {"9788575321607", "Livro dos níveis épicos"},
+        }},
+        {"etc", {
+            {"B001IJ6MWM"   , "A leste do Eden"},
+            {"9788525421630", "As aventuras de Huckleberry Finn"},
+            {"9788525412010", "As aventuras de Tom Sawyer"},
+            {"9788525408365", "A volta ao mundo em 80 dias"},
+            {"9788700631625", "Cem anos de solidão"},
+            {"9788525421616", "Morte na Mesopotâmia"},
+            {"9788574480077", "Musashi (v. 1)"},
+            {"9788574480145", "Musashi (v. 2)"},
+            {"15168750"     , "Natacha"},
+            {"9788510287203", "O amor nos tempos do cólera"},
+            {"9788450550467", "O ano de viver perigosamente"},
+            {"9788525412232", "O chamado da floresta"},
+            {"9788572327480", "O conde de Monte Cristo (vol. 1)"},
+            {"9788572327497", "O conde de Monte Cristo (vol. 2)"},
+            {"9788598078694", "O ladrão de raios"},
+            {"9788573743401", "O livro de cinco anéis"},
+            {"9788574024851", "O nome da rosa"},
+            {"9788525422965", "On the road"},
+            {"B00EUAVTLK"   , "O projeto Haigerloch"},
+            {"9788501024985", "O quarto protocolo"},
+            {"9788525419644", "Orgulho e preconceito"},
+            {"B004TIHXNG"   , "Os ricos são diferentes"},
+            {"9788535900910", "Risíveis amores"},
+            {"9788501020307", "Sidarta"},
+            {"9788528612073", "Zorro"},
+        }},
     }},
 }
 
@@ -267,14 +269,27 @@ local function generate_item(_, x)
     }
 end
 
-local toc <const> = toc:new()
-local l <const> = {}
-
-for i, t in ipairs(t) do
-    local year <const>, books <const> = table.unpack(t)
-    table.insert(l, toc:add(year:lower(), year))
-    table.insert(l, ul(util.imap(generate_item, books)))
+local generate_list
+generate_list = function(toc, t, level)
+    level = level or 0
+    return util.imap(function(_, x)
+        local title <const>, books <const>, header, l = x[1], x[2]
+        if type(books[1][2]) ~= "table" then
+            l = util.imap(generate_item, books)
+        else
+            l = generate_list(toc, books, level + 1)
+        end
+        if level == 0 then
+            header = toc:add(title:lower(), title)
+        else
+            header = inline_tag("p", nil, title)
+        end
+        return lines { header, ul(l) }
+    end, t)
 end
+
+local toc <const> = toc:new()
+local l <const> = generate_list(toc, t)
 
 return include "master.lua" {
     title = "reading list",
