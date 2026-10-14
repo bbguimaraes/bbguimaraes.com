@@ -305,17 +305,25 @@ return include "master.lua" {
             par [[
 This is a list of every book I have ever read, as best as I have been able to
 keep track.  The list is in reverse chronological order, except for some unknown
-sections at the end.
+sections at the end, and is progressively more accurate and complete (I have
+only started diligently keeping a record from 2020 onwards).
 ]],
             par(format {
                 [[
-Most of these I own and have read a physical copy, but some are digital.  Where
-possible, I include the
-%s code of the exact edition.
+For most of these I own and have read a physical copy, but some are digital.
+Where possible, I include the
+%s
+code of the exact edition (or other similar identification code, when
+available).  Reviews for some of these can be found in the
+%s.
 ]],
                 link {
                     href = "https://en.wikipedia.org/wiki/ISBN",
                     content = "ISBN",
+                },
+                link {
+                    href = "./#reading-list",
+                    content = "main page",
                 },
             }),
             table.unpack(l),
