@@ -198,7 +198,7 @@ local t <const> = {
         {"9788249603060", "Tolkien"},
         {"9780618154050", "Unfinished tales"},
     }},
-    {"J. K. Rowling", {
+    {"Rowling", {
         {"9780747591061", "Harry Potter and the deathly hallows"},
         {"9789722325691", "Harry Potter e a câmara dos segredos"},
         {"9788532523099", "Harry Potter e a ordem da fênix"},
@@ -267,15 +267,13 @@ local function generate_item(_, x)
     }
 end
 
+local toc <const> = toc:new()
 local l <const> = {}
 
 for i, t in ipairs(t) do
     local year <const>, books <const> = table.unpack(t)
     table.insert(l, lines {
-        inline_tag(
-            "p",
-            {id = year:gsub(" ", "-"):gsub("%.", ""):lower()},
-            inline_tag("b", nil, year)),
+        toc:add(year:lower(), year),
         ul(util.imap(generate_item, books)),
     })
 end
@@ -290,6 +288,7 @@ return include "master.lua" {
         },
         main({id = "reading-list"}, lines {
             h1 "reading list",
+            tag("aside", {class = "toc"}, toc),
             par [[
 This is a list of every book I have ever read, as best as I have been able to
 keep track.  The list is in reverse chronological order, except for some unknown
